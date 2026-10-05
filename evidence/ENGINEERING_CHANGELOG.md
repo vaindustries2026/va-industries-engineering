@@ -1390,3 +1390,57 @@ migrations: 0
 rollback: "delete the 3 asset_registry ids above; delete the 4 storage keys above"
 status: "C1_VISUAL_CANON_DURABLY_STORED + STORED_BYTES_HASH_VERIFIED + MIKKO_APPROVED_REGISTERED + LUMI_APPROVED_REGISTERED + EP005_BATHROOM_APPROVED_REGISTERED + DUO_REFERENCE_STORED_NOT_REGISTRY_MAPPED + AGENT006_MATCH_READINESS_PROVEN_READ_ONLY + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-PACK-PREINGEST-STOP: EP005 working pack, first authorisation stopped before write (cheek alias conflict)
+
+```yaml
+change_id: "ENG-20261005-EP005-PACK-PREINGEST-STOP"
+timestamp: "2026-10-05"
+actor: "Claude"
+result: "STOPPED_PRE_WRITE: CHEEK_ALIAS_RESOLVES_COMBINED_BERRY_REQUIREMENT"
+detail: "approved cheek alias \"Berry smudge on Mikko's anatomical left cheek\" == primary source_label of APPROVED_NEW::TMP_EP005_BERRY_SMUDGE_OVERLAYS; in-memory Agent-006 sim resolved it REUSE_EXISTING -> CHEEK, contradicting the 'leave unresolved' decision"
+resolution: "Company Brain Option 1: cheek aliases = []"
+writes: 0
+```
+
+---
+
+## ENG-20261005-EP005-WORKING-VISUAL-PACK-APPROVED: EP005 five working production assets stored, hash-verified, registered
+
+```yaml
+change_id: "ENG-20261005-EP005-WORKING-VISUAL-PACK-APPROVED"
+timestamp: "2026-10-05"
+actor: "Claude"
+approved_by: "Gilang / Company Brain"
+evidence: "evidence/EP005_WORKING_VISUAL_PACK_INGESTED_v1.0.md"
+rows_json: "evidence/ep005/EP005_WORKING_VISUAL_PACK_REGISTRY_ROWS_v1.0.json"
+scope: "approved EP005 working production assets (not core canon); exact session WebP bytes accepted as authoritative"
+storage_writes:   # production-assets, x-upsert false, readback sha256 verified 5/5
+  - {key: "visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp", id: "e5ef12f3-baea-4cf8-9ce9-46d1a917abb0", sha256: "34fa31a1…56ac", bytes: 47670}
+  - {key: "visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp", id: "80744e45-d904-4086-9069-e010b17187bb", sha256: "afaa3a9f…c1db", bytes: 237724}
+  - {key: "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01.webp", id: "48a1acf0-b020-4cbd-b003-2a614d753c03", sha256: "b2c735f2…78ac", bytes: 257966}
+  - {key: "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01.webp", id: "de46e075-fc63-46ac-a10a-3ad501e829cb", sha256: "df7c2adb…7b0e", bytes: 294014}
+  - {key: "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01.webp", id: "e595212b-ca24-44ac-8069-68c40583b088", sha256: "c1169127…0bc1", bytes: 285032}
+registry_inserts:   # plain insert, APPROVED
+  - {asset_id: "PROP-EP005-HAND-MIRROR-v01", id: "a61c0af2-1e8d-40e2-88d1-8848390f2a17", aliases: ["TMP_EP005_HAND_MIRROR", "Tiny hand mirror"]}
+  - {asset_id: "PROP-EP005-CLEANING-CLOTH-v01", id: "ab33c77c-5fde-4642-9efb-706f619c4a7e", aliases: ["TMP_EP005_SOFT_CLOTH", "Soft cloth"]}
+  - {asset_id: "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01", id: "e2fc6426-bf97-437e-9515-d86419a0498a", aliases: []}
+  - {asset_id: "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01", id: "b960c11c-6b88-4223-854b-e9ba44c7aad4", aliases: ["Berry smudge on skin beside Mikko's mouth"]}
+  - {asset_id: "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01", id: "dfaa3b89-8366-44dc-ace9-542b4a764a80", aliases: ["Berry smudge on Mikko's nose"]}
+tmp_berry_alias_assigned: false
+synthetic_set_row: false
+prior_rows_unchanged: "15/15 field-identical (incl. 3 C1 rows); C1 storage objects untouched"
+agent006_readonly_proof: "unmodified 03/05/07 of 9bf6bbef vs live manifest 670b201b + APPROVED/LOCKED registry: mirror REUSE_EXISTING, cloth REUSE_EXISTING, combined berry CREATE_NEW (intentional), Mikko/Lumi/environment unchanged REUSE_EXISTING"
+open_followup: "separate bounded task: repair combined berry requirement structure"
+n8n_writes: 0
+paid_calls: 0
+generation_calls: 0
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+migrations: 0
+rollback: "delete the 5 asset_registry ids above; delete the 5 storage keys above"
+status: "EP005_FIVE_WORKING_PRODUCTION_ASSETS_STORED + FIVE_STORED_BYTES_HASH_VERIFIED + 5_APPROVED_REGISTERED + MIRROR_MATCH_READY + CLOTH_MATCH_READY + BERRY_COMBINED_REQUIREMENT_INTENTIONALLY_UNRESOLVED + C1_CANON_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
+```

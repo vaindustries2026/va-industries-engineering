@@ -1,0 +1,200 @@
+[
+ {
+  "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+  "asset_name": "EP005 Hand Mirror",
+  "asset_type": "PROP",
+  "asset_subtype": null,
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [
+   "TMP_EP005_HAND_MIRROR",
+   "Tiny hand mirror"
+  ],
+  "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp",
+  "source_url": null,
+  "metadata_json": {
+   "canon_scope": "MIKKO_LUMI_EP005_WORKING_PRODUCTION_ASSETS",
+   "canon_role": "EP005_PROP",
+   "episode_code": "EP-CANDIDATE-005",
+   "production_manifest_id": "670b201b-6793-4518-ad5a-d051eb98d90c",
+   "satisfies_requirement": "APPROVED_NEW::TMP_EP005_HAND_MIRROR",
+   "agent004_temp_asset_id": "TMP_EP005_HAND_MIRROR",
+   "human_approval": "APPROVED",
+   "approval_authority": "Gilang",
+   "approval_record": "ENG-20261005-EP005-WORKING-VISUAL-PACK-APPROVED",
+   "source": "Claude Code session attachment 2026-10-05",
+   "source_session_file": "images/6.webp",
+   "sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "bytes": 47670,
+   "dimensions": "1448x1086",
+   "format": "WEBP (lossy VP8, ICC profile)",
+   "has_alpha": false,
+   "storage_object_key": "visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp"
+  },
+  "notes": "EP005 human-approved working production asset (EP005 Hand Mirror). Exact bytes governed by SHA-256 in metadata_json."
+ },
+ {
+  "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+  "asset_name": "EP005 Cleaning Cloth",
+  "asset_type": "PROP",
+  "asset_subtype": null,
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [
+   "TMP_EP005_SOFT_CLOTH",
+   "Soft cloth"
+  ],
+  "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp",
+  "source_url": null,
+  "metadata_json": {
+   "canon_scope": "MIKKO_LUMI_EP005_WORKING_PRODUCTION_ASSETS",
+   "canon_role": "EP005_PROP",
+   "episode_code": "EP-CANDIDATE-005",
+   "production_manifest_id": "670b201b-6793-4518-ad5a-d051eb98d90c",
+   "satisfies_requirement": "APPROVED_NEW::TMP_EP005_SOFT_CLOTH",
+   "agent004_temp_asset_id": "TMP_EP005_SOFT_CLOTH",
+   "human_approval": "APPROVED",
+   "approval_authority": "Gilang",
+   "approval_record": "ENG-20261005-EP005-WORKING-VISUAL-PACK-APPROVED",
+   "source": "Claude Code session attachment 2026-10-05",
+   "source_session_file": "images/7.webp",
+   "sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "bytes": 237724,
+   "dimensions": "1447x1087",
+   "format": "WEBP (lossy VP8, ICC profile)",
+   "has_alpha": false,
+   "storage_object_key": "visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp"
+  },
+  "notes": "EP005 human-approved working production asset (EP005 Cleaning Cloth). Exact bytes governed by SHA-256 in metadata_json."
+ },
+ {
+  "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+  "asset_name": "EP005 Berry Smudge - Cheek",
+  "asset_type": "OVERLAY_VFX",
+  "asset_subtype": "BERRY_SMUDGE_OVERLAY",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01.webp",
+  "source_url": null,
+  "metadata_json": {
+   "canon_scope": "MIKKO_LUMI_EP005_WORKING_PRODUCTION_ASSETS",
+   "canon_role": "EP005_OVERLAY",
+   "episode_code": "EP-CANDIDATE-005",
+   "production_manifest_id": "670b201b-6793-4518-ad5a-d051eb98d90c",
+   "satisfies_requirement": "APPROVED_NEW::TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+   "agent004_temp_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+   "human_approval": "APPROVED",
+   "approval_authority": "Gilang",
+   "approval_record": "ENG-20261005-EP005-WORKING-VISUAL-PACK-APPROVED",
+   "source": "Claude Code session attachment 2026-10-05",
+   "source_session_file": "images/8.webp",
+   "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+   "bytes": 257966,
+   "dimensions": "1447x1087",
+   "format": "WEBP (lossy VP8, ICC profile)",
+   "has_alpha": true,
+   "overlay_set": "EP005_BERRY_SMUDGE",
+   "overlay_set_members": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "continuity_removal": {
+    "cheek": "S009",
+    "mouth": "S015",
+    "nose": "S021"
+   },
+   "storage_object_key": "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01.webp"
+  },
+  "notes": "EP005 human-approved working production asset (EP005 Berry Smudge - Cheek). Exact bytes governed by SHA-256 in metadata_json."
+ },
+ {
+  "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+  "asset_name": "EP005 Berry Smudge - Mouth",
+  "asset_type": "OVERLAY_VFX",
+  "asset_subtype": "BERRY_SMUDGE_OVERLAY",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [
+   "Berry smudge on skin beside Mikko's mouth"
+  ],
+  "storage_path": "production-assets/visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01.webp",
+  "source_url": null,
+  "metadata_json": {
+   "canon_scope": "MIKKO_LUMI_EP005_WORKING_PRODUCTION_ASSETS",
+   "canon_role": "EP005_OVERLAY",
+   "episode_code": "EP-CANDIDATE-005",
+   "production_manifest_id": "670b201b-6793-4518-ad5a-d051eb98d90c",
+   "satisfies_requirement": "APPROVED_NEW::TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+   "agent004_temp_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+   "human_approval": "APPROVED",
+   "approval_authority": "Gilang",
+   "approval_record": "ENG-20261005-EP005-WORKING-VISUAL-PACK-APPROVED",
+   "source": "Claude Code session attachment 2026-10-05",
+   "source_session_file": "images/10.webp",
+   "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+   "bytes": 294014,
+   "dimensions": "1448x1086",
+   "format": "WEBP (lossy VP8, ICC profile)",
+   "has_alpha": true,
+   "overlay_set": "EP005_BERRY_SMUDGE",
+   "overlay_set_members": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "continuity_removal": {
+    "cheek": "S009",
+    "mouth": "S015",
+    "nose": "S021"
+   },
+   "storage_object_key": "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01.webp"
+  },
+  "notes": "EP005 human-approved working production asset (EP005 Berry Smudge - Mouth). Exact bytes governed by SHA-256 in metadata_json."
+ },
+ {
+  "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+  "asset_name": "EP005 Berry Smudge - Nose",
+  "asset_type": "OVERLAY_VFX",
+  "asset_subtype": "BERRY_SMUDGE_OVERLAY",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [
+   "Berry smudge on Mikko's nose"
+  ],
+  "storage_path": "production-assets/visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01.webp",
+  "source_url": null,
+  "metadata_json": {
+   "canon_scope": "MIKKO_LUMI_EP005_WORKING_PRODUCTION_ASSETS",
+   "canon_role": "EP005_OVERLAY",
+   "episode_code": "EP-CANDIDATE-005",
+   "production_manifest_id": "670b201b-6793-4518-ad5a-d051eb98d90c",
+   "satisfies_requirement": "APPROVED_NEW::TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+   "agent004_temp_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+   "human_approval": "APPROVED",
+   "approval_authority": "Gilang",
+   "approval_record": "ENG-20261005-EP005-WORKING-VISUAL-PACK-APPROVED",
+   "source": "Claude Code session attachment 2026-10-05",
+   "source_session_file": "images/9.webp",
+   "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+   "bytes": 285032,
+   "dimensions": "1446x1087",
+   "format": "WEBP (lossy VP8, ICC profile)",
+   "has_alpha": true,
+   "overlay_set": "EP005_BERRY_SMUDGE",
+   "overlay_set_members": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "continuity_removal": {
+    "cheek": "S009",
+    "mouth": "S015",
+    "nose": "S021"
+   },
+   "storage_object_key": "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01.webp"
+  },
+  "notes": "EP005 human-approved working production asset (EP005 Berry Smudge - Nose). Exact bytes governed by SHA-256 in metadata_json."
+ }
+]

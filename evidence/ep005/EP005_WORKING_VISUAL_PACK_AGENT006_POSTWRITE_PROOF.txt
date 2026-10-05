@@ -1,0 +1,17 @@
+governed {"rows_read":11,"governed_count":11,"excluded_count":0}
+APPROVED_NEW::TMP_EP005_BERRY_SMUDGE_OVERLAYS | label=Berry smudge on Mikko's anatomical left cheek | exact=[] | CREATE_NEW | 
+APPROVED_NEW::TMP_EP005_SOFT_CLOTH | label=Soft cloth | exact=["PROP-EP005-CLEANING-CLOTH-v01"] | REUSE_EXISTING | PROP-EP005-CLEANING-CLOTH-v01
+APPROVED_NEW::TMP_EP005_HAND_MIRROR | label=Tiny hand mirror | exact=["PROP-EP005-HAND-MIRROR-v01"] | REUSE_EXISTING | PROP-EP005-HAND-MIRROR-v01
+APPROVED_REUSE::Lumi clue chime | label=Lumi clue chime | exact=["SFX-LUMI-CLUE-CHIME"] | REUSE_EXISTING | SFX-LUMI-CLUE-CHIME
+APPROVED_REUSE::Mikko TRY whoosh | label=Mikko TRY whoosh | exact=["SFX-MIKKO-TRY-WHOOSH"] | REUSE_EXISTING | SFX-MIKKO-TRY-WHOOSH
+APPROVED_REUSE::WIN sparkle chord | label=WIN sparkle chord | exact=["SFX-WIN-SPARKLE-CHORD"] | REUSE_EXISTING | SFX-WIN-SPARKLE-CHORD
+TBD::CHARACTER::Lumi | label=Lumi | exact=["CHAR-LUMI-MASTER-v01"] | REUSE_EXISTING | CHAR-LUMI-MASTER-v01
+TBD::CHARACTER::Mikko | label=Mikko | exact=["CHAR-MIKKO-MASTER-v01"] | REUSE_EXISTING | CHAR-MIKKO-MASTER-v01
+TBD::ENVIRONMENT::Canonical environment/background | label=Canonical environment/background | exact=["WORLD-EP005-BATHROOM-MASTER-v01"] | REUSE_EXISTING | WORLD-EP005-BATHROOM-MASTER-v01
+TBD::OVERLAY_VFX::Mirror glint treatment | label=Mirror glint treatment | exact=[] | NEEDS_HUMAN_REVIEW | 
+TBD::OVERLAY_VFX::Mirror reflection/compositing treatment | label=Mirror reflection/compositing treatment | exact=[] | NEEDS_HUMAN_REVIEW | 
+TBD::OVERLAY_VFX::Soft completion pop visual accent | label=Soft completion pop visual accent | exact=[] | NEEDS_HUMAN_REVIEW | 
+TBD::AUDIO::AMBIENCE | label=AMBIENCE | exact=[] | NEEDS_HUMAN_REVIEW | 
+TBD::AUDIO::FOLEY_CLOTH | label=FOLEY_CLOTH | exact=[] | NEEDS_HUMAN_REVIEW | 
+TBD::AUDIO::COMPLETION_SFX | label=COMPLETION_SFX | exact=[] | NEEDS_HUMAN_REVIEW | 
+TBD::AUDIO::FOLEY_TOUCH | label=FOLEY_TOUCH | exact=[] | NEEDS_HUMAN_REVIEW | 
