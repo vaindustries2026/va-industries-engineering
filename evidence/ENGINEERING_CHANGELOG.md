@@ -1478,3 +1478,30 @@ rollback: "delete episode_production_manifests id 3bcde9ee-6676-480f-90da-5695b6
 next: "separate human G3 approval of 3bcde9ee; Agent-006 run only under separate authorisation"
 status: "EP005_BERRY_DERIVED_MANIFEST_CREATED_REVIEW + SOURCE_MANIFEST_670B201B_UNCHANGED + BERRY_REQUIREMENTS_SPLIT_3_WAYS + S013_NOSE_ENTRY_ADDED_FROM_CONTINUITY + DERIVED_REQUIREMENT_COUNT_18 + IN_MEMORY_AGENT006_MATCH_PROOF_PASS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-BERRY-DERIVED-MANIFEST-HUMAN-APPROVED: human manifest approval of derived EP005 manifest 3bcde9ee
+
+```yaml
+change_id: "ENG-20261005-EP005-BERRY-DERIVED-MANIFEST-HUMAN-APPROVED"
+timestamp: "2026-10-05T06:11:59Z"
+actor: "Claude (applying recorded human decision)"
+approved_by: "Gilang (recorded by Company Brain)"
+evidence: "evidence/EP005_BERRY_DERIVED_MANIFEST_HUMAN_APPROVED_v1.0.md"
+approval_scope: "manifest approval only, for EP005 asset-resolution use, covering the evidenced berry split (cheek S001-S009/S009, mouth S001-S015/S015, nose S001-S021/S021, derived S013 nose entry). NOT readiness, generation, spend, Agent-006/007 execution or publication approval."
+pre_write: "3bcde9ee REVIEW; manifest sha256 3b855d95…0ec = evidence; 21/21 fields = transform; source 670b201b APPROVED, md5 249adbfe…/da698055… unchanged; registry 20 rows md5 b7b46112…; EP005 objects 048d2985…; C1 objects 7a4ac73d…; Agent-006 9bf6bbef unpublished"
+write: "UPDATE episode_production_manifests SET status='APPROVED' WHERE id='3bcde9ee-6676-480f-90da-5695b64532a7' AND status='REVIEW'  -- 1 row (existing G3 mechanism, as ENG-20260926-018)"
+post_write: "only status changed (md5 excluding status caafdbd5… before = after); all other fingerprints unchanged; APPROVED manifests 2 -> 3"
+inmemory_check: "real APPROVED status passes node 03 gate; 18 requirements identical to evidenced sim; cheek/mouth/nose REUSE_EXISTING"
+consequence: "Agent-005 cost baseline for backlog 07d622e9 now selects 3bcde9ee (video 15, same as 670b201b); no financial change"
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+registry_changes: 0
+storage_changes: 0
+paid_calls: 0
+migrations: 0
+rollback: "UPDATE episode_production_manifests SET status='REVIEW' WHERE id='3bcde9ee-6676-480f-90da-5695b64532a7' AND status='APPROVED'"
+status: "EP005_BERRY_DERIVED_MANIFEST_HUMAN_APPROVED + DERIVED_MANIFEST_3BCDE9EE_APPROVED + SOURCE_MANIFEST_670B201B_UNCHANGED + C1_CANON_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
+```
