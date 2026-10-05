@@ -1,0 +1,6 @@
+AMB-BATHROOM-QUIET-v01-CAND-A.wav: RMS -52.6 dBFS | peak -39.4 dBFS | 1s-RMS -53.4..-51.9 dB | seam last/first 0.5s -52.7/-52.6 dB, boundary step 0.00052 <= p99.9 step 0.00209: True | max tonal prominence 2.8 dB (40Hz-15kHz, vs local median) | centroid 3435 Hz | L/R corr -0.002
+AMB-BATHROOM-QUIET-v01-CAND-B.wav: RMS -51.4 dBFS | peak -36.9 dBFS | 1s-RMS -52.3..-50.7 dB | seam last/first 0.5s -51.4/-51.5 dB, boundary step 0.00090 <= p99.9 step 0.00159: True | max tonal prominence 2.6 dB (40Hz-15kHz, vs local median) | centroid 2440 Hz | L/R corr -0.004
+AMB-BATHROOM-QUIET-v01-CAND-C.wav: RMS -53.1 dBFS | peak -40.0 dBFS | 1s-RMS -53.9..-52.4 dB | seam last/first 0.5s -53.2/-53.1 dB, boundary step 0.00113 <= p99.9 step 0.00310: True | max tonal prominence 2.3 dB (40Hz-15kHz, vs local median) | centroid 5087 Hz | L/R corr 0.000
+SFX-COMPLETION-POP-v01-CAND-A.wav: dur 0.250s | peak -6.4 dBFS at 2.0 ms | span above -40 dB 239 ms | first/last sample 0.000000/-0.000001 | spectral centroid 654 Hz
+SFX-COMPLETION-POP-v01-CAND-B.wav: dur 0.300s | peak -6.4 dBFS at 3.4 ms | span above -40 dB 288 ms | first/last sample 0.000000/-0.000002 | spectral centroid 506 Hz
+SFX-COMPLETION-POP-v01-CAND-C.wav: dur 0.180s | peak -6.9 dBFS at 1.7 ms | span above -40 dB 171 ms | first/last sample 0.000000/-0.000002 | spectral centroid 875 Hz

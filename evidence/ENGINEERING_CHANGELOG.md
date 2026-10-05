@@ -1595,3 +1595,37 @@ migrations: 0
 rollback: "UPDATE episode_production_manifests SET status='REVIEW' WHERE id='96df250f-7182-4d5f-a556-b0448e518375' AND status='APPROVED'"
 status: "EP005_TBD_CLEANUP_DERIVED_MANIFEST_HUMAN_APPROVED + DERIVED_MANIFEST_96DF250F_APPROVED + THREE_VISUAL_TREATMENTS_PRESERVED + FOLEY_TOUCH_DROPPED + THREE_AUDIO_TBDS_REMAIN + ELEVEN_REUSE_EXISTING_PRESERVED + SOURCE_MANIFESTS_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-LOCAL-AUDIO-CANDIDATES: deterministic local audio candidates for human review (ambience x3, completion pop x3)
+
+```yaml
+change_id: "ENG-20261005-EP005-LOCAL-AUDIO-CANDIDATES"
+timestamp: "2026-10-05T07:00:25Z"
+actor: "Claude"
+authorised_by: "Company Brain (owned/self-produced audio; local deterministic tools only)"
+evidence: "evidence/EP005_LOCAL_AUDIO_CANDIDATES_v1.0.md"
+script: "evidence/ep005/audio_candidates/generate_ep005_audio_candidates_v1.sh (ffmpeg 6.1.1 lavfi anoisesrc fixed seeds + aevalsrc; bitexact; no inputs, no network)"
+candidates:
+  - {id: "AMB-BATHROOM-QUIET-v01-CAND-A", sha256: "b0afccd7a8815cd223048c703155dd66aae58d8dd22b453dd515950a03f8de02", spec: "40 s seamless loop, s24le 48k stereo, -52.6 dBFS RMS"}
+  - {id: "AMB-BATHROOM-QUIET-v01-CAND-B", sha256: "f8809a9dcda6f854686734efbeaa4667a86842f734a4110f67c44dc1bb45bb77", spec: "40 s seamless loop, warmer, -51.4 dBFS RMS"}
+  - {id: "AMB-BATHROOM-QUIET-v01-CAND-C", sha256: "a2e38046c7aab31e555a5bd3307d3dcc4ba4f296b4f4a79c5c531988bdacce68", spec: "40 s seamless loop, airier, -53.1 dBFS RMS"}
+  - {id: "SFX-COMPLETION-POP-v01-CAND-A", sha256: "1dcab105d29bd7dd0bf99dd1eb86c43dabe5a671a36cc230614c0bc13b96e13a", spec: "0.25 s, s24le 48k mono, 900->380 Hz glide"}
+  - {id: "SFX-COMPLETION-POP-v01-CAND-B", sha256: "7816c4d7ab4fdb4dd65dcdf65799b1b530ec84145be33bb258c6917be32c8822", spec: "0.30 s, softer 700->300 Hz"}
+  - {id: "SFX-COMPLETION-POP-v01-CAND-C", sha256: "fa109e403d25d36e7e2dc5ae674257884ad1fcdb2b2c304ec6cb3e04280b94df", spec: "0.18 s, brighter 1100->450 Hz + faint transient"}
+determinism: "two runs inside unshare -n (no network interfaces) -> 6/6 identical SHA-256"
+qc: "ambience seams clean (boundary step < p99.9 adjacent step; head/tail RMS within 0.2 dB), max tonal prominence 2.3-2.8 dB (no hum), L/R corr ~0; pops start/end at zero, peak about -6.4 dBFS"
+review_location: "session scratch .../scratchpad/ep005_audio_candidates/ (+ review_aids loop-check files); binaries NOT committed"
+disclosure: "pip install numpy (PyPI) used for QC only; not an audio source or provider"
+provider_calls: 0
+paid_calls: 0
+registry_changes: 0
+storage_changes: 0
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+migrations: 0
+next: "human listening and selection by exact SHA-256; FOLEY-CLOTH-SOFT-v01 human recording; separate ingestion authorisation"
+status: "EP005_LOCAL_AUDIO_CANDIDATES_READY_FOR_HUMAN_REVIEW + DETERMINISTIC_RECIPES_RECORDED + SIX_SHA256_RECORDED + ZERO_PROVIDER_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
+```
