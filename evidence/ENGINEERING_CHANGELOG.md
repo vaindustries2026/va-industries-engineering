@@ -1629,3 +1629,30 @@ migrations: 0
 next: "human listening and selection by exact SHA-256; FOLEY-CLOTH-SOFT-v01 human recording; separate ingestion authorisation"
 status: "EP005_LOCAL_AUDIO_CANDIDATES_READY_FOR_HUMAN_REVIEW + DETERMINISTIC_RECIPES_RECORDED + SIX_SHA256_RECORDED + ZERO_PROVIDER_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-SUNO-STOPPED-PRE-GENERATION: Suno candidate task stopped at Step 1 (commercial rights not verified)
+
+```yaml
+change_id: "ENG-20261005-EP005-SUNO-STOPPED-PRE-GENERATION"
+timestamp: "2026-10-05"
+actor: "Claude"
+requested_by: "Company Brain (Suno candidates for AMB-BATHROOM-QUIET-v01, FOLEY-CLOTH-SOFT-v01, SFX-COMPLETION-POP-v01; existing access/credits only; rights check first)"
+evidence: "evidence/EP005_SUNO_CANDIDATES_STOPPED_PRE_GENERATION_v1.0.md"
+result: "STOPPED_PRE_GENERATION_SUNO_COMMERCIAL_RIGHTS_NOT_VERIFIED"
+findings:
+  - "no Suno plan/tier, billing or rights evidence recorded anywhere (repo, registry)"
+  - "existing 3 Suno SFX rows carry only source=Suno + human_approved; no plan, date, id, prompt, licence or hash"
+  - "no Suno access from this environment: no tool/connector, no n8n credential (10 listed, names/types only), no env secret, proxy injects Supabase only"
+unblock: "human captures current Suno plan + dated terms; generates in the Suno web app (recording id/prompt/model/timestamp) or provides sanctioned access; Claude then hashes the original bytes and builds the review package"
+generations: 0
+paid_calls: 0
+purchases_upgrades_credits_billing_changes: 0
+registry_changes: 0
+storage_changes: 0
+agent006_executions: 0
+agent007_executions: 0
+migrations: 0
+status: "STOPPED_PRE_GENERATION + ZERO_WRITES_OUTSIDE_EVIDENCE"
+```
