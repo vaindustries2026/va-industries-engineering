@@ -1,0 +1,58 @@
+{
+  "CLAUDE.md": {
+    "sha256": "bcc38a0f28911728c35a7c83731f11a532cf5bbb69210b6897abc052397ec72e",
+    "bytes": 2580
+  },
+  "README.md": {
+    "sha256": "01bdee49f716f600cedb4bfe9187c353c091f2c0ef2008535de6dedab8f4a701",
+    "bytes": 391
+  },
+  "canon/c1/lumi_character_master_sheet.png": {
+    "sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+    "bytes": 1887897
+  },
+  "canon/c1/mikko_lumi_child_friendly_bathroom_board.png": {
+    "sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+    "bytes": 1756516
+  },
+  "canon/c1/mikko_lumi_duo_scale_sheet.png": {
+    "sha256": "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f",
+    "bytes": 1704130
+  },
+  "canon/c1/mikko_the_bear_character_master_sheet.png": {
+    "sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+    "bytes": 2207008
+  },
+  "company-brain/VA_01_ARCHITECTURE_PROGRESS_AND_SYSTEM_DESIGN.md": {
+    "sha256": "57efcfdaa4f888f5fd46dfe25d85bbfd55a576f9ab800f66c6aed46d52cb4a33",
+    "bytes": 19740
+  },
+  "company-brain/VA_02_ENGINEERING_PROBLEMS_SOLVED_AND_REUSABLE_PLAYBOOK.md": {
+    "sha256": "ffab2747853de8beab916de3d8e4755cfa7b75e0fb12c8d5cfb16f3d55541896",
+    "bytes": 28005
+  },
+  "company-brain/VA_03_CURRENT_STATE_ACTIVE_WORK_AND_NEXT_ACTIONS.md": {
+    "sha256": "4f029cba77b051e197612945f13c15ecc8279a91ffa77ea0dbac5d0e77bdde00",
+    "bytes": 15273
+  },
+  "evidence/ENGINEERING_CHANGELOG.md": {
+    "sha256": "b7a47a8e21864c3735df6486d78f8e2b362c6d01cf0d5f3ac24ed680bfbc2cae",
+    "bytes": 114967
+  },
+  "evidence/S52_HUMAN_RESOLUTION_MECHANISM_DESIGN_v0.1.md": {
+    "sha256": "452a90468d7911eaf1ff5323f0d85d9cff86c4e665e23fd190fb06f8863bf2c8",
+    "bytes": 12810
+  },
+  "evidence/S6_AGENT007_SAFETY_HARDENING_REPORT_v1.0.md": {
+    "sha256": "8dd1586272d68080b743f90e5210902bc2a88101c569ed198abfd670babb7fde",
+    "bytes": 13964
+  },
+  "workflows/AGENT006_ZTBdnKFO8STSjJU4_S52_DRAFT_9bf6bbef.json": {
+    "sha256": "bf6d59e4b4128c47c0374e038bba6419c7dfedb3b1de737b689f349eb03f252e",
+    "bytes": 54459
+  },
+  "workflows/AGENT007_hlwQHO8FEcn4gDXE_S6_DRAFT_42ce4565.json": {
+    "sha256": "d322f7ef233d9d5cee6e0740cac2bb1738a6322f1c1ffed2c7dc562328645368",
+    "bytes": 370013
+  }
+}
