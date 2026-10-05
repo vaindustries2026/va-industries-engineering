@@ -1353,3 +1353,40 @@ migrations: 0
 rollback: "not applicable"
 status: "STOPPED_PRE_WRITE + ZERO_WRITES"
 ```
+
+---
+
+## ENG-20261005-C1-COMPLETE: C1 visual canon stored, hash-verified, registered; Agent-006 match proven read-only
+
+```yaml
+change_id: "ENG-20261005-C1-COMPLETE"
+timestamp: "2026-10-05"
+actor: "Claude"
+requested_by: "Gilang / Company Brain"
+spec: "evidence/C1_EVIDENCE_GAP_REPAIR_AND_IMPLEMENTATION_SPEC_v1.0.md"
+evidence: "evidence/C1_VISUAL_CANON_STORED_AND_REGISTERED_v1.0.md"
+preconditions: "main contains e7ebdf8; canon/c1 4/4 sha256 + bytes match spec"
+credential_tests: {storage_list_production_assets: 200, rest_read_asset_registry: 200}
+live_drift: "none (registry 12, objects 7, 0 under visual/canonical/, target keys/ids absent, 0 collisions, readiness 5 / ARI 40 / jobs 11 / batches 3, migrations 1, Agent-006 9bf6bbef unpublished)"
+storage_writes:   # bucket production-assets, x-upsert false, readback sha256 verified
+  - {key: "visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png", id: "06b16cf9-cff5-44a7-9ba7-43d707ea428f", sha256: "41c9480a…f1a8", bytes: 2207008}
+  - {key: "visual/canonical/characters/CHAR-LUMI-MASTER-v01.png", id: "8b729cf0-d22c-47e0-a986-f55072760641", sha256: "8b29c1ab…3a41", bytes: 1887897}
+  - {key: "visual/canonical/references/DUO-MIKKO-LUMI-SCALE-v01.png", id: "9d5c8dd7-6684-48f4-9c4d-8fcfdd9d9486", sha256: "735d6407…121f", bytes: 1704130}
+  - {key: "visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png", id: "f45a29b6-b297-42db-bef4-848b0205542a", sha256: "ab79c560…3733", bytes: 1756516}
+registry_inserts:   # plain insert, status APPROVED, exact spec 4.2 JSON
+  - {asset_id: "CHAR-MIKKO-MASTER-v01", id: "0d7a47e0-0adf-47d6-9cf9-f71ad7439747"}
+  - {asset_id: "CHAR-LUMI-MASTER-v01", id: "75cf9e5d-78ec-4cac-b1bb-49e696629bc2"}
+  - {asset_id: "WORLD-EP005-BATHROOM-MASTER-v01", id: "8cdeea80-1eb3-4a75-b50a-c209f1aae434"}
+duo: "stored + hash-verified; no asset_registry row (DUO_REFERENCE_STORED_NOT_REGISTRY_MAPPED)"
+prior_rows_unchanged: "12/12 field-identical to pre-write snapshot"
+agent006_readonly_proof: "unmodified 03/05/07 jsCode of 9bf6bbef run locally vs live APPROVED manifest 670b201b + APPROVED/LOCKED registry (GET only): Mikko -> CHAR-MIKKO-MASTER-v01, Lumi -> CHAR-LUMI-MASTER-v01, Canonical environment/background -> WORLD-EP005-BATHROOM-MASTER-v01; each exactly 1 exact match, REUSE_EXISTING"
+n8n_writes: 0
+paid_calls: 0
+generation_calls: 0
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+migrations: 0
+rollback: "delete the 3 asset_registry ids above; delete the 4 storage keys above"
+status: "C1_VISUAL_CANON_DURABLY_STORED + STORED_BYTES_HASH_VERIFIED + MIKKO_APPROVED_REGISTERED + LUMI_APPROVED_REGISTERED + EP005_BATHROOM_APPROVED_REGISTERED + DUO_REFERENCE_STORED_NOT_REGISTRY_MAPPED + AGENT006_MATCH_READINESS_PROVEN_READ_ONLY + EVIDENCE_COMMITTED_TO_GITHUB"
+```
