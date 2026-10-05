@@ -1181,3 +1181,36 @@ rollback:
 
 status: "S5.2_SFX_PATHS_CORRECTED + AGENT006_REUSE_SHOTS_PATCHED_UNPUBLISHED + CANDIDATE_IMAGES_EXPORTED_FOR_HUMAN_QC + GOVERNANCE_AND_RESOLUTION_PROPOSALS_READY + S6_AGENT007_SAFETY_DRAFT_CONFIGURED + FREE_VALIDATION_PASSED + UNPUBLISHED"
 ```
+
+---
+
+## ENG-20261005-C1-PRECHECK: C1 canon registration, pre-write reconciliation (STOPPED_PRE_WRITE)
+
+```yaml
+change_id: "ENG-20261005-C1-PRECHECK"   # deliberately not numbered -022/-023: those IDs are referenced by the instruction but absent from this changelog
+timestamp: "2026-10-05"
+actor: "Claude"
+requested_by: "Gilang"
+target: "Supabase ziluiwrwwbayhcskeere (production-assets, public.asset_registry); n8n Agent-006 ZTBdnKFO8STSjJU4 (read-only)"
+change_type: "READ_ONLY_RECONCILIATION"
+evidence: "evidence/C1_CANON_REGISTRATION_PRECHECK_STOPPED_v1.0.md"
+result: "STOPPED_PRE_WRITE: RECORDED_EVIDENCE_MISSING"
+blocking_conflicts:
+  C-1: "ENG-20260930-022 and ENG-20260930-023 absent from the repo; this changelog ended at ENG-20260928-020"
+  C-2: "ENG-20260929-021 referenced by company-brain docs but absent from this changelog"
+  C-3: "canon byte re-approval not recorded; hashes come only from CLAUDE.md; VA_03 section 9 names different exact files"
+  C-4: "no recorded C1 bucket/object keys, row fields, aliases, provenance fields or duo-sheet storage rule"
+local_hashes: "4/4 match CLAUDE.md (mikko 41c9480a…, lumi 8b29c1ab…, duo 735d6407…, bathroom ab79c560…)"
+live_state: "registry 12 (APPROVED 3 SFX, REVIEW 9); objects 7 in production-assets; readiness 5; ARI 40; jobs 11; batches 3; migrations 1; Agent-006 9bf6bbef unpublished; Agent-007 draft b135f8a5 / published 45c20c99: matches recorded state"
+alias_check: "TBD::CHARACTER::Mikko, TBD::CHARACTER::Lumi, TBD::ENVIRONMENT::Canonical environment/background each have 0 exact APPROVED/LOCKED matches today; no duplicate-match conflict; planned C1 asset_ids unused"
+supabase_writes: 0
+n8n_writes: 0
+paid_calls: {openai: 0, gemini: 0, runway: 0, generation: 0}
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+migrations: 0
+rollback: "not applicable"
+status: "STOPPED_PRE_WRITE + ZERO_WRITES"
+next_human_decision: "Provide ENG-20260929-021/-20260930-022/-20260930-023 evidence and the exact approved C1 write specification (object keys, row fields, aliases, duo-sheet handling), then re-authorise C1."
+```
