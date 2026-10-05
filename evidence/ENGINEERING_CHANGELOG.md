@@ -1533,3 +1533,38 @@ containment: "run records REVIEW and inert; Agent-007 accepts only APPROVED + NE
 open_items: ["3 visual + 4 audio TBD human asset decisions", "readiness approval of e32ef7eb (human)", "F-1 SFX storage_path mismatch (ENG-20260926-019)"]
 status: "EP005_AGENT006_DERIVED_MANIFEST_LIVE_RESOLUTION_PASS + REQUIREMENT_COUNT_18 + 11_REUSE_EXISTING + TRUE_TBDS_REMAIN_HUMAN_REVIEW + ZERO_AMBIGUOUS_MATCHES + ZERO_AGENT007_RUN + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-TBD-CLEANUP-DERIVED-MANIFEST: second derived EP005 manifest applying remaining-TBD human decisions (REVIEW) + F-1 erratum
+
+```yaml
+change_id: "ENG-20261005-EP005-TBD-CLEANUP-DERIVED-MANIFEST"
+timestamp: "2026-10-05T06:47:46Z"
+actor: "Claude"
+human_decisions_by: "Gilang (recorded by Company Brain)"
+evidence: "evidence/EP005_TBD_CLEANUP_DERIVED_MANIFEST_CREATED_REVIEW_v1.0.md"
+transform: "evidence/ep005/tbd_cleanup/ep005_tbd_cleanup_v1.py (deterministic, no LLM)"
+source_manifest: {id: "3bcde9ee-6676-480f-90da-5695b64532a7", status: "APPROVED", unchanged: true, row_md5: "931d64dfaca0b235ea70ea698cef7eea"}
+derived_manifest: {id: "96df250f-7182-4d5f-a556-b0448e518375", status: "REVIEW", production_plan_run_id: "DRV-EP005-TBD-CLEANUP-1-A005O-1790400144423", manifest_sha256_canonical: "833bf0aab4f28f64bd5db72c129896811cc80705e1e9becbf6b9db123eb2422e", readback: "21/21 fields exact"}
+decisions_applied:
+  compositing_treatments: ["TREATMENT-EP005-MIRROR-GLINT-v01 (S004,S012,S018)", "TREATMENT-EP005-MIRROR-REFLECTION-v01 (S006,S007,S010,S011,S014,S025)", "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01 (S025, KEEP)"]
+  dropped: "TBD::AUDIO::FOLEY_TOUCH (S028 visual pat unchanged)"
+  unresolved_audio_remaining: ["AMBIENCE", "FOLEY_CLOTH", "COMPLETION_SFX"]
+counts: "visual TBD deps 6->3 (C1-resolving only), audio 4->3, unique 10->6, audio refs 29->28, unresolved refs 97->87"
+inmemory_agent006_proof: "14 requirements: 11 REUSE_EXISTING identical to live run A006-1791181098027; 3 audio NEEDS_HUMAN_REVIEW; no OVERLAY_VFX or FOLEY_TOUCH requirement; 0 CREATE_NEW; REVIEW status blocked at node 03"
+f1_erratum: "appended to evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md: F-1 was already repaired under ENG-20260928-020 Part A; the 'open' note in ENG-20261005-EP005-AGENT006-DERIVED-LIVE-RUN was stale; SFX paths not modified"
+supabase_writes: "1 insert (episode_production_manifests)"
+registry_changes: 0
+storage_changes: 0
+workflow_changes: 0
+agent006_executions: 0
+agent007_executions: 0
+manifest_approvals: 0
+readiness_approvals: 0
+paid_calls: 0
+migrations: 0
+rollback: "delete episode_production_manifests id 96df250f-7182-4d5f-a556-b0448e518375"
+next: "human approval of 96df250f; audio sourcing/approval/registration for AMBIENCE, FOLEY_CLOTH, COMPLETION_SFX under separate authorisation"
+status: "EP005_TBD_CLEANUP_DERIVED_MANIFEST_CREATED_REVIEW + THREE_VISUAL_TBDS_RECLASSIFIED_AS_COMPOSITING + FOLEY_TOUCH_DROPPED + THREE_AUDIO_TBDS_REMAIN + EXPECTED_REQUIREMENT_COUNT_14 + ELEVEN_REUSE_EXISTING_PRESERVED + F1_EVIDENCE_ERRATUM_ADDED + SOURCE_MANIFESTS_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
+```

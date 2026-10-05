@@ -141,3 +141,22 @@ EP005_AGENT006_DERIVED_MANIFEST_LIVE_RESOLUTION_PASS
 ```
 
 **Stop condition:** the task is complete. Claude Code will not continue into readiness approval or any Agent-007 work without separate authorisation.
+
+---
+
+## Erratum / Addendum (2026-10-05; appended, original text above unchanged)
+
+**Correction to §7, the "F-1" bullet, and to the ENG-20261005-EP005-AGENT006-DERIVED-LIVE-RUN `open_items` entry.**
+
+Both described F-1 (SFX storage_path mismatch, ENG-20260926-019) as still open. That was stale and incorrect.
+
+F-1 had already been repaired under **ENG-20260928-020 Part A**, which corrected all three SFX `storage_path` values. A read-only audit on 2026-10-05 (EP005 remaining-TBD decision brief) confirmed that each recorded path downloads (HTTP 200) and equals the stored object key:
+
+| asset_id | Object key | Bytes | SHA-256 |
+|---|---|---|---|
+| SFX-LUMI-CLUE-CHIME | `audio/sfx/SFX-LUMI-CLUE-CHIME-v01.wav.mp3` | 206753 | `adf415b3f23abaa93f20e510e6ac6cf3fc3c68665cd3e9cca91ff60a0a93b136` |
+| SFX-MIKKO-TRY-WHOOSH | `audio/sfx/SFX-MIKKO-TRY-WHOOSH-v01.mp3.mp3` | 341541 | `53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3` |
+| SFX-WIN-SPARKLE-CHORD | `audio/sfx/SFX-WIN-SPARKLE-CHORD-v01.mp3.mp3` | 245215 | `84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b` |
+
+- **Decision (Company Brain):** accept the finding and do not modify the paths.
+- **Effect on this run:** none. Agent-006 matching does not use storage_path, so every result in §3 stands.
