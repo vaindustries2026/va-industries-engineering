@@ -1444,3 +1444,37 @@ migrations: 0
 rollback: "delete the 5 asset_registry ids above; delete the 5 storage keys above"
 status: "EP005_FIVE_WORKING_PRODUCTION_ASSETS_STORED + FIVE_STORED_BYTES_HASH_VERIFIED + 5_APPROVED_REGISTERED + MIRROR_MATCH_READY + CLOTH_MATCH_READY + BERRY_COMBINED_REQUIREMENT_INTENTIONALLY_UNRESOLVED + C1_CANON_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-BERRY-SPLIT-DERIVED-MANIFEST: derived EP005 manifest with berry requirement split 3 ways (REVIEW)
+
+```yaml
+change_id: "ENG-20261005-EP005-BERRY-SPLIT-DERIVED-MANIFEST"
+timestamp: "2026-10-05"
+actor: "Claude"
+approved_by: "Gilang / Company Brain (berry requirement repair design)"
+evidence: "evidence/EP005_BERRY_DERIVED_MANIFEST_CREATED_REVIEW_v1.0.md"
+transform: "evidence/ep005/berry_split/ep005_berry_requirement_split_v1.py (deterministic, no LLM)"
+origin: "Agent-004 single shot asset_id -> TMP_EP005_BERRY_SMUDGE_OVERLAYS (script 14471926) -> Agent-005 node 12 groups by asset_id -> Agent-006 node 05 one APPROVED_NEW requirement"
+source_manifest: {id: "670b201b-6793-4518-ad5a-d051eb98d90c", status: "APPROVED", unchanged: true, row_md5: "249adbfe4a9ddbc6c75446994979fe0d", manifest_md5: "da69805527dae414efb5d1823c0b7a97"}
+derived_manifest: {id: "3bcde9ee-6676-480f-90da-5695b64532a7", status: "REVIEW", production_plan_run_id: "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423", unique_new_asset_count: 5, manifest_sha256_canonical: "3b855d95b7fc5bbffabbac22bbdebc2c4e702cf113b52192591f7602bb3fd0ec", readback: "21/21 fields exact"}
+split:
+  - {requirement_key: "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01", label: "Berry smudge on Mikko's anatomical left cheek", shots: "S001-S009", removal: "S009"}
+  - {requirement_key: "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01", label: "Berry smudge on skin beside Mikko's mouth", shots: "S001-S015", removal: "S015"}
+  - {requirement_key: "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01", label: "Berry smudge on Mikko's nose", shots: "S001-S021", removal: "S021"}
+overlay_entries: "10 retagged, 17 generic expanded to 34, 1 continuity gap fill (S013 nose); legacy free-text notes unchanged"
+inmemory_agent006_proof: "18 requirements (was 16); cheek/mouth/nose each exactly 1 match -> REUSE_EXISTING; mirror, cloth, 3 audio, Mikko, Lumi, environment unchanged REUSE_EXISTING; 7 TBDs unchanged NEEDS_HUMAN_REVIEW; 15 non-berry requirements field-identical to baseline; NC1 REVIEW gate blocks, NC2 no overlay rows -> CREATE_NEW, NC3 duplicate -> NEEDS_HUMAN_REVIEW"
+supabase_writes: "1 insert (episode_production_manifests)"
+registry_changes: 0
+workflow_code_changes: 0
+agent006_executions: 0
+agent007_executions: 0
+manifest_approvals: 0
+readiness_approvals: 0
+paid_calls: 0
+migrations: 0
+rollback: "delete episode_production_manifests id 3bcde9ee-6676-480f-90da-5695b64532a7"
+next: "separate human G3 approval of 3bcde9ee; Agent-006 run only under separate authorisation"
+status: "EP005_BERRY_DERIVED_MANIFEST_CREATED_REVIEW + SOURCE_MANIFEST_670B201B_UNCHANGED + BERRY_REQUIREMENTS_SPLIT_3_WAYS + S013_NOSE_ENTRY_ADDED_FROM_CONTINUITY + DERIVED_REQUIREMENT_COUNT_18 + IN_MEMORY_AGENT006_MATCH_PROOF_PASS + EVIDENCE_COMMITTED_TO_GITHUB"
+```
