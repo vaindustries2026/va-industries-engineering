@@ -1322,3 +1322,34 @@ agent007_executions: 0
 migrations: 0
 status: "C1_SPEC_RECONCILED + EVIDENCE_GAP_REPAIRED + STOPPED_PRE_WRITE + ZERO_WRITES"
 ```
+
+---
+
+## ENG-20261005-C1-CRED-REJECTED: C1 resume stopped before write (Supabase credential rejected)
+
+```yaml
+change_id: "ENG-20261005-C1-CRED-REJECTED"
+timestamp: "2026-10-05"
+actor: "Claude"
+requested_by: "Gilang / Company Brain"
+spec: "evidence/C1_EVIDENCE_GAP_REPAIR_AND_IMPLEMENTATION_SPEC_v1.0.md"
+evidence: "evidence/C1_RESUME_STOPPED_CREDENTIAL_REJECTED_v1.0.md"
+result: "STOPPED_PRE_WRITE: SUPABASE_CREDENTIAL_REJECTED"
+preconditions: "main contains 3a7bbb5 + 57ab83c; canon/c1 4/4 sha256 + bytes match spec"
+blocker: >
+  Proxy-injected SUPABASE_SERVICE_ROLE_KEY is rejected: Storage returns 'Invalid Compact JWS' (bearer is not a JWT)
+  and PostgREST returns 'No API key found' (no apikey header injected). No list/upload/readback path to
+  production-assets, so spec 4.1 cannot run and registry inserts must not precede it. Secret value never printed or committed.
+live_drift: "none: registry 12 (APPROVED 3 / REVIEW 9 / LOCKED 0), target ids 0, alias/name collisions 0, objects 7 (0 under visual/canonical/), readiness 5, ARI 40, jobs 11, batches 3, migrations 1, Agent-006 9bf6bbef unpublished"
+resume_requirement: "environment secret replaced with the legacy JWT service_role key, or injection also sets the apikey header; new session; resume at spec 4.1"
+supabase_writes: 0
+n8n_writes: 0
+paid_calls: 0
+generation_calls: 0
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+migrations: 0
+rollback: "not applicable"
+status: "STOPPED_PRE_WRITE + ZERO_WRITES"
+```
