@@ -1184,6 +1184,64 @@ status: "S5.2_SFX_PATHS_CORRECTED + AGENT006_REUSE_SHOTS_PATCHED_UNPUBLISHED + C
 
 ---
 
+## ENG-20260929-021: S6.1 Agent-007 canon-downgrade protection (RECONSTRUCTED RECORD)
+
+```yaml
+change_id: "ENG-20260929-021"
+record_provenance: "RECONSTRUCTED by Company Brain on 2026-10-05; NOT a recovered original. Adopted as the authoritative durable record."
+authoritative_source: "evidence/C1_EVIDENCE_GAP_REPAIR_AND_IMPLEMENTATION_SPEC_v1.0.md section 1 (sha256 9790ddc4fc9159d71bc289e79a7bcb1fd3488f26b5c3642802097f437aeadac0)"
+change_type: "FIX"
+target: "AGENT-007 hlwQHO8FEcn4gDXE"
+result: "unpublished safety draft b135f8a5-7800-4169-b2f4-9cf3a7d5904d (76 nodes); published 45c20c99 unchanged; trigger disconnected; PAID_DISPATCH_SWITCH DISABLED; node-10 pre-read + insert-only ON CONFLICT DO NOTHING"
+live_reconciliation_2026-10-05: "n8n reports versionId b135f8a5…, activeVersionId 45c20c99…, nodeCount 76: consistent"
+paid_calls: 0
+generation_calls: 0
+publication: false
+migrations: 0
+```
+
+---
+
+## ENG-20260930-022: C1 first execution attempt stopped on hash mismatch (RECONSTRUCTED RECORD)
+
+```yaml
+change_id: "ENG-20260930-022"
+record_provenance: "RECONSTRUCTED by Company Brain on 2026-10-05; NOT a recovered original. Adopted as the authoritative durable record."
+authoritative_source: "evidence/C1_EVIDENCE_GAP_REPAIR_AND_IMPLEMENTATION_SPEC_v1.0.md section 2"
+change_type: "C1_PRECHECK_STOP"
+result: "STOPPED_HASH_MISMATCH: the expected SHA-256 values supplied then did not match the final image bytes"
+writes: 0
+paid_calls: 0
+generation_calls: 0
+governance_rule_reconfirmed: "Human visual approval -> save exact final file -> hash the saved file -> record that hash -> only then register/store canon."
+distinct_from: "ENG-20261005-C1-PRECHECK (a later, separate pre-write stop on missing evidence)"
+```
+
+---
+
+## ENG-20260930-023: C1 canon bytes re-approved (RECONSTRUCTED RECORD)
+
+```yaml
+change_id: "ENG-20260930-023"
+record_provenance: "RECONSTRUCTED by Company Brain on 2026-10-05; NOT a recovered original. Adopted as the authoritative durable record."
+authoritative_source: "evidence/C1_EVIDENCE_GAP_REPAIR_AND_IMPLEMENTATION_SPEC_v1.0.md section 3"
+change_type: "C1_CANON_BYTES_REAPPROVAL"
+approved_by: "Gilang"
+state_after: "ACTUAL_CANON_BYTES_REAPPROVED + ZERO_WRITES"
+authoritative_files:   # all four re-verified on 2026-10-05 against repo commit 5055f76: sha256, bytes, 1448x1086, RGB 8-bit, PNG CRCs OK
+  CHAR-MIKKO-MASTER-v01: {path: "canon/c1/mikko_the_bear_character_master_sheet.png", sha256: "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8", bytes: 2207008}
+  CHAR-LUMI-MASTER-v01: {path: "canon/c1/lumi_character_master_sheet.png", sha256: "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41", bytes: 1887897}
+  DUO-MIKKO-LUMI-SCALE-v01: {path: "canon/c1/mikko_lumi_duo_scale_sheet.png", sha256: "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f", bytes: 1704130}
+  WORLD-EP005-BATHROOM-MASTER-v01: {path: "canon/c1/mikko_lumi_child_friendly_bathroom_board.png", sha256: "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733", bytes: 1756516}
+superseded_hashes: ["70a88421…", "8bf26e70…", "245d6453…", "3c64daed…"]
+filename_clarification: "Company Brain labels (Mikko Master, Lumi Master, Duo Scale, Bathroom master) name logical roles only; the only authoritative bytes are the four canon/c1/ files above."
+writes: 0
+paid_calls: 0
+generation_calls: 0
+```
+
+---
+
 ## ENG-20261005-C1-PRECHECK: C1 canon registration, pre-write reconciliation (STOPPED_PRE_WRITE)
 
 ```yaml
@@ -1213,4 +1271,24 @@ migrations: 0
 rollback: "not applicable"
 status: "STOPPED_PRE_WRITE + ZERO_WRITES"
 next_human_decision: "Provide ENG-20260929-021/-20260930-022/-20260930-023 evidence and the exact approved C1 write specification (object keys, row fields, aliases, duo-sheet handling), then re-authorise C1."
+```
+
+---
+
+## ENG-20261005-C1-SPEC-RECONCILE: C1 evidence gap repaired + implementation spec reconciled
+
+```yaml
+change_id: "ENG-20261005-C1-SPEC-RECONCILE"
+timestamp: "2026-10-05"
+actor: "Claude"
+requested_by: "Gilang / Company Brain"
+added: "evidence/C1_EVIDENCE_GAP_REPAIR_AND_IMPLEMENTATION_SPEC_v1.0.md (sha256 9790ddc4fc9159d71bc289e79a7bcb1fd3488f26b5c3642802097f437aeadac0)"
+gap_closed: "ENG-20260929-021, ENG-20260930-022, ENG-20260930-023 now present above as RECONSTRUCTED records"
+resolves_precheck_conflicts: {C-1: "closed (-022/-023 recorded)", C-2: "closed (-021 recorded)", C-3: "closed (-023 re-approval + filename clarification)", C-4: "closed (spec section 4: bucket, object keys, rows, aliases, duo handling)"}
+reconciliation:
+  main: "source_repo_commit 5055f760 in spec = main source-pack commit; canon/c1 bytes match spec sha256/bytes/1448x1086/RGB"
+  live_supabase: "bucket production-assets exists (private); 0 objects under visual/canonical/; 0 rows with the 4 target asset_ids; 0 registry tokens (asset_id/asset_name/aliases, Agent-006 normalisation) equal to any intended name/alias; registry 12 rows, objects 7, unchanged since 2026-09-24"
+  agent006_draft: "live ZTBdnKFO8STSjJU4 = 9bf6bbef (unpublished) = repo export; matcher uses normalised asset_id/asset_name/aliases of APPROVED/LOCKED non-mock rows; spec rows are non-mock (no TEST_/MOCK_ prefix, no mock:// path)"
+  material_conflicts: 0
+writes: 0
 ```
