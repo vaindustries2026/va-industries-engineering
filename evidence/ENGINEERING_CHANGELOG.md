@@ -1568,3 +1568,30 @@ rollback: "delete episode_production_manifests id 96df250f-7182-4d5f-a556-b0448e
 next: "human approval of 96df250f; audio sourcing/approval/registration for AMBIENCE, FOLEY_CLOTH, COMPLETION_SFX under separate authorisation"
 status: "EP005_TBD_CLEANUP_DERIVED_MANIFEST_CREATED_REVIEW + THREE_VISUAL_TBDS_RECLASSIFIED_AS_COMPOSITING + FOLEY_TOUCH_DROPPED + THREE_AUDIO_TBDS_REMAIN + EXPECTED_REQUIREMENT_COUNT_14 + ELEVEN_REUSE_EXISTING_PRESERVED + F1_EVIDENCE_ERRATUM_ADDED + SOURCE_MANIFESTS_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-TBD-CLEANUP-MANIFEST-HUMAN-APPROVED: human manifest approval of derived EP005 manifest 96df250f
+
+```yaml
+change_id: "ENG-20261005-EP005-TBD-CLEANUP-MANIFEST-HUMAN-APPROVED"
+timestamp: "2026-10-05T06:52:28Z"
+actor: "Claude (applying recorded human decision)"
+approved_by: "Gilang (recorded by Company Brain)"
+evidence: "evidence/EP005_TBD_CLEANUP_DERIVED_MANIFEST_HUMAN_APPROVED_v1.0.md"
+approval_scope: "manifest approval only: 3 visual TBDs as compositing treatments, FOLEY_TOUCH dropped, AMBIENCE/FOLEY_CLOTH/COMPLETION_SFX unresolved, 11 reusable requirements unchanged. NOT readiness, execution, generation, spend or publication approval."
+pre_write: "96df250f REVIEW; manifest sha256 833bf0aa…422e = evidence; 21/21 fields = transform; 3bcde9ee 931d64df…, 670b201b 249adbfe… unchanged; registry b7b46112… (20); storage 4c7ef85e…; C1 rows 950ab724… / objects 7a4ac73d…; Agent-006 9bf6bbef unpublished"
+write: "UPDATE episode_production_manifests SET status='APPROVED' WHERE id='96df250f-7182-4d5f-a556-b0448e518375' AND status='REVIEW'  -- 1 row (existing mechanism)"
+post_write: "only status changed (md5 excluding status 0cca2373… before = after); all other fingerprints unchanged; APPROVED manifests 3 -> 4"
+inmemory_check: "real APPROVED status passes node 03; 14 requirements identical to evidenced sim (11 REUSE_EXISTING, 3 audio NEEDS_HUMAN_REVIEW)"
+consequence: "Agent-005 cost baseline for backlog 07d622e9 now selects 96df250f (video 15, unchanged); Agent-006 runs must target 96df250f by exact UUID"
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+registry_changes: 0
+storage_changes: 0
+paid_calls: 0
+migrations: 0
+rollback: "UPDATE episode_production_manifests SET status='REVIEW' WHERE id='96df250f-7182-4d5f-a556-b0448e518375' AND status='APPROVED'"
+status: "EP005_TBD_CLEANUP_DERIVED_MANIFEST_HUMAN_APPROVED + DERIVED_MANIFEST_96DF250F_APPROVED + THREE_VISUAL_TREATMENTS_PRESERVED + FOLEY_TOUCH_DROPPED + THREE_AUDIO_TBDS_REMAIN + ELEVEN_REUSE_EXISTING_PRESERVED + SOURCE_MANIFESTS_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
+```
