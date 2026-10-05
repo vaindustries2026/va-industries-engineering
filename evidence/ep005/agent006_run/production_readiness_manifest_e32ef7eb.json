@@ -1,0 +1,1903 @@
+[
+ {
+  "id": "e32ef7eb-448d-4da8-8271-fabf51bdc81e",
+  "created_at": "2026-10-05T06:18:38.86063+00:00",
+  "asset_resolution_run_id": "A006-1791181098027",
+  "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+  "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+  "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+  "episode_code": "EP-CANDIDATE-005",
+  "script_version": "v02",
+  "title_working": "EP-CANDIDATE-005 v02 — Three Gentle Wipes",
+  "requirement_count": 18,
+  "resolved_reuse_count": 11,
+  "create_new_count": 0,
+  "human_review_count": 7,
+  "blocked_count": 0,
+  "readiness_state": "NEEDS_HUMAN_REVIEW",
+  "readiness_manifest_json": {
+   "episode": {
+    "episode_code": "EP-CANDIDATE-005",
+    "title_working": "EP-CANDIDATE-005 v02 — Three Gentle Wipes",
+    "script_version": "v02",
+    "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c"
+   },
+   "summary": {
+    "blocked_count": 0,
+    "create_new_count": 0,
+    "requirement_count": 18,
+    "human_review_count": 7,
+    "resolved_reuse_count": 11
+   },
+   "governance": {
+    "rule": "AGENT-006 may assess readiness but may not approve its own production-readiness manifest.",
+    "agent_status": "REVIEW",
+    "human_approval_required": true
+   },
+   "readiness_state": "NEEDS_HUMAN_REVIEW",
+   "manifest_version": "agent006-production-readiness-v0.1",
+   "human_review_queue": [
+    {
+     "reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "source_label": "Mirror glint treatment",
+     "affected_shots": [
+      "S004",
+      "S012",
+      "S018"
+     ],
+     "requirement_key": "TBD::OVERLAY_VFX::Mirror glint treatment",
+     "requirement_type": "OVERLAY_VFX",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "source_label": "Mirror reflection/compositing treatment",
+     "affected_shots": [
+      "S006",
+      "S007",
+      "S010",
+      "S011",
+      "S014",
+      "S025"
+     ],
+     "requirement_key": "TBD::OVERLAY_VFX::Mirror reflection/compositing treatment",
+     "requirement_type": "OVERLAY_VFX",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "source_label": "Soft completion pop visual accent",
+     "affected_shots": [
+      "S025"
+     ],
+     "requirement_key": "TBD::OVERLAY_VFX::Soft completion pop visual accent",
+     "requirement_type": "OVERLAY_VFX",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "source_label": "AMBIENCE",
+     "affected_shots": [
+      "S001",
+      "S003",
+      "S005",
+      "S006",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_key": "TBD::AUDIO::AMBIENCE",
+     "requirement_type": "AUDIO",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    },
+    {
+     "reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "source_label": "FOLEY_CLOTH",
+     "affected_shots": [
+      "S002",
+      "S009",
+      "S014",
+      "S015",
+      "S020",
+      "S021",
+      "S028"
+     ],
+     "requirement_key": "TBD::AUDIO::FOLEY_CLOTH",
+     "requirement_type": "AUDIO",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    },
+    {
+     "reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "source_label": "COMPLETION_SFX",
+     "affected_shots": [
+      "S025"
+     ],
+     "requirement_key": "TBD::AUDIO::COMPLETION_SFX",
+     "requirement_type": "AUDIO",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    },
+    {
+     "reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "source_label": "FOLEY_TOUCH",
+     "affected_shots": [
+      "S028"
+     ],
+     "requirement_key": "TBD::AUDIO::FOLEY_TOUCH",
+     "requirement_type": "AUDIO",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    }
+   ],
+   "canonical_reuse_map": [
+    {
+     "source_label": "Berry smudge on Mikko's anatomical left cheek",
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009"
+     ],
+     "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "source_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "requirement_type": "OVERLAY_VFX",
+     "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01"
+    },
+    {
+     "source_label": "Berry smudge on skin beside Mikko's mouth",
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015"
+     ],
+     "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "source_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "requirement_type": "OVERLAY_VFX",
+     "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+    },
+    {
+     "source_label": "Berry smudge on Mikko's nose",
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021"
+     ],
+     "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "source_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "requirement_type": "OVERLAY_VFX",
+     "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+    },
+    {
+     "source_label": "Soft cloth",
+     "affected_shots": [
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_key": "APPROVED_NEW::TMP_EP005_SOFT_CLOTH",
+     "source_asset_id": "TMP_EP005_SOFT_CLOTH",
+     "requirement_type": "PROP",
+     "canonical_asset_id": "PROP-EP005-CLEANING-CLOTH-v01"
+    },
+    {
+     "source_label": "Tiny hand mirror",
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_key": "APPROVED_NEW::TMP_EP005_HAND_MIRROR",
+     "source_asset_id": "TMP_EP005_HAND_MIRROR",
+     "requirement_type": "PROP",
+     "canonical_asset_id": "PROP-EP005-HAND-MIRROR-v01"
+    },
+    {
+     "source_label": "Lumi clue chime",
+     "affected_shots": [
+      "S004"
+     ],
+     "requirement_key": "APPROVED_REUSE::Lumi clue chime",
+     "source_asset_id": "Lumi clue chime",
+     "requirement_type": "SOURCE_APPROVED_ASSET",
+     "canonical_asset_id": "SFX-LUMI-CLUE-CHIME"
+    },
+    {
+     "source_label": "Mikko TRY whoosh",
+     "affected_shots": [
+      "S007"
+     ],
+     "requirement_key": "APPROVED_REUSE::Mikko TRY whoosh",
+     "source_asset_id": "Mikko TRY whoosh",
+     "requirement_type": "SOURCE_APPROVED_ASSET",
+     "canonical_asset_id": "SFX-MIKKO-TRY-WHOOSH"
+    },
+    {
+     "source_label": "WIN sparkle chord",
+     "affected_shots": [
+      "S027"
+     ],
+     "requirement_key": "APPROVED_REUSE::WIN sparkle chord",
+     "source_asset_id": "WIN sparkle chord",
+     "requirement_type": "SOURCE_APPROVED_ASSET",
+     "canonical_asset_id": "SFX-WIN-SPARKLE-CHORD"
+    },
+    {
+     "source_label": "Lumi",
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_key": "TBD::CHARACTER::Lumi",
+     "source_asset_id": null,
+     "requirement_type": "CHARACTER",
+     "canonical_asset_id": "CHAR-LUMI-MASTER-v01"
+    },
+    {
+     "source_label": "Mikko",
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_key": "TBD::CHARACTER::Mikko",
+     "source_asset_id": null,
+     "requirement_type": "CHARACTER",
+     "canonical_asset_id": "CHAR-MIKKO-MASTER-v01"
+    },
+    {
+     "source_label": "Canonical environment/background",
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_key": "TBD::ENVIRONMENT::Canonical environment/background",
+     "source_asset_id": null,
+     "requirement_type": "ENVIRONMENT",
+     "canonical_asset_id": "WORLD-EP005-BATHROOM-MASTER-v01"
+    }
+   ],
+   "asset_creation_queue": [],
+   "blocked_requirements": [],
+   "dependency_breakdown": {
+    "unresolved_audio_tbd": 4,
+    "unresolved_visual_tbd": 3,
+    "audio_tbd_requirements": 4,
+    "visual_tbd_requirements": 6,
+    "approved_new_requirements": 5,
+    "approved_reuse_requirements": 3
+   },
+   "all_resolution_records": [
+    {
+     "id": "9083811b-101b-4217-9252-1064b5639882",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:22.780306+00:00",
+     "next_action": "Reuse the already-created canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Berry smudge on Mikko's anatomical left cheek",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "source_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "source_shot_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009"
+     ],
+     "requirement_type": "OVERLAY_VFX",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 1,
+     "resolution_reason": "The approved new asset has already been created and mapped into the canonical asset registry.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "requirement_origin": "APPROVED_NEW",
+     "creation_brief_json": null,
+     "source_asset_status": "NEW_REQUIRED",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "id": "821ee13c-1f2d-4159-ae00-bdb6bdc7609c",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:23.921348+00:00",
+     "next_action": "Reuse the already-created canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Berry smudge on skin beside Mikko's mouth",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "source_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "source_shot_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015"
+     ],
+     "requirement_type": "OVERLAY_VFX",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 2,
+     "resolution_reason": "The approved new asset has already been created and mapped into the canonical asset registry.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "requirement_origin": "APPROVED_NEW",
+     "creation_brief_json": null,
+     "source_asset_status": "NEW_REQUIRED",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "id": "976dbb8a-8450-4181-bb4a-bd6d326fab80",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:25.069337+00:00",
+     "next_action": "Reuse the already-created canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Berry smudge on Mikko's nose",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "source_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "source_shot_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021"
+     ],
+     "requirement_type": "OVERLAY_VFX",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 3,
+     "resolution_reason": "The approved new asset has already been created and mapped into the canonical asset registry.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "requirement_origin": "APPROVED_NEW",
+     "creation_brief_json": null,
+     "source_asset_status": "NEW_REQUIRED",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     ]
+    },
+    {
+     "id": "aa26d8ec-ae34-4c95-a9c6-97598a24dd92",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:26.165188+00:00",
+     "next_action": "Reuse the already-created canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Soft cloth",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_NEW::TMP_EP005_SOFT_CLOTH",
+     "source_asset_id": "TMP_EP005_SOFT_CLOTH",
+     "source_shot_ids": [
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_type": "PROP",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 4,
+     "resolution_reason": "The approved new asset has already been created and mapped into the canonical asset registry.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+     "requirement_origin": "APPROVED_NEW",
+     "creation_brief_json": null,
+     "source_asset_status": "NEW_REQUIRED",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "PROP-EP005-CLEANING-CLOTH-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "PROP-EP005-CLEANING-CLOTH-v01",
+      "PROP-EP005-HAND-MIRROR-v01"
+     ]
+    },
+    {
+     "id": "1b0250e8-d362-4eba-af09-e94286acc7de",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:27.261805+00:00",
+     "next_action": "Reuse the already-created canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Tiny hand mirror",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_NEW::TMP_EP005_HAND_MIRROR",
+     "source_asset_id": "TMP_EP005_HAND_MIRROR",
+     "source_shot_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_type": "PROP",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 5,
+     "resolution_reason": "The approved new asset has already been created and mapped into the canonical asset registry.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "PROP-EP005-HAND-MIRROR-v01",
+     "requirement_origin": "APPROVED_NEW",
+     "creation_brief_json": null,
+     "source_asset_status": "NEW_REQUIRED",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "PROP-EP005-HAND-MIRROR-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "PROP-EP005-HAND-MIRROR-v01",
+      "PROP-EP005-CLEANING-CLOTH-v01"
+     ]
+    },
+    {
+     "id": "306ead3a-ab4b-4bef-9154-89a6caf85e72",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:28.428157+00:00",
+     "next_action": "Reuse the canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Lumi clue chime",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_REUSE::Lumi clue chime",
+     "source_asset_id": "Lumi clue chime",
+     "source_shot_ids": [
+      "S004"
+     ],
+     "requirement_type": "SOURCE_APPROVED_ASSET",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 6,
+     "resolution_reason": "The approved reused asset has exactly one approved or locked canonical registry match.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "SFX-LUMI-CLUE-CHIME",
+     "requirement_origin": "APPROVED_REUSE",
+     "creation_brief_json": null,
+     "source_asset_status": "REUSE",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME"
+     ],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME"
+     ]
+    },
+    {
+     "id": "543da9b9-f873-4e40-9bb4-eefaaec1d4f7",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:29.59995+00:00",
+     "next_action": "Reuse the canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Mikko TRY whoosh",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_REUSE::Mikko TRY whoosh",
+     "source_asset_id": "Mikko TRY whoosh",
+     "source_shot_ids": [
+      "S007"
+     ],
+     "requirement_type": "SOURCE_APPROVED_ASSET",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 7,
+     "resolution_reason": "The approved reused asset has exactly one approved or locked canonical registry match.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "SFX-MIKKO-TRY-WHOOSH",
+     "requirement_origin": "APPROVED_REUSE",
+     "creation_brief_json": null,
+     "source_asset_status": "REUSE",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "SFX-MIKKO-TRY-WHOOSH"
+     ],
+     "suggested_candidate_asset_ids": [
+      "SFX-MIKKO-TRY-WHOOSH"
+     ]
+    },
+    {
+     "id": "2aa4d3ae-76db-414a-ad59-7589aa4be1d4",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:30.680903+00:00",
+     "next_action": "Reuse the canonical asset in downstream production.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "WIN sparkle chord",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "APPROVED_REUSE::WIN sparkle chord",
+     "source_asset_id": "WIN sparkle chord",
+     "source_shot_ids": [
+      "S027"
+     ],
+     "requirement_type": "SOURCE_APPROVED_ASSET",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 8,
+     "resolution_reason": "The approved reused asset has exactly one approved or locked canonical registry match.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "SFX-WIN-SPARKLE-CHORD",
+     "requirement_origin": "APPROVED_REUSE",
+     "creation_brief_json": null,
+     "source_asset_status": "REUSE",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "SFX-WIN-SPARKLE-CHORD"
+     ],
+     "suggested_candidate_asset_ids": [
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    },
+    {
+     "id": "bfe64c0d-5e63-45da-aceb-1bd41077e5ba",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:31.921053+00:00",
+     "next_action": "Use the matched canonical asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Lumi",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::CHARACTER::Lumi",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_type": "CHARACTER",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 9,
+     "resolution_reason": "The unresolved dependency has exactly one approved canonical registry match by asset name, ID, or alias.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "CHAR-LUMI-MASTER-v01",
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "CHAR-LUMI-MASTER-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "CHAR-LUMI-MASTER-v01",
+      "CHAR-MIKKO-MASTER-v01"
+     ]
+    },
+    {
+     "id": "0c8e22a1-97cd-416f-adb7-8be4db3fa82f",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:32.385375+00:00",
+     "next_action": "Use the matched canonical asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Mikko",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::CHARACTER::Mikko",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_type": "CHARACTER",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 10,
+     "resolution_reason": "The unresolved dependency has exactly one approved canonical registry match by asset name, ID, or alias.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "CHAR-MIKKO-MASTER-v01",
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "CHAR-MIKKO-MASTER-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "CHAR-MIKKO-MASTER-v01",
+      "CHAR-LUMI-MASTER-v01"
+     ]
+    },
+    {
+     "id": "4e4f7757-080a-4fe8-a78e-58a3132c176e",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:32.794546+00:00",
+     "next_action": "Use the matched canonical asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Canonical environment/background",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::ENVIRONMENT::Canonical environment/background",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_type": "ENVIRONMENT",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 11,
+     "resolution_reason": "The unresolved dependency has exactly one approved canonical registry match by asset name, ID, or alias.",
+     "resolution_status": "REUSE_EXISTING",
+     "canonical_asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [
+      "WORLD-EP005-BATHROOM-MASTER-v01"
+     ],
+     "suggested_candidate_asset_ids": [
+      "WORLD-EP005-BATHROOM-MASTER-v01"
+     ]
+    },
+    {
+     "id": "e8f4a63a-1739-474d-b24a-dbafad86477d",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:33.866098+00:00",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Mirror glint treatment",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::OVERLAY_VFX::Mirror glint treatment",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S004",
+      "S012",
+      "S018"
+     ],
+     "requirement_type": "OVERLAY_VFX",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 12,
+     "resolution_reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "resolution_status": "NEEDS_HUMAN_REVIEW",
+     "canonical_asset_id": null,
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "id": "db378c6c-e768-426a-9d8f-dd43a43b7af6",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:34.668193+00:00",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Mirror reflection/compositing treatment",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::OVERLAY_VFX::Mirror reflection/compositing treatment",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S006",
+      "S007",
+      "S010",
+      "S011",
+      "S014",
+      "S025"
+     ],
+     "requirement_type": "OVERLAY_VFX",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 13,
+     "resolution_reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "resolution_status": "NEEDS_HUMAN_REVIEW",
+     "canonical_asset_id": null,
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "id": "93d043b5-f7de-4628-b9fe-63bb963530d4",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:35.086027+00:00",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "Soft completion pop visual accent",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::OVERLAY_VFX::Soft completion pop visual accent",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S025"
+     ],
+     "requirement_type": "OVERLAY_VFX",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 14,
+     "resolution_reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "resolution_status": "NEEDS_HUMAN_REVIEW",
+     "canonical_asset_id": null,
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    {
+     "id": "862fff74-9c57-4d6d-96e5-6555a173ffd1",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:35.497954+00:00",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "AMBIENCE",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::AUDIO::AMBIENCE",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S001",
+      "S003",
+      "S005",
+      "S006",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "requirement_type": "AUDIO",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 15,
+     "resolution_reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "resolution_status": "NEEDS_HUMAN_REVIEW",
+     "canonical_asset_id": null,
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    },
+    {
+     "id": "6023161b-8cfe-4a52-a065-6a402e9be9ff",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:36.0014+00:00",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "FOLEY_CLOTH",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::AUDIO::FOLEY_CLOTH",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S002",
+      "S009",
+      "S014",
+      "S015",
+      "S020",
+      "S021",
+      "S028"
+     ],
+     "requirement_type": "AUDIO",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 16,
+     "resolution_reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "resolution_status": "NEEDS_HUMAN_REVIEW",
+     "canonical_asset_id": null,
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    },
+    {
+     "id": "7db618cc-9d45-4fc3-b925-53447f521353",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:36.414375+00:00",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "COMPLETION_SFX",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::AUDIO::COMPLETION_SFX",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S025"
+     ],
+     "requirement_type": "AUDIO",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 17,
+     "resolution_reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "resolution_status": "NEEDS_HUMAN_REVIEW",
+     "canonical_asset_id": null,
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    },
+    {
+     "id": "02e89a83-d97b-407c-9dc0-0f0808bedcd6",
+     "status": "REVIEW",
+     "created_at": "2026-10-05T06:18:36.821743+00:00",
+     "next_action": "Human should review the suggested same-type canonical assets or approve creation of a new asset.",
+     "episode_code": "EP-CANDIDATE-005",
+     "source_label": "FOLEY_TOUCH",
+     "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+     "prompt_version": "agent006-resolution-rules-v0.1",
+     "script_version": "v02",
+     "requirement_key": "TBD::AUDIO::FOLEY_TOUCH",
+     "source_asset_id": null,
+     "source_shot_ids": [
+      "S028"
+     ],
+     "requirement_type": "AUDIO",
+     "episode_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+     "requirement_index": 18,
+     "resolution_reason": "No exact approved canonical mapping exists for this unresolved dependency.",
+     "resolution_status": "NEEDS_HUMAN_REVIEW",
+     "canonical_asset_id": null,
+     "requirement_origin": "TBD_DEPENDENCY",
+     "creation_brief_json": null,
+     "source_asset_status": "TBD",
+     "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+     "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+     "asset_resolution_run_id": "A006-1791181098027",
+     "exact_candidate_asset_ids": [],
+     "suggested_candidate_asset_ids": [
+      "SFX-LUMI-CLUE-CHIME",
+      "SFX-MIKKO-TRY-WHOOSH",
+      "SFX-WIN-SPARKLE-CHORD"
+     ]
+    }
+   ],
+   "asset_resolution_run_id": "A006-1791181098027",
+   "source_manifest_context": {
+    "tbd_counts": {
+     "audio_tbd_reference_count": 29,
+     "audio_tbd_dependency_count": 4,
+     "visual_tbd_dependency_count": 6,
+     "unique_tbd_asset_dependency_count": 10
+    },
+    "manifest_status": "APPROVED",
+    "readiness_flags": [
+     "UNRESOLVED_TBDS"
+    ],
+    "readiness_state": "PLANNING_COMPLETE_WITH_TBDS",
+    "workload_counts": {
+     "shot_count": 29,
+     "compositor_shot_count": 28,
+     "image_generation_shot_count": 26,
+     "video_generation_shot_count": 15
+    },
+    "manifest_version": "agent005-production-manifest-v0.1+berry-split-1",
+    "recovery_lineage": {
+     "note": "Recorded model output from Agent-005 exec 502 (workflow version 9d2649af), replayed through S4B.2 validation (517b11ef). Not newly model-generated.",
+     "recovery_mode": "RECORDED_MODEL_OUTPUT_REPLAY",
+     "source_row_ids": [
+      {
+       "row_id": "8c57ce0a-681f-4af4-a94c-ff22db2991ed",
+       "shot_id": "S001",
+       "shot_index": 1
+      },
+      {
+       "row_id": "f90ae020-0d53-4e8e-ad97-b71059e8159c",
+       "shot_id": "S002",
+       "shot_index": 2
+      },
+      {
+       "row_id": "52f3f6aa-0882-45be-8b84-4e4d02942aa5",
+       "shot_id": "S003",
+       "shot_index": 3
+      },
+      {
+       "row_id": "ae16ebfe-668d-4483-81c5-85fc7a72dc06",
+       "shot_id": "S004",
+       "shot_index": 4
+      },
+      {
+       "row_id": "c759c5c2-b5d6-4ab3-836a-f5e4b1442c6f",
+       "shot_id": "S005",
+       "shot_index": 5
+      },
+      {
+       "row_id": "9d73c2cd-1a33-488d-ab4f-e8a6eda0904e",
+       "shot_id": "S006",
+       "shot_index": 6
+      },
+      {
+       "row_id": "6815c34b-985e-4146-862d-8d47cbcae2e2",
+       "shot_id": "S007",
+       "shot_index": 7
+      },
+      {
+       "row_id": "2a4e5c37-eb88-43e6-9bb1-71142b93d1d8",
+       "shot_id": "S008",
+       "shot_index": 8
+      },
+      {
+       "row_id": "d33f546e-85f6-4dc3-8a62-4bac159164a4",
+       "shot_id": "S009",
+       "shot_index": 9
+      },
+      {
+       "row_id": "7d6f0224-4f0d-4476-967f-4c9ca55a955f",
+       "shot_id": "S010",
+       "shot_index": 10
+      },
+      {
+       "row_id": "63de8d7b-3543-4f02-9fe1-81fa1c0fd5b6",
+       "shot_id": "S011",
+       "shot_index": 11
+      },
+      {
+       "row_id": "f1340ca3-0f32-46ba-a7cf-e28e7430e720",
+       "shot_id": "S012",
+       "shot_index": 12
+      },
+      {
+       "row_id": "70d1c835-be38-402a-8a7b-de61b556e9fe",
+       "shot_id": "S013",
+       "shot_index": 13
+      },
+      {
+       "row_id": "dc400bd1-1978-4b1c-926f-45224b256430",
+       "shot_id": "S014",
+       "shot_index": 14
+      },
+      {
+       "row_id": "7b8cf02f-350b-4cb7-aca5-f87345d567f0",
+       "shot_id": "S015",
+       "shot_index": 15
+      },
+      {
+       "row_id": "7d0a8fe2-037b-40f7-af82-c6d63876dd55",
+       "shot_id": "S016",
+       "shot_index": 16
+      },
+      {
+       "row_id": "4f2cd222-b861-43de-9014-017cba0c9128",
+       "shot_id": "S017",
+       "shot_index": 17
+      },
+      {
+       "row_id": "c52ac2cb-384a-4fff-ad02-a0c234aaa83e",
+       "shot_id": "S018",
+       "shot_index": 18
+      },
+      {
+       "row_id": "82724f6e-680a-48c6-b5e9-f29a765ea42e",
+       "shot_id": "S019",
+       "shot_index": 19
+      },
+      {
+       "row_id": "100f6d76-4860-4972-9787-040243e7a376",
+       "shot_id": "S020",
+       "shot_index": 20
+      },
+      {
+       "row_id": "c0f149e9-2d92-4e3d-9e91-5eb77589a851",
+       "shot_id": "S021",
+       "shot_index": 21
+      },
+      {
+       "row_id": "f93cf5b5-a9d1-45e3-93e1-5af68c68446c",
+       "shot_id": "S022",
+       "shot_index": 22
+      },
+      {
+       "row_id": "f85fbf65-6fea-4ea5-9fab-6f79845a5c53",
+       "shot_id": "S023",
+       "shot_index": 23
+      },
+      {
+       "row_id": "fef7f018-4b9a-4436-96d8-a3f05457d5d3",
+       "shot_id": "S024",
+       "shot_index": 24
+      },
+      {
+       "row_id": "1448abb0-2301-4de9-bc1a-be972e1c632a",
+       "shot_id": "S025",
+       "shot_index": 25
+      },
+      {
+       "row_id": "9dbb9c0d-a7ef-4eeb-8f31-5378f6d5ad82",
+       "shot_id": "S026",
+       "shot_index": 26
+      },
+      {
+       "row_id": "773f3b63-7c06-4a1c-ac2c-e28be24955a4",
+       "shot_id": "S027",
+       "shot_index": 27
+      },
+      {
+       "row_id": "52d20721-be6f-45b7-8f8b-73b690699d45",
+       "shot_id": "S028",
+       "shot_index": 28
+      },
+      {
+       "row_id": "565c095b-5850-4066-98ce-ab84ad6d0d23",
+       "shot_id": "S029",
+       "shot_index": 29
+      }
+     ],
+     "source_run_md5": "00da99ba8ee90cdb3ea85511b1d318fb",
+     "model_call_made": false,
+     "recovery_run_id": "A005R-1790394486839",
+     "recovery_change_id": "ENG-20260926-015",
+     "normalization_count": 1,
+     "normalization_summary": [
+      {
+       "field": "visible_at_start",
+       "reason": "PREVIOUS_VALIDATED_END_STATE",
+       "element": "Berry smudge on Mikko's nose",
+       "shot_id": "S022",
+       "model_value": true,
+       "source_shot_id": "S021",
+       "authoritative_value": false
+      }
+     ],
+     "recovered_from_run_id": "A005-1790328680362",
+     "source_prompt_version": "agent005-shot-planning-v0.2",
+     "model_calls_for_recovery": 0,
+     "validator_workflow_version": "517b11ef-cd04-4779-bb44-a5cdb4d86ac8",
+     "recovered_from_execution_id": "502",
+     "source_model_workflow_version": "9d2649af-eb2b-421a-91ea-1989b35e4274",
+     "source_content_fingerprint_sha256": "da20f514a40db739e1c40263d55bae9dbaa9d62865c0787535a707e88909621a"
+    },
+    "episode_backlog_id": "07d622e9-a152-4107-b300-f052546405e3",
+    "production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+    "production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+    "production_optimization": {
+     "note": "Human-approved Scenario B workload baseline (15 video). Does NOT authorise any paid generation; downstream generation remains separately blocked.",
+     "basis": "Human-approved deterministic production decision (Scenario B, ENG-20260926-016). Not a model decision.",
+     "decision": "SCENARIO_B_BALANCED_OPTIMISATION",
+     "change_id": "ENG-20260926-017",
+     "decision_id": "ENG-20260926-016",
+     "source_run_id": "A005R-1790394486839",
+     "source_row_ids": [
+      {
+       "row_id": "18745d59-54c8-4aa0-bb46-9590f1cca9f1",
+       "shot_id": "S001",
+       "shot_index": 1
+      },
+      {
+       "row_id": "fbff14e1-fd4b-4533-b750-a2959a98e1c9",
+       "shot_id": "S002",
+       "shot_index": 2
+      },
+      {
+       "row_id": "00f99163-64cb-4cbb-8128-82cb56181f8b",
+       "shot_id": "S003",
+       "shot_index": 3
+      },
+      {
+       "row_id": "a2c0a0c7-29db-4ae0-9245-b6a9b596ff30",
+       "shot_id": "S004",
+       "shot_index": 4
+      },
+      {
+       "row_id": "f96fa2b2-5cb5-43e6-a5eb-5cfc5e8da6d2",
+       "shot_id": "S005",
+       "shot_index": 5
+      },
+      {
+       "row_id": "62af13ad-7a1d-4db3-827b-43fe6744f59a",
+       "shot_id": "S006",
+       "shot_index": 6
+      },
+      {
+       "row_id": "7420c5f9-7116-4205-885f-49e16922f51e",
+       "shot_id": "S007",
+       "shot_index": 7
+      },
+      {
+       "row_id": "0a7754c2-8330-4f64-9dff-5fde0341568c",
+       "shot_id": "S008",
+       "shot_index": 8
+      },
+      {
+       "row_id": "efb963e7-e124-4cb0-92d9-8caf4e8717c7",
+       "shot_id": "S009",
+       "shot_index": 9
+      },
+      {
+       "row_id": "aa8c9bda-4ca3-4435-bc25-b61a0a576956",
+       "shot_id": "S010",
+       "shot_index": 10
+      },
+      {
+       "row_id": "4d7cd715-ca7a-4a5d-a925-2333182de8ee",
+       "shot_id": "S011",
+       "shot_index": 11
+      },
+      {
+       "row_id": "e4fd8fcf-2943-43c1-acef-56fb2ef274f6",
+       "shot_id": "S012",
+       "shot_index": 12
+      },
+      {
+       "row_id": "1752d2bf-bcec-4022-87c8-2499f03b31f9",
+       "shot_id": "S013",
+       "shot_index": 13
+      },
+      {
+       "row_id": "aa05dd26-26e0-4766-9ffe-a0e470f7d96f",
+       "shot_id": "S014",
+       "shot_index": 14
+      },
+      {
+       "row_id": "6ff657c4-2372-480d-a049-c6d899b33eb1",
+       "shot_id": "S015",
+       "shot_index": 15
+      },
+      {
+       "row_id": "7f3a8bd0-d707-4b71-85d4-a097161c78ce",
+       "shot_id": "S016",
+       "shot_index": 16
+      },
+      {
+       "row_id": "0c3d92df-52a9-4ea6-81dd-5cc2e331aff7",
+       "shot_id": "S017",
+       "shot_index": 17
+      },
+      {
+       "row_id": "5e2b2e21-3fd1-44ec-b4e9-6a3908246088",
+       "shot_id": "S018",
+       "shot_index": 18
+      },
+      {
+       "row_id": "325ab71d-48d2-419f-9576-78eb11b044b8",
+       "shot_id": "S019",
+       "shot_index": 19
+      },
+      {
+       "row_id": "9686ba35-e486-45e6-85e3-2d4054c4f1bf",
+       "shot_id": "S020",
+       "shot_index": 20
+      },
+      {
+       "row_id": "c37b0739-7656-4da3-b0ef-c66b5db7cdbe",
+       "shot_id": "S021",
+       "shot_index": 21
+      },
+      {
+       "row_id": "891d72bf-e9b4-474d-ba7f-a916b6fea22b",
+       "shot_id": "S022",
+       "shot_index": 22
+      },
+      {
+       "row_id": "d79fee83-8598-46b9-9f48-d4e38129bb51",
+       "shot_id": "S023",
+       "shot_index": 23
+      },
+      {
+       "row_id": "f9281c54-3278-43d2-9aa7-60dbf903c9e2",
+       "shot_id": "S024",
+       "shot_index": 24
+      },
+      {
+       "row_id": "d92946f1-30ba-452c-84da-7caa3c8511a2",
+       "shot_id": "S025",
+       "shot_index": 25
+      },
+      {
+       "row_id": "9db048d3-9464-413b-a786-8dfcb44d0f06",
+       "shot_id": "S026",
+       "shot_index": 26
+      },
+      {
+       "row_id": "9582fcde-0209-453a-9fca-ccd86ca1fedc",
+       "shot_id": "S027",
+       "shot_index": 27
+      },
+      {
+       "row_id": "f75b446d-8c32-4bc8-b646-f0fb0dd9a257",
+       "shot_id": "S028",
+       "shot_index": 28
+      },
+      {
+       "row_id": "3970d716-def3-4830-b445-21e4df544084",
+       "shot_id": "S029",
+       "shot_index": 29
+      }
+     ],
+     "model_call_made": false,
+     "human_authorised": true,
+     "recovery_lineage": {
+      "note": "Recorded model output from Agent-005 exec 502 (workflow version 9d2649af), replayed through S4B.2 validation (517b11ef). Not newly model-generated.",
+      "recovery_mode": "RECORDED_MODEL_OUTPUT_REPLAY",
+      "source_row_ids": [
+       {
+        "row_id": "8c57ce0a-681f-4af4-a94c-ff22db2991ed",
+        "shot_id": "S001",
+        "shot_index": 1
+       },
+       {
+        "row_id": "f90ae020-0d53-4e8e-ad97-b71059e8159c",
+        "shot_id": "S002",
+        "shot_index": 2
+       },
+       {
+        "row_id": "52f3f6aa-0882-45be-8b84-4e4d02942aa5",
+        "shot_id": "S003",
+        "shot_index": 3
+       },
+       {
+        "row_id": "ae16ebfe-668d-4483-81c5-85fc7a72dc06",
+        "shot_id": "S004",
+        "shot_index": 4
+       },
+       {
+        "row_id": "c759c5c2-b5d6-4ab3-836a-f5e4b1442c6f",
+        "shot_id": "S005",
+        "shot_index": 5
+       },
+       {
+        "row_id": "9d73c2cd-1a33-488d-ab4f-e8a6eda0904e",
+        "shot_id": "S006",
+        "shot_index": 6
+       },
+       {
+        "row_id": "6815c34b-985e-4146-862d-8d47cbcae2e2",
+        "shot_id": "S007",
+        "shot_index": 7
+       },
+       {
+        "row_id": "2a4e5c37-eb88-43e6-9bb1-71142b93d1d8",
+        "shot_id": "S008",
+        "shot_index": 8
+       },
+       {
+        "row_id": "d33f546e-85f6-4dc3-8a62-4bac159164a4",
+        "shot_id": "S009",
+        "shot_index": 9
+       },
+       {
+        "row_id": "7d6f0224-4f0d-4476-967f-4c9ca55a955f",
+        "shot_id": "S010",
+        "shot_index": 10
+       },
+       {
+        "row_id": "63de8d7b-3543-4f02-9fe1-81fa1c0fd5b6",
+        "shot_id": "S011",
+        "shot_index": 11
+       },
+       {
+        "row_id": "f1340ca3-0f32-46ba-a7cf-e28e7430e720",
+        "shot_id": "S012",
+        "shot_index": 12
+       },
+       {
+        "row_id": "70d1c835-be38-402a-8a7b-de61b556e9fe",
+        "shot_id": "S013",
+        "shot_index": 13
+       },
+       {
+        "row_id": "dc400bd1-1978-4b1c-926f-45224b256430",
+        "shot_id": "S014",
+        "shot_index": 14
+       },
+       {
+        "row_id": "7b8cf02f-350b-4cb7-aca5-f87345d567f0",
+        "shot_id": "S015",
+        "shot_index": 15
+       },
+       {
+        "row_id": "7d0a8fe2-037b-40f7-af82-c6d63876dd55",
+        "shot_id": "S016",
+        "shot_index": 16
+       },
+       {
+        "row_id": "4f2cd222-b861-43de-9014-017cba0c9128",
+        "shot_id": "S017",
+        "shot_index": 17
+       },
+       {
+        "row_id": "c52ac2cb-384a-4fff-ad02-a0c234aaa83e",
+        "shot_id": "S018",
+        "shot_index": 18
+       },
+       {
+        "row_id": "82724f6e-680a-48c6-b5e9-f29a765ea42e",
+        "shot_id": "S019",
+        "shot_index": 19
+       },
+       {
+        "row_id": "100f6d76-4860-4972-9787-040243e7a376",
+        "shot_id": "S020",
+        "shot_index": 20
+       },
+       {
+        "row_id": "c0f149e9-2d92-4e3d-9e91-5eb77589a851",
+        "shot_id": "S021",
+        "shot_index": 21
+       },
+       {
+        "row_id": "f93cf5b5-a9d1-45e3-93e1-5af68c68446c",
+        "shot_id": "S022",
+        "shot_index": 22
+       },
+       {
+        "row_id": "f85fbf65-6fea-4ea5-9fab-6f79845a5c53",
+        "shot_id": "S023",
+        "shot_index": 23
+       },
+       {
+        "row_id": "fef7f018-4b9a-4436-96d8-a3f05457d5d3",
+        "shot_id": "S024",
+        "shot_index": 24
+       },
+       {
+        "row_id": "1448abb0-2301-4de9-bc1a-be972e1c632a",
+        "shot_id": "S025",
+        "shot_index": 25
+       },
+       {
+        "row_id": "9dbb9c0d-a7ef-4eeb-8f31-5378f6d5ad82",
+        "shot_id": "S026",
+        "shot_index": 26
+       },
+       {
+        "row_id": "773f3b63-7c06-4a1c-ac2c-e28be24955a4",
+        "shot_id": "S027",
+        "shot_index": 27
+       },
+       {
+        "row_id": "52d20721-be6f-45b7-8f8b-73b690699d45",
+        "shot_id": "S028",
+        "shot_index": 28
+       },
+       {
+        "row_id": "565c095b-5850-4066-98ce-ab84ad6d0d23",
+        "shot_id": "S029",
+        "shot_index": 29
+       }
+      ],
+      "source_run_md5": "00da99ba8ee90cdb3ea85511b1d318fb",
+      "model_call_made": false,
+      "recovery_run_id": "A005R-1790394486839",
+      "recovery_change_id": "ENG-20260926-015",
+      "normalization_count": 1,
+      "normalization_summary": [
+       {
+        "field": "visible_at_start",
+        "reason": "PREVIOUS_VALIDATED_END_STATE",
+        "element": "Berry smudge on Mikko's nose",
+        "shot_id": "S022",
+        "model_value": true,
+        "source_shot_id": "S021",
+        "authoritative_value": false
+       }
+      ],
+      "recovered_from_run_id": "A005-1790328680362",
+      "source_prompt_version": "agent005-shot-planning-v0.2",
+      "model_calls_for_recovery": 0,
+      "validator_workflow_version": "517b11ef-cd04-4779-bb44-a5cdb4d86ac8",
+      "recovered_from_execution_id": "502",
+      "source_model_workflow_version": "9d2649af-eb2b-421a-91ea-1989b35e4274",
+      "source_content_fingerprint_sha256": "da20f514a40db739e1c40263d55bae9dbaa9d62865c0787535a707e88909621a"
+     },
+     "replacement_method": "COMPOSITE",
+     "source_manifest_id": "ff5afc70-02ed-46d7-acd1-b69ae15fd0dd",
+     "source_video_count": 20,
+     "optimization_run_id": "A005O-1790400144423",
+     "video_removed_shots": [
+      "S003",
+      "S004",
+      "S017",
+      "S023",
+      "S025"
+     ],
+     "source_video_seconds": 82.5,
+     "optimized_video_count": 15,
+     "optimized_video_shots": [
+      "S001",
+      "S002",
+      "S007",
+      "S009",
+      "S010",
+      "S011",
+      "S014",
+      "S015",
+      "S016",
+      "S020",
+      "S021",
+      "S022",
+      "S026",
+      "S027",
+      "S028"
+     ],
+     "replacement_rationales": {
+      "S003": "Composited over-shoulder still with a controlled mirror/arm transform and reflection handling.",
+      "S004": "Rigid mirror-layer tilt, deterministic glint overlay and gaze/expression treatment.",
+      "S017": "Small composited hand settle, subtle breathing and a small mirror adjustment.",
+      "S023": "Small composited eye/head adjustment over the clean mirror composition.",
+      "S025": "Matched clean S001 composition with expression/gaze treatment, completion pop and deterministic clean-reveal emphasis."
+     },
+     "optimized_video_seconds": 63,
+     "paid_generation_authorised": false,
+     "source_rows_fingerprint_sha256": "61221b4a1054ee839371480a58e0b98fa62e1ecf38236c3c72e9d4a156369c1c",
+     "source_manifest_fingerprint_sha256": "19b16cd8a2641ce754565b4d2371d9ac3082cb794e984f9d819f283b1c9e9f39"
+    },
+    "paid_generation_authorised": false
+   },
+   "source_production_manifest_id": "3bcde9ee-6676-480f-90da-5695b64532a7",
+   "source_production_plan_run_id": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423"
+  },
+  "status": "REVIEW",
+  "agent_version": "agent006-asset-resolution-readiness-manager-v0.1",
+  "prompt_version": "agent006-resolution-rules-v0.1"
+ }
+]

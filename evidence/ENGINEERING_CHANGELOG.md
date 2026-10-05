@@ -1505,3 +1505,31 @@ migrations: 0
 rollback: "UPDATE episode_production_manifests SET status='REVIEW' WHERE id='3bcde9ee-6676-480f-90da-5695b64532a7' AND status='APPROVED'"
 status: "EP005_BERRY_DERIVED_MANIFEST_HUMAN_APPROVED + DERIVED_MANIFEST_3BCDE9EE_APPROVED + SOURCE_MANIFEST_670B201B_UNCHANGED + C1_CANON_UNCHANGED + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261005-EP005-AGENT006-DERIVED-LIVE-RUN: one controlled Agent-006 run on derived EP005 manifest 3bcde9ee
+
+```yaml
+change_id: "ENG-20261005-EP005-AGENT006-DERIVED-LIVE-RUN"
+timestamp: "2026-10-05T06:18:16Z"
+actor: "Claude"
+authorised_by: "Company Brain (exactly one Agent-006 run against 3bcde9ee)"
+evidence: "evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md"
+pre_run: "3bcde9ee APPROVED (row md5 931d64df…); 670b201b unchanged (249adbfe…); registry 20 (b7b46112…), 11 governed, 0 duplicate tokens; Agent-006 9bf6bbef unpublished, no provider/HTTP nodes"
+method: "existing single-use caller pattern (ENG-20260926-019): AQ4JEKWd0cQOUmJV (Manual Trigger + Execute Workflow, input production_manifest_id only, no credentials), archived after the run"
+execution: {caller: "576 success", agent006: "577 integrated success 06:18:16.155Z-06:18:39.072Z", asset_resolution_run_id: "A006-1791181098027", readiness_manifest: "e32ef7eb-448d-4da8-8271-fabf51bdc81e REVIEW / NEEDS_HUMAN_REVIEW"}
+result: "18 requirements: 11 REUSE_EXISTING with exactly 1 match each (cheek, mouth, nose overlays; mirror; cloth; Mikko; Lumi; bathroom; 3 SFX); 7 NEEDS_HUMAN_REVIEW (3 visual + 4 audio TBDs, 0 matches); 0 ambiguous, 0 CREATE_NEW, 0 BLOCKED; 18/18 identical to the in-memory proof"
+db_audit: "ARI 40->58 (prior 40 md5 feb133cc… unchanged, +18 under A006-1791181098027); readiness 5->6 (prior md5 9338a06f… unchanged, +e32ef7eb); manifests, registry, storage, jobs, batches, shot plans, scripts, migrations unchanged"
+agent007_executions: 0
+readiness_approvals: 0
+generation_calls: 0
+paid_calls: 0
+workflow_changes: 0
+registry_changes: 0
+storage_changes: 0
+migrations: 0
+containment: "run records REVIEW and inert; Agent-007 accepts only APPROVED + NEEDS_ASSET_CREATION; no deletion authorised"
+open_items: ["3 visual + 4 audio TBD human asset decisions", "readiness approval of e32ef7eb (human)", "F-1 SFX storage_path mismatch (ENG-20260926-019)"]
+status: "EP005_AGENT006_DERIVED_MANIFEST_LIVE_RESOLUTION_PASS + REQUIREMENT_COUNT_18 + 11_REUSE_EXISTING + TRUE_TBDS_REMAIN_HUMAN_REVIEW + ZERO_AMBIGUOUS_MATCHES + ZERO_AGENT007_RUN + EVIDENCE_COMMITTED_TO_GITHUB"
+```
