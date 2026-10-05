@@ -1292,3 +1292,33 @@ reconciliation:
   material_conflicts: 0
 writes: 0
 ```
+
+---
+
+## ENG-20261005-C1-UPLOAD-BLOCKED: C1 stopped before storage write (no storage write credential)
+
+```yaml
+change_id: "ENG-20261005-C1-UPLOAD-BLOCKED"
+timestamp: "2026-10-05"
+actor: "Claude"
+spec: "evidence/C1_EVIDENCE_GAP_REPAIR_AND_IMPLEMENTATION_SPEC_v1.0.md"
+result: "STOPPED_PRE_WRITE: NO_STORAGE_WRITE_PATH"
+completed: ["spec reconciled (0 material conflicts)", "local hashes re-verified", "live pre-write checks clean (target keys absent, target asset_ids absent, 0 name/alias collisions)"]
+blocker: >
+  The engineering environment has no Supabase credential able to write to or read back from the private
+  bucket production-assets (no service-role or storage S3 key in the environment; storage.objects has no
+  RLS policies; the Supabase MCP has SQL only and no storage upload/download). Spec 4.1 requires a
+  no-overwrite upload plus SHA-256 readback BEFORE any registry insert, so neither storage nor registry
+  writes were attempted. Inserting storage.objects rows by SQL would not store bytes and was not done.
+options_for_human:
+  A: "Add a Supabase service-role key to the cloud environment as SUPABASE_SERVICE_ROLE_KEY and start a new session; C1 then resumes from spec 4.1 unchanged."
+  B: "Explicitly authorise a single-use, read-back-capable n8n uploader harness using the existing n8n Supabase credential (archived after one run); this is an n8n write outside the current C1 scope."
+supabase_writes: 0
+n8n_writes: 0
+paid_calls: 0
+generation_calls: 0
+agent006_executions: 0
+agent007_executions: 0
+migrations: 0
+status: "C1_SPEC_RECONCILED + EVIDENCE_GAP_REPAIRED + STOPPED_PRE_WRITE + ZERO_WRITES"
+```
