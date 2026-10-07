@@ -10,13 +10,13 @@ Build a human-governed system that turns anime research into **original V&A comm
 
 | | |
 |---|---|
-| Last completed | **Pre-CF-001 database activation** (2026-10-07, branch `engine2/clip-farming-sprint-01-preflight`): migrations 0001 and 0002 applied and verified. Before it: pre-Sprint 1 provisioning and preflight, then Sprint 0 (foundation) on `engine2/clip-farming-sprint-00-foundation` |
+| Last completed | **Pre-CF-001 database hardening** (2026-10-07): migration 0003 applied (version 20261007113241), F-6 and F-7 fixed, advisor 0 findings. Before it: **Pre-CF-001 database activation** (2026-10-07, branch `engine2/clip-farming-sprint-01-preflight`): migrations 0001 and 0002 applied and verified. Before it: pre-Sprint 1 provisioning and preflight, then Sprint 0 (foundation) on `engine2/clip-farming-sprint-00-foundation` |
 | Status | **Stopped.** The database foundation is applied. The runtime role has no password yet; the n8n credential waits on a human. CF-001 is not authorised |
 | Database | Dedicated Supabase project `V&A Anime Clip Farming — Engine 2` (ref `mkeldytatorxxszjdngt`, eu-north-1, Free plan), schema `cf` ([ADR-001](architecture/decisions/ADR-001_DEDICATED_SUPABASE_PROJECT.md)). 7 tables, empty apart from 14 transition rows and 3 kill switches (all off) |
-| Implemented live | The dedicated project; role `cf_n8n_runtime` (no password); migration `0001_cf_sprint01` (7 `cf` tables, 4 functions, 12 triggers, minimal runtime grants); migration `0002_cf_runtime_human_admin_guard` ([ADR-002](architecture/decisions/ADR-002_RUNTIME_ROLE_CANNOT_MAKE_HUMAN_ADMIN_TRANSITIONS.md): the runtime role cannot make HUMAN_ADMIN transitions) |
+| Implemented live | The dedicated project; role `cf_n8n_runtime` (no password); migration `0001_cf_sprint01` (7 `cf` tables, 4 functions, 12 triggers, minimal runtime grants); migration `0002_cf_runtime_human_admin_guard` ([ADR-002](architecture/decisions/ADR-002_RUNTIME_ROLE_CANNOT_MAKE_HUMAN_ADMIN_TRANSITIONS.md): the runtime role cannot make HUMAN_ADMIN transitions) | Migration `0003_cf_freeze_generated_columns_and_search_path` ([ADR-003](architecture/decisions/ADR-003_FREEZE_IGNORES_GENERATED_COLUMNS_AND_PINNED_SEARCH_PATH.md)) fixes F-6 and F-7.
 | Design only | Data model, full schema (DESIGN ONLY — NOT APPLIED), identities, state model, gates, CF-001…CF-009 contracts, dependency map, test strategy |
 | Other live Engine 2 objects | One experimental, unpublished, never-executed n8n workflow `WStqWRlqax7iocOx` (ANIME-LAB — VIDEO-SMOKE-001). No CF workflow, no CF credential |
-| Next | A human sets the `cf_n8n_runtime` password and creates the n8n credential; the Company Brain decides findings F-6 (dated titles cannot change status) and F-7 (search_path warnings); then Sprint 1 — CF-001 Market & Trend Radar. **Sprint 1 is not authorised.** No sprint is ever automatically authorised by a previous one or by any document in this folder |
+| Next | A human sets the `cf_n8n_runtime` password and creates the n8n credential; then Sprint 1 — CF-001 Market & Trend Radar. **Sprint 1 is not authorised.** No sprint is ever automatically authorised by a previous one or by any document in this folder |
 
 ## Engine 2 architecture
 
@@ -68,6 +68,8 @@ projects/anime-clip-farming/
         0001_cf_sprint01.TESTS.sql            local-only tests (33)
         0002_cf_runtime_human_admin_guard.sql APPLIED 2026-10-07 (version 20261007110907); replaces cf.guard_status_transition() only
         0002_cf_runtime_human_admin_guard.ROLLBACK.sql / .VERIFY.sql / .TESTS.sql
+        0003_cf_freeze_generated_columns_and_search_path.sql APPLIED 2026-10-07 (version 20261007113241); F-6 + F-7
+        0003_cf_freeze_generated_columns_and_search_path.ROLLBACK.sql / .VERIFY.sql / .TESTS.sql
     workflow-contracts/
       AGENT_CONTRACTS_CF001_CF009_v0.1.md     per-agent contracts
       DEPENDENCY_MAP_v0.1.md                  chain, gates, paid and publish entry points
@@ -87,6 +89,9 @@ projects/anime-clip-farming/
     PRE_CF001_0002_TEST_OUTPUT.txt            local test run of 0002 (PostgreSQL 16.15 and 17.10)
     PRE_SPRINT_01_TEST_OUTPUT.txt             local test run (PostgreSQL 16.15 and 17.10)
     pre-sprint-01-tools/                      scripts that built and checked migration 0001
+    PRE_CF001_DATABASE_HARDENING_EVIDENCE.md  0003 apply, tests, live verification
+    PRE_CF001_0003_TEST_OUTPUT.txt            local test run of 0003 (PostgreSQL 16.15 and 17.10)
+    cf-0003-tools/                            scripts that built and tested migration 0003
     cf-0002-tools/                            scripts that built and tested migration 0002
   changelog/
     ENGINE2_CHANGELOG.md

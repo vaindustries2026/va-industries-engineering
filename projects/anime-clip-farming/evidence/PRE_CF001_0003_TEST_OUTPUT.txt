@@ -1,0 +1,516 @@
+# Engine 2 migration 0003 local test run (throwaway clusters inside the engineering container; never Supabase)
+# Run: 2026-10-07T11:31:29Z
+# sha256 24c01ae7fca4adb7b59f24598629fb7bd9ead993609ce02c1814f48b24aca7ea  0001_cf_sprint01.sql
+# sha256 dd0fbd63f6f8ed9df412dd7e580922b0b6dfa1a5daef6a4ca3b7c46dff3b2d75  0001_cf_sprint01.TESTS.sql
+# sha256 99c821d6458fd6d75deee92b9d00d66be051e0679b3b717bac8a4560c23f392e  0001_cf_sprint01.VERIFY.sql
+# sha256 09025a9489369667c15a3e39f6348eebf8660a70278ae2f005fce0d619ee76da  0001_cf_sprint01.ROLLBACK.sql
+# sha256 80d44f0420f859a2508a0d8e33e3d7318797849345a41a02840339342be0c66b  0002_cf_runtime_human_admin_guard.sql
+# sha256 85df5dc17c4699c36f141290fcd4722819f4f51cbcb1cde84ad78be2e8ec5e7f  0002_cf_runtime_human_admin_guard.ROLLBACK.sql
+# sha256 d0494c32ec8faf753e58d54a209b29159d8e946f890cb591024a5f1d1fbf36f8  0002_cf_runtime_human_admin_guard.TESTS.sql
+# sha256 851fa89eb66c0334c7115419b5fb5a2c150fa41363dd5c3e004f8f1e700a0454  0002_cf_runtime_human_admin_guard.VERIFY.sql
+# sha256 d6aca6551153d20bda97b930510a9dc555cc69c33d9e0350cd7aa605aa0217f3  0003_cf_freeze_generated_columns_and_search_path.sql
+# sha256 e36ef27b68dc75930549336a5becde495af4ba154813eb9838d4c0a744c3e594  0003_cf_freeze_generated_columns_and_search_path.ROLLBACK.sql
+# sha256 cfd0052717d443c987694511bcb75a21258526d0d95f2a2e10e1e74e36e4f796  0003_cf_freeze_generated_columns_and_search_path.TESTS.sql
+# sha256 c06dba2108d6c1c6fc831324f7058ce0e3bc633bd62a41dd81639453c6f6af4f  0003_cf_freeze_generated_columns_and_search_path.VERIFY.sql
+
+=== Cluster 16: PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit ===
+PASS A0-16 baseline = live state: guard md5 0dac745af135d4772111d92fd2b168c9 (0002), freeze md5 e4b4d9c63cc9870d5f59ab09e5dfe2c1 (0001), four functions with no search_path
+--- F-6 baseline on 0002 (16) ---
+    NOTICE:  ADMIN_READY_TO_RETIRED=CF_IMMUTABLE_ROW
+    NOTICE:  ADMIN_BLOCKED_TO_READY=CF_IMMUTABLE_ROW
+    NOTICE:  RUNTIME_READY_TO_RETIRED=CF_IMMUTABLE_ROW: cf
+    NOTICE:  RUNTIME_BLOCKED_TO_READY=CF_IMMUTABLE_ROW: cf
+PASS A1-16 F-6 REPRODUCED on the 0002 baseline: a dated title's post-DRAFT status changes fail with CF_IMMUTABLE_ROW for admin and runtime (not CF_GOVERNANCE_DENIED)
+PASS A2-16 the generic fixture (generated columns other than era_decade) is also frozen wrongly on the 0002 baseline, so the fixture test is not vacuous
+PASS A3-16 F-7 shown on the baseline: with a hostile schema first in the session search_path an unpinned cf function resolves cf_evil.to_jsonb
+PASS B1-16 0003 applies as non-superuser postgres in one transaction; freeze md5 f957a25df6e08a74a21b6a64e5181a47, guard md5 unchanged 0dac745af135d4772111d92fd2b168c9, 4 of 4 functions pinned
+    NOTICE:  PASS H3-01 cf.guard_status_transition(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-02 cf.freeze_after_first_status(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-03 cf.forbid_delete(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-04 cf.touch_updated_at(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-05 no cf function has SECURITY DEFINER, and no search_path names public, "$user" or pg_temp
+    NOTICE:  PASS H3-06 no EXECUTE grant on any cf function to anyone but the owner (PUBLIC, runtime, anon, authenticated, service_role)
+    NOTICE:  PASS H3-07 the cf schema holds exactly the same four functions, owned by postgres
+    NOTICE:  PASS H3-08 bodies: guard is the 0002 body (HUMAN_ADMIN block retained, byte for byte), touch and forbid are the 0001 bodies, freeze is the 0003 body
+    NOTICE:  PASS H3-09 the 12 triggers are still bound and enabled (3 guard, 3 freeze, 3 no-delete, 3 touch)
+    NOTICE:  PASS H3-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H3-51 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H3-52 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H3-53 no cf table holds data before the fixtures (apart from the 14 transition rows and 3 kill switches)
+    NOTICE:  PASS H3-10 runtime: dated anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H3-11 the generated column era_decade is computed for the dated titles
+    NOTICE:  PASS H3-12 runtime: dated anime_title DRAFT -> READY (NEW -> DRAFT -> READY)
+    NOTICE:  PASS H3-13 runtime: dated anime_title DRAFT -> BLOCKED (NEW -> DRAFT -> BLOCKED)
+    NOTICE:  PASS H3-14 runtime: a mutable column (display_title) still changes on a dated READY title
+    NOTICE:  PASS H3-15 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-16 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-17 runtime denied: dated anime_title READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H3-18 every refused attempt left its row unchanged
+    NOTICE:  PASS H3-20 runtime: READY title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-21 runtime: READY title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-22 runtime: READY title, start_year change (era_decade follows) -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-23 runtime: READY title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-24 runtime: BLOCKED title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-25 runtime: BLOCKED title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-26 runtime: BLOCKED title, start_year change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-27 runtime: BLOCKED title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-28 runtime: a status change that also alters a frozen column is still CF_IMMUTABLE_ROW (READY title, start_year + status)
+    NOTICE:  PASS H3-30 admin (postgres): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-31 admin (postgres): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-32 the admin transitions are persisted (READY and RETIRED) and era_decade is intact
+    NOTICE:  PASS H3-33 admin: content of a RETIRED dated title is still frozen (start_year)
+    NOTICE:  PASS H3-34 admin: a RETIRED title cannot be deleted
+    NOTICE:  PASS H3-35 fixture check: gen_fixture has two generated stored columns, neither is era_decade
+    NOTICE:  PASS H3-36 generic: status-only change succeeds when the only OLD/NEW difference is a generated column
+    NOTICE:  PASS H3-37 generic: a second status-only change on the same row succeeds
+    NOTICE:  PASS H3-38 generic: a mutable column (TG_ARGV) still changes, generated columns untouched
+    NOTICE:  PASS H3-39 generic: a real immutable source column change (src_a, which drives "doubled") still fails
+    NOTICE:  PASS H3-40 generic: a real immutable source column change (src_b, which drives "shout") still fails
+    NOTICE:  PASS H3-41 generic: status plus a source column change in one statement still fails
+    NOTICE:  PASS H3-42 generic: the failed attempts changed nothing; generated values follow the sources
+    NOTICE:  PASS H3-43 generic: a table with a dropped column and a generated column accepts a status-only change
+    NOTICE:  PASS H3-44 generic: the same table still rejects a source change
+    NOTICE:  PASS H3-45 generic: a table with no generated column (empty set) accepts a status-only change
+    NOTICE:  PASS H3-46 generic: a table with no generated column still rejects a content change
+    NOTICE:  PASS H3-47 generic: IDEA/DRAFT rows are still unfrozen (freeze returns before comparing)
+    NOTICE:  PASS H3-40a this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H3-41a real login denied: dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-42a real login denied: dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-43a real login: dated anime_title DRAFT -> READY works
+    NOTICE:  PASS H3-44a real login: a frozen column on a READY dated title still fails
+    NOTICE:  PASS H3-45a real login: a dated title cannot be deleted
+    NOTICE:  PASS H3-60 hostile session search_path: a franchise status change on a READY row (guard + freeze + touch) still succeeds
+    NOTICE:  PASS H3-61 hostile session search_path: freeze on a READY dated title (display_title change) does not resolve cf_evil.to_jsonb
+    NOTICE:  PASS H3-62 updated_at was set by pg_catalog.now(), not by cf_evil.now() (no 1999 timestamp)
+    NOTICE:  PASS H3-63 the functions hold search_path = pg_catalog, cf, which excludes the hostile and every non-cf schema
+    NOTICE:  drop cascades to 4 other objects
+    DETAIL:  drop cascades to function cf_evil.now()
+    drop cascades to function cf_evil.to_jsonb(anyelement)
+    drop cascades to function cf_evil.upper(text)
+    drop cascades to function cf_evil.md5(text)
+    NOTICE:  PASS H3-70 every fixture row is mine (fictional): 2 franchises, 5 dated titles, nothing in agent_runs, reviewers or research_candidates
+--- 0003 tests (16): exit=0 pass=60/60 fail=0
+PASS B2-16 all 60 0003 tests pass (F-6 dated titles, immutability, generic fixtures, F-7 function security, real login, hostile search_path)
+    NOTICE:  PASS H2-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H2-51 only the guard function changed: its body is the 0002 body, the other three are the 0001 bodies
+    NOTICE:  PASS H2-52 guard function keeps invoker rights, postgres ownership and an empty execute list
+    NOTICE:  PASS H2-53 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H2-54 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H2-55 no cf table holds data apart from the 14 transition rows and 3 kill switches
+    NOTICE:  PASS H2-10 runtime: anime_franchise NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-11 runtime: anime_franchise DRAFT -> READY
+    NOTICE:  PASS H2-12 runtime: anime_franchise DRAFT -> BLOCKED
+    NOTICE:  PASS H2-13 runtime: anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-14 runtime: anime_title DRAFT -> READY
+    NOTICE:  PASS H2-15 runtime: anime_title DRAFT -> BLOCKED
+    NOTICE:  PASS H2-16 runtime: research_candidate NEW -> IDEA (insert)
+    NOTICE:  PASS H2-17 runtime: research_candidate IDEA -> READY
+    NOTICE:  PASS H2-18 runtime: research_candidate READY -> RETIRED (deterministic, unchanged)
+    NOTICE:  PASS H2-19 runtime: research_candidate IDEA -> REJECTED
+    NOTICE:  PASS H2-01 runtime denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-02 runtime denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-03 runtime denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-04 runtime denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-06 runtime denied: anime_franchise READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-07 runtime denied: anime_title BLOCKED -> READY through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-08 every refused attempt left its row unchanged
+    NOTICE:  PASS H2-20 runtime: anime_franchise READY -> DRAFT is still an invalid transition
+    NOTICE:  PASS H2-21 runtime: anime_title BLOCKED -> RETIRED (no such edge) is still an invalid transition
+    NOTICE:  PASS H2-22 runtime: research_candidate RETIRED -> IDEA is still an invalid transition
+    NOTICE:  PASS H2-23 runtime: anime_franchise born READY is still an invalid transition
+    NOTICE:  PASS H2-40 admin (postgres): anime_franchise BLOCKED -> READY, the row the runtime was denied
+    NOTICE:  PASS H2-41 admin (postgres): anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-42 admin (postgres): anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-43 admin (postgres): anime_title READY -> RETIRED
+    NOTICE:  PASS H2-44 admin (superuser session): anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-45 postgres holds an ADMIN-only membership on cf_n8n_runtime, which is why the guard checks identity, not membership
+    NOTICE:  PASS H2-30 this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H2-31 real login denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-32 real login denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-33 real login denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-34 real login denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-35 real login: anime_franchise NEW -> DRAFT still works
+    NOTICE:  PASS H2-36 real login: anime_franchise DRAFT -> READY still works
+    NOTICE:  PASS H2-60 runtime: a HUMAN_GATE edge without a persisted decision fails as a missing gate decision, not as a HUMAN_ADMIN denial
+    NOTICE:  PASS H2-61 runtime: the same HUMAN_GATE edge succeeds once the matching decision exists
+    NOTICE:  PASS H2-62 runtime: a HUMAN_ADMIN edge on the same object stays denied, decision or not
+    CF 0002 TESTS COMPLETE
+--- 0002 tests on the 0003 state (16): exit=0 pass=43/43 fail=0
+PASS C1-16 all 43 0002 tests pass on the 0003 state (F-2 closed, deterministic path, admin path, real login, HUMAN_GATE stand-ins; only H2-51/H2-52 updated to 0003's deltas)
+    NOTICE:  PASS S1-ISO-01 cf holds exactly the Sprint 1 objects
+    NOTICE:  PASS S1-ISO-02 every foreign key in cf points at a cf table
+    NOTICE:  PASS S1-ISO-03 no cf function names another schema, none is SECURITY DEFINER
+    NOTICE:  PASS S1-ISO-04 cf columns use only built-in or cf types, and no cf object depends on an extension
+    NOTICE:  PASS S1-ISO-05 cf_n8n_runtime is LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION and a member of nothing
+    NOTICE:  PASS S1-PRIV-01 cf_n8n_runtime has exactly the designed privileges on cf
+    NOTICE:  PASS S1-PRIV-02 anon, authenticated and service_role get nothing in cf
+    NOTICE:  PASS S1-PRIV-03 PUBLIC holds no privilege on any cf object
+    NOTICE:  PASS S1-GATE-00 no gate objects yet and no Sprint 1 transition needs a gate
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS S1-RUN-01 cf_n8n_runtime can run the CF-001 write path (run, franchise, title, candidate, READY)
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS S1-RPL-01 replaying a run with the same idempotency key writes nothing new
+    NOTICE:  PASS S1-ST-01 research candidate born READY rejected
+    NOTICE:  PASS S1-ST-02 READY research candidate cannot go back to IDEA
+    NOTICE:  PASS S1-IMM-01 research candidate content frozen once READY
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    NOTICE:  PASS S1-ROLE-01 cf_n8n_runtime cannot make anyone a reviewer
+    NOTICE:  PASS S1-ROLE-02 cf_n8n_runtime cannot add a state-machine edge
+    NOTICE:  PASS S1-ROLE-03 cf_n8n_runtime cannot delete rows
+    NOTICE:  PASS S1-ROLE-04 cf_n8n_runtime cannot truncate tables
+    NOTICE:  PASS S1-ROLE-05 cf_n8n_runtime cannot create objects in cf
+    NOTICE:  PASS S1-ROLE-06 cf_n8n_runtime cannot create objects in public
+    NOTICE:  PASS S1-ROLE-07 cf_n8n_runtime cannot disable the guard triggers
+    NOTICE:  PASS S1-ROLE-08 cf_n8n_runtime cannot call cf functions directly
+    NOTICE:  PASS S1-ROLE-09 cf_n8n_runtime cannot switch triggers off for its session
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted, even from a privileged session
+    SPRINT 1 TESTS COMPLETE
+--- 0001 tests on the 0003 state (16): exit=0 pass=33/33 fail=0
+PASS C2-16 all 33 Sprint 1 fail-closed tests pass on the 0003 state (identity, dedupe, no-delete, freeze, paid, publication, privileges, isolation)
+PASS D1-16 0003 VERIFY returns all 15 columns true (t,t,t,t,t,t,t,t,t,t,t,t,t,t,t)
+PASS D2-16 0001 VERIFY re-run returns all true after 0003 (t,t,t,t,t,t,t,t,t,t,t)
+    0002 VERIFY on the 0003 state: t,f,t,t,t,t,t,t,t,t,t
+PASS D3-16 0002 VERIFY on 0003: only column 2 (guard function proconfig IS NULL) differs, intentionally; guard md5 and HUMAN_ADMIN block still exact
+PASS D4-16 0003 VERIFY catches an unpinned search_path (t,t,t,f,t,t,t,t,t,t,t,t,t,t,t)
+PASS D5-16 0003 VERIFY catches an EXECUTE grant to the runtime role (t,t,t,t,f,t,t,t,t,t,t,f,t,t,t)
+PASS D6-16 0003 VERIFY shows runtime_role_passwordless=false once a password exists
+PASS G3-01-16 0003 refuses a database where 0001 is not applied
+PASS G3-02-16 0003 refuses when the runtime role has the wrong attributes and changes nothing
+PASS G3-03-16 0003 refuses a database that has the YouTube Kids tables
+PASS G3-04-16 a second apply of 0003 is refused
+PASS G3-05-16 0003 refuses to replace a drifted freeze function
+PASS G3-06-16 0003 refuses a database that is on 0001 only (guard function is not the 0002 version, so the HUMAN_ADMIN block would be lost)
+PASS G3-07-16 0003 refuses when a function already carries a search_path setting
+PASS G3-08-16 0003 refuses when the runtime role belongs to another role
+PASS R3-01-16 rollback refuses when 0003 is not applied
+PASS R3-02-16 rollback refuses to touch anything when another function is not the approved body
+PASS R3-03-16 rollback restores the 0001 freeze body (e4b4d9c63cc9870d5f59ab09e5dfe2c1), keeps the 0002 guard (0dac745af135d4772111d92fd2b168c9) and clears all four proconfig settings
+PASS R3-04-16 after the rollback the 0002 VERIFY is all true again, i.e. exactly the pre-0003 state (t,t,t,t,t,t,t,t,t,t,t)
+PASS R3-05-16 0003 VERIFY reports the freeze function and pinned search_paths as false after the rollback (f,t,t,f,t,t,t,t,t,t,t,t,t,t,t)
+PASS R3-06-16 after the rollback F-6 is back (dated READY -> RETIRED fails again): the rollback really restores the old behaviour
+    NOTICE:  PASS H3-01 cf.guard_status_transition(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-02 cf.freeze_after_first_status(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-03 cf.forbid_delete(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-04 cf.touch_updated_at(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-05 no cf function has SECURITY DEFINER, and no search_path names public, "$user" or pg_temp
+    NOTICE:  PASS H3-06 no EXECUTE grant on any cf function to anyone but the owner (PUBLIC, runtime, anon, authenticated, service_role)
+    NOTICE:  PASS H3-07 the cf schema holds exactly the same four functions, owned by postgres
+    NOTICE:  PASS H3-08 bodies: guard is the 0002 body (HUMAN_ADMIN block retained, byte for byte), touch and forbid are the 0001 bodies, freeze is the 0003 body
+    NOTICE:  PASS H3-09 the 12 triggers are still bound and enabled (3 guard, 3 freeze, 3 no-delete, 3 touch)
+    NOTICE:  PASS H3-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H3-51 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H3-52 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H3-53 no cf table holds data before the fixtures (apart from the 14 transition rows and 3 kill switches)
+    NOTICE:  PASS H3-10 runtime: dated anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H3-11 the generated column era_decade is computed for the dated titles
+    NOTICE:  PASS H3-12 runtime: dated anime_title DRAFT -> READY (NEW -> DRAFT -> READY)
+    NOTICE:  PASS H3-13 runtime: dated anime_title DRAFT -> BLOCKED (NEW -> DRAFT -> BLOCKED)
+    NOTICE:  PASS H3-14 runtime: a mutable column (display_title) still changes on a dated READY title
+    NOTICE:  PASS H3-15 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-16 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-17 runtime denied: dated anime_title READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H3-18 every refused attempt left its row unchanged
+    NOTICE:  PASS H3-20 runtime: READY title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-21 runtime: READY title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-22 runtime: READY title, start_year change (era_decade follows) -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-23 runtime: READY title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-24 runtime: BLOCKED title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-25 runtime: BLOCKED title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-26 runtime: BLOCKED title, start_year change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-27 runtime: BLOCKED title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-28 runtime: a status change that also alters a frozen column is still CF_IMMUTABLE_ROW (READY title, start_year + status)
+    NOTICE:  PASS H3-30 admin (postgres): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-31 admin (postgres): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-32 the admin transitions are persisted (READY and RETIRED) and era_decade is intact
+    NOTICE:  PASS H3-33 admin: content of a RETIRED dated title is still frozen (start_year)
+    NOTICE:  PASS H3-34 admin: a RETIRED title cannot be deleted
+    NOTICE:  PASS H3-35 fixture check: gen_fixture has two generated stored columns, neither is era_decade
+    NOTICE:  PASS H3-36 generic: status-only change succeeds when the only OLD/NEW difference is a generated column
+    NOTICE:  PASS H3-37 generic: a second status-only change on the same row succeeds
+    NOTICE:  PASS H3-38 generic: a mutable column (TG_ARGV) still changes, generated columns untouched
+    NOTICE:  PASS H3-39 generic: a real immutable source column change (src_a, which drives "doubled") still fails
+    NOTICE:  PASS H3-40 generic: a real immutable source column change (src_b, which drives "shout") still fails
+    NOTICE:  PASS H3-41 generic: status plus a source column change in one statement still fails
+    NOTICE:  PASS H3-42 generic: the failed attempts changed nothing; generated values follow the sources
+    NOTICE:  PASS H3-43 generic: a table with a dropped column and a generated column accepts a status-only change
+    NOTICE:  PASS H3-44 generic: the same table still rejects a source change
+    NOTICE:  PASS H3-45 generic: a table with no generated column (empty set) accepts a status-only change
+    NOTICE:  PASS H3-46 generic: a table with no generated column still rejects a content change
+    NOTICE:  PASS H3-47 generic: IDEA/DRAFT rows are still unfrozen (freeze returns before comparing)
+    NOTICE:  PASS H3-40a this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H3-41a real login denied: dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-42a real login denied: dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-43a real login: dated anime_title DRAFT -> READY works
+    NOTICE:  PASS H3-44a real login: a frozen column on a READY dated title still fails
+    NOTICE:  PASS H3-45a real login: a dated title cannot be deleted
+    NOTICE:  PASS H3-60 hostile session search_path: a franchise status change on a READY row (guard + freeze + touch) still succeeds
+    NOTICE:  PASS H3-61 hostile session search_path: freeze on a READY dated title (display_title change) does not resolve cf_evil.to_jsonb
+    NOTICE:  PASS H3-62 updated_at was set by pg_catalog.now(), not by cf_evil.now() (no 1999 timestamp)
+    NOTICE:  PASS H3-63 the functions hold search_path = pg_catalog, cf, which excludes the hostile and every non-cf schema
+    NOTICE:  drop cascades to 4 other objects
+    DETAIL:  drop cascades to function cf_evil.now()
+    drop cascades to function cf_evil.to_jsonb(anyelement)
+    drop cascades to function cf_evil.upper(text)
+    drop cascades to function cf_evil.md5(text)
+    NOTICE:  PASS H3-70 every fixture row is mine (fictional): 2 franchises, 5 dated titles, nothing in agent_runs, reviewers or research_candidates
+PASS R3-07-16 apply, rollback, re-apply works and all 60 0003 tests pass again
+PASS R3-08-16 rolling back 0003, then 0002, then 0001 leaves no cf schema
+PASS R3-09-16 rollback refuses a database that has the YouTube Kids tables
+
+=== Cluster 17: PostgreSQL 17.10 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit ===
+PASS A0-17 baseline = live state: guard md5 0dac745af135d4772111d92fd2b168c9 (0002), freeze md5 e4b4d9c63cc9870d5f59ab09e5dfe2c1 (0001), four functions with no search_path
+--- F-6 baseline on 0002 (17) ---
+    NOTICE:  ADMIN_READY_TO_RETIRED=CF_IMMUTABLE_ROW
+    NOTICE:  ADMIN_BLOCKED_TO_READY=CF_IMMUTABLE_ROW
+    NOTICE:  RUNTIME_READY_TO_RETIRED=CF_IMMUTABLE_ROW: cf
+    NOTICE:  RUNTIME_BLOCKED_TO_READY=CF_IMMUTABLE_ROW: cf
+PASS A1-17 F-6 REPRODUCED on the 0002 baseline: a dated title's post-DRAFT status changes fail with CF_IMMUTABLE_ROW for admin and runtime (not CF_GOVERNANCE_DENIED)
+PASS A2-17 the generic fixture (generated columns other than era_decade) is also frozen wrongly on the 0002 baseline, so the fixture test is not vacuous
+PASS A3-17 F-7 shown on the baseline: with a hostile schema first in the session search_path an unpinned cf function resolves cf_evil.to_jsonb
+PASS B1-17 0003 applies as non-superuser postgres in one transaction; freeze md5 f957a25df6e08a74a21b6a64e5181a47, guard md5 unchanged 0dac745af135d4772111d92fd2b168c9, 4 of 4 functions pinned
+    NOTICE:  PASS H3-01 cf.guard_status_transition(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-02 cf.freeze_after_first_status(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-03 cf.forbid_delete(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-04 cf.touch_updated_at(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-05 no cf function has SECURITY DEFINER, and no search_path names public, "$user" or pg_temp
+    NOTICE:  PASS H3-06 no EXECUTE grant on any cf function to anyone but the owner (PUBLIC, runtime, anon, authenticated, service_role)
+    NOTICE:  PASS H3-07 the cf schema holds exactly the same four functions, owned by postgres
+    NOTICE:  PASS H3-08 bodies: guard is the 0002 body (HUMAN_ADMIN block retained, byte for byte), touch and forbid are the 0001 bodies, freeze is the 0003 body
+    NOTICE:  PASS H3-09 the 12 triggers are still bound and enabled (3 guard, 3 freeze, 3 no-delete, 3 touch)
+    NOTICE:  PASS H3-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H3-51 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H3-52 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H3-53 no cf table holds data before the fixtures (apart from the 14 transition rows and 3 kill switches)
+    NOTICE:  PASS H3-10 runtime: dated anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H3-11 the generated column era_decade is computed for the dated titles
+    NOTICE:  PASS H3-12 runtime: dated anime_title DRAFT -> READY (NEW -> DRAFT -> READY)
+    NOTICE:  PASS H3-13 runtime: dated anime_title DRAFT -> BLOCKED (NEW -> DRAFT -> BLOCKED)
+    NOTICE:  PASS H3-14 runtime: a mutable column (display_title) still changes on a dated READY title
+    NOTICE:  PASS H3-15 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-16 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-17 runtime denied: dated anime_title READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H3-18 every refused attempt left its row unchanged
+    NOTICE:  PASS H3-20 runtime: READY title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-21 runtime: READY title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-22 runtime: READY title, start_year change (era_decade follows) -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-23 runtime: READY title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-24 runtime: BLOCKED title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-25 runtime: BLOCKED title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-26 runtime: BLOCKED title, start_year change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-27 runtime: BLOCKED title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-28 runtime: a status change that also alters a frozen column is still CF_IMMUTABLE_ROW (READY title, start_year + status)
+    NOTICE:  PASS H3-30 admin (postgres): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-31 admin (postgres): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-32 the admin transitions are persisted (READY and RETIRED) and era_decade is intact
+    NOTICE:  PASS H3-33 admin: content of a RETIRED dated title is still frozen (start_year)
+    NOTICE:  PASS H3-34 admin: a RETIRED title cannot be deleted
+    NOTICE:  PASS H3-35 fixture check: gen_fixture has two generated stored columns, neither is era_decade
+    NOTICE:  PASS H3-36 generic: status-only change succeeds when the only OLD/NEW difference is a generated column
+    NOTICE:  PASS H3-37 generic: a second status-only change on the same row succeeds
+    NOTICE:  PASS H3-38 generic: a mutable column (TG_ARGV) still changes, generated columns untouched
+    NOTICE:  PASS H3-39 generic: a real immutable source column change (src_a, which drives "doubled") still fails
+    NOTICE:  PASS H3-40 generic: a real immutable source column change (src_b, which drives "shout") still fails
+    NOTICE:  PASS H3-41 generic: status plus a source column change in one statement still fails
+    NOTICE:  PASS H3-42 generic: the failed attempts changed nothing; generated values follow the sources
+    NOTICE:  PASS H3-43 generic: a table with a dropped column and a generated column accepts a status-only change
+    NOTICE:  PASS H3-44 generic: the same table still rejects a source change
+    NOTICE:  PASS H3-45 generic: a table with no generated column (empty set) accepts a status-only change
+    NOTICE:  PASS H3-46 generic: a table with no generated column still rejects a content change
+    NOTICE:  PASS H3-47 generic: IDEA/DRAFT rows are still unfrozen (freeze returns before comparing)
+    NOTICE:  PASS H3-40a this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H3-41a real login denied: dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-42a real login denied: dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-43a real login: dated anime_title DRAFT -> READY works
+    NOTICE:  PASS H3-44a real login: a frozen column on a READY dated title still fails
+    NOTICE:  PASS H3-45a real login: a dated title cannot be deleted
+    NOTICE:  PASS H3-60 hostile session search_path: a franchise status change on a READY row (guard + freeze + touch) still succeeds
+    NOTICE:  PASS H3-61 hostile session search_path: freeze on a READY dated title (display_title change) does not resolve cf_evil.to_jsonb
+    NOTICE:  PASS H3-62 updated_at was set by pg_catalog.now(), not by cf_evil.now() (no 1999 timestamp)
+    NOTICE:  PASS H3-63 the functions hold search_path = pg_catalog, cf, which excludes the hostile and every non-cf schema
+    NOTICE:  drop cascades to 4 other objects
+    DETAIL:  drop cascades to function cf_evil.now()
+    drop cascades to function cf_evil.to_jsonb(anyelement)
+    drop cascades to function cf_evil.upper(text)
+    drop cascades to function cf_evil.md5(text)
+    NOTICE:  PASS H3-70 every fixture row is mine (fictional): 2 franchises, 5 dated titles, nothing in agent_runs, reviewers or research_candidates
+--- 0003 tests (17): exit=0 pass=60/60 fail=0
+PASS B2-17 all 60 0003 tests pass (F-6 dated titles, immutability, generic fixtures, F-7 function security, real login, hostile search_path)
+    NOTICE:  PASS H2-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H2-51 only the guard function changed: its body is the 0002 body, the other three are the 0001 bodies
+    NOTICE:  PASS H2-52 guard function keeps invoker rights, postgres ownership and an empty execute list
+    NOTICE:  PASS H2-53 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H2-54 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H2-55 no cf table holds data apart from the 14 transition rows and 3 kill switches
+    NOTICE:  PASS H2-10 runtime: anime_franchise NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-11 runtime: anime_franchise DRAFT -> READY
+    NOTICE:  PASS H2-12 runtime: anime_franchise DRAFT -> BLOCKED
+    NOTICE:  PASS H2-13 runtime: anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-14 runtime: anime_title DRAFT -> READY
+    NOTICE:  PASS H2-15 runtime: anime_title DRAFT -> BLOCKED
+    NOTICE:  PASS H2-16 runtime: research_candidate NEW -> IDEA (insert)
+    NOTICE:  PASS H2-17 runtime: research_candidate IDEA -> READY
+    NOTICE:  PASS H2-18 runtime: research_candidate READY -> RETIRED (deterministic, unchanged)
+    NOTICE:  PASS H2-19 runtime: research_candidate IDEA -> REJECTED
+    NOTICE:  PASS H2-01 runtime denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-02 runtime denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-03 runtime denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-04 runtime denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-06 runtime denied: anime_franchise READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-07 runtime denied: anime_title BLOCKED -> READY through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-08 every refused attempt left its row unchanged
+    NOTICE:  PASS H2-20 runtime: anime_franchise READY -> DRAFT is still an invalid transition
+    NOTICE:  PASS H2-21 runtime: anime_title BLOCKED -> RETIRED (no such edge) is still an invalid transition
+    NOTICE:  PASS H2-22 runtime: research_candidate RETIRED -> IDEA is still an invalid transition
+    NOTICE:  PASS H2-23 runtime: anime_franchise born READY is still an invalid transition
+    NOTICE:  PASS H2-40 admin (postgres): anime_franchise BLOCKED -> READY, the row the runtime was denied
+    NOTICE:  PASS H2-41 admin (postgres): anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-42 admin (postgres): anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-43 admin (postgres): anime_title READY -> RETIRED
+    NOTICE:  PASS H2-44 admin (superuser session): anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-45 postgres holds an ADMIN-only membership on cf_n8n_runtime, which is why the guard checks identity, not membership
+    NOTICE:  PASS H2-30 this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H2-31 real login denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-32 real login denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-33 real login denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-34 real login denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-35 real login: anime_franchise NEW -> DRAFT still works
+    NOTICE:  PASS H2-36 real login: anime_franchise DRAFT -> READY still works
+    NOTICE:  PASS H2-60 runtime: a HUMAN_GATE edge without a persisted decision fails as a missing gate decision, not as a HUMAN_ADMIN denial
+    NOTICE:  PASS H2-61 runtime: the same HUMAN_GATE edge succeeds once the matching decision exists
+    NOTICE:  PASS H2-62 runtime: a HUMAN_ADMIN edge on the same object stays denied, decision or not
+    CF 0002 TESTS COMPLETE
+--- 0002 tests on the 0003 state (17): exit=0 pass=43/43 fail=0
+PASS C1-17 all 43 0002 tests pass on the 0003 state (F-2 closed, deterministic path, admin path, real login, HUMAN_GATE stand-ins; only H2-51/H2-52 updated to 0003's deltas)
+    NOTICE:  PASS S1-ISO-01 cf holds exactly the Sprint 1 objects
+    NOTICE:  PASS S1-ISO-02 every foreign key in cf points at a cf table
+    NOTICE:  PASS S1-ISO-03 no cf function names another schema, none is SECURITY DEFINER
+    NOTICE:  PASS S1-ISO-04 cf columns use only built-in or cf types, and no cf object depends on an extension
+    NOTICE:  PASS S1-ISO-05 cf_n8n_runtime is LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION and a member of nothing
+    NOTICE:  PASS S1-PRIV-01 cf_n8n_runtime has exactly the designed privileges on cf
+    NOTICE:  PASS S1-PRIV-02 anon, authenticated and service_role get nothing in cf
+    NOTICE:  PASS S1-PRIV-03 PUBLIC holds no privilege on any cf object
+    NOTICE:  PASS S1-GATE-00 no gate objects yet and no Sprint 1 transition needs a gate
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS S1-RUN-01 cf_n8n_runtime can run the CF-001 write path (run, franchise, title, candidate, READY)
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS S1-RPL-01 replaying a run with the same idempotency key writes nothing new
+    NOTICE:  PASS S1-ST-01 research candidate born READY rejected
+    NOTICE:  PASS S1-ST-02 READY research candidate cannot go back to IDEA
+    NOTICE:  PASS S1-IMM-01 research candidate content frozen once READY
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    NOTICE:  PASS S1-ROLE-01 cf_n8n_runtime cannot make anyone a reviewer
+    NOTICE:  PASS S1-ROLE-02 cf_n8n_runtime cannot add a state-machine edge
+    NOTICE:  PASS S1-ROLE-03 cf_n8n_runtime cannot delete rows
+    NOTICE:  PASS S1-ROLE-04 cf_n8n_runtime cannot truncate tables
+    NOTICE:  PASS S1-ROLE-05 cf_n8n_runtime cannot create objects in cf
+    NOTICE:  PASS S1-ROLE-06 cf_n8n_runtime cannot create objects in public
+    NOTICE:  PASS S1-ROLE-07 cf_n8n_runtime cannot disable the guard triggers
+    NOTICE:  PASS S1-ROLE-08 cf_n8n_runtime cannot call cf functions directly
+    NOTICE:  PASS S1-ROLE-09 cf_n8n_runtime cannot switch triggers off for its session
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted, even from a privileged session
+    SPRINT 1 TESTS COMPLETE
+--- 0001 tests on the 0003 state (17): exit=0 pass=33/33 fail=0
+PASS C2-17 all 33 Sprint 1 fail-closed tests pass on the 0003 state (identity, dedupe, no-delete, freeze, paid, publication, privileges, isolation)
+PASS D1-17 0003 VERIFY returns all 15 columns true (t,t,t,t,t,t,t,t,t,t,t,t,t,t,t)
+PASS D2-17 0001 VERIFY re-run returns all true after 0003 (t,t,t,t,t,t,t,t,t,t,t)
+    0002 VERIFY on the 0003 state: t,f,t,t,t,t,t,t,t,t,t
+PASS D3-17 0002 VERIFY on 0003: only column 2 (guard function proconfig IS NULL) differs, intentionally; guard md5 and HUMAN_ADMIN block still exact
+PASS D4-17 0003 VERIFY catches an unpinned search_path (t,t,t,f,t,t,t,t,t,t,t,t,t,t,t)
+PASS D5-17 0003 VERIFY catches an EXECUTE grant to the runtime role (t,t,t,t,f,t,t,t,t,t,t,f,t,t,t)
+PASS D6-17 0003 VERIFY shows runtime_role_passwordless=false once a password exists
+PASS G3-01-17 0003 refuses a database where 0001 is not applied
+PASS G3-02-17 0003 refuses when the runtime role has the wrong attributes and changes nothing
+PASS G3-03-17 0003 refuses a database that has the YouTube Kids tables
+PASS G3-04-17 a second apply of 0003 is refused
+PASS G3-05-17 0003 refuses to replace a drifted freeze function
+PASS G3-06-17 0003 refuses a database that is on 0001 only (guard function is not the 0002 version, so the HUMAN_ADMIN block would be lost)
+PASS G3-07-17 0003 refuses when a function already carries a search_path setting
+PASS G3-08-17 0003 refuses when the runtime role belongs to another role
+PASS R3-01-17 rollback refuses when 0003 is not applied
+PASS R3-02-17 rollback refuses to touch anything when another function is not the approved body
+PASS R3-03-17 rollback restores the 0001 freeze body (e4b4d9c63cc9870d5f59ab09e5dfe2c1), keeps the 0002 guard (0dac745af135d4772111d92fd2b168c9) and clears all four proconfig settings
+PASS R3-04-17 after the rollback the 0002 VERIFY is all true again, i.e. exactly the pre-0003 state (t,t,t,t,t,t,t,t,t,t,t)
+PASS R3-05-17 0003 VERIFY reports the freeze function and pinned search_paths as false after the rollback (f,t,t,f,t,t,t,t,t,t,t,t,t,t,t)
+PASS R3-06-17 after the rollback F-6 is back (dated READY -> RETIRED fails again): the rollback really restores the old behaviour
+    NOTICE:  PASS H3-01 cf.guard_status_transition(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-02 cf.freeze_after_first_status(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-03 cf.forbid_delete(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-04 cf.touch_updated_at(): search_path = pg_catalog, cf, SECURITY INVOKER, postgres-owned
+    NOTICE:  PASS H3-05 no cf function has SECURITY DEFINER, and no search_path names public, "$user" or pg_temp
+    NOTICE:  PASS H3-06 no EXECUTE grant on any cf function to anyone but the owner (PUBLIC, runtime, anon, authenticated, service_role)
+    NOTICE:  PASS H3-07 the cf schema holds exactly the same four functions, owned by postgres
+    NOTICE:  PASS H3-08 bodies: guard is the 0002 body (HUMAN_ADMIN block retained, byte for byte), touch and forbid are the 0001 bodies, freeze is the 0003 body
+    NOTICE:  PASS H3-09 the 12 triggers are still bound and enabled (3 guard, 3 freeze, 3 no-delete, 3 touch)
+    NOTICE:  PASS H3-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H3-51 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H3-52 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H3-53 no cf table holds data before the fixtures (apart from the 14 transition rows and 3 kill switches)
+    NOTICE:  PASS H3-10 runtime: dated anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H3-11 the generated column era_decade is computed for the dated titles
+    NOTICE:  PASS H3-12 runtime: dated anime_title DRAFT -> READY (NEW -> DRAFT -> READY)
+    NOTICE:  PASS H3-13 runtime: dated anime_title DRAFT -> BLOCKED (NEW -> DRAFT -> BLOCKED)
+    NOTICE:  PASS H3-14 runtime: a mutable column (display_title) still changes on a dated READY title
+    NOTICE:  PASS H3-15 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-16 runtime denied (CF_GOVERNANCE_DENIED, not CF_IMMUTABLE_ROW): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-17 runtime denied: dated anime_title READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H3-18 every refused attempt left its row unchanged
+    NOTICE:  PASS H3-20 runtime: READY title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-21 runtime: READY title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-22 runtime: READY title, start_year change (era_decade follows) -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-23 runtime: READY title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-24 runtime: BLOCKED title, normalised_title_key change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-25 runtime: BLOCKED title, franchise_id change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-26 runtime: BLOCKED title, start_year change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-27 runtime: BLOCKED title, media_type change -> CF_IMMUTABLE_ROW
+    NOTICE:  PASS H3-28 runtime: a status change that also alters a frozen column is still CF_IMMUTABLE_ROW (READY title, start_year + status)
+    NOTICE:  PASS H3-30 admin (postgres): dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-31 admin (postgres): dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-32 the admin transitions are persisted (READY and RETIRED) and era_decade is intact
+    NOTICE:  PASS H3-33 admin: content of a RETIRED dated title is still frozen (start_year)
+    NOTICE:  PASS H3-34 admin: a RETIRED title cannot be deleted
+    NOTICE:  PASS H3-35 fixture check: gen_fixture has two generated stored columns, neither is era_decade
+    NOTICE:  PASS H3-36 generic: status-only change succeeds when the only OLD/NEW difference is a generated column
+    NOTICE:  PASS H3-37 generic: a second status-only change on the same row succeeds
+    NOTICE:  PASS H3-38 generic: a mutable column (TG_ARGV) still changes, generated columns untouched
+    NOTICE:  PASS H3-39 generic: a real immutable source column change (src_a, which drives "doubled") still fails
+    NOTICE:  PASS H3-40 generic: a real immutable source column change (src_b, which drives "shout") still fails
+    NOTICE:  PASS H3-41 generic: status plus a source column change in one statement still fails
+    NOTICE:  PASS H3-42 generic: the failed attempts changed nothing; generated values follow the sources
+    NOTICE:  PASS H3-43 generic: a table with a dropped column and a generated column accepts a status-only change
+    NOTICE:  PASS H3-44 generic: the same table still rejects a source change
+    NOTICE:  PASS H3-45 generic: a table with no generated column (empty set) accepts a status-only change
+    NOTICE:  PASS H3-46 generic: a table with no generated column still rejects a content change
+    NOTICE:  PASS H3-47 generic: IDEA/DRAFT rows are still unfrozen (freeze returns before comparing)
+    NOTICE:  PASS H3-40a this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H3-41a real login denied: dated anime_title BLOCKED -> READY
+    NOTICE:  PASS H3-42a real login denied: dated anime_title READY -> RETIRED
+    NOTICE:  PASS H3-43a real login: dated anime_title DRAFT -> READY works
+    NOTICE:  PASS H3-44a real login: a frozen column on a READY dated title still fails
+    NOTICE:  PASS H3-45a real login: a dated title cannot be deleted
+    NOTICE:  PASS H3-60 hostile session search_path: a franchise status change on a READY row (guard + freeze + touch) still succeeds
+    NOTICE:  PASS H3-61 hostile session search_path: freeze on a READY dated title (display_title change) does not resolve cf_evil.to_jsonb
+    NOTICE:  PASS H3-62 updated_at was set by pg_catalog.now(), not by cf_evil.now() (no 1999 timestamp)
+    NOTICE:  PASS H3-63 the functions hold search_path = pg_catalog, cf, which excludes the hostile and every non-cf schema
+    NOTICE:  drop cascades to 4 other objects
+    DETAIL:  drop cascades to function cf_evil.now()
+    drop cascades to function cf_evil.to_jsonb(anyelement)
+    drop cascades to function cf_evil.upper(text)
+    drop cascades to function cf_evil.md5(text)
+    NOTICE:  PASS H3-70 every fixture row is mine (fictional): 2 franchises, 5 dated titles, nothing in agent_runs, reviewers or research_candidates
+PASS R3-07-17 apply, rollback, re-apply works and all 60 0003 tests pass again
+PASS R3-08-17 rolling back 0003, then 0002, then 0001 leaves no cf schema
+PASS R3-09-17 rollback refuses a database that has the YouTube Kids tables
+
+SUMMARY: 62 harness checks passed, 0 failed

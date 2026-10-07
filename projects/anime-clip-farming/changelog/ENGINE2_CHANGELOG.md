@@ -4,6 +4,21 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-07 — ENGINE 2 — PRE-CF001 DATABASE HARDENING (migration 0003: F-6 + F-7)
+
+- **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-07T11:23Z.
+- **Branch:** `engine2/clip-farming-sprint-01-preflight`. Not merged; no PR.
+- **Live (Supabase `mkeldytatorxxszjdngt` only):** pre-apply re-check showed no drift; applied `0003_cf_freeze_generated_columns_and_search_path.sql` (sha256 `d6aca6551153d20bda97b930510a9dc555cc69c33d9e0350cd7aa605aa0217f3`) as `cf_freeze_generated_columns_and_search_path`, version `20261007113241`. VERIFY 0003 15/15, 0001 11/11, advisor 0 findings (was 4 WARN), privileges unchanged, role still passwordless, 0 data rows.
+- **Change:** freeze function ignores generated columns (catalog-driven); `search_path = pg_catalog, cf` pinned on all four `cf` functions; guard body untouched (HUMAN_ADMIN block retained).
+- **Repo:** migration 0003 + ROLLBACK/VERIFY/TESTS, ADR-003, hardening evidence and raw test output, `evidence/cf-0003-tools/`, README, ADR-002 note.
+- **Tests:** 62/62 harness checks on PostgreSQL 16.15 and 17.10 (F-6 reproduced first; 60 new tests; 0001 33/33; 0002 43/43; rollback/reapply).
+- **Not changed:** 0001/0002 files, data model, runtime role attributes/privileges, password (none), n8n, other projects.
+- **Counters:** CF workflows 0, n8n executions 0, provider/paid calls 0, publications 0, schedules 0.
+- **Rollback:** `0003 ... ROLLBACK.sql` (reopens F-6/F-7; remove the history row by hand); human approval needed.
+- **Stop state:** STOPPED. Next: a human sets the runtime password and creates the n8n credential. CF-001 not authorised.
+
+---
+
 ## 2026-10-07 — ENGINE 2 — PRE-CF001 DATABASE ACTIVATION (migrations 0001 and 0002)
 
 - **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain decisions D1–D3, relayed by Aquila, 2026-10-07T10:57Z.
