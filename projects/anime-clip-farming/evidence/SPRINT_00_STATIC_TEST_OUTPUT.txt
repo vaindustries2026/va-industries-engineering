@@ -1,0 +1,41 @@
+# Sprint 0 static test output — throwaway local PostgreSQL 16.15 (container only; not Supabase)
+# DDL: architecture/data-contracts/migrations-draft/0001_cf_backbone.DESIGN_ONLY.sql sha256 9252c0749697ce83c149903553ddcd5281e3dfa291ba285f46561f453e21d15c
+# Tests: architecture/data-contracts/migrations-draft/0001_cf_backbone.STATIC_TESTS.sql sha256 ce6f8170a7961887312965e2cab253fc753cf8a0f80bdd01e38f30dbd7fd81ed
+# Run: 2026-10-07 UTC; lines that are bare UUIDs are gate_decision_ids returned by fixture decisions
+NOTICE:  PASS T-ID-01 malformed UUID rejected
+NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+NOTICE:  PASS T-ID-04 duplicate episode natural key rejected
+NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+NOTICE:  PASS T-ID-06 scene with non-positive span rejected
+NOTICE:  PASS T-ID-07 scene without research provenance rejected
+NOTICE:  PASS T-ST-01 invalid insert status (APPROVED at birth) rejected
+NOTICE:  PASS T-ST-02 skipping REVIEW (IDEA -> APPROVED) rejected
+NOTICE:  PASS T-GATE-01 REVIEW -> APPROVED without a gate decision rejected (AI recommendation is not approval)
+NOTICE:  PASS T-IMM-01 editorial content frozen once in REVIEW
+NOTICE:  PASS T-GATE-02 unauthorised reviewer for gate rejected
+NOTICE:  PASS T-GATE-03 stale review (content hash changed since viewing) rejected
+NOTICE:  PASS T-GATE-04 unknown object rejected
+36a6cdc2-fe57-4a8e-b597-cee387dd8cd0
+NOTICE:  PASS T-GATE-05 G1 approval persisted and status APPROVED
+NOTICE:  PASS T-RPL-01 replaying the same G1 submission writes nothing new
+NOTICE:  PASS T-APP-01 gate decisions are append-only (no UPDATE)
+NOTICE:  PASS T-APP-02 gate decisions are append-only (no DELETE)
+NOTICE:  PASS T-APP-03 lifecycle rows are never deleted
+3a93c4ee-aa13-4257-9e57-615752875767
+NOTICE:  PASS T-SRC-01 BLOCKED package must say why
+NOTICE:  PASS T-SRC-02 approved script + blocked source package is a valid state
+NOTICE:  PASS T-SRC-03 scene publication status stays UNKNOWN (research access is not permission)
+NOTICE:  PASS T-SRC-04 BLOCKED package cannot be approved
+NOTICE:  PASS T-SRC-05 a manifest needs a source package that exists
+NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+NOTICE:  PASS T-PUB-01 all kill switches default OFF
+NOTICE:  PASS T-PUB-02 nothing is publish-eligible
+NOTICE:  PASS T-ROLE-01 cf_agent cannot insert gate decisions
+NOTICE:  PASS T-ROLE-02 cf_agent cannot call the gate function
+NOTICE:  PASS T-ROLE-03 cf_agent cannot turn on publishing
+eb4ed870-2bec-4ef0-a92e-ff961d56dc03
+NOTICE:  PASS T-GATE-06 revoked script is RETIRED and its approval is no longer effective
+STATIC TESTS COMPLETE
