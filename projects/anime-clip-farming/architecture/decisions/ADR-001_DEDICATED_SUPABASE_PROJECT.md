@@ -34,8 +34,8 @@ Sprint 0 proposed putting Clip Farming tables in a new `cf` schema inside the ex
 
 Privilege order:
 1. Provisioning (done): role exists, no password, no grants.
-2. Migration `0001_cf_sprint01` (not applied): creates the objects, revokes everything from PUBLIC, then grants `cf_n8n_runtime` USAGE on `cf`, SELECT on the Sprint 1 tables, and INSERT/UPDATE on the four CF-001 tables only. No default privileges, so later objects get nothing until a later migration grants it.
-3. Human (pending): sets the role password and creates the n8n credential `Engine 2 — Clip Farming Supabase DB`.
+2. Migration `0001_cf_sprint01` (applied 2026-10-07, version `20261007105903`): creates the objects, revokes everything from PUBLIC, then grants `cf_n8n_runtime` USAGE on `cf`, SELECT on the Sprint 1 tables, and INSERT/UPDATE on the four CF-001 tables only. No default privileges, so later objects get nothing until a later migration grants it.
+3. Human (still pending after 0001 and 0002 were applied): sets the role password and creates the n8n credential `Engine 2 — Clip Farming Supabase DB`.
 
 ## Secrets
 - The project's database password for `postgres` was generated inside the Supabase provisioning call. It was not returned to Claude and is not in any file, commit, log or message. If it is ever needed, a human resets it in the dashboard (Project Settings → Database).

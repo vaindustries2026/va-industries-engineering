@@ -2,7 +2,7 @@
 
 **Status:** PROPOSED — DESIGN ONLY — NOT APPLIED. Placement revised after Sprint 0 by ADR-001 (dedicated Supabase project); the tables, columns, keys and rules below are unchanged.
 **Draft DDL:** `migrations-draft/0001_cf_backbone.DESIGN_ONLY.sql` (validated only in throwaway local PostgreSQL 16.15 and 17.10; 33/33 static tests in `migrations-draft/0001_cf_backbone.STATIC_TESTS.sql` pass).
-**Sprint 1 subset:** `migrations/0001_cf_sprint01.sql` (preflight passed, not applied; see `../../evidence/PRE_SPRINT_01_MIGRATION_PREFLIGHT.md`).
+**Sprint 1 subset:** `migrations/0001_cf_sprint01.sql` (applied 2026-10-07; see `../../evidence/PRE_SPRINT_01_MIGRATION_PREFLIGHT.md` and `../../evidence/PRE_CF001_DATABASE_ACTIVATION_EVIDENCE.md`), plus `migrations/0002_cf_runtime_human_admin_guard.sql` (applied; [ADR-002](../decisions/ADR-002_RUNTIME_ROLE_CANNOT_MAKE_HUMAN_ADMIN_TRANSITIONS.md)). The guard function in the draft design file still shows the 0001 body; 0002 is the live version.
 **Identities:** `IDENTITY_CONTRACTS_v0.1.md`. **States:** `../state-machine/STATE_MODEL_v0.1.md`. **Gates:** `../approval-contracts/HUMAN_GOVERNANCE_GATES_v0.1.md`.
 
 ---

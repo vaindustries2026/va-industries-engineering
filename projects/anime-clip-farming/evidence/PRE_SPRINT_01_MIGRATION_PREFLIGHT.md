@@ -2,6 +2,8 @@
 
 **Result: READY TO APPLY. Not applied.** Applying needs an explicit human / Company Brain approval that names the file and sha256 below.
 
+> **Update, 2026-10-07:** the Company Brain approved this exact file and sha256; it was applied and verified, and F-2 was fixed by migration 0002. See `PRE_CF001_DATABASE_ACTIVATION_EVIDENCE.md`. The text below is the preflight as it stood before the apply.
+
 | | |
 |---|---|
 | Migration | `architecture/data-contracts/migrations/0001_cf_sprint01.sql` |
@@ -120,7 +122,7 @@ GRANT SELECT ON ALL TABLES IN SCHEMA cf TO cf_n8n_runtime;
 | # | Finding | Handling |
 |---|---|---|
 | F-1 | §15 of the Sprint 0 report missed that `system_flags` needs `reviewers`. | Included `reviewers` (D-1). Confirm with the approval. |
-| F-2 | `HUMAN_ADMIN` transitions (franchise/title `BLOCKED → READY`, `READY → RETIRED`) are documented as human-only, but the guard trigger does not check who makes them. The runtime role can update those tables, so a faulty workflow could make them. This is in the accepted design, not new. | Unchanged here. Recommend a small follow-up migration that rejects `HUMAN_ADMIN` edges for `cf_n8n_runtime`, before any workflow writes those statuses. Needs a decision. |
+| F-2 | `HUMAN_ADMIN` transitions (franchise/title `BLOCKED → READY`, `READY → RETIRED`) are documented as human-only, but the guard trigger does not check who makes them. The runtime role can update those tables, so a faulty workflow could make them. This is in the accepted design, not new. | Unchanged here. Recommend a small follow-up migration that rejects `HUMAN_ADMIN` edges for `cf_n8n_runtime`, before any workflow writes those statuses. Needs a decision. **Resolved 2026-10-07:** approved and implemented as migration 0002 (ADR-002). |
 | F-3 | The Sprint 0 design described a `cf_owner` role that its SQL never created. | Objects are owned by `postgres`, the applying role. Recorded in the design file and ADR-001. |
 | F-4 | Supabase does not document whether `apply_migration` wraps the file in one transaction. | The file has no BEGIN/COMMIT of its own; the rollback is safe on a partial apply; `VERIFY.sql` checks the result. |
 | F-5 | Local tests cannot reproduce Supabase-only pieces (supautils, Supabase event triggers). | Covered by the live read-only checks (§3, provisioning evidence §4) and `VERIFY.sql` after the apply. |

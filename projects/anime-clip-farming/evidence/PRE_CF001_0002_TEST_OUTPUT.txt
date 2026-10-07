@@ -1,0 +1,224 @@
+# Engine 2 migration 0002 local test run (throwaway clusters inside the engineering container; never Supabase)
+# Run: 2026-10-07T11:13:10Z
+# sha256 24c01ae7fca4adb7b59f24598629fb7bd9ead993609ce02c1814f48b24aca7ea  0001_cf_sprint01.sql
+# sha256 dd0fbd63f6f8ed9df412dd7e580922b0b6dfa1a5daef6a4ca3b7c46dff3b2d75  0001_cf_sprint01.TESTS.sql
+# sha256 99c821d6458fd6d75deee92b9d00d66be051e0679b3b717bac8a4560c23f392e  0001_cf_sprint01.VERIFY.sql
+# sha256 09025a9489369667c15a3e39f6348eebf8660a70278ae2f005fce0d619ee76da  0001_cf_sprint01.ROLLBACK.sql
+# sha256 80d44f0420f859a2508a0d8e33e3d7318797849345a41a02840339342be0c66b  0002_cf_runtime_human_admin_guard.sql
+# sha256 85df5dc17c4699c36f141290fcd4722819f4f51cbcb1cde84ad78be2e8ec5e7f  0002_cf_runtime_human_admin_guard.ROLLBACK.sql
+# sha256 d0494c32ec8faf753e58d54a209b29159d8e946f890cb591024a5f1d1fbf36f8  0002_cf_runtime_human_admin_guard.TESTS.sql
+# sha256 851fa89eb66c0334c7115419b5fb5a2c150fa41363dd5c3e004f8f1e700a0454  0002_cf_runtime_human_admin_guard.VERIFY.sql
+
+=== Cluster 16: PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit ===
+PASS F0-16 on 0001 alone the runtime role CAN do BLOCKED -> READY and READY -> RETIRED (finding F-2 reproduced)
+PASS B1-16 0002 applies as non-superuser postgres in one transaction; guard body md5 = 0dac745af135d4772111d92fd2b168c9
+--- 0002 tests (16): exit=0 pass=43/43 fail=0
+    NOTICE:  PASS H2-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H2-51 only the guard function changed: its body is the 0002 body, the other three are the 0001 bodies
+    NOTICE:  PASS H2-52 guard function keeps invoker rights, postgres ownership and an empty execute list
+    NOTICE:  PASS H2-53 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H2-54 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H2-55 no cf table holds data apart from the 14 transition rows and 3 kill switches
+    NOTICE:  PASS H2-10 runtime: anime_franchise NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-11 runtime: anime_franchise DRAFT -> READY
+    NOTICE:  PASS H2-12 runtime: anime_franchise DRAFT -> BLOCKED
+    NOTICE:  PASS H2-13 runtime: anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-14 runtime: anime_title DRAFT -> READY
+    NOTICE:  PASS H2-15 runtime: anime_title DRAFT -> BLOCKED
+    NOTICE:  PASS H2-16 runtime: research_candidate NEW -> IDEA (insert)
+    NOTICE:  PASS H2-17 runtime: research_candidate IDEA -> READY
+    NOTICE:  PASS H2-18 runtime: research_candidate READY -> RETIRED (deterministic, unchanged)
+    NOTICE:  PASS H2-19 runtime: research_candidate IDEA -> REJECTED
+    NOTICE:  PASS H2-01 runtime denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-02 runtime denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-03 runtime denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-04 runtime denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-06 runtime denied: anime_franchise READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-07 runtime denied: anime_title BLOCKED -> READY through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-08 every refused attempt left its row unchanged
+    NOTICE:  PASS H2-20 runtime: anime_franchise READY -> DRAFT is still an invalid transition
+    NOTICE:  PASS H2-21 runtime: anime_title BLOCKED -> RETIRED (no such edge) is still an invalid transition
+    NOTICE:  PASS H2-22 runtime: research_candidate RETIRED -> IDEA is still an invalid transition
+    NOTICE:  PASS H2-23 runtime: anime_franchise born READY is still an invalid transition
+    NOTICE:  PASS H2-40 admin (postgres): anime_franchise BLOCKED -> READY, the row the runtime was denied
+    NOTICE:  PASS H2-41 admin (postgres): anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-42 admin (postgres): anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-43 admin (postgres): anime_title READY -> RETIRED
+    NOTICE:  PASS H2-44 admin (superuser session): anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-45 postgres holds an ADMIN-only membership on cf_n8n_runtime, which is why the guard checks identity, not membership
+    NOTICE:  PASS H2-30 this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H2-31 real login denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-32 real login denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-33 real login denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-34 real login denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-35 real login: anime_franchise NEW -> DRAFT still works
+    NOTICE:  PASS H2-36 real login: anime_franchise DRAFT -> READY still works
+    NOTICE:  PASS H2-60 runtime: a HUMAN_GATE edge without a persisted decision fails as a missing gate decision, not as a HUMAN_ADMIN denial
+    NOTICE:  PASS H2-61 runtime: the same HUMAN_GATE edge succeeds once the matching decision exists
+    NOTICE:  PASS H2-62 runtime: a HUMAN_ADMIN edge on the same object stays denied, decision or not
+    CF 0002 TESTS COMPLETE
+PASS B2-16 all 43 0002 tests pass (denials, deterministic path, admin path, real login, HUMAN_GATE compatibility)
+--- 0001 tests after 0002 (16): exit=0 pass=33/33 fail=0
+    NOTICE:  PASS S1-ISO-01 cf holds exactly the Sprint 1 objects
+    NOTICE:  PASS S1-ISO-02 every foreign key in cf points at a cf table
+    NOTICE:  PASS S1-ISO-03 no cf function names another schema, none is SECURITY DEFINER
+    NOTICE:  PASS S1-ISO-04 cf columns use only built-in or cf types, and no cf object depends on an extension
+    NOTICE:  PASS S1-ISO-05 cf_n8n_runtime is LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION and a member of nothing
+    NOTICE:  PASS S1-PRIV-01 cf_n8n_runtime has exactly the designed privileges on cf
+    NOTICE:  PASS S1-PRIV-02 anon, authenticated and service_role get nothing in cf
+    NOTICE:  PASS S1-PRIV-03 PUBLIC holds no privilege on any cf object
+    NOTICE:  PASS S1-GATE-00 no gate objects yet and no Sprint 1 transition needs a gate
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS S1-RUN-01 cf_n8n_runtime can run the CF-001 write path (run, franchise, title, candidate, READY)
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS S1-RPL-01 replaying a run with the same idempotency key writes nothing new
+    NOTICE:  PASS S1-ST-01 research candidate born READY rejected
+    NOTICE:  PASS S1-ST-02 READY research candidate cannot go back to IDEA
+    NOTICE:  PASS S1-IMM-01 research candidate content frozen once READY
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    NOTICE:  PASS S1-ROLE-01 cf_n8n_runtime cannot make anyone a reviewer
+    NOTICE:  PASS S1-ROLE-02 cf_n8n_runtime cannot add a state-machine edge
+    NOTICE:  PASS S1-ROLE-03 cf_n8n_runtime cannot delete rows
+    NOTICE:  PASS S1-ROLE-04 cf_n8n_runtime cannot truncate tables
+    NOTICE:  PASS S1-ROLE-05 cf_n8n_runtime cannot create objects in cf
+    NOTICE:  PASS S1-ROLE-06 cf_n8n_runtime cannot create objects in public
+    NOTICE:  PASS S1-ROLE-07 cf_n8n_runtime cannot disable the guard triggers
+    NOTICE:  PASS S1-ROLE-08 cf_n8n_runtime cannot call cf functions directly
+    NOTICE:  PASS S1-ROLE-09 cf_n8n_runtime cannot switch triggers off for its session
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted, even from a privileged session
+    SPRINT 1 TESTS COMPLETE
+PASS B3-16 all 33 Sprint 1 fail-closed tests still pass after 0002 (identity, dedupe, no-delete, freeze, paid, publication, privileges, isolation, CREATE)
+PASS B4a-16 0001 VERIFY returns all true after 0002 (t,t,t,t,t,t,t,t,t,t,t)
+PASS B4b-16 0002 VERIFY returns all true (t,t,t,t,t,t,t,t,t,t,t)
+PASS B4c-16 0002 VERIFY catches an extra privilege (runtime_privileges_exact=false: t,t,t,t,t,t,t,t,f,t,t)
+PASS B4d-16 0002 VERIFY shows runtime_role_passwordless=false once a password exists (t,t,t,t,t,t,t,f,t,t,t)
+PASS K1-16 F-6 pinned: a dated READY title cannot change status for ANY role (CF_IMMUTABLE_ROW from the freeze trigger, before the status guard)
+    NOTICE:  ADMIN_RESULT=CF_IMMUTABLE_ROW: cf
+    NOTICE:  RUNTIME_RESULT=CF_IMMUTABLE_ROW: cf
+PASS G2-01-16 0002 refuses a database where 0001 is not applied
+PASS G2-02-16 0002 refuses when the runtime role has the wrong attributes and leaves the function unchanged
+PASS G2-03-16 0002 refuses a database that has the YouTube Kids tables
+PASS G2-04-16 a second apply of 0002 is refused
+PASS G2-05-16 0002 refuses to replace a guard function that is not the approved 0001 version
+PASS G2-06-16 0002 refuses when the runtime role belongs to another role
+PASS R2-01-16 rollback refuses when 0002 is not applied
+PASS R2-02-16 rollback refuses to overwrite an unknown function
+PASS R2-03-16 rollback restores the exact 0001 body (md5 eb7450cc84bc9e3d8c4ae4cd7d9187e3) and removes only its own history row
+PASS R2-04-16 0002 VERIFY reports guard_function_is_0002_exact=false after the rollback (f,t,t,t,t,t,t,t,t,t,t)
+PASS R2-05-16 re-apply after rollback succeeds and all 43 0002 tests pass again
+PASS R2-06-16 rollback refuses a database that has the YouTube Kids tables
+PASS R2-07-16 rolling back 0002 and then 0001 leaves no cf schema
+
+=== Cluster 17: PostgreSQL 17.10 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit ===
+PASS F0-17 on 0001 alone the runtime role CAN do BLOCKED -> READY and READY -> RETIRED (finding F-2 reproduced)
+PASS B1-17 0002 applies as non-superuser postgres in one transaction; guard body md5 = 0dac745af135d4772111d92fd2b168c9
+--- 0002 tests (17): exit=0 pass=43/43 fail=0
+    NOTICE:  PASS H2-50 allowed_transitions is exactly the accepted 14 rows, 4 of them HUMAN_ADMIN
+    NOTICE:  PASS H2-51 only the guard function changed: its body is the 0002 body, the other three are the 0001 bodies
+    NOTICE:  PASS H2-52 guard function keeps invoker rights, postgres ownership and an empty execute list
+    NOTICE:  PASS H2-53 runtime privilege matrix unchanged: USAGE on cf, SELECT everywhere, INSERT/UPDATE on the four CF-001 tables, nothing else
+    NOTICE:  PASS H2-54 runtime role attributes unchanged, no memberships, owns nothing, still has no password
+    NOTICE:  PASS H2-55 no cf table holds data apart from the 14 transition rows and 3 kill switches
+    NOTICE:  PASS H2-10 runtime: anime_franchise NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-11 runtime: anime_franchise DRAFT -> READY
+    NOTICE:  PASS H2-12 runtime: anime_franchise DRAFT -> BLOCKED
+    NOTICE:  PASS H2-13 runtime: anime_title NEW -> DRAFT (insert)
+    NOTICE:  PASS H2-14 runtime: anime_title DRAFT -> READY
+    NOTICE:  PASS H2-15 runtime: anime_title DRAFT -> BLOCKED
+    NOTICE:  PASS H2-16 runtime: research_candidate NEW -> IDEA (insert)
+    NOTICE:  PASS H2-17 runtime: research_candidate IDEA -> READY
+    NOTICE:  PASS H2-18 runtime: research_candidate READY -> RETIRED (deterministic, unchanged)
+    NOTICE:  PASS H2-19 runtime: research_candidate IDEA -> REJECTED
+    NOTICE:  PASS H2-01 runtime denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-02 runtime denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-03 runtime denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-04 runtime denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-06 runtime denied: anime_franchise READY -> RETIRED through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-07 runtime denied: anime_title BLOCKED -> READY through INSERT ... ON CONFLICT DO UPDATE
+    NOTICE:  PASS H2-08 every refused attempt left its row unchanged
+    NOTICE:  PASS H2-20 runtime: anime_franchise READY -> DRAFT is still an invalid transition
+    NOTICE:  PASS H2-21 runtime: anime_title BLOCKED -> RETIRED (no such edge) is still an invalid transition
+    NOTICE:  PASS H2-22 runtime: research_candidate RETIRED -> IDEA is still an invalid transition
+    NOTICE:  PASS H2-23 runtime: anime_franchise born READY is still an invalid transition
+    NOTICE:  PASS H2-40 admin (postgres): anime_franchise BLOCKED -> READY, the row the runtime was denied
+    NOTICE:  PASS H2-41 admin (postgres): anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-42 admin (postgres): anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-43 admin (postgres): anime_title READY -> RETIRED
+    NOTICE:  PASS H2-44 admin (superuser session): anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-45 postgres holds an ADMIN-only membership on cf_n8n_runtime, which is why the guard checks identity, not membership
+    NOTICE:  PASS H2-30 this session is a real cf_n8n_runtime login
+    NOTICE:  PASS H2-31 real login denied: anime_franchise BLOCKED -> READY
+    NOTICE:  PASS H2-32 real login denied: anime_franchise READY -> RETIRED
+    NOTICE:  PASS H2-33 real login denied: anime_title BLOCKED -> READY
+    NOTICE:  PASS H2-34 real login denied: anime_title READY -> RETIRED
+    NOTICE:  PASS H2-35 real login: anime_franchise NEW -> DRAFT still works
+    NOTICE:  PASS H2-36 real login: anime_franchise DRAFT -> READY still works
+    NOTICE:  PASS H2-60 runtime: a HUMAN_GATE edge without a persisted decision fails as a missing gate decision, not as a HUMAN_ADMIN denial
+    NOTICE:  PASS H2-61 runtime: the same HUMAN_GATE edge succeeds once the matching decision exists
+    NOTICE:  PASS H2-62 runtime: a HUMAN_ADMIN edge on the same object stays denied, decision or not
+    CF 0002 TESTS COMPLETE
+PASS B2-17 all 43 0002 tests pass (denials, deterministic path, admin path, real login, HUMAN_GATE compatibility)
+--- 0001 tests after 0002 (17): exit=0 pass=33/33 fail=0
+    NOTICE:  PASS S1-ISO-01 cf holds exactly the Sprint 1 objects
+    NOTICE:  PASS S1-ISO-02 every foreign key in cf points at a cf table
+    NOTICE:  PASS S1-ISO-03 no cf function names another schema, none is SECURITY DEFINER
+    NOTICE:  PASS S1-ISO-04 cf columns use only built-in or cf types, and no cf object depends on an extension
+    NOTICE:  PASS S1-ISO-05 cf_n8n_runtime is LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION and a member of nothing
+    NOTICE:  PASS S1-PRIV-01 cf_n8n_runtime has exactly the designed privileges on cf
+    NOTICE:  PASS S1-PRIV-02 anon, authenticated and service_role get nothing in cf
+    NOTICE:  PASS S1-PRIV-03 PUBLIC holds no privilege on any cf object
+    NOTICE:  PASS S1-GATE-00 no gate objects yet and no Sprint 1 transition needs a gate
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS S1-RUN-01 cf_n8n_runtime can run the CF-001 write path (run, franchise, title, candidate, READY)
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS S1-RPL-01 replaying a run with the same idempotency key writes nothing new
+    NOTICE:  PASS S1-ST-01 research candidate born READY rejected
+    NOTICE:  PASS S1-ST-02 READY research candidate cannot go back to IDEA
+    NOTICE:  PASS S1-IMM-01 research candidate content frozen once READY
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    NOTICE:  PASS S1-ROLE-01 cf_n8n_runtime cannot make anyone a reviewer
+    NOTICE:  PASS S1-ROLE-02 cf_n8n_runtime cannot add a state-machine edge
+    NOTICE:  PASS S1-ROLE-03 cf_n8n_runtime cannot delete rows
+    NOTICE:  PASS S1-ROLE-04 cf_n8n_runtime cannot truncate tables
+    NOTICE:  PASS S1-ROLE-05 cf_n8n_runtime cannot create objects in cf
+    NOTICE:  PASS S1-ROLE-06 cf_n8n_runtime cannot create objects in public
+    NOTICE:  PASS S1-ROLE-07 cf_n8n_runtime cannot disable the guard triggers
+    NOTICE:  PASS S1-ROLE-08 cf_n8n_runtime cannot call cf functions directly
+    NOTICE:  PASS S1-ROLE-09 cf_n8n_runtime cannot switch triggers off for its session
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted, even from a privileged session
+    SPRINT 1 TESTS COMPLETE
+PASS B3-17 all 33 Sprint 1 fail-closed tests still pass after 0002 (identity, dedupe, no-delete, freeze, paid, publication, privileges, isolation, CREATE)
+PASS B4a-17 0001 VERIFY returns all true after 0002 (t,t,t,t,t,t,t,t,t,t,t)
+PASS B4b-17 0002 VERIFY returns all true (t,t,t,t,t,t,t,t,t,t,t)
+PASS B4c-17 0002 VERIFY catches an extra privilege (runtime_privileges_exact=false: t,t,t,t,t,t,t,t,f,t,t)
+PASS B4d-17 0002 VERIFY shows runtime_role_passwordless=false once a password exists (t,t,t,t,t,t,t,f,t,t,t)
+PASS K1-17 F-6 pinned: a dated READY title cannot change status for ANY role (CF_IMMUTABLE_ROW from the freeze trigger, before the status guard)
+    NOTICE:  ADMIN_RESULT=CF_IMMUTABLE_ROW: cf
+    NOTICE:  RUNTIME_RESULT=CF_IMMUTABLE_ROW: cf
+PASS G2-01-17 0002 refuses a database where 0001 is not applied
+PASS G2-02-17 0002 refuses when the runtime role has the wrong attributes and leaves the function unchanged
+PASS G2-03-17 0002 refuses a database that has the YouTube Kids tables
+PASS G2-04-17 a second apply of 0002 is refused
+PASS G2-05-17 0002 refuses to replace a guard function that is not the approved 0001 version
+PASS G2-06-17 0002 refuses when the runtime role belongs to another role
+PASS R2-01-17 rollback refuses when 0002 is not applied
+PASS R2-02-17 rollback refuses to overwrite an unknown function
+PASS R2-03-17 rollback restores the exact 0001 body (md5 eb7450cc84bc9e3d8c4ae4cd7d9187e3) and removes only its own history row
+PASS R2-04-17 0002 VERIFY reports guard_function_is_0002_exact=false after the rollback (f,t,t,t,t,t,t,t,t,t,t)
+PASS R2-05-17 re-apply after rollback succeeds and all 43 0002 tests pass again
+PASS R2-06-17 rollback refuses a database that has the YouTube Kids tables
+PASS R2-07-17 rolling back 0002 and then 0001 leaves no cf schema
+
+SUMMARY: 44 harness checks passed, 0 failed

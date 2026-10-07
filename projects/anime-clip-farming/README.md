@@ -10,13 +10,13 @@ Build a human-governed system that turns anime research into **original V&A comm
 
 | | |
 |---|---|
-| Last completed | **Pre-Sprint 1 Supabase provisioning + migration preflight** (2026-10-07, branch `engine2/clip-farming-sprint-01-preflight`). Sprint 0 (foundation) before it, on `engine2/clip-farming-sprint-00-foundation` |
-| Status | **Stopped.** Sprint 1 migration is READY TO APPLY, not applied. The n8n credential waits on a human |
-| Database | Dedicated Supabase project `V&A Anime Clip Farming — Engine 2` (ref `mkeldytatorxxszjdngt`, eu-north-1, Free plan), schema `cf` ([ADR-001](architecture/decisions/ADR-001_DEDICATED_SUPABASE_PROJECT.md)). It holds no CF table yet |
-| Implemented live | The empty dedicated project and the runtime role `cf_n8n_runtime` (no password, no grants) |
+| Last completed | **Pre-CF-001 database activation** (2026-10-07, branch `engine2/clip-farming-sprint-01-preflight`): migrations 0001 and 0002 applied and verified. Before it: pre-Sprint 1 provisioning and preflight, then Sprint 0 (foundation) on `engine2/clip-farming-sprint-00-foundation` |
+| Status | **Stopped.** The database foundation is applied. The runtime role has no password yet; the n8n credential waits on a human. CF-001 is not authorised |
+| Database | Dedicated Supabase project `V&A Anime Clip Farming — Engine 2` (ref `mkeldytatorxxszjdngt`, eu-north-1, Free plan), schema `cf` ([ADR-001](architecture/decisions/ADR-001_DEDICATED_SUPABASE_PROJECT.md)). 7 tables, empty apart from 14 transition rows and 3 kill switches (all off) |
+| Implemented live | The dedicated project; role `cf_n8n_runtime` (no password); migration `0001_cf_sprint01` (7 `cf` tables, 4 functions, 12 triggers, minimal runtime grants); migration `0002_cf_runtime_human_admin_guard` ([ADR-002](architecture/decisions/ADR-002_RUNTIME_ROLE_CANNOT_MAKE_HUMAN_ADMIN_TRANSITIONS.md): the runtime role cannot make HUMAN_ADMIN transitions) |
 | Design only | Data model, full schema (DESIGN ONLY — NOT APPLIED), identities, state model, gates, CF-001…CF-009 contracts, dependency map, test strategy |
 | Other live Engine 2 objects | One experimental, unpublished, never-executed n8n workflow `WStqWRlqax7iocOx` (ANIME-LAB — VIDEO-SMOKE-001). No CF workflow, no CF credential |
-| Next | Approve and apply `migrations/0001_cf_sprint01.sql`; a human sets the role password and creates the n8n credential; then Sprint 1 — CF-001 Market & Trend Radar. **Sprint 1 is not authorised.** No sprint is ever automatically authorised by a previous one or by any document in this folder |
+| Next | A human sets the `cf_n8n_runtime` password and creates the n8n credential; the Company Brain decides findings F-6 (dated titles cannot change status) and F-7 (search_path warnings); then Sprint 1 — CF-001 Market & Trend Radar. **Sprint 1 is not authorised.** No sprint is ever automatically authorised by a previous one or by any document in this folder |
 
 ## Engine 2 architecture
 
@@ -54,6 +54,7 @@ projects/anime-clip-farming/
     ENGINE2_INFRASTRUCTURE_BLUEPRINT.md       blueprint, byte-for-byte from project files
     decisions/
       ADR-001_DEDICATED_SUPABASE_PROJECT.md   dedicated project + runtime role (post-Sprint 0)
+      ADR-002_RUNTIME_ROLE_CANNOT_MAKE_HUMAN_ADMIN_TRANSITIONS.md   finding F-2 fix
     data-contracts/
       DATA_MODEL_v0.1.md                      tables, keys, writers, readers, dedupe
       IDENTITY_CONTRACTS_v0.1.md              every UUID identity and its rules
@@ -61,10 +62,12 @@ projects/anime-clip-farming/
         0001_cf_backbone.DESIGN_ONLY.sql      DESIGN ONLY — NOT APPLIED (full 23-table design)
         0001_cf_backbone.STATIC_TESTS.sql     local-only static tests (33)
       migrations/
-        0001_cf_sprint01.sql                  Sprint 1 subset — READY TO APPLY, NOT APPLIED
+        0001_cf_sprint01.sql                  Sprint 1 subset — APPLIED 2026-10-07 (version 20261007105903)
         0001_cf_sprint01.ROLLBACK.sql         removes exactly what 0001 creates
         0001_cf_sprint01.VERIFY.sql           read-only post-apply check
         0001_cf_sprint01.TESTS.sql            local-only tests (33)
+        0002_cf_runtime_human_admin_guard.sql APPLIED 2026-10-07 (version 20261007110907); replaces cf.guard_status_transition() only
+        0002_cf_runtime_human_admin_guard.ROLLBACK.sql / .VERIFY.sql / .TESTS.sql
     workflow-contracts/
       AGENT_CONTRACTS_CF001_CF009_v0.1.md     per-agent contracts
       DEPENDENCY_MAP_v0.1.md                  chain, gates, paid and publish entry points
@@ -79,9 +82,12 @@ projects/anime-clip-farming/
     SPRINT_00_BASELINE_EVIDENCE.md            read-only baseline
     SPRINT_00_STATIC_TEST_OUTPUT.txt          local static test run
     PRE_SPRINT_01_SUPABASE_PROVISIONING_EVIDENCE.md   project, region, isolation, role, credential stop
-    PRE_SPRINT_01_MIGRATION_PREFLIGHT.md      comparison, target guard, tests, rollback, READY TO APPLY
+    PRE_SPRINT_01_MIGRATION_PREFLIGHT.md      comparison, target guard, tests, rollback (READY TO APPLY at the time)
+    PRE_CF001_DATABASE_ACTIVATION_EVIDENCE.md apply results, 0002 diff and tests, privilege matrix, findings F-6 / F-7
+    PRE_CF001_0002_TEST_OUTPUT.txt            local test run of 0002 (PostgreSQL 16.15 and 17.10)
     PRE_SPRINT_01_TEST_OUTPUT.txt             local test run (PostgreSQL 16.15 and 17.10)
-    pre-sprint-01-tools/                      scripts that built and checked the migration
+    pre-sprint-01-tools/                      scripts that built and checked migration 0001
+    cf-0002-tools/                            scripts that built and tested migration 0002
   changelog/
     ENGINE2_CHANGELOG.md
 ```

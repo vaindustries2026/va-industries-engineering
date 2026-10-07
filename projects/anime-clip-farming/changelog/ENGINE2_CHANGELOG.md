@@ -4,6 +4,24 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-07 — ENGINE 2 — PRE-CF001 DATABASE ACTIVATION (migrations 0001 and 0002)
+
+- **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain decisions D1–D3, relayed by Aquila, 2026-10-07T10:57Z.
+- **Repository / branch:** `vaindustries2026/va-industries-engineering`, `engine2/clip-farming-sprint-01-preflight`. Not merged; no PR.
+- **Live changes (Supabase project `mkeldytatorxxszjdngt` only):**
+  - Preflight first: ref, `ACTIVE_HEALTHY`, empty migration history, `cf` absent, guard conditions, and file sha256 `24c01ae7fca4adb7b59f24598629fb7bd9ead993609ce02c1814f48b24aca7ea` all matched the approval.
+  - Applied `0001_cf_sprint01.sql` as migration `cf_sprint01`, version `20261007105903`. VERIFY 11/11 true. Security advisors: 4 WARN (`function_search_path_mutable`), finding F-7.
+  - Created, tested locally and applied `0002_cf_runtime_human_admin_guard.sql` (sha256 `80d44f0420f859a2508a0d8e33e3d7318797849345a41a02840339342be0c66b`) as migration `cf_runtime_human_admin_guard`, version `20261007110907`. It replaces only `cf.guard_status_transition()`: when the edge's mode is `HUMAN_ADMIN` and `session_user` or `current_user` is `cf_n8n_runtime`, it raises `CF_GOVERNANCE_DENIED` (SQLSTATE 42501). 0002 VERIFY 11/11 true; 0001 VERIFY re-run 11/11 true.
+- **Repo changes:** migration 0002 with ROLLBACK, VERIFY and local TESTS; ADR-002; `evidence/cf-0002-tools/` (generator and test harness); activation evidence and raw test output; README, DATA_MODEL, ADR-001, preflight and Sprint 1 placeholder status lines. `0001_cf_sprint01.sql` and its sha256 are unchanged.
+- **Tests (local, throwaway PostgreSQL 16.15 and 17.10):** 44/44 harness checks (22 per version): F-2 reproduced on 0001 alone; the four HUMAN_ADMIN transitions denied for the runtime role (also via upsert and in a real login); every deterministic CF-001 edge still works; admin path works; the 33 Sprint 1 tests pass after 0002; 0002 guard and rollback checks; HUMAN_GATE compatibility.
+- **Not changed:** the data model (14 transition rows identical, md5 `6ea6f7a4…`); the runtime role's attributes, memberships and privileges; the role is still **passwordless**; the shared Supabase project; every n8n workflow and credential; Slack; Google Cloud; everything outside `projects/anime-clip-farming/`.
+- **Findings:** F-2 fixed. **F-6** (not fixed, needs a decision): `cf.freeze_after_first_status` blocks every status change on a dated `anime_titles` row after DRAFT, for every role including admins, because the generated column `era_decade` is not computed yet in `NEW` during a BEFORE trigger. F-7 (not changed): advisor `function_search_path_mutable` WARN on the four `cf` functions.
+- **Counters:** migrations applied 2, committed rows 0, roles created or altered 0, passwords set 0 · CF workflows built 0, n8n workflows created/modified/published/executed 0/0/0/0, credentials created 0 · provider calls 0, paid calls 0 · purchases or plan changes 0 · publications, uploads, schedules, Slack messages 0.
+- **Rollback:** undo 0002 with `0002_cf_runtime_human_admin_guard.ROLLBACK.sql` (reopens F-2); then 0001 with `0001_cf_sprint01.ROLLBACK.sql`; both need human approval and were tested locally.
+- **Stop state:** STOPPED. Waiting for a human to set the `cf_n8n_runtime` password and create the n8n credential, and for decisions on F-6 and F-7. CF-001 not authorised.
+
+---
+
 ## 2026-10-07 — ENGINE 2 — PRE-SPRINT 1 SUPABASE PROVISIONING (+ Sprint 1 migration preflight)
 
 - **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, 2026-10-07T03:24Z.
