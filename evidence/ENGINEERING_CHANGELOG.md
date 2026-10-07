@@ -1695,3 +1695,40 @@ migrations: 0
 next: "human listening and selection by exact SHA-256; rights reconciliation; trimming/gain staging of the chosen files; separate ingestion authorisation"
 status: "EP005_ELEVENLABS_AUDIO_CANDIDATES_READY_FOR_HUMAN_REVIEW + MAX_NINE_GENERATIONS + ORIGINAL_SHA256_RECORDED + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261007-EP005-SELECTED-AUDIO-MASTERING: mastered review derivatives of the three human-selected ElevenLabs audio candidates
+
+```yaml
+change_id: "ENG-20261007-EP005-SELECTED-AUDIO-MASTERING"
+timestamp: "2026-10-07"
+actor: "Claude"
+authorised_by: "Company Brain (human selection: AMBIENCE C, CLOTH C, COMPLETION POP A; no regeneration; no credits; local review derivatives only)"
+evidence: "evidence/EP005_SELECTED_AUDIO_MASTERING_v1.0.md"
+recipe: "evidence/ep005/audio_mastering/master_ep005_selected_audio_v1.sh (ffmpeg only, bitexact, verifies source SHA-256; two runs byte-identical)"
+manifest: "evidence/ep005/audio_mastering/EP005_MASTERING_MANIFEST_v1.json"
+sources_verified:
+  - {id: "AMB-BATHROOM-QUIET-v01-EL-CAND-C", gen: "Oe9nvpw0JuR3zKjs6Vib", sha256: "baee962c86f8725ffa595331f452a698bde7d5e69871165696bf43e933317d6b"}
+  - {id: "FOLEY-CLOTH-SOFT-v01-EL-CAND-C", gen: "eiW0bnQ9IsbkD6qwPVuQ", sha256: "b0c80ce840bc39f0f306b8f84dcf5fb8b654a011249bcd03a63933911f6b9080"}
+  - {id: "SFX-COMPLETION-POP-v01-EL-CAND-A", gen: "75tahAZ0wFnzcjSADUkx", sha256: "26cbfe89678e68b4826a8179c29ffa427492bd521a8df300c51d9c8f4b9d4a6d"}
+masters:   # WAV PCM s24le 44.1 kHz stereo
+  - {production_id: "AMB-BATHROOM-QUIET-v01", file: "AMB-BATHROOM-QUIET-v01_MASTER_REVIEW.wav", bytes: 6615168, sha256: "4ce88a1a396c3a9dc4f34ee4f9d1ae8464b2ab5bd81ddf0fd375eff5ab5566c7", processing: "loop-aware 80 Hz 4th-order high-pass + gain +34.5 dB; 25.0002 s; -42.0 LUFS; peak -29.9 dBFS"}
+  - {production_id: "FOLEY-CLOTH-SOFT-v01", file: "FOLEY-CLOTH-SOFT-v01_MASTER_REVIEW.wav", bytes: 248826, sha256: "e861dd2b7b26a78b7be31ab9db1bef3d5ccc7905f700e5c04bc9eae849805f03", processing: "tail trim 1.000 -> 0.940 s + gain +18.8 dB; peak -6.08 dBFS"}
+  - {production_id: "SFX-COMPLETION-POP-v01", file: "SFX-COMPLETION-POP-v01_MASTER_REVIEW.wav", bytes: 53022, sha256: "0c5d136d407b60f9dc6ec65ab98fbd764dcb0e6f7f24b2fd04dd3f5d57f6398f", processing: "30 Hz high-pass + trim 0.480 -> 0.200 s + 0.25 ms fade-in + 20 ms fade-out + gain +26.9 dB; peak -6.02 dBFS"}
+deviation: "two high-pass filters beyond gain/trim/fade, each justified by a measured objective defect (ambience: ~99% of power is a 25-40 Hz rumble 17 dB above the audible band; pop: sub-40 Hz unipolar pulse). Comparison file with gain-only ambience provided. Decision requested: accept or redo strictly gain-only."
+findings: "ambience loop seam clean (left as provider made it); faint tonal lines 3.6-15.8 kHz ~25 dB below hush (likely MP3 artefacts, untouched); masters kept at native 44.1 kHz while the approved SFX library is 48 kHz; sources are 128 kbps MP3"
+rights_status: "UNRECONCILED; connector workspace/account identity (a2a81ab0f7fd406cb3fff9eef8e173c2) vs VA account unresolved; no ingestion until reconciled and a human approves exact bytes"
+review_location: "session scratch .../scratchpad/mastering/review_final/ (3 masters + 2 review aids); audio binaries NOT committed"
+elevenlabs_calls: 0
+credits_used: 0
+new_generations: 0
+registry_changes: 0
+storage_changes: 0
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+migrations: 0
+next: "final human listening; decision on the two filters; rights/account reconciliation; separate ingestion authorisation (upload with no overwrite, readback, register APPROVED, derived manifest mapping the three audio requirements by name)"
+status: "EP005_SELECTED_AUDIO_MASTERING_READY_FOR_FINAL_HUMAN_REVIEW + THREE_MASTERED_REVIEW_FILES + ZERO_NEW_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
+```

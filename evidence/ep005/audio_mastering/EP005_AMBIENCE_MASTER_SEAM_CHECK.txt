@@ -1,0 +1,3 @@
+seam (>=100 Hz band): wrap-around step 1.13e-03 = percentile 56.02 of all adjacent-sample steps (p99.9 5.27e-03, max 8.00e-03)
+200 ms RMS (dBFS) last/first: -50.4/-49.3 | per-200ms-window RMS spread across file: min -50.4, max -46.6
+mean 1/3-oct band diff last 1 s vs first 1 s: 0.66 dB | typical random 1 s pairs in this file: median 0.62, p95 1.13 dB
