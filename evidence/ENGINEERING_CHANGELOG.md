@@ -1758,3 +1758,31 @@ migrations: 0
 rollback: "delete derived row 45cc7493 and the three registry rows; remove the three storage objects; 96df250f untouched"
 status: "EP005_AUDIO_INGESTION_AND_FINAL_DERIVED_MANIFEST_READY_FOR_HUMAN_APPROVAL + THREE_APPROVED_AUDIO_REGISTRY_ROWS + NEW_DERIVED_MANIFEST_STATUS_REVIEW + ZERO_TBD_AUDIO_REQUIREMENTS + EXPECTED_REQUIREMENT_COUNT_14 + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261007-EP005-FINAL-AGENT006-PROOF: approve derived manifest 45cc7493 and run Agent-006 once
+
+```yaml
+change_id: "ENG-20261007-EP005-FINAL-AGENT006-PROOF"
+timestamp: "2026-10-07T04:10:02Z"
+actor: "Claude"
+authorised_by: "Human via Company Brain (approve 45cc7493 status-only; exactly one Agent-006 run)"
+evidence: ["evidence/EP005_FINAL_AGENT006_PROOF_v1.0.md", "evidence/EP005_DERIVED_MANIFEST_APPROVAL_v1.0.md"]
+approval: "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed REVIEW -> APPROVED, status only (canonical sha e0c2e849... verified before; all other fields identical); approval commit d1ab62cc2a09e60e7e6c191b241087d5a59abd29; 96df250f unchanged"
+method: "single-use caller ntqoBdrDyUHiGjVc (no credentials), archived after the run; Agent-006 ZTBdnKFO8STSjJU4 at 9bf6bbef unchanged and unpublished"
+execution: {caller: "578 success", agent006: "579 success 04:10:02Z-04:10:19Z", asset_resolution_run_id: "A006-1791346204213", readiness_manifest: "edc4ad58-3e5d-4ac2-9c74-c9af03af363f REVIEW / READY_FOR_HUMAN_APPROVAL"}
+result: "14 requirements: 14 REUSE_EXISTING, 0 NEEDS_HUMAN_REVIEW, 0 CREATE_NEW, 0 BLOCKED, 0 ambiguous"
+db_audit: "ARI 58->72 (+14, prior md5 unchanged); readiness 6->7 (prior md5 unchanged); registry (23), manifests (11), storage (19) identical before/after the run"
+agent007_executions: 0
+readiness_approvals: 0
+generation_calls: 0
+paid_calls: 0
+elevenlabs_calls: 0
+registry_changes: 0
+storage_changes: 0
+migrations: 0
+rollback: "delete edc4ad58 and the 14 ARI rows of A006-1791346204213; set 45cc7493 back to REVIEW if required"
+open_items: ["human approval of readiness manifest edc4ad58 (not given)", "ElevenLabs commercial-rights documentation (deferred by human)"]
+status: "EP005_FINAL_AGENT006_PROOF_COMPLETE + DERIVED_MANIFEST_APPROVED + EXACTLY_ONE_AGENT006_RUN + 14_REUSE_EXISTING + ZERO_NEEDS_HUMAN_REVIEW + ZERO_CREATE_NEW + ZERO_BLOCKED + ZERO_AMBIGUOUS + READY_FOR_HUMAN_APPROVAL + READINESS_MANIFEST_STATUS_REVIEW + ZERO_AGENT007_RUN + ZERO_PROVIDER_GENERATION + ZERO_PAID_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
+```
