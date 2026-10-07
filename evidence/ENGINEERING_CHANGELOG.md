@@ -1870,3 +1870,27 @@ binaries_committed: 0
 rollback: "revert this commit; delete session scratch render; nothing else to undo"
 status: "AGENT008_V01_PHASE0_COMPOSITOR_BUILT + S004_S005_TECHNICAL_SMOKE_RENDER_READY_FOR_HUMAN_REVIEW + ZERO_PROVIDER_CALLS + ZERO_PAID_CALLS + ZERO_RUNWAY_CALLS + ZERO_ELEVENLABS_CALLS + ZERO_PRODUCTION_DB_WRITES + ZERO_PRODUCTION_STORAGE_WRITES + ZERO_AGENT006_RUN + ZERO_AGENT007_RUN + TEST_SUITE_PASS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261007-EP005-VOICE-S004-TIMING-AUDIT: voice/dialogue audit and S004 timing proof (read-only)
+
+```yaml
+change_id: "ENG-20261007-EP005-VOICE-S004-TIMING-AUDIT"
+timestamp: "2026-10-07"
+actor: "Claude"
+authorised_by: "Company Brain (read-only audit; D-1 and D-2 approved, D-3 open)"
+evidence: "evidence/EP005_VOICE_AND_S004_TIMING_AUDIT_v1.0.md"
+human_decisions_recorded: {D1: "APPROVED deterministic shot-level trim of SFX-LUMI-CLUE-CHIME for S004; source unchanged; no new asset", D2: "APPROVED AMB-BATHROOM-QUIET-v01 continuity under S004 as a timeline policy", D3: "OPEN"}
+s004_dialogue: ["Lumi: A little glint! Look at his cheek.", "Lumi: Can you help Mikko find the next berry smudge?"]
+voice_infrastructure_status: "MISSING"
+elevenlabs: "TTS models multilingual_v2/v3/v4/turbo_2_5/flash_2_5; connector exposes voice + language only (no speed/stability/seed/format); duration measurable only after generation; listing/previews free"
+s004_budget: {max_dialogue_s: 4.15, est_speech_s: {comfortable: 7.03, brisk: 6.13, adult: 5.45}}
+timing_conflict: "YES (also S012 CONFLICT; S018, S001, S006, S007 TIGHT)"
+proposed_audition: "Lumi L1 Lola f9imtLc2jfOLXtqe3Ihb, L2 Libby-Animated Wu9A8zlwvFHoEpuX7MGo, L3 celine mHX7OoPk2G45VMAuinIt; multilingual_v2; 1 take each; line 1; ~102 credits est (unverified)"
+agent008_contract: "evidence/ep005/voice_audit/AGENT008_VOICE_INPUT_CONTRACT_PROPOSAL_v0.1.json (proposal only)"
+generations: 0
+credits: 0
+production_writes: 0
+status: "EP005_VOICE_AND_S004_TIMING_AUDIT_COMPLETE + TIMING_CONFLICT_YES + VOICE_INFRASTRUCTURE_MISSING + ZERO_GENERATIONS + ZERO_CREDITS + ZERO_PRODUCTION_WRITES"
+```

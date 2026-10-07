@@ -1,0 +1,285 @@
+{
+ "source": "approved manifest 45cc7493 (read-only), syllable heuristic; planning estimate",
+ "rule": "FITS: comfortable<=shot-0.3s; TIGHT: only adult rate fits; CONFLICT: even adult rate exceeds shot-0.2s",
+ "shots": [
+  {
+   "shot_id": "S001",
+   "shot_s": 6,
+   "lines": [
+    [
+     "Mikko",
+     "Berries on my face! I want to feel fresh."
+    ],
+    [
+     "Lumi",
+     "I see three little smudges."
+    ]
+   ],
+   "syllables": 17,
+   "est_comfortable_s": 6.367,
+   "est_brisk_s": 5.557,
+   "est_adult_s": 4.95,
+   "status": "TIGHT"
+  },
+  {
+   "shot_id": "S002",
+   "shot_s": 3.5,
+   "lines": [
+    [
+     "Mikko",
+     "Where shall I try first?"
+    ]
+   ],
+   "syllables": 5,
+   "est_comfortable_s": 1.667,
+   "est_brisk_s": 1.429,
+   "est_adult_s": 1.25,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S003",
+   "shot_s": 3.5,
+   "lines": [
+    [
+     "Lumi",
+     "Let’s look for one little spot."
+    ]
+   ],
+   "syllables": 7,
+   "est_comfortable_s": 2.333,
+   "est_brisk_s": 2.0,
+   "est_adult_s": 1.75,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S004",
+   "shot_s": 5,
+   "lines": [
+    [
+     "Lumi",
+     "A little glint! Look at his cheek."
+    ],
+    [
+     "Lumi",
+     "Can you help Mikko find the next berry smudge?"
+    ]
+   ],
+   "syllables": 19,
+   "est_comfortable_s": 7.033,
+   "est_brisk_s": 6.129,
+   "est_adult_s": 5.45,
+   "status": "CONFLICT"
+  },
+  {
+   "shot_id": "S006",
+   "shot_s": 2.5,
+   "lines": [
+    [
+     "Mikko",
+     "This cheek. I’ll try a gentle wipe."
+    ]
+   ],
+   "syllables": 8,
+   "est_comfortable_s": 2.917,
+   "est_brisk_s": 2.536,
+   "est_adult_s": 2.25,
+   "status": "TIGHT"
+  },
+  {
+   "shot_id": "S007",
+   "shot_s": 5.0,
+   "lines": [
+    [
+     "Mikko",
+     "Wipe your cheek with me. Soft and slow."
+    ],
+    [
+     "Mikko",
+     "Can you pretend to wipe your cheek?"
+    ]
+   ],
+   "syllables": 16,
+   "est_comfortable_s": 6.033,
+   "est_brisk_s": 5.271,
+   "est_adult_s": 4.7,
+   "status": "TIGHT"
+  },
+  {
+   "shot_id": "S010",
+   "shot_s": 5,
+   "lines": [
+    [
+     "Lumi",
+     "That cheek is clear. Two smudges left."
+    ]
+   ],
+   "syllables": 8,
+   "est_comfortable_s": 2.917,
+   "est_brisk_s": 2.536,
+   "est_adult_s": 2.25,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S012",
+   "shot_s": 5,
+   "lines": [
+    [
+     "Lumi",
+     "I see a spot near your mouth."
+    ],
+    [
+     "Lumi",
+     "Can you help Mikko find the next berry smudge?"
+    ]
+   ],
+   "syllables": 18,
+   "est_comfortable_s": 6.45,
+   "est_brisk_s": 5.593,
+   "est_adult_s": 4.95,
+   "status": "CONFLICT"
+  },
+  {
+   "shot_id": "S014",
+   "shot_s": 4,
+   "lines": [
+    [
+     "Mikko",
+     "I’ll slow my hand. One little wipe."
+    ]
+   ],
+   "syllables": 8,
+   "est_comfortable_s": 2.917,
+   "est_brisk_s": 2.536,
+   "est_adult_s": 2.25,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S016",
+   "shot_s": 4,
+   "lines": [
+    [
+     "Lumi",
+     "That spot is gone. One is left."
+    ]
+   ],
+   "syllables": 7,
+   "est_comfortable_s": 2.583,
+   "est_brisk_s": 2.25,
+   "est_adult_s": 2.0,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S018",
+   "shot_s": 6,
+   "lines": [
+    [
+     "Lumi",
+     "One tiny spot is still here."
+    ],
+    [
+     "Lumi",
+     "Can you help Mikko find the next berry smudge?"
+    ]
+   ],
+   "syllables": 18,
+   "est_comfortable_s": 6.45,
+   "est_brisk_s": 5.593,
+   "est_adult_s": 4.95,
+   "status": "TIGHT"
+  },
+  {
+   "shot_id": "S020",
+   "shot_s": 4,
+   "lines": [
+    [
+     "Mikko",
+     "My nose! I’ll wipe just that spot."
+    ]
+   ],
+   "syllables": 7,
+   "est_comfortable_s": 2.583,
+   "est_brisk_s": 2.25,
+   "est_adult_s": 2.0,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S022",
+   "shot_s": 3,
+   "lines": [
+    [
+     "Lumi",
+     "Your nose is clear, too."
+    ]
+   ],
+   "syllables": 5,
+   "est_comfortable_s": 1.787,
+   "est_brisk_s": 1.549,
+   "est_adult_s": 1.37,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S025",
+   "shot_s": 4,
+   "lines": [
+    [
+     "Lumi",
+     "Cheek, mouth, nose. All clear."
+    ]
+   ],
+   "syllables": 5,
+   "est_comfortable_s": 2.157,
+   "est_brisk_s": 1.919,
+   "est_adult_s": 1.74,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S026",
+   "shot_s": 5,
+   "lines": [
+    [
+     "Mikko",
+     "One little spot at a time!"
+    ]
+   ],
+   "syllables": 7,
+   "est_comfortable_s": 2.333,
+   "est_brisk_s": 2.0,
+   "est_adult_s": 1.75,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S027",
+   "shot_s": 5,
+   "lines": [
+    [
+     "Mikko",
+     "We did it! I feel fresh."
+    ]
+   ],
+   "syllables": 6,
+   "est_comfortable_s": 2.25,
+   "est_brisk_s": 1.964,
+   "est_adult_s": 1.75,
+   "status": "FITS"
+  },
+  {
+   "shot_id": "S028",
+   "shot_s": 5,
+   "lines": [
+    [
+     "Lumi",
+     "You look comfy. Story time."
+    ],
+    [
+     "Mikko",
+     "I’m ready to rest."
+    ]
+   ],
+   "syllables": 12,
+   "est_comfortable_s": 4.7,
+   "est_brisk_s": 4.129,
+   "est_adult_s": 3.7,
+   "status": "FITS"
+  }
+ ]
+}

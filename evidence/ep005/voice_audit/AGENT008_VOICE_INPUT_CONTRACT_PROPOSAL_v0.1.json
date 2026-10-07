@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent008-dialogue-input-proposal-v0.1",
+  "title": "PROPOSAL (not implemented): approved dialogue clip consumed by Agent-008",
+  "description": "One record per spoken line. Voice audio is a separately human-approved input. Agent-008 only places it; it never generates, regenerates, retimes by resynthesis, or substitutes dialogue. Missing, unapproved or hash-mismatched dialogue fails closed.",
+  "type": "object",
+  "required": ["shot_id", "line_index", "speaker", "voice_asset_id", "voice_id", "tts_model_id", "dialogue_text", "dialogue_text_sha256", "audio_asset_id", "audio_path", "sha256", "duration_s", "start_time_s", "end_time_s", "gain_db", "approval_status", "approved_by", "approval_record"],
+  "properties": {
+    "shot_id": {"type": "string", "pattern": "^S[0-9]{3}$"},
+    "line_index": {"type": "integer", "minimum": 0, "description": "order of the line within the shot's approved voice_lines"},
+    "speaker": {"enum": ["Lumi", "Mikko"]},
+    "voice_asset_id": {"type": "string", "description": "registry id of the human-approved character voice (e.g. VOICE-LUMI-v01), APPROVED/LOCKED"},
+    "voice_id": {"type": "string", "description": "pinned ElevenLabs voice_id recorded on the voice asset; informational for provenance"},
+    "tts_model_id": {"type": "string"},
+    "dialogue_text": {"type": "string", "description": "exact approved line, character for character"},
+    "dialogue_text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$", "description": "sha256 of dialogue_text (UTF-8, as in the approved script); must equal the hash of the manifest line"},
+    "audio_asset_id": {"type": "string", "description": "registry id of the approved dialogue clip, APPROVED/LOCKED"},
+    "audio_path": {"type": "string", "pattern": "^production-assets/"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "duration_s": {"type": "number", "exclusiveMinimum": 0, "description": "measured from the file (ffprobe sample count / rate); Agent-008 re-measures and fails on disagreement > 1 sample"},
+    "start_time_s": {"type": "number", "minimum": 0, "description": "shot-relative placement"},
+    "end_time_s": {"type": "number", "description": "= start_time_s + duration_s; must be <= shot duration minus tail guard; protected holds accept no dialogue"},
+    "gain_db": {"type": "number", "maximum": 6},
+    "approval_status": {"const": "APPROVED"},
+    "approved_by": {"type": "string"},
+    "approval_record": {"type": "string", "description": "changelog / decision id"}
+  },
+  "x-agent008-rules": [
+    "Fail closed if dialogue_text_sha256 differs from sha256 of the manifest's approved line (no paraphrase can slip in).",
+    "Fail closed if the clip, the voice asset or the line is not APPROVED, or if sha256 differs.",
+    "Fail closed if lines in one shot overlap, run past the shot end minus tail guard, or land in a protected participation hold.",
+    "Never call a TTS provider; a missing clip yields DIALOGUE_NOT_APPROVED, never a generation.",
+    "Time-stretching is not allowed by default; any retime is a separately approved edit recorded on the clip.",
+    "Captions derive from dialogue_text with start/end from this record (timeline.timed_text_from_slots)."
+  ]
+}

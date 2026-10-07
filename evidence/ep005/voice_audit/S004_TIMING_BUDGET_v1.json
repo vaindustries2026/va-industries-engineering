@@ -1,0 +1,70 @@
+{
+ "method": "syllable-rate estimate; planning only",
+ "rates_syl_per_s": {
+  "preschool_comfortable": 3.0,
+  "preschool_brisk": 3.5,
+  "adult_conversational": 4.0
+ },
+ "between_lines_s": 0.45,
+ "tail_guard_s": 0.2,
+ "S004": {
+  "shot_seconds": 5,
+  "frames": 120,
+  "glint_frames": [
+   12,
+   19
+  ],
+  "chime_clip_seconds": [
+   0.5,
+   4.875
+  ],
+  "lines": [
+   {
+    "text": "A little glint! Look at his cheek.",
+    "words": 7,
+    "syllables": 8,
+    "intra_pause_s": 0.25
+   },
+   {
+    "text": "Can you help Mikko find the next berry smudge?",
+    "words": 9,
+    "syllables": 11,
+    "intra_pause_s": 0
+   }
+  ],
+  "dialogue_window": {
+   "earliest_start_s": 0.65,
+   "latest_end_s": 4.8,
+   "max_dialogue_s": 4.15,
+   "absolute_max_s_no_reaction_no_guard": 4.5
+  },
+  "estimated_speech_s": {
+   "preschool_comfortable": 7.033,
+   "preschool_brisk": 6.129,
+   "adult_conversational": 5.45
+  },
+  "overrun_s": {
+   "preschool_comfortable": 2.883,
+   "preschool_brisk": 1.979,
+   "adult_conversational": 1.3
+  },
+  "fits_at_any_natural_rate": false,
+  "TIMING_CONFLICT": "YES"
+ },
+ "snapshot_voice_shots": [
+  {
+   "shot_id": "S004",
+   "shot_s": 5,
+   "lines": 2,
+   "est_comfortable_s": 7.033,
+   "est_brisk_s": 6.129
+  },
+  {
+   "shot_id": "S025",
+   "shot_s": 4,
+   "lines": 1,
+   "est_comfortable_s": 2.157,
+   "est_brisk_s": 1.919
+  }
+ ]
+}
