@@ -1732,3 +1732,29 @@ migrations: 0
 next: "final human listening; decision on the two filters; rights/account reconciliation; separate ingestion authorisation (upload with no overwrite, readback, register APPROVED, derived manifest mapping the three audio requirements by name)"
 status: "EP005_SELECTED_AUDIO_MASTERING_READY_FOR_FINAL_HUMAN_REVIEW + THREE_MASTERED_REVIEW_FILES + ZERO_NEW_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+```yaml
+id: ENG-20261007-EP005-AUDIO-INGESTION
+timestamp: "2026-10-07"
+actor: "Claude"
+authorised_by: "Company Brain / human (all three mastered audio files approved; ingest, register, create derived manifest in REVIEW)"
+evidence: "evidence/EP005_AUDIO_INGESTION_AND_FINAL_DERIVED_MANIFEST_v1.0.md"
+manifest: "evidence/ep005/audio_ingestion/EP005_AUDIO_INGESTION_MANIFEST_v1.json"
+storage: ["audio/ambience/AMB-BATHROOM-QUIET-v01.wav (cc28320c-8508-4979-824b-0e557a931bb8)", "audio/foley/FOLEY-CLOTH-SOFT-v01.wav (46132a21-7f7b-4052-a0f8-1d0fff576070)", "audio/sfx/SFX-COMPLETION-POP-v01.wav (222a2762-81b0-401e-b02e-abca83b5c00f)"]
+final_sha256: {AMB: "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f", CLOTH: "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f", POP: "0e3d63e607633a199feed76e93f62773bfe006b86e39515cb47fbd3a8f844dfa"}
+registry_rows: {AMB: "2ba504eb-43ad-45c2-a3bc-67ce72282359", CLOTH: "34c7e5f4-8250-4058-9b84-3ce80d5f2030", POP: "0d07e835-fa88-4078-87dd-63c35f1226ae"}
+derived_manifest: {id: "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed", status: "REVIEW", source: "96df250f-7182-4d5f-a556-b0448e518375 (unmodified)", canonical_sha256: "e0c2e849fa00c8328dd2dd670e4b5bcd477d29dc6de967d70440abc0349b0d55", requirements: "14 before, 14 after, 0 TBD::AUDIO"}
+rights_status: "UNRECONCILED (recorded in registry metadata)"
+elevenlabs_calls: 0
+credits_used: 0
+billing_changes: 0
+overwrites: 0
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+manifest_approvals: 0
+workflow_publications: 0
+migrations: 0
+rollback: "delete derived row 45cc7493 and the three registry rows; remove the three storage objects; 96df250f untouched"
+status: "EP005_AUDIO_INGESTION_AND_FINAL_DERIVED_MANIFEST_READY_FOR_HUMAN_APPROVAL + THREE_APPROVED_AUDIO_REGISTRY_ROWS + NEW_DERIVED_MANIFEST_STATUS_REVIEW + ZERO_TBD_AUDIO_REQUIREMENTS + EXPECTED_REQUIREMENT_COUNT_14 + EVIDENCE_COMMITTED_TO_GITHUB"
+```

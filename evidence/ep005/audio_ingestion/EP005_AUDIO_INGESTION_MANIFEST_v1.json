@@ -1,0 +1,28 @@
+{
+  "task": "EP005 audio finalise, ingest, register, audio-mapped derived manifest",
+  "date": "2026-10-07",
+  "approved_44k1_masters_verified": {
+    "AMB-BATHROOM-QUIET-v01": "4ce88a1a396c3a9dc4f34ee4f9d1ae8464b2ab5bd81ddf0fd375eff5ab5566c7",
+    "FOLEY-CLOTH-SOFT-v01": "e861dd2b7b26a78b7be31ab9db1bef3d5ccc7905f700e5c04bc9eae849805f03",
+    "SFX-COMPLETION-POP-v01": "0c5d136d407b60f9dc6ec65ab98fbd764dcb0e6f7f24b2fd04dd3f5d57f6398f"
+  },
+  "final_assets": [
+    {"id": "AMB-BATHROOM-QUIET-v01", "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav", "storage_object_id": "cc28320c-8508-4979-824b-0e557a931bb8", "registry_row_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359", "elevenlabs_generation_id": "Oe9nvpw0JuR3zKjs6Vib", "bytes": 7200174, "samples": 1200012, "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f"},
+    {"id": "FOLEY-CLOTH-SOFT-v01", "storage_path": "production-assets/audio/foley/FOLEY-CLOTH-SOFT-v01.wav", "storage_object_id": "46132a21-7f7b-4052-a0f8-1d0fff576070", "registry_row_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030", "elevenlabs_generation_id": "eiW0bnQ9IsbkD6qwPVuQ", "bytes": 270822, "samples": 45120, "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f"},
+    {"id": "SFX-COMPLETION-POP-v01", "storage_path": "production-assets/audio/sfx/SFX-COMPLETION-POP-v01.wav", "storage_object_id": "222a2762-81b0-401e-b02e-abca83b5c00f", "registry_row_id": "0d07e835-fa88-4078-87dd-63c35f1226ae", "elevenlabs_generation_id": "75tahAZ0wFnzcjSADUkx", "bytes": 57702, "samples": 9600, "sha256": "0e3d63e607633a199feed76e93f62773bfe006b86e39515cb47fbd3a8f844dfa"}
+  ],
+  "format": "WAV PCM s24le, 48000 Hz, stereo; ffmpeg libsoxr resampling only; two conversion runs byte-identical",
+  "derived_manifest": {
+    "id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+    "status": "REVIEW",
+    "production_plan_run_id": "DRV-EP005-AUDIO-MAPPED-1-A005O-1790400144423",
+    "source_manifest_id": "96df250f-7182-4d5f-a556-b0448e518375",
+    "source_canonical_sha256": "32e2dee8993d1c0496d24bc25d2ceb81bf06664f05e30917a730030d61fb7082",
+    "derived_canonical_sha256": "e0c2e849fa00c8328dd2dd670e4b5bcd477d29dc6de967d70440abc0349b0d55",
+    "requirements_before": 14, "requirements_after": 14,
+    "tbd_audio_before": 3, "tbd_audio_after": 0,
+    "source_row_unchanged_md5": "80e9f62a784a815328c8aa29ac612873"
+  },
+  "registry_after": {"rows": 23, "approved": 14, "review": 9, "preexisting_rows_unchanged": 20},
+  "forbidden_actions_performed": {"elevenlabs_calls": 0, "credits": 0, "billing": 0, "overwrites": 0, "agent006_runs": 0, "agent007_runs": 0, "readiness_approvals": 0, "workflow_publications": 0, "migrations": 0, "canon_changes": 0, "manifest_approvals": 0}
+}

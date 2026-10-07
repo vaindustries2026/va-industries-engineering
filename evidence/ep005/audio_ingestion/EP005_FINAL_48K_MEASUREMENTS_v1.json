@@ -1,0 +1,146 @@
+[
+ {
+  "production_id": "AMB-BATHROOM-QUIET-v01",
+  "approved_master_file": "AMB-BATHROOM-QUIET-v01_MASTER_REVIEW.wav",
+  "approved_master_sha256": "4ce88a1a396c3a9dc4f34ee4f9d1ae8464b2ab5bd81ddf0fd375eff5ab5566c7",
+  "final_file": "AMB-BATHROOM-QUIET-v01.wav",
+  "final_bytes": 7200174,
+  "final_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+  "before_44k1_master": {
+   "codec": "pcm_s24le",
+   "sample_rate": 44100,
+   "channels": 2,
+   "bits": 24,
+   "samples_per_channel": 1102511,
+   "duration_s": 25.00025,
+   "sample_peak_dBFS": -29.86,
+   "true_peak_dBTP": -29.9,
+   "rms_dBFS": -44.2,
+   "integrated_LUFS": -42.0,
+   "rms_below_60Hz_dBFS": -60.7,
+   "rms_100Hz_to_16kHz_dBFS": -47.8,
+   "rms_above_16kHz_dBFS": -78.4,
+   "first_sample_abs": 0.00803,
+   "last_sample_abs": 0.0107
+  },
+  "after_48k_final": {
+   "codec": "pcm_s24le",
+   "sample_rate": 48000,
+   "channels": 2,
+   "bits": 24,
+   "samples_per_channel": 1200012,
+   "duration_s": 25.00025,
+   "sample_peak_dBFS": -29.91,
+   "true_peak_dBTP": -29.9,
+   "rms_dBFS": -44.2,
+   "integrated_LUFS": -42.0,
+   "rms_below_60Hz_dBFS": -60.7,
+   "rms_100Hz_to_16kHz_dBFS": -47.8,
+   "rms_above_16kHz_dBFS": -78.4,
+   "first_sample_abs": 0.008,
+   "last_sample_abs": 0.0105
+  },
+  "loop_seam_before": {
+   "wrap_step_percentile_of_adjacent_steps": 56.02,
+   "last_200ms_dBFS": -50.4,
+   "first_200ms_dBFS": -49.3,
+   "file_200ms_range_dBFS": [
+    -50.4,
+    -46.6
+   ]
+  },
+  "loop_seam_after": {
+   "wrap_step_percentile_of_adjacent_steps": 57.57,
+   "last_200ms_dBFS": -50.4,
+   "first_200ms_dBFS": -49.3,
+   "file_200ms_range_dBFS": [
+    -50.4,
+    -46.6
+   ]
+  }
+ },
+ {
+  "production_id": "FOLEY-CLOTH-SOFT-v01",
+  "approved_master_file": "FOLEY-CLOTH-SOFT-v01_MASTER_REVIEW.wav",
+  "approved_master_sha256": "e861dd2b7b26a78b7be31ab9db1bef3d5ccc7905f700e5c04bc9eae849805f03",
+  "final_file": "FOLEY-CLOTH-SOFT-v01.wav",
+  "final_bytes": 270822,
+  "final_sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+  "before_44k1_master": {
+   "codec": "pcm_s24le",
+   "sample_rate": 44100,
+   "channels": 2,
+   "bits": 24,
+   "samples_per_channel": 41454,
+   "duration_s": 0.94,
+   "sample_peak_dBFS": -6.08,
+   "true_peak_dBTP": -5.9,
+   "rms_dBFS": -21.4,
+   "integrated_LUFS": -14.6,
+   "rms_below_60Hz_dBFS": -57.7,
+   "rms_100Hz_to_16kHz_dBFS": -23.6,
+   "rms_above_16kHz_dBFS": -108.1,
+   "first_sample_abs": 0.00279,
+   "last_sample_abs": 0.00158
+  },
+  "after_48k_final": {
+   "codec": "pcm_s24le",
+   "sample_rate": 48000,
+   "channels": 2,
+   "bits": 24,
+   "samples_per_channel": 45120,
+   "duration_s": 0.94,
+   "sample_peak_dBFS": -5.9,
+   "true_peak_dBTP": -5.9,
+   "rms_dBFS": -21.4,
+   "integrated_LUFS": -14.6,
+   "rms_below_60Hz_dBFS": -57.7,
+   "rms_100Hz_to_16kHz_dBFS": -23.6,
+   "rms_above_16kHz_dBFS": -107.6,
+   "first_sample_abs": 0.00262,
+   "last_sample_abs": 0.00147
+  }
+ },
+ {
+  "production_id": "SFX-COMPLETION-POP-v01",
+  "approved_master_file": "SFX-COMPLETION-POP-v01_MASTER_REVIEW.wav",
+  "approved_master_sha256": "0c5d136d407b60f9dc6ec65ab98fbd764dcb0e6f7f24b2fd04dd3f5d57f6398f",
+  "final_file": "SFX-COMPLETION-POP-v01.wav",
+  "final_bytes": 57702,
+  "final_sha256": "0e3d63e607633a199feed76e93f62773bfe006b86e39515cb47fbd3a8f844dfa",
+  "before_44k1_master": {
+   "codec": "pcm_s24le",
+   "sample_rate": 44100,
+   "channels": 2,
+   "bits": 24,
+   "samples_per_channel": 8820,
+   "duration_s": 0.2,
+   "sample_peak_dBFS": -6.02,
+   "true_peak_dBTP": -6.0,
+   "rms_dBFS": -24.8,
+   "integrated_LUFS": -70.0,
+   "rms_below_60Hz_dBFS": -42.5,
+   "rms_100Hz_to_16kHz_dBFS": -25.0,
+   "rms_above_16kHz_dBFS": -87.0,
+   "first_sample_abs": 0.0,
+   "last_sample_abs": 1.67e-06
+  },
+  "after_48k_final": {
+   "codec": "pcm_s24le",
+   "sample_rate": 48000,
+   "channels": 2,
+   "bits": 24,
+   "samples_per_channel": 9600,
+   "duration_s": 0.2,
+   "sample_peak_dBFS": -6.03,
+   "true_peak_dBTP": -6.0,
+   "rms_dBFS": -24.8,
+   "integrated_LUFS": -70.0,
+   "rms_below_60Hz_dBFS": -42.5,
+   "rms_100Hz_to_16kHz_dBFS": -25.0,
+   "rms_above_16kHz_dBFS": -87.9,
+   "first_sample_abs": 0.000335,
+   "last_sample_abs": 1.55e-06
+  }
+ }
+]

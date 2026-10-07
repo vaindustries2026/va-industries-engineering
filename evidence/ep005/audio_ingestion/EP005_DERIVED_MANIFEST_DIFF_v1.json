@@ -1,0 +1,1492 @@
+{
+ "source_manifest_id": "96df250f-7182-4d5f-a556-b0448e518375",
+ "source_canonical_sha256": "32e2dee8993d1c0496d24bc25d2ceb81bf06664f05e30917a730030d61fb7082",
+ "derived_canonical_sha256": "e0c2e849fa00c8328dd2dd670e4b5bcd477d29dc6de967d70440abc0349b0d55",
+ "row_column_changes": {
+  "production_plan_run_id": {
+   "before": "DRV-EP005-TBD-CLEANUP-1-A005O-1790400144423",
+   "after": "DRV-EP005-AUDIO-MAPPED-1-A005O-1790400144423"
+  },
+  "unique_reused_asset_count": {
+   "before": 3,
+   "after": 6
+  },
+  "status": {
+   "before": "APPROVED",
+   "after": "REVIEW"
+  },
+  "agent_version": {
+   "before": "manifest-derivation-ep005-tbd-cleanup-v1",
+   "after": "manifest-derivation-ep005-audio-mapped-v1"
+  }
+ },
+ "manifest_json_changes": [
+  {
+   "path": "$.asset_inventory",
+   "op": "changed",
+   "before": [
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Lumi clue chime",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Mikko TRY whoosh",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Berry smudge on Mikko's anatomical left cheek"
+     ],
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "OVERLAY_VFX"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009"
+     ],
+     "derived_from_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS"
+    },
+    {
+     "labels": [
+      "Berry smudge on skin beside Mikko's mouth"
+     ],
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "OVERLAY_VFX"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015"
+     ],
+     "derived_from_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS"
+    },
+    {
+     "labels": [
+      "Berry smudge on Mikko's nose"
+     ],
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "OVERLAY_VFX"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021"
+     ],
+     "derived_from_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS"
+    },
+    {
+     "labels": [
+      "Agent-004 approved new asset",
+      "Tiny hand mirror"
+     ],
+     "asset_id": "TMP_EP005_HAND_MIRROR",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "PROP"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ]
+    },
+    {
+     "labels": [
+      "Agent-004 approved new asset",
+      "Soft cloth"
+     ],
+     "asset_id": "TMP_EP005_SOFT_CLOTH",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "PROP"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ]
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "WIN sparkle chord",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    }
+   ],
+   "after": [
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Lumi clue chime",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Mikko TRY whoosh",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Berry smudge on Mikko's anatomical left cheek"
+     ],
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "OVERLAY_VFX"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009"
+     ],
+     "derived_from_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS"
+    },
+    {
+     "labels": [
+      "Berry smudge on skin beside Mikko's mouth"
+     ],
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "OVERLAY_VFX"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015"
+     ],
+     "derived_from_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS"
+    },
+    {
+     "labels": [
+      "Berry smudge on Mikko's nose"
+     ],
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "OVERLAY_VFX"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021"
+     ],
+     "derived_from_asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS"
+    },
+    {
+     "labels": [
+      "Agent-004 approved new asset",
+      "Tiny hand mirror"
+     ],
+     "asset_id": "TMP_EP005_HAND_MIRROR",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "PROP"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ]
+    },
+    {
+     "labels": [
+      "Agent-004 approved new asset",
+      "Soft cloth"
+     ],
+     "asset_id": "TMP_EP005_SOFT_CLOTH",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "PROP"
+     ],
+     "asset_status": "NEW_REQUIRED",
+     "used_in_shots": [
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ]
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "WIN sparkle chord",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Bathroom quiet ambience"
+     ],
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "AUDIO"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": [
+      "S001",
+      "S003",
+      "S005",
+      "S006",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "mapped_from_audio_tbd": "TBD::AUDIO::AMBIENCE"
+    },
+    {
+     "labels": [
+      "Soft microfiber cloth wipe"
+     ],
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "AUDIO"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": [
+      "S002",
+      "S009",
+      "S014",
+      "S015",
+      "S020",
+      "S021",
+      "S028"
+     ],
+     "mapped_from_audio_tbd": "TBD::AUDIO::FOLEY_CLOTH"
+    },
+    {
+     "labels": [
+      "Soft completion pop"
+     ],
+     "asset_id": "SFX-COMPLETION-POP-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "AUDIO"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": [
+      "S025"
+     ],
+     "mapped_from_audio_tbd": "TBD::AUDIO::COMPLETION_SFX"
+    }
+   ]
+  },
+  {
+   "path": "$.audio_asset_mappings",
+   "op": "added",
+   "after": [
+    {
+     "replaces_requirement": "TBD::AUDIO::AMBIENCE",
+     "new_requirement_key": "APPROVED_REUSE::AMB-BATHROOM-QUIET-v01",
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "shots": [
+      "S001",
+      "S003",
+      "S005",
+      "S006",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "source_generation_id": "Oe9nvpw0JuR3zKjs6Vib",
+     "original_dependency_entry": {
+      "shots": [
+       "S001",
+       "S003",
+       "S005",
+       "S006",
+       "S008",
+       "S010",
+       "S011",
+       "S012",
+       "S013",
+       "S016",
+       "S017",
+       "S018",
+       "S019",
+       "S022",
+       "S023",
+       "S024",
+       "S026",
+       "S027",
+       "S028",
+       "S029"
+      ],
+      "shot_count": 20,
+      "canonical_id": "TBD",
+      "audio_category": "AMBIENCE",
+      "source_phrases": [
+       "Quiet background ambience; canonical asset identity TBD.",
+       "Quiet ambience; asset TBD.",
+       "Quiet ambience only; asset TBD.",
+       "Quiet ambience; asset TBD. No additional clue sound.",
+       "Quiet ambience; asset TBD. No new audio identity.",
+       "Quiet ambience under the chord; asset TBD.",
+       "Barely audible cloth handling and shoulder pat; assets TBD. Quiet ambience continues.",
+       "Quiet background ambience only; canonical identity TBD."
+      ],
+      "dependency_type": "AUDIO",
+      "reference_count": 20,
+      "governance_status": "UNRESOLVED"
+     }
+    },
+    {
+     "replaces_requirement": "TBD::AUDIO::FOLEY_CLOTH",
+     "new_requirement_key": "APPROVED_REUSE::FOLEY-CLOTH-SOFT-v01",
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "shots": [
+      "S002",
+      "S009",
+      "S014",
+      "S015",
+      "S020",
+      "S021",
+      "S028"
+     ],
+     "storage_path": "production-assets/audio/foley/FOLEY-CLOTH-SOFT-v01.wav",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "source_generation_id": "eiW0bnQ9IsbkD6qwPVuQ",
+     "original_dependency_entry": {
+      "shots": [
+       "S002",
+       "S009",
+       "S014",
+       "S015",
+       "S020",
+       "S021",
+       "S028"
+      ],
+      "shot_count": 7,
+      "canonical_id": "TBD",
+      "audio_category": "FOLEY_CLOTH",
+      "source_phrases": [
+       "Very light cloth handling; sound asset TBD.",
+       "A faint, soft cloth brush; asset TBD.",
+       "Minimal cloth handling; asset TBD.",
+       "Very light cloth brush; asset TBD.",
+       "A faint cloth brush; asset TBD.",
+       "Barely audible cloth handling and shoulder pat; assets TBD. Quiet ambience continues."
+      ],
+      "dependency_type": "AUDIO",
+      "reference_count": 7,
+      "governance_status": "UNRESOLVED"
+     }
+    },
+    {
+     "replaces_requirement": "TBD::AUDIO::COMPLETION_SFX",
+     "new_requirement_key": "APPROVED_REUSE::SFX-COMPLETION-POP-v01",
+     "asset_id": "SFX-COMPLETION-POP-v01",
+     "shots": [
+      "S025"
+     ],
+     "storage_path": "production-assets/audio/sfx/SFX-COMPLETION-POP-v01.wav",
+     "sha256": "0e3d63e607633a199feed76e93f62773bfe006b86e39515cb47fbd3a8f844dfa",
+     "source_generation_id": "75tahAZ0wFnzcjSADUkx",
+     "original_dependency_entry": {
+      "shots": [
+       "S025"
+      ],
+      "shot_count": 1,
+      "canonical_id": "TBD",
+      "audio_category": "COMPLETION_SFX",
+      "source_phrases": [
+       "One soft completion pop at the clean mirror reveal; specific sound asset TBD."
+      ],
+      "dependency_type": "AUDIO",
+      "reference_count": 1,
+      "governance_status": "UNRESOLVED"
+     }
+    }
+   ]
+  },
+  {
+   "path": "$.audio_tbd_dependencies",
+   "op": "changed",
+   "before": [
+    {
+     "shots": [
+      "S001",
+      "S003",
+      "S005",
+      "S006",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "shot_count": 20,
+     "canonical_id": "TBD",
+     "audio_category": "AMBIENCE",
+     "source_phrases": [
+      "Quiet background ambience; canonical asset identity TBD.",
+      "Quiet ambience; asset TBD.",
+      "Quiet ambience only; asset TBD.",
+      "Quiet ambience; asset TBD. No additional clue sound.",
+      "Quiet ambience; asset TBD. No new audio identity.",
+      "Quiet ambience under the chord; asset TBD.",
+      "Barely audible cloth handling and shoulder pat; assets TBD. Quiet ambience continues.",
+      "Quiet background ambience only; canonical identity TBD."
+     ],
+     "dependency_type": "AUDIO",
+     "reference_count": 20,
+     "governance_status": "UNRESOLVED"
+    },
+    {
+     "shots": [
+      "S002",
+      "S009",
+      "S014",
+      "S015",
+      "S020",
+      "S021",
+      "S028"
+     ],
+     "shot_count": 7,
+     "canonical_id": "TBD",
+     "audio_category": "FOLEY_CLOTH",
+     "source_phrases": [
+      "Very light cloth handling; sound asset TBD.",
+      "A faint, soft cloth brush; asset TBD.",
+      "Minimal cloth handling; asset TBD.",
+      "Very light cloth brush; asset TBD.",
+      "A faint cloth brush; asset TBD.",
+      "Barely audible cloth handling and shoulder pat; assets TBD. Quiet ambience continues."
+     ],
+     "dependency_type": "AUDIO",
+     "reference_count": 7,
+     "governance_status": "UNRESOLVED"
+    },
+    {
+     "shots": [
+      "S025"
+     ],
+     "shot_count": 1,
+     "canonical_id": "TBD",
+     "audio_category": "COMPLETION_SFX",
+     "source_phrases": [
+      "One soft completion pop at the clean mirror reveal; specific sound asset TBD."
+     ],
+     "dependency_type": "AUDIO",
+     "reference_count": 1,
+     "governance_status": "UNRESOLVED"
+    }
+   ],
+   "after": []
+  },
+  {
+   "path": "$.audio_tbd_dependency_count",
+   "op": "changed",
+   "before": 3,
+   "after": 0
+  },
+  {
+   "path": "$.audio_tbd_reference_count",
+   "op": "changed",
+   "before": 28,
+   "after": 0
+  },
+  {
+   "path": "$.derivation.derived_from_manifest_id",
+   "op": "changed",
+   "before": "3bcde9ee-6676-480f-90da-5695b64532a7",
+   "after": "96df250f-7182-4d5f-a556-b0448e518375"
+  },
+  {
+   "path": "$.derivation.derived_from_production_plan_run_id",
+   "op": "changed",
+   "before": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+   "after": "DRV-EP005-TBD-CLEANUP-1-A005O-1790400144423"
+  },
+  {
+   "path": "$.derivation.dropped",
+   "op": "removed",
+   "before": [
+    "TBD::AUDIO::FOLEY_TOUCH"
+   ]
+  },
+  {
+   "path": "$.derivation.human_decision",
+   "op": "added",
+   "after": "Gilang approved the three mastered ElevenLabs EP005 audio files (ambience C, cloth C, pop A) on 2026-10-07 and the mapping of the three generic audio TBD requirements to exact approved assets"
+  },
+  {
+   "path": "$.derivation.human_decisions_applied",
+   "op": "removed",
+   "before": {
+    "AMBIENCE": "CREATE_NEW_AUDIO later (proposed AMB-BATHROOM-QUIET-v01); unresolved, not mapped",
+    "FOLEY_CLOTH": "CREATE_NEW_AUDIO later (proposed FOLEY-CLOTH-SOFT-v01); unresolved, not mapped",
+    "FOLEY_TOUCH": "DROPPED: barely audible, narratively non-essential; no sound asset; S028 visual shoulder-pat action unchanged",
+    "COMPLETION_SFX": "CREATE_NEW_AUDIO later (proposed SFX-COMPLETION-POP-v01); unresolved, not mapped",
+    "Mirror glint treatment": "DERIVE/COMPOSITE_FROM_EXISTING (compositor preset; not an asset; never Agent-007)",
+    "Soft completion pop visual accent": "NOT_A_SEPARATE_ASSET, KEEP (deterministic bloom pulse; never Agent-007)",
+    "Mirror reflection/compositing treatment": "NOT_A_SEPARATE_ASSET (shot-level compositing; never Agent-007)"
+   }
+  },
+  {
+   "path": "$.derivation.informed_by_agent006_run",
+   "op": "removed",
+   "before": "A006-1791181098027"
+  },
+  {
+   "path": "$.derivation.informed_by_readiness_manifest",
+   "op": "removed",
+   "before": "e32ef7eb-448d-4da8-8271-fabf51bdc81e"
+  },
+  {
+   "path": "$.derivation.mapping",
+   "op": "added",
+   "after": {
+    "TBD::AUDIO::AMBIENCE": "AMB-BATHROOM-QUIET-v01",
+    "TBD::AUDIO::FOLEY_CLOTH": "FOLEY-CLOTH-SOFT-v01",
+    "TBD::AUDIO::COMPLETION_SFX": "SFX-COMPLETION-POP-v01"
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.continuity_gap_fills",
+   "op": "removed",
+   "before": [
+    "S013:OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.derived_from_manifest_id",
+   "op": "changed",
+   "before": "670b201b-6793-4518-ad5a-d051eb98d90c",
+   "after": "3bcde9ee-6676-480f-90da-5695b64532a7"
+  },
+  {
+   "path": "$.derivation.previous_derivation.derived_from_production_plan_run_id",
+   "op": "changed",
+   "before": "A005O-1790400144423",
+   "after": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423"
+  },
+  {
+   "path": "$.derivation.previous_derivation.dropped",
+   "op": "added",
+   "after": [
+    "TBD::AUDIO::FOLEY_TOUCH"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.free_text_note",
+   "op": "removed",
+   "before": "two legacy production_order_notes (S002 shot_plan + shot_queue) mention the combined ID verbatim; intentionally unchanged"
+  },
+  {
+   "path": "$.derivation.previous_derivation.human_decisions_applied",
+   "op": "added",
+   "after": {
+    "AMBIENCE": "CREATE_NEW_AUDIO later (proposed AMB-BATHROOM-QUIET-v01); unresolved, not mapped",
+    "FOLEY_CLOTH": "CREATE_NEW_AUDIO later (proposed FOLEY-CLOTH-SOFT-v01); unresolved, not mapped",
+    "FOLEY_TOUCH": "DROPPED: barely audible, narratively non-essential; no sound asset; S028 visual shoulder-pat action unchanged",
+    "COMPLETION_SFX": "CREATE_NEW_AUDIO later (proposed SFX-COMPLETION-POP-v01); unresolved, not mapped",
+    "Mirror glint treatment": "DERIVE/COMPOSITE_FROM_EXISTING (compositor preset; not an asset; never Agent-007)",
+    "Soft completion pop visual accent": "NOT_A_SEPARATE_ASSET, KEEP (deterministic bloom pulse; never Agent-007)",
+    "Mirror reflection/compositing treatment": "NOT_A_SEPARATE_ASSET (shot-level compositing; never Agent-007)"
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.informed_by_agent006_run",
+   "op": "added",
+   "after": "A006-1791181098027"
+  },
+  {
+   "path": "$.derivation.previous_derivation.informed_by_readiness_manifest",
+   "op": "added",
+   "after": "e32ef7eb-448d-4da8-8271-fabf51bdc81e"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation",
+   "op": "added",
+   "after": {
+    "split": {
+     "TMP_EP005_BERRY_SMUDGE_OVERLAYS": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    "approval": "derived row created REVIEW; requires separate human manifest approval before any Agent-006 use",
+    "transform": "EP005_BERRY_REQUIREMENT_SPLIT_v1 (deterministic, no LLM)",
+    "free_text_note": "two legacy production_order_notes (S002 shot_plan + shot_queue) mention the combined ID verbatim; intentionally unchanged",
+    "continuity_gap_fills": [
+     "S013:OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+    ],
+    "shot_attribution_source": "shot_plans[].shot_plan.continuity_state.tracked_elements (visible_at_start OR visible_at_end)",
+    "derived_from_manifest_id": "670b201b-6793-4518-ad5a-d051eb98d90c",
+    "derived_from_production_plan_run_id": "A005O-1790400144423"
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.shot_attribution_source",
+   "op": "removed",
+   "before": "shot_plans[].shot_plan.continuity_state.tracked_elements (visible_at_start OR visible_at_end)"
+  },
+  {
+   "path": "$.derivation.previous_derivation.split",
+   "op": "removed",
+   "before": {
+    "TMP_EP005_BERRY_SMUDGE_OVERLAYS": [
+     "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+    ]
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.transform",
+   "op": "changed",
+   "before": "EP005_BERRY_REQUIREMENT_SPLIT_v1 (deterministic, no LLM)",
+   "after": "EP005_TBD_CLEANUP_v1 (deterministic, no LLM)"
+  },
+  {
+   "path": "$.derivation.previous_derivation.unresolved_audio_remaining",
+   "op": "added",
+   "after": [
+    "AMBIENCE",
+    "FOLEY_CLOTH",
+    "COMPLETION_SFX"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.visual_treatment_reclassification",
+   "op": "added",
+   "after": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01 <- Mirror glint treatment",
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01 <- Mirror reflection/compositing treatment",
+    "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01 <- Soft completion pop visual accent"
+   ]
+  },
+  {
+   "path": "$.derivation.transform",
+   "op": "changed",
+   "before": "EP005_TBD_CLEANUP_v1 (deterministic, no LLM)",
+   "after": "EP005_AUDIO_MAPPING_v1 (deterministic, no LLM)"
+  },
+  {
+   "path": "$.derivation.unchanged",
+   "op": "added",
+   "after": "the 11 existing reusable requirements, visual/compositing treatment decisions, dropped FOLEY_TOUCH, all shot plans and assignments"
+  },
+  {
+   "path": "$.derivation.unresolved_audio_remaining",
+   "op": "removed",
+   "before": [
+    "AMBIENCE",
+    "FOLEY_CLOTH",
+    "COMPLETION_SFX"
+   ]
+  },
+  {
+   "path": "$.derivation.visual_treatment_reclassification",
+   "op": "removed",
+   "before": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01 <- Mirror glint treatment",
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01 <- Mirror reflection/compositing treatment",
+    "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01 <- Soft completion pop visual accent"
+   ]
+  },
+  {
+   "path": "$.manifest_version",
+   "op": "changed",
+   "before": "agent005-production-manifest-v0.1+berry-split-1+tbd-cleanup-1",
+   "after": "agent005-production-manifest-v0.1+berry-split-1+tbd-cleanup-1+audio-mapped-1"
+  },
+  {
+   "path": "$.source_approved_assets.unique_reused_asset_ids",
+   "op": "changed",
+   "before": [
+    "Lumi clue chime",
+    "Mikko TRY whoosh",
+    "WIN sparkle chord"
+   ],
+   "after": [
+    "Lumi clue chime",
+    "Mikko TRY whoosh",
+    "WIN sparkle chord",
+    "AMB-BATHROOM-QUIET-v01",
+    "FOLEY-CLOTH-SOFT-v01",
+    "SFX-COMPLETION-POP-v01"
+   ]
+  },
+  {
+   "path": "$.unique_reused_assets",
+   "op": "changed",
+   "before": [
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Lumi clue chime",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Mikko TRY whoosh",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "WIN sparkle chord",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    }
+   ],
+   "after": [
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Lumi clue chime",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "Mikko TRY whoosh",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Agent-004 approved reused asset"
+     ],
+     "asset_id": "WIN sparkle chord",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": []
+    },
+    {
+     "labels": [
+      "Bathroom quiet ambience"
+     ],
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "AUDIO"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": [
+      "S001",
+      "S003",
+      "S005",
+      "S006",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "mapped_from_audio_tbd": "TBD::AUDIO::AMBIENCE"
+    },
+    {
+     "labels": [
+      "Soft microfiber cloth wipe"
+     ],
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "AUDIO"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": [
+      "S002",
+      "S009",
+      "S014",
+      "S015",
+      "S020",
+      "S021",
+      "S028"
+     ],
+     "mapped_from_audio_tbd": "TBD::AUDIO::FOLEY_CLOTH"
+    },
+    {
+     "labels": [
+      "Soft completion pop"
+     ],
+     "asset_id": "SFX-COMPLETION-POP-v01",
+     "asset_types": [
+      "SOURCE_APPROVED_ASSET",
+      "AUDIO"
+     ],
+     "asset_status": "REUSE",
+     "used_in_shots": [
+      "S025"
+     ],
+     "mapped_from_audio_tbd": "TBD::AUDIO::COMPLETION_SFX"
+    }
+   ]
+  },
+  {
+   "path": "$.unique_tbd_asset_dependencies",
+   "op": "changed",
+   "before": [
+    {
+     "asset_type": "CHARACTER",
+     "dependency": "Lumi",
+     "source_labels": [
+      "Lumi"
+     ],
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "dependency_type": "VISUAL",
+     "reference_count": 29,
+     "source_statuses": [
+      "TBD"
+     ],
+     "affected_shot_count": 29
+    },
+    {
+     "asset_type": "CHARACTER",
+     "dependency": "Mikko",
+     "source_labels": [
+      "Mikko"
+     ],
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "dependency_type": "VISUAL",
+     "reference_count": 29,
+     "source_statuses": [
+      "TBD"
+     ],
+     "affected_shot_count": 29
+    },
+    {
+     "asset_type": "ENVIRONMENT",
+     "dependency": "Canonical environment/background",
+     "source_labels": [
+      "TBD"
+     ],
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "dependency_type": "VISUAL",
+     "reference_count": 29,
+     "source_statuses": [
+      "TBD"
+     ],
+     "affected_shot_count": 29
+    },
+    {
+     "shots": [
+      "S001",
+      "S003",
+      "S005",
+      "S006",
+      "S008",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S022",
+      "S023",
+      "S024",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "shot_count": 20,
+     "canonical_id": "TBD",
+     "audio_category": "AMBIENCE",
+     "source_phrases": [
+      "Quiet background ambience; canonical asset identity TBD.",
+      "Quiet ambience; asset TBD.",
+      "Quiet ambience only; asset TBD.",
+      "Quiet ambience; asset TBD. No additional clue sound.",
+      "Quiet ambience; asset TBD. No new audio identity.",
+      "Quiet ambience under the chord; asset TBD.",
+      "Barely audible cloth handling and shoulder pat; assets TBD. Quiet ambience continues.",
+      "Quiet background ambience only; canonical identity TBD."
+     ],
+     "dependency_type": "AUDIO",
+     "reference_count": 20,
+     "governance_status": "UNRESOLVED"
+    },
+    {
+     "shots": [
+      "S002",
+      "S009",
+      "S014",
+      "S015",
+      "S020",
+      "S021",
+      "S028"
+     ],
+     "shot_count": 7,
+     "canonical_id": "TBD",
+     "audio_category": "FOLEY_CLOTH",
+     "source_phrases": [
+      "Very light cloth handling; sound asset TBD.",
+      "A faint, soft cloth brush; asset TBD.",
+      "Minimal cloth handling; asset TBD.",
+      "Very light cloth brush; asset TBD.",
+      "A faint cloth brush; asset TBD.",
+      "Barely audible cloth handling and shoulder pat; assets TBD. Quiet ambience continues."
+     ],
+     "dependency_type": "AUDIO",
+     "reference_count": 7,
+     "governance_status": "UNRESOLVED"
+    },
+    {
+     "shots": [
+      "S025"
+     ],
+     "shot_count": 1,
+     "canonical_id": "TBD",
+     "audio_category": "COMPLETION_SFX",
+     "source_phrases": [
+      "One soft completion pop at the clean mirror reveal; specific sound asset TBD."
+     ],
+     "dependency_type": "AUDIO",
+     "reference_count": 1,
+     "governance_status": "UNRESOLVED"
+    }
+   ],
+   "after": [
+    {
+     "asset_type": "CHARACTER",
+     "dependency": "Lumi",
+     "source_labels": [
+      "Lumi"
+     ],
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "dependency_type": "VISUAL",
+     "reference_count": 29,
+     "source_statuses": [
+      "TBD"
+     ],
+     "affected_shot_count": 29
+    },
+    {
+     "asset_type": "CHARACTER",
+     "dependency": "Mikko",
+     "source_labels": [
+      "Mikko"
+     ],
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "dependency_type": "VISUAL",
+     "reference_count": 29,
+     "source_statuses": [
+      "TBD"
+     ],
+     "affected_shot_count": 29
+    },
+    {
+     "asset_type": "ENVIRONMENT",
+     "dependency": "Canonical environment/background",
+     "source_labels": [
+      "TBD"
+     ],
+     "affected_shots": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023",
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029"
+     ],
+     "dependency_type": "VISUAL",
+     "reference_count": 29,
+     "source_statuses": [
+      "TBD"
+     ],
+     "affected_shot_count": 29
+    }
+   ]
+  },
+  {
+   "path": "$.unique_tbd_asset_dependency_count",
+   "op": "changed",
+   "before": 6,
+   "after": 3
+  }
+ ],
+ "changed_top_level_keys": [
+  "asset_inventory",
+  "audio_asset_mappings",
+  "audio_tbd_dependencies",
+  "audio_tbd_dependency_count",
+  "audio_tbd_reference_count",
+  "derivation",
+  "manifest_version",
+  "source_approved_assets",
+  "unique_reused_assets",
+  "unique_tbd_asset_dependencies",
+  "unique_tbd_asset_dependency_count"
+ ]
+}

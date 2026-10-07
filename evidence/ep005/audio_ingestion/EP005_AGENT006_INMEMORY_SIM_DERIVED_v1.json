@@ -1,0 +1,414 @@
+{
+ "manifest": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+ "status_in_memory": "APPROVED",
+ "governed": {
+  "rows_read": 14,
+  "governed_count": 14,
+  "excluded_count": 0
+ },
+ "requirement_count": 14,
+ "requirements": [
+  {
+   "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "origin": "APPROVED_NEW",
+   "label": "Berry smudge on Mikko's anatomical left cheek",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009"
+   ],
+   "exact": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "origin": "APPROVED_NEW",
+   "label": "Berry smudge on skin beside Mikko's mouth",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015"
+   ],
+   "exact": [
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "origin": "APPROVED_NEW",
+   "label": "Berry smudge on Mikko's nose",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021"
+   ],
+   "exact": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_NEW::TMP_EP005_SOFT_CLOTH",
+   "origin": "APPROVED_NEW",
+   "label": "Soft cloth",
+   "shots": [
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021",
+    "S022",
+    "S023",
+    "S024",
+    "S025",
+    "S026",
+    "S027",
+    "S028",
+    "S029"
+   ],
+   "exact": [
+    "PROP-EP005-CLEANING-CLOTH-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_NEW::TMP_EP005_HAND_MIRROR",
+   "origin": "APPROVED_NEW",
+   "label": "Tiny hand mirror",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021",
+    "S022",
+    "S023",
+    "S024",
+    "S025",
+    "S026",
+    "S027",
+    "S028",
+    "S029"
+   ],
+   "exact": [
+    "PROP-EP005-HAND-MIRROR-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "PROP-EP005-HAND-MIRROR-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_REUSE::Lumi clue chime",
+   "origin": "APPROVED_REUSE",
+   "label": "Lumi clue chime",
+   "shots": [
+    "S004"
+   ],
+   "exact": [
+    "SFX-LUMI-CLUE-CHIME"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "SFX-LUMI-CLUE-CHIME",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_REUSE::Mikko TRY whoosh",
+   "origin": "APPROVED_REUSE",
+   "label": "Mikko TRY whoosh",
+   "shots": [
+    "S007"
+   ],
+   "exact": [
+    "SFX-MIKKO-TRY-WHOOSH"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "SFX-MIKKO-TRY-WHOOSH",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_REUSE::WIN sparkle chord",
+   "origin": "APPROVED_REUSE",
+   "label": "WIN sparkle chord",
+   "shots": [
+    "S027"
+   ],
+   "exact": [
+    "SFX-WIN-SPARKLE-CHORD"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "SFX-WIN-SPARKLE-CHORD",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_REUSE::AMB-BATHROOM-QUIET-v01",
+   "origin": "APPROVED_REUSE",
+   "label": "Bathroom quiet ambience",
+   "shots": [
+    "S001",
+    "S003",
+    "S005",
+    "S006",
+    "S008",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S022",
+    "S023",
+    "S024",
+    "S026",
+    "S027",
+    "S028",
+    "S029"
+   ],
+   "exact": [
+    "AMB-BATHROOM-QUIET-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "AMB-BATHROOM-QUIET-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_REUSE::FOLEY-CLOTH-SOFT-v01",
+   "origin": "APPROVED_REUSE",
+   "label": "Soft microfiber cloth wipe",
+   "shots": [
+    "S002",
+    "S009",
+    "S014",
+    "S015",
+    "S020",
+    "S021",
+    "S028"
+   ],
+   "exact": [
+    "FOLEY-CLOTH-SOFT-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "FOLEY-CLOTH-SOFT-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "APPROVED_REUSE::SFX-COMPLETION-POP-v01",
+   "origin": "APPROVED_REUSE",
+   "label": "Soft completion pop",
+   "shots": [
+    "S025"
+   ],
+   "exact": [
+    "SFX-COMPLETION-POP-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "SFX-COMPLETION-POP-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "TBD::CHARACTER::Lumi",
+   "origin": "TBD_DEPENDENCY",
+   "label": "Lumi",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021",
+    "S022",
+    "S023",
+    "S024",
+    "S025",
+    "S026",
+    "S027",
+    "S028",
+    "S029"
+   ],
+   "exact": [
+    "CHAR-LUMI-MASTER-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "CHAR-LUMI-MASTER-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "TBD::CHARACTER::Mikko",
+   "origin": "TBD_DEPENDENCY",
+   "label": "Mikko",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021",
+    "S022",
+    "S023",
+    "S024",
+    "S025",
+    "S026",
+    "S027",
+    "S028",
+    "S029"
+   ],
+   "exact": [
+    "CHAR-MIKKO-MASTER-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "CHAR-MIKKO-MASTER-v01",
+   "node08": "ok"
+  },
+  {
+   "requirement_key": "TBD::ENVIRONMENT::Canonical environment/background",
+   "origin": "TBD_DEPENDENCY",
+   "label": "Canonical environment/background",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021",
+    "S022",
+    "S023",
+    "S024",
+    "S025",
+    "S026",
+    "S027",
+    "S028",
+    "S029"
+   ],
+   "exact": [
+    "WORLD-EP005-BATHROOM-MASTER-v01"
+   ],
+   "resolution": "REUSE_EXISTING",
+   "canonical_asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "node08": "ok"
+  }
+ ]
+}
