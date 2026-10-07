@@ -1,0 +1,11 @@
+{
+  "_comment": "Expected SHA-256 for APPROVED registry rows whose metadata_json has no sha256. Used only when the registry carries no hash; a registry hash always wins and a disagreement fails closed. Each pin cites committed evidence.",
+  "pins": {
+    "SFX-LUMI-CLUE-CHIME": {
+      "sha256": "adf415b3f23abaa93f20e510e6ac6cf3fc3c68665cd3e9cca91ff60a0a93b136",
+      "bytes": 206753,
+      "storage_path": "production-assets/audio/sfx/SFX-LUMI-CLUE-CHIME-v01.wav.mp3",
+      "source": "evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md (read-only storage audit, 2026-10-05)"
+    }
+  }
+}

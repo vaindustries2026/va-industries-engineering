@@ -1,0 +1,57 @@
+{
+ "frames": 216,
+ "distinct_raw_frames": 20,
+ "raw_frame_changes_at": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "tilt_frames": [
+  0,
+  11
+ ],
+ "glint_frames": [
+  12,
+  19
+ ],
+ "s005_hold_frames": [
+  120,
+  215
+ ],
+ "s005_hold_raw_identical_and_equal_to_last_s004_frame": true,
+ "chime_clip_seconds": [
+  0.5,
+  4.875
+ ],
+ "s004_end_seconds": 5.0,
+ "mix_master": {
+  "samples": 432000,
+  "peak_dbfs": -16.832,
+  "min_window_rms_dbfs": -56.76,
+  "silent_windows_below_floor": 0,
+  "window_seconds": 0.01,
+  "floor_dbfs": -100.0
+ },
+ "review_aac_peak_dbfs": -16.838,
+ "decoded_review": {
+  "decoded_frames": 216,
+  "max_abs_pixel_diff_within_hold": 7
+ }
+}

@@ -1,0 +1,180 @@
+{
+  "layout_id": "A008-LAYOUT-EP005-S004-S005-STANDIN-v1",
+  "classification": [
+    "NON_CANON_TECHNICAL_STANDIN",
+    "REVIEW_ONLY",
+    "NOT_FOR_EPISODE_PUBLICATION"
+  ],
+  "purpose": "Phase-0 compositor proof only. Built from crops of approved canon sheets because no approved EP005 base frame exists. Never registered as an asset.",
+  "reference_canvas": [
+    1920,
+    1080
+  ],
+  "units": "source rectangles in source-image pixels; placements in reference-canvas pixels (scaled to the output spec)",
+  "background": {
+    "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+    "source_rect": [
+      40,
+      162,
+      816,
+      459
+    ],
+    "blur_sigma": 4.0
+  },
+  "cloth": {
+    "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+    "source_rect": [
+      10,
+      115,
+      505,
+      430
+    ],
+    "key": [
+      228,
+      247
+    ],
+    "width": 420,
+    "position": [
+      70,
+      700
+    ]
+  },
+  "mirror": {
+    "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+    "source_rect": [
+      205,
+      30,
+      680,
+      965
+    ],
+    "key": [
+      232,
+      249
+    ],
+    "height": 1000,
+    "position": [
+      470,
+      50
+    ],
+    "glass_center_in_source": [
+      539.5,
+      387.5
+    ],
+    "glass_hole_radius_in_source": 210,
+    "glass_hole_feather": 3,
+    "reflection_radius_in_source": 214,
+    "pivot_in_source": [
+      540,
+      940
+    ]
+  },
+  "reflection": {
+    "character_asset_id": "CHAR-MIKKO-MASTER-v01",
+    "source_rect": [
+      1125,
+      195,
+      300,
+      300
+    ],
+    "mirror_flip": true,
+    "glass_tint_rgb": [
+      214,
+      232,
+      246
+    ],
+    "glass_tint_amount": 0.07,
+    "overlay_placements_unflipped": {
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01": {
+        "center": [
+          250,
+          182
+        ],
+        "width": 78,
+        "rotation_deg": -12,
+        "anatomy": "anatomical left cheek (viewer's right before the mirror flip)"
+      },
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01": {
+        "center": [
+          212,
+          226
+        ],
+        "width": 46,
+        "rotation_deg": 8,
+        "anatomy": "skin beside the mouth"
+      },
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01": {
+        "center": [
+          172,
+          172
+        ],
+        "width": 40,
+        "rotation_deg": 0,
+        "anatomy": "nose"
+      }
+    }
+  },
+  "lumi": {
+    "asset_id": "CHAR-LUMI-MASTER-v01",
+    "source_rect": [
+      38,
+      128,
+      236,
+      270
+    ],
+    "key": [
+      238,
+      251
+    ],
+    "height": 430,
+    "position": [
+      1230,
+      470
+    ]
+  },
+  "banner": {
+    "text": "NON_CANON_TECHNICAL_STANDIN  |  REVIEW_ONLY  |  NOT_FOR_EPISODE_PUBLICATION  |  AGENT-008 v0.1 PHASE-0",
+    "font_file": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "font_size": 26,
+    "height": 52,
+    "position": "top"
+  },
+  "timing": {
+    "S004": {
+      "mirror_tilt": {
+        "start_frame": 0,
+        "frames": 12,
+        "to_degrees": -2.5,
+        "easing": "smoothstep"
+      },
+      "glint": {
+        "treatment_id": "TREATMENT-EP005-MIRROR-GLINT-v01",
+        "start_frame": 12,
+        "frames": 8,
+        "center_in_reflection_unflipped": [
+          272,
+          140
+        ],
+        "size": 90
+      },
+      "clue_chime": {
+        "asset_id": "SFX-LUMI-CLUE-CHIME",
+        "start_frame": 12,
+        "gain_db": -12.0,
+        "overrun_policy": "TRIM_WITH_FADE",
+        "fade_out_seconds": 0.5,
+        "end_guard_frames": 3
+      }
+    },
+    "S005": {
+      "visual_source": "HOLD_LAST_FRAME_OF_S004"
+    },
+    "ambience_bed": {
+      "asset_id": "AMB-BATHROOM-QUIET-v01",
+      "policy": "CONTINUOUS_ACROSS_RENDER_RANGE",
+      "source_offset_seconds": 0.0,
+      "gain_db": 0.0,
+      "edge_fade_seconds": 0.02,
+      "authority": "Company Brain Phase-0 instruction 2026-10-07 lists the ambience for S004; manifest audio_asset_mappings lists it for S005 only (finding F-A008-02)"
+    }
+  }
+}

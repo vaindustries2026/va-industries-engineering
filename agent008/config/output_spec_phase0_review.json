@@ -1,0 +1,18 @@
+{
+  "_comment": "Provisional internal review spec for the Phase-0 production test. Not a channel-wide canon decision; override per run.",
+  "spec_id": "A008-REVIEW-1080P24-PHASE0",
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "pixel_format": "yuv420p",
+  "video_codec": "libx264",
+  "x264_preset": "medium",
+  "x264_crf": 16,
+  "audio_sample_rate": 48000,
+  "audio_channels": 2,
+  "review_audio_codec": "aac",
+  "review_audio_bitrate": "192k",
+  "peak_ceiling_dbfs": -1.0,
+  "output_status": "REVIEW",
+  "canon_decision": false
+}

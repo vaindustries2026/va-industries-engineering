@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent008-provenance-v0.1",
+  "title": "AGENT-008 v0.1 render provenance",
+  "type": "object",
+  "required": ["agent", "agent_version", "status", "labels", "human_approval", "authority_inputs", "output_spec",
+               "layout", "input_assets", "shot_specs", "timeline", "audio_cues", "mix_peak_dbfs", "overlays_drawn",
+               "raw_frames", "outputs", "recipes", "toolchain", "code", "safety", "deterministic_core_sha256"],
+  "properties": {
+    "status": {"const": "REVIEW"},
+    "labels": {"type": "array", "contains": {"const": "NON_CANON_TECHNICAL_STANDIN"}},
+    "human_approval": {
+      "type": "object", "required": ["required", "approved", "approve_by"],
+      "properties": {"required": {"const": true}, "approved": {"const": false}}
+    },
+    "authority_inputs": {
+      "type": "object",
+      "required": ["readiness_manifest_id", "production_manifest_id", "agent006_run_id",
+                   "production_manifest_canonical_sha256", "readiness_manifest_json_canonical_sha256",
+                   "asset_registry_canonical_sha256", "input_snapshot_sha256"]
+    },
+    "input_assets": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["asset_id", "registry_row_id", "status", "storage_path", "expected_sha256", "sha256_source",
+                     "verified_sha256", "bytes"],
+        "properties": {"status": {"enum": ["APPROVED", "LOCKED"]}}
+      }
+    },
+    "raw_frames": {"type": "object", "required": ["count", "format", "sha256_of_frame_hash_list", "first", "last"]},
+    "outputs": {
+      "type": "object", "required": ["review_mp4", "mix_wav"],
+      "properties": {
+        "review_mp4": {"type": "object", "required": ["file", "sha256", "bytes", "streams"]},
+        "mix_wav": {"type": "object", "required": ["file", "sha256", "bytes"]}
+      }
+    },
+    "safety": {
+      "type": "object",
+      "properties": {
+        "provider_calls": {"const": 0}, "paid_calls": {"const": 0}, "network_writes": {"const": 0},
+        "llm_calls": {"const": 0}, "registry_writes": {"const": 0}, "storage_writes": {"const": 0},
+        "registered_as_asset": {"const": false}
+      }
+    },
+    "deterministic_core_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

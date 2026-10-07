@@ -1838,3 +1838,35 @@ agent006_runs: 0
 agent007_runs: 0
 status: "EP005_DOWNSTREAM_PRODUCTION_AUDIT_COMPLETE + PRODUCTION_PATH_CLASSIFICATION_C + ZERO_PROVIDER_CALLS + ZERO_PAID_CALLS + ZERO_N8N_WRITES + ZERO_SUPABASE_WRITES + ZERO_STORAGE_WRITES + ZERO_AGENT006_RUN + ZERO_AGENT007_RUN + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261007-AGENT008-V01-PHASE0: Agent-008 deterministic compositor built; EP005 S004/S005 technical smoke render (REVIEW)
+
+```yaml
+change_id: "ENG-20261007-AGENT008-V01-PHASE0"
+timestamp: "2026-10-07"
+actor: "Claude"
+authorised_by: "Company Brain (Agent-008 v0.1 Phase-0 sprint; no provider generation)"
+evidence: "evidence/AGENT008_V01_PHASE0_SMOKE_v1.0.md"
+contract: "agent008/CONTRACT.md"
+inputs: {readiness: "edc4ad58-3e5d-4ac2-9c74-c9af03af363f APPROVED / READY_FOR_HUMAN_APPROVAL", production_manifest: "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed APPROVED (canonical e0c2e849…)", agent006_run: "A006-1791346204213", snapshot: "HTTP GET only"}
+render: {shots: "S004 (120 f) + S005 (96 f) = 216 frames, 9.000 s, 1920x1080 24 fps H.264 yuv420p + AAC", review_mp4_sha256: "8fd265089c2c93538375c3dc258ad2f225f69d58332894a560c17a2c323989b7", mix_wav_sha256: "caebec5d2c34ac07b0d0628a00571eb8d0777424ed3b100fdbd5066b4d33ca64", provenance_sha256: "4f3f6adbe3f41695031b4172b90ec87fc8ba971618821a97a1bde18ceb08a667", status: "REVIEW", labels: "NON_CANON_TECHNICAL_STANDIN / REVIEW_ONLY / NOT_FOR_EPISODE_PUBLICATION"}
+determinism: "two runs byte-identical (mp4, wav, provenance, raw frame hashes)"
+tests: "37/37 pass (T-A008-01..12 + readiness gate, protected hold, SFX overrun, caption/dialogue interfaces)"
+findings: ["F-A008-01 chime 8.0 s vs <=4.5 s window: explicit TRIM_WITH_FADE, human decision D-1", "F-A008-02 manifest maps ambience to S005 not S004: bed runs under S004 per Company Brain instruction, decision D-2", "F-A008-03 legacy SFX rows lack registry sha256 (chime pinned from evidence)", "F-A008-04 legacy readiness d124ba28/c0012923 can never be Agent-008 inputs", "F-A008-05 stand-in proves compositor only", "F-A008-06 H.264 hold drift <=7 code values (raw frames identical)"]
+provider_calls: 0
+paid_calls: 0
+runway_calls: 0
+elevenlabs_calls: 0
+production_db_writes: 0
+production_storage_writes: 0
+registry_writes: 0
+n8n_changes: 0
+migrations: 0
+agent006_runs: 0
+agent007_runs: 0
+binaries_committed: 0
+rollback: "revert this commit; delete session scratch render; nothing else to undo"
+status: "AGENT008_V01_PHASE0_COMPOSITOR_BUILT + S004_S005_TECHNICAL_SMOKE_RENDER_READY_FOR_HUMAN_REVIEW + ZERO_PROVIDER_CALLS + ZERO_PAID_CALLS + ZERO_RUNWAY_CALLS + ZERO_ELEVENLABS_CALLS + ZERO_PRODUCTION_DB_WRITES + ZERO_PRODUCTION_STORAGE_WRITES + ZERO_AGENT006_RUN + ZERO_AGENT007_RUN + TEST_SUITE_PASS + EVIDENCE_COMMITTED_TO_GITHUB"
+```
