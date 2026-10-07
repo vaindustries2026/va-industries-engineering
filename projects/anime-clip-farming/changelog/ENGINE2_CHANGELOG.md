@@ -4,6 +4,23 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-07 — ENGINE 2 — PRE-SPRINT 1 SUPABASE PROVISIONING (+ Sprint 1 migration preflight)
+
+- **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, 2026-10-07T03:24Z.
+- **Repository / branch:** `vaindustries2026/va-industries-engineering`, `engine2/clip-farming-sprint-01-preflight` from the Sprint 0 commit `5190db5` (Sprint 0 branch left as it was). Not merged; no PR.
+- **Live changes (Supabase only):**
+  - Created project `V&A Anime Clip Farming — Engine 2`, ref `mkeldytatorxxszjdngt`, org `VA-Company-Brain` (`zjijicmhxlommwvisywp`), region `eu-north-1` (n8n runs on Azure in Gävle, Sweden), Postgres 17.11, ACTIVE_HEALTHY. Free plan, second free slot, $0. Database password: CREATED / NOT EXPOSED.
+  - Created role `cf_n8n_runtime` (LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION), no password, no memberships, no grants.
+- **Repo changes:** ADR-001 (dedicated project; runtime role and direct grants); DATA_MODEL §1 (D-DB-1 superseded by D-DB-1R, D-DB-2 revised); governance GOV-4 role name; design SQL §14 and header (role change only) and the 3 role tests; new `migrations/0001_cf_sprint01.sql` with ROLLBACK, VERIFY and local TESTS; provisioning and preflight evidence, test output and the scripts that produced them; README; pointer notes on the Sprint 0 architecture report and the Sprint 1 placeholder.
+- **Not changed:** the data model (38/38 migration objects byte-identical to the Sprint 0 design); Sprint 0 discovery, gap, test-strategy reports and baseline evidence; the shared Supabase project `ziluiwrwwbayhcskeere` (only a read-only edge-log query); every n8n workflow and credential; Slack; Google Cloud; everything outside `projects/anime-clip-farming/`.
+- **Stopped at brief step 7:** the n8n credential `Engine 2 — Clip Farming Supabase DB` needs human-only secret entry (no credential-creation tool; the password must not pass through Claude). Procedure in the provisioning evidence §6.
+- **Preflight:** READY TO APPLY, not applied. 33/33 Sprint 0 static tests on PostgreSQL 16.15 and 17.10 (original and revised design); the migration's own 33 tests; guard, rollback and verification checks: 30/30 harness checks passed. Findings F-1…F-5 in the preflight doc (F-2, unenforced HUMAN_ADMIN edges, needs a decision).
+- **Counters:** Supabase projects created 1, roles created 1, migrations applied 0, tables 0, rows 0 · shared-project writes 0 · n8n workflows created/modified/published/executed 0/0/0/0, credentials created 0 · CF agent builds 0 · provider calls 0, paid calls 0 · purchases or plan changes 0 · publications, uploads, schedules, Slack messages 0.
+- **Rollback:** `drop role cf_n8n_runtime;` and pause or delete the project in the dashboard (human); delete the branch. Migration rollback (for after an apply): `migrations/0001_cf_sprint01.ROLLBACK.sql`.
+- **Stop state:** STOPPED. Waiting for (1) approval to apply `0001_cf_sprint01.sql` (sha256 `24c01ae7…a7ea`) and (2) a human to set the role password and create the n8n credential. CF-001 not authorised.
+
+---
+
 ## 2026-10-07 — BATCH A / SPRINT 0 — Engine 2 Foundation
 
 - **Operator:** Claude Engineer-2 (human owner Viva)

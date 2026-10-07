@@ -10,12 +10,13 @@ Build a human-governed system that turns anime research into **original V&A comm
 
 | | |
 |---|---|
-| Current sprint | **Batch A / Sprint 0 — Foundation** (read-only discovery + architecture & data contracts) |
-| Status | Complete on branch `engine2/clip-farming-sprint-00-foundation`; **stopped**, awaiting Company Brain reconciliation |
-| Implemented | Documentation only (this folder) |
-| Design only | Data model, Supabase schema (draft SQL marked DESIGN ONLY — NOT APPLIED), identities, state model, gates, CF-001…CF-009 contracts, dependency map, test strategy |
-| Live Engine 2 objects | One experimental, unpublished, never-executed n8n workflow `WStqWRlqax7iocOx` (ANIME-LAB — VIDEO-SMOKE-001). No CF workflow, no CF table |
-| Next sprint | Sprint 1 — CF-001 Market & Trend Radar. **Not authorised.** No sprint is ever automatically authorised by a previous one or by any document in this folder |
+| Last completed | **Pre-Sprint 1 Supabase provisioning + migration preflight** (2026-10-07, branch `engine2/clip-farming-sprint-01-preflight`). Sprint 0 (foundation) before it, on `engine2/clip-farming-sprint-00-foundation` |
+| Status | **Stopped.** Sprint 1 migration is READY TO APPLY, not applied. The n8n credential waits on a human |
+| Database | Dedicated Supabase project `V&A Anime Clip Farming — Engine 2` (ref `mkeldytatorxxszjdngt`, eu-north-1, Free plan), schema `cf` ([ADR-001](architecture/decisions/ADR-001_DEDICATED_SUPABASE_PROJECT.md)). It holds no CF table yet |
+| Implemented live | The empty dedicated project and the runtime role `cf_n8n_runtime` (no password, no grants) |
+| Design only | Data model, full schema (DESIGN ONLY — NOT APPLIED), identities, state model, gates, CF-001…CF-009 contracts, dependency map, test strategy |
+| Other live Engine 2 objects | One experimental, unpublished, never-executed n8n workflow `WStqWRlqax7iocOx` (ANIME-LAB — VIDEO-SMOKE-001). No CF workflow, no CF credential |
+| Next | Approve and apply `migrations/0001_cf_sprint01.sql`; a human sets the role password and creates the n8n credential; then Sprint 1 — CF-001 Market & Trend Radar. **Sprint 1 is not authorised.** No sprint is ever automatically authorised by a previous one or by any document in this folder |
 
 ## Engine 2 architecture
 
@@ -51,12 +52,19 @@ projects/anime-clip-farming/
   README.md                                   this file
   architecture/
     ENGINE2_INFRASTRUCTURE_BLUEPRINT.md       blueprint, byte-for-byte from project files
+    decisions/
+      ADR-001_DEDICATED_SUPABASE_PROJECT.md   dedicated project + runtime role (post-Sprint 0)
     data-contracts/
       DATA_MODEL_v0.1.md                      tables, keys, writers, readers, dedupe
       IDENTITY_CONTRACTS_v0.1.md              every UUID identity and its rules
       migrations-draft/
-        0001_cf_backbone.DESIGN_ONLY.sql      DESIGN ONLY — NOT APPLIED
+        0001_cf_backbone.DESIGN_ONLY.sql      DESIGN ONLY — NOT APPLIED (full 23-table design)
         0001_cf_backbone.STATIC_TESTS.sql     local-only static tests (33)
+      migrations/
+        0001_cf_sprint01.sql                  Sprint 1 subset — READY TO APPLY, NOT APPLIED
+        0001_cf_sprint01.ROLLBACK.sql         removes exactly what 0001 creates
+        0001_cf_sprint01.VERIFY.sql           read-only post-apply check
+        0001_cf_sprint01.TESTS.sql            local-only tests (33)
     workflow-contracts/
       AGENT_CONTRACTS_CF001_CF009_v0.1.md     per-agent contracts
       DEPENDENCY_MAP_v0.1.md                  chain, gates, paid and publish entry points
@@ -70,9 +78,13 @@ projects/anime-clip-farming/
   evidence/
     SPRINT_00_BASELINE_EVIDENCE.md            read-only baseline
     SPRINT_00_STATIC_TEST_OUTPUT.txt          local static test run
+    PRE_SPRINT_01_SUPABASE_PROVISIONING_EVIDENCE.md   project, region, isolation, role, credential stop
+    PRE_SPRINT_01_MIGRATION_PREFLIGHT.md      comparison, target guard, tests, rollback, READY TO APPLY
+    PRE_SPRINT_01_TEST_OUTPUT.txt             local test run (PostgreSQL 16.15 and 17.10)
+    pre-sprint-01-tools/                      scripts that built and checked the migration
   changelog/
     ENGINE2_CHANGELOG.md
 ```
 
 ## Naming
-Agents and n8n workflows use `CF-000 … CF-009` (e.g. `CF-001 — Market & Trend Radar`). Never `AGENT-00x`, which belongs to the YouTube Kids system. Database objects live in the dedicated Postgres schema `cf` (proposed). Git branches: `engine2/clip-farming-sprint-NN-<topic>`.
+Agents and n8n workflows use `CF-000 … CF-009` (e.g. `CF-001 — Market & Trend Radar`). Never `AGENT-00x`, which belongs to the YouTube Kids system. Database objects live in schema `cf` inside the dedicated Supabase project `mkeldytatorxxszjdngt`; the n8n login role is `cf_n8n_runtime`. Git branches: `engine2/clip-farming-sprint-NN-<topic>`.

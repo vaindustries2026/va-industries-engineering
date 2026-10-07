@@ -1,7 +1,8 @@
 # Engine 2 — Data Model v0.1
 
-**Status:** PROPOSED — DESIGN ONLY — NOT APPLIED.
-**Draft DDL:** `migrations-draft/0001_cf_backbone.DESIGN_ONLY.sql` (validated only in a throwaway local PostgreSQL 16; 33/33 static tests in `migrations-draft/0001_cf_backbone.STATIC_TESTS.sql` pass).
+**Status:** PROPOSED — DESIGN ONLY — NOT APPLIED. Placement revised after Sprint 0 by ADR-001 (dedicated Supabase project); the tables, columns, keys and rules below are unchanged.
+**Draft DDL:** `migrations-draft/0001_cf_backbone.DESIGN_ONLY.sql` (validated only in throwaway local PostgreSQL 16.15 and 17.10; 33/33 static tests in `migrations-draft/0001_cf_backbone.STATIC_TESTS.sql` pass).
+**Sprint 1 subset:** `migrations/0001_cf_sprint01.sql` (preflight passed, not applied; see `../../evidence/PRE_SPRINT_01_MIGRATION_PREFLIGHT.md`).
 **Identities:** `IDENTITY_CONTRACTS_v0.1.md`. **States:** `../state-machine/STATE_MODEL_v0.1.md`. **Gates:** `../approval-contracts/HUMAN_GOVERNANCE_GATES_v0.1.md`.
 
 ---
@@ -10,12 +11,13 @@
 
 | Decision | Proposal | Why | Needs human decision? |
 |---|---|---|---|
-| D-DB-1 Where | Same Supabase project as today (`VA-Company-Brain*`, ref `ziluiwrwwbayhcskeere`), in a **new dedicated Postgres schema `cf`**. | The project is the only one visible; a second project may add cost. A separate schema gives hard name isolation from the YouTube Kids tables in `public` (`production_plans`, `asset_registry`, `episode_scripts`…) without touching them. | **Yes** — alternative is a separate Supabase project (cleaner blast radius, possible cost). |
-| D-DB-2 Access path | n8n reaches `cf` through a **Postgres-node credential for a dedicated login role** (member of `cf_agent`), not through the Supabase REST API. | Exposing `cf` over PostgREST is a project-level API setting shared with the Kids system; the Postgres node avoids changing it. A dedicated role lets grants (not prompts) stop agents writing approvals. | **Yes** — a human must create the role password and the n8n credential. |
+| ~~D-DB-1 Where~~ (Sprint 0 proposal, **superseded**) | ~~Same Supabase project as today (`VA-Company-Brain*`, ref `ziluiwrwwbayhcskeere`), in a new dedicated Postgres schema `cf`.~~ | ~~The project is the only one visible; a second project may add cost. A separate schema gives hard name isolation from the YouTube Kids tables in `public` without touching them.~~ | Decided after Sprint 0: see D-DB-1R. |
+| **D-DB-1R Where** (Company Brain, 2026-10-07, [ADR-001](../decisions/ADR-001_DEDICATED_SUPABASE_PROJECT.md)) | **Dedicated Supabase project** `V&A Anime Clip Farming — Engine 2` (ref `mkeldytatorxxszjdngt`, eu-north-1), with all objects still in schema `cf`. | Separate blast radius from the YouTube Kids project. Keeping `cf` leaves the data model unchanged and keeps CF tables out of the Data API's default `public` schema. Cost $0 (second Free-plan slot). | Decided. |
+| D-DB-2 Access path | n8n reaches `cf` through a **Postgres-node credential for the dedicated login role `cf_n8n_runtime`** (LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION), not through the Supabase REST API. Revised by ADR-001: grants go to `cf_n8n_runtime` directly; the Sprint 0 group role `cf_agent` is dropped because a NOINHERIT role would not receive its grants. | `cf` is never exposed over PostgREST. A dedicated role lets grants (not prompts) stop agents writing approvals. | Role created 2026-10-07 without a password. **A human sets the password and creates the n8n credential.** |
 | D-DB-3 Credentials | Never reuse `V&A - Supabase Service Role - AGENT007`, `Supabase account`, or any service-role key for CF workflows. | Service role bypasses all grants and RLS, which would defeat the gate design; those credentials belong to the Kids lane. | No (rule). |
 | D-DB-4 Naming | Tables inside `cf` use the brief's names without a prefix (`cf.anime_titles`…). | Schema already namespaces them. If D-DB-1 is rejected in favour of `public`, prefix every table `cf_`. | Follows D-DB-1. |
 
-Nothing in `cf` references, reads, or alters any `public` object.
+Nothing in `cf` references, reads, or alters any `public` object, and the dedicated project holds no YouTube Kids object at all.
 
 ## 2. Table list: brief vs proposal
 
@@ -151,7 +153,7 @@ Legend: **W** = expected writer, **R** = expected readers, **Gate** = human-appr
 - **Purpose:** the only record of human approval. Append-only.
 - **PK:** `gate_decision_id`. **FK:** `reviewer_id`, `supersedes_gate_decision_id`.
 - **Required:** `gate`, `object_type` (CHECK-mapped to gate), `object_id`, `object_content_sha256`, `decision` (APPROVE/REJECT/REVOKE), `idempotency_key` (UNIQUE), `surface`, `decided_at`. **Optional:** `notes`, `approved_platforms` (required for G4 APPROVE, forbidden elsewhere).
-- **W:** `cf.record_gate_decision()` only (SECURITY DEFINER; `cf_agent` has no grant). **R:** every downstream validator, guard trigger.
+- **W:** `cf.record_gate_decision()` only (SECURITY DEFINER; `cf_n8n_runtime` has no grant). **R:** every downstream validator, guard trigger.
 - **Indexes (in the DDL):** `(object_type, object_id)`; `supersedes_gate_decision_id` UNIQUE.
 
 ### 4.15 `cf.production_manifests` (CF-006 output)

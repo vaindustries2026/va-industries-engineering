@@ -1,0 +1,274 @@
+# Engine 2 pre-Sprint 1 local preflight test run (throwaway clusters inside the engineering container; never Supabase)
+# Run: 2026-10-07T04:00:18Z
+# sha256 9252c0749697ce83c149903553ddcd5281e3dfa291ba285f46561f453e21d15c  orig_design.sql
+# sha256 ce6f8170a7961887312965e2cab253fc753cf8a0f80bdd01e38f30dbd7fd81ed  orig_tests.sql
+# sha256 75524710a123e6c16b2539d1b98316d5161497bab39492d88e4ffde01e8288d6  rev_design.sql
+# sha256 3f5ab115dee51f7d13fe9a8a60a45f60c3bfbbf7f63a173cdd5b2502be0a218a  rev_tests.sql
+# sha256 24c01ae7fca4adb7b59f24598629fb7bd9ead993609ce02c1814f48b24aca7ea  s1.sql
+# sha256 dd0fbd63f6f8ed9df412dd7e580922b0b6dfa1a5daef6a4ca3b7c46dff3b2d75  s1_tests.sql
+# sha256 09025a9489369667c15a3e39f6348eebf8660a70278ae2f005fce0d619ee76da  s1_rollback.sql
+# sha256 99c821d6458fd6d75deee92b9d00d66be051e0679b3b717bac8a4560c23f392e  s1_verify.sql
+
+=== Cluster 16: PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit ===
+--- A (16) original Sprint 0 design + 33 static tests: exit=0 pass=33 fail=0
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-04 duplicate episode natural key rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS T-ID-06 scene with non-positive span rejected
+    NOTICE:  PASS T-ID-07 scene without research provenance rejected
+    NOTICE:  PASS T-ST-01 invalid insert status (APPROVED at birth) rejected
+    NOTICE:  PASS T-ST-02 skipping REVIEW (IDEA -> APPROVED) rejected
+    NOTICE:  PASS T-GATE-01 REVIEW -> APPROVED without a gate decision rejected (AI recommendation is not approval)
+    NOTICE:  PASS T-IMM-01 editorial content frozen once in REVIEW
+    NOTICE:  PASS T-GATE-02 unauthorised reviewer for gate rejected
+    NOTICE:  PASS T-GATE-03 stale review (content hash changed since viewing) rejected
+    NOTICE:  PASS T-GATE-04 unknown object rejected
+    1cbe7627-b852-490d-b2ca-0f7378834c44
+    NOTICE:  PASS T-GATE-05 G1 approval persisted and status APPROVED
+    NOTICE:  PASS T-RPL-01 replaying the same G1 submission writes nothing new
+    NOTICE:  PASS T-APP-01 gate decisions are append-only (no UPDATE)
+    NOTICE:  PASS T-APP-02 gate decisions are append-only (no DELETE)
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted
+    18359b49-4ac1-421d-88bc-4d59694e7bb9
+    NOTICE:  PASS T-SRC-01 BLOCKED package must say why
+    NOTICE:  PASS T-SRC-02 approved script + blocked source package is a valid state
+    NOTICE:  PASS T-SRC-03 scene publication status stays UNKNOWN (research access is not permission)
+    NOTICE:  PASS T-SRC-04 BLOCKED package cannot be approved
+    NOTICE:  PASS T-SRC-05 a manifest needs a source package that exists
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS T-PUB-02 nothing is publish-eligible
+    NOTICE:  PASS T-ROLE-01 cf_agent cannot insert gate decisions
+    NOTICE:  PASS T-ROLE-02 cf_agent cannot call the gate function
+    NOTICE:  PASS T-ROLE-03 cf_agent cannot turn on publishing
+    2f4a39db-225d-47b0-9f1f-85e0ab4a06d5
+    NOTICE:  PASS T-GATE-06 revoked script is RETIRED and its approval is no longer effective
+    STATIC TESTS COMPLETE
+PASS A-16 original 33 static tests pass on the Sprint 0 design
+PASS G-01-16 migration aborts and creates nothing when cf_n8n_runtime is missing
+PASS G-02-16 migration aborts and creates nothing when the role is INHERIT
+PASS G-03-16 migration aborts when the role belongs to another role
+PASS G-04-16 migration aborts on a database that has the YouTube Kids tables
+PASS R-01-16 rollback refuses to run on a database that has the YouTube Kids tables
+--- B (16) revised design (ADR-001 roles) + 33 static tests: exit=0 pass=33 fail=0
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-04 duplicate episode natural key rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS T-ID-06 scene with non-positive span rejected
+    NOTICE:  PASS T-ID-07 scene without research provenance rejected
+    NOTICE:  PASS T-ST-01 invalid insert status (APPROVED at birth) rejected
+    NOTICE:  PASS T-ST-02 skipping REVIEW (IDEA -> APPROVED) rejected
+    NOTICE:  PASS T-GATE-01 REVIEW -> APPROVED without a gate decision rejected (AI recommendation is not approval)
+    NOTICE:  PASS T-IMM-01 editorial content frozen once in REVIEW
+    NOTICE:  PASS T-GATE-02 unauthorised reviewer for gate rejected
+    NOTICE:  PASS T-GATE-03 stale review (content hash changed since viewing) rejected
+    NOTICE:  PASS T-GATE-04 unknown object rejected
+    b8e64ecf-2c30-436a-b77e-73d557b1ab0d
+    NOTICE:  PASS T-GATE-05 G1 approval persisted and status APPROVED
+    NOTICE:  PASS T-RPL-01 replaying the same G1 submission writes nothing new
+    NOTICE:  PASS T-APP-01 gate decisions are append-only (no UPDATE)
+    NOTICE:  PASS T-APP-02 gate decisions are append-only (no DELETE)
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted
+    33023ee7-e9a8-44ed-ac33-f4259777f73a
+    NOTICE:  PASS T-SRC-01 BLOCKED package must say why
+    NOTICE:  PASS T-SRC-02 approved script + blocked source package is a valid state
+    NOTICE:  PASS T-SRC-03 scene publication status stays UNKNOWN (research access is not permission)
+    NOTICE:  PASS T-SRC-04 BLOCKED package cannot be approved
+    NOTICE:  PASS T-SRC-05 a manifest needs a source package that exists
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS T-PUB-02 nothing is publish-eligible
+    NOTICE:  PASS T-ROLE-01 cf_n8n_runtime cannot insert gate decisions
+    NOTICE:  PASS T-ROLE-02 cf_n8n_runtime cannot call the gate function
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    bdb6bc70-d102-4504-b14f-284319cb5aae
+    NOTICE:  PASS T-GATE-06 revoked script is RETIRED and its approval is no longer effective
+    STATIC TESTS COMPLETE
+PASS B-16 33 static tests pass on the revised design, DDL applied by non-superuser postgres
+--- C (16) Sprint 1 migration + its tests: exit=0 pass=33/33 fail=0
+    NOTICE:  PASS S1-ISO-01 cf holds exactly the Sprint 1 objects
+    NOTICE:  PASS S1-ISO-02 every foreign key in cf points at a cf table
+    NOTICE:  PASS S1-ISO-03 no cf function names another schema, none is SECURITY DEFINER
+    NOTICE:  PASS S1-ISO-04 cf columns use only built-in or cf types, and no cf object depends on an extension
+    NOTICE:  PASS S1-ISO-05 cf_n8n_runtime is LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION and a member of nothing
+    NOTICE:  PASS S1-PRIV-01 cf_n8n_runtime has exactly the designed privileges on cf
+    NOTICE:  PASS S1-PRIV-02 anon, authenticated and service_role get nothing in cf
+    NOTICE:  PASS S1-PRIV-03 PUBLIC holds no privilege on any cf object
+    NOTICE:  PASS S1-GATE-00 no gate objects yet and no Sprint 1 transition needs a gate
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS S1-RUN-01 cf_n8n_runtime can run the CF-001 write path (run, franchise, title, candidate, READY)
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS S1-RPL-01 replaying a run with the same idempotency key writes nothing new
+    NOTICE:  PASS S1-ST-01 research candidate born READY rejected
+    NOTICE:  PASS S1-ST-02 READY research candidate cannot go back to IDEA
+    NOTICE:  PASS S1-IMM-01 research candidate content frozen once READY
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    NOTICE:  PASS S1-ROLE-01 cf_n8n_runtime cannot make anyone a reviewer
+    NOTICE:  PASS S1-ROLE-02 cf_n8n_runtime cannot add a state-machine edge
+    NOTICE:  PASS S1-ROLE-03 cf_n8n_runtime cannot delete rows
+    NOTICE:  PASS S1-ROLE-04 cf_n8n_runtime cannot truncate tables
+    NOTICE:  PASS S1-ROLE-05 cf_n8n_runtime cannot create objects in cf
+    NOTICE:  PASS S1-ROLE-06 cf_n8n_runtime cannot create objects in public
+    NOTICE:  PASS S1-ROLE-07 cf_n8n_runtime cannot disable the guard triggers
+    NOTICE:  PASS S1-ROLE-08 cf_n8n_runtime cannot call cf functions directly
+    NOTICE:  PASS S1-ROLE-09 cf_n8n_runtime cannot switch triggers off for its session
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted, even from a privileged session
+    SPRINT 1 TESTS COMPLETE
+PASS C-16 Sprint 1 migration applies as non-superuser and all its tests pass
+PASS V-01-16 read-only verification query returns all true, run as postgres (t,t,t,t,t,t,t,t,t,t,t)
+PASS V-02-16 verification catches an extra privilege (runtime_privileges_exact=false: t,t,t,t,t,t,t,t,t,f,t)
+PASS G-05-16 a second apply is refused
+PASS R-02-16 rollback stops and changes nothing when an object it did not create is in cf
+PASS R-03-16 rollback stops when an object outside cf depends on cf
+    psql:/home/pgtest/work/s1_rollback.sql:32: ERROR:  cannot drop desired object(s) because other objects depend on them
+    DETAIL:  view depends_on_cf depends on table cf.research_candidates
+    HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+PASS R-04-16 clean rollback removes schema cf and its rows, keeps cf_n8n_runtime with no table access (cf,role,tables=0,1,0)
+PASS R-05-16 re-apply after rollback succeeds and all Sprint 1 tests pass again
+
+=== Cluster 17: PostgreSQL 17.10 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit ===
+--- A (17) original Sprint 0 design + 33 static tests: exit=0 pass=33 fail=0
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-04 duplicate episode natural key rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS T-ID-06 scene with non-positive span rejected
+    NOTICE:  PASS T-ID-07 scene without research provenance rejected
+    NOTICE:  PASS T-ST-01 invalid insert status (APPROVED at birth) rejected
+    NOTICE:  PASS T-ST-02 skipping REVIEW (IDEA -> APPROVED) rejected
+    NOTICE:  PASS T-GATE-01 REVIEW -> APPROVED without a gate decision rejected (AI recommendation is not approval)
+    NOTICE:  PASS T-IMM-01 editorial content frozen once in REVIEW
+    NOTICE:  PASS T-GATE-02 unauthorised reviewer for gate rejected
+    NOTICE:  PASS T-GATE-03 stale review (content hash changed since viewing) rejected
+    NOTICE:  PASS T-GATE-04 unknown object rejected
+    970f1a25-ffc8-44bb-a48d-e9118b1110bf
+    NOTICE:  PASS T-GATE-05 G1 approval persisted and status APPROVED
+    NOTICE:  PASS T-RPL-01 replaying the same G1 submission writes nothing new
+    NOTICE:  PASS T-APP-01 gate decisions are append-only (no UPDATE)
+    NOTICE:  PASS T-APP-02 gate decisions are append-only (no DELETE)
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted
+    2d8f0b21-d74d-4f41-b1d1-72c7c301a1e9
+    NOTICE:  PASS T-SRC-01 BLOCKED package must say why
+    NOTICE:  PASS T-SRC-02 approved script + blocked source package is a valid state
+    NOTICE:  PASS T-SRC-03 scene publication status stays UNKNOWN (research access is not permission)
+    NOTICE:  PASS T-SRC-04 BLOCKED package cannot be approved
+    NOTICE:  PASS T-SRC-05 a manifest needs a source package that exists
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS T-PUB-02 nothing is publish-eligible
+    NOTICE:  PASS T-ROLE-01 cf_agent cannot insert gate decisions
+    NOTICE:  PASS T-ROLE-02 cf_agent cannot call the gate function
+    NOTICE:  PASS T-ROLE-03 cf_agent cannot turn on publishing
+    a3ba6b1b-3736-4b2f-aaf4-7c3530c1998e
+    NOTICE:  PASS T-GATE-06 revoked script is RETIRED and its approval is no longer effective
+    STATIC TESTS COMPLETE
+PASS A-17 original 33 static tests pass on the Sprint 0 design
+PASS G-01-17 migration aborts and creates nothing when cf_n8n_runtime is missing
+PASS G-02-17 migration aborts and creates nothing when the role is INHERIT
+PASS G-03-17 migration aborts when the role belongs to another role
+PASS G-04-17 migration aborts on a database that has the YouTube Kids tables
+PASS R-01-17 rollback refuses to run on a database that has the YouTube Kids tables
+--- B (17) revised design (ADR-001 roles) + 33 static tests: exit=0 pass=33 fail=0
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-04 duplicate episode natural key rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS T-ID-06 scene with non-positive span rejected
+    NOTICE:  PASS T-ID-07 scene without research provenance rejected
+    NOTICE:  PASS T-ST-01 invalid insert status (APPROVED at birth) rejected
+    NOTICE:  PASS T-ST-02 skipping REVIEW (IDEA -> APPROVED) rejected
+    NOTICE:  PASS T-GATE-01 REVIEW -> APPROVED without a gate decision rejected (AI recommendation is not approval)
+    NOTICE:  PASS T-IMM-01 editorial content frozen once in REVIEW
+    NOTICE:  PASS T-GATE-02 unauthorised reviewer for gate rejected
+    NOTICE:  PASS T-GATE-03 stale review (content hash changed since viewing) rejected
+    NOTICE:  PASS T-GATE-04 unknown object rejected
+    ab7ecc15-8652-41d6-b116-e76cc3f3dae6
+    NOTICE:  PASS T-GATE-05 G1 approval persisted and status APPROVED
+    NOTICE:  PASS T-RPL-01 replaying the same G1 submission writes nothing new
+    NOTICE:  PASS T-APP-01 gate decisions are append-only (no UPDATE)
+    NOTICE:  PASS T-APP-02 gate decisions are append-only (no DELETE)
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted
+    da8cbe13-6a0e-4f0e-bc6d-f781317d1550
+    NOTICE:  PASS T-SRC-01 BLOCKED package must say why
+    NOTICE:  PASS T-SRC-02 approved script + blocked source package is a valid state
+    NOTICE:  PASS T-SRC-03 scene publication status stays UNKNOWN (research access is not permission)
+    NOTICE:  PASS T-SRC-04 BLOCKED package cannot be approved
+    NOTICE:  PASS T-SRC-05 a manifest needs a source package that exists
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS T-PUB-02 nothing is publish-eligible
+    NOTICE:  PASS T-ROLE-01 cf_n8n_runtime cannot insert gate decisions
+    NOTICE:  PASS T-ROLE-02 cf_n8n_runtime cannot call the gate function
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    460c74e8-8235-4fb7-8037-fb74fef36e85
+    NOTICE:  PASS T-GATE-06 revoked script is RETIRED and its approval is no longer effective
+    STATIC TESTS COMPLETE
+PASS B-17 33 static tests pass on the revised design, DDL applied by non-superuser postgres
+--- C (17) Sprint 1 migration + its tests: exit=0 pass=33/33 fail=0
+    NOTICE:  PASS S1-ISO-01 cf holds exactly the Sprint 1 objects
+    NOTICE:  PASS S1-ISO-02 every foreign key in cf points at a cf table
+    NOTICE:  PASS S1-ISO-03 no cf function names another schema, none is SECURITY DEFINER
+    NOTICE:  PASS S1-ISO-04 cf columns use only built-in or cf types, and no cf object depends on an extension
+    NOTICE:  PASS S1-ISO-05 cf_n8n_runtime is LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION and a member of nothing
+    NOTICE:  PASS S1-PRIV-01 cf_n8n_runtime has exactly the designed privileges on cf
+    NOTICE:  PASS S1-PRIV-02 anon, authenticated and service_role get nothing in cf
+    NOTICE:  PASS S1-PRIV-03 PUBLIC holds no privilege on any cf object
+    NOTICE:  PASS S1-GATE-00 no gate objects yet and no Sprint 1 transition needs a gate
+    NOTICE:  PASS T-RIGHTS-01 no automated legal-determination column exists anywhere in cf
+    NOTICE:  PASS T-PUB-01 all kill switches default OFF
+    NOTICE:  PASS S1-RUN-01 cf_n8n_runtime can run the CF-001 write path (run, franchise, title, candidate, READY)
+    NOTICE:  PASS T-ID-01 malformed UUID rejected
+    NOTICE:  PASS T-ID-02 duplicate research candidate (same window) rejected
+    NOTICE:  PASS T-ID-03 duplicate external AniList ID rejected
+    NOTICE:  PASS T-ID-05 research candidate without evidence rejected
+    NOTICE:  PASS S1-RPL-01 replaying a run with the same idempotency key writes nothing new
+    NOTICE:  PASS S1-ST-01 research candidate born READY rejected
+    NOTICE:  PASS S1-ST-02 READY research candidate cannot go back to IDEA
+    NOTICE:  PASS S1-IMM-01 research candidate content frozen once READY
+    NOTICE:  PASS T-PAID-01 paid call count without authorisation reference rejected
+    NOTICE:  PASS T-PAID-02 wrong agent namespace rejected (AGENT-00x is the Kids system)
+    NOTICE:  PASS T-ROLE-03 cf_n8n_runtime cannot turn on publishing
+    NOTICE:  PASS S1-ROLE-01 cf_n8n_runtime cannot make anyone a reviewer
+    NOTICE:  PASS S1-ROLE-02 cf_n8n_runtime cannot add a state-machine edge
+    NOTICE:  PASS S1-ROLE-03 cf_n8n_runtime cannot delete rows
+    NOTICE:  PASS S1-ROLE-04 cf_n8n_runtime cannot truncate tables
+    NOTICE:  PASS S1-ROLE-05 cf_n8n_runtime cannot create objects in cf
+    NOTICE:  PASS S1-ROLE-06 cf_n8n_runtime cannot create objects in public
+    NOTICE:  PASS S1-ROLE-07 cf_n8n_runtime cannot disable the guard triggers
+    NOTICE:  PASS S1-ROLE-08 cf_n8n_runtime cannot call cf functions directly
+    NOTICE:  PASS S1-ROLE-09 cf_n8n_runtime cannot switch triggers off for its session
+    NOTICE:  PASS T-APP-03 lifecycle rows are never deleted, even from a privileged session
+    SPRINT 1 TESTS COMPLETE
+PASS C-17 Sprint 1 migration applies as non-superuser and all its tests pass
+PASS V-01-17 read-only verification query returns all true, run as postgres (t,t,t,t,t,t,t,t,t,t,t)
+PASS V-02-17 verification catches an extra privilege (runtime_privileges_exact=false: t,t,t,t,t,t,t,t,t,f,t)
+PASS G-05-17 a second apply is refused
+PASS R-02-17 rollback stops and changes nothing when an object it did not create is in cf
+PASS R-03-17 rollback stops when an object outside cf depends on cf
+    psql:/home/pgtest/work/s1_rollback.sql:32: ERROR:  cannot drop desired object(s) because other objects depend on them
+    DETAIL:  view depends_on_cf depends on table cf.research_candidates
+    HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+PASS R-04-17 clean rollback removes schema cf and its rows, keeps cf_n8n_runtime with no table access (cf,role,tables=0,1,0)
+PASS R-05-17 re-apply after rollback succeeds and all Sprint 1 tests pass again
+
+SUMMARY: 30 harness checks passed, 0 failed

@@ -9,9 +9,20 @@
 -- throwaway local PostgreSQL 16 instance inside the engineering container
 -- (see sprints/SPRINT_00_FOUNDATION/SPRINT_00_TEST_STRATEGY.md §6).
 --
+-- Revised 2026-10-07, after Sprint 0 (architecture/decisions/ADR-001):
+--   * Target is the dedicated Supabase project "V&A Anime Clip Farming —
+--     Engine 2" (ref mkeldytatorxxszjdngt), not the shared VA-Company-Brain
+--     project. Schema `cf` is kept inside it.
+--   * Section 14 only: the n8n runtime role is cf_n8n_runtime, provisioned
+--     before any migration, with direct grants (the group role cf_agent is
+--     dropped because the runtime role is NOINHERIT).
+--   No table, column, constraint, type, function, trigger or view changed.
+--   Re-validated on local PostgreSQL 16.15 and 17.10
+--   (evidence/PRE_SPRINT_01_MIGRATION_PREFLIGHT.md).
+--
 -- Applying any part of it requires a separate, explicit migration
--- authorisation naming the exact objects. Sprint 1 is expected to apply only
--- the subset listed in SPRINT_00_ARCHITECTURE_REPORT.md §15.
+-- authorisation naming the exact objects. Sprint 1 applies only the subset in
+-- migrations/0001_cf_sprint01.sql (SPRINT_00_ARCHITECTURE_REPORT.md §15).
 --
 -- Isolation: every object lives in the dedicated schema `cf`. Nothing here
 -- reads, references, alters or depends on any object in `public` (the
@@ -953,39 +964,51 @@ WHERE r.status = 'APPROVED'
   AND p.script_id = s.script_id;
 
 -- -----------------------------------------------------------------------------
--- 14. Roles and privileges (proposal; role names subject to human decision)
+-- 14. Roles and privileges (revised 2026-10-07, ADR-001)
 -- -----------------------------------------------------------------------------
--- cf_owner     : owns the schema and the SECURITY DEFINER gate function. No login.
--- cf_agent     : the n8n login role for CF-001..CF-009. Can write agent tables,
---                cannot write gate_decisions, reviewers, system_flags or allowed_transitions,
---                cannot execute record_gate_decision.
--- cf_governance: the human governance surface. Can execute record_gate_decision only.
+-- cf_n8n_runtime: the n8n login role for CF-001..CF-009. Created by the
+--                 provisioning step BEFORE any migration as LOGIN NOINHERIT
+--                 NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION,
+--                 with no password until a human sets it. Can write agent
+--                 tables; cannot write gate_decisions, reviewers, system_flags
+--                 or allowed_transitions; cannot execute record_gate_decision.
+-- cf_governance : the human governance surface. Can execute
+--                 record_gate_decision only. Unchanged; which login uses it is
+--                 decision D-GOV-2.
+--
+-- Changed from Sprint 0: the NOLOGIN group role cf_agent is gone. A NOINHERIT
+-- login role does not receive a group role's privileges, so its grants now go
+-- directly to cf_n8n_runtime. The privilege set is the one cf_agent had.
+-- Sprint 0 also described a cf_owner role that this file never created; objects
+-- are owned by the role that applies the migration (`postgres` on Supabase).
 --
 -- Supabase service_role bypasses all of this; CF workflows must NOT use the
 -- service-role key (and must never reuse the YouTube Kids credentials).
 
 DO $$ BEGIN
-  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'cf_agent') THEN CREATE ROLE cf_agent NOLOGIN; END IF;
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'cf_n8n_runtime') THEN
+    RAISE EXCEPTION 'CF_PRECONDITION: role cf_n8n_runtime must be provisioned before this migration';
+  END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'cf_governance') THEN CREATE ROLE cf_governance NOLOGIN; END IF;
 END $$;
 
 REVOKE ALL ON SCHEMA cf FROM PUBLIC;
 REVOKE ALL ON ALL TABLES IN SCHEMA cf FROM PUBLIC;
 REVOKE ALL ON ALL FUNCTIONS IN SCHEMA cf FROM PUBLIC;
-GRANT USAGE ON SCHEMA cf TO cf_agent, cf_governance;
+GRANT USAGE ON SCHEMA cf TO cf_n8n_runtime, cf_governance;
 
-GRANT SELECT ON ALL TABLES IN SCHEMA cf TO cf_agent;
+GRANT SELECT ON ALL TABLES IN SCHEMA cf TO cf_n8n_runtime;
 GRANT INSERT, UPDATE ON
   cf.agent_runs, cf.anime_franchises, cf.anime_titles, cf.anime_source_episodes,
   cf.research_candidates, cf.anime_scene_intelligence, cf.editorial_opportunities,
   cf.content_scripts, cf.publication_source_packages, cf.production_manifests,
   cf.production_jobs, cf.content_assets, cf.renders, cf.published_content, cf.platform_posts
-  TO cf_agent;
+  TO cf_n8n_runtime;
 GRANT INSERT ON
   cf.editorial_opportunity_scenes, cf.publication_source_items,
   cf.performance_snapshots, cf.content_learning_log
-  TO cf_agent;
--- Deliberately absent for cf_agent: gate_decisions, reviewers, system_flags, allowed_transitions writes.
+  TO cf_n8n_runtime;
+-- Deliberately absent for cf_n8n_runtime: gate_decisions, reviewers, system_flags, allowed_transitions writes.
 
 GRANT SELECT ON cf.reviewers, cf.v_effective_gate_decisions, cf.editorial_opportunities,
   cf.content_scripts, cf.publication_source_packages, cf.publication_source_items, cf.renders

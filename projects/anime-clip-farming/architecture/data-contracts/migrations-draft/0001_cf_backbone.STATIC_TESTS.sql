@@ -4,9 +4,12 @@
 -- Run ONLY against a throwaway local PostgreSQL instance that has just loaded
 -- 0001_cf_backbone.DESIGN_ONLY.sql. Never run against Supabase.
 -- All data below is fictional fixture data. Every assertion raises on failure.
+--   psql -c "CREATE ROLE cf_n8n_runtime WITH LOGIN NOINHERIT NOBYPASSRLS NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION PASSWORD NULL"
 --   psql -v ON_ERROR_STOP=1 -f 0001_cf_backbone.DESIGN_ONLY.sql
 --   psql -v ON_ERROR_STOP=1 -f 0001_cf_backbone.STATIC_TESTS.sql
 -- Expected output: one "PASS <id>" notice per test and no "FAIL".
+-- Revised 2026-10-07 (ADR-001): the role tests run as cf_n8n_runtime instead
+-- of the Sprint 0 group role cf_agent. The 33 tests are otherwise unchanged.
 -- =============================================================================
 
 SET client_min_messages = warning;
@@ -238,18 +241,18 @@ SELECT cf_test.expect_true('T-PUB-02 nothing is publish-eligible',
   NOT EXISTS (SELECT 1 FROM cf.v_publish_eligibility));
 
 -- ---------------------------------------------------------------------------
--- Privileges: the agent role cannot write approvals
+-- Privileges: the agent runtime role cannot write approvals
 -- ---------------------------------------------------------------------------
-GRANT USAGE ON SCHEMA cf_test TO cf_agent;
-SET ROLE cf_agent;
-SELECT cf_test.expect_error('T-ROLE-01 cf_agent cannot insert gate decisions',
+GRANT USAGE ON SCHEMA cf_test TO cf_n8n_runtime;
+SET ROLE cf_n8n_runtime;
+SELECT cf_test.expect_error('T-ROLE-01 cf_n8n_runtime cannot insert gate decisions',
   $$INSERT INTO cf.gate_decisions (gate, object_type, object_id, object_content_sha256, decision, reviewer_id, idempotency_key, surface)
     VALUES ('G1', 'editorial_opportunity', '00000000-0000-4000-8000-000000000011', 'x', 'APPROVE',
             '00000000-0000-4000-8000-000000000001', 'k-agent', 'AGENT')$$, 'permission denied');
-SELECT cf_test.expect_error('T-ROLE-02 cf_agent cannot call the gate function',
+SELECT cf_test.expect_error('T-ROLE-02 cf_n8n_runtime cannot call the gate function',
   $$SELECT cf.record_gate_decision('G1', '00000000-0000-4000-8000-000000000011', 'APPROVE',
       '00000000-0000-4000-8000-000000000001', 'k-agent-2', 'AGENT')$$, 'permission denied');
-SELECT cf_test.expect_error('T-ROLE-03 cf_agent cannot turn on publishing',
+SELECT cf_test.expect_error('T-ROLE-03 cf_n8n_runtime cannot turn on publishing',
   $$UPDATE cf.system_flags SET enabled = true WHERE flag_key = 'PUBLISH_ENABLED'$$, 'permission denied');
 RESET ROLE;
 

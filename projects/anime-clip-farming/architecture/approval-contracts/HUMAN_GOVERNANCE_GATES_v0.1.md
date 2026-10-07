@@ -12,7 +12,7 @@
 | GOV-1 | **Recommendation is not approval.** No status, flag, rank, score, confidence or LLM text ever counts as approval. Only an effective row in `cf.gate_decisions` does. |
 | GOV-2 | **Exact object.** A decision names one object UUID and the `content_sha256` the reviewer saw. A new revision (new UUID) needs its own decision. |
 | GOV-3 | **Attributable.** Every decision has a `reviewer_id` of an active human whose `allowed_gates` includes that gate, a `decided_at`, the `surface` it came from, and an `idempotency_key`. |
-| GOV-4 | **Only one write path.** `cf.record_gate_decision()` (SECURITY DEFINER). The n8n agent role (`cf_agent`) has no INSERT on `gate_decisions` and no EXECUTE on the function. Static tests T-ROLE-01/02 prove this in the draft. |
+| GOV-4 | **Only one write path.** `cf.record_gate_decision()` (SECURITY DEFINER). The n8n runtime role (`cf_n8n_runtime`; Sprint 0 called it `cf_agent`, see ADR-001) has no INSERT on `gate_decisions` and no EXECUTE on the function. Static tests T-ROLE-01/02 prove this in the draft. |
 | GOV-5 | **Append-only.** Decisions are never updated or deleted. Corrections are new rows: `REVOKE` supersedes an `APPROVE`. A mistaken `REJECT` is not reopened; the agent creates a new revision. |
 | GOV-6 | **Fail closed downstream.** Every consumer validates: (a) object status is `APPROVED`, (b) an effective `APPROVE` decision exists for this gate, object ID and current `content_sha256`, (c) no upstream approval in the chain has been revoked. Any check missing or false → stop with a named error, write nothing. |
 | GOV-7 | **No proxy approval.** Approving at one gate never implies another. G2 does not imply G3; G3 does not imply G4; G4 does not imply that publishing is switched on. |

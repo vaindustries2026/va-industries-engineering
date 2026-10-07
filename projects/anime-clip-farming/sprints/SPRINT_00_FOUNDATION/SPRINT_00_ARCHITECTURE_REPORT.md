@@ -1,5 +1,7 @@
 # Sprint 0 — Final Architecture Report
 
+> **Post-Sprint 0 note (2026-10-07):** the Company Brain chose a dedicated Supabase project instead of D-DB-1 (shared project + `cf` schema). See [ADR-001](../../architecture/decisions/ADR-001_DEDICATED_SUPABASE_PROJECT.md). This report is kept unchanged below as the Sprint 0 record; §15's migration subset is now `architecture/data-contracts/migrations/0001_cf_sprint01.sql`, and blockers B-1, B-2 and B-3 are updated in `evidence/PRE_SPRINT_01_MIGRATION_PREFLIGHT.md` §10.
+
 **Batch A / Sprint 0 — Engine 2 Foundation.** Operator: Claude Engineer-2 (owner Viva). Date: 2026-10-07.
 **Everything in this report is PROPOSED unless it says IMPLEMENTED.** The only IMPLEMENTED items are documentation files on the Sprint 0 Git branch.
 
