@@ -1,0 +1,11 @@
+{
+ "manifest_id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+ "changed_fields": {
+  "status": {
+   "before": "REVIEW",
+   "after": "APPROVED"
+  }
+ },
+ "all_other_fields_identical": true,
+ "manifest_json_identical": true
+}
