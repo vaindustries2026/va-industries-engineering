@@ -1,0 +1,13 @@
+{
+ "readiness_manifest_id": "edc4ad58-3e5d-4ac2-9c74-c9af03af363f",
+ "changed_fields": {
+  "status": {
+   "before": "REVIEW",
+   "after": "APPROVED"
+  }
+ },
+ "all_other_columns_identical": true,
+ "readiness_manifest_json_identical": true,
+ "resolution_items_identical_14": true,
+ "other_readiness_manifests_identical": true
+}

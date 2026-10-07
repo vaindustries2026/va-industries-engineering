@@ -1786,3 +1786,31 @@ rollback: "delete edc4ad58 and the 14 ARI rows of A006-1791346204213; set 45cc74
 open_items: ["human approval of readiness manifest edc4ad58 (not given)", "ElevenLabs commercial-rights documentation (deferred by human)"]
 status: "EP005_FINAL_AGENT006_PROOF_COMPLETE + DERIVED_MANIFEST_APPROVED + EXACTLY_ONE_AGENT006_RUN + 14_REUSE_EXISTING + ZERO_NEEDS_HUMAN_REVIEW + ZERO_CREATE_NEW + ZERO_BLOCKED + ZERO_AMBIGUOUS + READY_FOR_HUMAN_APPROVAL + READINESS_MANIFEST_STATUS_REVIEW + ZERO_AGENT007_RUN + ZERO_PROVIDER_GENERATION + ZERO_PAID_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261007-EP005-PRODUCTION-READINESS-APPROVED: approve readiness manifest edc4ad58
+
+```yaml
+change_id: "ENG-20261007-EP005-PRODUCTION-READINESS-APPROVED"
+timestamp: "2026-10-07"
+actor: "Claude"
+authorised_by: "Human via Company Brain (approve EP005 production readiness; readiness only)"
+evidence: ["evidence/EP005_PRODUCTION_READINESS_APPROVAL_v1.0.md", "evidence/ep005/audio_ingestion/EP005_READINESS_APPROVAL_FIELD_DIFF_v1.json"]
+readiness_manifest: "edc4ad58-3e5d-4ac2-9c74-c9af03af363f"
+production_manifest: "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed (APPROVED, unmodified)"
+agent006_run: "A006-1791346204213 (execution 579)"
+change: "status REVIEW -> APPROVED only; readiness_state stays READY_FOR_HUMAN_APPROVAL; readiness_manifest_json, counts and all other columns identical; 14 resolution items and other readiness manifests unchanged"
+counts: "requirement 14; 14 REUSE_EXISTING; 0 unresolved/create_new/blocked/ambiguous"
+agent006_runs: 0
+agent007_runs: 0
+provider_calls: 0
+paid_calls: 0
+downstream_production_executions: 0
+registry_changes: 0
+storage_changes: 0
+migrations: 0
+rollback: "set status back to REVIEW for edc4ad58"
+next: "Company Brain / human authorisation for any next production stage; none started"
+status: "EP005_PRODUCTION_READINESS_APPROVED + READINESS_MANIFEST_APPROVED + PRODUCTION_MANIFEST_APPROVED + 14_REUSE_EXISTING + ZERO_UNRESOLVED + ZERO_AGENT006_RUN + ZERO_AGENT007_RUN + ZERO_PROVIDER_GENERATION + ZERO_PAID_CALLS + ZERO_DOWNSTREAM_PRODUCTION + EVIDENCE_COMMITTED_TO_GITHUB"
+```
