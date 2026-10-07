@@ -1814,3 +1814,27 @@ rollback: "set status back to REVIEW for edc4ad58"
 next: "Company Brain / human authorisation for any next production stage; none started"
 status: "EP005_PRODUCTION_READINESS_APPROVED + READINESS_MANIFEST_APPROVED + PRODUCTION_MANIFEST_APPROVED + 14_REUSE_EXISTING + ZERO_UNRESOLVED + ZERO_AGENT006_RUN + ZERO_AGENT007_RUN + ZERO_PROVIDER_GENERATION + ZERO_PAID_CALLS + ZERO_DOWNSTREAM_PRODUCTION + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261007-EP005-DOWNSTREAM-PRODUCTION-AUDIT: read-only downstream production audit
+
+```yaml
+change_id: "ENG-20261007-EP005-DOWNSTREAM-PRODUCTION-AUDIT"
+timestamp: "2026-10-07"
+actor: "Claude"
+authorised_by: "Company Brain (read-only downstream audit)"
+evidence: "evidence/EP005_DOWNSTREAM_PRODUCTION_AUDIT_v1.0.md"
+classification: "C NEW_PRODUCTION_WORKFLOW_REQUIRED"
+live_workflows: {agent006: "ZTBdnKFO8STSjJU4 9bf6bbef unpublished", agent007_v01: "hlwQHO8FEcn4gDXE active, published 45c20c99 (no paid gate), draft b135f8a5 gate DISABLED", agent007_v02: "SVWr32vunweTrvnf inactive"}
+key_findings: ["no downstream shot/video/composite/voice/caption/render/QC/publish workflow, table or storage path exists", "only provider call wired anywhere is Runway text_to_image (assets, not shots)", "15 video shots and 26 base frames required; no base frames exist", "no ElevenLabs or TTS credential in n8n", "legacy APPROVED+NEEDS_ASSET_CREATION readiness manifests d124ba28 and c0012923 remain (F-4)", "shot_plan text still carries TMP_/TBD labels; use canonical_reuse_map"]
+next_stage_proposed: "Agent-008 Shot Assembly Specification & Deterministic Compositor (not built); smoke S004+S005"
+provider_calls: 0
+paid_calls: 0
+n8n_writes: 0
+supabase_writes: 0
+storage_writes: 0
+agent006_runs: 0
+agent007_runs: 0
+status: "EP005_DOWNSTREAM_PRODUCTION_AUDIT_COMPLETE + PRODUCTION_PATH_CLASSIFICATION_C + ZERO_PROVIDER_CALLS + ZERO_PAID_CALLS + ZERO_N8N_WRITES + ZERO_SUPABASE_WRITES + ZERO_STORAGE_WRITES + ZERO_AGENT006_RUN + ZERO_AGENT007_RUN + EVIDENCE_COMMITTED_TO_GITHUB"
+```
