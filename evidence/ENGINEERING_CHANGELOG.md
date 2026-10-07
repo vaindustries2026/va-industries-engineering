@@ -1656,3 +1656,42 @@ agent007_executions: 0
 migrations: 0
 status: "STOPPED_PRE_GENERATION + ZERO_WRITES_OUTSIDE_EVIDENCE"
 ```
+
+---
+
+## ENG-20261007-EP005-ELEVENLABS-AUDIO-CANDIDATES: nine ElevenLabs Sound Effects candidates for human review (ambience x3, cloth x3, pop x3)
+
+```yaml
+change_id: "ENG-20261007-EP005-ELEVENLABS-AUDIO-CANDIDATES"
+timestamp: "2026-10-07T03:11:33Z"
+actor: "Claude"
+authorised_by: "Company Brain (existing ElevenLabs Starter-plan credits only; max 9 generations; no purchase/upgrade/billing change; rights reconciliation separate)"
+evidence: "evidence/EP005_ELEVENLABS_AUDIO_CANDIDATES_v1.0.md"
+manifest: "evidence/ep005/elevenlabs_candidates/EP005_ELEVENLABS_CANDIDATES_MANIFEST_v1.json (prompts, node/session/generation ids, timestamps, settings, SHA-256 of original downloads)"
+tool: "ElevenLabs MCP (restricted connector), flow NRRpsJcWc7UzYPkRv6e3, model eleven_text_to_sound_v2, generations_count=1 on every run, prompt_influence 0.5"
+generations: {performed: 9, ceiling: 9, failed: 0, retries: 0}
+credits: "265 reported across the 9 generations; estimate_only had returned 795 (3x); account balance not readable via the connector"
+candidates:
+  - {id: "AMB-BATHROOM-QUIET-v01-EL-CAND-A", sha256: "e5930ba7886e9889075bc2c26203296f58319c0959b0581efb8e41b3a44c5192", gen: "jBDhcy9ESwGyI8gN3IP9"}
+  - {id: "AMB-BATHROOM-QUIET-v01-EL-CAND-B", sha256: "87ca37d5a5feda35f3f5d40485b3c6ff6697574452d278a636e16f2534b67906", gen: "7CeuAy9P4ig5O05cOFJs"}
+  - {id: "AMB-BATHROOM-QUIET-v01-EL-CAND-C", sha256: "baee962c86f8725ffa595331f452a698bde7d5e69871165696bf43e933317d6b", gen: "Oe9nvpw0JuR3zKjs6Vib"}
+  - {id: "FOLEY-CLOTH-SOFT-v01-EL-CAND-A", sha256: "6eee9b2447a9525853105a9146daae3f47f5142a55d54b7e12846c546c327a6a", gen: "1svFoVNd2k9YUGYk5BK1"}
+  - {id: "FOLEY-CLOTH-SOFT-v01-EL-CAND-B", sha256: "d7a7786e01a5e69fae7465d91eea5aaf8efdeea5f03aad32bbfe3a719d3c58c2", gen: "n8T2LIFiBNMbroS3VjgQ"}
+  - {id: "FOLEY-CLOTH-SOFT-v01-EL-CAND-C", sha256: "b0c80ce840bc39f0f306b8f84dcf5fb8b654a011249bcd03a63933911f6b9080", gen: "eiW0bnQ9IsbkD6qwPVuQ"}
+  - {id: "SFX-COMPLETION-POP-v01-EL-CAND-A", sha256: "26cbfe89678e68b4826a8179c29ffa427492bd521a8df300c51d9c8f4b9d4a6d", gen: "75tahAZ0wFnzcjSADUkx"}
+  - {id: "SFX-COMPLETION-POP-v01-EL-CAND-B", sha256: "3f2fc41f6da27abc4e1abbf285b3a02f9a9ac319529ccfbbecba97cce48923ba", gen: "9nbCjtJHleIzRbpza0DP"}
+  - {id: "SFX-COMPLETION-POP-v01-EL-CAND-C", sha256: "9c816983d5e05f36ba5f14d5463769ce371fd1affccb79d3f01354876f26aecc", gen: "w7nMUcbVodYoUbfbm0KZ"}
+qc_flags: "ambience: tonal prominence 27.6-32.1 dB (possible hum; local synthetic candidates were 2.3-2.8); loop-seam click test fails for A and B, passes for C (MP3 padding may affect it); all very quiet (-60 to -68 dBFS RMS). pops: peaks -33 to -43 dBFS; B and C keep low-level content to end of the 0.48 s clip. cloth: A ~0-793 ms, B ~187-510 ms, C ~24-872 ms"
+rights_status: "UNRECONCILED (Starter plan stated by Company Brain, not verified from account; not blocking generation per instruction); no ingestion until reconciled and a human approves exact bytes"
+prompt_deviation: "suggested prompt directions condensed per the model guide; toilet/plumbing/traffic/fan terms omitted; prompt_influence 0.5 chosen"
+review_location: "session scratch .../scratchpad/el_candidates/ (original/, review/ byte-identical renamed copies, review_aids/ loop-check derivatives); audio binaries NOT committed"
+purchases_upgrades_billing_changes: 0
+registry_changes: 0
+storage_changes: 0
+agent006_executions: 0
+agent007_executions: 0
+readiness_approvals: 0
+migrations: 0
+next: "human listening and selection by exact SHA-256; rights reconciliation; trimming/gain staging of the chosen files; separate ingestion authorisation"
+status: "EP005_ELEVENLABS_AUDIO_CANDIDATES_READY_FOR_HUMAN_REVIEW + MAX_NINE_GENERATIONS + ORIGINAL_SHA256_RECORDED + EVIDENCE_COMMITTED_TO_GITHUB"
+```
