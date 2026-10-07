@@ -1,0 +1,137 @@
+{
+ "task": "EP005 bounded Lumi voice audition (D-3 shortened S004 prompt)",
+ "date": "2026-10-07",
+ "authorised_by": "Company Brain / human decision D-3",
+ "text": "A little glint! Look at his cheek. Can you find the next berry smudge?",
+ "text_characters": 70,
+ "model_id": "eleven_multilingual_v2",
+ "settings": "voice_id + model only (connector exposes no other controls); generations_count=1 per candidate",
+ "flow_id": "v156SWeKdkuYy8Crv8ag",
+ "flow_workspace": "a2a81ab0f7fd406cb3fff9eef8e173c2",
+ "generations": 3,
+ "credits_total": 210,
+ "credits_per_take": 70,
+ "reported_price_per_take_usd_cents": 1.4,
+ "s004_dialogue_window_s": 4.15,
+ "window_definition": "speech may start 0.65 s after shot start (glint reaction) and must end by 4.80 s (0.20 s guard before the protected S005 hold)",
+ "takes": [
+  {
+   "label": "L1",
+   "voice": "Lola - Soft, Innocent and Calming",
+   "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+   "generation_id": "ICmQjlhIOueTir68xc0u",
+   "session_id": "Fp6R66oDts693PqH3PwA",
+   "file": "L1_Lola_f9imtLc2jfOLXtqe3Ihb_ICmQjlhIOueTir68xc0u.mp3",
+   "sha256": "832fa7cc217755daa4f7a00d4701899d865ba60cd2bcf89549f2ba99a4c32797",
+   "bytes": 112464,
+   "codec": "mp3 mono 44.1kHz 128kbps",
+   "reported_duration_s": 5.898,
+   "decoded_duration_s": 5.898,
+   "lead_silence_s": 0.08,
+   "trail_silence_s": 0.42,
+   "speech_extent_s": 5.4,
+   "internal_pauses_ge120ms": [
+    [
+     1.15,
+     0.18
+    ],
+    [
+     1.4,
+     0.13
+    ],
+    [
+     2.59,
+     0.13
+    ],
+    [
+     2.73,
+     0.35
+    ]
+   ],
+   "syllables": 16,
+   "syl_per_s_speech_extent": 2.96,
+   "peak_dbfs": -18.49,
+   "end_if_start_0p65": 6.05,
+   "margin_to_4p80_s": -1.25,
+   "margin_to_5p00_s": -1.05,
+   "fits_4p15_window": false,
+   "credits": 70
+  },
+  {
+   "label": "L2",
+   "voice": "Libby-Animated",
+   "voice_id": "Wu9A8zlwvFHoEpuX7MGo",
+   "generation_id": "ceoShU0y1UDdJvn7lck3",
+   "session_id": "h32Oy2hl1r0FWwRGWUgL",
+   "file": "L2_Libby-Animated_Wu9A8zlwvFHoEpuX7MGo_ceoShU0y1UDdJvn7lck3.mp3",
+   "sha256": "bf296ebd77da0a2657910acc6f4ea4dfcd0ec2d816165dbab18f42e456138229",
+   "bytes": 125003,
+   "codec": "mp3 mono 44.1kHz 128kbps",
+   "reported_duration_s": 6.687,
+   "decoded_duration_s": 6.687,
+   "lead_silence_s": 0.16,
+   "trail_silence_s": 0.45,
+   "speech_extent_s": 6.08,
+   "internal_pauses_ge120ms": [
+    [
+     1.34,
+     0.23
+    ],
+    [
+     1.59,
+     0.12
+    ],
+    [
+     3.0,
+     0.24
+    ],
+    [
+     3.25,
+     0.22
+    ],
+    [
+     3.48,
+     0.29
+    ],
+    [
+     3.9,
+     0.28
+    ]
+   ],
+   "syllables": 16,
+   "syl_per_s_speech_extent": 2.63,
+   "peak_dbfs": -11.83,
+   "end_if_start_0p65": 6.73,
+   "margin_to_4p80_s": -1.93,
+   "margin_to_5p00_s": -1.73,
+   "fits_4p15_window": false,
+   "credits": 70
+  },
+  {
+   "label": "L3",
+   "voice": "celine - cuddly, thin and soft.",
+   "voice_id": "mHX7OoPk2G45VMAuinIt",
+   "generation_id": "LyA1OJnk187PvD0U0PG2",
+   "session_id": "WGynKYSI5XkjxBsP0LEL",
+   "file": "L3_celine_mHX7OoPk2G45VMAuinIt_LyA1OJnk187PvD0U0PG2.mp3",
+   "sha256": "e7a0986dad22a2bde1df9df37936cbef983ec409683c75f57aa39dff3e369520",
+   "bytes": 103687,
+   "codec": "mp3 mono 44.1kHz 128kbps",
+   "reported_duration_s": 5.341,
+   "decoded_duration_s": 5.341,
+   "lead_silence_s": 0.0,
+   "trail_silence_s": 0.02,
+   "speech_extent_s": 5.32,
+   "internal_pauses_ge120ms": [],
+   "syllables": 16,
+   "syl_per_s_speech_extent": 3.01,
+   "peak_dbfs": -9.63,
+   "end_if_start_0p65": 5.97,
+   "margin_to_4p80_s": -1.17,
+   "margin_to_5p00_s": -0.97,
+   "fits_4p15_window": false,
+   "credits": 70
+  }
+ ],
+ "binaries_committed": false
+}

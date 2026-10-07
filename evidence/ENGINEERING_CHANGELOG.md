@@ -1894,3 +1894,29 @@ credits: 0
 production_writes: 0
 status: "EP005_VOICE_AND_S004_TIMING_AUDIT_COMPLETE + TIMING_CONFLICT_YES + VOICE_INFRASTRUCTURE_MISSING + ZERO_GENERATIONS + ZERO_CREDITS + ZERO_PRODUCTION_WRITES"
 ```
+
+---
+
+## ENG-20261007-EP005-LUMI-VOICE-AUDITION: bounded Lumi audition (3 takes, 210 credits) and D-3 decision record
+
+```yaml
+change_id: "ENG-20261007-EP005-LUMI-VOICE-AUDITION"
+timestamp: "2026-10-07"
+actor: "Claude"
+authorised_by: "Company Brain / human (D-3 prompt shortening decision; bounded audition of L1-L3)"
+evidence: ["evidence/EP005_LUMI_VOICE_AUDITION_v1.0.md", "evidence/ep005/voice_audition/LUMI_AUDITION_RESULTS_v1.json"]
+decision_recorded: "S004 prompt: 'Can you help Mikko find the next berry smudge?' -> 'Can you find the next berry smudge?' (line 1 unchanged); script/manifest NOT yet updated"
+s012_s018: "identical repeated prompt in script and manifest (S004, S012, S018); same shortened form proposed, not applied"
+generations: {count: 3, model: "eleven_multilingual_v2", flow_id: "v156SWeKdkuYy8Crv8ag", credits_each: 70, credits_total: 210}
+takes: [{L1: "Lola f9imtLc2jfOLXtqe3Ihb gen ICmQjlhIOueTir68xc0u 5.898 s sha 832fa7cc…2797"}, {L2: "Libby-Animated Wu9A8zlwvFHoEpuX7MGo gen ceoShU0y1UDdJvn7lck3 6.687 s sha bf296ebd…8229"}, {L3: "celine mHX7OoPk2G45VMAuinIt gen LyA1OJnk187PvD0U0PG2 5.341 s sha e7a0986d…9520"}]
+fit: "speech extents 5.40 / 6.08 / 5.32 s vs 4.15 s window: none fits; timing conflict remains; no take rushed by duration (2.6-3.0 syl/s)"
+winner_selected: false
+mikko_generated: false
+registry_rows: 0
+storage_uploads: 0
+agent008_changes: 0
+renders: 0
+billing_changes: 0
+audio_binaries_committed: 0
+status: "EP005_LUMI_VOICE_AUDITION_COMPLETE_THREE_TAKES + TIMING_CONFLICT_REMAINS + NO_WINNER_SELECTED + ZERO_PRODUCTION_WRITES"
+```
