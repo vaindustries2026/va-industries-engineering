@@ -88,7 +88,7 @@ Verification (read-only, immediately after):
 | Objects owned | 0 |
 | Database privileges | CONNECT and TEMP (PostgreSQL's PUBLIC defaults); no CREATE |
 | Schema privileges | USAGE on `public`, `pg_catalog`, `information_schema` (PUBLIC defaults); none on `auth`, `extensions`, `graphql`, `graphql_public`, `pgbouncer`, `realtime`, `storage`, `vault`; CREATE nowhere |
-| Tables it can read or write | none |
+| Tables it can read or write | none. A plain `has_table_privilege` scan finds two views, `extensions.pg_stat_statements` and `extensions.pg_stat_statements_info`, which the extension grants SELECT on to PUBLIC. The role has no USAGE on `extensions`, so it cannot reach them (re-checked 2026-10-07T04:05Z). |
 | Sensitive functions | cannot execute `pgbouncer.get_auth`, `vault.create_secret`, `vault.update_secret` |
 
 Why no password now: this project logs DDL (`log_statement = ddl`, `pg_stat_statements.track_utility = on`), so a password inside SQL text would land in the Postgres logs. It is set by a human (§6).
