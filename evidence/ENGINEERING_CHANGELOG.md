@@ -2351,3 +2351,24 @@ paid_action_triggered: false
 rollback: "delete asset_registry id 6c290db5-e47b-456c-a51c-736d7568e018; delete storage key above; revert commit"
 status: "EP005_S027_FINAL_SHOT_APPROVED_AND_PRESERVED + HUMAN_DECISION_APPROVED + EXACT_FINAL_BYTES_PRESERVED + STORAGE_READBACK_SHA256_MATCH + SHOT_RENDER_ASSEMBLED_SHOT_REGISTERED_APPROVED + RAW_MOTION_SOURCE_UNCHANGED + DIALOGUE_SOURCE_UNCHANGED + AGENT006_RESOLUTION_UNCHANGED + ZERO_NEW_GENERATIONS + ZERO_PROVIDER_SPEND + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261010-EP005-AGENT008-SCALEOUT-AUDIT: zero-spend EP005 production matrix and batch plan
+
+```yaml
+change_id: "ENG-20261010-EP005-AGENT008-SCALEOUT-AUDIT"
+timestamp: "2026-10-10"
+actor: "Claude"
+authorised_by: "Company Brain (zero-spend scale-out audit)"
+change_type: "TEST"   # read-only audit + evidence
+evidence: ["evidence/EP005_AGENT008_SCALEOUT_AUDIT_v1.0.md", "evidence/agent008/scaleout/EP005_AGENT008_PRODUCTION_MATRIX_v1.json", "evidence/agent008/scaleout/EP005_AGENT008_PRODUCTION_MATRIX_v1.md", "evidence/agent008/scaleout/EP005_AGENT008_PRODUCTION_BATCH_PLAN_v1.md", "evidence/agent008/scaleout/EP005_AGENT008_CAPABILITY_GAP_MATRIX_v1.md", "evidence/agent008/scaleout/S027_LIFECYCLE_STANDARDISATION_v1.md", "evidence/agent008/scaleout/build_ep005_production_matrix.py", "evidence/agent008/scaleout/AUTHORITATIVE_INPUT_FETCH_SHA256_v1.txt"]
+sources: {script: "14471926 v02 APPROVED", production_manifest: "45cc7493 APPROVED", readiness: "edc4ad58 APPROVED", registry_rows: 27}
+summary: {total_shots: 29, s027_complete: 1, remaining: 28, static_or_deterministic: 14, higgsfield_motion: 3, hybrid: 8, blocked: 3, new_base_frames: 9, mikko_dialogue_shots: 9, lumi_dialogue_shots: 10, lumi_voice_blocked_shots: 10, agent008_code_gaps: 11, video_generations: 11, video_if_unblocked: 14, image_generations: 9, mikko_tts: 9, lumi_tts_after_voice_approval: 13}
+key_findings: ["G05 foley/pop mixed as looped beds (defect)", "G10 whoosh has no governed SHA", "G01 snapshots cover 5/29 shots", "new dialogue timing conflicts S012, S018 (plus known S004)", "S009/S015/S021 blocked on tracked smudge removal"]
+provider_calls: 0
+writes_to_production_state: 0
+paid_action_triggered: false
+rollback: "revert commit"
+status: "EP005_AGENT008_SCALEOUT_PLAN_READY + S027_COMPLETE_APPROVED + ALL_REMAINING_SHOTS_CLASSIFIED + ZERO_PROVIDER_CALLS + ZERO_GENERATIONS + ZERO_WRITES_TO_PRODUCTION_STATE + EVIDENCE_COMMITTED_TO_GITHUB"
+```

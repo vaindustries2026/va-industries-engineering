@@ -1,0 +1,2857 @@
+{
+ "source": {
+  "production_manifest_id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+  "readiness_manifest_id": "edc4ad58-3e5d-4ac2-9c74-c9af03af363f",
+  "script": "EP-CANDIDATE-005 v02 (14471926), APPROVED"
+ },
+ "summary": {
+  "TOTAL_EP005_SHOTS": 29,
+  "S027_COMPLETE_APPROVED": 1,
+  "REMAINING_SHOTS": 28,
+  "STATIC_OR_DETERMINISTIC_ONLY": 14,
+  "HIGGSFIELD_MOTION_REQUIRED": 3,
+  "HYBRID": 8,
+  "BLOCKED": 3,
+  "NEW_BASE_FRAMES_REQUIRED": 9,
+  "NEW_BASE_FRAME_FAMILIES": [
+   "F-CHEEK-CLOTH",
+   "F-FACE-MIRROR",
+   "F-FACE-MIRROR-POINT",
+   "F-MACRO-REFLECTION",
+   "F-MEDIUM-TWOSHOT",
+   "F-MIRROR-OPEN",
+   "F-MOUTH-CLOTH",
+   "F-NOSE-CLOTH",
+   "F-OVERSHOULDER-MIRROR"
+  ],
+  "MIKKO_DIALOGUE_SHOTS": 9,
+  "MIKKO_DIALOGUE_SHOTS_REMAINING": 8,
+  "LUMI_DIALOGUE_SHOTS": 10,
+  "LUMI_VOICE_BLOCKED_SHOTS": 10,
+  "AGENT008_CODE_GAPS": 11,
+  "SHOTS_WITH_CODE_GAPS": 27,
+  "ESTIMATED_VIDEO_GENERATIONS_REQUIRED": 11,
+  "ESTIMATED_VIDEO_GENERATIONS_IF_BLOCKED_SHOTS_UNBLOCKED": 14,
+  "ESTIMATED_IMAGE_GENERATIONS_REQUIRED": 9,
+  "ESTIMATED_NEW_TTS_GENERATIONS_REQUIRED": 9,
+  "ESTIMATED_LUMI_TTS_AFTER_VOICE_APPROVAL": 13,
+  "MANIFEST_VIDEO_GENERATION_SHOTS": 15,
+  "MANIFEST_IMAGE_GENERATION_SHOTS": 26,
+  "basis": "one attempt per generation, no retries assumed; video counts exclude S027 (complete)"
+ },
+ "base_frame_families": {
+  "F-MIRROR-OPEN": "close mirror composition: Lumi holds the hand mirror, Mikko and his reflection readable (S001 opening = S025 match)",
+  "F-OVERSHOULDER-MIRROR": "over-shoulder close: Lumi positions the mirror for Mikko, cloth lowered (S003-S005)",
+  "F-FACE-MIRROR": "close face-and-mirror view, cloth lowered, reflection readable (S010-S013, S016)",
+  "F-FACE-MIRROR-POINT": "pose variant of F-FACE-MIRROR: Mikko points to his anatomical left cheek with his free hand (S006)",
+  "F-CHEEK-CLOTH": "close view of Mikko cheek with soft cloth, Lumi holding mirror (S007-S009)",
+  "F-MOUTH-CLOTH": "close face with cloth approaching the skin beside the mouth (S014-S015)",
+  "F-NOSE-CLOTH": "close face with cloth near the nose (S020-S022)",
+  "F-MACRO-REFLECTION": "distinctly tighter macro of the clean-glass reflection (S018-S019)",
+  "F-MEDIUM-TWOSHOT": "medium two-shot, Lumi holds mirror, Mikko with cloth (S002, S017, S023, S026)"
+ },
+ "code_gaps": {
+  "G01_INPUT_SNAPSHOT_COVERAGE": {
+   "gap": "Agent-008 snapshots hold only S004,S005,S025 (phase0) and S026,S027 (motion); build_shot_spec fails SHOT_NOT_IN_MANIFEST for the other 24.",
+   "smallest_change": "Run the existing read-only agent008/tools/snapshot_inputs.py once for all 29 shots and commit the snapshot (no code change).",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S009",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S015",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020",
+    "S021",
+    "S022",
+    "S023",
+    "S024",
+    "S025",
+    "S028",
+    "S029"
+   ]
+  },
+  "G02_PRODUCTION_STILL_SHOT_PATH": {
+   "gap": "Still shots render only through the Phase-0 stand-in path, hard-wired to S004/S005 and a NON-CANON layout.",
+   "smallest_change": "Add compose_still_shot(approved_frame_sha, spec_shot, timing): hold a hash-verified approved/derived frame for N frames and reuse the existing treatment, mix (incl. dialogue) and encode functions.",
+   "shots": [
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S008",
+    "S012",
+    "S013",
+    "S017",
+    "S018",
+    "S019",
+    "S023",
+    "S024",
+    "S025",
+    "S029"
+   ]
+  },
+  "G03_OVERLAY_ANCHOR_PLACEMENT": {
+   "gap": "Berry overlays have no placement spec on production frames (face plus mirrored reflection).",
+   "smallest_change": "A per-frame anchor JSON (x, y, scale, rotation, mirror flag) per overlay, human-approved, applied deterministically; reused for static shots and for pre-compositing smudges into base frames before provider upload.",
+   "shots": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006",
+    "S007",
+    "S008",
+    "S010",
+    "S011",
+    "S012",
+    "S013",
+    "S014",
+    "S016",
+    "S017",
+    "S018",
+    "S019",
+    "S020"
+   ]
+  },
+  "G04_DERIVED_FRAME_FROM_APPROVED_MOTION": {
+   "gap": "No governed way to take the last (or Nth) frame of an approved RAW_MOTION_SOURCE as the base of the next shot.",
+   "smallest_change": "Deterministic extract (ffmpeg, exact frame index) recorded with source SHA, frame index and output SHA; registered SHOT_FRAME/DERIVED_FRAME after human approval.",
+   "shots": [
+    "S008",
+    "S011",
+    "S028",
+    "S029"
+   ]
+  },
+  "G05_ROLE_AWARE_MAPPED_AUDIO": {
+   "gap": "spec mapped_audio mixes FOLEY-CLOTH-SOFT-v01 and SFX-COMPLETION-POP-v01 as looped full-length beds (mix_motion_audio/BED). Only AMBIENCE should be a bed.",
+   "smallest_change": "Split mapped_audio by registry subtype: AMBIENCE = bed; FOLEY/SFX = timed one-shot cues requiring timing (fail closed without), as named_sfx already does.",
+   "shots": [
+    "S002",
+    "S009",
+    "S014",
+    "S015",
+    "S020",
+    "S021",
+    "S025",
+    "S028"
+   ]
+  },
+  "G06_KEYFRAMED_CROP_SCALE": {
+   "gap": "No deterministic camera settle (S024) on stills.",
+   "smallest_change": "Keyframed crop/scale ramp (start rect -> end rect, smoothstep) on a still, within source resolution (no upscale beyond 1.0).",
+   "shots": [
+    "S024"
+   ]
+  },
+  "G07_IN_SHOT_CUT": {
+   "gap": "S018 needs an adjustment segment then a cut to macro inside one shot.",
+   "smallest_change": "Two-segment shot: concatenate two deterministic segments at an exact frame; provenance per segment.",
+   "shots": [
+    "S018"
+   ]
+  },
+  "G08_TREATMENTS_ON_STILL_PRODUCTION": {
+   "gap": "Glint, reflection and pop-accent primitives exist; only the glint has run (Phase-0). Reflection/pop not executed in a production path.",
+   "smallest_change": "Wire treatments.TREATMENTS into G02 with frame windows from timing; reflection only if the frame does not already contain a readable reflection.",
+   "shots": [
+    "S004",
+    "S006",
+    "S012",
+    "S018",
+    "S025"
+   ]
+  },
+  "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD": {
+   "gap": "resolve_dialogue supports N slots, but does not reject overlapping clips or clips inside protected holds/before-cue windows.",
+   "smallest_change": "Add non-overlap and window checks to resolve_dialogue (fail closed).",
+   "shots": [
+    "S001",
+    "S004",
+    "S007",
+    "S012",
+    "S018",
+    "S028"
+   ]
+  },
+  "G10_WHOOSH_HASH_PIN": {
+   "gap": "SFX-MIKKO-TRY-WHOOSH has no registry SHA and no hash pin, so Agent-008 fails closed on S007.",
+   "smallest_change": "Read-only storage hash audit and a committed hash pin (data, not code).",
+   "shots": [
+    "S007"
+   ]
+  },
+  "G11_TRACKED_OVERLAY_REMOVAL": {
+   "gap": "S009/S015/S021 need a smudge to vanish exactly under a provider-generated moving cloth.",
+   "smallest_change": "Not small: requires tracking (or a human-designed masked crossfade on an occluding frame window). Needs its own design decision before any spend.",
+   "shots": [
+    "S009",
+    "S015",
+    "S021"
+   ]
+  }
+ },
+ "shots": [
+  {
+   "shot_id": "S001",
+   "section": "OPENING",
+   "episode_range_s": [
+    0,
+    6
+   ],
+   "duration_s": 6,
+   "frames_24fps": 144,
+   "intended_action": "0.0-6.0 seconds. Close mirror composition establishes Mikko's reflection with exactly three berry smudges: on Mikko's anatomical left cheek, the skin beside his mouth, and his nose. Lumi holds the tiny hand mirror and looks closely while Mikko tilts his head slightly. The mirror glass remains clean. Preserve this composition for comparison with S025.",
+   "camera": "CLOSE | Stable close hold with a subtle synchronized head-tilt movement from Mikko's reflection and the three marks. No camera push-in or reframing.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "Berries on my face! I want to feel fresh.",
+     "syllables": 10,
+     "estimated_duration": "~2.43 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    },
+    {
+     "speaker": "Lumi",
+     "text": "I see three little smudges.",
+     "syllables": 7,
+     "estimated_duration": "~2.33-2.66 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "S002 must continue from the same minimal neutral setting and preserve the established face and mirror continuity.",
+    "S025 must reuse a comparable mirror composition so the three-smudges-to-clean transformation reads immediately.",
+    "The three smudge overlays must be authored as independently removable elements for the later approved removal order."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "HIGH"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: Mikko head tilt with face, reflection and all three smudges moving together. Provider motion plus deterministic smudges (pre-composited into the base frame on face and reflection).",
+   "base_frame_family": "F-MIRROR-OPEN",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": {
+    "movement": "Gentle Mikko head tilt; Lumi holds mirror steady; reflection follows; locked camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 6,
+    "trim_to_frames": 144,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S002",
+   "section": "ONE",
+   "episode_range_s": [
+    6,
+    9.5
+   ],
+   "duration_s": 3.5,
+   "frames_24fps": 84,
+   "intended_action": "Produce the approved 6.0–9.5 second medium shot in the same minimal neutral setting. Mikko asks, “Where shall I try first?”, picks up the soft cloth within reach, and loosely folds it into his hand, ready to try. No face contact occurs in this shot.",
+   "camera": "MEDIUM | Static hold with only natural character movement during the cloth pickup and fold.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Soft cloth",
+    "Tiny hand mirror"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "Where shall I try first?",
+     "syllables": 5,
+     "estimated_duration": "~1.44 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    }
+   ],
+   "ambience": [],
+   "foley": [
+    {
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+     "subtype": "FOLEY",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "sha256_source": "registry"
+    }
+   ],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match S001’s exact three-smudge placement and clean mirror glass.",
+    "Carry forward Lumi holding the tiny hand mirror and Mikko’s readable reflection.",
+    "The cloth must be ready for the first wipe in S003, while remaining lowered or not yet used at the end of S002 as required by the next shot.",
+    "Do not remove any smudge before later approved progress beats."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "IMAGE_TO_VIDEO",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: cloth pick-up and fold (prop interaction). Three smudges present -> pre-composited into the F-MEDIUM-TWOSHOT clean base.",
+   "base_frame_family": "F-MEDIUM-TWOSHOT",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": {
+    "movement": "Mikko reaches, picks up the cloth and loosely folds it; Lumi holds mirror; no face contact; static camera. 3.5 s: generate 4 s, deterministic trim to 84 frames.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 84,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G05_ROLE_AWARE_MAPPED_AUDIO"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S003",
+   "section": "ONE",
+   "episode_range_s": [
+    9.5,
+    13
+   ],
+   "duration_s": 3.5,
+   "frames_24fps": 84,
+   "intended_action": "Produce the 9.5–13.0 second over-shoulder shot in the same minimal, neutral setting. Lumi positions and holds the tiny hand mirror so Mikko’s face and its clean-glass reflection are readable. Mikko looks into the mirror with the cloth lowered. Exactly three berry smudges remain visible: anatomical left cheek, skin beside the mouth, and nose. Lumi says, “Let’s look for one little spot.”",
+   "camera": "CLOSE | Controlled, nearly static hold with only minimal stabilization or natural hand movement; no dramatic tilt or push-in.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "Let’s look for one little spot.",
+     "syllables": 8,
+     "estimated_duration": "~2.66-3.04 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match S002’s ending state: all three berry smudges are present, the cloth is within Mikko’s reach, and the setting remains minimal and neutral.",
+    "Use the same selected anatomical-left-cheek identity and mirror/reflection orientation that continue into S004.",
+    "S004 depends on this shot ending with Lumi still controlling the mirror and all three smudges still present."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only (video_generation_required=false): nearly static over-shoulder hold; smudges as static overlays; Lumi line. Minor mirror positioning represented by the held pose.",
+   "base_frame_family": "F-OVERSHOULDER-MIRROR",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S004",
+   "section": "CUE",
+   "episode_range_s": [
+    13,
+    18
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "13.0–18.0 seconds. Lumi tilts the hand mirror; a tiny reflected glint draws attention to the berry smudge on Mikko’s anatomical left cheek. Lumi delivers the approved dialogue, then the approved child prompt. Mikko watches without pointing. No music bed and no child-response hold.",
+   "camera": "CLOSE | Very subtle camera hold with the mirror tilting in Lumi’s hands; no push-in beyond the CLOSE framing ceiling.",
+   "characters": [
+    "Lumi",
+    "Mikko"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "A little glint! Look at his cheek.",
+     "syllables": 8,
+     "estimated_duration": "~2.66-3.04 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    },
+    {
+     "speaker": "Lumi",
+     "text": "Can you help Mikko find the next berry smudge?",
+     "syllables": 11,
+     "estimated_duration": "~3.65-4.18 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [],
+   "foley": [],
+   "sfx": [
+    {
+     "asset_id": "SFX-LUMI-CLUE-CHIME",
+     "registry_id": "8eda97e0-38c1-4676-a0f5-e31b5a127967",
+     "subtype": "SFX",
+     "sha256": "adf415b3f23abaa93f20e510e6ac6cf3fc3c68665cd3e9cca91ff60a0a93b136",
+     "sha256_source": "hash_pin"
+    }
+   ],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "continuity": [
+    "Match S003’s mirror orientation, reflection readability, smudge placement, and character continuity.",
+    "The selected mark must remain the berry smudge on Mikko’s anatomical left cheek.",
+    "The glint and Lumi clue chime must be completed before S005 begins.",
+    "S005 must inherit the mirror view with all three smudges still present and the cheek mark easy to locate."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only: static frame + TREATMENT-EP005-MIRROR-GLINT-v01 + clue chime. Mirror tilt represented by the glint (human acceptance needed). Two Lumi lines: known S004 TIMING_CONFLICT and unapplied D-3 wording decision.",
+   "base_frame_family": "F-OVERSHOULDER-MIRROR",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S005",
+   "section": "CUE",
+   "episode_range_s": [
+    18,
+    22
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "Produce a 4-second uninterrupted close hold from 18.0s to 22.0s. Lumi holds the tiny hand mirror steady so the cheek mark is easy to locate. Mikko waits with relaxed hands. No pointing, wiping, target-confirming reaction, new glint, reveal effect, dialogue, countdown, musical accent, or answer-revealing sound.",
+   "camera": "CLOSE | Static hold for the full 4.0 seconds; no push-in, rack focus, tilt, or reframing.",
+   "characters": [
+    "Lumi",
+    "Mikko"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": true,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match the end state of S004: all three smudges remain, the tiny mirror is held by Lumi, the mirror glass is clean, Mikko’s reflection is visible, and the cloth is within Mikko’s reach.",
+    "Hold exactly until 22.0s so S006 can begin with Mikko pointing to the marked cheek after the response pause.",
+    "Use the same selected anatomical left cheek and mirror orientation needed for continuity into S006."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Protected 4.0 s participation hold: static frame identical to S004 end state; no events.",
+   "base_frame_family": "F-OVERSHOULDER-MIRROR",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "LOW",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S006",
+   "section": "CUE",
+   "episode_range_s": [
+    22,
+    24.5
+   ],
+   "duration_s": 2.5,
+   "frames_24fps": 60,
+   "intended_action": "At 22.0–24.5 seconds, hold a close face-and-mirror view that clearly connects the reflected berry mark to Mikko’s anatomical left cheek. After the approved response pause, Mikko points to that cheek with his free hand and says, “This cheek. I’ll try a gentle wipe.” No smudge is removed.",
+   "camera": "CLOSE | Static hold; no push-in, pan, or rack focus during the shot.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "This cheek. I’ll try a gentle wipe.",
+     "syllables": 9,
+     "estimated_duration": "~2.24 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "continuity": [
+    "Match S005’s three-smudge facial state, mirror position, character orientation, and relaxed hand state at 22.0 seconds.",
+    "Mikko’s point and dialogue must complete by 24.5 seconds so S007 can begin directly with the marked cheek and soft cloth.",
+    "The cheek selected here must remain the target for the first wipe in S007."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only: held pointing pose + reflection treatment + Mikko line; pointing gesture represented by a held pose (human acceptance needed).",
+   "base_frame_family": "F-FACE-MIRROR-POINT",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S007",
+   "section": "ACTION_1",
+   "episode_range_s": [
+    24.5,
+    29.5
+   ],
+   "duration_s": 5.0,
+   "frames_24fps": 120,
+   "intended_action": "From 24.5 to 29.5 seconds, show a clear close view of Mikko’s marked anatomical left cheek and the soft cloth. Mikko delivers the approved line and child prompt, then gently brings the cloth against the cheek without moving it across the skin. The berry smudge remains in place.",
+   "camera": "CLOSE | Stable hold with only minimal animation-compatible settling during the cloth lift and stationary contact.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Soft cloth",
+    "Tiny hand mirror"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "Wipe your cheek with me. Soft and slow.",
+     "syllables": 8,
+     "estimated_duration": "~2.04 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    },
+    {
+     "speaker": "Mikko",
+     "text": "Can you pretend to wipe your cheek?",
+     "syllables": 8,
+     "estimated_duration": "~2.04 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    }
+   ],
+   "ambience": [],
+   "foley": [],
+   "sfx": [
+    {
+     "asset_id": "SFX-MIKKO-TRY-WHOOSH",
+     "registry_id": "0e10bf46-4099-43cd-ab91-5c10fcb59d9d",
+     "subtype": "SFX",
+     "sha256": null,
+     "sha256_source": "MISSING"
+    }
+   ],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "continuity": [
+    "Match the selected anatomical left cheek, three-smudge state, mirror position, and cloth availability from S006.",
+    "S008 must begin from the same readable cheek view with the cloth still stationary against the cheek.",
+    "Do not remove the cheek smudge until a later approved progress beat."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: cloth lift into stationary contact with the marked cheek; smudges + reflection pre-composited into base frame; two Mikko lines; TRY whoosh.",
+   "base_frame_family": "F-CHEEK-CLOTH",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": {
+    "movement": "Mikko lifts the cloth and rests it still against the cheek smudge (no wiping); Lumi holds mirror; locked camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 5,
+    "trim_to_frames": 120,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD",
+    "G10_WHOOSH_HASH_PIN"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 2,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S008",
+   "section": "ACTION_1",
+   "episode_range_s": [
+    29.5,
+    32.5
+   ],
+   "duration_s": 3.0,
+   "frames_24fps": 72,
+   "intended_action": "Hold the established readable cheek view from S007 for the full 3.0-second child-response pause, with Mikko keeping the soft cloth still against the selected cheek mark. No wiping, cloth removal, mark removal, confirmation, reveal effect, or music occurs.",
+   "camera": "CLOSE | Static hold with no push-in, pan, tilt, rack focus, or reframing.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Soft cloth",
+    "Tiny hand mirror"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": true,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match the starting composition, cheek selection, cloth contact, mirror angle, and smudge state from S007.",
+    "S009 begins at 32.5s and performs the first short wiping motion; do not begin that motion early in S008.",
+    "The selected cheek smudge must remain present at the end of S008 so S009 can remove exactly one smudge during its approved wipe."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "STATIC_HOLD",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Protected 3.0 s hold: last frame of the approved S007 raw motion held (continuity rule visible_at_start(N)=visible_at_end(N-1)).",
+   "base_frame_family": "F-CHEEK-CLOTH",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "LOW",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S009",
+   "section": "ACTION_1",
+   "episode_range_s": [
+    32.5,
+    34
+   ],
+   "duration_s": 1.5,
+   "frames_24fps": 36,
+   "intended_action": "At 32.5–34.0 seconds, hold a close view of Mikko’s selected anatomical left cheek. Mikko makes one short, gentle cloth wipe across only the cheek smudge, then lifts the cloth away. The cheek overlay disappears only as the cloth passes; the mouth-area and nose smudges remain. Keep the motion away from the eye. No dialogue, child-response hold, or music.",
+   "camera": "CLOSE | Locked-off camera; no pan, zoom, or reframing during the wipe.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Soft cloth",
+    "Tiny hand mirror"
+   ],
+   "dialogue": [],
+   "ambience": [],
+   "foley": [
+    {
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+     "subtype": "FOLEY",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "sha256_source": "registry"
+    }
+   ],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "visible_at_start": true,
+     "visible_at_end": false,
+     "event": "REMOVED_IN_SHOT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match the cheek selection, facial orientation, lighting, and close-view continuity from S008.",
+    "The S008 end state must provide all three smudges, mirror, reflection, and cloth as specified.",
+    "S010 must begin after the cloth has been lifted away, with only the cheek smudge removed and the mouth-area and nose smudges still present."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": false,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "BLOCKED",
+   "classification_reason": "Cheek smudge must disappear only under the cloth pass: needs mask removal tracked to provider-generated cloth motion. No governed capability (Agent-008 fails closed on motion overlays; provider prompting cannot be bound to an exact overlay removal).",
+   "base_frame_family": "F-CHEEK-CLOTH",
+   "BASE_FRAME_STATUS": "BLOCKED",
+   "motion_brief": {
+    "movement": "One short gentle wipe across the cheek, lift away; cheek smudge removed under the cloth only.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 36,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G05_ROLE_AWARE_MAPPED_AUDIO",
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S010",
+   "section": "ACTION_1",
+   "episode_range_s": [
+    34,
+    39
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "Produce the approved 34.0–39.0 second close shot: the tiny hand mirror clearly shows Mikko’s anatomical left cheek clean while the two remaining berry smudges are still visible. Mikko lowers the cloth. Lumi observes without touching his face. After the visible result is established, Lumi delivers the approved line, followed by a short silent look.",
+   "camera": "CLOSE | Stable hold with only minimal settling as Mikko lowers the cloth; no reframing that obscures the result.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "That cheek is clear. Two smudges left.",
+     "syllables": 8,
+     "estimated_duration": "~2.66-3.04 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "continuity": [
+    "S009 must end with the anatomical left cheek smudge removed, while the mouth-side and nose smudges remain.",
+    "The mirror must already be held by Lumi and the soft cloth must already be within Mikko’s reach at shot start.",
+    "S011 must inherit the clear cheek and two remaining smudges, with the mirror still readable.",
+    "The final transformation and later correction must not be pre-empted in this shot."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: Mikko lowers cloth; mouth+nose smudges and clean reflection pre-composited; Lumi line.",
+   "base_frame_family": "F-FACE-MIRROR",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": {
+    "movement": "Mikko lowers the cloth; Lumi holds mirror steady; locked camera; no smudge change.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 5,
+    "trim_to_frames": 120,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S011",
+   "section": "ACTION_1",
+   "episode_range_s": [
+    39,
+    44
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "Produce the approved 39–44 second relaxed two-shot. Mikko gives a small pleased smile, checks his clear cheek, and rests the cloth below his chin while Lumi keeps the readable mirror steady. This is a visual processing and reaction hold, with no additional wipe, clue reveal, child-response pause, dialogue, or music.",
+   "camera": "CLOSE | Static hold with only subtle natural character motion: Mikko’s small smile and settling cloth; Lumi maintains a steady mirror hold.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "continuity": [
+    "Match the end-state composition and continuity from S010: Mikko’s anatomical left cheek is already clear, while the mouth-side and nose smudges remain.",
+    "The shot must end ready for S012, where Lumi angles the mirror toward the small berry mark beside Mikko’s mouth.",
+    "Do not anticipate S012’s mirror angle, tiny glint, clue chime, or macro reveal."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: small pleased smile and cloth settle; base = last frame of approved S010 raw motion.",
+   "base_frame_family": "F-FACE-MIRROR",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": {
+    "movement": "Small pleased smile, checks clear cheek, rests cloth below chin; Lumi steady; locked camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 5,
+    "trim_to_frames": 120,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S012",
+   "section": "ACTION_2",
+   "episode_range_s": [
+    44,
+    49
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "Produce the approved 44–49 second ACTION_2 shot: Lumi angles the hand mirror toward the small berry mark on the skin beside Mikko’s mouth. Mikko watches with the cloth lowered. The established tiny glint appears, while the anatomical-left cheek remains clear and the mouth-area mark remains present.",
+   "camera": "CLOSE | Very small controlled mirror-angle adjustment by Lumi, followed by a brief steady hold as the established glint appears. No push-in beyond the close framing ceiling.",
+   "characters": [
+    "Lumi",
+    "Mikko"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "I see a spot near your mouth.",
+     "syllables": 7,
+     "estimated_duration": "~2.33-2.66 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    },
+    {
+     "speaker": "Lumi",
+     "text": "Can you help Mikko find the next berry smudge?",
+     "syllables": 11,
+     "estimated_duration": "~3.65-4.18 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "continuity": [
+    "Match S011’s continuity: the cheek smudge is already removed, the mouth-area and nose smudges remain, the mirror is clean, and the cloth is lowered.",
+    "Use the established hand-mirror visual ritual from ACTION_2 rather than creating a new CUE section.",
+    "S013 must begin with the mouth-area mark still visible and Mikko still not moving the cloth toward it.",
+    "Later correction must remove the mouth-area smudge exactly once and must not restore the cheek smudge."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only: F-FACE-MIRROR clean base + mouth/nose overlays + glint; two Lumi lines (same D-3/timing review as S004).",
+   "base_frame_family": "F-FACE-MIRROR",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S013",
+   "section": "ACTION_2",
+   "episode_range_s": [
+    49,
+    53
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "Hold the mirror view for exactly 4 seconds with the mouth-area berry mark visible. Lumi keeps the mirror angled while both characters wait calmly. Mikko keeps the cloth lowered and does not move it toward the target. No dialogue, response cue, mark removal, or revealing motion occurs.",
+   "camera": "CLOSE | Locked-off uninterrupted hold from 49.0 to 53.0 seconds; no push-in, rack focus, reframing, or camera shake.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": true,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match the mirror angle, clean glass, reflection, mouth-area mark, lowered cloth, and character positions from S012.",
+    "Do not begin the cloth approach or speed change from S014 until after 53.0 seconds.",
+    "Maintain the prior continuity state: the cheek smudge is already removed, while the mouth-area and nose smudges remain."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Protected 4.0 s hold: S012 end frame held.",
+   "base_frame_family": "F-FACE-MIRROR",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "LOW",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S014",
+   "section": "ACTION_2",
+   "episode_range_s": [
+    53,
+    57
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "Produce the approved 53–57 second close face view. Lumi holds and angles the tiny hand mirror while Mikko brings the soft cloth closer, completes the dialogue before contact, and visibly slows his hand before any wipe begins. Emphasize the small berry smudge on the skin beside Mikko’s closed mouth. This is a calm speed adjustment, not a failed attempt or new problem.",
+   "camera": "CLOSE | Very restrained, nearly locked camera. Allow only a subtle settling adjustment as the cloth approaches; no push into macro or extreme close-up.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "I’ll slow my hand. One little wipe.",
+     "syllables": 9,
+     "estimated_duration": "~2.24 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    }
+   ],
+   "ambience": [],
+   "foley": [
+    {
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+     "subtype": "FOLEY",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "sha256_source": "registry"
+    }
+   ],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "continuity": [
+    "S013 end state: cheek smudge already absent; mouth-area and nose smudges remain; Lumi holds the mirror; Mikko has the cloth within reach.",
+    "The approved dialogue must finish before the cloth approaches contact.",
+    "S015 begins the actual small, slow wipe and must receive the mouth-area mark still present at the end of S014."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: slow hand approach with cloth, no contact; mouth+nose smudges and clean reflection pre-composited; Mikko line; soft cloth foley.",
+   "base_frame_family": "F-MOUTH-CLOTH",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": {
+    "movement": "Mikko slowly brings the cloth toward the mouth smudge and visibly slows before contact; no wipe; locked camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 96,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G05_ROLE_AWARE_MAPPED_AUDIO"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S015",
+   "section": "ACTION_2",
+   "episode_range_s": [
+    57,
+    60
+   ],
+   "duration_s": 3,
+   "frames_24fps": 72,
+   "intended_action": "At 57–60 seconds, use a close view of Mikko’s face and cloth. Mikko makes one visibly slower, smaller wipe over the berry mark on the skin beside his mouth, then lifts the cloth away. The mouth-area overlay disappears only as the cloth passes. The nose mark remains, the cheek remains clear, and there is no repeat or loop.",
+   "camera": "CLOSE | Stable hold with only minimal follow-through as the cloth makes one small wipe and lifts away.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Soft cloth",
+    "Tiny hand mirror"
+   ],
+   "dialogue": [],
+   "ambience": [],
+   "foley": [
+    {
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+     "subtype": "FOLEY",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "sha256_source": "registry"
+    }
+   ],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "visible_at_start": true,
+     "visible_at_end": false,
+     "event": "REMOVED_IN_SHOT"
+    },
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match S014’s final facial-mark state and established mirror composition.",
+    "Use the S014 hand and cloth position as the starting pose for the slower wipe.",
+    "Deliver the mouth-area mark removed, nose mark retained, and cloth lifted away for S016.",
+    "Maintain the established mirror reflection and clean mirror glass."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "HIGH"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "BLOCKED",
+   "classification_reason": "Mouth smudge removal synchronised to a provider-generated cloth pass: same unsolved tracked-removal capability as S009.",
+   "base_frame_family": "F-MOUTH-CLOTH",
+   "BASE_FRAME_STATUS": "BLOCKED",
+   "motion_brief": {
+    "movement": "One slower, smaller wipe beside the mouth, lift away; mouth smudge removed under the cloth only.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 72,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G05_ROLE_AWARE_MAPPED_AUDIO",
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S016",
+   "section": "ACTION_2",
+   "episode_range_s": [
+    60,
+    64
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "At 60–64 seconds, hold a close view of Lumi’s hand mirror and Mikko’s reflection. The reflection shows clear cheek and mouth-area skin while the nose mark remains. Lumi checks the result and says, “That spot is gone. One is left.” Mikko lowers his hand. Do not begin the final target-confirming response.",
+   "camera": "CLOSE | Minimal settling hold; allow only the approved subtle hand-lowering motion and natural reflection movement. No mirror-angle adjustment beyond maintaining the established view.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "That spot is gone. One is left.",
+     "syllables": 7,
+     "estimated_duration": "~2.33-2.66 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match the reflection, lighting, mirror position, and remaining nose mark from S015.",
+    "The mouth-area smudge must already be removed at shot start and must remain removed.",
+    "Do not begin the final target-confirming response or remove the nose smudge before S017.",
+    "Maintain the same setting and lighting into S017."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: Mikko lowers his hand; F-FACE-MIRROR clean base with nose overlay pre-composited; Lumi line.",
+   "base_frame_family": "F-FACE-MIRROR",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": {
+    "movement": "Mikko lowers his hand; Lumi checks the result holding the mirror; locked camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 96,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S017",
+   "section": "ACTION_2",
+   "episode_range_s": [
+    64,
+    68
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "Four-second processing hold in the established medium two-shot. Mikko relaxes his cloth hand and continues looking at the mirror while Lumi prepares a slight mirror-angle adjustment. No new cleaning motion, task, frustration, dialogue, music, or child-response hold.",
+   "camera": "MEDIUM | Static hold with only the characters' approved hand and mirror movements; no camera push-in or macro reveal.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match S016's established medium two-shot, lighting, character positions, mirror orientation, and reflection continuity.",
+    "Use S016's ending continuity state as S017's starting state.",
+    "Hand off to S018 with the nose smudge still present and the mirror still clean; S018 performs the approved mirror adjustment and macro reveal.",
+    "Do not introduce the S018 glint or success audio in S017."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only processing hold: F-MEDIUM-TWOSHOT clean base + nose overlay; no dialogue.",
+   "base_frame_family": "F-MEDIUM-TWOSHOT",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "LOW",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S018",
+   "section": "ACTION_3",
+   "episode_range_s": [
+    68,
+    74
+   ],
+   "duration_s": 6,
+   "frames_24fps": 144,
+   "intended_action": "At 68.0–74.0 seconds, Lumi adjusts the tiny hand mirror and the image cuts to a distinctly tighter macro view of its clean-glass reflection. The remaining nose smudge is unmistakable. The established tiny glint appears once and ends before S019. Lumi observes while holding the mirror steady; Mikko makes no target-confirming gesture.",
+   "camera": "MACRO | Small mirror-angle adjustment by Lumi followed by a clean cut/reframe into the macro reflection. Hold the macro view steady after the cut.",
+   "characters": [
+    "Lumi",
+    "Mikko"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "One tiny spot is still here.",
+     "syllables": 7,
+     "estimated_duration": "~2.33-2.66 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    },
+    {
+     "speaker": "Lumi",
+     "text": "Can you help Mikko find the next berry smudge?",
+     "syllables": 11,
+     "estimated_duration": "~3.65-4.18 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "continuity": [
+    "Match S017’s established setting, lighting, mirror orientation, and remaining-smudge continuity.",
+    "Use the S017 end state as the starting state: cheek and mouth smudges remain removed, nose smudge remains visible, mirror glass remains clean, and cloth remains within Mikko’s reach.",
+    "End the glint before S019 begins.",
+    "S019 must maintain the macro reflection at the same scale with Lumi holding the mirror still."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": false,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only: macro reflection + nose overlay + glint; in-shot cut/reframe (CODE_GAP); two Lumi lines.",
+   "base_frame_family": "F-MACRO-REFLECTION",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S019",
+   "section": "ACTION_3",
+   "episode_range_s": [
+    74,
+    79
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "Hold the macro reflection at the established scale for the full five-second child-response window. Lumi holds the tiny hand mirror still while Mikko waits off the detail framing. The nose smudge remains visible and unchanged; no answer-revealing motion, clue highlight, glint, dialogue, or music occurs.",
+   "camera": "MACRO | Locked static hold for the entire 74–79 second window; no zoom, pan, tilt, rack focus, or cutaway.",
+   "characters": [
+    "Lumi",
+    "Mikko"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": true,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "Match the macro reflection scale and mirror angle from S018.",
+    "Preserve the nose smudge and clean mirror glass state from S018.",
+    "Hand off at 79 seconds to S020, where Mikko identifies his nose and adjusts the cloth toward it.",
+    "Do not pre-animate or pre-audio any action belonging to S020."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Protected 5.0 s hold: S018 end frame held.",
+   "base_frame_family": "F-MACRO-REFLECTION",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "LOW",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S020",
+   "section": "ACTION_3",
+   "episode_range_s": [
+    79,
+    83
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "From the prior macro reflection, return to a close face view showing Mikko's nose mark and both already-clear areas. Mikko identifies his nose, says the approved line, and adjusts the cloth toward the small target without wiping it. Lumi continues holding and angling the mirror.",
+   "camera": "CLOSE | A controlled return from the previous detail framing to the approved clear face view, then a stable hold while Mikko identifies the nose and adjusts the cloth.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "My nose! I’ll wipe just that spot.",
+     "syllables": 8,
+     "estimated_duration": "~2.04 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    }
+   ],
+   "ambience": [],
+   "foley": [
+    {
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+     "subtype": "FOLEY",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "sha256_source": "registry"
+    }
+   ],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": true,
+     "event": "PERSISTENT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "S019 must end with the nose smudge present, the mirror held by Lumi, the clean mirror glass visible, and the cloth within Mikko's reach.",
+    "The response in S020 begins only after S019 ends.",
+    "Mikko's dialogue must finish before any wipe action; the actual gentle wipe and cloth contact occur in S021.",
+    "S021 must begin with the nose smudge still present and continue directly into the final cloth contact."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HYBRID",
+   "classification_reason": "Manifest video shot: return from macro to close face, Mikko recognises nose and adjusts cloth; nose smudge pre-composited; Mikko line; cloth foley.",
+   "base_frame_family": "F-NOSE-CLOTH",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": {
+    "movement": "Mikko looks up, adjusts the cloth toward the nose without contact; Lumi steady; locked camera (the macro-to-close return is a cut).",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 96,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G05_ROLE_AWARE_MAPPED_AUDIO"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S021",
+   "section": "ACTION_3",
+   "episode_range_s": [
+    83,
+    87
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "Produce the approved 83–87 second unbroken close face view. Mikko carefully positions the cloth on the marked nose, makes one small gentle wipe, and lifts it away. The nose smudge is removed during the cloth passage; the cheek and mouth-area smudges remain absent. No dialogue, child-response hold, music, or magical clearing.",
+   "camera": "CLOSE | Locked-off hold with no camera movement; the action is created by Mikko’s hand, cloth, and overlay removal.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [],
+   "foley": [
+    {
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+     "subtype": "FOLEY",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "sha256_source": "registry"
+    }
+   ],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [
+    {
+     "overlay_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "visible_at_start": true,
+     "visible_at_end": false,
+     "event": "REMOVED_IN_SHOT"
+    }
+   ],
+   "treatments": [],
+   "continuity": [
+    "S020 must end with the cheek and mouth-area smudges absent, the nose smudge present, the clean mirror glass visible, Mikko’s reflection visible, Lumi holding the mirror, and the cloth within Mikko’s reach.",
+    "The nose overlay must remain present until the cloth passage begins, then be removed exactly once during the wipe.",
+    "S022 must begin with Mikko’s nose, cheek, and mouth area clear, with Lumi still holding the mirror and Mikko lowering the cloth."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": false,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "BLOCKED",
+   "classification_reason": "Nose smudge removal synchronised to a provider-generated cloth pass: same unsolved tracked-removal capability as S009/S015.",
+   "base_frame_family": "F-NOSE-CLOTH",
+   "BASE_FRAME_STATUS": "BLOCKED",
+   "motion_brief": {
+    "movement": "Cloth on nose, one small wipe, lift away; nose smudge removed under the cloth only.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 96,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G05_ROLE_AWARE_MAPPED_AUDIO",
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S022",
+   "section": "ACTION_3",
+   "episode_range_s": [
+    87,
+    90
+   ],
+   "duration_s": 3,
+   "frames_24fps": 72,
+   "intended_action": "At 87–90 seconds, hold a close view of Mikko’s now-clear nose beside his clear cheek and mouth area while Lumi observes the finished result and says, “Your nose is clear, too.” Mikko lowers the cloth. No child-response hold or music.",
+   "camera": "CLOSE | Static hold with only the natural lowering motion of Mikko’s cloth hand.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "Your nose is clear, too.",
+     "syllables": 5,
+     "estimated_duration": "~1.66-1.9 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [],
+   "continuity": [
+    "Match S021’s final face, mirror angle, selected cheek continuity, and clean nose state.",
+    "The final nose smudge must already be removed before S022 begins; do not show a wipe removing it in this shot.",
+    "Hand off to S023 with Mikko’s face still clear, Mikko’s cloth hand down, and Lumi maintaining the mirror angle."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "classification_reason": "Manifest video shot with zero overlays/treatments: Mikko lowers the cloth; clean base = F-NOSE-CLOTH clean; Lumi line. 3.0 s: generate 4 s and trim to 72 frames.",
+   "base_frame_family": "F-NOSE-CLOTH",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": {
+    "movement": "Mikko lowers the cloth from his clear nose; Lumi steady; locked camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 4,
+    "trim_to_frames": 72,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S023",
+   "section": "ACTION_3",
+   "episode_range_s": [
+    90,
+    93
+   ],
+   "duration_s": 3,
+   "frames_24fps": 72,
+   "intended_action": "Three-second readable result hold: Mikko looks into the hand mirror and quietly checks his already-clear face. His cloth hand remains down, while Lumi maintains the mirror angle. No additional wipe, glint, or search ritual.",
+   "camera": "MEDIUM | Static hold with only minimal natural character motion; no push-in, glint reveal, or reframing.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [],
+   "continuity": [
+    "Match the end state of S022: Mikko’s nose is clear, his cloth is lowered, and Lumi is observing while holding the mirror.",
+    "Preserve the established opening/final mirror composition relationship for the gentle settling move in S024.",
+    "Maintain continuity with the exact smudge-removal order; no removed smudge may return."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only 3 s readable-result hold, clean face, no overlays.",
+   "base_frame_family": "F-MEDIUM-TWOSHOT",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "LOW",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S024",
+   "section": "ACTION_3",
+   "episode_range_s": [
+    93,
+    95
+   ],
+   "duration_s": 2,
+   "frames_24fps": 48,
+   "intended_action": "93–95 seconds. The camera gently settles toward the saved opening mirror composition. Lumi makes a small framing adjustment while holding the tiny hand mirror. Mikko remains still with a relaxed expression. All three berry smudges remain absent throughout the move, preparing the direct three-marks-to-clean comparison for S025.",
+   "camera": "CLOSE | Very gentle settling move toward the saved opening composition; end in a stable hold.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [],
+   "continuity": [
+    "S023 establishes Mikko looking into the mirror, with the cloth hand down and Lumi maintaining the mirror angle.",
+    "S025 must match this saved opening mirror composition and show the clean, bright reflection.",
+    "Maintain the continuity state inherited from S023: all three smudges absent, mirror glass clean, reflection present, cloth within reach, and no glint."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only 2 s camera settle toward the opening composition: deterministic crop/scale ramp on the F-MIRROR-OPEN clean frame ending on the exact S025 framing (CODE_GAP: keyframed crop).",
+   "base_frame_family": "F-MIRROR-OPEN",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S025",
+   "section": "WIN",
+   "episode_range_s": [
+    95,
+    99
+   ],
+   "duration_s": 4,
+   "frames_24fps": 96,
+   "intended_action": "95–99 seconds. Match S001's mirror composition at a CLOSE scale, showing Mikko looking at his clean, bright reflection while Lumi smiles softly. Lumi says, “Cheek, mouth, nose. All clear.” A single soft completion pop occurs at the clean mirror reveal. No music and no child-response hold.",
+   "camera": "CLOSE | Minimal stabilization only; hold the composition with no additional push-in or reframing.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "Cheek, mouth, nose. All clear.",
+     "syllables": 5,
+     "estimated_duration": "~1.66-1.9 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    }
+   ],
+   "ambience": [],
+   "foley": [],
+   "sfx": [
+    {
+     "asset_id": "SFX-COMPLETION-POP-v01",
+     "registry_id": "0d07e835-fa88-4078-87dd-63c35f1226ae",
+     "subtype": "SFX",
+     "sha256": "0e3d63e607633a199feed76e93f62773bfe006b86e39515cb47fbd3a8f844dfa",
+     "sha256_source": "registry"
+    }
+   ],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+    "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01"
+   ],
+   "continuity": [
+    "S024 must provide the saved opening mirror composition, with Lumi holding the mirror and Mikko relaxed.",
+    "Match S001's established mirror scale and angle.",
+    "The three berry smudges must already be removed in the approved order before this shot begins.",
+    "S026 follows with a medium two-shot of Mikko holding the cloth away from his face."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only CLEAN REVEAL: F-MIRROR-OPEN clean + clean reflection + completion pop accent + pop SFX; ZERO berry overlays; Lumi line.",
+   "base_frame_family": "F-MIRROR-OPEN",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G05_ROLE_AWARE_MAPPED_AUDIO",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S026",
+   "section": "WIN",
+   "episode_range_s": [
+    99,
+    104
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "Produce the approved 99–104 second WIN shot as a medium two-shot. Mikko holds the soft cloth proudly away from his clear face and says, “One little spot at a time!” Lumi continues holding and angling the hand mirror. Hold the shared smile briefly after the line. Do not add a fourth wipe or any music.",
+   "camera": "MEDIUM | Stable hold with no corrective push-in or macro insert. Allow only natural character motion during the line and brief post-line smile hold.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Soft cloth",
+    "Tiny hand mirror"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "One little spot at a time!",
+     "syllables": 7,
+     "estimated_duration": "~1.84 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [],
+   "continuity": [
+    "Match the clean-face and clean-mirror state established at the end of S025.",
+    "Use the same character positions and environment continuity needed for the warm shared celebration in S027.",
+    "Maintain the approved three-smudge removal history; no removed smudge may reappear."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "classification_reason": "Manifest video shot, zero overlays/treatments: Mikko lifts cloth proudly and speaks; clean F-MEDIUM-TWOSHOT base (the same new frame also serves S002/S017/S023 with overlays as needed).",
+   "base_frame_family": "F-MEDIUM-TWOSHOT",
+   "BASE_FRAME_STATUS": "NEEDS_NEW_SHOT_FRAME",
+   "motion_brief": {
+    "movement": "Mikko lifts and holds the cloth away from his clear face, then a brief proud smile; Lumi holds the mirror; static camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 5,
+    "trim_to_frames": 120,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "MEDIUM",
+   "code_gaps": [],
+   "agent008": "SUPPORTED_NOW",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S027",
+   "section": "WIN",
+   "episode_range_s": [
+    104,
+    109
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "Produce the approved 104–109 second WIN shot: Mikko and Lumi share a small, warm celebration in the same TBD setting. Mikko says, “We did it! I feel fresh.” Both characters smile and make a gentle happy shoulder lift. Start the WIN sparkle chord at the shared smile and fade it completely by 109 seconds. Keep the celebration small and do not imply that Mikko’s earlier messy face was bad.",
+   "camera": "CLOSE | Locked-off or nearly static camera with only a very subtle settling motion; no reframing or dramatic push-in.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "We did it! I feel fresh.",
+     "syllables": 6,
+     "estimated_duration": "~1.64 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "APPROVED DLG-EP005-S027-L1-MIKKO-v01"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [
+    {
+     "asset_id": "SFX-WIN-SPARKLE-CHORD",
+     "registry_id": "f52ccf46-f2b8-4f78-9bff-a4eb410d5436",
+     "subtype": "SFX",
+     "sha256": "84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b",
+     "sha256_source": "hash_pin"
+    }
+   ],
+   "music_present": true,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [],
+   "continuity": [
+    "Match the character screen positions, mirror orientation, clean face state, cloth placement, and environment from S026.",
+    "All three berry smudges must remain absent: anatomical left cheek, skin beside the mouth, and nose.",
+    "Transition into S028 at 109 seconds with the success chord fully faded and the cloth available for Mikko to pass to Lumi."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": false,
+    "method": "IMAGE_TO_VIDEO",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "COMPLETE_APPROVED",
+   "classification": "COMPLETE_APPROVED",
+   "classification_reason": "COMPLETE_APPROVED: SHOT-EP005-S027-ASSEMBLED-v01 (7b01c392...8fde). Not to be rebuilt.",
+   "base_frame_family": null,
+   "BASE_FRAME_STATUS": "APPROVED_EXISTING",
+   "motion_brief": null,
+   "PRODUCTION_RISK": null,
+   "agent008": "SUPPORTED_NOW (complete)",
+   "code_gaps": [],
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts": 0
+   }
+  },
+  {
+   "shot_id": "S028",
+   "section": "COMFORT",
+   "episode_range_s": [
+    109,
+    114
+   ],
+   "duration_s": 5,
+   "frames_24fps": 120,
+   "intended_action": "Produce a comfortable two-shot from 109–114 seconds. Mikko passes the soft cloth to Lumi; after the success chord has fully faded, Lumi gives one cozy pat to Mikko’s shoulder, never his face, while Mikko settles beside her. Lumi lowers the hand mirror to her lap. Preserve the clean-face state and end ready for calm story time, with no new task or location.",
+   "camera": "MEDIUM | Static hold with only natural character movement; no push-in, pan, or reframing.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Soft cloth",
+    "Tiny hand mirror"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "You look comfy. Story time.",
+     "syllables": 7,
+     "estimated_duration": "~2.33-2.66 s speech at audition rates",
+     "voice_status": "BLOCKED: no human-approved Lumi production voice",
+     "clip_status": "BLOCKED_ON_LUMI_VOICE"
+    },
+    {
+     "speaker": "Mikko",
+     "text": "I’m ready to rest.",
+     "syllables": 6,
+     "estimated_duration": "~1.64 s at the M1 rate",
+     "voice_status": "APPROVED (Teddy Twinkle XjGYkUkzth8BPs29fmcV)",
+     "clip_status": "NOT_GENERATED (1 TTS take needed)"
+    }
+   ],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [
+    {
+     "asset_id": "FOLEY-CLOTH-SOFT-v01",
+     "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+     "subtype": "FOLEY",
+     "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+     "sha256_source": "registry"
+    }
+   ],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [],
+   "continuity": [
+    "S027 ends with the warm celebration and the success chord fully faded before Lumi’s cozy pat.",
+    "Use the established clean-face, clean-mirror, reflection, cloth, and character continuity from S027.",
+    "S029 must begin with both characters relaxed and settled, with the clean face visible and the mirror and cloth resting quietly in Lumi’s lap."
+   ],
+   "manifest_flags": {
+    "video_generation_required": true,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "MEDIUM"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "classification_reason": "Manifest video shot, zero overlays: cloth hand-off, mirror lowering, one shoulder pat, settle. Base = last frame of approved S027 raw motion (continuity S027->S028); MEDIUM vs S027 knees-up framing needs human acceptance, else F-MEDIUM-TWOSHOT.",
+   "base_frame_family": "S027-END",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": {
+    "movement": "Mikko passes the cloth to Lumi; Lumi lowers the mirror to her lap and gives one gentle shoulder pat (never the face); Mikko settles; static camera.",
+    "camera": "locked / static (no pan, tilt, zoom, dolly, reframing, cuts)",
+    "preservation": "exact approved identities, costumes, colours, props; smudge state exactly as frame; clean mirror glass",
+    "prohibited": "extra limbs/characters, prop duplication, morphing, text/logos, sparkles/magic, unscripted wipes, lip-sync, audio",
+    "model": "bytedance/seedance-2.0/image-to-video",
+    "duration_s": 5,
+    "trim_to_frames": 120,
+    "resolution": "1080p",
+    "generate_audio": false
+   },
+   "PRODUCTION_RISK": "HIGH",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION",
+    "G05_ROLE_AWARE_MAPPED_AUDIO",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S029",
+   "section": "COMFORT",
+   "episode_range_s": [
+    114,
+    120
+   ],
+   "duration_s": 6,
+   "frames_24fps": 144,
+   "intended_action": "Six-second safe-state ending hold from 114.0s to 120.0s. Calm, still close two-shot of Mikko and Lumi resting together. Mikko's clean face remains visible while the tiny hand mirror and soft cloth rest quietly in Lumi's lap. Both relax their shoulders and remain settled with only subtle breathing. No dialogue, child-response hold, additional task, effect, or closing sting.",
+   "camera": "CLOSE | Locked-off camera with no push-in, pan, tilt, rack focus, or attention-grabbing movement.",
+   "characters": [
+    "Mikko",
+    "Lumi"
+   ],
+   "props": [
+    "Tiny hand mirror",
+    "Soft cloth"
+   ],
+   "dialogue": [],
+   "ambience": [
+    {
+     "asset_id": "AMB-BATHROOM-QUIET-v01",
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "subtype": "AMBIENCE",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+     "sha256_source": "registry"
+    }
+   ],
+   "foley": [],
+   "sfx": [],
+   "music_present": false,
+   "protected_participation_hold": false,
+   "overlays": [],
+   "treatments": [],
+   "continuity": [
+    "S028 end-state continuity: Mikko and Lumi are already settled together after the success chord has faded.",
+    "Reuse the established final mirror composition relationship from earlier shots so the clean-face transformation remains readable.",
+    "Carry forward the removed-smudge state from S028; no berry smudges may reappear."
+   ],
+   "manifest_flags": {
+    "video_generation_required": false,
+    "image_generation_required": true,
+    "compositor_required": true,
+    "method": "COMPOSITE",
+    "complexity": "LOW"
+   },
+   "PRODUCTION_STATUS": "TODO",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "classification_reason": "Manifest compositor-only 6 s safe-state hold: last frame of the approved S028 raw motion (mirror and cloth in Lumi lap).",
+   "base_frame_family": "S028-END",
+   "BASE_FRAME_STATUS": "CAN_DERIVE_DETERMINISTICALLY",
+   "motion_brief": null,
+   "PRODUCTION_RISK": "LOW",
+   "code_gaps": [
+    "G01_INPUT_SNAPSHOT_COVERAGE",
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "agent008": "CODE_GAP",
+   "PROVIDER_CALLS_REQUIRED": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  }
+ ]
+}
