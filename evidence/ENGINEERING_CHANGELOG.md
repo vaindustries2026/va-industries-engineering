@@ -2111,3 +2111,30 @@ paid_action_triggered: false
 rollback: "revert commit; no external state changed"
 status: "EP005_S027_BASE_FRAME_READY_FOR_HUMAN_REVIEW + OUTPUT_DOWNLOADED_YES + OUTPUT_SHA256_RECORDED_YES + STATUS_REVIEW + HUMAN_DECISION_PENDING + ZERO_VIDEO_GENERATIONS + ZERO_SEEDANCE_POSTS"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-BASE-FRAME-APPROVED: human approval recorded; exact bytes preserved to production storage; registered APPROVED
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-BASE-FRAME-APPROVED"
+timestamp: "2026-10-09T06:17:25Z"
+actor: "Claude"
+authorised_by: "Gilang (human QC APPROVE of exact SHA-256)"
+change_type: "WRITE"   # 1 storage object (no-overwrite) + 1 registry row (plain insert)
+evidence: ["evidence/EP005_S027_BASE_FRAME_APPROVED_STORED_REGISTERED_v1.0.md", "evidence/ep005/s027_base_frame/HUMAN_QC_RECORD_v1.json", "evidence/ep005/s027_base_frame/REGISTRY_ROW_v1.json", "evidence/ep005/s027_base_frame/REGISTRY_ROW_INSERTED_v1.json", "evidence/ep005/s027_base_frame/AGENT006_READONLY_PROOF_PREWRITE.txt", "evidence/ep005/s027_base_frame/AGENT006_READONLY_PROOF_POSTWRITE.txt"]
+frame_id: "FRAME-EP005-S027-BASE-v01"
+human_decision: "APPROVED"
+approved_sha256: "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+provider_request_id: "0d6997fe-6c53-487e-8477-242e60c80c75"
+storage: {bucket: "production-assets", key: "visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png", object_id: "cfb3bb48-2ca5-4146-835d-d27da6723891", upsert: false, readback_sha256_match: true, byte_identical: true}
+registry: {id: "d2a07b22-cf25-42ff-b86a-c4080ff24bc2", asset_type: "SHOT_FRAME", asset_subtype: "BASE_FRAME", status: "APPROVED", aliases: [], scope: "shot-specific, not C1 canon"}
+agent006_readonly_proof: "manifest 45cc7493: 14 requirements, resolutions identical pre/post; governed 14 -> 15"
+side_effects: "storage.objects 19->20, asset_registry 23->24; manifests 11, readiness 7 unchanged; pre-existing rows identical"
+regenerations: 0
+video_generations: 0
+seedance_posts: 0
+paid_action_triggered: false
+rollback: "delete asset_registry id d2a07b22-cf25-42ff-b86a-c4080ff24bc2; delete storage object key above"
+status: "EP005_S027_BASE_FRAME_APPROVED + EXACT_ORIGINAL_PRESERVED_TO_PRODUCTION_STORAGE + STORAGE_READBACK_SHA256_MATCH + PRODUCTION_ASSET_REGISTERED_APPROVED + ZERO_REGENERATIONS + ZERO_VIDEO_GENERATIONS + ZERO_SEEDANCE_POSTS + EVIDENCE_COMMITTED_TO_GITHUB"
+```

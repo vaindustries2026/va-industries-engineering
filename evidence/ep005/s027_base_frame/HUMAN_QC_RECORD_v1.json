@@ -1,9 +1,9 @@
 {
  "frame_id": "FRAME-EP005-S027-BASE-v01",
- "status": "REVIEW",
+ "status": "APPROVED",
  "output_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
- "decision": "PENDING",
- "decided_by": null,
+ "decision": "APPROVED",
+ "decided_by": "Gilang",
  "rule": "Humans only (Gilang). APPROVE or REJECT must name the exact output SHA-256. Claude makes no approval decision.",
  "checklist": {
   "MIKKO": [
@@ -57,5 +57,27 @@
    "World: vanity, arched wood mirror, globe sconces, towel ring, toilet, basket, mat, plants consistent with bathroom board; no extra characters seen.",
    "Composition: eye-level medium two-shot (waist/shin-up), Mikko left larger, Lumi right floating; no berry smudges on faces; no watermark seen; only text is canon 'M' backpack badge."
   ]
- }
+ },
+ "decided_at": "2026-10-09",
+ "approved_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+ "approval_record": "ENG-20261009-EP005-S027-BASE-FRAME-APPROVED",
+ "approved_qualities": [
+  "Mikko identity and appearance",
+  "Lumi identity and appearance",
+  "Mikko/Lumi relative composition",
+  "clean Mikko face",
+  "cleaning cloth",
+  "pink flower mirror",
+  "bathroom environment",
+  "clean two-shot composition",
+  "animation-friendly pose",
+  "zero berry smudges",
+  "no unacceptable visual defects"
+ ],
+ "accepted_deviations": [
+  "Mikko boot crop accepted for this knees-up S027 composition",
+  "outfit texture/detail accepted",
+  "existing backpack badge accepted"
+ ],
+ "scope": "Shot-specific EP005 production asset; NOT C1/global character canon"
 }

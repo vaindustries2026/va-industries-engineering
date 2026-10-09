@@ -1,0 +1,49 @@
+[
+ {
+  "asset_id": "FRAME-EP005-S027-BASE-v01",
+  "asset_name": "EP005 S027 Base Frame",
+  "asset_type": "SHOT_FRAME",
+  "asset_subtype": "BASE_FRAME",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png",
+  "source_url": null,
+  "metadata_json": {
+   "canon_scope": "MIKKO_LUMI_EP005_SHOT_SPECIFIC_PRODUCTION_ASSET",
+   "not_c1_canon": true,
+   "canon_role": "S027 motion base/start frame (shot-specific; not global character canon)",
+   "episode_code": "EP-CANDIDATE-005",
+   "shot_id": "S027",
+   "frame_id": "FRAME-EP005-S027-BASE-v01",
+   "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+   "bytes": 4746496,
+   "dimensions": "2688x1520",
+   "format": "PNG 8-bit RGB non-interlaced",
+   "content_type": "image/png",
+   "has_alpha": false,
+   "storage_object_key": "visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png",
+   "storage_object_id": "cfb3bb48-2ca5-4146-835d-d27da6723891",
+   "provenance": {
+    "provider": "HIGGSFIELD",
+    "model": "Marketing Studio Image 2.5 Flare",
+    "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
+    "provider_request_id": "0d6997fe-6c53-487e-8477-242e60c80c75",
+    "original_provider_url": "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/a943a133-cbcb-4fee-875c-63f2f995a6dd.png",
+    "provider_original_md5_etag": "bb9d46d4e2021f8dc99015d9d7222f9a",
+    "request_body_sha256": "13af2150d3ca8413d050505e5fc1db38d80ab854131f03deb3083cad3a2899d1",
+    "prompt_sha256": "d24d0bab891cd9ea0eece2039f3980b989e8fc2d0c890d5f43c05dabfa70e2d9",
+    "generation_record": "evidence/ep005/s027_base_frame/FLARE_GENERATION_RECORD_v1.json",
+    "bytes_modified": false,
+    "generation_attempts": 1,
+    "automatic_retries": 0
+   },
+   "human_approval": "APPROVED",
+   "approval_authority": "Gilang",
+   "approved_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+   "approval_record": "ENG-20261009-EP005-S027-BASE-FRAME-APPROVED",
+   "approval_notes": "Boot crop accepted for knees-up S027 composition; outfit texture/detail and existing backpack badge accepted."
+  },
+  "notes": "Approved shot-specific EP005 S027 base frame (Higgsfield Flare request 0d6997fe). Exact provider-original bytes, SHA-256 81b841a6...0061b. Not C1/global canon. Human approval: Gilang, 2026-10-09."
+ }
+]

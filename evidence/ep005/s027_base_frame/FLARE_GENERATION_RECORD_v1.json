@@ -1,6 +1,6 @@
 {
  "frame_id": "FRAME-EP005-S027-BASE-v01",
- "status": "REVIEW (output downloaded and hashed; human decision PENDING)",
+ "status": "APPROVED (human, Gilang, exact SHA-256); preserved to production storage; registered",
  "model": "Marketing Studio Image 2.5 Flare",
  "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
  "request_body_sha256": "13af2150d3ca8413d050505e5fc1db38d80ab854131f03deb3083cad3a2899d1",
@@ -71,5 +71,20 @@
  "automatic_retries": 0,
  "seedance_posts": 0,
  "video_generations": 0,
- "output_downloaded": true
+ "output_downloaded": true,
+ "production_storage": {
+  "bucket": "production-assets",
+  "object_key": "visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png",
+  "object_id": "cfb3bb48-2ca5-4146-835d-d27da6723891",
+  "upload": "POST x-upsert:false, HTTP 200",
+  "readback_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "readback_bytes": 4746496,
+  "byte_identical_to_provider_original": true
+ },
+ "registry": {
+  "asset_registry_id": "d2a07b22-cf25-42ff-b86a-c4080ff24bc2",
+  "asset_id": "FRAME-EP005-S027-BASE-v01",
+  "status": "APPROVED",
+  "created_at": "2026-10-09T06:17:25.940513+00:00"
+ }
 }
