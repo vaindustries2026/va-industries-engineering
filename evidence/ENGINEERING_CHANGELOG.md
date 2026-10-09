@@ -2203,3 +2203,25 @@ paid_action_triggered: true
 rollback: "evidence-only revert; provider spend not reversible"
 status: "EP005_S027_SEEDANCE_MOTION_READY_FOR_HUMAN_REVIEW + SOURCE_UPLOADS_1 + SOURCE_READBACK_SHA_MATCH + SEEDANCE_GENERATIONS_1 + GENERATION_ATTEMPTS_1 + AUTOMATIC_RETRIES_0 + OUTPUT_DOWNLOADED_YES + RAW_VIDEO_SHA256_RECORDED_YES + STATUS_REVIEW + HUMAN_DECISION_PENDING + TOTAL_GENERATION_COST_USD_LE_3_50 + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-RAW-MOTION-APPROVED: human APPROVE recorded; exact raw video preserved; registry insert stopped pending type approval
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-RAW-MOTION-APPROVED"
+timestamp: "2026-10-09T08:08:10Z"
+actor: "Claude"
+authorised_by: "Gilang / Company Brain (APPROVE of exact raw SHA-256; preserve to production storage)"
+change_type: "WRITE"   # 1 storage object (no-overwrite); 0 registry rows
+evidence: ["evidence/EP005_S027_RAW_MOTION_APPROVED_PRESERVED_v1.0.md", "evidence/agent008/phase1/s027_v2/S027_MOTION_HUMAN_QC_RECORD_v1.json", "evidence/agent008/phase1/s027_v2/S027_MOTION_GENERATION_RECORD_v1.json", "evidence/agent008/phase1/s027_v2/S027_MOTION_LEDGER_v1.jsonl", "evidence/agent008/phase1/s027_v2/S027_RAW_MOTION_REGISTRY_ROW_PROPOSED_v1.json"]
+approved_raw_video_sha256: "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25"
+provider_request_id: "09bd5c9b-b04a-4137-b2f4-519f18a14c33"
+storage: {bucket: "production-assets", key: "visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4", object_id: "db6dfae1-f5a9-4203-8bed-ada8743ab285", upsert: false, readback_sha256_match: true, byte_identical: true}
+registry: "NOT INSERTED - no suitable existing asset_type; proposed SHOT_MOTION / RAW_MOTION_SOURCE for Company Brain"
+side_effects: "storage.objects 20->21; asset_registry 24 (unchanged); manifests 11, readiness 7 unchanged"
+regenerations: 0
+paid_action_triggered: false
+rollback: "delete the storage object key above; revert evidence commit"
+status: "EP005_S027_RAW_MOTION_APPROVED_AND_PRESERVED + STORAGE_READBACK_SHA256_MATCH + ZERO_REGENERATIONS + REGISTRY_INSERT_STOPPED_TYPE_PROPOSAL_PENDING + EVIDENCE_COMMITTED_TO_GITHUB"
+```

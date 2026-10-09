@@ -1,8 +1,8 @@
 {
  "candidate_id": "MOTION-EP005-S027-SEEDANCE20-CAND-v01",
  "shot_id": "S027",
- "status": "REVIEW",
- "human_decision": "PENDING",
+ "status": "APPROVED (human, exact raw SHA-256); preserved to production storage; registry row NOT inserted (type pending Company Brain)",
+ "human_decision": "APPROVED",
  "provider": "HIGGSFIELD",
  "provider_model": "bytedance/seedance-2.0/image-to-video",
  "endpoint": "POST https://api.higgsfield.ai/bytedance/seedance-2.0/image-to-video",
@@ -70,5 +70,17 @@
   "fallback_model_used": false,
   "video_generations": 1,
   "image_generations": 0
+ },
+ "production_storage": {
+  "bucket": "production-assets",
+  "object_key": "visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+  "object_id": "db6dfae1-f5a9-4203-8bed-ada8743ab285",
+  "upload": "POST x-upsert:false, Content-Type video/mp4, HTTP 200 (key absent before: NoSuchKey)",
+  "readback_http": 200,
+  "readback_bytes": 3411040,
+  "readback_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "readback_content_type": "video/mp4",
+  "byte_identical_to_provider_original": true,
+  "created_at": "2026-10-09T08:08:10.890198Z"
  }
 }

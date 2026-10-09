@@ -1,9 +1,9 @@
 {
  "candidate_id": "MOTION-EP005-S027-SEEDANCE20-CAND-v01",
  "raw_video_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
- "status": "REVIEW",
- "decision": "PENDING",
- "decided_by": null,
+ "status": "APPROVED",
+ "decision": "APPROVED",
+ "decided_by": "Gilang / Company Brain",
  "rule": "Humans only (Gilang). APPROVE or REJECT must cite the exact raw-video SHA-256. Claude makes no approval decision. Approval does not register a production video, approve the shot, or authorise compositing.",
  "checklist": {
   "MIKKO": [
@@ -54,5 +54,41 @@
    "Lumi: round orb, star antenna, pink flower mirror held, single mirror; expression changes from open-mouth laugh (t=0) to closed smile; glow slightly reduced.",
    "No extra characters, text, logos, sparkles or mirror glint seen in the samples; no audio stream in the file."
   ]
+ },
+ "decided_at": "2026-10-09",
+ "approved_raw_video_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+ "approval_scope": "approved S027 RAW MOTION SOURCE for continued EP005 production use; shot-specific; not C1 canon; not the final composited/rendered shot",
+ "accepted_observations": [
+  "Mikko small positional drift",
+  "Mikko fur tone changes slightly during the shot",
+  "Lumi transitions from open-mouth happy expression to closed smile"
+ ],
+ "passed": [
+  "Mikko identity acceptable",
+  "Lumi identity acceptable",
+  "cleaning cloth stable",
+  "pink flower mirror stable",
+  "no duplicate props",
+  "no unwanted limbs or characters",
+  "Mikko clean-faced",
+  "no berry smudges",
+  "camera effectively locked",
+  "bathroom stable",
+  "no unwanted text/logos",
+  "no mirror glint event",
+  "no magical effects",
+  "motion gentle and preschool-appropriate"
+ ],
+ "production_storage": {
+  "bucket": "production-assets",
+  "object_key": "visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+  "object_id": "db6dfae1-f5a9-4203-8bed-ada8743ab285",
+  "upload": "POST x-upsert:false, Content-Type video/mp4, HTTP 200 (key absent before: NoSuchKey)",
+  "readback_http": 200,
+  "readback_bytes": 3411040,
+  "readback_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "readback_content_type": "video/mp4",
+  "byte_identical_to_provider_original": true,
+  "created_at": "2026-10-09T08:08:10.890198Z"
  }
 }
