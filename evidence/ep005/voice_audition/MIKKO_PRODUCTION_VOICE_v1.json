@@ -1,0 +1,14 @@
+{
+ "MIKKO_PRODUCTION_VOICE": "APPROVED",
+ "character": "Mikko",
+ "voice_name": "Teddy Twinkle – Cute Cartoon Boy",
+ "voice_id": "XjGYkUkzth8BPs29fmcV",
+ "provider": "ElevenLabs",
+ "source": "existing ElevenLabs library voice (no cloning, no custom voice)",
+ "model_used_for_approved_take": "eleven_multilingual_v2",
+ "approved_by": "Gilang (human)",
+ "approved_on": "2026-10-09",
+ "approval_record": "ENG-20261009-EP005-S027-MIKKO-VOICE-APPROVED",
+ "selected_from": "evidence/ep005/voice_audition/MIKKO_S027_AUDITION_RESULTS_v1.json (M1)",
+ "proposed_registry_identity": "VOICE-MIKKO-v01 (not registered; a voice choice has no audio file)"
+}

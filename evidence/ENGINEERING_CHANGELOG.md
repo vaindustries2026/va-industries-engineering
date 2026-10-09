@@ -2280,3 +2280,28 @@ paid_action_triggered: true
 rollback: "evidence-only revert; credits not reversible"
 status: "MIKKO_VOICE_AUDITIONS_READY_FOR_HUMAN_REVIEW + AUDITION_CANDIDATES_3 + S027_TIMING_ANALYSED + HUMAN_VOICE_SELECTION_PENDING + S027_DIALOGUE_VISUAL_SYNC_DECISION_PENDING_HUMAN + COMPOSITOR_NOT_RUN + VIDEO_NOT_MODIFIED + ZERO_HIGGSFIELD_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-MIKKO-VOICE-APPROVED: Mikko voice locked; M1 S027 line preserved; registry stopped pending DIALOGUE subtype
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-MIKKO-VOICE-APPROVED"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Gilang (human: M1 approved as Mikko production voice and S027 line)"
+change_type: "WRITE"   # 1 storage object (no-overwrite); 0 registry rows
+evidence: ["evidence/EP005_S027_MIKKO_VOICE_APPROVED_DIALOGUE_PRESERVED_v1.0.md", "evidence/ep005/voice_audition/MIKKO_PRODUCTION_VOICE_v1.json", "evidence/ep005/voice_audition/S027_M1_DIALOGUE_APPROVED_PRESERVED_v1.json", "evidence/ep005/voice_audition/S027_M1_DIALOGUE_REGISTRY_ROW_PROPOSED_v1.json", "evidence/ep005/voice_audition/S027_DIALOGUE_TIMING_PROPOSAL_v1.json", "evidence/agent008/phase1/s027_v2/S027_VISUAL_SYNC_OPTIONS_v1.md", "evidence/agent008/phase1/s027_v2/S027_COMPOSITOR_DIALOGUE_PATCH_PLAN_v1.md"]
+mikko_voice: {name: "Teddy Twinkle – Cute Cartoon Boy", voice_id: "XjGYkUkzth8BPs29fmcV", status: "APPROVED"}
+dialogue_clip: {asset_id: "DLG-EP005-S027-L1-MIKKO-v01", generation_id: "Yp0rHGo5tJSND55ELxJl", model: "eleven_multilingual_v2", text: "We did it! I feel fresh.", sha256: "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50", bytes: 44337, duration_s: 1.625}
+storage: {key: "audio/dialogue/DLG-EP005-S027-L1-MIKKO-v01.mp3", object_id: "953752d9-9cb6-415e-bd6a-fbb4079d8cb5", upsert: false, readback_sha256_match: true}
+registry: "NOT INSERTED - no dialogue subtype under AUDIO (SFX/AMBIENCE/FOLEY); proposed AUDIO/DIALOGUE"
+timing_proposal: {DIALOGUE_START: 0.540, DIALOGUE_END: 1.730, WIN_CHORD_START: 1.917, WIN_CHORD_FADE_START: 4.000, WIN_CHORD_END: 5.000}
+s027_dialogue_visual_sync_decision: "PENDING_HUMAN"
+compositor: "not run, not modified; patch plan prepared"
+new_tts_generations: 0
+video_generations: 0
+paid_action_triggered: false
+rollback: "delete storage object audio/dialogue/DLG-EP005-S027-L1-MIKKO-v01.mp3; revert evidence commit"
+status: "MIKKO_PRODUCTION_VOICE_APPROVED + S027_M1_DIALOGUE_APPROVED + EXACT_M1_AUDIO_PRESERVED + STORAGE_READBACK_SHA_MATCH + REGISTRY_INSERT_STOPPED_SUBTYPE_PROPOSAL + DIALOGUE_TIMING_PROPOSED + VOICEOVER_VS_LIPSYNC_OPTIONS_PREPARED + COMPOSITOR_DIALOGUE_PATCH_PLAN_PREPARED + ZERO_NEW_TTS_GENERATIONS + ZERO_VIDEO_GENERATIONS + COMPOSITOR_NOT_RUN + EVIDENCE_COMMITTED_TO_GITHUB"
+```

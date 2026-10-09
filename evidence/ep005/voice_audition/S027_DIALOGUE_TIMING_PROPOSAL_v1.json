@@ -1,0 +1,42 @@
+{
+ "proposal": "S027 dialogue + audio timing v1",
+ "status": "PROPOSED",
+ "assembly_authorised": false,
+ "shot_duration_s": 5.0,
+ "fps": 24,
+ "frames": {
+  "dialogue_clip_placement": 12,
+  "win_chord_start": 46,
+  "win_chord_fade_start": 96,
+  "win_chord_end": 120
+ },
+ "grid": "cue starts snapped to the 24 fps frame grid",
+ "inputs": {
+  "dialogue": "DLG-EP005-S027-L1-MIKKO-v01 (sha 81a0b038…da50, 1.625 s, speech 0.04–1.23 s within clip)",
+  "chord": "SFX-WIN-SPARKLE-CHORD (sha 84e0d57c…bd9b, 9.816 s, onset immediate)",
+  "ambience": "AMB-BATHROOM-QUIET-v01 (sha ea28fad4…4d2f)"
+ },
+ "motion_basis": "mean |frame difference| of the approved raw (read-only): settle 0.0–0.6 s; main lift 0.8–1.6 s (peak 1.00 s); quiet 1.8–2.6 s; second lift 2.8–3.2 s; still 3.5–5.0 s",
+ "DIALOGUE_CLIP_PLACEMENT_S": 0.5,
+ "DIALOGUE_START": 0.54,
+ "DIALOGUE_END": 1.73,
+ "DIALOGUE_CLIP_END_S": 2.125,
+ "WIN_CHORD_START": 1.917,
+ "WIN_CHORD_FADE_START": 4.0,
+ "WIN_CHORD_END": 5.0,
+ "gains_db": {
+  "dialogue": 0.0,
+  "win_chord": -10.0,
+  "ambience": 0.0
+ },
+ "ambience": "0.000–5.000 s, 20 ms edge ramps (compositor built-in)",
+ "rationale": [
+  "0.50 s visual settle before the clip (speech audible from 0.54 s)",
+  "'We did it!' rides the main shoulder lift (0.8–1.6 s); 'I feel fresh.' ends 1.73 s",
+  "chord lands 0.19 s after the last word, in the quiet window, so the completion beat is the line ending",
+  "chord sounds 1.917–5.000 s (3.083 s of the 9.816 s cue), linear 1.0 s fade 4.000–5.000, silent at the cut (manifest: fade completely by 109 s)",
+  "played once; no stretch, trim or edit of the clip; its 0.40 s provider tail silence stays inside the shot"
+ ],
+ "exact_bytes_note": "the registered clip stays byte-exact; any mixed output necessarily decodes MP3 -> 48 kHz PCM (soxr) -> AAC, which is a derived rendering, not a modification of the asset",
+ "headroom_check": "offline numpy sum (not the compositor): mix peak -8.55 dBFS vs ceiling -1.0 dBFS"
+}
