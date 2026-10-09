@@ -1,14 +1,61 @@
 {
  "frame_id": "FRAME-EP005-S027-BASE-v01",
  "status": "REVIEW",
- "output_sha256": null,
- "decision": "PENDING (cannot open: original output not yet downloaded and hashed)",
+ "output_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+ "decision": "PENDING",
  "decided_by": null,
  "rule": "Humans only (Gilang). APPROVE or REJECT must name the exact output SHA-256. Claude makes no approval decision.",
  "checklist": {
-  "MIKKO": ["same approved identity", "correct fur colour", "correct face", "correct hair tuft", "correct clothes", "clean face", "cloth held correctly", "no anatomy errors"],
-  "LUMI": ["correct round orb identity", "correct star antenna", "correct face", "correct scale", "mirror held correctly", "no anatomy errors"],
-  "WORLD": ["bathroom matches approved world", "no unexpected redesign", "no additional characters or unwanted props"],
-  "COMPOSITION": ["close two-shot", "eye level", "stable animation-friendly pose", "Mikko larger and grounded", "Lumi smaller and floating", "zero berry smudges", "no text/logos/watermarks"]
+  "MIKKO": [
+   "approved Mikko identity preserved",
+   "correct honey-brown fur",
+   "correct face and hair tuft",
+   "teal/blue overalls",
+   "yellow neckerchief",
+   "brown boots",
+   "clean face",
+   "correct cloth",
+   "no anatomy errors"
+  ],
+  "LUMI": [
+   "approved Lumi identity preserved",
+   "round golden-white orb",
+   "correct star antenna",
+   "correct face",
+   "correct scale relative to Mikko",
+   "floating position correct",
+   "correct pink flower mirror",
+   "no anatomy errors"
+  ],
+  "WORLD": [
+   "approved bathroom preserved",
+   "no unexpected redesign",
+   "no unwanted characters",
+   "no unwanted props"
+  ],
+  "COMPOSITION": [
+   "close two-shot",
+   "eye-level",
+   "stable animation-friendly starting pose",
+   "Mikko larger / grounded",
+   "Lumi smaller / floating",
+   "zero berry smudges",
+   "no text, logos or watermarks"
+  ]
+ },
+ "decision_must_cite_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+ "output_bytes": 4746496,
+ "output_dimensions": "2688x1520",
+ "claude_preliminary_observations": {
+  "authority": "ADVISORY ONLY - not a QC decision",
+  "items": [
+   "Mikko: identity, honey-brown fur, hair tuft, teal overalls with paw badge, yellow neckerchief, backpack with wrench and M badge all consistent with canon; face clean; holds a blue cleaning cloth matching the bathroom-board prop.",
+   "Mikko: BOOTS NOT VISIBLE - frame crops at the rolled overall cuffs, so 'brown boots' and 'grounded' cannot be confirmed from this frame.",
+   "Mikko: overalls carry yellow speckle/wear texture and patches (canon has patch; speckles are heavier here) - human to judge whether it reads as dirt/smudge.",
+   "Lumi: round golden-white glowing orb, star antenna, canon face, tiny hands/feet, floating off ground, holding pink flower hand mirror matching bathroom-board prop; no spiral glow tail.",
+   "Lumi scale: orb roughly 0.7x Mikko head width - human to judge against duo scale sheet.",
+   "World: vanity, arched wood mirror, globe sconces, towel ring, toilet, basket, mat, plants consistent with bathroom board; no extra characters seen.",
+   "Composition: eye-level medium two-shot (waist/shin-up), Mikko left larger, Lumi right floating; no berry smudges on faces; no watermark seen; only text is canon 'M' backpack badge."
+  ]
  }
 }

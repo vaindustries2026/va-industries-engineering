@@ -1,6 +1,6 @@
 {
  "frame_id": "FRAME-EP005-S027-BASE-v01",
- "status": "REVIEW_PENDING_RETRIEVAL (not downloaded; no human review possible yet)",
+ "status": "REVIEW (output downloaded and hashed; human decision PENDING)",
  "model": "Marketing Studio Image 2.5 Flare",
  "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
  "request_body_sha256": "13af2150d3ca8413d050505e5fc1db38d80ab854131f03deb3083cad3a2899d1",
@@ -34,14 +34,34 @@
  "output_url": "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/a943a133-cbcb-4fee-875c-63f2f995a6dd.png",
  "output_count": 1,
  "retrieval": {
-  "result": "BLOCKED",
-  "host": "d3u0tzju9qaucj.cloudfront.net",
-  "error": "environment egress proxy CONNECT 403 (policy denial), 2 attempts 06:02:3x and 06:02:47Z; host differs from the allowed upload CDN d3snorpfx4xhv8.cloudfront.net"
+  "result": "DOWNLOADED",
+  "method": "single plain HTTPS GET of the recorded output URL (no provider call, no auth)",
+  "at": "Fri, 09 Oct 2026 06:08:13 GMT",
+  "http_status": 200,
+  "response_headers": {
+   "content-type": "image/png",
+   "content-length": "4746496",
+   "last-modified": "Fri, 09 Oct 2026 06:02:15 GMT",
+   "etag": "\"bb9d46d4e2021f8dc99015d9d7222f9a\"",
+   "x-amz-expiration": "expiry-date=\"Sat, 17 Oct 2026 00:00:00 GMT\", rule-id=\"Delete after 7 days\"",
+   "x-amz-cf-id": "r2z-UdN9RjYDrx4blzDI8hCgLIoD7hzyRqtdztZOS15rbipQJrPK6w==",
+   "server": "AmazonS3"
+  },
+  "bytes_unmodified": true,
+  "md5": "bb9d46d4e2021f8dc99015d9d7222f9a",
+  "md5_equals_s3_etag": true,
+  "previous_attempts": "2 blocked by egress policy (CONNECT 403) on 2026-10-09 06:02Z; host since allowed by human environment change",
+  "binary_committed": false,
+  "local_copy": "session scratchpad only (ephemeral); not written to V&A production storage"
  },
- "output_sha256": null,
- "content_type": null,
- "dimensions": null,
- "bytes": null,
+ "output_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+ "content_type": "image/png",
+ "dimensions": {
+  "width": 2688,
+  "height": 1520,
+  "format": "PNG 8-bit RGB non-interlaced"
+ },
+ "bytes": 4746496,
  "cost": {
   "reported_by_api": "none in submit or status responses",
   "api_balance_before_usd": 5.0,
@@ -50,5 +70,6 @@
  "generation_attempts": 1,
  "automatic_retries": 0,
  "seedance_posts": 0,
- "video_generations": 0
+ "video_generations": 0,
+ "output_downloaded": true
 }

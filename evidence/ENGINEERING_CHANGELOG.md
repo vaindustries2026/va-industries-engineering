@@ -2074,3 +2074,40 @@ registry_writes: 0
 production_storage_writes: 0
 status: "STOPPED_OUTPUT_CDN_EGRESS_BLOCKED + HIGGSFIELD_FLARE_GENERATIONS_1 + GENERATION_ATTEMPTS_1 + AUTOMATIC_RETRIES_0 + OUTPUT_DOWNLOADED_NO + STATUS_REVIEW + ZERO_VIDEO_GENERATIONS + ZERO_SEEDANCE_POSTS + ZERO_REGISTRY_WRITES + ZERO_PRODUCTION_STORAGE_WRITES + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-BASE-FRAME-RETRIEVED: original output downloaded and hashed; ready for human review
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-BASE-FRAME-RETRIEVED"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain / human (read-only retrieval; output CDN host allowed by environment change)"
+change_type: "TEST"   # read-only retrieval + evidence update
+evidence: ["evidence/EP005_S027_BASE_FRAME_RETRIEVED_FOR_HUMAN_REVIEW_v1.0.md", "evidence/ep005/s027_base_frame/FLARE_GENERATION_RECORD_v1.json", "evidence/ep005/s027_base_frame/GENERATION_LEDGER_v1.jsonl", "evidence/ep005/s027_base_frame/HUMAN_QC_RECORD_v1.json"]
+frame_id: "FRAME-EP005-S027-BASE-v01"
+provider_request_id: "0d6997fe-6c53-487e-8477-242e60c80c75"
+output_url: "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/a943a133-cbcb-4fee-875c-63f2f995a6dd.png"
+output_downloaded: true
+content_type: "image/png"
+dimensions: "2688x1520"
+bytes: 4746496
+output_sha256: "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+md5_equals_s3_etag: true
+provider_cdn_expiry: "2026-10-17 (x-amz-expiration, delete after 7 days)"
+binary_committed: false
+frame_status: "REVIEW"
+human_decision: "PENDING"
+flare_generations: 1
+generation_attempts: 1
+automatic_retries: 0
+provider_posts_this_task: 0
+seedance_posts: 0
+video_generations: 0
+registry_writes: 0
+production_storage_writes: 0
+paid_action_triggered: false
+rollback: "revert commit; no external state changed"
+status: "EP005_S027_BASE_FRAME_READY_FOR_HUMAN_REVIEW + OUTPUT_DOWNLOADED_YES + OUTPUT_SHA256_RECORDED_YES + STATUS_REVIEW + HUMAN_DECISION_PENDING + ZERO_VIDEO_GENERATIONS + ZERO_SEEDANCE_POSTS"
+```
