@@ -2169,3 +2169,37 @@ paid_action_triggered: false
 rollback: "revert commit"
 status: "EP005_S027_MOTION_PACKAGE_READY_FOR_HUMAN_APPROVAL + GENERATION_AUTHORISED_FALSE + SEEDANCE_POSTS_0 + VIDEO_GENERATIONS_0 + CREDITS_SPENT_0 + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-SEEDANCE-MOTION: one authorised Seedance 2.0 generation; raw candidate REVIEW
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-SEEDANCE-MOTION"
+timestamp: "2026-10-09T07:52:49Z"
+actor: "Claude"
+authorised_by: "Gilang / Company Brain (1 source upload, 1 generation, max $3.50; package 195591f)"
+change_type: "PAID_GENERATION"
+evidence: ["evidence/EP005_S027_SEEDANCE_MOTION_GENERATED_REVIEW_v1.0.md", "evidence/agent008/phase1/s027_v2/S027_SOURCE_UPLOAD_v1.json", "evidence/agent008/phase1/s027_v2/S027_FINAL_GATE_v1.json", "evidence/agent008/phase1/s027_v2/S027_MOTION_LEDGER_v1.jsonl", "evidence/agent008/phase1/s027_v2/S027_MOTION_RESULT_v1.json", "evidence/agent008/phase1/s027_v2/S027_MOTION_GENERATION_RECORD_v1.json", "evidence/agent008/phase1/s027_v2/S027_MOTION_HUMAN_QC_RECORD_v1.json"]
+source_frame_sha256: "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+source_public_url: "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png"
+source_readback_sha256_match: true
+prompt_sha256: "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3"
+final_request_body_sha256: "139e98c1799dedace2b7f30b93b34a94e7002b6204bffdbef5a99c4cad38f499"
+provider_request_id: "09bd5c9b-b04a-4137-b2f4-519f18a14c33"
+output_url: "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/e40add72-db79-43bf-a1bd-27c7f6c0c85e.mp4"
+raw_video: {sha256: "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25", bytes: 3411040, content_type: "video/mp4", resolution: "1920x1080", fps: 24, duration_s: 5.041667, audio_streams: 0, committed: false}
+cost: "not reported by provider; calculated $3.402 (243,000 tokens), up to $3.430 if billed on 121 frames; ceiling $3.50"
+candidate_status: "REVIEW"
+human_decision: "PENDING"
+seedance_generations: 1
+generation_attempts: 1
+automatic_retries: 0
+source_uploads: 1
+fallback_model: "none"
+registry_writes: 0
+production_storage_writes: 0
+paid_action_triggered: true
+rollback: "evidence-only revert; provider spend not reversible"
+status: "EP005_S027_SEEDANCE_MOTION_READY_FOR_HUMAN_REVIEW + SOURCE_UPLOADS_1 + SOURCE_READBACK_SHA_MATCH + SEEDANCE_GENERATIONS_1 + GENERATION_ATTEMPTS_1 + AUTOMATIC_RETRIES_0 + OUTPUT_DOWNLOADED_YES + RAW_VIDEO_SHA256_RECORDED_YES + STATUS_REVIEW + HUMAN_DECISION_PENDING + TOTAL_GENERATION_COST_USD_LE_3_50 + EVIDENCE_COMMITTED_TO_GITHUB"
+```

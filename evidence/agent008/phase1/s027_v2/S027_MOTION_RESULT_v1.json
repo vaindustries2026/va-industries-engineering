@@ -1,0 +1,54 @@
+{
+ "reservation": {
+  "approval_scope_id": "S027-MOTION-SEEDANCE20-1",
+  "at_unix": 1791532369.1828904,
+  "attempt_number": 1,
+  "event": "RESERVED",
+  "request": {
+   "approval_scope_id": "S027-MOTION-SEEDANCE20-1",
+   "aspect_ratio": "16:9",
+   "duration_seconds": 5,
+   "fps_target": 24,
+   "motion_prompt": "Animate this exact starting image as a calm, gentle preschool moment. The starting frame stays visually dominant: keep the image as it is and add only small, soft movement.\n\nMikko, the bear on the left, keeps his gentle, satisfied smile. He makes one small, natural, satisfied shoulder lift and then settles back, relaxed and proud. His head may move only very slightly, like soft breathing. He keeps the blue cleaning cloth held securely in his hand, where it is now. He does not wipe his face, does not move the cloth toward his face, does not walk, does not talk and does not change his pose.\n\nLumi, the glowing orb on the right, keeps her warm, happy expression. She floats in place with a very gentle, buoyant bob, and may give one tiny pleased lift of her body. She keeps holding the pink flower mirror steady and clearly visible in her hand. She does not fly around the bathroom, does not talk and does not change her pose.\n\nThe camera is completely locked: no pan, no tilt, no zoom, no dolly, no orbit, no reframing and no cuts. The bathroom stays exactly the same: no background changes, no moving fixtures, no new objects and no environmental effects.\n\nPreserve Mikko's and Lumi's exact identities, clothing and colours from the starting image. Mikko's face stays clean, with zero berry marks or smudges. Keep exactly one cleaning cloth and exactly one pink flower mirror; do not duplicate either prop. Do not create extra limbs, fingers, hands, faces or characters. Do not morph the characters, change Mikko's fur colour, change Lumi's round orb shape, resize Lumi, or change costumes. No text or logos. No mirror reflection event, no mirror glint, no berry-removal action, no magical effects and no sparkles. No lip-sync, no dialogue and no audio.",
+   "negative_constraints": "",
+   "negative_constraints_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "prompt_sha256": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3",
+   "provider": "higgsfield",
+   "provider_model": "bytedance/seedance-2.0/image-to-video",
+   "provider_params": {},
+   "resolution": "1080p",
+   "shot_id": "S027",
+   "source_frame_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/s027motion/FRAME-EP005-S027-BASE-v01.png",
+   "source_frame_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+   "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png"
+  }
+ },
+ "result": {
+  "cost_or_usage_if_available": null,
+  "created_at": "2026-10-09T07:52:49.183010+00:00",
+  "prompt_hash": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3",
+  "provider": "higgsfield",
+  "provider_job_id": "09bd5c9b-b04a-4137-b2f4-519f18a14c33",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "provider_status": "COMPLETED",
+  "raw_bytes": 3411040,
+  "raw_codec": "mov,mp4,m4a,3gp,3g2,mj2/h264",
+  "raw_duration": 5.041667,
+  "raw_fps": "24/1",
+  "raw_original_filename": "e40add72-db79-43bf-a1bd-27c7f6c0c85e.mp4",
+  "raw_output_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/s027motion/raw/S027/09bd5c9b-b04a-4137-b2f4-519f18a14c33/e40add72-db79-43bf-a1bd-27c7f6c0c85e.mp4",
+  "raw_output_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "raw_resolution": "1920x1080",
+  "source_frame_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png",
+  "status": "REVIEW"
+ },
+ "source_upload": {
+  "bytes": 4746496,
+  "content_type": "image/png",
+  "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png",
+  "readback": "SHA256_MATCH",
+  "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com"
+ }
+}
