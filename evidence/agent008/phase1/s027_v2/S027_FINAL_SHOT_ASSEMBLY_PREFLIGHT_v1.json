@@ -1,0 +1,66 @@
+{
+ "report": "S027_FINAL_SHOT_ASSEMBLY_PREFLIGHT",
+ "zero_spend": true,
+ "render_performed": false,
+ "RAW_MOTION_REGISTERED_APPROVED": "YES (row 2ebed34b-92b5-47dc-8131-c3716849f5eb)",
+ "RAW_MOTION_SHA_VERIFIED": "YES (storage readback 86dddea5...0e25)",
+ "AGENT006_RESOLUTION_UNCHANGED": "YES (14/14 identical; governed 15->16)",
+ "REQUIRED_VIDEO_TREATMENTS": [
+  "trim 121->120 frames (5.000 s)",
+  "review encode x264 CRF16 yuv420p (derived output)"
+ ],
+ "REQUIRED_AUDIO_ASSETS": [
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+   "role": "ambience bed, full shot"
+  },
+  {
+   "asset_id": "SFX-WIN-SPARKLE-CHORD",
+   "sha256": "84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b",
+   "role": "music cue at shared smile, -10 dB, fully faded by 5.0 s"
+  }
+ ],
+ "REQUIRED_DIALOGUE": "YES - Mikko: \"We did it! I feel fresh.\" (audio_plan.voice_required=true; build_shot_spec dialogue_slots status DEFERRED_NO_VOICE_ASSET)",
+ "REQUIRED_OVERLAYS": [],
+ "TARGET_DURATION": "5.000 s (episode 104-109 s; 120 frames)",
+ "TARGET_RESOLUTION": "1920x1080",
+ "TARGET_FPS": 24,
+ "COMPOSITOR_SUPPORT": "PARTIAL",
+ "answers": {
+  "1_dialogue": "YES, one Mikko line.",
+  "2_silent_except_ambience": "NO - ambience + WIN sparkle chord + Mikko dialogue.",
+  "3_audio_assets": "AMB-BATHROOM-QUIET-v01 and SFX-WIN-SPARKLE-CHORD only; no foley, no other SFX (manifest qc: chord is the only named asset; no extra music/sting/chime/whoosh). FOLEY-CLOTH-SOFT-v01 and SFX-COMPLETION-POP-v01 are not mapped to S027.",
+  "4_berry_overlays": "ZERO - overlay_vfx_requirements=[], active_overlays=[], all three smudges visible_at_start=false and visible_at_end=false.",
+  "5_mirror_glint_reflection": "No glint (tracked 'Established tiny glint' false/false). No mirror treatment (compositing_treatments=[], treatments=[]). Note: continuity lists 'Mikko's reflection' visible true/true; the human-approved frame and motion show plain mirror glass - accepted by human approval, recorded as a continuity note only.",
+  "6_treatments_altering_raw_pixels": "None. No crop/scale/colour/overlay. Final candidate is a 1-frame trim + lossy review encode; the registered raw is never modified.",
+  "7_final_duration": "5.000 s (start 104, end 109).",
+  "8_fps_resolution": "24 fps, 1920x1080 (A008 review output spec).",
+  "9_trim": "YES - raw 121 frames (5.0417 s) -> 120 frames; decode_normalised already takes exactly spec frames (drops the last frame). No other timing change.",
+  "10_compositor_support": "PARTIAL - video decode/trim/QC/encode, ambience bed, timed named cue with gain and fade-by are implemented in agent008.motion.compose. Dialogue is NOT: compose_motion_shot has no dialogue input (timeline.dialogue_track is an interface only) and it does not fail closed when dialogue_slots is non-empty, so running it today would silently omit Mikko's line."
+ },
+ "REMAINING_BLOCKERS": [
+  {
+   "code": "DIALOGUE_VOICE_ASSET_MISSING",
+   "detail": "No approved Mikko voice or S027 dialogue clip exists (registry has no VOICE/DLG rows; Lumi audition takes are candidates only). Proposed identities per the voice-input contract proposal: VOICE-MIKKO-v01, DLG-EP005-S027-L1-MIKKO-v01. Needs its own authorisation; not worked around."
+  },
+  {
+   "code": "COMPOSITOR_DIALOGUE_UNSUPPORTED",
+   "detail": "agent008.motion.compose needs dialogue-track mixing and a fail-closed guard for unfilled dialogue_slots. Code change; needs authorisation."
+  },
+  {
+   "code": "WIN_CHORD_START_TIME_UNSET",
+   "detail": "Manifest says start 'at the shared smile'; the shot-relative time must be set by a human from the approved raw motion (job field SET_AT_SHARED_SMILE_AFTER_MOTION_REVIEW)."
+  },
+  {
+   "code": "DIALOGUE_VS_NO_LIPSYNC_DECISION",
+   "detail": "The approved raw motion was generated with no lip-sync (approved prompt); Mikko's mouth does not form the line. Placing the line needs a human decision (accept unsynced delivery vs another approach). Not a regeneration request."
+  },
+  {
+   "code": "ASSEMBLY_AUTHORISATION_ABSENT",
+   "detail": "Expected: no compositor run is authorised in this task."
+  }
+ ],
+ "assembly_spec": "evidence/agent008/phase1/s027_v2/S027_ASSEMBLY_SPEC_PROPOSED_v1.json",
+ "ASSEMBLY_AUTHORISED": false
+}

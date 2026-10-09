@@ -2225,3 +2225,26 @@ paid_action_triggered: false
 rollback: "delete the storage object key above; revert evidence commit"
 status: "EP005_S027_RAW_MOTION_APPROVED_AND_PRESERVED + STORAGE_READBACK_SHA256_MATCH + ZERO_REGENERATIONS + REGISTRY_INSERT_STOPPED_TYPE_PROPOSAL_PENDING + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-RAW-MOTION-REGISTERED: SHOT_MOTION/RAW_MOTION_SOURCE row inserted; S027 assembly preflight (zero spend)
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-RAW-MOTION-REGISTERED"
+timestamp: "2026-10-09T08:17:54Z"
+actor: "Claude"
+authorised_by: "Company Brain (classification SHOT_MOTION / RAW_MOTION_SOURCE approved; one plain insert; read-only audit)"
+change_type: "WRITE"   # 1 registry row (plain insert); audit read-only
+evidence: ["evidence/EP005_S027_RAW_MOTION_REGISTERED_AND_ASSEMBLY_PREFLIGHT_v1.0.md", "evidence/agent008/phase1/s027_v2/S027_RAW_MOTION_REGISTRY_ROW_FINAL_v1.json", "evidence/agent008/phase1/s027_v2/S027_RAW_MOTION_REGISTRY_ROW_INSERTED_v1.json", "evidence/agent008/phase1/s027_v2/S027_RAW_MOTION_REGISTRY_POSTINSERT_VERIFICATION_v1.json", "evidence/agent008/phase1/s027_v2/AGENT006_READONLY_PROOF_MOTION_PREWRITE.txt", "evidence/agent008/phase1/s027_v2/AGENT006_READONLY_PROOF_MOTION_POSTWRITE.txt", "evidence/agent008/phase1/s027_v2/S027_FINAL_SHOT_ASSEMBLY_PREFLIGHT_v1.json", "evidence/agent008/phase1/s027_v2/S027_ASSEMBLY_SPEC_PROPOSED_v1.json"]
+registry_row: {id: "2ebed34b-92b5-47dc-8131-c3716849f5eb", asset_id: "MOTION-EP005-S027-SEEDANCE20-CAND-v01", asset_type: "SHOT_MOTION", asset_subtype: "RAW_MOTION_SOURCE", status: "APPROVED", aliases: [], sha256: "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25"}
+side_effects: "asset_registry 24->25; storage.objects 21 unchanged; manifests 11, readiness 7 unchanged; C1 unchanged"
+agent006_readonly_proof: "manifest 45cc7493: 14/14 resolutions identical; governed 15->16"
+assembly_preflight: "COMPOSITOR_SUPPORT PARTIAL; blockers DIALOGUE_VOICE_ASSET_MISSING, COMPOSITOR_DIALOGUE_UNSUPPORTED, WIN_CHORD_START_TIME_UNSET, DIALOGUE_VS_NO_LIPSYNC_DECISION, ASSEMBLY_AUTHORISATION_ABSENT"
+assembly_authorised: false
+generations: 0
+provider_spend_usd: 0
+paid_action_triggered: false
+rollback: "delete asset_registry id 2ebed34b-92b5-47dc-8131-c3716849f5eb"
+status: "EP005_S027_RAW_MOTION_REGISTERED + SHOT_MOTION_RAW_MOTION_SOURCE_APPROVED + RAW_VIDEO_SHA_VERIFIED + REGISTRY_ROW_INSERTED + AGENT006_RESOLUTION_UNCHANGED + S027_FINAL_SHOT_ASSEMBLY_PREFLIGHT_COMPLETE + ASSEMBLY_AUTHORISED_FALSE + ZERO_NEW_GENERATIONS + ZERO_PROVIDER_SPEND + EVIDENCE_COMMITTED_TO_GITHUB"
+```

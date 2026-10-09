@@ -1,0 +1,105 @@
+{
+ "spec_id": "A008-ASSEMBLY-EP005-S027-v1",
+ "status": "PROPOSED",
+ "ASSEMBLY_AUTHORISED": false,
+ "assembly_authorised": false,
+ "shot_id": "S027",
+ "section": "WIN",
+ "episode_window_s": [
+  104,
+  109
+ ],
+ "authority": {
+  "production_manifest_id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed (APPROVED)",
+  "readiness_manifest_id": "edc4ad58-3e5d-4ac2-9c74-c9af03af363f (APPROVED)",
+  "agent006_run_id": "A006-1791346204213",
+  "shot_spec_builder": "agent008.spec.build_shot_spec(motion_phase=True)"
+ },
+ "output_spec": {
+  "spec_id": "A008-REVIEW-1080P24-PHASE0",
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "frames": 120,
+  "duration_s": 5.0,
+  "pixel_format": "yuv420p",
+  "video_codec": "libx264 crf16 preset medium",
+  "audio": "aac 192k, 48 kHz stereo",
+  "peak_ceiling_dbfs": -1.0,
+  "status_on_output": "REVIEW"
+ },
+ "video": {
+  "source_asset_id": "MOTION-EP005-S027-SEEDANCE20-CAND-v01",
+  "registry_row_id": "2ebed34b-92b5-47dc-8131-c3716849f5eb",
+  "sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "storage": "production-assets/visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+  "raw": "1920x1080, 24/1 fps, 121 frames, 5.041667 s, no audio",
+  "operations": [
+   {
+    "op": "verify_sha256",
+    "detail": "fail closed on mismatch"
+   },
+   {
+    "op": "decode_normalised",
+    "detail": "fps=24 (identity), scale 1920x1080 (identity size), pad none (identity); yuv420p->rgb24 for the encoder"
+   },
+   {
+    "op": "trim_to_exact_frames",
+    "detail": "keep frames 0..119 (120 frames = 5.000 s); drop the final raw frame index 120 (0.0417 s)"
+   },
+   {
+    "op": "auto_qc_frames",
+    "detail": "black frames, freeze runs (max 24), distinct frames, frame-hash list"
+   },
+   {
+    "op": "encode_review",
+    "detail": "lossy x264 CRF16 re-encode of the 120 kept frames; the registered raw source is never modified"
+   }
+  ],
+  "overlays": [],
+  "treatments": [],
+  "captions": "none (no caption requirement in the approved data; timeline captions_burned_in=false)",
+  "video_fades": "none (clean cut into S028)"
+ },
+ "audio": {
+  "beds": [
+   {
+    "asset_id": "AMB-BATHROOM-QUIET-v01",
+    "registry_row_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+    "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+    "source_duration_s": 25.00025,
+    "placement": "0.000-5.000 s, gain 0.0 dB, 20 ms edge ramps (compositor built-in)"
+   }
+  ],
+  "named": [
+   {
+    "asset_id": "SFX-WIN-SPARKLE-CHORD",
+    "registry_row_id": "f52ccf46-f2b8-4f78-9bff-a4eb410d5436",
+    "sha256": "84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b",
+    "sha256_source": "agent008/inputs/hash_pins.json (registry row has no hash)",
+    "source_duration_s": 9.816,
+    "start_seconds": "HUMAN_TIMING_REQUIRED (manifest: 'at the shared smile')",
+    "gain_db": -10.0,
+    "fade_out_seconds": 1.0,
+    "fade_complete_by_seconds": 5.0,
+    "note": "9.8 s cue is truncated by the fade so it is fully silent by 5.0 s (manifest: fade completely by 109 s)"
+   }
+  ],
+  "dialogue": [
+   {
+    "speaker": "Mikko",
+    "text": "We did it! I feel fresh.",
+    "required": true,
+    "audio_asset_id": null,
+    "status": "BLOCKED_NO_APPROVED_VOICE_ASSET"
+   }
+  ],
+  "foley": [],
+  "other_sfx": [],
+  "music_other_than_chord": "none (manifest: no extra music, sting, chime or whoosh)"
+ },
+ "would_alter_raw_motion_pixels": {
+  "raw_source": "never modified (verified by SHA before and after)",
+  "final_candidate": "derived encode: 1-frame trim + lossy x264 re-encode; no crop, scale, overlay, colour change or treatment"
+ }
+}
