@@ -2001,3 +2001,26 @@ production_writes: 0
 status: "AGENT008_HIGGSFIELD_TRANSPORT_WIRED + S027_BASE_FRAME_BLOCKER_PRESERVED + ZERO_UPLOADS + ZERO_GENERATIONS + ZERO_CREDITS + TEST_SUITE_PASS"
 rollback_notes: "Revert this commit; the adapter returns to fail-closed without a transport."
 ```
+
+---
+
+## ENG-20261009-EP005-S027-BASE-FRAME-STOPPED: base-frame generation stopped; provider CDN blocked by egress policy
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-BASE-FRAME-STOPPED"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain (S027 base frame: up to 5 reference uploads + exactly one Flare image generation)"
+evidence: ["evidence/EP005_S027_BASE_FRAME_STOPPED_PROVIDER_CDN_BLOCKED_v1.0.md", "evidence/ep005/s027_base_frame/GENERATION_PACKAGE_v1.json", "evidence/ep005/s027_base_frame/UPLOAD_LEDGER_v1.jsonl"]
+references: "5/5 APPROVED; live registry = snapshot = local bytes (sha256 match)"
+uploads: "1 attempted (CHAR-MIKKO-MASTER-v01): POST generate-upload-url + PUT completed; readback GET to d3snorpfx4xhv8.cloudfront.net denied by egress proxy (CONNECT 403); failed closed"
+generation: "NOT submitted (output CDN unreachable -> could not download/hash/review)"
+prompt_sha256: "d24d0bab891cd9ea0eece2039f3980b989e8fc2d0c890d5f43c05dabfa70e2d9"
+image_generations: 0
+video_generations: 0
+credits_spent_generation: 0
+registry_writes: 0
+production_storage_writes: 0
+status: "STOPPED_PROVIDER_CDN_EGRESS_BLOCKED + ZERO_GENERATIONS + ZERO_REGISTRY_WRITES + ZERO_PRODUCTION_STORAGE_WRITES"
+rollback_notes: "Documentation-only commit."
+```

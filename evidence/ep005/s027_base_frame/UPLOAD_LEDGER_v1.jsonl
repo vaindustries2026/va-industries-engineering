@@ -1,0 +1,2 @@
+{"approval_scope_id": "S027-BASEFRAME-REF-CHAR-MIKKO-MASTER-v01", "at_unix": 1791525037.697584, "content_type": "image/png", "event": "UPLOAD_RESERVED", "frame_id": "CHAR-MIKKO-MASTER-v01", "source_frame_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8"}
+{"approval_scope_id": "S027-BASEFRAME-REF-CHAR-MIKKO-MASTER-v01", "at_unix": 1791525041.2274885, "code": "HTTP_TRANSPORT_ERROR", "event": "UPLOAD_FAILED"}
