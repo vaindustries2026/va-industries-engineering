@@ -1,0 +1,106 @@
+{
+ "job_id": "A008-MOTION-EP005-S027-SMOKE-v2",
+ "ready_for_paid_call": false,
+ "checks": [
+  {
+   "check": "approved_shot_contract",
+   "result": "PASS",
+   "value": 120
+  },
+  {
+   "check": "shot_in_approved_video_shots",
+   "result": "PASS",
+   "value": true
+  },
+  {
+   "check": "manifest_ids",
+   "result": "PASS",
+   "value": [
+    "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+    "edc4ad58-3e5d-4ac2-9c74-c9af03af363f",
+    "APPROVED"
+   ]
+  },
+  {
+   "check": "source_frame_sha256",
+   "result": "PASS",
+   "value": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+  },
+  {
+   "check": "model_capability",
+   "result": "PASS",
+   "value": true
+  },
+  {
+   "check": "prompt_sha256",
+   "result": "PASS",
+   "value": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3"
+  },
+  {
+   "check": "requested_duration_resolution",
+   "result": "PASS",
+   "value": [
+    5,
+    "1080p",
+    "16:9"
+   ]
+  },
+  {
+   "check": "model_official_contract",
+   "result": "PASS",
+   "value": "bytedance/seedance-2.0/image-to-video"
+  },
+  {
+   "check": "provider_credentials",
+   "result": "PASS",
+   "value": true
+  },
+  {
+   "check": "source_frame_hosted_url",
+   "result": "FAIL",
+   "code": "SOURCE_URL_MISSING",
+   "detail": "approved frame not staged; source upload needs its own authorisation"
+  },
+  {
+   "check": "spend_authorisation",
+   "result": "FAIL",
+   "code": "SPEND_AUTHORISATION_MISSING",
+   "detail": "no human-approved generation authorisation for this job"
+  },
+  {
+   "check": "paid_generation_count_so_far",
+   "result": "PASS",
+   "value": 0
+  }
+ ],
+ "blockers": [
+  "SOURCE_URL_MISSING",
+  "SPEND_AUTHORISATION_MISSING"
+ ],
+ "offline_serialisation": {
+  "official_model_id": "bytedance/seedance-2.0/image-to-video",
+  "endpoint": "/bytedance/seedance-2.0/image-to-video",
+  "contract_status": "VERIFIED",
+  "without_source_url": "SOURCE_URL_MISSING",
+  "body_keys_with_placeholder_url": [
+   "duration",
+   "generate_audio",
+   "image_url",
+   "prompt",
+   "resolution"
+  ],
+  "body_without_prompt_and_url": {
+   "duration": 5,
+   "resolution": "1080p",
+   "generate_audio": false
+  },
+  "prompt_transmitted_equals_package_prompt": true,
+  "prompt_sha256": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3"
+ },
+ "source_frame_verified": {
+  "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "registry_status": "APPROVED",
+  "registry_id": "d2a07b22-cf25-42ff-b86a-c4080ff24bc2"
+ },
+ "network_calls": 0
+}

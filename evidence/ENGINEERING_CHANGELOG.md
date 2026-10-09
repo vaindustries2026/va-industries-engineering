@@ -2138,3 +2138,34 @@ paid_action_triggered: false
 rollback: "delete asset_registry id d2a07b22-cf25-42ff-b86a-c4080ff24bc2; delete storage object key above"
 status: "EP005_S027_BASE_FRAME_APPROVED + EXACT_ORIGINAL_PRESERVED_TO_PRODUCTION_STORAGE + STORAGE_READBACK_SHA256_MATCH + PRODUCTION_ASSET_REGISTERED_APPROVED + ZERO_REGENERATIONS + ZERO_VIDEO_GENERATIONS + ZERO_SEEDANCE_POSTS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-MOTION-PACKAGE: Seedance 2.0 S027 motion package prepared (zero spend)
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-MOTION-PACKAGE"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain (zero-spend preparation only)"
+change_type: "CONFIG"   # new job package + evidence; no code changes
+evidence: ["evidence/EP005_S027_MOTION_PACKAGE_PREPARED_v1.0.md", "agent008/motion/jobs/ep005_s027_motion_smoke_v2.json", "evidence/agent008/phase1/s027_v2/S027_MOTION_PROMPT_v2.txt", "evidence/agent008/phase1/s027_v2/S027_PREFLIGHT_v2.json", "evidence/agent008/phase1/s027_v2/run_preflight_v2.py"]
+frame_id: "FRAME-EP005-S027-BASE-v01"
+source_sha256_verified_from_production_storage: "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+provider_model: "bytedance/seedance-2.0/image-to-video"
+params: {duration: 5, resolution: "1080p", generate_audio: false, maximum_attempts: 1}
+motion_prompt_sha256: "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3"
+negative_constraints_folded_into_prompt: true
+expected_cost: "243,000 video tokens x $0.014/1k = $3.40 list ($2.38 at 30% max discount); not charged"
+source_public_url: "NOT_YET_ASSIGNED"
+preflight_blockers: ["SOURCE_URL_MISSING", "SPEND_AUTHORISATION_MISSING"]
+tests: "agent008 84/84 OK"
+generation_authorised: false
+higgsfield_calls: 0
+seedance_posts: 0
+video_generations: 0
+credits_spent: 0
+paid_action_triggered: false
+rollback: "revert commit"
+status: "EP005_S027_MOTION_PACKAGE_READY_FOR_HUMAN_APPROVAL + GENERATION_AUTHORISED_FALSE + SEEDANCE_POSTS_0 + VIDEO_GENERATIONS_0 + CREDITS_SPENT_0 + EVIDENCE_COMMITTED_TO_GITHUB"
+```

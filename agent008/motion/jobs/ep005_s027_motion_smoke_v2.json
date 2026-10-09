@@ -1,0 +1,110 @@
+{
+ "job_id": "A008-MOTION-EP005-S027-SMOKE-v2",
+ "package_version": "v2",
+ "supersedes": "A008-MOTION-EP005-S027-SMOKE-v1 (prompt and negatives replaced; base-frame blocker closed)",
+ "status": "READY_FOR_HUMAN_APPROVAL",
+ "generation_authorised": false,
+ "GENERATION_AUTHORISED": "FALSE",
+ "spend_gate": "No source upload, Seedance POST, video generation, retry, fallback model or billing change is authorised by this package.",
+ "shot_id": "S027",
+ "frame_id": "FRAME-EP005-S027-BASE-v01",
+ "source_frame": {
+  "asset_registry_id": "d2a07b22-cf25-42ff-b86a-c4080ff24bc2",
+  "registry_status": "APPROVED",
+  "asset_type": "SHOT_FRAME",
+  "asset_subtype": "BASE_FRAME",
+  "storage": "production-assets/visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png",
+  "approved_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "bytes": 4746496,
+  "dimensions": "2688x1520",
+  "content_type": "image/png",
+  "human_approval": "Gilang, ENG-20261009-EP005-S027-BASE-FRAME-APPROVED"
+ },
+ "approved_source_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+ "production_manifest_id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+ "readiness_manifest_id": "edc4ad58-3e5d-4ac2-9c74-c9af03af363f",
+ "agent006_run_id": "A006-1791346204213",
+ "provider": "higgsfield",
+ "provider_model": "bytedance/seedance-2.0/image-to-video",
+ "provider_model_locked_for_this_attempt": true,
+ "fallback_model": "NONE (not authorised)",
+ "motion_prompt": "Animate this exact starting image as a calm, gentle preschool moment. The starting frame stays visually dominant: keep the image as it is and add only small, soft movement.\n\nMikko, the bear on the left, keeps his gentle, satisfied smile. He makes one small, natural, satisfied shoulder lift and then settles back, relaxed and proud. His head may move only very slightly, like soft breathing. He keeps the blue cleaning cloth held securely in his hand, where it is now. He does not wipe his face, does not move the cloth toward his face, does not walk, does not talk and does not change his pose.\n\nLumi, the glowing orb on the right, keeps her warm, happy expression. She floats in place with a very gentle, buoyant bob, and may give one tiny pleased lift of her body. She keeps holding the pink flower mirror steady and clearly visible in her hand. She does not fly around the bathroom, does not talk and does not change her pose.\n\nThe camera is completely locked: no pan, no tilt, no zoom, no dolly, no orbit, no reframing and no cuts. The bathroom stays exactly the same: no background changes, no moving fixtures, no new objects and no environmental effects.\n\nPreserve Mikko's and Lumi's exact identities, clothing and colours from the starting image. Mikko's face stays clean, with zero berry marks or smudges. Keep exactly one cleaning cloth and exactly one pink flower mirror; do not duplicate either prop. Do not create extra limbs, fingers, hands, faces or characters. Do not morph the characters, change Mikko's fur colour, change Lumi's round orb shape, resize Lumi, or change costumes. No text or logos. No mirror reflection event, no mirror glint, no berry-removal action, no magical effects and no sparkles. No lip-sync, no dialogue and no audio.",
+ "motion_prompt_sha256": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3",
+ "motion_prompt_file": "evidence/agent008/phase1/s027_v2/S027_MOTION_PROMPT_v2.txt (exact bytes, no trailing newline; file sha256 == motion_prompt_sha256)",
+ "negative_constraints": "",
+ "negative_constraints_folded_into_prompt": true,
+ "negative_constraints_note": "Seedance 2.0 i2v has no negative-prompt field in the verified contract; all preservation/prohibition constraints are in motion_prompt and therefore inside motion_prompt_sha256. This field is intentionally empty and is not transmitted.",
+ "duration_seconds": 5,
+ "resolution": "1080p",
+ "generate_audio": false,
+ "aspect_ratio": "16:9",
+ "fps_target": 24,
+ "aspect_ratio_note": "no aspect field in the Seedance 2.0 i2v schema; output aspect follows the source frame (2688x1520)",
+ "maximum_attempts": 1,
+ "automatic_retries": 0,
+ "source_upload_required": true,
+ "source_public_url": "NOT_YET_ASSIGNED",
+ "future_source_upload_sequence": [
+  "read approved bytes from production storage",
+  "recompute SHA-256 == approved_source_sha256 (else STOP)",
+  "authorised Higgsfield POST /files/generate-upload-url {content_type: image/png} + PUT exact bytes (prepare_source_upload)",
+  "record public HTTPS URL",
+  "GET readback; SHA-256 must equal approved_source_sha256",
+  "freeze request body (image_url = recorded public_url) and record its SHA-256",
+  "human spend authorisation bound to that exact body, max_generations = 1",
+  "single POST /bytedance/seedance-2.0/image-to-video; no retry"
+ ],
+ "future_request_body_template": {
+  "prompt": "<motion_prompt>",
+  "image_url": "<source_public_url, NOT_YET_ASSIGNED>",
+  "duration": 5,
+  "resolution": "1080p",
+  "generate_audio": false
+ },
+ "expected_cost": {
+  "basis": "Higgsfield official Seedance 2.0 token metering: billable video tokens = ceil(seconds x width x height x 24 / 1024); $0.014 per 1,000 tokens for 480p/720p/1080p (before customer discount); image references not billed as video input. Source: open.higgsfield.ai Seedance 2.0 model page and /pricing (read via search index; direct fetch blocked by egress policy on 2026-10-09).",
+  "inputs": {
+   "seconds": 5,
+   "resolution": "1080p",
+   "fps": 24,
+   "mode": "image-to-video",
+   "video_input": false,
+   "audio": false
+  },
+  "primary_estimate": {
+   "output_px": "1920x1080",
+   "tokens": 243000,
+   "usd_list": 3.402,
+   "usd_at_30pct_max_discount": 2.3814
+  },
+  "sensitivity_if_provider_outputs_1920x1088": {
+   "output_px": "1920x1088",
+   "tokens": 244800,
+   "usd_list": 3.4272,
+   "usd_at_30pct_max_discount": 2.399
+  },
+  "charged_so_far_usd": 0
+ },
+ "audio_timing_for_compositor": {
+  "beds": {
+   "AMB-BATHROOM-QUIET-v01": {
+    "gain_db": 0.0
+   }
+  },
+  "named": {
+   "SFX-WIN-SPARKLE-CHORD": {
+    "start_seconds": "SET_AT_SHARED_SMILE_AFTER_MOTION_REVIEW",
+    "gain_db": -10.0,
+    "fade_out_seconds": 1.0,
+    "fade_complete_by_seconds": 5.0
+   }
+  }
+ },
+ "dialogue": "absent (no lip-sync, no dialogue, generate_audio false)",
+ "provider_params": {
+  "duration": 5,
+  "resolution": "1080p",
+  "generate_audio": false,
+  "image_url": "NOT_YET_ASSIGNED"
+ }
+}
