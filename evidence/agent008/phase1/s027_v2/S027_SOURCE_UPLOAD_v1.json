@@ -1,0 +1,25 @@
+{
+ "step1": {
+  "registry_id": "d2a07b22-cf25-42ff-b86a-c4080ff24bc2",
+  "registry_status": "APPROVED",
+  "storage_key": "visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png",
+  "stored_bytes": 4746496,
+  "stored_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "prompt_sha256": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3"
+ },
+ "step2_upload": {
+  "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png",
+  "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com",
+  "content_type": "image/png",
+  "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "bytes": 4746496,
+  "readback": "NOT_ATTEMPTED"
+ },
+ "step2_readback": {
+  "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png",
+  "http_status": 200,
+  "bytes": 4746496,
+  "content_type": "image/png",
+  "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+ }
+}
