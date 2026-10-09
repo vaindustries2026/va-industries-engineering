@@ -1,0 +1,54 @@
+{
+ "frame_id": "FRAME-EP005-S027-BASE-v01",
+ "status": "REVIEW_PENDING_RETRIEVAL (not downloaded; no human review possible yet)",
+ "model": "Marketing Studio Image 2.5 Flare",
+ "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
+ "request_body_sha256": "13af2150d3ca8413d050505e5fc1db38d80ab854131f03deb3083cad3a2899d1",
+ "prompt_sha256": "d24d0bab891cd9ea0eece2039f3980b989e8fc2d0c890d5f43c05dabfa70e2d9",
+ "pre_post_checks": "12/12 PASS (body sha, prompt sha, 5 image_urls = verified refs, 16:9, 2k, high, enhance_prompt false, count 1, exact key set, not previously submitted); 5 reference URLs HEAD 200",
+ "submit": {
+  "http_status": 200,
+  "date": "Fri, 09 Oct 2026 06:01:46 GMT",
+  "cf_ray": "a47b2c336acec05f-IAD",
+  "response": {
+   "status": "queued",
+   "request_id": "0d6997fe-6c53-487e-8477-242e60c80c75",
+   "status_url": "https://api.higgsfield.ai/requests/0d6997fe-6c53-487e-8477-242e60c80c75/status",
+   "cancel_url": "https://api.higgsfield.ai/requests/0d6997fe-6c53-487e-8477-242e60c80c75/cancel"
+  }
+ },
+ "provider_request_id": "0d6997fe-6c53-487e-8477-242e60c80c75",
+ "terminal_status": "completed",
+ "polls": "4 GETs on the status route, in_progress x3 then completed (06:01:52-06:02:24Z)",
+ "final_status_response": {
+  "status": "completed",
+  "request_id": "0d6997fe-6c53-487e-8477-242e60c80c75",
+  "status_url": "https://api.higgsfield.ai/requests/0d6997fe-6c53-487e-8477-242e60c80c75/status",
+  "cancel_url": "https://api.higgsfield.ai/requests/0d6997fe-6c53-487e-8477-242e60c80c75/cancel",
+  "images": [
+   {
+    "url": "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/a943a133-cbcb-4fee-875c-63f2f995a6dd.png"
+   }
+  ]
+ },
+ "output_url": "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/a943a133-cbcb-4fee-875c-63f2f995a6dd.png",
+ "output_count": 1,
+ "retrieval": {
+  "result": "BLOCKED",
+  "host": "d3u0tzju9qaucj.cloudfront.net",
+  "error": "environment egress proxy CONNECT 403 (policy denial), 2 attempts 06:02:3x and 06:02:47Z; host differs from the allowed upload CDN d3snorpfx4xhv8.cloudfront.net"
+ },
+ "output_sha256": null,
+ "content_type": null,
+ "dimensions": null,
+ "bytes": null,
+ "cost": {
+  "reported_by_api": "none in submit or status responses",
+  "api_balance_before_usd": 5.0,
+  "api_balance_after": "not readable (no official balance route used); MCP workspace (separate account) unchanged at 10 credits, 0 marketing_studio generations"
+ },
+ "generation_attempts": 1,
+ "automatic_retries": 0,
+ "seedance_posts": 0,
+ "video_generations": 0
+}

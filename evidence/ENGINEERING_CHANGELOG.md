@@ -2046,3 +2046,31 @@ production_writes: 0
 rollback: "revert commit; provider-side inputs are temporary copies of approved bytes"
 status: "EP005_S027_REFERENCE_UPLOADS_VERIFIED + FIVE_FRESH_UPLOADS + FIVE_PUBLIC_URLS_CAPTURED + FIVE_READBACK_SHA256_MATCHES + ZERO_IMAGE_GENERATIONS + ZERO_VIDEO_GENERATIONS + ZERO_GENERATION_CREDITS + GENERATION_PACKAGE_READY_NOT_SUBMITTED"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-BASE-FRAME-FLARE: single Flare generation completed; output retrieval blocked by egress policy
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-BASE-FRAME-FLARE"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain / human (exactly one Flare generation, frozen body 13af2150…99d1)"
+evidence: ["evidence/EP005_S027_BASE_FRAME_GENERATED_RETRIEVAL_BLOCKED_v1.0.md", "evidence/ep005/s027_base_frame/FLARE_GENERATION_RECORD_v1.json", "evidence/ep005/s027_base_frame/GENERATION_LEDGER_v1.jsonl", "evidence/ep005/s027_base_frame/HUMAN_QC_RECORD_v1.json"]
+provider_request_id: "0d6997fe-6c53-487e-8477-242e60c80c75"
+terminal_status: "completed (1 image)"
+output_url: "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/a943a133-cbcb-4fee-875c-63f2f995a6dd.png"
+output_downloaded: false
+blocker: "d3u0tzju9qaucj.cloudfront.net denied by environment egress policy (CONNECT 403)"
+output_sha256: null
+frame_status: "REVIEW (human QC pending)"
+cost_reported: "none in API responses; balance before $5.00"
+flare_generations: 1
+generation_attempts: 1
+automatic_retries: 0
+seedance_posts: 0
+video_generations: 0
+registry_writes: 0
+production_storage_writes: 0
+status: "STOPPED_OUTPUT_CDN_EGRESS_BLOCKED + HIGGSFIELD_FLARE_GENERATIONS_1 + GENERATION_ATTEMPTS_1 + AUTOMATIC_RETRIES_0 + OUTPUT_DOWNLOADED_NO + STATUS_REVIEW + ZERO_VIDEO_GENERATIONS + ZERO_SEEDANCE_POSTS + ZERO_REGISTRY_WRITES + ZERO_PRODUCTION_STORAGE_WRITES + EVIDENCE_COMMITTED_TO_GITHUB"
+```

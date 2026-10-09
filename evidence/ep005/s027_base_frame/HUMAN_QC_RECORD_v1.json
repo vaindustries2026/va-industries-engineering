@@ -1,0 +1,14 @@
+{
+ "frame_id": "FRAME-EP005-S027-BASE-v01",
+ "status": "REVIEW",
+ "output_sha256": null,
+ "decision": "PENDING (cannot open: original output not yet downloaded and hashed)",
+ "decided_by": null,
+ "rule": "Humans only (Gilang). APPROVE or REJECT must name the exact output SHA-256. Claude makes no approval decision.",
+ "checklist": {
+  "MIKKO": ["same approved identity", "correct fur colour", "correct face", "correct hair tuft", "correct clothes", "clean face", "cloth held correctly", "no anatomy errors"],
+  "LUMI": ["correct round orb identity", "correct star antenna", "correct face", "correct scale", "mirror held correctly", "no anatomy errors"],
+  "WORLD": ["bathroom matches approved world", "no unexpected redesign", "no additional characters or unwanted props"],
+  "COMPOSITION": ["close two-shot", "eye level", "stable animation-friendly pose", "Mikko larger and grounded", "Lumi smaller and floating", "zero berry smudges", "no text/logos/watermarks"]
+ }
+}
