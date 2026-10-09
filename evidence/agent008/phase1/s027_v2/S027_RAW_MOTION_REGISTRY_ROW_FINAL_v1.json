@@ -1,0 +1,66 @@
+[
+ {
+  "asset_id": "MOTION-EP005-S027-SEEDANCE20-CAND-v01",
+  "asset_name": "EP005 S027 Raw Motion Source",
+  "asset_type": "SHOT_MOTION",
+  "asset_subtype": "RAW_MOTION_SOURCE",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+  "source_url": null,
+  "metadata_json": {
+   "canon_scope": "MIKKO_LUMI_EP005_SHOT_SPECIFIC_PRODUCTION_ASSET",
+   "not_c1_canon": true,
+   "not_final_rendered_shot": true,
+   "canon_role": "Approved raw provider motion source for S027; input to Agent-008 8D compositor; not the final composited/rendered shot",
+   "episode_code": "EP-CANDIDATE-005",
+   "shot_id": "S027",
+   "sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+   "bytes": 3411040,
+   "content_type": "video/mp4",
+   "container": "mp4",
+   "video_codec": "h264 yuv420p",
+   "dimensions": "1920x1080",
+   "fps": "24/1",
+   "frames": 121,
+   "duration_s": 5.041667,
+   "audio_streams": 0,
+   "storage_object_key": "visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+   "storage_object_id": "db6dfae1-f5a9-4203-8bed-ada8743ab285",
+   "provenance": {
+    "source_frame_id": "FRAME-EP005-S027-BASE-v01",
+    "source_frame_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+    "source_frame_registry_id": "d2a07b22-cf25-42ff-b86a-c4080ff24bc2",
+    "provider_source_public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png",
+    "motion_prompt_sha256": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3",
+    "final_request_body_sha256": "139e98c1799dedace2b7f30b93b34a94e7002b6204bffdbef5a99c4cad38f499",
+    "provider": "HIGGSFIELD",
+    "provider_model": "bytedance/seedance-2.0/image-to-video",
+    "provider_request_id": "09bd5c9b-b04a-4137-b2f4-519f18a14c33",
+    "original_output_url": "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/e40add72-db79-43bf-a1bd-27c7f6c0c85e.mp4",
+    "provider_output_md5_etag": "3ec7d7bdaa447dd88e67429fd7ce5050",
+    "requested": {
+     "duration": 5,
+     "resolution": "1080p",
+     "generate_audio": false
+    },
+    "package_commit": "195591f",
+    "bytes_modified": false,
+    "generation_attempts": 1,
+    "automatic_retries": 0
+   },
+   "human_approval": "APPROVED",
+   "approval_authority": "Gilang / Company Brain",
+   "approved_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+   "approval_record": "ENG-20261009-EP005-S027-RAW-MOTION-APPROVED",
+   "accepted_observations": [
+    "Mikko small positional drift",
+    "Mikko fur tone changes slightly during the shot",
+    "Lumi transitions from open-mouth happy expression to closed smile"
+   ],
+   "classification_approval": "Company Brain, 2026-10-09: SHOT_MOTION / RAW_MOTION_SOURCE = exact, human-approved, unmodified provider motion clip used as a downstream production source; not C1 canon, not a final composited shot, not a final episode render, not a publishing asset"
+  },
+  "notes": "Approved S027 raw Seedance 2.0 motion source (request 09bd5c9b). Exact provider bytes. Not C1 canon; not the final rendered shot."
+ }
+]
