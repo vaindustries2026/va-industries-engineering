@@ -24,9 +24,14 @@ class SpendAuthorisation:
     prompt_sha256: str
     max_generations: int
     no_auto_retry: bool = True
+    human_approved: bool = False
+
+    @property
+    def maximum_attempts(self):
+        return self.max_generations
 
     def matches(self, req):
-        pairs = {'provider': (self.provider, req.provider), 'provider_model': (self.provider_model, req.provider_model),
+        pairs = {'provider': (str(self.provider).lower(), str(req.provider).lower()), 'provider_model': (self.provider_model, req.provider_model),
                  'shot_id': (self.shot_id, req.shot_id), 'source_frame_sha256': (self.source_frame_sha256, req.source_frame_sha256),
                  'prompt_sha256': (self.prompt_sha256, req.prompt_sha256),
                  'approval_scope_id': (self.approval_scope_id, req.approval_scope_id)}
@@ -52,6 +57,9 @@ class AttemptLedger:
 
     def attempts(self, scope_id):
         return sum(1 for r in self.entries(scope_id) if r['event'] == 'RESERVED')
+
+    def upload_attempts(self, scope_id):
+        return sum(1 for r in self.entries(scope_id) if r['event'] == 'UPLOAD_RESERVED')
 
     def append(self, event, scope_id, **data):
         self.path.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,45 @@
+{
+  "source": "Official Higgsfield API contract, verified by Company Brain 2026-10-09 (docs.higgsfield.ai); lifecycle cross-checked against the official SDK @higgsfield/client 0.2.6. Configuration, not V&A canon: the model used for a job is chosen per job and bound by its spend authorisation.",
+  "base_url": "https://api.higgsfield.ai",
+  "routes": {
+    "generate_upload_url": "/files/generate-upload-url",
+    "request_status": "/requests/{request_id}/status",
+    "request_cancel": "/requests/{request_id}/cancel"
+  },
+  "default_primary": "bytedance/seedance-2.0/image-to-video",
+  "default_fallback": "kling-video/v3.0/std/image-to-video",
+  "models": {
+    "bytedance/seedance-2.0/image-to-video": {
+      "aliases": ["seedance_2_0"],
+      "contract_status": "VERIFIED",
+      "submit_enabled": true,
+      "endpoint": "/bytedance/seedance-2.0/image-to-video",
+      "serializer": "seedance_2_0_i2v",
+      "required_fields": ["image_url"],
+      "allowed_fields": ["prompt", "image_url", "duration", "resolution", "end_image_url", "generate_audio"],
+      "fixed_fields": {"generate_audio": false},
+      "duration_range": [4, 15],
+      "duration_integer": true,
+      "resolutions": ["480p", "720p", "1080p", "4k"],
+      "aspect_ratios": [],
+      "aspect_ratio_note": "No aspect field in the verified schema; output aspect follows the source image.",
+      "media_roles": ["start_image", "end_image"]
+    },
+    "kling-video/v3.0/std/image-to-video": {
+      "aliases": ["kling3_0"],
+      "contract_status": "PARTIAL",
+      "contract_note": "Path, prompt, image_url, last_image_url, duration and sound (default on) seen in docs excerpts only; full parameter table not verified. Configurable fallback; submission disabled until verified.",
+      "submit_enabled": false,
+      "endpoint": "/kling-video/v3.0/std/image-to-video",
+      "serializer": "kling_3_0_i2v",
+      "required_fields": ["image_url", "prompt"],
+      "allowed_fields": ["prompt", "image_url", "duration", "last_image_url", "sound"],
+      "fixed_fields": {"sound": "off"},
+      "duration_range": [3, 15],
+      "duration_integer": true,
+      "resolutions": [],
+      "aspect_ratios": [],
+      "media_roles": ["start_image", "end_image"]
+    }
+  }
+}

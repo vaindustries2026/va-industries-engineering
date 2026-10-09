@@ -14,6 +14,7 @@ from ..spec import build_shot_spec
 from .authorisation import AttemptLedger
 from .contracts import MotionRequest
 from .higgsfield import HiggsfieldProvider
+from .higgsfield_transport import HiggsfieldApiTransport
 
 
 def _check(name, fn, out):
@@ -26,7 +27,8 @@ def _check(name, fn, out):
         out.append({'check': name, 'result': 'FAIL', 'code': 'FILE_MISSING', 'detail': str(e)})
 
 
-def preflight(job, snapshot, pins, source_frame_path, frame_approval, provider, ledger, scope_id):
+def preflight(job, snapshot, pins, source_frame_path, frame_approval, provider, ledger, scope_id, source_upload=None,
+              authorisation=None):
     out = []
     spec = load_output_spec()
     r = validate_readiness(snapshot, job['readiness_manifest_id'], job['production_manifest_id'], job['agent006_run_id'])
@@ -49,8 +51,27 @@ def preflight(job, snapshot, pins, source_frame_path, frame_approval, provider, 
     out.append({'check': 'prompt_sha256', 'result': 'PASS', 'value': job['motion_prompt_sha256']})
     out.append({'check': 'requested_duration_resolution', 'result': 'PASS',
                 'value': [job['duration_seconds'], job['resolution'], job['aspect_ratio']]})
+    def contract():
+        if not hasattr(provider, 'official_model'):
+            return job['provider_model']
+        mid, rec = provider.official_model(job['provider_model'])
+        if not rec or rec.get('contract_status') != 'VERIFIED' or not rec.get('submit_enabled'):
+            raise FailClosed('MODEL_CONTRACT_NOT_VERIFIED', job['provider_model'])
+        return mid
+    _check('model_official_contract', contract, out)
     _check('provider_credentials', lambda: provider.credentials_present() or (_ for _ in ()).throw(
-        FailClosed('PROVIDER_CREDENTIAL_MISSING', 'Higgsfield MCP connector is read-only; no API credential configured')), out)
+        FailClosed('PROVIDER_CREDENTIAL_MISSING', 'no sanctioned Higgsfield API transport configured')), out)
+    def staged():
+        if getattr(provider, 'requires_hosted_source', False) and not source_upload:
+            raise FailClosed('SOURCE_URL_MISSING', 'approved frame not staged; source upload needs its own authorisation')
+        return (source_upload or {}).get('public_url')
+    _check('source_frame_hosted_url', staged, out)
+    def spend():
+        if authorisation is None:
+            raise FailClosed('SPEND_AUTHORISATION_MISSING', 'no human-approved generation authorisation for this job')
+        from .higgsfield import require_paid_authorisation
+        return require_paid_authorisation(authorisation)
+    _check('spend_authorisation', spend, out)
     out.append({'check': 'paid_generation_count_so_far', 'result': 'PASS', 'value': ledger.attempts(scope_id)})
     blockers = [c for c in out if c['result'] == 'FAIL']
     return {'job_id': job['job_id'], 'ready_for_paid_call': not blockers, 'checks': out,
@@ -61,6 +82,7 @@ if __name__ == '__main__':
     root = Path(__file__).resolve().parents[1]
     job = json.loads((root / 'motion/jobs/ep005_s027_motion_smoke_v1.json').read_text())
     snap = load_snapshot(root / 'inputs/ep005_motion_s027_input_snapshot.json')
-    rep = preflight(job, snap, load_hash_pins(root / 'inputs/hash_pins.json'), None, None, HiggsfieldProvider(),
+    rep = preflight(job, snap, load_hash_pins(root / 'inputs/hash_pins.json'), None, None,
+                    HiggsfieldProvider(transport=HiggsfieldApiTransport()),
                     AttemptLedger(sys.argv[1] if len(sys.argv) > 1 else '/dev/null'), 'UNSET')
     print(json.dumps(rep, indent=1, default=str))

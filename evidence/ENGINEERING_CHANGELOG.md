@@ -1973,3 +1973,31 @@ production_writes: 0
 status: "STOPPED_OFFICIAL_API_CONFLICTS_WITH_AGENT008_ASSUMPTIONS + HIGGSFIELD_AUTH_VERIFIED + S027_BASE_FRAME_BLOCKER_PRESERVED + ZERO_GENERATIONS + ZERO_CREDITS + ZERO_PROVIDER_POSTS"
 rollback_notes: "Documentation-only; revert this commit."
 ```
+
+---
+
+## ENG-20261009-AGENT008-HF-TRANSPORT-WIRED: official Higgsfield transport wired behind MotionGenerationProvider (zero spend)
+
+```yaml
+change_id: "ENG-20261009-AGENT008-HF-TRANSPORT-WIRED"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain (Agent-008 v0.2 official Higgsfield transport wiring; C-1/C-2/status-route stops waived for implementation only)"
+evidence: ["evidence/AGENT008_V02_HIGGSFIELD_TRANSPORT_WIRED_v1.0.md", "evidence/agent008/phase1_transport/S027_PREFLIGHT_v2.json", "evidence/agent008/phase1_transport/TEST_RESULTS_v1.txt"]
+contract: "POST /files/generate-upload-url -> PUT upload_url (upload_headers only) -> POST /bytedance/seedance-2.0/image-to-video -> GET /requests/{request_id}/status -> GET video.url"
+files_added: ["agent008/motion/http.py", "agent008/motion/higgsfield_transport.py", "agent008/motion/higgsfield_api_models.json", "agent008/motion/source_upload.py", "agent008/tests/test_higgsfield_transport.py"]
+files_changed: ["agent008/motion/higgsfield.py", "agent008/motion/provider.py", "agent008/motion/contracts.py", "agent008/motion/authorisation.py", "agent008/motion/runner.py", "agent008/motion/preflight.py", "agent008/motion/jobs/ep005_s027_motion_smoke_v1.json", "agent008/CONTRACT.md"]
+auth: "EnvironmentProxyAuth (Claude cloud network secret; HF_CREDENTIALS not read) or SuppliedHeaderAuth (future n8n); credential never read/logged/stored"
+model: "primary bytedance/seedance-2.0/image-to-video (VERIFIED; S027 duration 5, 1080p, generate_audio false); fallback kling-video/v3.0/std/image-to-video (PARTIAL; submit disabled)"
+open_item: "Seedance schema has no negative-prompt field; negative_constraints recorded, not transmitted (Company Brain decision)"
+s027_preflight: "blockers SOURCE_FRAME_MISSING, SOURCE_URL_MISSING, SPEND_AUTHORISATION_MISSING; PROVIDER_CREDENTIAL_MISSING cleared"
+tests: "84/84 pass (54 existing unchanged + 30 HF transport, all mocked)"
+live_higgsfield_calls: 0
+posts: 0
+uploads: 0
+generations: 0
+credits_spent: 0
+production_writes: 0
+status: "AGENT008_HIGGSFIELD_TRANSPORT_WIRED + S027_BASE_FRAME_BLOCKER_PRESERVED + ZERO_UPLOADS + ZERO_GENERATIONS + ZERO_CREDITS + TEST_SUITE_PASS"
+rollback_notes: "Revert this commit; the adapter returns to fail-closed without a transport."
+```

@@ -118,7 +118,8 @@ Status: built and tested offline; **no generation performed**. The first paid sm
 - Spend gate: `SpendAuthorisation` names provider, model, shot, source-frame SHA, prompt SHA, scope id and `max_generations`, and requires `no_auto_retry`. `AttemptLedger` is append-only; the attempt is reserved **before** submission, so failures still count. A FAILED status raises `PROVIDER_FAILED_NO_RETRY`; a poll timeout raises `PROVIDER_POLL_TIMEOUT_NO_RETRY`. There is no retry code path.
 - Raw output is written once to `<raw_root>/<shot>/<job_id>/` (the run fails if the directory is not empty), made read-only, probed and hashed. The compositor re-verifies that SHA before use.
 - Overlays or treatments on generated motion need tracked placement and fail closed in v0.2 (`MOTION_TREATMENTS_NEED_TRACKING_V02`). S027 needs none.
-- Higgsfield adapter: no built-in transport. A sanctioned transport bound to Higgsfield's official API and a human-provided credential must be injected. Endpoints are not guessed; no cookies; no reverse-engineered access.
+- Higgsfield adapter: wired to the official Higgsfield API through `motion/higgsfield_transport.HiggsfieldApiTransport` (section 19). The credential is supplied by the execution environment's `AuthBoundary`, never by application code. Endpoints come from the verified official contract; no cookies; no reverse-engineered access.
+- Provider-neutral additions (v0.2 transport): `MotionRequest.source_frame_url` and `MotionResult.source_frame_url` (hosted copy of the approved frame, set only by `stage_source_frame`); `MotionGenerationProvider.prepare_source_upload` (default: not supported), `requires_hosted_source`, `requires_human_approved_authorisation`; `SpendAuthorisation.human_approved` (default False). Providers that need none of these are unaffected.
 
 ## 15. Proposed data model (NOT migrated)
 | Table | Key fields |
@@ -136,4 +137,46 @@ Execute Workflow trigger (input: exact shot_assembly_job_id) → read job and au
 Expected frame count and duration, expected resolution, shot identity, raw SHA, black frames (mean < 12), longest identical-frame run (freeze) versus the allowed maximum, audio peak versus ceiling, silent-window gaps, overlay/treatment counts, provenance completeness, output SHA-256. The human QC list is in `evidence/agent008/phase1/HUMAN_QC_CHECKLIST_MOTION.md`.
 
 ## 18. First motion smoke (EP005 S027) — blocked
-Job `agent008/motion/jobs/ep005_s027_motion_smoke_v1.json`. The preflight (`python3 -m agent008.motion.preflight`) reports the blockers `SOURCE_FRAME_MISSING` and `PROVIDER_CREDENTIAL_MISSING`.
+Job `agent008/motion/jobs/ep005_s027_motion_smoke_v1.json`. The preflight (`python3 -m agent008.motion.preflight`; no network) now reports `SOURCE_FRAME_MISSING` (**STOPPED_BASE_FRAME_REQUIRED_BEFORE_MOTION**), `SOURCE_URL_MISSING` (upload not authorised) and `SPEND_AUTHORISATION_MISSING`. `PROVIDER_CREDENTIAL_MISSING` is cleared: the official transport is wired and the environment auth boundary is verified. Model: `bytedance/seedance-2.0/image-to-video`, duration 5, resolution 1080p, generate_audio false.
+
+## 19. Official Higgsfield transport (v0.2, wired 2026-10-09; zero spend)
+Official contract (Company Brain verification of docs.higgsfield.ai, plus the official SDK `@higgsfield/client` 0.2.6). Base `https://api.higgsfield.ai`; config in `motion/higgsfield_api_models.json`.
+
+| Operation | Official call | Agent-008 |
+|---|---|---|
+| prepare_source_upload | `POST /files/generate-upload-url {content_type}` → `{upload_url, upload_headers, public_url}`; `PUT upload_url` with exact bytes and ONLY `upload_headers`; readback `GET public_url` SHA-256 match | `motion/source_upload.stage_source_frame` → `HiggsfieldProvider.prepare_source_upload` → `HiggsfieldApiTransport.prepare_source_upload` |
+| submit | `POST /bytedance/seedance-2.0/image-to-video {prompt, image_url, duration, resolution, generate_audio:false}` (+ `Idempotency-Key`) → `{request_id, status_url, cancel_url, status}` | `HiggsfieldProvider.submit` (needs bound authorisation + `source_frame_url`) |
+| poll | `GET /requests/{request_id}/status` → `queued`/`in_progress` → QUEUED/RUNNING; `completed` → COMPLETED (`video.url`); `failed`/`nsfw`/`canceled` → FAILED | `HiggsfieldApiTransport.poll` (read-only; HTTP 5xx keeps polling; unknown or malformed fails closed) |
+| retrieve | `GET video.url` (no API credential) | `HiggsfieldApiTransport.retrieve`; the runner freezes and hashes the raw output |
+
+Authentication (`motion/http.py`):
+- `EnvironmentProxyAuth` (Claude cloud): the egress proxy injects the network-secret credential for `api.higgsfield.ai`, and the application adds no header. `HF_CREDENTIALS` is never read.
+- `SuppliedHeaderAuth` (other runtimes, e.g. n8n): a supplier returns the header at send time, only for the API host. It is never stored.
+- Errors are redacted. Logs carry method and path only.
+
+Source integrity (all fail closed):
+1. frame status is APPROVED, LOCKED or APPROVED_FOR_MOTION_INPUT;
+2. an exact SHA-256 is supplied;
+3. the local bytes match that SHA (the hashed bytes are the bytes sent);
+4. the content type is explicit and matches the file signature;
+5. a human-approved `UploadAuthorisation` names this frame id, SHA, content type and provider, with max 1 upload, reserved in the ledger first;
+6. `public_url` is recorded in the ledger and in `MOTION_RESULT.json`;
+7. the request's `source_frame_url` must equal the recorded `public_url` (runner check).
+
+Upload security:
+- The PUT carries only the returned `upload_headers`.
+- An `upload_url` on an authenticated API host is refused (`UPLOAD_URL_WOULD_RECEIVE_PROVIDER_AUTH`), so a proxy-injected credential cannot reach storage.
+- `upload_headers` with a different Content-Type are refused.
+
+Spend policy for Higgsfield (`higgsfield.require_paid_authorisation`):
+- provider is HIGGSFIELD, `human_approved` is true, `max_generations` is 1, and the authorisation exactly matches shot, model, source SHA, prompt SHA and scope;
+- the authorisation is bound by the runner after the ledger reservation and consumed by one submit;
+- a failed or errored submit is counted (`PROVIDER_SUBMIT_FAILED_NO_RETRY`); provider failure is counted (`PROVIDER_FAILED_NO_RETRY`); every request is sent once.
+
+Model configuration (not canon):
+- primary `bytedance/seedance-2.0/image-to-video` (alias `seedance_2_0`, contract VERIFIED);
+- fallback `kling-video/v3.0/std/image-to-video` (alias `kling3_0`, contract PARTIAL, submission disabled until verified).
+
+Seedance negative prompt: the verified schema has no negative-prompt field, so `negative_constraints` are hashed and recorded but not transmitted (open decision; see evidence).
+
+Tests: T-A008-HF01..HF13 plus upload-security regression in `tests/test_higgsfield_transport.py`. All mocked; no sockets.

@@ -13,9 +13,11 @@ from .contracts import MotionResult
 from .provider import TERMINAL_FAILED, TERMINAL_OK
 
 
-def validate_pre_generation(req, provider, auth, ledger, snapshot, frame_approval):
+def validate_pre_generation(req, provider, auth, ledger, snapshot, frame_approval, source_upload=None):
     """Every field must resolve, or the run stops before any spend. Returns a checklist dict."""
     req.validate()
+    if auth is None:
+        raise FailClosed('SPEND_AUTHORISATION_MISSING')
     checks = {}
     pm = snapshot['production_manifest']
     vids = (pm['manifest_json_reduced'].get('generation_workload') or {}).get('video_generation_shots') or []
@@ -39,6 +41,15 @@ def validate_pre_generation(req, provider, auth, ledger, snapshot, frame_approva
     if not provider.credentials_present():
         raise FailClosed('PROVIDER_CREDENTIAL_MISSING', provider.name)
     checks['credentials'] = 'present'
+    if getattr(provider, 'requires_hosted_source', False):
+        if not source_upload or not req.source_frame_url:
+            raise FailClosed('SOURCE_URL_MISSING', 'the approved frame must be staged (stage_source_frame) first')
+        if source_upload.get('sha256') != req.source_frame_sha256 or source_upload.get('public_url') != req.source_frame_url:
+            raise FailClosed('SOURCE_UPLOAD_MISMATCH', 'request must reference the exact recorded public_url and sha256')
+        checks['source_frame_url'] = req.source_frame_url
+    if getattr(provider, 'requires_human_approved_authorisation', False):
+        from .higgsfield import require_paid_authorisation
+        require_paid_authorisation(auth)
     auth.matches(req)
     used = ledger.attempts(auth.approval_scope_id)
     if used >= auth.max_generations:
@@ -52,12 +63,18 @@ def _freeze(path):
 
 
 def run_once(req, provider, auth, ledger, raw_root, snapshot, frame_approval, poll_interval=10.0, max_polls=180,
-             sleep=time.sleep):
+             sleep=time.sleep, source_upload=None):
     """Validate, reserve, submit ONCE, poll read-only, fetch and freeze the raw output. Never retries."""
-    validate_pre_generation(req, provider, auth, ledger, snapshot, frame_approval)
+    validate_pre_generation(req, provider, auth, ledger, snapshot, frame_approval, source_upload)
     reservation = ledger.reserve(auth, req)                 # counted even if anything below fails
     created = datetime.now(timezone.utc).isoformat()
-    job_id = provider.submit(req)
+    if hasattr(provider, 'bind_authorisation'):
+        provider.bind_authorisation(auth, reservation)
+    try:
+        job_id = provider.submit(req)
+    except FailClosed as e:
+        ledger.append('SUBMIT_FAILED', auth.approval_scope_id, code=e.code)
+        raise FailClosed('PROVIDER_SUBMIT_FAILED_NO_RETRY', f'{e.code}: {e.detail}') from None
     ledger.append('SUBMITTED', auth.approval_scope_id, provider_job_id=job_id, at_iso=created)
     status = {}
     for _ in range(max_polls):
@@ -71,7 +88,7 @@ def run_once(req, provider, auth, ledger, raw_root, snapshot, frame_approval, po
     result = MotionResult(provider=provider.name, provider_model=req.provider_model, provider_job_id=job_id,
                           source_frame_sha256=req.source_frame_sha256, prompt_hash=req.prompt_sha256,
                           provider_status=status['status'], created_at=created,
-                          cost_or_usage_if_available=status.get('usage'))
+                          cost_or_usage_if_available=status.get('usage'), source_frame_url=req.source_frame_url)
     if status['status'] == TERMINAL_FAILED:
         ledger.append('FAILED', auth.approval_scope_id, provider_job_id=job_id, detail=status.get('detail'))
         raise FailClosed('PROVIDER_FAILED_NO_RETRY', f'{job_id}: {status.get("detail")}')
@@ -92,6 +109,7 @@ def run_once(req, provider, auth, ledger, raw_root, snapshot, frame_approval, po
     result.raw_fps = v.get('r_frame_rate')
     result.raw_codec = f"{pr['format'].get('format_name')}/{v.get('codec_name')}"
     ledger.append('COMPLETED', auth.approval_scope_id, provider_job_id=job_id, raw_output_sha256=result.raw_output_sha256)
-    (dest / 'MOTION_RESULT.json').write_text(json.dumps({'reservation': reservation, 'result': result.to_dict()},
+    (dest / 'MOTION_RESULT.json').write_text(json.dumps({'reservation': reservation, 'result': result.to_dict(),
+                                                        'source_upload': source_upload},
                                                        indent=1, sort_keys=True))
     return result

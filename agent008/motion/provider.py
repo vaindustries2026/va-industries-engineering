@@ -12,6 +12,8 @@ TERMINAL_FAILED = 'FAILED'
 
 class MotionGenerationProvider(ABC):
     name = 'abstract'
+    requires_hosted_source = False                  # True: submit needs request.source_frame_url from stage_source_frame
+    requires_human_approved_authorisation = False   # True: paid policy (human_approved, exactly one attempt)
 
     @abstractmethod
     def credentials_present(self):
@@ -32,6 +34,11 @@ class MotionGenerationProvider(ABC):
     @abstractmethod
     def fetch(self, provider_job_id, dest_dir):
         """Download the raw result unchanged into dest_dir. Returns (path, original_filename)."""
+
+    def prepare_source_upload(self, data, content_type, expected_sha256):
+        """Host the exact approved source bytes; returns a record with public_url. PAID-GATED. Optional."""
+        from ..errors import FailClosed
+        raise FailClosed('SOURCE_UPLOAD_NOT_SUPPORTED', self.name)
 
     def validate_request(self, request):
         caps = self.capabilities(request.provider_model)

@@ -24,6 +24,7 @@ class MotionRequest:
     provider_model: str
     approval_scope_id: str
     provider_params: dict = field(default_factory=dict)
+    source_frame_url: str = None    # hosted copy of the approved frame (set only by stage_source_frame)
 
     @property
     def prompt_sha256(self):
@@ -69,6 +70,7 @@ class MotionResult:
     created_at: str = None
     cost_or_usage_if_available: object = None
     status: str = 'REVIEW'
+    source_frame_url: str = None
 
     def to_dict(self):
         return asdict(self)
