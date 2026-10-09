@@ -1,0 +1,23 @@
+{
+ "row_id": "451edb4d-3001-4016-bc9b-9e081bf5d68b",
+ "created_at": "2026-10-09T09:39:42.684489+00:00",
+ "rows_before": 25,
+ "rows_after": 26,
+ "checks": {
+  "one_new": true,
+  "asset_id": true,
+  "type": true,
+  "subtype": true,
+  "status": true,
+  "aliases": true,
+  "sha": true,
+  "voice": true,
+  "gen": true,
+  "text": true,
+  "shot": true,
+  "path": true,
+  "rights": true,
+  "all_fields_equal": true,
+  "preexisting_identical": true
+ }
+}

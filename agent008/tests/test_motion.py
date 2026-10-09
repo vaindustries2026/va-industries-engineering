@@ -190,7 +190,7 @@ class M05_M06_SpendGate(Base):
         self.assertEqual(e2.exception.code, 'GENERATION_COUNT_EXCEEDED')
 
 
-class M07_to_M11_Pipeline(Base):
+class ComposeFixture(Base):
     def setUp(self):
         super().setUp()
         self.result = self.run_fake(FakeMotionProvider())
@@ -199,11 +199,20 @@ class M07_to_M11_Pipeline(Base):
         self.spec_shot = build_shot_spec(self.snap, res, 'S027', SMALL, motion_phase=True)
         _wav(self.tmp / 'amb.wav', 2.0, 0, 0.003)
         _wav(self.tmp / 'chord.wav', 3.0, 660, 0.2)
-        self.assets = {'AMB-BATHROOM-QUIET-v01': self.tmp / 'amb.wav', 'SFX-WIN-SPARKLE-CHORD': self.tmp / 'chord.wav'}
+        _wav(self.tmp / 'dlg.wav', 1.2, 330, 0.25)
+        self.assets = {'AMB-BATHROOM-QUIET-v01': self.tmp / 'amb.wav', 'SFX-WIN-SPARKLE-CHORD': self.tmp / 'chord.wav',
+                       'DLG-TEST-S027-L1': self.tmp / 'dlg.wav'}
+        # S027 carries a required Mikko line, so every S027 compose now needs an approved, hash-bound clip.
+        self.dialogue = {'shot_id': 'S027', 'speaker': 'Mikko', 'text': 'We did it! I feel fresh.',
+                         'audio_asset_id': 'DLG-TEST-S027-L1', 'expected_sha256': sha256_file(self.tmp / 'dlg.wav'),
+                         'registry_status': 'APPROVED', 'start_seconds': 0.5, 'gain_db': 0.0}
         self.timing = {'beds': {}, 'named': {'SFX-WIN-SPARKLE-CHORD': {'start_seconds': 1.0, 'gain_db': -10.0,
                                                                        'fade_out_seconds': 1.0,
-                                                                       'fade_complete_by_seconds': 5.0}}}
+                                                                       'fade_complete_by_seconds': 5.0}},
+                       'dialogue': [self.dialogue]}
 
+
+class M07_to_M11_Pipeline(ComposeFixture):
     def test_M07_raw_preserved_unchanged(self):
         p = Path(self.result.raw_output_path)
         self.assertFalse(os.access(p, os.W_OK) and os.stat(p).st_mode & 0o222)
@@ -258,6 +267,98 @@ class M07_to_M11_Pipeline(Base):
         with self.assertRaises(FailClosed) as e:
             compose_motion_shot(short, req, self.spec_shot, SMALL, self.assets, self.timing, self.tmp / 'o4')
         self.assertEqual(e.exception.code, 'RAW_TOO_SHORT')
+
+
+class D01_Dialogue(ComposeFixture):
+    """Dialogue support in the motion compositor (T-A008-D01..D11). No network, no paid calls."""
+
+    def compose(self, out, timing=None, spec_shot=None, assets=None):
+        return compose_motion_shot(self.result, self.req, spec_shot or self.spec_shot, SMALL, assets or self.assets,
+                                   timing or self.timing, self.tmp / out)
+
+    def with_dialogue(self, **kw):
+        return {**self.timing, 'dialogue': [{**self.dialogue, **kw}]}
+
+    def mix(self, timing):
+        from agent008.motion.compose import mix_motion_audio, resolve_dialogue
+        dlg = resolve_dialogue(self.spec_shot, self.assets, timing)
+        return mix_motion_audio(self.spec_shot, self.assets, timing, SMALL, dlg)
+
+    def assert_code(self, code, **kw):
+        with self.assertRaises(FailClosed) as e:
+            self.compose('bad', timing=self.with_dialogue(**kw))
+        self.assertEqual(e.exception.code, code)
+
+    def test_D01_dialogue_mixed_at_exact_start(self):
+        from agent008 import media
+        sr = SMALL.audio_sample_rate
+        clip = media.load_audio(self.assets['DLG-TEST-S027-L1'], sr, SMALL.audio_channels)
+        no_dlg = {**self.timing, 'dialogue': []}
+        with_dlg, cues, _ = self.mix(self.timing)
+        spec_wo = {**self.spec_shot, 'dialogue_slots': []}
+        from agent008.motion.compose import mix_motion_audio
+        without, _, _ = mix_motion_audio(spec_wo, self.assets, no_dlg, SMALL, ())
+        diff = with_dlg - without
+        start = int(round(0.5 * sr))
+        np.testing.assert_allclose(diff[start:start + len(clip)], clip, atol=1e-9)
+        self.assertEqual(float(np.abs(diff[:start]).max()), 0.0)
+        self.assertEqual(float(np.abs(diff[start + len(clip):]).max()), 0.0)
+        d = [c for c in cues if c['kind'] == 'DIALOGUE']
+        self.assertEqual(len(d), 1)                                   # D06: once only
+        self.assertAlmostEqual(d[0]['end_s'] - d[0]['start_s'], len(clip) / sr)   # D07: no stretching
+
+    def test_D02_required_dialogue_missing_fails_closed(self):
+        with self.assertRaises(FailClosed) as e:
+            self.compose('missing', timing={**self.timing, 'dialogue': []})
+        self.assertEqual(e.exception.code, 'DIALOGUE_SLOT_UNFILLED')
+
+    def test_D03_sha_mismatch_fails_closed(self):
+        self.assert_code('HASH_MISMATCH', expected_sha256='e' * 64)
+
+    def test_D04_unapproved_fails_closed(self):
+        self.assert_code('DIALOGUE_NOT_APPROVED', registry_status='REVIEW')
+
+    def test_D05_wrong_shot_text_speaker_or_asset_fails_closed(self):
+        self.assert_code('DIALOGUE_SHOT_MISMATCH', shot_id='S026')
+        self.assert_code('DIALOGUE_TEXT_MISMATCH', text='We did it!')
+        self.assert_code('DIALOGUE_SPEAKER_MISMATCH', speaker='Lumi')
+        self.assert_code('DIALOGUE_REQUIRES_APPROVED_AUDIO', audio_asset_id='DLG-UNKNOWN')
+
+    def test_D06_extra_dialogue_fails_closed(self):
+        with self.assertRaises(FailClosed) as e:
+            self.compose('extra', timing={**self.timing, 'dialogue': [self.dialogue, self.dialogue]})
+        self.assertEqual(e.exception.code, 'DIALOGUE_UNEXPECTED')
+
+    def test_D07_overrun_fails_closed_never_trimmed(self):
+        self.assert_code('DIALOGUE_OVERRUNS_SHOT', start_seconds=4.5)
+
+    def test_D08_full_mix_and_output_spec(self):
+        prov = self.compose('full')
+        kinds = sorted(c['kind'] for c in prov['audio_cues'])
+        self.assertEqual(kinds, ['BED', 'DIALOGUE', 'NAMED'])
+        self.assertEqual(prov['qc']['output_frames'], 120)
+        self.assertEqual(prov['qc']['automatic_result'], 'PASS')
+        self.assertEqual(prov['dialogue_tracks'][0]['sha256'], self.dialogue['expected_sha256'])
+        mp4 = self.tmp / 'full' / 'MOTION_SMOKE_REVIEW.mp4'
+        from agent008 import media
+        pr = media.probe(mp4)
+        v = [s for s in pr['streams'] if s['codec_type'] == 'video'][0]
+        self.assertEqual(v['r_frame_rate'], '24/1')
+        self.assertEqual(int(v['nb_frames']), 120)
+        wav = self.tmp / 'full' / 'S027_MOTION_MIX.wav'
+        a = [s for s in media.probe(wav)['streams'] if s['codec_type'] == 'audio'][0]
+        self.assertEqual(int(a['duration_ts']), 5 * SMALL.audio_sample_rate)     # exactly 5.000 s
+
+    def test_D09_no_dialogue_shot_unchanged(self):
+        spec_wo = {**self.spec_shot, 'dialogue_slots': []}
+        legacy = {k: v for k, v in self.timing.items() if k != 'dialogue'}
+        a = self.compose('l1', timing=legacy, spec_shot=spec_wo)
+        b = self.compose('l2', timing=legacy, spec_shot=spec_wo)
+        self.assertEqual(a['dialogue_tracks'], [])
+        self.assertEqual(a['outputs']['mix_wav']['sha256'], b['outputs']['mix_wav']['sha256'])
+        with self.assertRaises(FailClosed) as e:      # a dialogue clip on a shot with no slot is refused
+            self.compose('l3', timing=self.timing, spec_shot=spec_wo)
+        self.assertEqual(e.exception.code, 'DIALOGUE_UNEXPECTED')
 
 
 class M12_Abstraction(unittest.TestCase):

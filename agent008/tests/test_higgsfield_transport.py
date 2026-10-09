@@ -516,9 +516,15 @@ class HF12_HF13_EndToEndMocked(HFBase):
                                     SMALL, motion_phase=True)
         _wav(self.tmp / 'amb.wav', 2.0, 0, 0.003)
         _wav(self.tmp / 'chord.wav', 3.0, 660, 0.2)
-        assets = {'AMB-BATHROOM-QUIET-v01': self.tmp / 'amb.wav', 'SFX-WIN-SPARKLE-CHORD': self.tmp / 'chord.wav'}
+        _wav(self.tmp / 'dlg.wav', 1.2, 330, 0.25)
+        assets = {'AMB-BATHROOM-QUIET-v01': self.tmp / 'amb.wav', 'SFX-WIN-SPARKLE-CHORD': self.tmp / 'chord.wav',
+                  'DLG-TEST-S027-L1': self.tmp / 'dlg.wav'}
+        dialogue = {'shot_id': 'S027', 'speaker': 'Mikko', 'text': 'We did it! I feel fresh.',
+                    'audio_asset_id': 'DLG-TEST-S027-L1', 'expected_sha256': sha256_file(self.tmp / 'dlg.wav'),
+                    'registry_status': 'APPROVED', 'start_seconds': 0.5, 'gain_db': 0.0}
         timing = {'beds': {}, 'named': {'SFX-WIN-SPARKLE-CHORD': {'start_seconds': 1.0, 'gain_db': -10.0,
-                                                                  'fade_out_seconds': 1.0, 'fade_complete_by_seconds': 5.0}}}
+                                                                  'fade_out_seconds': 1.0, 'fade_complete_by_seconds': 5.0}},
+                  'dialogue': [dialogue]}
         prov = compose_motion_shot(self.result, self.sreq, spec_shot, SMALL, assets, timing, self.tmp / 'out_hf')
         self.assertEqual(prov['raw_output_verified_sha256'], self.result.raw_output_sha256)
         self.assertEqual(prov['qc']['automatic_result'], 'PASS')

@@ -1,0 +1,17 @@
+{
+ "candidate_id": "SHOT-EP005-S027-FINAL-CAND-v01",
+ "output_sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
+ "status": "REVIEW",
+ "decision": "PENDING",
+ "decided_by": null,
+ "rule": "Humans only (Gilang). APPROVE or REJECT must cite the exact output SHA-256. Not registered; not approved; raw source and canon untouched.",
+ "checklist": [
+  "dialogue audible, clear and once only; voice is the approved Mikko voice",
+  "voice-over over Mikko's smile reads acceptably (accepted for S027)",
+  "WIN chord lands after the line and is silent at the cut",
+  "ambience unobtrusive",
+  "no extra sounds, music, captions or overlays",
+  "picture identical to the approved raw motion (first 120 frames)",
+  "5.000 s, clean cut into S028"
+ ]
+}

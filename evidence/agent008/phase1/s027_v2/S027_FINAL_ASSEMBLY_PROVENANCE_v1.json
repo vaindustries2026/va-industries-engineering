@@ -1,0 +1,342 @@
+{
+ "agent": "AGENT-008 \u2014 Shot Assembly Specification & Deterministic Compositor",
+ "agent_version": "agent008-v0.2-motion",
+ "audio_cues": [
+  {
+   "asset_id": "DLG-EP005-S027-L1-MIKKO-v01",
+   "end_s": 2.125395833333333,
+   "gain_db": 0.0,
+   "kind": "DIALOGUE",
+   "sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50",
+   "start_s": 0.5
+  },
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "end_s": 5.0,
+   "gain_db": 0.0,
+   "kind": "BED",
+   "start_s": 0.0
+  },
+  {
+   "asset_id": "SFX-WIN-SPARKLE-CHORD",
+   "end_s": 5.0,
+   "fade_out_s": 1.0,
+   "gain_db": -10.0,
+   "kind": "NAMED",
+   "start_s": 1.9166666666666667
+  }
+ ],
+ "deterministic_core_sha256": "e8cabfe0de095aee733ad18535e4c3362ee48ee7f18242773260ba87ce0eb6be",
+ "dialogue_tracks": [
+  {
+   "audio_asset_id": "DLG-EP005-S027-L1-MIKKO-v01",
+   "gain_db": 0.0,
+   "registry_status": "APPROVED",
+   "sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50",
+   "shot_id": "S027",
+   "speaker": "Mikko",
+   "start_seconds": 0.5,
+   "text": "We did it! I feel fresh.",
+   "text_sha256": "90053d06ee5fc597079e8b08012a76d3cef77a138f0ae3e03feeafac4c446308"
+  }
+ ],
+ "human_approval": {
+  "approve_by": "exact review mp4 sha256",
+  "approved": false,
+  "decisions": [
+   "APPROVE",
+   "REJECT",
+   "REGENERATE"
+  ],
+  "required": true
+ },
+ "mix_peak_dbfs": -8.551,
+ "motion_request": {
+  "approval_scope_id": "S027-MOTION-SEEDANCE20-1",
+  "aspect_ratio": "16:9",
+  "duration_seconds": 5,
+  "fps_target": 24,
+  "motion_prompt": "Animate this exact starting image as a calm, gentle preschool moment. The starting frame stays visually dominant: keep the image as it is and add only small, soft movement.\n\nMikko, the bear on the left, keeps his gentle, satisfied smile. He makes one small, natural, satisfied shoulder lift and then settles back, relaxed and proud. His head may move only very slightly, like soft breathing. He keeps the blue cleaning cloth held securely in his hand, where it is now. He does not wipe his face, does not move the cloth toward his face, does not walk, does not talk and does not change his pose.\n\nLumi, the glowing orb on the right, keeps her warm, happy expression. She floats in place with a very gentle, buoyant bob, and may give one tiny pleased lift of her body. She keeps holding the pink flower mirror steady and clearly visible in her hand. She does not fly around the bathroom, does not talk and does not change her pose.\n\nThe camera is completely locked: no pan, no tilt, no zoom, no dolly, no orbit, no reframing and no cuts. The bathroom stays exactly the same: no background changes, no moving fixtures, no new objects and no environmental effects.\n\nPreserve Mikko's and Lumi's exact identities, clothing and colours from the starting image. Mikko's face stays clean, with zero berry marks or smudges. Keep exactly one cleaning cloth and exactly one pink flower mirror; do not duplicate either prop. Do not create extra limbs, fingers, hands, faces or characters. Do not morph the characters, change Mikko's fur colour, change Lumi's round orb shape, resize Lumi, or change costumes. No text or logos. No mirror reflection event, no mirror glint, no berry-removal action, no magical effects and no sparkles. No lip-sync, no dialogue and no audio.",
+  "negative_constraints": "",
+  "negative_constraints_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "prompt_sha256": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3",
+  "provider": "higgsfield",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "provider_params": {},
+  "resolution": "1080p",
+  "shot_id": "S027",
+  "source_frame_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/s027motion/FRAME-EP005-S027-BASE-v01.png",
+  "source_frame_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png"
+ },
+ "motion_result": {
+  "cost_or_usage_if_available": null,
+  "created_at": "2026-10-09T07:52:49.183010+00:00",
+  "prompt_hash": "ab7f92afa5d7a8bde2efc621eb86ebe249614762b66e15576ec0b5d9c3f4cab3",
+  "provider": "higgsfield",
+  "provider_job_id": "09bd5c9b-b04a-4137-b2f4-519f18a14c33",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "provider_status": "COMPLETED",
+  "raw_bytes": 3411040,
+  "raw_codec": "mov,mp4,m4a,3gp,3g2,mj2/h264",
+  "raw_duration": 5.041667,
+  "raw_fps": "24/1",
+  "raw_original_filename": "e40add72-db79-43bf-a1bd-27c7f6c0c85e.mp4",
+  "raw_output_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/s027final/inputs/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+  "raw_output_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "raw_resolution": "1920x1080",
+  "source_frame_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/5cfa56ae-c54e-4377-a078-d0e6b1b56329.png",
+  "status": "REVIEW"
+ },
+ "output_spec": {
+  "audio_channels": 2,
+  "audio_sample_rate": 48000,
+  "canon_decision": false,
+  "fps": 24,
+  "height": 1080,
+  "output_status": "REVIEW",
+  "peak_ceiling_dbfs": -1.0,
+  "pixel_format": "yuv420p",
+  "review_audio_bitrate": "192k",
+  "review_audio_codec": "aac",
+  "spec_id": "A008-REVIEW-1080P24-PHASE0",
+  "video_codec": "libx264",
+  "width": 1920,
+  "x264_crf": 16,
+  "x264_preset": "medium"
+ },
+ "outputs": {
+  "mix_wav": {
+   "file": "S027_MOTION_MIX.wav",
+   "sha256": "c67da3f3d7cf0a2aeca0e9d8736db64c09aa2b819b9a3a607338bf1893e2a863"
+  },
+  "review_mp4": {
+   "bytes": 4307940,
+   "file": "MOTION_SMOKE_REVIEW.mp4",
+   "sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde"
+  }
+ },
+ "qc": {
+  "audio_peak_dbfs": -8.551,
+  "audio_silent_windows": 0,
+  "automatic_result": "PASS",
+  "black_frames": [],
+  "distinct_frames": 120,
+  "expected_duration_s": 5,
+  "expected_frames": 120,
+  "expected_resolution": "1920x1080",
+  "frame_hash_list_sha256": "8f3b24e01eaf69177a370bf0c71353e5240e70a4836e0f07733b87d0d6e0fa3a",
+  "frames": 120,
+  "issues": [],
+  "longest_identical_run": 1,
+  "max_freeze_frames": 24,
+  "output_duration_s": 5.0,
+  "output_frames": 120,
+  "output_resolution": "1920x1080",
+  "overlays_applied": 0,
+  "treatments_applied": 0
+ },
+ "raw_output_verified_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+ "recipes": {
+  "encode_command": [
+   "ffmpeg",
+   "-v",
+   "error",
+   "-y",
+   "-f",
+   "rawvideo",
+   "-pix_fmt",
+   "rgb24",
+   "-s",
+   "1920x1080",
+   "-r",
+   "24",
+   "-i",
+   "-",
+   "-i",
+   "<OUT>/S027_MOTION_MIX.wav",
+   "-map",
+   "0:v:0",
+   "-map",
+   "1:a:0",
+   "-vf",
+   "scale=out_color_matrix=bt709:out_range=tv:flags=lanczos+accurate_rnd+full_chroma_int+bitexact,format=yuv420p",
+   "-c:v",
+   "libx264",
+   "-preset",
+   "medium",
+   "-crf",
+   "16",
+   "-threads",
+   "1",
+   "-color_primaries",
+   "bt709",
+   "-color_trc",
+   "bt709",
+   "-colorspace",
+   "bt709",
+   "-c:a",
+   "aac",
+   "-b:a",
+   "192k",
+   "-ar",
+   "48000",
+   "-frames:v",
+   "120",
+   "-fflags",
+   "+bitexact",
+   "-flags:v",
+   "+bitexact",
+   "-flags:a",
+   "+bitexact",
+   "-map_metadata",
+   "-1",
+   "-movflags",
+   "+faststart",
+   "<OUT>/MOTION_SMOKE_REVIEW.mp4"
+  ]
+ },
+ "safety": {
+  "auto_approved": false,
+  "auto_retry": false
+ },
+ "shot_id": "S027",
+ "shot_spec": {
+  "active_overlays": [],
+  "animation_method": "IMAGE_TO_VIDEO",
+  "characters": [
+   {
+    "asset_id": "CHAR-MIKKO-MASTER-v01",
+    "asset_type": "CHARACTER",
+    "character_name": "Mikko",
+    "expected_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+    "manifest_label": "TBD",
+    "object_key": "visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png",
+    "reference": "TBD::CHARACTER::Mikko",
+    "registry_row_id": "0d7a47e0-0adf-47d6-9cf9-f71ad7439747",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png"
+   },
+   {
+    "asset_id": "CHAR-LUMI-MASTER-v01",
+    "asset_type": "CHARACTER",
+    "character_name": "Lumi",
+    "expected_sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+    "manifest_label": "TBD",
+    "object_key": "visual/canonical/characters/CHAR-LUMI-MASTER-v01.png",
+    "reference": "TBD::CHARACTER::Lumi",
+    "registry_row_id": "75cf9e5d-78ec-4cac-b1bb-49e696629bc2",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-LUMI-MASTER-v01.png"
+   }
+  ],
+  "clean_reveal": false,
+  "continuity_start_authority": {
+   "elements_inherited": 8,
+   "elements_not_redeclared": [],
+   "rule": "visible_at_start(N) = validated visible_at_end(N-1)",
+   "source_shot_id": "S026"
+  },
+  "dialogue_slots": [
+   {
+    "audio_asset_id": null,
+    "shot_id": "S027",
+    "speaker": "Mikko",
+    "status": "DEFERRED_NO_VOICE_ASSET",
+    "text": "We did it! I feel fresh."
+   }
+  ],
+  "duration_seconds": 5,
+  "environment": {
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "asset_type": "ENVIRONMENT",
+   "expected_sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "manifest_label": "TBD",
+   "object_key": "visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png",
+   "reference": "TBD::ENVIRONMENT::Canonical environment/background",
+   "registry_row_id": "8cdeea80-1eb3-4a75-b50a-c209f1aae434",
+   "sha256_source": "asset_registry.metadata_json.sha256",
+   "status": "APPROVED",
+   "storage_path": "production-assets/visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png"
+  },
+  "episode_end_seconds": 109,
+  "episode_start_seconds": 104,
+  "frames": 120,
+  "informational_stale_labels": [
+   "TBD",
+   "TMP_EP005_HAND_MIRROR",
+   "TMP_EP005_SOFT_CLOTH"
+  ],
+  "mapped_audio": [
+   {
+    "asset_id": "AMB-BATHROOM-QUIET-v01",
+    "asset_type": "AUDIO",
+    "expected_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+    "object_key": "audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+    "reference": "AMB-BATHROOM-QUIET-v01",
+    "registry_row_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+    "replaces_requirement": "TBD::AUDIO::AMBIENCE",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav"
+   }
+  ],
+  "music_present": true,
+  "named_sfx": [
+   {
+    "asset_id": "SFX-WIN-SPARKLE-CHORD",
+    "asset_type": "AUDIO",
+    "expected_sha256": "84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b",
+    "manifest_label": "WIN sparkle chord",
+    "object_key": "audio/sfx/SFX-WIN-SPARKLE-CHORD-v01.mp3.mp3",
+    "reference": "WIN sparkle chord",
+    "registry_row_id": "f52ccf46-f2b8-4f78-9bff-a4eb410d5436",
+    "sha256_source": "agent008/inputs/hash_pins.json (evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md (read-only storage audit, 2026-10-05))",
+    "status": "APPROVED",
+    "storage_path": "production-assets/audio/sfx/SFX-WIN-SPARKLE-CHORD-v01.mp3.mp3"
+   }
+  ],
+  "props": [
+   {
+    "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+    "asset_type": "PROP",
+    "expected_sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+    "label_is_stale": true,
+    "manifest_label": "TMP_EP005_HAND_MIRROR",
+    "object_key": "visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp",
+    "reference": "TMP_EP005_HAND_MIRROR",
+    "registry_row_id": "a61c0af2-1e8d-40e2-88d1-8848390f2a17",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp"
+   },
+   {
+    "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+    "asset_type": "PROP",
+    "expected_sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+    "label_is_stale": true,
+    "manifest_label": "TMP_EP005_SOFT_CLOTH",
+    "object_key": "visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp",
+    "reference": "TMP_EP005_SOFT_CLOTH",
+    "registry_row_id": "ab33c77c-5fde-4642-9efb-706f619c4a7e",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp"
+   }
+  ],
+  "protected_participation_hold": false,
+  "shot_id": "S027",
+  "shot_index": 27,
+  "treatments": [],
+  "video_generation_required": true
+ },
+ "stage": "8C->8D->8F",
+ "status": "REVIEW",
+ "toolchain": {
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3"
+ }
+}

@@ -1,0 +1,139 @@
+{
+ "label": "renderA",
+ "inputs": {
+  "MOTION-EP005-S027-SEEDANCE20-CAND-v01": {
+   "registry_id": "2ebed34b-92b5-47dc-8131-c3716849f5eb",
+   "status": "APPROVED",
+   "asset_type": "SHOT_MOTION",
+   "asset_subtype": "RAW_MOTION_SOURCE",
+   "storage_path": "production-assets/visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+   "sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+   "sha256_source": "asset_registry.metadata_json.sha256"
+  },
+  "DLG-EP005-S027-L1-MIKKO-v01": {
+   "registry_id": "451edb4d-3001-4016-bc9b-9e081bf5d68b",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "DIALOGUE",
+   "storage_path": "production-assets/audio/dialogue/DLG-EP005-S027-L1-MIKKO-v01.mp3",
+   "sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50",
+   "sha256_source": "asset_registry.metadata_json.sha256"
+  },
+  "AMB-BATHROOM-QUIET-v01": {
+   "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "AMBIENCE",
+   "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+   "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+   "sha256_source": "asset_registry.metadata_json.sha256"
+  },
+  "SFX-WIN-SPARKLE-CHORD": {
+   "registry_id": "f52ccf46-f2b8-4f78-9bff-a4eb410d5436",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "SFX",
+   "storage_path": "production-assets/audio/sfx/SFX-WIN-SPARKLE-CHORD-v01.mp3.mp3",
+   "sha256": "84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b",
+   "sha256_source": "agent008/inputs/hash_pins.json"
+  }
+ },
+ "timing": {
+  "beds": {
+   "AMB-BATHROOM-QUIET-v01": {
+    "gain_db": 0.0
+   }
+  },
+  "named": {
+   "SFX-WIN-SPARKLE-CHORD": {
+    "start_seconds": 1.9166666666666667,
+    "gain_db": -10.0,
+    "fade_out_seconds": 1.0,
+    "fade_complete_by_seconds": 5.0
+   }
+  },
+  "dialogue": [
+   {
+    "shot_id": "S027",
+    "speaker": "Mikko",
+    "text": "We did it! I feel fresh.",
+    "audio_asset_id": "DLG-EP005-S027-L1-MIKKO-v01",
+    "expected_sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50",
+    "registry_status": "APPROVED",
+    "start_seconds": 0.5,
+    "gain_db": 0.0
+   }
+  ]
+ },
+ "outputs": {
+  "review_mp4": {
+   "file": "MOTION_SMOKE_REVIEW.mp4",
+   "sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
+   "bytes": 4307940
+  },
+  "mix_wav": {
+   "file": "S027_MOTION_MIX.wav",
+   "sha256": "c67da3f3d7cf0a2aeca0e9d8736db64c09aa2b819b9a3a607338bf1893e2a863"
+  }
+ },
+ "qc": {
+  "frames": 120,
+  "black_frames": [],
+  "longest_identical_run": 1,
+  "max_freeze_frames": 24,
+  "distinct_frames": 120,
+  "frame_hash_list_sha256": "8f3b24e01eaf69177a370bf0c71353e5240e70a4836e0f07733b87d0d6e0fa3a",
+  "issues": [],
+  "expected_frames": 120,
+  "output_frames": 120,
+  "output_resolution": "1920x1080",
+  "expected_resolution": "1920x1080",
+  "output_duration_s": 5.0,
+  "expected_duration_s": 5,
+  "audio_peak_dbfs": -8.551,
+  "audio_silent_windows": 0,
+  "overlays_applied": 0,
+  "treatments_applied": 0,
+  "automatic_result": "PASS"
+ },
+ "audio_cues": [
+  {
+   "asset_id": "DLG-EP005-S027-L1-MIKKO-v01",
+   "kind": "DIALOGUE",
+   "start_s": 0.5,
+   "end_s": 2.125395833333333,
+   "gain_db": 0.0,
+   "sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50"
+  },
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "kind": "BED",
+   "start_s": 0.0,
+   "end_s": 5.0,
+   "gain_db": 0.0
+  },
+  {
+   "asset_id": "SFX-WIN-SPARKLE-CHORD",
+   "kind": "NAMED",
+   "start_s": 1.9166666666666667,
+   "end_s": 5.0,
+   "gain_db": -10.0,
+   "fade_out_s": 1.0
+  }
+ ],
+ "dialogue_tracks": [
+  {
+   "shot_id": "S027",
+   "speaker": "Mikko",
+   "text": "We did it! I feel fresh.",
+   "text_sha256": "90053d06ee5fc597079e8b08012a76d3cef77a138f0ae3e03feeafac4c446308",
+   "audio_asset_id": "DLG-EP005-S027-L1-MIKKO-v01",
+   "sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50",
+   "registry_status": "APPROVED",
+   "start_seconds": 0.5,
+   "gain_db": 0.0
+  }
+ ],
+ "deterministic_core_sha256": "e8cabfe0de095aee733ad18535e4c3362ee48ee7f18242773260ba87ce0eb6be",
+ "raw_after_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25"
+}

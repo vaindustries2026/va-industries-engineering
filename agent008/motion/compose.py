@@ -47,11 +47,57 @@ def auto_qc_frames(frames, max_freeze_frames, intended_freeze=False):
             'frame_hash_list_sha256': sha256_bytes('\n'.join(hashes).encode()), 'issues': issues}, hashes
 
 
-def mix_motion_audio(spec_shot, inputs, timing, spec):
+DIALOGUE_APPROVED_STATES = ('APPROVED', 'LOCKED')
+
+
+def resolve_dialogue(spec_shot, inputs, timing):
+    """Bind every manifest dialogue slot to exactly one approved, hash-verified clip. Fail closed otherwise.
+
+    timing['dialogue'] holds one entry per slot, in slot order: shot_id, speaker, text, audio_asset_id,
+    expected_sha256, registry_status, start_seconds, gain_db. The clip file is inputs[audio_asset_id].
+    """
+    slots = spec_shot.get('dialogue_slots') or []
+    tracks = list(timing.get('dialogue') or [])
+    if len(tracks) < len(slots):
+        raise FailClosed('DIALOGUE_SLOT_UNFILLED', f"{spec_shot['shot_id']}: {len(slots)} slot(s), {len(tracks)} clip(s)")
+    if len(tracks) > len(slots):
+        raise FailClosed('DIALOGUE_UNEXPECTED', f"{spec_shot['shot_id']}: {len(tracks)} clip(s) for {len(slots)} slot(s)")
+    resolved = []
+    for slot, t in zip(slots, tracks):
+        aid = t.get('audio_asset_id')
+        if t.get('shot_id') != slot['shot_id']:
+            raise FailClosed('DIALOGUE_SHOT_MISMATCH', f"{t.get('shot_id')} != {slot['shot_id']}")
+        if t.get('speaker') != slot['speaker']:
+            raise FailClosed('DIALOGUE_SPEAKER_MISMATCH', f"{t.get('speaker')} != {slot['speaker']}")
+        if t.get('text') != slot['text']:
+            raise FailClosed('DIALOGUE_TEXT_MISMATCH', str(aid))
+        if t.get('registry_status') not in DIALOGUE_APPROVED_STATES:
+            raise FailClosed('DIALOGUE_NOT_APPROVED', f"{aid}: {t.get('registry_status')}")
+        if not aid or aid not in inputs:
+            raise FailClosed('DIALOGUE_REQUIRES_APPROVED_AUDIO', str(aid))
+        sha = verify_file(inputs[aid], t.get('expected_sha256'), f'dialogue {aid}')
+        if not 0 <= float(t['start_seconds']) < spec_shot['duration_seconds']:
+            raise FailClosed('DIALOGUE_TIMING_INVALID', f"{aid}: {t['start_seconds']}")
+        resolved.append({'shot_id': slot['shot_id'], 'speaker': slot['speaker'], 'text': slot['text'],
+                         'text_sha256': sha256_bytes(slot['text'].encode('utf-8')), 'audio_asset_id': aid,
+                         'sha256': sha, 'registry_status': t['registry_status'],
+                         'start_seconds': float(t['start_seconds']), 'gain_db': float(t.get('gain_db', 0.0))})
+    return resolved
+
+
+def mix_motion_audio(spec_shot, inputs, timing, spec, dialogue=()):
     sr, ch = spec.audio_sample_rate, spec.audio_channels
     total = int(round(spec_shot['frames'] / spec.fps * sr))
     out = np.zeros((total, ch))
     cues = []
+    for d in dialogue:
+        a = media.load_audio(inputs[d['audio_asset_id']], sr, ch) * db_to_gain(d['gain_db'])
+        start = int(round(d['start_seconds'] * sr))
+        if start + len(a) > total:
+            raise FailClosed('DIALOGUE_OVERRUNS_SHOT', f"{d['audio_asset_id']} ends at {(start + len(a)) / sr:.3f} s")
+        out[start:start + len(a)] += a              # placed once; never looped, stretched or trimmed
+        cues.append({'asset_id': d['audio_asset_id'], 'kind': 'DIALOGUE', 'start_s': start / sr,
+                     'end_s': (start + len(a)) / sr, 'gain_db': d['gain_db'], 'sha256': d['sha256']})
     bed_ids = [a['asset_id'] for a in spec_shot['mapped_audio']]
     for aid in bed_ids:
         a = media.load_audio(inputs[aid], sr, ch)
@@ -102,9 +148,10 @@ def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_pa
     if spec_shot['active_overlays'] or spec_shot['treatments']:
         raise FailClosed('MOTION_TREATMENTS_NEED_TRACKING_V02',
                          'overlays/treatments on generated motion need tracked placement (not in v0.2)')
+    dialogue = resolve_dialogue(spec_shot, asset_paths, timing)
     frames = decode_normalised(motion_result.raw_output_path, spec, spec_shot['frames'])[:spec_shot['frames']]
     qc, hashes = auto_qc_frames(frames, max_freeze_frames)
-    audio, cues, peak_db = mix_motion_audio(spec_shot, asset_paths, timing, spec)
+    audio, cues, peak_db = mix_motion_audio(spec_shot, asset_paths, timing, spec, dialogue)
     wav = out_dir / f"{spec_shot['shot_id']}_MOTION_MIX.wav"
     media.write_wav24(audio, spec.audio_sample_rate, wav)
     mp4 = out_dir / 'MOTION_SMOKE_REVIEW.mp4'
@@ -126,7 +173,8 @@ def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_pa
         'agent': AGENT_NAME, 'agent_version': AGENT_VERSION_V02, 'stage': '8C->8D->8F', 'status': 'REVIEW',
         'shot_id': spec_shot['shot_id'], 'motion_request': motion_request.to_dict(),
         'motion_result': motion_result.to_dict(), 'raw_output_verified_sha256': raw,
-        'output_spec': spec.to_dict(), 'shot_spec': spec_shot, 'audio_cues': cues, 'mix_peak_dbfs': peak_db,
+        'output_spec': spec.to_dict(), 'shot_spec': spec_shot, 'dialogue_tracks': dialogue,
+        'audio_cues': cues, 'mix_peak_dbfs': peak_db,
         'qc': qc, 'recipes': {'encode_command': [c if not str(c).startswith('/') else '<OUT>/' + Path(c).name for c in cmd]},
         'outputs': {'review_mp4': {'file': mp4.name, 'sha256': sha256_file(mp4), 'bytes': mp4.stat().st_size},
                     'mix_wav': {'file': wav.name, 'sha256': sha256_file(wav)}},

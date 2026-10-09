@@ -2305,3 +2305,26 @@ paid_action_triggered: false
 rollback: "delete storage object audio/dialogue/DLG-EP005-S027-L1-MIKKO-v01.mp3; revert evidence commit"
 status: "MIKKO_PRODUCTION_VOICE_APPROVED + S027_M1_DIALOGUE_APPROVED + EXACT_M1_AUDIO_PRESERVED + STORAGE_READBACK_SHA_MATCH + REGISTRY_INSERT_STOPPED_SUBTYPE_PROPOSAL + DIALOGUE_TIMING_PROPOSED + VOICEOVER_VS_LIPSYNC_OPTIONS_PREPARED + COMPOSITOR_DIALOGUE_PATCH_PLAN_PREPARED + ZERO_NEW_TTS_GENERATIONS + ZERO_VIDEO_GENERATIONS + COMPOSITOR_NOT_RUN + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-FINAL-SHOT-ASSEMBLED: dialogue registered; Agent-008 dialogue patch; S027 final shot REVIEW candidate
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-FINAL-SHOT-ASSEMBLED"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain (AUDIO/DIALOGUE classification; S027 voice-over accepted; minimal compositor patch; one deterministic S027 assembly)"
+change_type: "CODE + WRITE"
+evidence: ["evidence/EP005_S027_FINAL_SHOT_ASSEMBLED_REVIEW_v1.0.md", "evidence/agent008/phase1/s027_v2/S027_FINAL_ASSEMBLY_SPEC_v1.json", "evidence/agent008/phase1/s027_v2/S027_FINAL_ASSEMBLY_PROVENANCE_v1.json", "evidence/agent008/phase1/s027_v2/S027_FINAL_SHOT_QC_RECORD_v1.json", "evidence/agent008/phase1/s027_v2/AGENT008_TEST_OUTPUT_DIALOGUE_PATCH_v1.txt", "evidence/ep005/voice_audition/S027_M1_DIALOGUE_REGISTRY_ROW_INSERTED_v1.json"]
+code_changed: ["agent008/motion/compose.py (resolve_dialogue, dialogue mixing, provenance)", "agent008/tests/test_motion.py (ComposeFixture, D01-D09, S027 fixture dialogue)", "agent008/tests/test_higgsfield_transport.py (HF13 fixture dialogue)"]
+tests: "93/93 OK (84 existing + 9 new)"
+dialogue_registry_row: {id: "451edb4d-3001-4016-bc9b-9e081bf5d68b", asset_id: "DLG-EP005-S027-L1-MIKKO-v01", asset_type: "AUDIO", asset_subtype: "DIALOGUE", status: "APPROVED"}
+s027_dialogue_visual_sync_decision: "VOICE_OVER_ACCEPTED (S027 only)"
+final_candidate: {id: "SHOT-EP005-S027-FINAL-CAND-v01", sha256: "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde", bytes: 4307940, video: "h264 1920x1080 24fps 120 frames", audio: "aac 48k stereo", duration_s: 5.0, status: "REVIEW", human_decision: "PENDING", determinism: "2 renders byte-identical"}
+raw_motion_source_unchanged: true
+provider_generations: 0
+paid_action_triggered: false
+rollback: "delete asset_registry id 451edb4d-3001-4016-bc9b-9e081bf5d68b; revert commit"
+status: "EP005_S027_FINAL_SHOT_READY_FOR_HUMAN_REVIEW + AUDIO_DIALOGUE_ASSET_REGISTERED_APPROVED + S027_VOICEOVER_ACCEPTED + LIPSYNC_NOT_REQUIRED_FOR_S027 + COMPOSITOR_DIALOGUE_SUPPORT_IMPLEMENTED + REQUIRED_DIALOGUE_FAIL_CLOSED + FULL_TEST_SUITE_PASS + RAW_MOTION_SOURCE_UNCHANGED + ZERO_NEW_PROVIDER_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
+```

@@ -1,0 +1,44 @@
+{
+ "spec_id": "A008-ASSEMBLY-EP005-S027-v2",
+ "status": "EXECUTED_ONCE (+1 identical determinism re-render)",
+ "authorised_by": "Company Brain (patch + one deterministic S027 assembly)",
+ "s027_dialogue_visual_sync_decision": "VOICE_OVER_ACCEPTED (S027 only; not a global policy); lack of explicit mouth articulation HUMAN-ACCEPTED for S027",
+ "inputs": {
+  "MOTION-EP005-S027-SEEDANCE20-CAND-v01": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "DLG-EP005-S027-L1-MIKKO-v01": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50",
+  "AMB-BATHROOM-QUIET-v01": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+  "SFX-WIN-SPARKLE-CHORD": "84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b (hash pin; registry row carries no hash)"
+ },
+ "video": {
+  "trim": "first 120 of 121 raw frames (decode_normalised -frames:v 120); fps 24 identity; scale/pad identity at 1920x1080; no interpolation, crop, reframe, overlay or treatment"
+ },
+ "audio": {
+  "ambience": "AMB-BATHROOM-QUIET-v01 0.000-5.000 s, 0 dB, 20 ms edge ramps",
+  "dialogue": "DLG-EP005-S027-L1-MIKKO-v01 file placed at 0.500 s, 0 dB, once, unstretched; file ends 2.125 s; audible ~0.540-1.730 s",
+  "win_chord": "SFX-WIN-SPARKLE-CHORD start 1.9167 s (frame 46), -10 dB, linear fade 4.000-5.000 s, zero at 5.000 s",
+  "none": [
+   "foley",
+   "other SFX",
+   "music",
+   "captions",
+   "overlays",
+   "mirror glint",
+   "mirror reflection treatment"
+  ]
+ },
+ "output": {
+  "file": "MOTION_SMOKE_REVIEW.mp4 (compositor fixed name)",
+  "container": "mp4 (mov,mp4,m4a,3gp,3g2,mj2)",
+  "video": "h264 High yuv420p 1920x1080 24/1 fps, 120 frames, x264 crf16 preset medium",
+  "audio": "aac LC 48 kHz stereo 192k (from 24-bit 48 kHz mix WAV)",
+  "duration_s": 5.0,
+  "bytes": 4307940,
+  "sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
+  "mix_wav_sha256": "c67da3f3d7cf0a2aeca0e9d8736db64c09aa2b819b9a3a607338bf1893e2a863",
+  "deterministic_core_sha256": "e8cabfe0de095aee733ad18535e4c3362ee48ee7f18242773260ba87ce0eb6be",
+  "frame_hash_list_sha256": "8f3b24e01eaf69177a370bf0c71353e5240e70a4836e0f07733b87d0d6e0fa3a"
+ },
+ "determinism": "rendered twice (renderA, renderB): MP4 and WAV byte-identical",
+ "raw_source_after_render_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25 (unchanged)",
+ "auto_qc": "PASS: 120/120 frames, 120 distinct, 0 black, longest identical run 1, 1920x1080, 5.000 s, peak -8.551 dBFS (ceiling -1.0), 0 silent windows, overlays 0, treatments 0"
+}
