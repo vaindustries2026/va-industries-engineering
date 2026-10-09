@@ -1,0 +1,188 @@
+{
+ "task": "EP005 S027 Mikko production voice audition (bounded, 3 takes)",
+ "date": "2026-10-09",
+ "authorised_by": "Company Brain / human (exactly 3 TTS generations, no retries)",
+ "text": "We did it! I feel fresh.",
+ "text_characters": 24,
+ "text_sha256": "90053d06ee5fc597079e8b08012a76d3cef77a138f0ae3e03feeafac4c446308",
+ "model_id": "eleven_multilingual_v2",
+ "model_reason": "same model as the Lumi audition (EP005_LUMI_VOICE_AUDITION_v1.0)",
+ "settings": "voice_id + model only; generations_count=1 per candidate; no tags, no performance markup",
+ "flow_id": "bh8NqpJJuJRvkW42JSay",
+ "flow_workspace": "a2a81ab0f7fd406cb3fff9eef8e173c2",
+ "generations": 3,
+ "credits_total": 72,
+ "price_total_usd_cents": 1.44,
+ "retries": 0,
+ "failures": 0,
+ "measurement": "decoded mono 44.1 kHz; speech extent = first..last 10 ms window above max(-55 dBFS, peak-35 dB) (Lumi method); F0 = autocorrelation median over voiced 40 ms frames (octave errors possible)",
+ "s027_budget": {
+  "shot_s": 5.0,
+  "assumed_visual_settle_s": 0.5,
+  "gap_line_to_chord_s": 0.2,
+  "chord_min_audible_s": 1.0,
+  "chord_fade_s": 1.0,
+  "chord_fade_complete_by_s": 5.0,
+  "note": "illustrative assumptions for fit only; the chord timestamp is NOT assigned"
+ },
+ "takes": [
+  {
+   "voice": "Teddy Twinkle - Cute Cartoon Boy",
+   "voice_id": "XjGYkUkzth8BPs29fmcV",
+   "generation_id": "Yp0rHGo5tJSND55ELxJl",
+   "session_id": "CR75vFeMW3tXZ0fIfjPx",
+   "node_id": "efldRWQ30A9K49eOnjtH",
+   "reported_duration_s": 1.6254,
+   "f0_median_hz": 340,
+   "f0_p10_p90_hz": [
+    259,
+    397
+   ],
+   "why_chosen": "library voice described as a sweet, kind, cheerful cartoon boy for children's animation (the childlike end of the range)",
+   "file": "M1_TeddyTwinkle_XjGYkUkzth8BPs29fmcV_Yp0rHGo5tJSND55ELxJl.mp3",
+   "sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50",
+   "bytes": 44337,
+   "codec": "mp3 1ch 44100Hz 128kbps",
+   "decoded_duration_s": 1.625,
+   "lead_silence_s": 0.04,
+   "trail_silence_s": 0.4,
+   "speech_extent_s": 1.19,
+   "internal_pauses_ge120ms": [
+    [
+     0.46,
+     0.19
+    ]
+   ],
+   "peak_dbfs": -5.53,
+   "syl_per_s": 5.04,
+   "label": "M1",
+   "model_id": "eleven_multilingual_v2",
+   "credits": 24,
+   "price_cents": 0.48,
+   "status": "REVIEW",
+   "text": "We did it! I feel fresh.",
+   "syllables": 6,
+   "s027_fit": {
+    "assumed_settle_s": 0.5,
+    "speech_window_s": [
+     0.5,
+     1.69
+    ],
+    "clip_placed_at_s": 0.46,
+    "clip_ends_at_s": 2.08,
+    "earliest_chord_start_after_line_s": 1.89,
+    "room_for_chord_to_5p0_s": 3.11,
+    "chord_needs_s": 2.0,
+    "fits": true,
+    "pace_note": "fast for preschool (>4.5 syl/s); human to judge if rushed"
+   }
+  },
+  {
+   "voice": "Austin Boy",
+   "voice_id": "Xb3zeLrTi6F4ziIcXdwk",
+   "generation_id": "jCMBcewfJiO8VBKiFnXf",
+   "session_id": "L8pbzJ9CGvKnNY2tyJ3i",
+   "node_id": "iNgnwjEuwu32YVTqjcbd",
+   "reported_duration_s": 2.0434,
+   "f0_median_hz": 126,
+   "f0_p10_p90_hz": [
+    117,
+    143
+   ],
+   "why_chosen": "library voice described as a timid boy; chosen as the naturalistic, less-performed option",
+   "note": "start response quoted 48 credits; completed generation billed 24",
+   "file": "M2_AustinBoy_Xb3zeLrTi6F4ziIcXdwk_jCMBcewfJiO8VBKiFnXf.mp3",
+   "sha256": "728f0ab40983c7d5cf1d80a967aeca233871a8b02f591c0475f5f34346dcacff",
+   "bytes": 51024,
+   "codec": "mp3 1ch 44100Hz 128kbps",
+   "decoded_duration_s": 2.043,
+   "lead_silence_s": 0.08,
+   "trail_silence_s": 0.31,
+   "speech_extent_s": 1.65,
+   "internal_pauses_ge120ms": [
+    [
+     0.59,
+     0.29
+    ]
+   ],
+   "peak_dbfs": -12.6,
+   "syl_per_s": 3.64,
+   "label": "M2",
+   "model_id": "eleven_multilingual_v2",
+   "credits": 24,
+   "price_cents": 0.48,
+   "status": "REVIEW",
+   "text": "We did it! I feel fresh.",
+   "syllables": 6,
+   "s027_fit": {
+    "assumed_settle_s": 0.5,
+    "speech_window_s": [
+     0.5,
+     2.15
+    ],
+    "clip_placed_at_s": 0.42,
+    "clip_ends_at_s": 2.46,
+    "earliest_chord_start_after_line_s": 2.35,
+    "room_for_chord_to_5p0_s": 2.65,
+    "chord_needs_s": 2.0,
+    "fits": true,
+    "pace_note": "comfortable to brisk"
+   }
+  },
+  {
+   "voice": "Aaron - Conversational American Male",
+   "voice_id": "B6uUx2p7cRgxseOUyP6P",
+   "generation_id": "7l4OyxGjMbE4jqX7qeJ7",
+   "session_id": "9nNqaRdCtzMb10JqaUDC",
+   "node_id": "4dz43F2EGu9gk43p5IZC",
+   "reported_duration_s": 1.8112,
+   "f0_median_hz": 150,
+   "f0_p10_p90_hz": [
+    111,
+    530
+   ],
+   "why_chosen": "library voice described as youthful, earnest, friendly-young-hero for animation; the older/warmer end of the range",
+   "file": "M3_Aaron_B6uUx2p7cRgxseOUyP6P_7l4OyxGjMbE4jqX7qeJ7.mp3",
+   "sha256": "020c67578bccd8c8161507f19e85eae2f0207bc4ceee7cbd84265e5df931a946",
+   "bytes": 47263,
+   "codec": "mp3 1ch 44100Hz 128kbps",
+   "decoded_duration_s": 1.811,
+   "lead_silence_s": 0.04,
+   "trail_silence_s": 0.26,
+   "speech_extent_s": 1.51,
+   "internal_pauses_ge120ms": [
+    [
+     0.55,
+     0.24
+    ]
+   ],
+   "peak_dbfs": -11.24,
+   "syl_per_s": 3.97,
+   "label": "M3",
+   "model_id": "eleven_multilingual_v2",
+   "credits": 24,
+   "price_cents": 0.48,
+   "status": "REVIEW",
+   "text": "We did it! I feel fresh.",
+   "syllables": 6,
+   "s027_fit": {
+    "assumed_settle_s": 0.5,
+    "speech_window_s": [
+     0.5,
+     2.01
+    ],
+    "clip_placed_at_s": 0.46,
+    "clip_ends_at_s": 2.27,
+    "earliest_chord_start_after_line_s": 2.21,
+    "room_for_chord_to_5p0_s": 2.79,
+    "chord_needs_s": 2.0,
+    "fits": true,
+    "pace_note": "comfortable to brisk"
+   }
+  }
+ ],
+ "HUMAN_VOICE_SELECTION": "PENDING",
+ "S027_DIALOGUE_VISUAL_SYNC_DECISION": "PENDING_HUMAN",
+ "binaries_committed": false,
+ "status": "REVIEW"
+}

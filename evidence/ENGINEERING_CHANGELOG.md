@@ -2248,3 +2248,35 @@ paid_action_triggered: false
 rollback: "delete asset_registry id 2ebed34b-92b5-47dc-8131-c3716849f5eb"
 status: "EP005_S027_RAW_MOTION_REGISTERED + SHOT_MOTION_RAW_MOTION_SOURCE_APPROVED + RAW_VIDEO_SHA_VERIFIED + REGISTRY_ROW_INSERTED + AGENT006_RESOLUTION_UNCHANGED + S027_FINAL_SHOT_ASSEMBLY_PREFLIGHT_COMPLETE + ASSEMBLY_AUTHORISED_FALSE + ZERO_NEW_GENERATIONS + ZERO_PROVIDER_SPEND + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-MIKKO-VOICE-AUDITION: three Mikko TTS audition takes (REVIEW)
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-MIKKO-VOICE-AUDITION"
+timestamp: "2026-10-09T09:04Z"
+actor: "Claude"
+authorised_by: "Company Brain / human (exactly 3 ElevenLabs TTS generations, no retries)"
+change_type: "PAID_GENERATION"
+evidence: ["evidence/EP005_S027_MIKKO_VOICE_AUDITION_v1.0.md", "evidence/ep005/voice_audition/MIKKO_S027_AUDITION_RESULTS_v1.json"]
+text: "We did it! I feel fresh."
+model_id: "eleven_multilingual_v2"
+flow_id: "bh8NqpJJuJRvkW42JSay"
+takes:
+  M1: {voice: "Teddy Twinkle - Cute Cartoon Boy", voice_id: "XjGYkUkzth8BPs29fmcV", generation_id: "Yp0rHGo5tJSND55ELxJl", duration_s: 1.625, sha256: "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50"}
+  M2: {voice: "Austin Boy", voice_id: "Xb3zeLrTi6F4ziIcXdwk", generation_id: "jCMBcewfJiO8VBKiFnXf", duration_s: 2.043, sha256: "728f0ab40983c7d5cf1d80a967aeca233871a8b02f591c0475f5f34346dcacff"}
+  M3: {voice: "Aaron - Conversational American Male", voice_id: "B6uUx2p7cRgxseOUyP6P", generation_id: "7l4OyxGjMbE4jqX7qeJ7", duration_s: 1.811, sha256: "020c67578bccd8c8161507f19e85eae2f0207bc4ceee7cbd84265e5df931a946"}
+credits_total: 72
+retries: 0
+s027_timing: "all three fit (0.5 s settle + line + >=2.0 s chord incl. 1.0 s fade by 5.000 s)"
+human_voice_selection: "PENDING"
+s027_dialogue_visual_sync_decision: "PENDING_HUMAN"
+binaries_committed: false
+registry_writes: 0
+production_storage_writes: 0
+higgsfield_generations: 0
+paid_action_triggered: true
+rollback: "evidence-only revert; credits not reversible"
+status: "MIKKO_VOICE_AUDITIONS_READY_FOR_HUMAN_REVIEW + AUDITION_CANDIDATES_3 + S027_TIMING_ANALYSED + HUMAN_VOICE_SELECTION_PENDING + S027_DIALOGUE_VISUAL_SYNC_DECISION_PENDING_HUMAN + COMPOSITOR_NOT_RUN + VIDEO_NOT_MODIFIED + ZERO_HIGGSFIELD_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
+```
