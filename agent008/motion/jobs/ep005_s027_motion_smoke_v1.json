@@ -1,0 +1,64 @@
+{
+ "job_id": "A008-MOTION-EP005-S027-SMOKE-v1",
+ "status": "BLOCKED",
+ "blockers": [
+  "STOPPED_HIGGSFIELD_ACCESS_NOT_CONFIGURED",
+  "STOPPED_BASE_FRAME_REQUIRED_BEFORE_MOTION"
+ ],
+ "shot_id": "S027",
+ "production_manifest_id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+ "readiness_manifest_id": "edc4ad58-3e5d-4ac2-9c74-c9af03af363f",
+ "agent006_run_id": "A006-1791346204213",
+ "provider": "higgsfield",
+ "provider_model": "seedance_2_0",
+ "fallback_model_if_human_prefers": "kling3_0",
+ "provider_params": {
+  "mode": "std",
+  "resolution": "1080p",
+  "duration": 5,
+  "aspect_ratio": "16:9",
+  "generate_audio": false,
+  "genre": "auto",
+  "bitrate_mode": "standard",
+  "start_image": "<approved S027 base frame>",
+  "end_image": "optional: same approved base frame (forces a return to the settled pose for S028 continuity; human choice)"
+ },
+ "duration_seconds": 5,
+ "aspect_ratio": "16:9",
+ "resolution": "1080p",
+ "fps_target": 24,
+ "motion_prompt": "Animate this exact image with a locked-off, static camera. Two stylised 3D preschool characters share a small, warm celebration. Mikko, a honey-brown bear cub with big brown eyes, rosy cheeks and a small hair tuft, wearing teal-blue overalls, a yellow neckerchief and brown boots, gives a warm, relaxed smile and makes one gentle, small happy shoulder lift, then settles. His face stays clean. He keeps the soft blue cloth away from his face, within reach. Lumi, a perfectly round warm golden-white glowing orb with a star antenna, big brown eyes, rosy cheeks and tiny hands and feet, keeps hovering gently in place, gives a small reassuring smile and one gentle shoulder lift, and keeps holding the pink flower hand mirror steady. Natural soft breathing only. Same child-friendly bathroom background, unchanged. Calm, slow, small movements.",
+ "negative_constraints": "no camera movement, no zoom, no pan, no push-in, no cuts, no scene transition; no extra gestures, no waving, no jumping, no pointing, no wiping; no new props, no extra characters, no text, no logos, no captions; no costume or colour changes; no morphing, no character redesign, no change of body shape or proportions; no berry smudges on Mikko's face; no dirt on the mirror; no background redesign or warping; no sparkles or magic effects; no cinematic embellishment; no lip movement beyond a smile",
+ "required_base_frame": {
+  "id_proposal": "FRAME-EP005-S027-BASE-v01",
+  "content": "Close two-shot, eye level, 16:9: clean-faced Mikko (no berry smudges) and Lumi side by side in the approved EP005 bathroom; Mikko holds the soft blue cloth away from his face (PROP-EP005-CLEANING-CLOTH-v01); Lumi holds the pink flower hand mirror (PROP-EP005-HAND-MIRROR-v01) with clean glass; screen sides and mirror orientation continuous with S026; warm, soft, even lighting; quiet background (WORLD-EP005-BATHROOM-MASTER-v01).",
+  "canon_references": [
+   "CHAR-MIKKO-MASTER-v01",
+   "CHAR-LUMI-MASTER-v01",
+   "WORLD-EP005-BATHROOM-MASTER-v01",
+   "PROP-EP005-HAND-MIRROR-v01",
+   "PROP-EP005-CLEANING-CLOTH-v01"
+  ],
+  "format": "PNG, 1920x1080 (or 16:9 at provider-native size), sRGB, no text or watermark",
+  "why_not_deterministic": "Approved assets are model/turnaround sheets; no approved image shows Mikko holding the cloth or Lumi holding the mirror in a two-shot. A collage would misrepresent poses and props and would be animated as a collage.",
+  "approval": "human approval by exact sha256 (status APPROVED_FOR_MOTION_INPUT or registry APPROVED) before any paid motion call; creating it needs its own separate authorisation (image provider spend or human-made art)"
+ },
+ "audio_timing_for_compositor": {
+  "beds": {
+   "AMB-BATHROOM-QUIET-v01": {
+    "gain_db": 0.0
+   }
+  },
+  "named": {
+   "SFX-WIN-SPARKLE-CHORD": {
+    "start_seconds": "SET_AT_SHARED_SMILE_AFTER_MOTION_REVIEW",
+    "gain_db": -10.0,
+    "fade_out_seconds": 1.0,
+    "fade_complete_by_seconds": 5.0
+   }
+  }
+ },
+ "dialogue": "absent in the first motion smoke (no approved Lumi/Mikko voice); Mikko line \"We did it! I feel fresh.\" deferred",
+ "motion_prompt_sha256": "9850629271d25db1275c776c1a71b617ba92de907ebd2cab242c1aa5bdfbb8a8",
+ "negative_constraints_sha256": "02d943191ac9a76cebccdccfac12d487b98c05db7d6a8146d0e9bda2bb171495"
+}

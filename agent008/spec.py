@@ -42,7 +42,7 @@ def parse_voice_line(line):
     return m.group(1).strip(), m.group(2).strip()
 
 
-def build_shot_spec(snapshot, resolver, shot_id, output_spec):
+def build_shot_spec(snapshot, resolver, shot_id, output_spec, motion_phase=False):
     pm = snapshot['production_manifest']['manifest_json_reduced']
     s = _shot(pm, shot_id)
     plan = s['shot_plan']
@@ -145,13 +145,14 @@ def build_shot_spec(snapshot, resolver, shot_id, output_spec):
                                               + [c.get('asset_id') for c in plan.get('character_requirements') or []]
                                               if is_stale_label(x)}),
     }
-    validate_shot_contract(spec)
+    validate_shot_contract(spec, motion_phase=motion_phase)
     return spec
 
 
-def validate_shot_contract(spec):
+def validate_shot_contract(spec, motion_phase=False):
+    """motion_phase=True (Agent-008 v0.2, stage 8C) admits approved video-generation shots; Phase 0 never does."""
     sid = spec['shot_id']
-    if spec['video_generation_required']:
+    if spec['video_generation_required'] and not motion_phase:
         raise FailClosed('VIDEO_GENERATION_SHOT_NOT_PHASE0', sid)
     if spec['clean_reveal']:
         validate_clean_reveal(spec)

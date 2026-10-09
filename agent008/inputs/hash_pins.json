@@ -6,6 +6,12 @@
       "bytes": 206753,
       "storage_path": "production-assets/audio/sfx/SFX-LUMI-CLUE-CHIME-v01.wav.mp3",
       "source": "evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md (read-only storage audit, 2026-10-05)"
+    },
+    "SFX-WIN-SPARKLE-CHORD": {
+      "sha256": "84e0d57cf17a170af66dfb31ade4d647f6077cbbe13eb2fd87be6ae6f0c5bd9b",
+      "bytes": 245215,
+      "storage_path": "production-assets/audio/sfx/SFX-WIN-SPARKLE-CHORD-v01.mp3.mp3",
+      "source": "evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md (read-only storage audit, 2026-10-05)"
     }
   }
 }

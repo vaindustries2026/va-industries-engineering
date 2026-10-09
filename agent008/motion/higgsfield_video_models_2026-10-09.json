@@ -1,0 +1,15 @@
+{
+  "source": "Higgsfield MCP models_list (read-only), 2026-10-09; image-to-video capable subset relevant to Agent-008. No prices are exposed by the connector.",
+  "account": {"workspace_type": "private", "subscription_plan_type": "free", "credits": 10},
+  "models": {
+    "seedance_2_0": {"provider": "Bytedance", "durations_note": "4-15 s", "duration_range": [4, 15], "resolutions": ["480p", "720p", "1080p", "4k"], "aspect_ratios": ["auto", "16:9", "9:16", "4:3", "3:4", "1:1", "21:9"], "media_roles": ["start_image", "end_image", "image_references", "video_references", "audio_references"], "controls": ["duration", "resolution", "mode std|fast", "bitrate_mode", "genre", "generate_audio"], "tags": ["reference", "identity", "consistent", "start-frame", "end-frame"]},
+    "kling3_0": {"provider": "Kling", "duration_range": [3, 15], "resolutions": [], "aspect_ratios": ["16:9", "9:16", "1:1"], "media_roles": ["start_image", "end_image"], "controls": ["duration", "mode std|pro|4k", "sound on|off"]},
+    "kling_o3_flf": {"provider": "Kling", "duration_range": [3, 15], "resolutions": [], "aspect_ratios": ["16:9", "9:16", "1:1"], "media_roles": ["start_image", "end_image"], "controls": ["duration", "mode", "sound", "multi_shots"]},
+    "kling3_0_turbo": {"provider": "Kling", "duration_range": [3, 15], "resolutions": ["720p", "1080p"], "aspect_ratios": ["16:9", "9:16", "1:1"], "media_roles": ["start_image"], "controls": ["duration", "resolution"]},
+    "seedance1_5": {"provider": "Bytedance", "durations": [4, 8, 12], "resolutions": ["480p", "720p", "1080p"], "aspect_ratios": ["auto", "16:9", "9:16", "4:3", "3:4", "1:1", "21:9"], "media_roles": ["start_image", "end_image"], "controls": ["duration", "resolution", "generate_audio"]},
+    "minimax_hailuo": {"provider": "Hailuo", "durations": [6, 10], "resolutions": ["512", "768", "1080"], "aspect_ratios": [], "media_roles": ["start_image", "end_image"], "controls": ["variant", "duration", "resolution"]},
+    "grok_video_v15_lite": {"provider": "xAI", "duration_range": [1, 15], "resolutions": ["480p", "720p", "1080p"], "aspect_ratios": ["auto", "16:9", "9:16", "4:3", "3:4", "1:1", "3:2", "2:3"], "media_roles": ["start_image"], "controls": ["duration", "resolution"]},
+    "happy_horse_video": {"provider": "Happy Horse", "duration_range": [3, 15], "resolutions": ["720p", "1080p"], "aspect_ratios": ["16:9", "9:16", "1:1", "4:3", "3:4"], "media_roles": ["start_image"], "controls": ["duration", "resolution"]},
+    "cinematic_studio_3_0": {"provider": "Higgsfield", "duration_range": [4, 15], "resolutions": ["480p", "720p", "1080p", "4k"], "aspect_ratios": ["auto", "21:9", "16:9", "4:3", "1:1", "3:4", "9:16"], "media_roles": ["image", "start_image", "end_image"], "controls": ["resolution", "genre", "generate_audio"], "tags": ["cinematic"]}
+  }
+}

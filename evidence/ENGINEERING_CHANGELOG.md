@@ -1920,3 +1920,30 @@ billing_changes: 0
 audio_binaries_committed: 0
 status: "EP005_LUMI_VOICE_AUDITION_COMPLETE_THREE_TAKES + TIMING_CONFLICT_REMAINS + NO_WINNER_SELECTED + ZERO_PRODUCTION_WRITES"
 ```
+
+---
+
+## ENG-20261009-AGENT008-V02-MOTION-LAYER: motion-generation layer built; Higgsfield smoke stopped before generation
+
+```yaml
+change_id: "ENG-20261009-AGENT008-V02-MOTION-LAYER"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain (Agent-008 v0.2 Phase 1; exactly one Higgsfield job authorised)"
+evidence: "evidence/AGENT008_V02_PHASE1_MOTION_LAYER_v1.0.md"
+higgsfield_access: "MCP connected but read-only (cannot generate, per connector); no API credential in env/n8n/repo; account free plan, 10 credits"
+built: ["MotionGenerationProvider abstraction + MotionRequest/MotionResult", "HiggsfieldProvider (fail-closed, transport injection, no guessed endpoints)", "SpendAuthorisation + append-only AttemptLedger (reserve before submit, no retry)", "runner (preflight validation, one submit, read-only poll, raw freeze + sha)", "motion compositor pass + automatic QC", "human QC decision log", "preflight tool", "CONTRACT v0.2 stages 8A-8G, data model, n8n design"]
+smoke_shot: "S027 (IMAGE_TO_VIDEO, locked-off, zero overlays, no mirror treatment, simple shoulder lift)"
+model_recommended: "seedance_2_0 (start/end image + identity references, 5 s, 16:9, 1080p, audio off); fallback kling3_0; COST_UNKNOWN"
+prompt_sha256: "9850629271d25db1275c776c1a71b617ba92de907ebd2cab242c1aa5bdfbb8a8"
+preflight_blockers: ["SOURCE_FRAME_MISSING (FRAME-EP005-S027-BASE-v01 required)", "PROVIDER_CREDENTIAL_MISSING"]
+phase0_preserved: "S004/S005 render byte-identical (mp4 8fd26508…, wav caebec5d…)"
+tests: "54/54 pass (37 Phase-0 + 17 motion M01-M12)"
+higgsfield_generations: 0
+credits_spent: 0
+other_provider_generations: 0
+agent006_runs: 0
+agent007_runs: 0
+production_writes: 0
+status: "STOPPED_HIGGSFIELD_ACCESS_NOT_CONFIGURED + STOPPED_BASE_FRAME_REQUIRED_BEFORE_MOTION + MOTION_PROVIDER_ABSTRACTION_BUILT + TEST_SUITE_PASS + ZERO_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
+```

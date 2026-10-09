@@ -1,0 +1,65 @@
+{
+ "job_id": "A008-MOTION-EP005-S027-SMOKE-v1",
+ "ready_for_paid_call": false,
+ "checks": [
+  {
+   "check": "approved_shot_contract",
+   "result": "PASS",
+   "value": 120
+  },
+  {
+   "check": "shot_in_approved_video_shots",
+   "result": "PASS",
+   "value": true
+  },
+  {
+   "check": "manifest_ids",
+   "result": "PASS",
+   "value": [
+    "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+    "edc4ad58-3e5d-4ac2-9c74-c9af03af363f",
+    "APPROVED"
+   ]
+  },
+  {
+   "check": "source_frame_sha256",
+   "result": "FAIL",
+   "code": "SOURCE_FRAME_MISSING",
+   "detail": "no approved S027 base frame exists"
+  },
+  {
+   "check": "model_capability",
+   "result": "PASS",
+   "value": true
+  },
+  {
+   "check": "prompt_sha256",
+   "result": "PASS",
+   "value": "9850629271d25db1275c776c1a71b617ba92de907ebd2cab242c1aa5bdfbb8a8"
+  },
+  {
+   "check": "requested_duration_resolution",
+   "result": "PASS",
+   "value": [
+    5,
+    "1080p",
+    "16:9"
+   ]
+  },
+  {
+   "check": "provider_credentials",
+   "result": "FAIL",
+   "code": "PROVIDER_CREDENTIAL_MISSING",
+   "detail": "Higgsfield MCP connector is read-only; no API credential configured"
+  },
+  {
+   "check": "paid_generation_count_so_far",
+   "result": "PASS",
+   "value": 0
+  }
+ ],
+ "blockers": [
+  "SOURCE_FRAME_MISSING",
+  "PROVIDER_CREDENTIAL_MISSING"
+ ]
+}

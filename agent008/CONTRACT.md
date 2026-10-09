@@ -93,3 +93,47 @@ python3 -m agent008 --readiness-manifest-id edc4ad58-3e5d-4ac2-9c74-c9af03af363f
 python3 -m unittest discover -s agent008/tests -t . -v
 ```
 Requirements: Python 3.11, numpy, ffmpeg/ffprobe with libx264, libmp3lame (tests only), libfreetype (drawtext), and the DejaVu Sans font.
+
+---
+
+# v0.2 — Phase 1 motion-generation layer (stage 8C)
+
+Status: built and tested offline; **no generation performed**. The first paid smoke is blocked (see section 18).
+
+## 13. Stages
+| Stage | Name | Kind | Module |
+|---|---|---|---|
+| 8A | Shot specification | DETERMINISTIC | `spec.build_shot_spec` (`motion_phase=True` admits approved video-generation shots; Phase 0 still rejects them) |
+| 8B | Base-frame resolution | HUMAN-APPROVED input | `motion/runner.validate_pre_generation` requires a frame bound to an exact SHA-256 with status APPROVED / LOCKED / APPROVED_FOR_MOTION_INPUT. The Phase-0 stand-in is never accepted. |
+| 8C | Motion generation | **PROVIDER-GENERATED (paid)** | `motion/provider.MotionGenerationProvider`; first implementation `motion/higgsfield.HiggsfieldProvider`; gate `motion/authorisation`; runner `motion/runner.run_once` |
+| 8D | Deterministic compositor | DETERMINISTIC | Phase-0 compositor (stills) and `motion/compose` (generated clips: fps resample, aspect-fit, pad, trim to exact frames) |
+| 8E | Audio / dialogue inputs | DETERMINISTIC placement of HUMAN-APPROVED assets | `render.mix` (Phase 0), `motion/compose.mix_motion_audio`; dialogue clips per the dialogue-input contract proposal |
+| 8F | Shot render | DETERMINISTIC | `media.encode_review`; automatic QC in `motion/compose.auto_qc_frames` |
+| 8G | Human QC | HUMAN-APPROVED | `motion/qc.QCDecisionLog`: APPROVE / REJECT / REGENERATE by a named human against an exact SHA-256; REJECT is terminal; REGENERATE only records that a new spend authorisation is needed |
+
+## 14. Provider boundary
+- The only non-deterministic step is `provider.submit / poll / fetch`. Everything before it (spec, frame, prompt hash, authorisation) and after it (raw preservation, compositing, encode, QC) is deterministic and hash-checked.
+- `MotionRequest`: shot_id, source_frame_path, source_frame_sha256, motion_prompt, negative_constraints, duration_seconds, aspect_ratio, resolution, fps_target, provider, provider_model, approval_scope_id, provider_params. The prompt and negative constraints are hashed (SHA-256).
+- `MotionResult`: provider, provider_model, provider_job_id, source_frame_sha256, prompt_hash, provider_status, raw_output_path, raw_output_sha256, raw_original_filename, raw_bytes, raw_duration, raw_resolution, raw_fps, raw_codec, created_at, cost_or_usage_if_available, status=REVIEW.
+- Spend gate: `SpendAuthorisation` names provider, model, shot, source-frame SHA, prompt SHA, scope id and `max_generations`, and requires `no_auto_retry`. `AttemptLedger` is append-only; the attempt is reserved **before** submission, so failures still count. A FAILED status raises `PROVIDER_FAILED_NO_RETRY`; a poll timeout raises `PROVIDER_POLL_TIMEOUT_NO_RETRY`. There is no retry code path.
+- Raw output is written once to `<raw_root>/<shot>/<job_id>/` (the run fails if the directory is not empty), made read-only, probed and hashed. The compositor re-verifies that SHA before use.
+- Overlays or treatments on generated motion need tracked placement and fail closed in v0.2 (`MOTION_TREATMENTS_NEED_TRACKING_V02`). S027 needs none.
+- Higgsfield adapter: no built-in transport. A sanctioned transport bound to Higgsfield's official API and a human-provided credential must be injected. Endpoints are not guessed; no cookies; no reverse-engineered access.
+
+## 15. Proposed data model (NOT migrated)
+| Table | Key fields |
+|---|---|
+| `shot_assembly_jobs` | id, shot_id, readiness_manifest_id, production_manifest_id, agent006_run_id, stage (8A..8G), input_snapshot_sha256, code_sha256, status, fail_code |
+| `motion_generation_jobs` | id, shot_assembly_job_id, approval_scope_id, attempt_number, provider, provider_model, provider_job_id, prompt_hash, negative_hash, input_asset_hash (source frame), params_json, raw_output_hash, raw_output_path, cost, usage_json, status (RESERVED/SUBMITTED/COMPLETED/FAILED/POLL_TIMEOUT), created_at. Insert-only; unique (approval_scope_id, attempt_number); no update of a terminal row |
+| `motion_spend_authorisations` | approval_scope_id, authorised_by, provider, provider_model, shot_id, source_frame_sha256, prompt_sha256, max_generations, no_auto_retry, created_at |
+| `shot_render_candidates` | id, job_id, shot_id, raw_output_hash, review_mp4_sha256, provenance_sha256, storage_path (no overwrite), status REVIEW |
+| `render_qc_decisions` | id, candidate_sha256, decision (APPROVE/REJECT/REGENERATE), reviewer, checklist_json, notes, decided_at. Append-only; REJECT is terminal |
+
+## 16. Minimal future n8n wrapper (design only; not built)
+Execute Workflow trigger (input: exact shot_assembly_job_id) → read job and authorisation (Supabase, read) → call the Agent-008 runner on a job host (HTTP or Execute Command) → poll status → write the `motion_generation_jobs` row → call the compositor → write `shot_render_candidates` (REVIEW) → stop and wait for a human `render_qc_decisions` row. No provider credential lives in n8n unless Higgsfield publishes a sanctioned API route; unpublished.
+
+## 17. Automatic QC on generated motion
+Expected frame count and duration, expected resolution, shot identity, raw SHA, black frames (mean < 12), longest identical-frame run (freeze) versus the allowed maximum, audio peak versus ceiling, silent-window gaps, overlay/treatment counts, provenance completeness, output SHA-256. The human QC list is in `evidence/agent008/phase1/HUMAN_QC_CHECKLIST_MOTION.md`.
+
+## 18. First motion smoke (EP005 S027) — blocked
+Job `agent008/motion/jobs/ep005_s027_motion_smoke_v1.json`. The preflight (`python3 -m agent008.motion.preflight`) reports the blockers `SOURCE_FRAME_MISSING` and `PROVIDER_CREDENTIAL_MISSING`.
