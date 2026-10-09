@@ -1,0 +1,101 @@
+{
+ "status": "ALL_VERIFIED",
+ "uploads_attempted": 5,
+ "results": [
+  {
+   "n": 1,
+   "asset_id": "CHAR-MIKKO-MASTER-v01",
+   "upload": "OK",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/025418b7-5693-4e04-8859-0513ce660da1.png",
+   "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com",
+   "content_type": "image/png",
+   "bytes": 2207008,
+   "approved_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+   "readback": {
+    "http_status": 200,
+    "bytes": 2207008,
+    "sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+    "content_type": "image/png"
+   },
+   "readback_match": true,
+   "scope_id": "S027-BASEFRAME-REF-B2-CHAR-MIKKO-MASTER-v01",
+   "at_unix": 1791525432.9355743
+  },
+  {
+   "n": 2,
+   "asset_id": "CHAR-LUMI-MASTER-v01",
+   "upload": "OK",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/938ce2f7-0f99-4020-b67c-783cda0b3ea4.png",
+   "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com",
+   "content_type": "image/png",
+   "bytes": 1887897,
+   "approved_sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+   "readback": {
+    "http_status": 200,
+    "bytes": 1887897,
+    "sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+    "content_type": "image/png"
+   },
+   "readback_match": true,
+   "scope_id": "S027-BASEFRAME-REF-B2-CHAR-LUMI-MASTER-v01",
+   "at_unix": 1791525435.7660027
+  },
+  {
+   "n": 3,
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "upload": "OK",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/1f631ac5-56d0-4869-9587-d94b451ee5c9.png",
+   "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com",
+   "content_type": "image/png",
+   "bytes": 1756516,
+   "approved_sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "readback": {
+    "http_status": 200,
+    "bytes": 1756516,
+    "sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+    "content_type": "image/png"
+   },
+   "readback_match": true,
+   "scope_id": "S027-BASEFRAME-REF-B2-WORLD-EP005-BATHROOM-MASTER-v01",
+   "at_unix": 1791525437.9992514
+  },
+  {
+   "n": 4,
+   "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+   "upload": "OK",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d7da1cda-b974-4ac1-9f6b-f8ba936ce516.webp",
+   "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com",
+   "content_type": "image/webp",
+   "bytes": 47670,
+   "approved_sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "readback": {
+    "http_status": 200,
+    "bytes": 47670,
+    "sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+    "content_type": "image/webp"
+   },
+   "readback_match": true,
+   "scope_id": "S027-BASEFRAME-REF-B2-PROP-EP005-HAND-MIRROR-v01",
+   "at_unix": 1791525439.6996434
+  },
+  {
+   "n": 5,
+   "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+   "upload": "OK",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/6d186991-ae32-4b92-8737-b904b93e27dd.webp",
+   "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com",
+   "content_type": "image/webp",
+   "bytes": 237724,
+   "approved_sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "readback": {
+    "http_status": 200,
+    "bytes": 237724,
+    "sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+    "content_type": "image/webp"
+   },
+   "readback_match": true,
+   "scope_id": "S027-BASEFRAME-REF-B2-PROP-EP005-CLEANING-CLOTH-v01",
+   "at_unix": 1791525441.842088
+  }
+ ]
+}

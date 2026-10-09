@@ -2024,3 +2024,25 @@ production_storage_writes: 0
 status: "STOPPED_PROVIDER_CDN_EGRESS_BLOCKED + ZERO_GENERATIONS + ZERO_REGISTRY_WRITES + ZERO_PRODUCTION_STORAGE_WRITES"
 rollback_notes: "Documentation-only commit."
 ```
+
+---
+
+## ENG-20261009-EP005-S027-REFERENCE-UPLOADS-VERIFIED: five fresh Higgsfield reference uploads with CDN readback (no generation)
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-REFERENCE-UPLOADS-VERIFIED"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain (exactly 5 fresh reference uploads; no generation)"
+evidence: ["evidence/EP005_S027_REFERENCE_UPLOADS_VERIFIED_v1.0.md", "evidence/ep005/s027_base_frame/UPLOAD_LEDGER_v2.jsonl", "evidence/ep005/s027_base_frame/REFERENCE_UPLOADS_READBACK_v2.json", "evidence/ep005/s027_base_frame/GENERATION_PACKAGE_v2.json"]
+reconciliation: "registry APPROVED sha256 = storage bytes = canon/c1 bytes for all 5; CDN egress now allowed; batch-1 Mikko upload treated as orphaned"
+uploads: {historical: 1, this_batch: 5, cap: 5, readback_sha256_matches: 5, storage_put_host: "fnf-api-input-prod-*.s3.amazonaws.com (no API auth)"}
+generation_package: {status: "PREPARED_NOT_SUBMITTED", prompt_sha256: "d24d0bab891cd9ea0eece2039f3980b989e8fc2d0c890d5f43c05dabfa70e2d9", request_body_sha256: "13af2150d3ca8413d050505e5fc1db38d80ab854131f03deb3083cad3a2899d1"}
+balance_read_only: "10 credits free plan, before and after"
+image_generations: 0
+video_generations: 0
+generation_credits: 0
+production_writes: 0
+rollback: "revert commit; provider-side inputs are temporary copies of approved bytes"
+status: "EP005_S027_REFERENCE_UPLOADS_VERIFIED + FIVE_FRESH_UPLOADS + FIVE_PUBLIC_URLS_CAPTURED + FIVE_READBACK_SHA256_MATCHES + ZERO_IMAGE_GENERATIONS + ZERO_VIDEO_GENERATIONS + ZERO_GENERATION_CREDITS + GENERATION_PACKAGE_READY_NOT_SUBMITTED"
+```

@@ -1,0 +1,86 @@
+{
+ "status": "PREPARED_NOT_SUBMITTED (awaiting separate Company Brain authorisation of the paid image-generation POST)",
+ "shot_id": "S027",
+ "target_frame_id": "FRAME-EP005-S027-BASE-v01",
+ "target_status_after_generation": "REVIEW",
+ "model": "Marketing Studio Image 2.5 Flare",
+ "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
+ "mode": "DIRECT (no preset field sent; interpretation recorded: presets are applied via a preset id, so DIRECT = omit it)",
+ "references_in_order": [
+  {
+   "n": 1,
+   "asset_id": "CHAR-MIKKO-MASTER-v01",
+   "sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+   "content_type": "image/png",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/025418b7-5693-4e04-8859-0513ce660da1.png",
+   "readback_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+   "upload_scope_id": "S027-BASEFRAME-REF-B2-CHAR-MIKKO-MASTER-v01"
+  },
+  {
+   "n": 2,
+   "asset_id": "CHAR-LUMI-MASTER-v01",
+   "sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+   "content_type": "image/png",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/938ce2f7-0f99-4020-b67c-783cda0b3ea4.png",
+   "readback_sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+   "upload_scope_id": "S027-BASEFRAME-REF-B2-CHAR-LUMI-MASTER-v01"
+  },
+  {
+   "n": 3,
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "content_type": "image/png",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/1f631ac5-56d0-4869-9587-d94b451ee5c9.png",
+   "readback_sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "upload_scope_id": "S027-BASEFRAME-REF-B2-WORLD-EP005-BATHROOM-MASTER-v01"
+  },
+  {
+   "n": 4,
+   "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+   "sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "content_type": "image/webp",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d7da1cda-b974-4ac1-9f6b-f8ba936ce516.webp",
+   "readback_sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "upload_scope_id": "S027-BASEFRAME-REF-B2-PROP-EP005-HAND-MIRROR-v01"
+  },
+  {
+   "n": 5,
+   "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+   "sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "content_type": "image/webp",
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/6d186991-ae32-4b92-8737-b904b93e27dd.webp",
+   "readback_sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "upload_scope_id": "S027-BASEFRAME-REF-B2-PROP-EP005-CLEANING-CLOTH-v01"
+  }
+ ],
+ "reference_reconciliation": "live asset_registry (read-only GET) = repo snapshot = local bytes: all 5 status APPROVED, sha256 identical",
+ "prompt": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. Close two-shot at eye level, straight-on locked camera, normal lens, no tilt, no lens distortion, no motion blur. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Left of centre: Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. His face is completely clean. Relaxed end-of-task stance, shoulders down, gentle satisfied smile, holding the soft light-blue fleece cleaning cloth from reference image 5 loosely folded in one hand at chest height, away from his face. Beside him on the right, floating at about his shoulder height: Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Warm, pleased, encouraging smile; she holds the pink flower-shaped hand mirror from reference image 4 upright by its handle in one tiny hand; the mirror glass is clean and shows only a plain pale-blue sheen. Framed from Mikko's knees up; both characters fully readable with clean silhouettes, a little space between them, no overlap. Calm, simple, stable pose suitable as the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles or effects, no dramatic lighting or camera angle.",
+ "prompt_sha256": "d24d0bab891cd9ea0eece2039f3980b989e8fc2d0c890d5f43c05dabfa70e2d9",
+ "prompt_chars": 2102,
+ "generation_count": 1,
+ "paid_image_generations_so_far": 0,
+ "balance_read_only_mcp": {
+  "credits_before_uploads": 10,
+  "credits_after_uploads": 10,
+  "plan": "free",
+  "note": "Flare cost not exposed; if insufficient the API is expected to return 403 without charge"
+ },
+ "supersedes": "GENERATION_PACKAGE_v1.json (no URLs; batch-1 Mikko upload orphaned)",
+ "request_body_exact": {
+  "prompt": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. Close two-shot at eye level, straight-on locked camera, normal lens, no tilt, no lens distortion, no motion blur. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Left of centre: Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. His face is completely clean. Relaxed end-of-task stance, shoulders down, gentle satisfied smile, holding the soft light-blue fleece cleaning cloth from reference image 5 loosely folded in one hand at chest height, away from his face. Beside him on the right, floating at about his shoulder height: Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Warm, pleased, encouraging smile; she holds the pink flower-shaped hand mirror from reference image 4 upright by its handle in one tiny hand; the mirror glass is clean and shows only a plain pale-blue sheen. Framed from Mikko's knees up; both characters fully readable with clean silhouettes, a little space between them, no overlap. Calm, simple, stable pose suitable as the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles or effects, no dramatic lighting or camera angle.",
+  "image_urls": [
+   "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/025418b7-5693-4e04-8859-0513ce660da1.png",
+   "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/938ce2f7-0f99-4020-b67c-783cda0b3ea4.png",
+   "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/1f631ac5-56d0-4869-9587-d94b451ee5c9.png",
+   "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d7da1cda-b974-4ac1-9f6b-f8ba936ce516.webp",
+   "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/6d186991-ae32-4b92-8737-b904b93e27dd.webp"
+  ],
+  "aspect_ratio": "16:9",
+  "resolution": "2k",
+  "quality": "high",
+  "enhance_prompt": false
+ },
+ "request_body_sha256": "13af2150d3ca8413d050505e5fc1db38d80ab854131f03deb3083cad3a2899d1",
+ "request_body_sha256_note": "sha256 of compact JSON with sorted keys",
+ "submitted": false
+}
