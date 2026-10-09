@@ -1947,3 +1947,29 @@ agent007_runs: 0
 production_writes: 0
 status: "STOPPED_HIGGSFIELD_ACCESS_NOT_CONFIGURED + STOPPED_BASE_FRAME_REQUIRED_BEFORE_MOTION + MOTION_PROVIDER_ABSTRACTION_BUILT + TEST_SUITE_PASS + ZERO_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-AGENT008-HF-TRANSPORT-STOPPED: official Higgsfield API contract check; stopped before code (material conflicts)
+
+```yaml
+change_id: "ENG-20261009-AGENT008-HF-TRANSPORT-STOPPED"
+timestamp: "2026-10-09"
+actor: "Claude"
+authorised_by: "Company Brain (Agent-008 v0.2 wire official Higgsfield transport; zero-spend)"
+evidence: "evidence/AGENT008_V02_HIGGSFIELD_TRANSPORT_CONTRACT_STOPPED_v1.0.md"
+auth_verified_earlier: "GET /marketing-studio/image/presets?size=1 -> 200 (proxy-injected credential; never read)"
+sources: "official SDK @higgsfield/client 0.2.6 (read in full) + search excerpts of docs.higgsfield.ai (direct access blocked by egress policy)"
+confirmed_contract: "POST /<model-endpoint>; response {status, request_id, status_url, cancel_url}; GET /requests/{request_id}/status; statuses queued|in_progress|completed|failed|nsfw(+canceled); output video.url; 401 auth, 403 credits"
+status_route: "GET /requests/{request_id}/status confirmed; the earlier 404 is consistent with an unknown id"
+conflicts: ["C-1 API needs a public image_url; local frame needs a platform.higgsfield.ai generate-upload-url (forbidden here; hosting/SHA-binding decision required)", "C-2 seedance_2_0 image-to-video endpoint/schema not documented in reachable sources; kling3_0 -> kling-video/v3.0/std/image-to-video partially confirmed", "C-3 MCP-derived capability catalogue does not match API field names", "C-4 cost unknown"]
+code_changes: 0
+live_higgsfield_calls_this_task: 0
+posts: 0
+generations: 0
+credits_spent: 0
+uploads: 0
+production_writes: 0
+status: "STOPPED_OFFICIAL_API_CONFLICTS_WITH_AGENT008_ASSUMPTIONS + HIGGSFIELD_AUTH_VERIFIED + S027_BASE_FRAME_BLOCKER_PRESERVED + ZERO_GENERATIONS + ZERO_CREDITS + ZERO_PROVIDER_POSTS"
+rollback_notes: "Documentation-only; revert this commit."
+```
