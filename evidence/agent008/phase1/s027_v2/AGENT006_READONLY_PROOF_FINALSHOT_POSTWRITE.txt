@@ -1,0 +1,47 @@
+manifest 45cc7493-80b4-4e8d-b71d-fbd7fd3656ed APPROVED requirements 14 governed rows 18 governed_ids { rows_read: 18, governed_count: 18, excluded_count: 0 }
+APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01 | APPROVED_NEW | Berry smudge on Mikko's anatomical left cheek | exact= | ["OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01"] | => | REUSE_EXISTING | OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01
+APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 | APPROVED_NEW | Berry smudge on skin beside Mikko's mouth | exact= | ["OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"] | => | REUSE_EXISTING | OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01
+APPROVED_NEW::OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01 | APPROVED_NEW | Berry smudge on Mikko's nose | exact= | ["OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"] | => | REUSE_EXISTING | OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01
+APPROVED_NEW::TMP_EP005_SOFT_CLOTH | APPROVED_NEW | Soft cloth | exact= | ["PROP-EP005-CLEANING-CLOTH-v01"] | => | REUSE_EXISTING | PROP-EP005-CLEANING-CLOTH-v01
+APPROVED_NEW::TMP_EP005_HAND_MIRROR | APPROVED_NEW | Tiny hand mirror | exact= | ["PROP-EP005-HAND-MIRROR-v01"] | => | REUSE_EXISTING | PROP-EP005-HAND-MIRROR-v01
+APPROVED_REUSE::Lumi clue chime | APPROVED_REUSE | Lumi clue chime | exact= | ["SFX-LUMI-CLUE-CHIME"] | => | REUSE_EXISTING | SFX-LUMI-CLUE-CHIME
+APPROVED_REUSE::Mikko TRY whoosh | APPROVED_REUSE | Mikko TRY whoosh | exact= | ["SFX-MIKKO-TRY-WHOOSH"] | => | REUSE_EXISTING | SFX-MIKKO-TRY-WHOOSH
+APPROVED_REUSE::WIN sparkle chord | APPROVED_REUSE | WIN sparkle chord | exact= | ["SFX-WIN-SPARKLE-CHORD"] | => | REUSE_EXISTING | SFX-WIN-SPARKLE-CHORD
+APPROVED_REUSE::AMB-BATHROOM-QUIET-v01 | APPROVED_REUSE | Bathroom quiet ambience | exact= | ["AMB-BATHROOM-QUIET-v01"] | => | REUSE_EXISTING | AMB-BATHROOM-QUIET-v01
+APPROVED_REUSE::FOLEY-CLOTH-SOFT-v01 | APPROVED_REUSE | Soft microfiber cloth wipe | exact= | ["FOLEY-CLOTH-SOFT-v01"] | => | REUSE_EXISTING | FOLEY-CLOTH-SOFT-v01
+APPROVED_REUSE::SFX-COMPLETION-POP-v01 | APPROVED_REUSE | Soft completion pop | exact= | ["SFX-COMPLETION-POP-v01"] | => | REUSE_EXISTING | SFX-COMPLETION-POP-v01
+TBD::CHARACTER::Lumi | TBD_DEPENDENCY | Lumi | exact= | ["CHAR-LUMI-MASTER-v01"] | => | REUSE_EXISTING | CHAR-LUMI-MASTER-v01
+TBD::CHARACTER::Mikko | TBD_DEPENDENCY | Mikko | exact= | ["CHAR-MIKKO-MASTER-v01"] | => | REUSE_EXISTING | CHAR-MIKKO-MASTER-v01
+TBD::ENVIRONMENT::Canonical environment/background | TBD_DEPENDENCY | Canonical environment/background | exact= | ["WORLD-EP005-BATHROOM-MASTER-v01"] | => | REUSE_EXISTING | WORLD-EP005-BATHROOM-MASTER-v01
+TARGETS {
+ "Mikko": [
+  {
+   "key": "TBD::CHARACTER::Mikko",
+   "exact": [
+    "CHAR-MIKKO-MASTER-v01"
+   ],
+   "status": "REUSE_EXISTING",
+   "canonical": "CHAR-MIKKO-MASTER-v01"
+  }
+ ],
+ "Lumi": [
+  {
+   "key": "TBD::CHARACTER::Lumi",
+   "exact": [
+    "CHAR-LUMI-MASTER-v01"
+   ],
+   "status": "REUSE_EXISTING",
+   "canonical": "CHAR-LUMI-MASTER-v01"
+  }
+ ],
+ "Canonical environment/background": [
+  {
+   "key": "TBD::ENVIRONMENT::Canonical environment/background",
+   "exact": [
+    "WORLD-EP005-BATHROOM-MASTER-v01"
+   ],
+   "status": "REUSE_EXISTING",
+   "canonical": "WORLD-EP005-BATHROOM-MASTER-v01"
+  }
+ ]
+}

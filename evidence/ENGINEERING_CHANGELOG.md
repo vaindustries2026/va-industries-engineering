@@ -2328,3 +2328,26 @@ paid_action_triggered: false
 rollback: "delete asset_registry id 451edb4d-3001-4016-bc9b-9e081bf5d68b; revert commit"
 status: "EP005_S027_FINAL_SHOT_READY_FOR_HUMAN_REVIEW + AUDIO_DIALOGUE_ASSET_REGISTERED_APPROVED + S027_VOICEOVER_ACCEPTED + LIPSYNC_NOT_REQUIRED_FOR_S027 + COMPOSITOR_DIALOGUE_SUPPORT_IMPLEMENTED + REQUIRED_DIALOGUE_FAIL_CLOSED + FULL_TEST_SUITE_PASS + RAW_MOTION_SOURCE_UNCHANGED + ZERO_NEW_PROVIDER_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261009-EP005-S027-FINAL-SHOT-APPROVED: S027 final shot approved, preserved, registered SHOT_RENDER/ASSEMBLED_SHOT
+
+```yaml
+change_id: "ENG-20261009-EP005-S027-FINAL-SHOT-APPROVED"
+timestamp: "2026-10-09T23:09:14Z"
+actor: "Claude"
+authorised_by: "Gilang / Company Brain (final QC APPROVE of exact SHA; preserve; register SHOT_RENDER/ASSEMBLED_SHOT)"
+change_type: "WRITE"   # 1 storage object (no-overwrite) + 1 registry row (plain insert)
+evidence: ["evidence/EP005_S027_FINAL_SHOT_APPROVED_PRESERVED_v1.0.md", "evidence/agent008/phase1/s027_v2/S027_FINAL_SHOT_QC_RECORD_v1.json", "evidence/agent008/phase1/s027_v2/S027_FINAL_SHOT_REGISTRY_ROW_v1.json", "evidence/agent008/phase1/s027_v2/S027_FINAL_SHOT_REGISTRY_ROW_INSERTED_v1.json", "evidence/agent008/phase1/s027_v2/S027_FINAL_SHOT_REGISTRY_POSTINSERT_VERIFICATION_v1.json", "evidence/agent008/phase1/s027_v2/AGENT006_READONLY_PROOF_FINALSHOT_PREWRITE.txt", "evidence/agent008/phase1/s027_v2/AGENT006_READONLY_PROOF_FINALSHOT_POSTWRITE.txt"]
+final_sha256: "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde"
+storage: {key: "visual/production/ep005/shots/SHOT-EP005-S027-ASSEMBLED-v01.mp4", object_id: "eff11fc4-bf12-4c92-b99c-8ca314bc636f", upsert: false, readback_sha256_match: true, byte_identical: true}
+registry: {id: "6c290db5-e47b-456c-a51c-736d7568e018", asset_id: "SHOT-EP005-S027-ASSEMBLED-v01", asset_type: "SHOT_RENDER", asset_subtype: "ASSEMBLED_SHOT", status: "APPROVED", aliases: []}
+agent006_readonly_proof: "14/14 identical; governed 17->18"
+side_effects: "storage.objects 22->23; asset_registry 26->27; manifests 11, readiness 7, C1 unchanged; raw motion and dialogue sources unchanged"
+generations: 0
+provider_spend_usd: 0
+paid_action_triggered: false
+rollback: "delete asset_registry id 6c290db5-e47b-456c-a51c-736d7568e018; delete storage key above; revert commit"
+status: "EP005_S027_FINAL_SHOT_APPROVED_AND_PRESERVED + HUMAN_DECISION_APPROVED + EXACT_FINAL_BYTES_PRESERVED + STORAGE_READBACK_SHA256_MATCH + SHOT_RENDER_ASSEMBLED_SHOT_REGISTERED_APPROVED + RAW_MOTION_SOURCE_UNCHANGED + DIALOGUE_SOURCE_UNCHANGED + AGENT006_RESOLUTION_UNCHANGED + ZERO_NEW_GENERATIONS + ZERO_PROVIDER_SPEND + EVIDENCE_COMMITTED_TO_GITHUB"
+```

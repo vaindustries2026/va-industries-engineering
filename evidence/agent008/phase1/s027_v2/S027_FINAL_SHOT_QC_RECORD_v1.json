@@ -1,9 +1,9 @@
 {
  "candidate_id": "SHOT-EP005-S027-FINAL-CAND-v01",
  "output_sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
- "status": "REVIEW",
- "decision": "PENDING",
- "decided_by": null,
+ "status": "APPROVED",
+ "decision": "APPROVED",
+ "decided_by": "Gilang / Company Brain",
  "rule": "Humans only (Gilang). APPROVE or REJECT must cite the exact output SHA-256. Not registered; not approved; raw source and canon untouched.",
  "checklist": [
   "dialogue audible, clear and once only; voice is the approved Mikko voice",
@@ -13,5 +13,43 @@
   "no extra sounds, music, captions or overlays",
   "picture identical to the approved raw motion (first 120 frames)",
   "5.000 s, clean cut into S028"
- ]
+ ],
+ "decided_at": "2026-10-09",
+ "approved_sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
+ "approval_binding": "Applies ONLY to SHA-256 7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde; no other render is approved by implication",
+ "approval_record": "ENG-20261009-EP005-S027-FINAL-SHOT-APPROVED",
+ "accepted_characteristics": [
+  "5.000 s",
+  "1920x1080",
+  "24 fps",
+  "120 frames",
+  "approved Seedance raw motion source",
+  "approved Mikko M1 dialogue",
+  "bathroom ambience",
+  "WIN sparkle chord",
+  "voice-over treatment accepted for S027",
+  "no lip-sync required for S027",
+  "no overlays",
+  "no berry effects",
+  "no mirror treatment",
+  "slight Mikko positional drift",
+  "slight Mikko fur-tone variation",
+  "Lumi expression transition"
+ ],
+ "production_storage": {
+  "bucket": "production-assets",
+  "object_key": "visual/production/ep005/shots/SHOT-EP005-S027-ASSEMBLED-v01.mp4",
+  "object_id": "eff11fc4-bf12-4c92-b99c-8ca314bc636f",
+  "upload": "POST x-upsert:false, video/mp4, HTTP 200 (NoSuchKey before)",
+  "readback_sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
+  "readback_bytes": 4307940,
+  "byte_identical": true
+ },
+ "registry": {
+  "id": "6c290db5-e47b-456c-a51c-736d7568e018",
+  "asset_id": "SHOT-EP005-S027-ASSEMBLED-v01",
+  "asset_type": "SHOT_RENDER",
+  "asset_subtype": "ASSEMBLED_SHOT",
+  "status": "APPROVED"
+ }
 }
