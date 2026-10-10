@@ -41,7 +41,7 @@ def plan(snapshot, hash_pins, layout, spec, readiness_manifest_id, production_ma
     # Every asset the stand-in or the mix uses must resolve through the spec or the canonical map.
     needed = {}
     for sp in specs:
-        for group in ('active_overlays', 'props', 'characters', 'named_sfx', 'mapped_audio'):
+        for group in ('active_overlays', 'props', 'characters', 'named_sfx', 'mapped_audio', 'event_audio'):
             for a in sp[group]:
                 needed[a['asset_id']] = a
         needed[sp['environment']['asset_id']] = sp['environment']

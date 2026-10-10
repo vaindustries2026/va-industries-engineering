@@ -9,6 +9,7 @@ from .. import AGENT_NAME, media
 from ..errors import FailClosed
 from ..hashing import canonical_sha256, sha256_bytes, sha256_file, verify_file
 from ..render import db_to_gain
+from ..spec import AUDIO_BED_ROLES, AUDIO_EVENT_ROLES
 from ..verify import audio_report
 
 AGENT_VERSION_V02 = 'agent008-v0.2-motion'
@@ -98,8 +99,10 @@ def mix_motion_audio(spec_shot, inputs, timing, spec, dialogue=()):
         out[start:start + len(a)] += a              # placed once; never looped, stretched or trimmed
         cues.append({'asset_id': d['audio_asset_id'], 'kind': 'DIALOGUE', 'start_s': start / sr,
                      'end_s': (start + len(a)) / sr, 'gain_db': d['gain_db'], 'sha256': d['sha256']})
-    bed_ids = [a['asset_id'] for a in spec_shot['mapped_audio']]
-    for aid in bed_ids:
+    for b in spec_shot['mapped_audio']:              # beds: AMBIENCE only (the only role allowed to loop)
+        aid = b['asset_id']
+        if b.get('audio_role') not in AUDIO_BED_ROLES:
+            raise FailClosed('AUDIO_ROLE_NOT_LOOPABLE', f"{aid}: {b.get('audio_role')} cannot be a bed")
         a = media.load_audio(inputs[aid], sr, ch)
         g = timing.get('beds', {}).get(aid, {}).get('gain_db', 0.0)
         reps = int(np.ceil(total / len(a)))
@@ -110,22 +113,34 @@ def mix_motion_audio(spec_shot, inputs, timing, spec, dialogue=()):
         bed[-f:] *= ramp[::-1]
         out += bed
         cues.append({'asset_id': aid, 'kind': 'BED', 'start_s': 0.0, 'end_s': total / sr, 'gain_db': g})
-    for s in spec_shot['named_sfx']:
+    events = [('NAMED', e) for e in spec_shot['named_sfx']] + [('EVENT', e) for e in spec_shot.get('event_audio') or []]
+    for kind, s in events:                           # events: FOLEY / SFX, placed once at an explicit time
         aid = s['asset_id']
+        if s.get('audio_role') not in AUDIO_EVENT_ROLES:
+            raise FailClosed('AUDIO_ROLE_NOT_EVENT', f"{aid}: {s.get('audio_role')}")
         t = timing.get('named', {}).get(aid)
         if not t:
-            raise FailClosed('NAMED_AUDIO_WITHOUT_TIMING', aid)
+            raise FailClosed('NAMED_AUDIO_WITHOUT_TIMING' if kind == 'NAMED' else 'EVENT_AUDIO_WITHOUT_TIMING', aid)
         a = media.load_audio(inputs[aid], sr, ch) * db_to_gain(t.get('gain_db', 0.0))
         start = int(round(t['start_seconds'] * sr))
-        end_by = int(round(t['fade_complete_by_seconds'] * sr)) if 'fade_complete_by_seconds' in t else total
+        if not 0 <= start < total:
+            raise FailClosed('EVENT_TIMING_INVALID', f"{aid}: {t['start_seconds']}")
+        if 'fade_complete_by_seconds' in t:
+            end_by = int(round(t['fade_complete_by_seconds'] * sr))
+        elif start + len(a) > total:
+            raise FailClosed('EVENT_OVERRUNS_SHOT', f'{aid} ends at {(start + len(a)) / sr:.3f} s; '
+                                                     'set fade_complete_by_seconds to trim deliberately')
+        else:
+            end_by = total
         keep = max(0, min(len(a), end_by - start))
         a = a[:keep].copy()
         fo = min(keep, int(round(t.get('fade_out_seconds', 0.0) * sr)))
         if fo:
             a[-fo:] *= np.linspace(1, 0, fo)[:, None]
-        out[start:start + keep] += a
-        cues.append({'asset_id': aid, 'kind': 'NAMED', 'start_s': start / sr, 'end_s': (start + keep) / sr,
-                     'gain_db': t.get('gain_db', 0.0), 'fade_out_s': t.get('fade_out_seconds', 0.0)})
+        out[start:start + keep] += a                 # once; never tiled to the shot length
+        cues.append({'asset_id': aid, 'kind': kind, 'role': s['audio_role'], 'start_s': start / sr,
+                     'end_s': (start + keep) / sr, 'gain_db': t.get('gain_db', 0.0),
+                     'fade_out_s': t.get('fade_out_seconds', 0.0)})
     peak = float(np.abs(out).max()) if out.size else 0.0
     peak_db = 20 * np.log10(peak) if peak > 0 else -np.inf
     if peak_db > spec.peak_ceiling_dbfs:

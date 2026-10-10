@@ -17,6 +17,31 @@ SPEAKER_LINE = re.compile(r'^\s*([^:]+):\s*[“"](.*)[”"]\s*$')
 # Future validation rules (encoded now, applied whenever these shots are specified).
 CLEAN_REVEAL_SHOTS = {'S025'}
 
+# Governed audio roles (registry AUDIO asset_subtype). Only AMBIENCE may span/loop a shot, as a bed.
+# FOLEY and SFX are events: placed once at an explicit timestamp, never looped or stretched.
+# DIALOGUE enters only through manifest dialogue slots (motion.compose.resolve_dialogue).
+AUDIO_BED_ROLES = ('AMBIENCE',)
+AUDIO_EVENT_ROLES = ('FOLEY', 'SFX')
+AUDIO_ROLES = AUDIO_BED_ROLES + AUDIO_EVENT_ROLES + ('DIALOGUE',)
+
+
+def audio_role(resolved):
+    """Role of a resolved audio asset, from its governed registry subtype. Fail closed when unknown."""
+    if resolved.get('asset_type') != 'AUDIO':
+        raise FailClosed('AUDIO_ROLE_NOT_AUDIO', f"{resolved['asset_id']}: {resolved.get('asset_type')}")
+    role = resolved.get('asset_subtype')
+    if role not in AUDIO_ROLES:
+        raise FailClosed('AUDIO_ROLE_UNKNOWN', f"{resolved['asset_id']}: {role}")
+    return role
+
+
+_TYPOGRAPHY = str.maketrans({'\u2019': "'", '\u2018': "'", '\u201c': '"', '\u201d': '"'})
+
+
+def element_key(name):
+    """Continuity element names are matched after typographic normalisation only (curly vs straight quotes)."""
+    return name.translate(_TYPOGRAPHY).strip()
+
 
 def _shot(manifest_reduced, shot_id):
     for s in manifest_reduced['shot_plans']:
@@ -55,8 +80,8 @@ def build_shot_spec(snapshot, resolver, shot_id, output_spec, motion_phase=False
         if o.get('requirement_class') == TREATMENT_CLASS or o.get('asset_status') == 'COMPOSITING_TREATMENT':
             req_treatments.append(o['asset_id'])
         else:
-            req_overlays[o['element']] = o['asset_id']
-    tracked = {t['element']: t for t in plan['continuity_state']['tracked_elements']}
+            req_overlays[element_key(o['element'])] = o['asset_id']
+    tracked = {element_key(t['element']): t for t in plan['continuity_state']['tracked_elements']}
     berries = {k: v for k, v in tracked.items() if k.startswith(BERRY_PREFIX)}
     active = []
     for element, t in sorted(berries.items()):
@@ -114,12 +139,23 @@ def build_shot_spec(snapshot, resolver, shot_id, output_spec, motion_phase=False
     sfx = []
     for name in ap.get('named_audio_assets') or []:
         _check_affected(resolver, name, shot_id)
-        sfx.append({'manifest_label': name, **resolver.resolve(name)})
-    mapped_beds = []
+        r = resolver.resolve(name)
+        role = audio_role(r)
+        if role not in AUDIO_EVENT_ROLES:
+            raise FailClosed('NAMED_AUDIO_ROLE_NOT_EVENT', f'{shot_id}: {r["asset_id"]} is {role}')
+        sfx.append({'manifest_label': name, **r, 'audio_role': role})
+    mapped_beds, mapped_events = [], []
     for mapping in pm.get('audio_asset_mappings') or []:
         if shot_id in mapping['shots']:
-            mapped_beds.append({'replaces_requirement': mapping['replaces_requirement'],
-                                **resolver.resolve(mapping['asset_id'])})
+            r = resolver.resolve(mapping['asset_id'])
+            role = audio_role(r)
+            entry = {'replaces_requirement': mapping['replaces_requirement'], **r, 'audio_role': role}
+            if role in AUDIO_BED_ROLES:
+                mapped_beds.append(entry)
+            elif role in AUDIO_EVENT_ROLES:
+                mapped_events.append(entry)
+            else:
+                raise FailClosed('MAPPED_AUDIO_ROLE_NOT_ALLOWED', f'{shot_id}: {r["asset_id"]} is {role}')
     dialogue = []
     for line in ap.get('voice_lines') or []:
         speaker, text = parse_voice_line(line)
@@ -137,7 +173,8 @@ def build_shot_spec(snapshot, resolver, shot_id, output_spec, motion_phase=False
         'clean_reveal': shot_id in CLEAN_REVEAL_SHOTS,
         'active_overlays': overlays, 'treatments': treatments,
         'props': props, 'characters': characters, 'environment': environment,
-        'named_sfx': sfx, 'mapped_audio': mapped_beds, 'music_present': ap.get('music_present'),
+        'named_sfx': sfx, 'mapped_audio': mapped_beds, 'event_audio': mapped_events,
+        'music_present': ap.get('music_present'),
         'dialogue_slots': dialogue,
         'continuity_start_authority': plan.get('continuity_start_authority'),
         'informational_stale_labels': sorted({x for x in [env.get('world'), env.get('background_asset_id')]
@@ -157,7 +194,8 @@ def validate_shot_contract(spec, motion_phase=False):
     if spec['clean_reveal']:
         validate_clean_reveal(spec)
     if spec['protected_participation_hold']:
-        if spec['treatments'] or spec['named_sfx'] or spec['dialogue_slots'] or spec['music_present']:
+        if spec['treatments'] or spec['named_sfx'] or spec.get('event_audio') or spec['dialogue_slots'] \
+                or spec['music_present']:
             raise FailClosed('PROTECTED_HOLD_HAS_EVENTS', sid)
     return True
 

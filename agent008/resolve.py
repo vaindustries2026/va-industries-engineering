@@ -97,6 +97,6 @@ class Resolver:
             raise FailClosed('STORAGE_PATH_INVALID', f'{cid}: {sp}')
         return {
             'reference': reference, 'asset_id': cid, 'registry_row_id': row['id'], 'status': row['status'],
-            'asset_type': row['asset_type'], 'storage_path': sp,
+            'asset_type': row['asset_type'], 'asset_subtype': row.get('asset_subtype'), 'storage_path': sp,
             'object_key': sp[len('production-assets/'):], 'expected_sha256': sha, 'sha256_source': sha_source,
         }
