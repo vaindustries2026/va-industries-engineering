@@ -1,0 +1,1415 @@
+{
+ "base": "EP005_AGENT008_PRODUCTION_MATRIX_v2 (Batch 0, accepted; not regenerated)",
+ "capture": "agent008/tests/fixtures/ep005_approved_state_capture_v2.json",
+ "changes_from_v2": [
+  {
+   "shot_id": "S003",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H1_LUMI_VOICE",
+     "H4_VISIBLE_SPEECH"
+    ],
+    [
+     "H1_LUMI_VOICE",
+     "H4_VISIBLE_SPEECH"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S004",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H1_LUMI_VOICE",
+     "H2_DIALOGUE_TIMING_WORDING",
+     "H3_HELD_POSE_SIGNOFF",
+     "H4_VISIBLE_SPEECH"
+    ],
+    [
+     "H1_LUMI_VOICE",
+     "H2_SCRIPT_AMENDMENT_AUTHORISATION",
+     "H4_VISIBLE_SPEECH"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S005",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S006",
+   "closed": [],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H3_HELD_POSE_SIGNOFF",
+     "H4_VISIBLE_SPEECH"
+    ],
+    [
+     "H4_VISIBLE_SPEECH"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S007",
+   "closed": [
+    "G10_WHOOSH_HASH_PIN"
+   ],
+   "spec": [
+    "BLOCKED:NO_EXPECTED_HASH",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H4_VISIBLE_SPEECH"
+    ],
+    [
+     "H4_VISIBLE_SPEECH"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S008",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S009",
+   "closed": [],
+   "spec": [
+    "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+    "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01"
+   ],
+   "decisions": [
+    [
+     "H6_SMUDGE_REMOVAL_METHOD"
+    ],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S011",
+   "closed": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S012",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H1_LUMI_VOICE",
+     "H2_DIALOGUE_TIMING_WORDING",
+     "H3_HELD_POSE_SIGNOFF",
+     "H4_VISIBLE_SPEECH"
+    ],
+    [
+     "H1_LUMI_VOICE",
+     "H2_SCRIPT_AMENDMENT_AUTHORISATION",
+     "H4_VISIBLE_SPEECH"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S013",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S015",
+   "closed": [],
+   "spec": [
+    "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+    "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01"
+   ],
+   "decisions": [
+    [
+     "H6_SMUDGE_REMOVAL_METHOD"
+    ],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S017",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H3_HELD_POSE_SIGNOFF"
+    ],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S018",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H1_LUMI_VOICE",
+     "H2_DIALOGUE_TIMING_WORDING",
+     "H3_HELD_POSE_SIGNOFF"
+    ],
+    [
+     "H1_LUMI_VOICE",
+     "H2_SCRIPT_AMENDMENT_AUTHORISATION"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S019",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S021",
+   "closed": [],
+   "spec": [
+    "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+    "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01"
+   ],
+   "decisions": [
+    [
+     "H6_SMUDGE_REMOVAL_METHOD"
+    ],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S023",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H3_HELD_POSE_SIGNOFF"
+    ],
+    []
+   ],
+   "technically_supported": [
+    false,
+    true
+   ]
+  },
+  {
+   "shot_id": "S024",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H3_HELD_POSE_SIGNOFF"
+    ],
+    []
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S025",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H1_LUMI_VOICE",
+     "H3_HELD_POSE_SIGNOFF",
+     "H4_VISIBLE_SPEECH"
+    ],
+    [
+     "H1_LUMI_VOICE",
+     "H4_VISIBLE_SPEECH"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S028",
+   "closed": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H1_LUMI_VOICE",
+     "H4_VISIBLE_SPEECH",
+     "H5_S028_BASE_FRAME"
+    ],
+    [
+     "H1_LUMI_VOICE",
+     "H4_VISIBLE_SPEECH",
+     "H5_S028_DERIVED_FRAME_AUTHORISATION"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    false
+   ]
+  },
+  {
+   "shot_id": "S029",
+   "closed": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "spec": [
+    "SPEC",
+    "SPEC"
+   ],
+   "decisions": [
+    [
+     "H3_HELD_POSE_SIGNOFF",
+     "H5_S028_BASE_FRAME"
+    ],
+    [
+     "H5_S028_DERIVED_FRAME_AUTHORISATION"
+    ]
+   ],
+   "technically_supported": [
+    false,
+    true
+   ]
+  }
+ ],
+ "gaps_closed_0c": {
+  "G02_PRODUCTION_STILL_SHOT_PATH": "IMPLEMENTED: agent008.still.compose_still_shot (overlays -> G03, treatments -> G08, fail closed)",
+  "G04_DERIVED_FRAME_FROM_APPROVED_MOTION": "IMPLEMENTED: agent008.derive.derive_frame (REVIEW candidate; registration separate)",
+  "G10_WHOOSH_HASH_PIN": "REPAIRED: registry metadata_json.sha256 = 53d06150...d0c3 (row 0e10bf46), Agent-006 unchanged"
+ },
+ "decision_gates": {
+  "H1_LUMI_VOICE": [
+   "S001",
+   "S003",
+   "S004",
+   "S010",
+   "S012",
+   "S016",
+   "S018",
+   "S022",
+   "S025",
+   "S028"
+  ],
+  "H2_SCRIPT_AMENDMENT_AUTHORISATION": [
+   "S004",
+   "S012",
+   "S018"
+  ],
+  "H4_VISIBLE_SPEECH": [
+   "S001",
+   "S002",
+   "S003",
+   "S004",
+   "S006",
+   "S007",
+   "S010",
+   "S012",
+   "S014",
+   "S016",
+   "S020",
+   "S022",
+   "S025",
+   "S026",
+   "S028"
+  ],
+  "H5_S028_DERIVED_FRAME_AUTHORISATION": [
+   "S028",
+   "S029"
+  ]
+ },
+ "decisions_resolved_0c": {
+  "H3_HELD_POSE_SIGNOFF": "APPROVED for every SAFE_HELD_POSE / SAFE_DETERMINISTIC_TREATMENT shot except S006",
+  "H6_SMUDGE_REMOVAL_METHOD": "DIRECTION APPROVED; implementation deferred to the overlay-anchor/wipe sprint (G11 stays open)",
+  "H4_GLOBAL_VO_POLICY": "NO GLOBAL POLICY; S027 is the only approved voice-over case"
+ },
+ "s006_reclassification": {
+  "classification": "HIGGSFIELD_MOTION_REQUIRED (planning; Batch 0C)",
+  "code_gaps": [
+   "G03_OVERLAY_ANCHOR_PLACEMENT",
+   "G08_TREATMENTS_ON_STILL_PRODUCTION"
+  ],
+  "gap_notes": {
+   "G03_OVERLAY_ANCHOR_PLACEMENT": "persistent smudges pre-composited into the motion base frame",
+   "G08_TREATMENTS_ON_STILL_PRODUCTION": "MIRROR-REFLECTION treatment: motion compose rejects treatments (MOTION_TREATMENTS_NEED_TRACKING_V02)"
+  },
+  "provider_calls_delta": {
+   "video": 1
+  }
+ },
+ "summary_v3": {
+  "REMAINING_SHOTS": 28,
+  "SPEC_RESOLVED_SHOTS": 26,
+  "SPEC_BLOCKED_SHOTS": [
+   "S009",
+   "S015",
+   "S021"
+  ],
+  "NEWLY_TECHNICALLY_SUPPORTED_BY_G02": [
+   "S023",
+   "S029"
+  ],
+  "NEWLY_TECHNICALLY_SUPPORTED_BY_G04": [
+   "S029"
+  ],
+  "G02_CLOSED_BUT_STILL_CODE_BLOCKED": {
+   "S003": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S004": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "S005": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S008": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S012": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "S013": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S017": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S018": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "S019": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S024": [
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "S025": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ]
+  },
+  "G04_CLOSED_BUT_STILL_CODE_BLOCKED": {
+   "S008": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S011": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "S028": [
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ]
+  },
+  "TECHNICALLY_SUPPORTED_SHOTS": [
+   "S022",
+   "S023",
+   "S026",
+   "S029"
+  ],
+  "CODE_BLOCKED_SHOTS": 24,
+  "CODE_BLOCKED_SHOTS_V2": 26,
+  "HUMAN_DECISION_BLOCKED_SHOTS": 17,
+  "HUMAN_DECISION_BLOCKED_SHOTS_V2": 23,
+  "VOICE_BLOCKED_SHOTS": 10,
+  "AGENT008_CODE_GAPS_OPEN": [
+   "G03_OVERLAY_ANCHOR_PLACEMENT",
+   "G06_KEYFRAMED_CROP_SCALE",
+   "G07_IN_SHOT_CUT",
+   "G08_TREATMENTS_ON_STILL_PRODUCTION",
+   "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD",
+   "G11_TRACKED_OVERLAY_REMOVAL"
+  ],
+  "AGENT008_CODE_GAPS_CLOSED": [
+   "G01_INPUT_SNAPSHOT_COVERAGE",
+   "G02_PRODUCTION_STILL_SHOT_PATH",
+   "G04_DERIVED_FRAME_FROM_APPROVED_MOTION",
+   "G05_ROLE_AWARE_MAPPED_AUDIO",
+   "G10_WHOOSH_HASH_PIN"
+  ],
+  "ESTIMATED_VIDEO_GENERATIONS": 12,
+  "ESTIMATED_VIDEO_GENERATIONS_IF_UNBLOCKED": 15,
+  "ESTIMATED_IMAGE_GENERATIONS": 9
+ },
+ "shots": [
+  {
+   "shot_id": "S001",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S002",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S003",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S004",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H2_SCRIPT_AMENDMENT_AUTHORISATION",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S005",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S006",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED (planning; Batch 0C)",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G03_OVERLAY_ANCHOR_PLACEMENT": "persistent smudges pre-composited into the motion base frame",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION": "MIRROR-REFLECTION treatment: motion compose rejects treatments (MOTION_TREATMENTS_NEED_TRACKING_V02)"
+   },
+   "reclassified_0c": true,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S007",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD",
+    "G10_WHOOSH_HASH_PIN"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G10_WHOOSH_HASH_PIN"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 2,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S008",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S009",
+   "classification": "BLOCKED",
+   "spec_v3": "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+   "code_gaps_v2": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_v3": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G11_TRACKED_OVERLAY_REMOVAL": "DESIGN APPROVED; NOT IMPLEMENTED (overlay-anchor/wipe sprint)"
+   },
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S010",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S011",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S012",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H2_SCRIPT_AMENDMENT_AUTHORISATION",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S013",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S014",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S015",
+   "classification": "BLOCKED",
+   "spec_v3": "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+   "code_gaps_v2": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_v3": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G11_TRACKED_OVERLAY_REMOVAL": "DESIGN APPROVED; NOT IMPLEMENTED (overlay-anchor/wipe sprint)"
+   },
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S016",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S017",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S018",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H2_SCRIPT_AMENDMENT_AUTHORISATION"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S019",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S020",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S021",
+   "classification": "BLOCKED",
+   "spec_v3": "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+   "code_gaps_v2": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_v3": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G11_TRACKED_OVERLAY_REMOVAL": "DESIGN APPROVED; NOT IMPLEMENTED (overlay-anchor/wipe sprint)"
+   },
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S022",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S023",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "OK",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S024",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "code_gaps_v3": [
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "OK",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S025",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_v3": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_TREATMENTS_NEED_G08",
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S026",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S027",
+   "status": "COMPLETE_APPROVED"
+  },
+  {
+   "shot_id": "S028",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H1_LUMI_VOICE",
+    "H4_VISIBLE_SPEECH",
+    "H5_S028_DERIVED_FRAME_AUTHORISATION"
+   ],
+   "voice_blocked": true,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  },
+  {
+   "shot_id": "S029",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "OK",
+   "human_decisions": [
+    "H5_S028_DERIVED_FRAME_AUTHORISATION"
+   ],
+   "voice_blocked": false,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   }
+  }
+ ]
+}

@@ -2397,3 +2397,33 @@ paid_action_triggered: false
 rollback: "revert commits"
 status: "EP005_BATCH0_STABILISATION_COMPLETE + SHORT_AUDIO_LOOP_BUG_FIXED + AUDIO_ROLE_SEMANTICS_GOVERNED + FULL_29_SHOT_SPEC_COVERAGE + WHOOSH_GOVERNANCE_REPAIR_PROPOSED + SMUDGE_REMOVAL_METHOD_DESIGNED + FULL_TEST_SUITE_PASS + SCALEOUT_MATRIX_V2_READY + ZERO_PROVIDER_CALLS + ZERO_GENERATIONS + ZERO_PRODUCTION_STATE_WRITES + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261010-EP005-BATCH0C-FACTORY-PATHS: whoosh repair applied, G02 still-shot + G04 derived-frame paths, decisions recorded (zero spend)
+
+```yaml
+change_id: "ENG-20261010-EP005-BATCH0C-FACTORY-PATHS"
+timestamp: "2026-10-10"
+actor: "Claude"
+authorised_by: "Company Brain / Gilang (Batch 0C: whoosh metadata repair approved; implement G02 + G04 only)"
+change_type: "CODE + REGISTRY_METADATA + EVIDENCE"
+production_state_writes:
+  - "asset_registry 0e10bf46-4099-43cd-ab91-5c10fcb59d9d (SFX-MIKKO-TRY-WHOOSH): metadata_json merge only (+sha256 53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3, bytes, duration_s, codec, sample_rate, channels, storage_object_id, hash_evidence); file/storage object/status/path unchanged"
+readback: "metadata_json.sha256 == governed SHA; stored bytes re-hashed = 53d06150...d0c3"
+agent006: "local read-only proof pre/post: 14 requirements, 18 governed rows, resolutions identical; workflow NOT run"
+code_changed: ["agent008/derive.py (new: G04 derive_frame)", "agent008/still.py (new: G02 compose_still_shot)", "agent008/tests/test_batch0c.py (20 tests)", "agent008/tests/fixtures/ep005_approved_state_capture_v2.json (GET capture after repair; v1 kept)"]
+tests: "128/128 OK (108 existing + 20 new)"
+episode: "26 SPEC / 3 BLOCKED (S007 now SPEC; S009/S015/S021 OVERLAY_TRANSITION_UNSUPPORTED_V01)"
+decisions_recorded: ["held pose approved except S006", "S006 motion required for planning (+1 video)", "smudge removal direction approved, not implemented", "no global VO policy (S027 only)", "Lumi voice pending human", "S028 derive from S027 raw frame 119 (spec only)"]
+script_amendment: "S004/S012/S018 Alternative B package ready (12 mutations); SCRIPT_AMENDMENT_AUTHORISED=false; not applied"
+matrix_v3_delta: {technically_supported: 4, newly_by_g02: ["S023", "S029"], newly_by_g04: ["S029"], code_blocked: 24, decision_blocked: 17, voice_blocked: 10, video: 12, video_if_unblocked: 15}
+evidence: ["evidence/agent008/batch0c/EP005_BATCH0C_FACTORY_PATHS_v1.md", "evidence/agent008/batch0c/WHOOSH_GOVERNANCE_REPAIR_APPLIED_v1.json", "evidence/agent008/batch0c/AGENT006_READONLY_PROOF_PRE_WHOOSH_REPAIR.txt", "evidence/agent008/batch0c/AGENT006_READONLY_PROOF_POST_WHOOSH_REPAIR.txt", "evidence/agent008/batch0c/EP005_S004_S012_S018_SCRIPT_AMENDMENT_PACKAGE_v1.json", "evidence/agent008/batch0c/S028_DERIVED_FRAME_SPEC_v1.json", "evidence/agent008/batch0c/EP005_AGENT008_PRODUCTION_MATRIX_v3_DELTA.json", "evidence/agent008/batch0c/build_matrix_v3_delta.py", "evidence/agent008/batch0c/AGENT008_TEST_OUTPUT_BATCH0C_v1.txt"]
+provider_calls: 0
+generations: 0
+production_renders: 0
+new_registrations: 0
+paid_action_triggered: false
+rollback: "registry: PATCH metadata_json back to the 4-key object in WHOOSH_GOVERNANCE_REPAIR_APPLIED_v1.json (human instruction required); code/evidence: revert commit"
+status: "EP005_BATCH0C_FACTORY_PATHS_READY + WHOOSH_GOVERNANCE_REPAIRED + AGENT006_RESOLUTION_UNCHANGED + G02_STILL_SHOT_PATH_IMPLEMENTED + G04_DERIVED_FRAME_PATH_IMPLEMENTED + HELD_POSE_DECISIONS_RECORDED + S006_MOTION_REQUIRED_FOR_PLANNING + S028_DERIVED_FRAME_SPEC_READY + S004_S012_S018_SCRIPT_AMENDMENT_PACKAGE_READY_NOT_APPLIED + LUMI_VOICE_SELECTION_PENDING_HUMAN + FULL_TEST_SUITE_PASS + ZERO_PROVIDER_GENERATIONS + ZERO_PRODUCTION_RENDERS + EVIDENCE_COMMITTED_TO_GITHUB"
+```

@@ -1,0 +1,355 @@
+{
+ "package": "EP005_S004_S012_S018_SCRIPT_AMENDMENT_PACKAGE_v1",
+ "decision": "Company Brain: ALTERNATIVE B (exact wording from evidence/agent008/batch0/EP005_BATCH0_DECISION_PACKS_v1.md section 6)",
+ "SCRIPT_AMENDMENT_AUTHORISED": false,
+ "applied": false,
+ "reason": "TIMING_FIT",
+ "affected_shots": [
+  "S004",
+  "S012",
+  "S018"
+ ],
+ "rate_basis": {
+  "lumi_syllables_per_second": [
+   2.63,
+   3.01
+  ],
+  "speech_window": "shot duration - 0.85 s (lead + tail)",
+  "source": "Batch 0 decision pack (Lumi audition-rate estimate; Lumi voice still pending)"
+ },
+ "source_rows": {
+  "episode_script": {
+   "id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+   "script_version": "v02",
+   "status": "APPROVED",
+   "production_script_json_canonical_sha256": "e91cf926055399c599e5cff48f15923d3360afd3e322fc5e12ab5f2d003acf80",
+   "architecture_json_canonical_sha256": "97d9fe50e7cc139f657e54be79446e19f1f41cb7718d25608db37dee95264bdf",
+   "approved_episode_snapshot_canonical_sha256": "b60602d1a6cccd58a9858772f54585c3d8ed900e2a063b9e76072399d60e40fb"
+  },
+  "production_manifest": {
+   "id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+   "status": "APPROVED",
+   "script_version": "v02",
+   "manifest_json_canonical_sha256": "e0c2e849fa00c8328dd2dd670e4b5bcd477d29dc6de967d70440abc0349b0d55"
+  },
+  "readiness_manifest_id": "edc4ad58-3e5d-4ac2-9c74-c9af03af363f"
+ },
+ "timing": {
+  "S004": {
+   "speaker": "Lumi",
+   "shot_duration_s": 5.0,
+   "speech_window_s": 4.15,
+   "old_lines": [
+    "A little glint! Look at his cheek.",
+    "Can you help Mikko find the next berry smudge?"
+   ],
+   "new_lines": [
+    "A glint on his cheek!",
+    "Find the next smudge!"
+   ],
+   "old_syllables": 19,
+   "new_syllables": 9,
+   "old_estimated_speech_s": [
+    6.31,
+    7.22
+   ],
+   "new_estimated_speech_s": [
+    2.99,
+    3.42
+   ],
+   "old_fits_window": false,
+   "new_fits_window": true,
+   "new_margin_at_slowest_s": 0.73,
+   "educational_function": "First clue (cheek) revealed by the mirror glint + chime, then the participation invitation immediately before the S005 4.0 s protected response hold."
+  },
+  "S012": {
+   "speaker": "Lumi",
+   "shot_duration_s": 5.0,
+   "speech_window_s": 4.15,
+   "old_lines": [
+    "I see a spot near your mouth.",
+    "Can you help Mikko find the next berry smudge?"
+   ],
+   "new_lines": [
+    "By your mouth!",
+    "Find the next smudge!"
+   ],
+   "old_syllables": 18,
+   "new_syllables": 7,
+   "old_estimated_speech_s": [
+    5.98,
+    6.84
+   ],
+   "new_estimated_speech_s": [
+    2.33,
+    2.66
+   ],
+   "old_fits_window": false,
+   "new_fits_window": true,
+   "new_margin_at_slowest_s": 1.49,
+   "educational_function": "Second clue (mouth) + the identical participation ritual immediately before the S013 4.0 s protected response hold."
+  },
+  "S018": {
+   "speaker": "Lumi",
+   "shot_duration_s": 6.0,
+   "speech_window_s": 5.15,
+   "old_lines": [
+    "One tiny spot is still here.",
+    "Can you help Mikko find the next berry smudge?"
+   ],
+   "new_lines": [
+    "One spot left!",
+    "Find the next smudge!"
+   ],
+   "old_syllables": 18,
+   "new_syllables": 7,
+   "old_estimated_speech_s": [
+    5.98,
+    6.84
+   ],
+   "new_estimated_speech_s": [
+    2.33,
+    2.66
+   ],
+   "old_fits_window": false,
+   "new_fits_window": true,
+   "new_margin_at_slowest_s": 2.49,
+   "educational_function": "Third clue (last spot, nose revealed by the macro reflection) + the identical participation ritual immediately before the S019 5.0 s protected response hold."
+  }
+ },
+ "proposed_mutations": [
+  {
+   "target": "episode_scripts.production_script_json",
+   "json_path": [
+    "shots",
+    3,
+    "dialogue_lyric"
+   ],
+   "old": "Lumi: “A little glint! Look at his cheek.”",
+   "new": "Lumi: “A glint on his cheek!”",
+   "note": "S004 clue line"
+  },
+  {
+   "target": "episode_scripts.production_script_json",
+   "json_path": [
+    "shots",
+    3,
+    "child_prompt"
+   ],
+   "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "new": "Lumi: “Find the next smudge!”",
+   "note": "S004 ritual prompt"
+  },
+  {
+   "target": "episode_production_manifests.manifest_json",
+   "json_path": [
+    "shot_plans",
+    3,
+    "shot_plan",
+    "audio_plan",
+    "voice_lines",
+    0
+   ],
+   "old": "Lumi: “A little glint! Look at his cheek.”",
+   "new": "Lumi: “A glint on his cheek!”",
+   "note": "S004 clue line (Agent-008 dialogue slot 1 text)"
+  },
+  {
+   "target": "episode_production_manifests.manifest_json",
+   "json_path": [
+    "shot_plans",
+    3,
+    "shot_plan",
+    "audio_plan",
+    "voice_lines",
+    1
+   ],
+   "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "new": "Lumi: “Find the next smudge!”",
+   "note": "S004 ritual prompt (Agent-008 dialogue slot 2 text)"
+  },
+  {
+   "target": "episode_scripts.production_script_json",
+   "json_path": [
+    "shots",
+    11,
+    "dialogue_lyric"
+   ],
+   "old": "Lumi: “I see a spot near your mouth.”",
+   "new": "Lumi: “By your mouth!”",
+   "note": "S012 clue line"
+  },
+  {
+   "target": "episode_scripts.production_script_json",
+   "json_path": [
+    "shots",
+    11,
+    "child_prompt"
+   ],
+   "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "new": "Lumi: “Find the next smudge!”",
+   "note": "S012 ritual prompt"
+  },
+  {
+   "target": "episode_production_manifests.manifest_json",
+   "json_path": [
+    "shot_plans",
+    11,
+    "shot_plan",
+    "audio_plan",
+    "voice_lines",
+    0
+   ],
+   "old": "Lumi: “I see a spot near your mouth.”",
+   "new": "Lumi: “By your mouth!”",
+   "note": "S012 clue line (Agent-008 dialogue slot 1 text)"
+  },
+  {
+   "target": "episode_production_manifests.manifest_json",
+   "json_path": [
+    "shot_plans",
+    11,
+    "shot_plan",
+    "audio_plan",
+    "voice_lines",
+    1
+   ],
+   "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "new": "Lumi: “Find the next smudge!”",
+   "note": "S012 ritual prompt (Agent-008 dialogue slot 2 text)"
+  },
+  {
+   "target": "episode_scripts.production_script_json",
+   "json_path": [
+    "shots",
+    17,
+    "dialogue_lyric"
+   ],
+   "old": "Lumi: “One tiny spot is still here.”",
+   "new": "Lumi: “One spot left!”",
+   "note": "S018 clue line"
+  },
+  {
+   "target": "episode_scripts.production_script_json",
+   "json_path": [
+    "shots",
+    17,
+    "child_prompt"
+   ],
+   "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "new": "Lumi: “Find the next smudge!”",
+   "note": "S018 ritual prompt"
+  },
+  {
+   "target": "episode_production_manifests.manifest_json",
+   "json_path": [
+    "shot_plans",
+    17,
+    "shot_plan",
+    "audio_plan",
+    "voice_lines",
+    0
+   ],
+   "old": "Lumi: “One tiny spot is still here.”",
+   "new": "Lumi: “One spot left!”",
+   "note": "S018 clue line (Agent-008 dialogue slot 1 text)"
+  },
+  {
+   "target": "episode_production_manifests.manifest_json",
+   "json_path": [
+    "shot_plans",
+    17,
+    "shot_plan",
+    "audio_plan",
+    "voice_lines",
+    1
+   ],
+   "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "new": "Lumi: “Find the next smudge!”",
+   "note": "S018 ritual prompt (Agent-008 dialogue slot 2 text)"
+  }
+ ],
+ "other_occurrences_not_proposed_for_mutation": [
+  {
+   "target": "episode_scripts.architecture_json",
+   "json_path": [
+    "cue",
+    "lumi_notice"
+   ],
+   "value": "Lumi tilts the mirror. A tiny glint reveals the cheek smudge, accompanied by the approved Lumi clue chime. Lumi says, “A little glint! Look at his cheek.”"
+  },
+  {
+   "target": "episode_scripts.architecture_json",
+   "json_path": [
+    "cue",
+    "child_prompt"
+   ],
+   "value": "Lumi: “Can you help Mikko find the next berry smudge?”"
+  },
+  {
+   "target": "episode_scripts.architecture_json",
+   "json_path": [
+    "three",
+    1,
+    "lumi_line"
+   ],
+   "value": "Before the pause: “I see a spot near your mouth.” After the wipe: “That spot is gone. One is left.”"
+  },
+  {
+   "target": "episode_scripts.architecture_json",
+   "json_path": [
+    "three",
+    1,
+    "child_prompt"
+   ],
+   "value": "Lumi: “Can you help Mikko find the next berry smudge?”"
+  },
+  {
+   "target": "episode_scripts.architecture_json",
+   "json_path": [
+    "three",
+    2,
+    "lumi_line"
+   ],
+   "value": "Before the pause: “One tiny spot is still here.” After the wipe: “Your nose is clear, too.”"
+  },
+  {
+   "target": "episode_scripts.architecture_json",
+   "json_path": [
+    "three",
+    2,
+    "child_prompt"
+   ],
+   "value": "Lumi: “Can you help Mikko find the next berry smudge?”"
+  },
+  {
+   "target": "episode_scripts.approved_episode_snapshot",
+   "json_path": [
+    "participation_question"
+   ],
+   "value": "Can you help Mikko find the next berry smudge?"
+  }
+ ],
+ "story_and_education_preservation": {
+  "kept": [
+   "three clues in the same order (cheek -> mouth -> nose)",
+   "one identical ritual prompt in all three shots (repetition is the participation cue)",
+   "the target word in each clue line (cheek, mouth) and the \"last spot\" count in S018",
+   "Lumi as observer/clue-giver; Mikko still performs every wipe",
+   "protected response holds S005/S013/S019 unchanged (durations, no events)",
+   "no answer-revealing sound added; chime/SFX plans unchanged"
+  ],
+  "changed": [
+   "question form \"Can you help Mikko find...?\" becomes the imperative \"Find the next smudge!\"",
+   "\"berry\" and \"help Mikko\" are dropped from the ritual prompt; S018 drops \"tiny\"/\"still here\" for \"One spot left!\""
+  ],
+  "risk": "The invitation is now an imperative, not a question; the protected hold that follows still gives the child the response window. Human script review should confirm tone."
+ },
+ "proposed_application_method": [
+  "Do NOT mutate the APPROVED v02 script row or APPROVED manifest 45cc7493 in place.",
+  "After separate human authorisation: create script v03 (copy of v02 with the production_script_json mutations above), derive a new manifest from v03 (manifest_json mutations above, all other fields byte-identical), then a new readiness record; supersede v02/45cc7493/edc4ad58 only after human approval of the new rows.",
+  "architecture_json / approved_episode_snapshot occurrences are historical approval context: keep as-is in v02; whether v03 carries an updated architecture_json is a human decision (listed above, no mutation proposed).",
+  "Re-run the Agent-006 read-only proof and agent008.episode against the new manifest; expect only S004/S012/S018 dialogue_slots text to change."
+ ],
+ "rollback": "Nothing applied. If applied later as v03 rows, rollback = keep v02/45cc7493/edc4ad58 as the governing rows (no in-place change to revert)."
+}

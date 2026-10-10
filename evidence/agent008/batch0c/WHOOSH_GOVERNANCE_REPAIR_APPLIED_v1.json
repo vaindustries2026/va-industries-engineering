@@ -1,0 +1,148 @@
+{
+ "action": "WHOOSH_GOVERNANCE_REPAIR (approved by Company Brain, Batch 0C item 1)",
+ "date": "2026-10-10",
+ "registry_row": "0e10bf46-4099-43cd-ab91-5c10fcb59d9d",
+ "asset_id": "SFX-MIKKO-TRY-WHOOSH",
+ "write": {
+  "method": "PATCH /rest/v1/asset_registry?id=eq.0e10bf46-4099-43cd-ab91-5c10fcb59d9d&status=eq.APPROVED",
+  "columns_written": [
+   "metadata_json"
+  ],
+  "merge": "existing keys kept byte-for-byte (format, source, purpose, human_approved); 8 keys added exactly as proposed in evidence/agent008/batch0/WHOOSH_GOVERNANCE_REPAIR_PROPOSED_v1.json",
+  "rows_affected": 1
+ },
+ "before": {
+  "row": {
+   "id": "0e10bf46-4099-43cd-ab91-5c10fcb59d9d",
+   "created_at": "2026-09-15T06:34:28.254961+00:00",
+   "updated_at": "2026-09-15T06:34:28.254961+00:00",
+   "asset_id": "SFX-MIKKO-TRY-WHOOSH",
+   "asset_name": "Mikko TRY whoosh",
+   "asset_type": "AUDIO",
+   "asset_subtype": "SFX",
+   "version": "v01",
+   "status": "APPROVED",
+   "aliases": [
+    "Mikko TRY whoosh"
+   ],
+   "storage_path": "production-assets/audio/sfx/SFX-MIKKO-TRY-WHOOSH-v01.mp3.mp3",
+   "source_url": null,
+   "metadata_json": {
+    "format": "mp3",
+    "source": "Suno",
+    "purpose": "Reusable recurring Mikko action-attempt cue",
+    "human_approved": true
+   },
+   "notes": "Foundational reusable audio asset created to resolve AGENT-006 BLOCKED_MISSING_REUSE for Mikko TRY whoosh."
+  },
+  "row_canonical_sha256": "db538e366bbec346ed05936453f18d1dd8a8b8bfb9fa3098a61ea419316951b0"
+ },
+ "after": {
+  "row": {
+   "id": "0e10bf46-4099-43cd-ab91-5c10fcb59d9d",
+   "created_at": "2026-09-15T06:34:28.254961+00:00",
+   "updated_at": "2026-09-15T06:34:28.254961+00:00",
+   "asset_id": "SFX-MIKKO-TRY-WHOOSH",
+   "asset_name": "Mikko TRY whoosh",
+   "asset_type": "AUDIO",
+   "asset_subtype": "SFX",
+   "version": "v01",
+   "status": "APPROVED",
+   "aliases": [
+    "Mikko TRY whoosh"
+   ],
+   "storage_path": "production-assets/audio/sfx/SFX-MIKKO-TRY-WHOOSH-v01.mp3.mp3",
+   "source_url": null,
+   "metadata_json": {
+    "bytes": 341541,
+    "codec": "mp3",
+    "format": "mp3",
+    "sha256": "53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3",
+    "source": "Suno",
+    "purpose": "Reusable recurring Mikko action-attempt cue",
+    "channels": 2,
+    "duration_s": 13.848,
+    "sample_rate": 48000,
+    "hash_evidence": "evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md + evidence/agent008/batch0/WHOOSH_GOVERNANCE_REPAIR_PROPOSED_v1.json",
+    "human_approved": true,
+    "storage_object_id": "7e415397-5755-4e24-ae9f-279a1310c688"
+   },
+   "notes": "Foundational reusable audio asset created to resolve AGENT-006 BLOCKED_MISSING_REUSE for Mikko TRY whoosh."
+  },
+  "row_canonical_sha256": "1bb1444a4d9f85223f3d9f854b417256317ba480a86ba19d48031ea9b8f9c011"
+ },
+ "changed_columns": [
+  "metadata_json"
+ ],
+ "added_metadata_keys": [
+  "bytes",
+  "channels",
+  "codec",
+  "duration_s",
+  "hash_evidence",
+  "sample_rate",
+  "sha256",
+  "storage_object_id"
+ ],
+ "readback": {
+  "metadata_json.sha256": "53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3",
+  "governed_sha256": "53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3",
+  "match": true,
+  "stored_object_bytes_sha256_reverified_before_write": "53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3",
+  "stored_object_bytes": 341541,
+  "probe": "mp3 48000 Hz 2 ch, 13.848 s (+ embedded mjpeg cover stream)"
+ },
+ "unchanged": {
+  "status": "APPROVED",
+  "storage_path": "production-assets/audio/sfx/SFX-MIKKO-TRY-WHOOSH-v01.mp3.mp3",
+  "updated_at": "2026-09-15T06:34:28.254961+00:00 (no updated_at trigger on asset_registry; column unchanged)",
+  "storage_object": {
+   "id": "7e415397-5755-4e24-ae9f-279a1310c688",
+   "key": "audio/sfx/SFX-MIKKO-TRY-WHOOSH-v01.mp3.mp3",
+   "etag": "\"ac26a57140e456e69ab358f4e376aa6d-1\"",
+   "updated_at": "2026-09-15T06:32:40.782Z",
+   "replaced": false
+  },
+  "registry_rows": 27,
+  "storage_objects_production_assets": 23,
+  "production_manifests": 11,
+  "manifest_45cc7493_bytes_identical": true
+ },
+ "agent006_readonly_proof": {
+  "workflow_run": false,
+  "script": "evidence/c1/agent006_readonly_match_proof.js (local node; GET-only snapshots)",
+  "pre": {
+   "requirements": 14,
+   "governed_rows": 18,
+   "gov_snapshot_canonical_sha256": "dd78f749388d16ead034012bd3964cbd28bc0ed5e5290f30af7299738b59ae50"
+  },
+  "post": {
+   "requirements": 14,
+   "governed_rows": 18,
+   "gov_snapshot_canonical_sha256": "d81109a71cffa507e05e32790b042ec9044eb0bb6f526e2c0588767ab70398eb"
+  },
+  "resolution_lines_identical": true,
+  "files": [
+   "evidence/agent008/batch0c/AGENT006_READONLY_PROOF_PRE_WHOOSH_REPAIR.txt",
+   "evidence/agent008/batch0c/AGENT006_READONLY_PROOF_POST_WHOOSH_REPAIR.txt"
+  ]
+ },
+ "agent008_effect": {
+  "S007": "BLOCKED:NO_EXPECTED_HASH -> SPEC (live; sha256_source asset_registry.metadata_json.sha256)",
+  "episode": "SPEC 26 / BLOCKED 3 (S009, S015, S021 OVERLAY_TRANSITION_UNSUPPORTED_V01)",
+  "capture": "agent008/tests/fixtures/ep005_approved_state_capture_v2.json (differs from v1 only in this row; v1 kept as the historical pre-repair capture)"
+ },
+ "rollback": {
+  "method": "PATCH metadata_json back to before.row.metadata_json (4 keys) on the same row",
+  "body": {
+   "metadata_json": {
+    "format": "mp3",
+    "source": "Suno",
+    "purpose": "Reusable recurring Mikko action-attempt cue",
+    "human_approved": true
+   }
+  },
+  "authorisation": "requires human instruction"
+ },
+ "paid_actions": 0
+}

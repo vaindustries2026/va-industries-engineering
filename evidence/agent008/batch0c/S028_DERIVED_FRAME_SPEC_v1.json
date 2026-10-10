@@ -1,0 +1,83 @@
+{
+ "spec": "S028_DERIVED_FRAME_SPEC_v1",
+ "status": "SPEC_READY_NOT_CREATED",
+ "DERIVED_FRAME_CREATION_AUTHORISED": false,
+ "decision": "Company Brain Batch 0C item 4: derive S028 from approved S027 frame 119; no new image unless deterministic derivation proves insufficient.",
+ "target": {
+  "shot_id": "S028",
+  "role": "S028 motion base/start frame (shot-specific; not C1 canon)",
+  "proposed_asset_id": "FRAME-EP005-S028-DERIVED-v01",
+  "proposed_classification": "SHOT_FRAME/DERIVED_FRAME",
+  "proposed_storage_key": "visual/production/ep005/frames/FRAME-EP005-S028-DERIVED-v01.png"
+ },
+ "source": {
+  "asset_id": "MOTION-EP005-S027-SEEDANCE20-CAND-v01",
+  "registry_id": "2ebed34b-92b5-47dc-8131-c3716849f5eb",
+  "classification": "SHOT_MOTION/RAW_MOTION_SOURCE",
+  "registry_status": "APPROVED",
+  "storage_key": "visual/production/ep005/motion/MOTION-EP005-S027-SEEDANCE20-CAND-v01.mp4",
+  "expected_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "expected_frames": 121,
+  "expected_width": 1920,
+  "expected_height": 1080,
+  "r_frame_rate": "24/1"
+ },
+ "frame_index": 119,
+ "frame_index_rationale": [
+  "The approved S027 assembled shot (SHOT-EP005-S027-ASSEMBLED-v01, 7b01c392...8fde, row 6c290db5) used raw frames 0-119 at 24/1 with no resample (fps 24 -> 24, 1920x1080 -> 1920x1080), so raw frame 119 is the last picture the viewer sees in S027.",
+  "The raw source (lossless decode of the approved provider bytes) is used rather than the assembled mp4, which is a second lossy H.264 generation of the same frame.",
+  "Raw frame 120 exists but is not in the approved assembled shot; it must not be used."
+ ],
+ "recipe": {
+  "tool": "agent008.derive.derive_frame",
+  "crop": null,
+  "scale": null,
+  "call": "derive_frame(source, 119, 'S028', <scratch out_dir>)",
+  "operations": [
+   "verify source SHA-256 = expected_sha256",
+   "count decoded frames (must be 121, 1920x1080)",
+   "select decoded frame n=119 of stream 0:v:0 as rgb24",
+   "write lossless PNG (rgb24, bitexact, no metadata); verify PNG decodes to the identical rgb24 bytes",
+   "re-verify source SHA unchanged"
+  ],
+  "fail_closed_on": [
+   "HASH_MISMATCH",
+   "DERIVE_SOURCE_NOT_APPROVED",
+   "DERIVE_SOURCE_GEOMETRY_MISMATCH",
+   "FRAME_INDEX_OUT_OF_RANGE",
+   "FRAME_INDEX_INVALID",
+   "OUTPUT_EXISTS",
+   "DERIVED_FRAME_NOT_LOSSLESS",
+   "SOURCE_MUTATED"
+  ]
+ },
+ "expected_frame_content": "S027 end state at t=4.958 s: Mikko holds the blue cloth at chest height; Lumi floats holding the pink flower mirror upright; clean face, no smudges, clean mirror glass; same bathroom; knees-up medium-close framing.",
+ "interpretation_recorded": {
+  "manifest_text": "Lumi lowers the mirror to her lap",
+  "approved_interpretation": "Lumi lowers the mirror to a relaxed resting position in front of her lower body while floating.",
+  "applies_to": [
+   "S028 motion brief (the lowering happens in S028 motion, not in the derived base frame)",
+   "S029 start/end-state continuity check (\"mirror and cloth resting quietly in Lumi’s lap\" read with the same interpretation)"
+  ],
+  "base_frame_effect": "none: the derived frame is the S027 end state (mirror upright); no edit to the frame is required or allowed"
+ },
+ "continuity_check": {
+  "manifest_rule": "visible_at_start(S028) = visible_at_end(S027)",
+  "overlays": "none active in S027 end or S028",
+  "treatments": "none",
+  "framing": "S028 MEDIUM accepted in S027 framing (Batch 0 decision pack section 8); no reframe at the cut"
+ },
+ "insufficiency_test": "Deterministic derivation is insufficient only if human QC of the exact derived PNG finds a defect (blur, artefact, wrong pose). In that case STOP and propose; no image generation without separate authorisation.",
+ "after_creation_required": [
+  "human QC + APPROVE of the exact output PNG sha256",
+  "separately authorised production-storage write of the exact bytes",
+  "separately authorised registration as SHOT_FRAME/DERIVED_FRAME (shot_id S028) with the G04 provenance JSON",
+  "Agent-006 read-only proof re-run (expected unchanged)"
+ ],
+ "downstream": {
+  "S028": "base-frame-ready once this derived frame is approved and registered; still blocked by H1 Lumi voice, H4 visible speech, G09 dialogue overlap/hold guard, then one Seedance generation (separate spend authorisation)",
+  "S029": "derives from the approved S028 motion end frame via G04 (not from this frame); G02 then holds it for 144 frames"
+ },
+ "paid_actions": 0,
+ "frames_created": 0
+}
