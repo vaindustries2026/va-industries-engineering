@@ -13,6 +13,7 @@ from pathlib import Path
 import numpy as np
 
 from . import AGENT_NAME, media
+from .dialogue_timing import govern_dialogue_timing
 from .errors import FailClosed
 from .hashing import canonical_sha256, sha256_bytes, sha256_file, verify_file
 from .motion.compose import auto_qc_frames, mix_motion_audio, resolve_dialogue
@@ -78,6 +79,7 @@ def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, cro
     check_still_contract(spec_shot, spec)
     frame_sha = verify_source_frame(frame, spec_shot)
     dialogue = resolve_dialogue(spec_shot, asset_paths, timing)
+    dialogue_timing = govern_dialogue_timing(spec_shot, dialogue, asset_paths, timing, spec)
     img, layout = layout_frame(frame['path'], spec, crop)
     n = spec_shot['frames']
     qc, _ = auto_qc_frames(np.broadcast_to(img, (n, *img.shape)), max_freeze_frames=n, intended_freeze=True)
@@ -120,6 +122,7 @@ def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, cro
         'source_frame': {k: frame.get(k) for k in ('asset_id', 'registry_id', 'classification', 'registry_status',
                                                    'shot_id')} | {'verified_sha256': frame_sha},
         'layout': layout, 'output_spec': spec.to_dict(), 'shot_spec': spec_shot, 'dialogue_tracks': dialogue,
+        'dialogue_timing': dialogue_timing,
         'audio_cues': cues, 'mix_peak_dbfs': peak_db, 'qc': qc,
         'recipes': {'encode_command': [c if not str(c).startswith('/') else '<OUT>/' + Path(c).name for c in cmd]},
         'outputs': {'review_mp4': {'file': mp4.name, 'sha256': sha256_file(mp4), 'bytes': mp4.stat().st_size},

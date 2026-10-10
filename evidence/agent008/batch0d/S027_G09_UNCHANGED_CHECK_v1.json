@@ -1,0 +1,37 @@
+{
+ "mix_wav_sha256": "c67da3f3d7cf0a2aeca0e9d8736db64c09aa2b819b9a3a607338bf1893e2a863",
+ "approved_mix_wav_sha256": "c67da3f3d7cf0a2aeca0e9d8736db64c09aa2b819b9a3a607338bf1893e2a863",
+ "identical": true,
+ "peak_dbfs": -8.551,
+ "g09_report": {
+  "version": "agent008-g09-v1",
+  "shot_id": "S027",
+  "sample_rate": 48000,
+  "shot_end_s": 5.0,
+  "window": {
+   "start_s": 0.0,
+   "end_s": 5.0,
+   "pre_hold_seconds": 0.0,
+   "post_hold_seconds": 0.0
+  },
+  "lines": [
+   {
+    "slot": 0,
+    "speaker": "Mikko",
+    "audio_asset_id": "DLG-EP005-S027-L1-MIKKO-v01",
+    "start_sample": 24000,
+    "end_sample": 102019,
+    "start_s": 0.5,
+    "end_s": 2.125396,
+    "duration_s": 1.625396
+   }
+  ],
+  "overlaps": [],
+  "visual_holds": {
+   "before_first_line_s": 0.5,
+   "after_last_line_s": 2.874604
+  }
+ },
+ "video_rendered": false,
+ "provider_calls": 0
+}

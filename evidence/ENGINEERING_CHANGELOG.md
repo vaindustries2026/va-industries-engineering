@@ -2450,3 +2450,31 @@ paid_action_triggered: false
 rollback: "revert commit"
 status: "LUMI_PRODUCTION_VOICE_APPROVED + VOICE_NAME=Lola – Soft, Innocent and Calming + VOICE_ID=f9imtLc2jfOLXtqe3Ihb + NEW_VOICE_AUDITIONS_REQUIRED=NO + EXISTING_AUDITION_TAKE_REMAINS_EVIDENCE_ONLY + LUMI_VOICE_BLOCKER_CLEARED + PRODUCTION_DIALOGUE_CLIPS_NOT_YET_GENERATED + ZERO_NEW_TTS_GENERATIONS + ZERO_PROVIDER_SPEND"
 ```
+
+---
+
+## ENG-20261010-EP005-BATCH0D-PREPRODUCTION-CLOSEOUT: G09 dialogue timing guard, S028 decision pack, Alternative B text, v03 lineage plan, matrix v3, next batch (zero spend)
+
+```yaml
+change_id: "ENG-20261010-EP005-BATCH0D-PREPRODUCTION-CLOSEOUT"
+timestamp: "2026-10-10"
+actor: "Claude"
+authorised_by: "Company Brain (Batch 0D: final pre-production closeout, zero provider spend)"
+change_type: "CODE + EVIDENCE"
+bases_accepted: ["802d2d8ef71eaff9bcee9452779768311f3d6de5 (Batch 0C)", "2f89854eba42766dcff2472d9201723844fe67b9 (Lumi voice)"]
+code_changed: ["agent008/dialogue_timing.py (new: G09 govern_dialogue_timing)", "agent008/motion/compose.py (G09 call + provenance.dialogue_timing; mix fails closed when dialogue < slots)", "agent008/still.py (G09 call + provenance.dialogue_timing)", "agent008/tests/test_g09.py (10 tests)"]
+tests: "138/138 OK (128 existing + 10 new)"
+s027_unchanged: "S027 audio mix rebuilt from approved inputs (no video): WAV c67da3f3...a863 identical; G09 Mikko 0.500-2.125396 s in 0-5 s"
+s028: "decision pack ready: VISIBLE_SPEECH_DECISION_REQUIRED; frame 119 sufficient; no new still; dialogue TIGHT (needs measured clips + possible authorised silent-tail overlap <=0.40 s)"
+script_amendment: "Alternative B text surfaced exactly from the Batch 0C package; SCRIPT_AMENDMENT_AUTHORISED=false; v03 lineage plan (not executed)"
+matrix_v3: {total: 29, complete: 1, remaining: 28, technically_supported: 5, code_blocked: 23, voice_identity_blocked: 0, missing_dialogue_asset: 16, script_amendment_blocked: 3, visible_speech_decision: 15, other_human_decision: 2, provider_ready: 0}
+next_batch_recommended: {shots: ["S028", "S029"], images: 0, videos: 1, tts: 2}
+evidence: ["evidence/agent008/batch0d/EP005_BATCH0D_PREPRODUCTION_CLOSEOUT_v1.md", "evidence/agent008/batch0d/S028_HUMAN_DECISION_PACK_v1.md", "evidence/agent008/batch0d/SCRIPT_V03_LINEAGE_PLAN_v1.md", "evidence/agent008/batch0d/EP005_AGENT008_PRODUCTION_MATRIX_v3.json", "evidence/agent008/batch0d/build_matrix_v3.py", "evidence/agent008/batch0d/S028_G09_FIT_SIMULATION_v1.json", "evidence/agent008/batch0d/s028_g09_fit_simulation.py", "evidence/agent008/batch0d/S027_G09_UNCHANGED_CHECK_v1.json", "evidence/agent008/batch0d/verify_s027_g09_unchanged.py", "evidence/agent008/batch0d/AGENT008_TEST_OUTPUT_BATCH0D_v1.txt"]
+provider_calls: 0
+generations: 0
+production_renders: 0
+production_state_writes: 0
+paid_action_triggered: false
+rollback: "revert commit"
+status: "EP005_BATCH0D_PREPRODUCTION_CLOSEOUT_READY + MIKKO_PRODUCTION_VOICE_APPROVED + LUMI_PRODUCTION_VOICE_APPROVED + LUMI_VOICE_BLOCKER_ALREADY_CLEARED + G09_IMPLEMENTED + DIALOGUE_TIMING_FAIL_CLOSED + S027_BEHAVIOUR_UNCHANGED + S028_HUMAN_DECISION_PACK_READY + S004_S012_S018_EXACT_ALTERNATIVE_B_TEXT_SURFACED + SCRIPT_AMENDMENT_AUTHORISED_FALSE + SCRIPT_V03_LINEAGE_PLAN_READY + PRODUCTION_MATRIX_V3_READY + NEXT_PRODUCTION_BATCH_RECOMMENDED + FULL_TEST_SUITE_PASS + ZERO_PROVIDER_CALLS + ZERO_GENERATIONS + ZERO_PRODUCTION_STATE_WRITES + EVIDENCE_COMMITTED_TO_GITHUB"
+```

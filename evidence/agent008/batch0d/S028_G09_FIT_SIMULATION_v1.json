@@ -1,0 +1,77 @@
+{
+ "shot": "S028",
+ "duration_s": 5,
+ "slots": [
+  {
+   "shot_id": "S028",
+   "speaker": "Lumi",
+   "text": "You look comfy. Story time.",
+   "audio_asset_id": null,
+   "status": "DEFERRED_NO_VOICE_ASSET"
+  },
+  {
+   "shot_id": "S028",
+   "speaker": "Mikko",
+   "text": "I’m ready to rest.",
+   "audio_asset_id": null,
+   "status": "DEFERRED_NO_VOICE_ASSET"
+  }
+ ],
+ "results": [
+  {
+   "scenario": "L1_measured_rate",
+   "plan": "sequential_pre0.25_gap0",
+   "clip_seconds": {
+    "Lumi": 2.865,
+    "Mikko": 2.075
+   },
+   "g09": "FAIL_CLOSED",
+   "code": "DIALOGUE_OVERRUNS_SHOT",
+   "detail": "S028 slot 1 SIM-Mikko ends at 5.189875 s (shot 5.000000 s)"
+  },
+  {
+   "scenario": "L1_measured_rate",
+   "plan": "sequential_pre0.25_authorised_silent_overlap_0.40",
+   "clip_seconds": {
+    "Lumi": 2.865,
+    "Mikko": 2.075
+   },
+   "g09": "PASS",
+   "lines": [
+    [
+     "Lumi",
+     0.25,
+     3.114875
+    ],
+    [
+     "Mikko",
+     2.714875,
+     4.789875
+    ]
+   ],
+   "tail_hold_s": 0.210125
+  },
+  {
+   "scenario": "slowest_estimate",
+   "plan": "sequential_pre0.25_gap0",
+   "clip_seconds": {
+    "Lumi": 3.162,
+    "Mikko": 2.275
+   },
+   "g09": "FAIL_CLOSED",
+   "code": "DIALOGUE_OVERRUNS_SHOT",
+   "detail": "S028 slot 1 SIM-Mikko ends at 5.686604 s (shot 5.000000 s)"
+  },
+  {
+   "scenario": "slowest_estimate",
+   "plan": "sequential_pre0.25_authorised_silent_overlap_0.40",
+   "clip_seconds": {
+    "Lumi": 3.162,
+    "Mikko": 2.275
+   },
+   "g09": "FAIL_CLOSED",
+   "code": "DIALOGUE_OVERRUNS_SHOT",
+   "detail": "S028 slot 1 SIM-Mikko ends at 5.286604 s (shot 5.000000 s)"
+  }
+ ]
+}

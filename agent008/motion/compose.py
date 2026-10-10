@@ -6,6 +6,7 @@ from pathlib import Path
 import numpy as np
 
 from .. import AGENT_NAME, media
+from ..dialogue_timing import govern_dialogue_timing
 from ..errors import FailClosed
 from ..hashing import canonical_sha256, sha256_bytes, sha256_file, verify_file
 from ..render import db_to_gain
@@ -88,6 +89,9 @@ def resolve_dialogue(spec_shot, inputs, timing):
 
 def mix_motion_audio(spec_shot, inputs, timing, spec, dialogue=()):
     sr, ch = spec.audio_sample_rate, spec.audio_channels
+    if len(dialogue) != len(spec_shot.get('dialogue_slots') or []):     # G09: required dialogue cannot vanish
+        raise FailClosed('DIALOGUE_SLOT_UNFILLED', f"{spec_shot['shot_id']}: {len(spec_shot.get('dialogue_slots') or [])} "
+                                                   f'slot(s), {len(dialogue)} placed')
     total = int(round(spec_shot['frames'] / spec.fps * sr))
     out = np.zeros((total, ch))
     cues = []
@@ -164,6 +168,7 @@ def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_pa
         raise FailClosed('MOTION_TREATMENTS_NEED_TRACKING_V02',
                          'overlays/treatments on generated motion need tracked placement (not in v0.2)')
     dialogue = resolve_dialogue(spec_shot, asset_paths, timing)
+    dialogue_timing = govern_dialogue_timing(spec_shot, dialogue, asset_paths, timing, spec)
     frames = decode_normalised(motion_result.raw_output_path, spec, spec_shot['frames'])[:spec_shot['frames']]
     qc, hashes = auto_qc_frames(frames, max_freeze_frames)
     audio, cues, peak_db = mix_motion_audio(spec_shot, asset_paths, timing, spec, dialogue)
@@ -189,7 +194,7 @@ def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_pa
         'shot_id': spec_shot['shot_id'], 'motion_request': motion_request.to_dict(),
         'motion_result': motion_result.to_dict(), 'raw_output_verified_sha256': raw,
         'output_spec': spec.to_dict(), 'shot_spec': spec_shot, 'dialogue_tracks': dialogue,
-        'audio_cues': cues, 'mix_peak_dbfs': peak_db,
+        'dialogue_timing': dialogue_timing, 'audio_cues': cues, 'mix_peak_dbfs': peak_db,
         'qc': qc, 'recipes': {'encode_command': [c if not str(c).startswith('/') else '<OUT>/' + Path(c).name for c in cmd]},
         'outputs': {'review_mp4': {'file': mp4.name, 'sha256': sha256_file(mp4), 'bytes': mp4.stat().st_size},
                     'mix_wav': {'file': wav.name, 'sha256': sha256_file(wav)}},
