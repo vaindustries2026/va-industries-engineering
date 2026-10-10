@@ -2427,3 +2427,26 @@ paid_action_triggered: false
 rollback: "registry: PATCH metadata_json back to the 4-key object in WHOOSH_GOVERNANCE_REPAIR_APPLIED_v1.json (human instruction required); code/evidence: revert commit"
 status: "EP005_BATCH0C_FACTORY_PATHS_READY + WHOOSH_GOVERNANCE_REPAIRED + AGENT006_RESOLUTION_UNCHANGED + G02_STILL_SHOT_PATH_IMPLEMENTED + G04_DERIVED_FRAME_PATH_IMPLEMENTED + HELD_POSE_DECISIONS_RECORDED + S006_MOTION_REQUIRED_FOR_PLANNING + S028_DERIVED_FRAME_SPEC_READY + S004_S012_S018_SCRIPT_AMENDMENT_PACKAGE_READY_NOT_APPLIED + LUMI_VOICE_SELECTION_PENDING_HUMAN + FULL_TEST_SUITE_PASS + ZERO_PROVIDER_GENERATIONS + ZERO_PRODUCTION_RENDERS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261010-EP005-LUMI-VOICE-APPROVED: Lumi production voice identity approved (planning/evidence only)
+
+```yaml
+change_id: "ENG-20261010-EP005-LUMI-VOICE-APPROVED"
+timestamp: "2026-10-10"
+actor: "Claude"
+authorised_by: "Gilang (human decision: L1 approved as Lumi production voice)"
+change_type: "EVIDENCE"
+voice: {character: "Lumi", name: "Lola – Soft, Innocent and Calming", voice_id: "f9imtLc2jfOLXtqe3Ihb", model: "eleven_multilingual_v2", scope: "identity only"}
+mikko_voice: {name: "Teddy Twinkle – Cute Cartoon Boy", voice_id: "XjGYkUkzth8BPs29fmcV", status: "APPROVED (2026-10-09)"}
+audition_take_L1: "ICmQjlhIOueTir68xc0u sha 832fa7cc…2797: EVIDENCE_ONLY, not registered, not production dialogue (D-3 review wording)"
+planning: {voice_blocked: "10 -> 0", cleared_shots: ["S001", "S003", "S004", "S010", "S012", "S016", "S018", "S022", "S025", "S028"], decision_blocked: "17 -> 17 (no shot had H1 as its only human gate)", code_blocked: 24, production_ready: 0, lumi_lines_required: 13, lumi_clips_existing: 0, awaiting_script_amendment: ["S004", "S012", "S018"]}
+evidence: ["evidence/ep005/voice_audition/LUMI_PRODUCTION_VOICE_v1.json", "evidence/agent008/voice/EP005_LUMI_PRODUCTION_VOICE_APPROVED_v1.md", "evidence/agent008/voice/EP005_AGENT008_PRODUCTION_MATRIX_v4_VOICE_DELTA.json", "evidence/agent008/voice/build_matrix_v4_voice_delta.py"]
+tts_generations: 0
+provider_calls: 0
+production_state_writes: 0
+paid_action_triggered: false
+rollback: "revert commit"
+status: "LUMI_PRODUCTION_VOICE_APPROVED + VOICE_NAME=Lola – Soft, Innocent and Calming + VOICE_ID=f9imtLc2jfOLXtqe3Ihb + NEW_VOICE_AUDITIONS_REQUIRED=NO + EXISTING_AUDITION_TAKE_REMAINS_EVIDENCE_ONLY + LUMI_VOICE_BLOCKER_CLEARED + PRODUCTION_DIALOGUE_CLIPS_NOT_YET_GENERATED + ZERO_NEW_TTS_GENERATIONS + ZERO_PROVIDER_SPEND"
+```

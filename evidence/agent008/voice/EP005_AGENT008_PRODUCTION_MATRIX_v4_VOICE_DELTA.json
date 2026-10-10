@@ -1,0 +1,1179 @@
+{
+ "base": "EP005_AGENT008_PRODUCTION_MATRIX_v3_DELTA (Batch 0C, not regenerated)",
+ "voice_state": {
+  "LUMI": {
+   "voice_name": "Lola – Soft, Innocent and Calming",
+   "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+   "model": "eleven_multilingual_v2",
+   "status": "APPROVED (human, Gilang, 2026-10-10)"
+  },
+  "MIKKO": {
+   "voice_name": "Teddy Twinkle – Cute Cartoon Boy",
+   "voice_id": "XjGYkUkzth8BPs29fmcV",
+   "model": "eleven_multilingual_v2",
+   "status": "APPROVED (human, Gilang, 2026-10-09)"
+  }
+ },
+ "gate_removed": "H1_LUMI_VOICE",
+ "gates_remaining": {
+  "H2_SCRIPT_AMENDMENT_AUTHORISATION": [
+   "S004",
+   "S012",
+   "S018"
+  ],
+  "H4_VISIBLE_SPEECH": [
+   "S001",
+   "S002",
+   "S003",
+   "S004",
+   "S006",
+   "S007",
+   "S010",
+   "S012",
+   "S014",
+   "S016",
+   "S020",
+   "S022",
+   "S025",
+   "S026",
+   "S028"
+  ],
+  "H5_S028_DERIVED_FRAME_AUTHORISATION": [
+   "S028",
+   "S029"
+  ]
+ },
+ "summary_v4": {
+  "LUMI_VOICE_SELECTION_PENDING_HUMAN": false,
+  "LUMI_PRODUCTION_VOICE_APPROVED": true,
+  "LUMI_VOICE_ID": "f9imtLc2jfOLXtqe3Ihb",
+  "NEW_VOICE_AUDITIONS_REQUIRED": false,
+  "SHOTS_NO_LONGER_BLOCKED_BY_MISSING_LUMI_VOICE": [
+   "S001",
+   "S003",
+   "S004",
+   "S010",
+   "S012",
+   "S016",
+   "S018",
+   "S022",
+   "S025",
+   "S028"
+  ],
+  "SHOTS_WHOSE_ONLY_HUMAN_GATE_WAS_LUMI_VOICE": [],
+  "VOICE_BLOCKED_SHOTS": 0,
+  "VOICE_BLOCKED_SHOTS_V3": 10,
+  "HUMAN_DECISION_BLOCKED_SHOTS": 17,
+  "HUMAN_DECISION_BLOCKED_SHOTS_V3": 17,
+  "CODE_BLOCKED_SHOTS": 24,
+  "TECHNICALLY_SUPPORTED_SHOTS": [
+   "S022",
+   "S023",
+   "S026",
+   "S029"
+  ],
+  "LUMI_DIALOGUE_LINES_TO_GENERATE": 13,
+  "LUMI_LINES_WITH_FINAL_V02_TEXT_GENERATION_NOT_AUTHORISED": [
+   "S001",
+   "S003",
+   "S010",
+   "S016",
+   "S022",
+   "S025",
+   "S028"
+  ],
+  "LUMI_LINES_AWAITING_SCRIPT_AMENDMENT": [
+   "S004",
+   "S004",
+   "S012",
+   "S012",
+   "S018",
+   "S018"
+  ],
+  "LUMI_DIALOGUE_CLIPS_EXISTING": 0,
+  "SHOTS_WITH_LUMI_DIALOGUE_CLIP_MISSING": [
+   "S001",
+   "S003",
+   "S004",
+   "S010",
+   "S012",
+   "S016",
+   "S018",
+   "S022",
+   "S025",
+   "S028"
+  ],
+  "PRODUCTION_READY_SHOTS": []
+ },
+ "shots": [
+  {
+   "shot_id": "S001",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "Berries on my face! I want to feel fresh.",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    },
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "I see three little smudges.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING",
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S002",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "Where shall I try first?",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S003",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "Let’s look for one little spot.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S004",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H2_SCRIPT_AMENDMENT_AUTHORISATION",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "A little glint! Look at his cheek.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED_AWAITING_SCRIPT_AMENDMENT",
+     "registry_status": null
+    },
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "Can you help Mikko find the next berry smudge?",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED_AWAITING_SCRIPT_AMENDMENT",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S005",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S006",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED (planning; Batch 0C)",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G03_OVERLAY_ANCHOR_PLACEMENT": "persistent smudges pre-composited into the motion base frame",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION": "MIRROR-REFLECTION treatment: motion compose rejects treatments (MOTION_TREATMENTS_NEED_TRACKING_V02)"
+   },
+   "reclassified_0c": true,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "This cheek. I’ll try a gentle wipe.",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S007",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD",
+    "G10_WHOOSH_HASH_PIN"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G10_WHOOSH_HASH_PIN"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 2,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "Wipe your cheek with me. Soft and slow.",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    },
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "Can you pretend to wipe your cheek?",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S008",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S009",
+   "classification": "BLOCKED",
+   "spec_v3": "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+   "code_gaps_v2": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_v3": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G11_TRACKED_OVERLAY_REMOVAL": "DESIGN APPROVED; NOT IMPLEMENTED (overlay-anchor/wipe sprint)"
+   },
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S010",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "That cheek is clear. Two smudges left.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S011",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S012",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H2_SCRIPT_AMENDMENT_AUTHORISATION",
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "I see a spot near your mouth.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED_AWAITING_SCRIPT_AMENDMENT",
+     "registry_status": null
+    },
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "Can you help Mikko find the next berry smudge?",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED_AWAITING_SCRIPT_AMENDMENT",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S013",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S014",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "I’ll slow my hand. One little wipe.",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S015",
+   "classification": "BLOCKED",
+   "spec_v3": "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+   "code_gaps_v2": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_v3": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G11_TRACKED_OVERLAY_REMOVAL": "DESIGN APPROVED; NOT IMPLEMENTED (overlay-anchor/wipe sprint)"
+   },
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S016",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "That spot is gone. One is left.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S017",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S018",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [
+    "H2_SCRIPT_AMENDMENT_AUTHORISATION"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "One tiny spot is still here.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED_AWAITING_SCRIPT_AMENDMENT",
+     "registry_status": null
+    },
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "Can you help Mikko find the next berry smudge?",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED_AWAITING_SCRIPT_AMENDMENT",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S019",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_OVERLAYS_NEED_G03_ANCHORS",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S020",
+   "classification": "HYBRID",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_v3": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "My nose! I’ll wipe just that spot.",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S021",
+   "classification": "BLOCKED",
+   "spec_v3": "BLOCKED:OVERLAY_TRANSITION_UNSUPPORTED_V01",
+   "code_gaps_v2": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_v3": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {
+    "G11_TRACKED_OVERLAY_REMOVAL": "DESIGN APPROVED; NOT IMPLEMENTED (overlay-anchor/wipe sprint)"
+   },
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S022",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "Your nose is clear, too.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S023",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "OK",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S024",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "code_gaps_v3": [
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "OK",
+   "human_decisions": [],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  },
+  {
+   "shot_id": "S025",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_v3": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "STILL_TREATMENTS_NEED_G08",
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "Cheek, mouth, nose. All clear.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S026",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "voice_blocked": false,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "One little spot at a time!",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S027",
+   "status": "COMPLETE_APPROVED"
+  },
+  {
+   "shot_id": "S028",
+   "classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION",
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_v3": [
+    "G09_DIALOGUE_OVERLAP_AND_HOLD_GUARD"
+   ],
+   "code_gaps_closed_0c": [
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": null,
+   "human_decisions": [
+    "H4_VISIBLE_SPEECH",
+    "H5_S028_DERIVED_FRAME_AUTHORISATION"
+   ],
+   "voice_blocked": false,
+   "technically_supported": false,
+   "provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [
+    {
+     "speaker": "Lumi",
+     "authoritative_text_v02": "You look comfy. Story time.",
+     "voice_id": "f9imtLc2jfOLXtqe3Ihb",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    },
+    {
+     "speaker": "Mikko",
+     "authoritative_text_v02": "I’m ready to rest.",
+     "voice_id": "XjGYkUkzth8BPs29fmcV",
+     "clip_status": "NOT_GENERATED",
+     "registry_status": null
+    }
+   ],
+   "asset_blockers": [
+    "LUMI_DIALOGUE_CLIP_MISSING",
+    "MIKKO_DIALOGUE_CLIP_MISSING"
+   ]
+  },
+  {
+   "shot_id": "S029",
+   "classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "spec_v3": "SPEC",
+   "code_gaps_v2": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "code_gaps_v3": [],
+   "code_gaps_closed_0c": [
+    "G02_PRODUCTION_STILL_SHOT_PATH",
+    "G04_DERIVED_FRAME_FROM_APPROVED_MOTION"
+   ],
+   "gap_notes": {},
+   "reclassified_0c": false,
+   "g02_still_contract": "OK",
+   "human_decisions": [
+    "H5_S028_DERIVED_FRAME_AUTHORISATION"
+   ],
+   "voice_blocked": false,
+   "technically_supported": true,
+   "provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0,
+    "cost": "video: ~$3.40 list per 5 s 1080p Seedance 2.0 (token formula, S027 basis; duration-scaled); image/tts: COST_UNVERIFIED"
+   },
+   "dialogue_assets": [],
+   "asset_blockers": []
+  }
+ ]
+}
