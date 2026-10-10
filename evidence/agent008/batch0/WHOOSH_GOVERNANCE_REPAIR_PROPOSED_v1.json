@@ -1,0 +1,23 @@
+{
+ "status": "WHOOSH_GOVERNANCE_REPAIR_PROPOSED",
+ "applied": false,
+ "asset_id": "SFX-MIKKO-TRY-WHOOSH",
+ "registry_row": {"id": "0e10bf46-4099-43cd-ab91-5c10fcb59d9d", "status": "APPROVED", "asset_type": "AUDIO", "asset_subtype": "SFX", "created_at": "2026-09-15T06:34:28.254961Z",
+                  "storage_path": "production-assets/audio/sfx/SFX-MIKKO-TRY-WHOOSH-v01.mp3.mp3",
+                  "metadata_json_current": {"format": "mp3", "source": "Suno", "purpose": "Reusable recurring Mikko action-attempt cue", "human_approved": true}},
+ "storage_object": {"id": "7e415397-5755-4e24-ae9f-279a1310c688", "key": "audio/sfx/SFX-MIKKO-TRY-WHOOSH-v01.mp3.mp3", "created_at": "2026-09-15T06:32:40.782889Z", "updated_at": "2026-09-15T06:32:40.782889Z (never modified)",
+                    "bytes": 341541, "content_type": "audio/mpeg", "etag": "ac26a57140e456e69ab358f4e376aa6d-1"},
+ "read_back_2026_10_10": {"http": 200, "bytes": 341541, "sha256": "53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3",
+                          "decoded": "mp3 48 kHz stereo (+ embedded mjpeg cover-art stream), duration 13.848 s"},
+ "identity_proof": ["registry storage_path == storage object key; object uploaded 06:32:40Z, row created 06:34:28Z (upload then register)",
+                    "object never modified (updated_at == created_at)",
+                    "same key, bytes 341541 and sha256 53d06150...d0c3 recorded by the committed read-only storage audit evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md (line 158), 2026-10-05",
+                    "row is APPROVED, metadata human_approved=true, source Suno (same provenance class as SFX-LUMI-CLUE-CHIME and SFX-WIN-SPARKLE-CHORD, which are pinned from that audit)"],
+ "required_metadata_correction": {"merge_into_metadata_json": {"sha256": "53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3", "bytes": 341541,
+     "duration_s": 13.848, "codec": "mp3", "sample_rate": 48000, "channels": 2, "storage_object_id": "7e415397-5755-4e24-ae9f-279a1310c688",
+     "hash_evidence": "evidence/EP005_AGENT006_DERIVED_MANIFEST_LIVE_RUN_v1.0.md + evidence/agent008/batch0/WHOOSH_GOVERNANCE_REPAIR_PROPOSED_v1.json"},
+   "method": "single UPDATE of metadata_json (jsonb merge) on row 0e10bf46-...; no other field changes; requires authorisation"},
+ "alternative_without_registry_write": "add SFX-MIKKO-TRY-WHOOSH to agent008/inputs/hash_pins.json citing the same evidence (precedent: chime and chord pins). Not applied.",
+ "consistency_note": "SFX-LUMI-CLUE-CHIME and SFX-WIN-SPARKLE-CHORD also lack registry sha256 (pinned only); the same metadata correction is recommended for them.",
+ "production_note": "13.85 s is long for S007 (5 s; 'softly under the initial cloth lift; finish before the shot ends'). With the Batch 0 gate EVENT_OVERRUNS_SHOT, S007 must set an explicit fade_complete_by_seconds; there is no silent truncation."
+}

@@ -2372,3 +2372,28 @@ paid_action_triggered: false
 rollback: "revert commit"
 status: "EP005_AGENT008_SCALEOUT_PLAN_READY + S027_COMPLETE_APPROVED + ALL_REMAINING_SHOTS_CLASSIFIED + ZERO_PROVIDER_CALLS + ZERO_GENERATIONS + ZERO_WRITES_TO_PRODUCTION_STATE + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261010-EP005-BATCH0-STABILISATION: Agent-008 audio roles, 29-shot coverage, decision packs (zero spend)
+
+```yaml
+change_id: "ENG-20261010-EP005-BATCH0-STABILISATION"
+timestamp: "2026-10-10"
+actor: "Claude"
+authorised_by: "Company Brain (Batch 0: engineering stabilisation, zero provider spend)"
+change_type: "CODE + EVIDENCE"
+code_changed: ["agent008/resolve.py (asset_subtype)", "agent008/spec.py (audio roles, event_audio, typographic element keys)", "agent008/motion/compose.py (AMBIENCE-only beds; one-shot timed events; fail-closed)", "agent008/render.py (event_audio group)", "agent008/tools/snapshot_inputs.py (build_snapshot; all shots by default)", "agent008/episode.py (new: resolve_episode)", "agent008/tests/test_batch0.py (15 tests)", "agent008/tests/fixtures/ep005_approved_state_capture_v1.json (GET capture)"]
+tests: "108/108 OK"
+s027_unchanged: "mix WAV sha c67da3f3...a863 identical; spec fields identical"
+episode_coverage: "29/29 accounted: 25 SPEC, 4 BLOCKED (S007 NO_EXPECTED_HASH; S009/S015/S021 OVERLAY_TRANSITION_UNSUPPORTED_V01)"
+whoosh: "WHOOSH_GOVERNANCE_REPAIR_PROPOSED sha 53d06150dc0acc73cc972890510ba406486b178e4222eca253f848129bbed0c3 (not applied)"
+smudge_removal: "designed (fixed anchor + keyed reveal sweep + drift QC); not implemented"
+decision_packs: ["Lumi L1-L3 recovered (selection pending human)", "S004/S012/S018 timing alternatives A/B", "held-pose matrix", "S028 derive from S027 frame 119", "visual-sync matrix"]
+matrix_v2: {technically_supported: 2, code_blocked: 26, decision_blocked: 23, voice_blocked: 10, provider_ready: 0, images: 9, video: 11, mikko_tts: 9, lumi_tts_after_h1: 13}
+provider_calls: 0
+production_state_writes: 0
+paid_action_triggered: false
+rollback: "revert commits"
+status: "EP005_BATCH0_STABILISATION_COMPLETE + SHORT_AUDIO_LOOP_BUG_FIXED + AUDIO_ROLE_SEMANTICS_GOVERNED + FULL_29_SHOT_SPEC_COVERAGE + WHOOSH_GOVERNANCE_REPAIR_PROPOSED + SMUDGE_REMOVAL_METHOD_DESIGNED + FULL_TEST_SUITE_PASS + SCALEOUT_MATRIX_V2_READY + ZERO_PROVIDER_CALLS + ZERO_GENERATIONS + ZERO_PRODUCTION_STATE_WRITES + EVIDENCE_COMMITTED_TO_GITHUB"
+```
