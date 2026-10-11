@@ -1,0 +1,231 @@
+{
+ "parent_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+ "row_column_changes": {
+  "script_run_id": {
+   "before": "A004-1788849454482",
+   "after": "AMD-EP005-SCRIPT-V05-ALTB-1-FROM-A004-1788849454482"
+  },
+  "script_version_number": {
+   "before": 2,
+   "after": 5
+  },
+  "script_version": {
+   "before": "v02",
+   "after": "v05"
+  },
+  "title_working": {
+   "before": "EP-CANDIDATE-005 v02 — Three Gentle Wipes",
+   "after": "EP-CANDIDATE-005 v05 — Three Gentle Wipes"
+  },
+  "status": {
+   "before": "APPROVED",
+   "after": "REVIEW"
+  },
+  "agent_version": {
+   "before": "agent004-script-architect-v0.1",
+   "after": "script-amendment-ep005-altb-v1"
+  }
+ },
+ "production_script_json_changes": [
+  {
+   "path": "$.lineage",
+   "op": "added",
+   "after": {
+    "parent_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+    "parent_script_version": "v02",
+    "parent_status": "APPROVED (immutable)",
+    "parent_production_script_json_canonical_sha256": "e91cf926055399c599e5cff48f15923d3360afd3e322fc5e12ab5f2d003acf80",
+    "parent_architecture_json_canonical_sha256": "97d9fe50e7cc139f657e54be79446e19f1f41cb7718d25608db37dee95264bdf",
+    "transform": "EP005_SCRIPT_V05_ALTB_v1 (deterministic, no LLM)",
+    "reason": "TIMING_FIT (Alternative B)",
+    "authority": "Company Brain approved the exact Alternative B wording for S004/S012/S018 (Gilang instruction 2026-10-11, EP005 SCRIPT V03 GOVERNANCE + S028 BASE FRAME PREFLIGHT); version v05 and lineage placement per human answers 2026-10-11",
+    "dialogue_changes": [
+     {
+      "shot_id": "S004",
+      "field": "production_script_json.shots[3].dialogue_lyric",
+      "old": "Lumi: “A little glint! Look at his cheek.”",
+      "new": "Lumi: “A glint on his cheek!”"
+     },
+     {
+      "shot_id": "S004",
+      "field": "production_script_json.shots[3].child_prompt",
+      "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+      "new": "Lumi: “Find the next smudge!”"
+     },
+     {
+      "shot_id": "S012",
+      "field": "production_script_json.shots[11].dialogue_lyric",
+      "old": "Lumi: “I see a spot near your mouth.”",
+      "new": "Lumi: “By your mouth!”"
+     },
+     {
+      "shot_id": "S012",
+      "field": "production_script_json.shots[11].child_prompt",
+      "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+      "new": "Lumi: “Find the next smudge!”"
+     },
+     {
+      "shot_id": "S018",
+      "field": "production_script_json.shots[17].dialogue_lyric",
+      "old": "Lumi: “One tiny spot is still here.”",
+      "new": "Lumi: “One spot left!”"
+     },
+     {
+      "shot_id": "S018",
+      "field": "production_script_json.shots[17].child_prompt",
+      "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+      "new": "Lumi: “Find the next smudge!”"
+     }
+    ],
+    "architecture_json_changes": [
+     {
+      "path": [
+       "cue",
+       "lumi_notice"
+      ],
+      "old": "“A little glint! Look at his cheek.”",
+      "new": "“A glint on his cheek!”"
+     },
+     {
+      "path": [
+       "cue",
+       "child_prompt"
+      ],
+      "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+      "new": "Lumi: “Find the next smudge!”"
+     },
+     {
+      "path": [
+       "three",
+       1,
+       "lumi_line"
+      ],
+      "old": "“I see a spot near your mouth.”",
+      "new": "“By your mouth!”"
+     },
+     {
+      "path": [
+       "three",
+       1,
+       "child_prompt"
+      ],
+      "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+      "new": "Lumi: “Find the next smudge!”"
+     },
+     {
+      "path": [
+       "three",
+       2,
+       "lumi_line"
+      ],
+      "old": "“One tiny spot is still here.”",
+      "new": "“One spot left!”"
+     },
+     {
+      "path": [
+       "three",
+       2,
+       "child_prompt"
+      ],
+      "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+      "new": "Lumi: “Find the next smudge!”"
+     },
+     {
+      "path": [
+       "character_voice_check",
+       "lumi"
+      ],
+      "old": "“I see a spot near your mouth”",
+      "new": "“By your mouth!”"
+     }
+    ],
+    "unchanged": "all other shots, timing, characterisation, structure, treatments, asset requirements, voices; approved_episode_snapshot (HISTORICAL_PROVENANCE_SNAPSHOT of episode_backlog 07d622e9)",
+    "version_note": "planned as \"v03\" in Batch 0C/0D; v03/v04 numbers belong to older REVIEW drafts 6b14e140/b5567e13"
+   }
+  },
+  {
+   "path": "$.shots[3].child_prompt",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.shots[3].dialogue_lyric",
+   "op": "changed",
+   "before": "Lumi: “A little glint! Look at his cheek.”",
+   "after": "Lumi: “A glint on his cheek!”"
+  },
+  {
+   "path": "$.shots[11].child_prompt",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.shots[11].dialogue_lyric",
+   "op": "changed",
+   "before": "Lumi: “I see a spot near your mouth.”",
+   "after": "Lumi: “By your mouth!”"
+  },
+  {
+   "path": "$.shots[17].child_prompt",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.shots[17].dialogue_lyric",
+   "op": "changed",
+   "before": "Lumi: “One tiny spot is still here.”",
+   "after": "Lumi: “One spot left!”"
+  }
+ ],
+ "architecture_json_changes": [
+  {
+   "path": "$.character_voice_check.lumi",
+   "op": "changed",
+   "before": "Her lines locate clues, invite the child to look, and confirm visible results: “I see a spot near your mouth” and “Your nose is clear, too.” She supplies observation and reassurance, while Mikko performs all three cleaning actions.",
+   "after": "Her lines locate clues, invite the child to look, and confirm visible results: “By your mouth!” and “Your nose is clear, too.” She supplies observation and reassurance, while Mikko performs all three cleaning actions."
+  },
+  {
+   "path": "$.cue.child_prompt",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.cue.lumi_notice",
+   "op": "changed",
+   "before": "Lumi tilts the mirror. A tiny glint reveals the cheek smudge, accompanied by the approved Lumi clue chime. Lumi says, “A little glint! Look at his cheek.”",
+   "after": "Lumi tilts the mirror. A tiny glint reveals the cheek smudge, accompanied by the approved Lumi clue chime. Lumi says, “A glint on his cheek!”"
+  },
+  {
+   "path": "$.three[1].child_prompt",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.three[1].lumi_line",
+   "op": "changed",
+   "before": "Before the pause: “I see a spot near your mouth.” After the wipe: “That spot is gone. One is left.”",
+   "after": "Before the pause: “By your mouth!” After the wipe: “That spot is gone. One is left.”"
+  },
+  {
+   "path": "$.three[2].child_prompt",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.three[2].lumi_line",
+   "op": "changed",
+   "before": "Before the pause: “One tiny spot is still here.” After the wipe: “Your nose is clear, too.”",
+   "after": "Before the pause: “One spot left!” After the wipe: “Your nose is clear, too.”"
+  }
+ ],
+ "parent_production_script_json_canonical_sha256": "e91cf926055399c599e5cff48f15923d3360afd3e322fc5e12ab5f2d003acf80",
+ "v05_production_script_json_canonical_sha256": "654fbaaa387e74cf646a6cd920f3080e9a52b7338661ebafd0ead5205dc88c89",
+ "v05_architecture_json_canonical_sha256": "55f18f2131b89efed80f03cd2546cb2e21d3be1d769f1d01adf7bb4dd6d46062",
+ "S027_script_entry_canonical_sha256": "301d24065b662a43f445e90c16465b6616c7a868759584164ac3e1a8ed20e1b8"
+}

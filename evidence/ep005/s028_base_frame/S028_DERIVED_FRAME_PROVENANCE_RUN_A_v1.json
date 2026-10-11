@@ -1,0 +1,65 @@
+{
+ "agent": "AGENT-008 \u2014 Shot Assembly Specification & Deterministic Compositor",
+ "agent_version": "agent008-v0.3-derived-frame",
+ "deterministic_core_sha256": "1c5df632449dd8d83ac05908b2e2c02cd128c0158000a14068943238d47e9218",
+ "frame_index": 119,
+ "frame_timestamp_s": 4.958333,
+ "human_approval": {
+  "approve_by": "exact output png sha256",
+  "approved": false,
+  "decisions": [
+   "APPROVE",
+   "REJECT"
+  ],
+  "required": true
+ },
+ "output": {
+  "bytes": 3091468,
+  "file": "S028_DERIVED_FRAME_CANDIDATE.png",
+  "height": 1080,
+  "lossless_roundtrip": true,
+  "rgb24_sha256": "f5dad881b8b8e48498b93381db225b034be867cec90d3950376284716570bc12",
+  "sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "width": 1920
+ },
+ "proposed_registry": {
+  "asset_subtype": "DERIVED_FRAME",
+  "asset_type": "SHOT_FRAME",
+  "registered": false,
+  "requires": "human approval of output.sha256, then a separately authorised storage write + registration",
+  "shot_id": "S028"
+ },
+ "recipe": {
+  "crop": null,
+  "png": "ffmpeg png encoder, rgb24, bitexact, no metadata",
+  "scale": null,
+  "scale_flags": null,
+  "select": "select=eq(n\\,119) on decoded frames of stream 0:v:0, rgb24"
+ },
+ "safety": {
+  "auto_approved": false,
+  "provider_calls": 0,
+  "registered": false,
+  "source_mutated": false
+ },
+ "selected_frame_rgb_sha256": "f5dad881b8b8e48498b93381db225b034be867cec90d3950376284716570bc12",
+ "source": {
+  "asset_id": "MOTION-EP005-S027-SEEDANCE20-CAND-v01",
+  "classification": "SHOT_MOTION/RAW_MOTION_SOURCE",
+  "decoded_frames": 121,
+  "height": 1080,
+  "r_frame_rate": "24/1",
+  "registry_id": "2ebed34b-92b5-47dc-8131-c3716849f5eb",
+  "registry_status": "APPROVED",
+  "sha256_after_derive": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "verified_sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25",
+  "width": 1920
+ },
+ "stage": "G04 derived frame",
+ "status": "REVIEW",
+ "target_shot_id": "S028",
+ "toolchain": {
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3"
+ }
+}

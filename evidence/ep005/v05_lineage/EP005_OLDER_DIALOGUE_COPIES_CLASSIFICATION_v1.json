@@ -1,0 +1,30 @@
+{
+ "task": "Part 1: classify every older copy of the S004/S012/S018 dialogue outside production_script_json.shots (script v02 14471926)",
+ "method": "fragment search over every column of script v02 (not only exact strings); Batch 0D listed 7, the full search found 8",
+ "rules": {"ACTIVE_AUTHORITATIVE_FIELD": "must use the new wording in v05", "DERIVED_ACTIVE_FIELD": "must agree with the new wording in v05",
+           "HISTORICAL_PROVENANCE_SNAPSHOT": "may stay unchanged only if clearly historical and immutable", "STALE_DUPLICATE_BUG": "must be corrected in v05"},
+ "occurrences": [
+  {"n": 1, "path": "architecture_json.cue.lumi_notice", "old": "Lumi tilts the mirror. A tiny glint reveals the cheek smudge, accompanied by the approved Lumi clue chime. Lumi says, “A little glint! Look at his cheek.”",
+   "class": "DERIVED_ACTIVE_FIELD", "v05": "quoted line replaced by “A glint on his cheek!” (rest of the beat description unchanged)",
+   "reason": "Part of the live script record's beat architecture for the S004 cue; it quotes the authoritative line. Left stale, v05 would contradict its own production dialogue."},
+  {"n": 2, "path": "architecture_json.cue.child_prompt", "old": "Lumi: “Can you help Mikko find the next berry smudge?”", "class": "DERIVED_ACTIVE_FIELD",
+   "v05": "Lumi: “Find the next smudge!”", "reason": "Architecture-level statement of the S004 ritual prompt; mirrors production shots[3].child_prompt."},
+  {"n": 3, "path": "architecture_json.three[1].lumi_line", "old": "Before the pause: “I see a spot near your mouth.” After the wipe: “That spot is gone. One is left.”",
+   "class": "DERIVED_ACTIVE_FIELD", "v05": "Before the pause: “By your mouth!” After the wipe: “That spot is gone. One is left.”",
+   "reason": "Beat 2 (S012) architecture; only the before-pause line is amended; the after-wipe line (S016) is not part of Alternative B and is unchanged."},
+  {"n": 4, "path": "architecture_json.three[1].child_prompt", "old": "Lumi: “Can you help Mikko find the next berry smudge?”", "class": "DERIVED_ACTIVE_FIELD",
+   "v05": "Lumi: “Find the next smudge!”", "reason": "Beat 2 ritual prompt; mirrors production shots[11].child_prompt."},
+  {"n": 5, "path": "architecture_json.three[2].lumi_line", "old": "Before the pause: “One tiny spot is still here.” After the wipe: “Your nose is clear, too.”",
+   "class": "DERIVED_ACTIVE_FIELD", "v05": "Before the pause: “One spot left!” After the wipe: “Your nose is clear, too.”",
+   "reason": "Beat 3 (S018) architecture; after-wipe line (S022) unchanged."},
+  {"n": 6, "path": "architecture_json.three[2].child_prompt", "old": "Lumi: “Can you help Mikko find the next berry smudge?”", "class": "DERIVED_ACTIVE_FIELD",
+   "v05": "Lumi: “Find the next smudge!”", "reason": "Beat 3 ritual prompt; mirrors production shots[17].child_prompt."},
+  {"n": 7, "path": "architecture_json.character_voice_check.lumi", "old": "Her lines locate clues, invite the child to look, and confirm visible results: “I see a spot near your mouth” and “Your nose is clear, too.” She supplies observation and reassurance, while Mikko performs all three cleaning actions.",
+   "class": "DERIVED_ACTIVE_FIELD", "v05": "example quote replaced by “By your mouth!”; the characterisation itself is unchanged",
+   "reason": "NOT in the Batch 0D list (it lacks the trailing period, so the exact-string search missed it). It cites a line as an example of Lumi's voice; after the amendment that line no longer exists, so the example must agree."},
+  {"n": 8, "path": "approved_episode_snapshot.participation_question", "old": "Can you help Mikko find the next berry smudge?", "class": "HISTORICAL_PROVENANCE_SNAPSHOT",
+   "v05": "unchanged", "reason": "approved_episode_snapshot is a byte-identical copy of the APPROVED episode_backlog row 07d622e9 (agent003, 2026-09-03), verified field-for-field against the live row. It records the approved episode concept the script was written from; rewriting it would falsify that upstream provenance. It does not feed Agent-005/006/008 production paths."}
+ ],
+ "summary": {"ACTIVE_AUTHORITATIVE_FIELD": 0, "DERIVED_ACTIVE_FIELD": 7, "HISTORICAL_PROVENANCE_SNAPSHOT": 1, "STALE_DUPLICATE_BUG": 0,
+             "note": "the 6 ACTIVE_AUTHORITATIVE fields are production_script_json.shots[3|11|17].dialogue_lyric/child_prompt (the approved changes themselves), not among these copies"}
+}

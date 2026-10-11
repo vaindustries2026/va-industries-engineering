@@ -1,0 +1,758 @@
+{
+ "agent_version": "script-amendment-ep005-altb-v1",
+ "approved_episode_snapshot": {
+  "action_1": "Mikko gently wipes one cheek and the first berry smudge disappears.",
+  "action_2": "Lumi spots a smudge near his mouth; Mikko slows down and wipes it carefully.",
+  "action_3": "A macro mirror view reveals the last nose smudge, which Mikko wipes away.",
+  "agent_version": "agent003-content-strategist-v0.1",
+  "batch_run_id": "A003-1788411280266",
+  "characters": [
+   "Mikko",
+   "Lumi"
+  ],
+  "comfort_beat": "Lumi gives Mikko a cozy cloth pat, and both relax for story time.",
+  "created_at": "2026-09-03T04:55:25.394448+00:00",
+  "episode_code": "EP-CANDIDATE-005",
+  "final_transformation": "The mirror changes from three berry marks to a clean bright reflection with a soft pop.",
+  "hypothesis": "A close-up clue reveal will reduce monotony and improve second-half retention.",
+  "id": "07d622e9-a152-4107-b300-f052546405e3",
+  "learning_point": "Wipe one small area at a time using gentle, clear motions.",
+  "main_action_verb": "wipe",
+  "new_assets": [
+   "hand mirror prop",
+   "berry-smudge overlays",
+   "soft cloth prop"
+  ],
+  "participation_question": "Can you help Mikko find the next berry smudge?",
+  "participation_type": "Face-wiping gesture copy-along",
+  "pillar": "Routine Companion",
+  "premise": "Mikko's face has three berry smudges after snack, and he wants to feel fresh.",
+  "primary_metric": "FIRST_30_SECOND_RETENTION",
+  "primary_variable": "Macro detail close-up at the correction point",
+  "production_difficulty": "LOW",
+  "prompt_version": "agent003-batch-planner-v0.1",
+  "rank": 5,
+  "recommend_for_review": true,
+  "research_rationale": "Tests a high-frequency visual reset within a simple routine that offers immediate visual clarity and low production burden.",
+  "reused_assets": [
+   "Lumi clue chime",
+   "Mikko TRY whoosh",
+   "WIN sparkle chord"
+  ],
+  "search_term": "kids brushing teeth",
+  "signature_cue": "Lumi's tiny mirror glints when it reveals a smudge.",
+  "source_synthesis_id": "a19440ed-385e-489d-a286-806a4973fae7",
+  "status": "APPROVED",
+  "world": "TBD"
+ },
+ "architecture_json": {
+  "audio_plan": {
+   "comfort": "Let the success chord fade before the cozy cloth pat. Finish with quiet ambience and no final attention-grabbing sting.",
+   "mission": "Keep Mikko’s opening wish and the three visible smudges easy to understand. No additional mission music is necessary.",
+   "participation": "Leave each response pause free of dialogue, answer-revealing sounds, countdowns, and urgent musical cues. Maintain quiet background ambience; its canonical identity is TBD.",
+   "recognition": "Use the approved Lumi clue chime with the first mirror glint. Do not introduce a new theme or named audio identity.",
+   "success": "Use the approved soft-pop function at the clean mirror reveal, followed by the reusable WIN sparkle chord. The pop’s specific sound asset is TBD.",
+   "work": "Use the approved Mikko TRY whoosh softly as he prepares the first wipe. Keep subsequent cloth sounds light and unobtrusive; avoid making gentle wiping sound forceful."
+  },
+  "character_voice_check": {
+   "lumi": "Her lines locate clues, invite the child to look, and confirm visible results: “By your mouth!” and “Your nose is clear, too.” She supplies observation and reassurance, while Mikko performs all three cleaning actions.",
+   "mikko": "His lines announce physical choices, invite copied movement, and report how he feels: “I’ll slow my hand,” “I’ll wipe just that spot,” and “I feel fresh.” He learns through trying rather than explaining like an expert."
+  },
+  "continuity_rules": [
+   "Begin with exactly three smudges: one cheek, skin near the mouth, and nose. Keep the selected cheek consistent throughout.",
+   "Remove exactly one smudge per progress beat, in the approved order. Never restore a removed smudge.",
+   "The mirror reflects marks on Mikko’s face; its glass is not dirty and is never the object being cleaned.",
+   "Keep the opening and final mirror compositions comparable so the three-marks-to-clean transformation reads immediately.",
+   "Lumi holds and angles the mirror. Mikko handles the cloth for every cleaning wipe. Lumi uses it only for the approved comfort pat afterward.",
+   "Keep wiping motions small, gentle, and away from eyes and the inside of the mouth.",
+   "Do not reveal Mikko’s target-confirming response or remove the target smudge before the child’s pause ends.",
+   "The macro reveal belongs to the third progress beat and supports the final target correction; it is not a fourth action or a new problem.",
+   "Keep the environment’s canonical identity TBD. Do not establish a named home, recurring story-time location, or new device.",
+   "End with both characters relaxed for story time, without introducing another task."
+  ],
+  "cue": {
+   "child_prompt": "Lumi: “Find the next smudge!”",
+   "cue_function": "Establish one signature ritual: mirror glints, Lumi invites a look, the child points, and Mikko tries. Later beats reuse this established ritual without adding another CUE section.",
+   "lumi_notice": "Lumi tilts the mirror. A tiny glint reveals the cheek smudge, accompanied by the approved Lumi clue chime. Lumi says, “A glint on his cheek!”",
+   "mikko_response": "After the pause, Mikko points to the cheek shown in the mirror. “This cheek. I’ll try a gentle wipe.”",
+   "pause_seconds": 4
+  },
+  "one": {
+   "goal": "Mikko wants to wipe his face and feel fresh after snack.",
+   "lumi_function": "Lumi positions the mirror so Mikko and the child can see. She says, “Let’s look for one little spot.” She guides attention without cleaning his face for him.",
+   "mikko_function": "Mikko picks up the soft cloth and asks, “Where shall I try first?” He is ready to act but needs help finding a small area to wipe.",
+   "problem": "Three small berry smudges remain in different places on his face."
+  },
+  "one_sentence_premise": "After snack, Mikko uses Lumi’s mirror clues and the child’s help to gently wipe away three berry smudges and feel fresh for story time.",
+  "opening_hook": {
+   "dialogue": "Mikko: “Berries on my face! I want to feel fresh.” Lumi: “I see three little smudges.”",
+   "purpose": "Establish the playful visual problem immediately, without treating a messy face as bad or upsetting.",
+   "visual": "Mikko looks into Lumi’s tiny hand mirror. His reflection clearly shows one berry smudge on a cheek, one near his mouth, and one on his nose. He tilts his head; the smudges move with his reflection."
+  },
+  "production_notes": [
+   "Architecture only: this document defines story functions, key dialogue, participation, and timing, not a shot-by-shot production script.",
+   "Timing budget: opening hook 0–6 seconds; ONE 6–13; CUE 13–24; progress beat 1 24–44; progress beat 2 44–68; progress beat 3 68–95; WIN and comfort 95–120.",
+   "The timing includes 16 seconds of explicit child-response pauses. Use the remaining time for readable gestures, natural delivery, visible results, and brief reaction holds rather than extra exposition.",
+   "Aim to complete the first visible wipe around the 30-second point. Preserve the child’s response time rather than rushing the cue.",
+   "Primary test variable: the macro mirror detail at the third-beat correction point. Make it a clear scale change using existing artwork, not a new environment or elaborate effect.",
+   "Primary metric remains FIRST_30_SECOND_RETENTION. The approved second-half retention hypothesis concerns the later macro reveal; that hypothesis is not directly measured by the primary metric alone.",
+   "Use the approved hand mirror prop, three independently removable berry-smudge overlays, and soft cloth prop. Reuse existing character assets and the approved clue chime, TRY whoosh, and WIN sparkle chord.",
+   "Mirror and cloth visual designs are TBD unless already established in the asset library. Use an existing neutral setting if available; otherwise keep background design minimal and canonical identity TBD.",
+   "Child participation is pretend face wiping with clean hands or simple pointing; no supplies are required. Do not imply that Mikko can hear or evaluate the child’s answer.",
+   "Reserve the final several seconds for the cozy pat and relaxed safe-state hold. No extra wipe, new clue, or closing challenge follows."
+  ],
+  "target_duration_seconds": 120,
+  "three": [
+   {
+    "action": "Mikko holds the soft cloth against the marked cheek. After the child’s gesture-copy pause, he makes one short, gentle wiping motion over that small area.",
+    "beat_number": 1,
+    "child_prompt": "Mikko: “Can you pretend to wipe your cheek?”",
+    "lumi_line": "After the wipe: “That cheek is clear. Two smudges left.”",
+    "mikko_line": "“Wipe your cheek with me. Soft and slow.”",
+    "pause_seconds": 3,
+    "visible_result": "The cheek smudge disappears only where the cloth passes. The mouth-area and nose smudges remain clearly visible."
+   },
+   {
+    "action": "Lumi spots the smudge near Mikko’s mouth and angles the mirror toward it. The mirror gives the established tiny glint. After the child responds, Mikko brings the cloth close, slows his hand, and carefully wipes only the marked skin beside his mouth.",
+    "beat_number": 2,
+    "child_prompt": "Lumi: “Find the next smudge!”",
+    "lumi_line": "Before the pause: “By your mouth!” After the wipe: “That spot is gone. One is left.”",
+    "mikko_line": "“I’ll slow my hand. One little wipe.”",
+    "pause_seconds": 4,
+    "visible_result": "The mouth-area smudge disappears after a visibly slower, smaller wipe. The nose smudge remains. The action demonstrates an adjustment in speed, not a new problem."
+   },
+   {
+    "action": "Lumi adjusts the mirror angle. A macro view of its reflection reveals the last nose smudge with the established glint. Hold this detail through the child’s response pause. Then return to a clear face view as Mikko adjusts the cloth toward his nose and gently wipes the small marked area.",
+    "beat_number": 3,
+    "child_prompt": "Lumi: “Find the next smudge!”",
+    "lumi_line": "Before the pause: “One spot left!” After the wipe: “Your nose is clear, too.”",
+    "mikko_line": "After the pause: “My nose! I’ll wipe just that spot.”",
+    "pause_seconds": 5,
+    "visible_result": "The macro clue makes the remaining target unmistakable. Mikko’s final gentle wipe removes the nose smudge, leaving no berry marks."
+   }
+  ],
+  "title_working": "EP-CANDIDATE-005 v02 — Three Gentle Wipes",
+  "win": {
+   "celebration": "Use the approved WIN sparkle chord for a small shared smile and happy shoulder lift. Mikko says, “We did it! I feel fresh.”",
+   "comfort_beat": "Lumi gives Mikko one cozy cloth pat on his shoulder, not another cleaning wipe. Lumi says, “You look comfy. Story time.” Mikko settles beside her: “I’m ready to rest.” Both relax in the same setting, ending on a calm, still hold.",
+   "final_transformation": "The mirror now shows a clean, bright reflection in the same framing that originally showed all three smudges. A soft pop marks completion; it does not magically remove any marks.",
+   "success_reprise": "Lumi: “Cheek, mouth, nose. All clear.” Mikko holds up the cloth without wiping again: “One little spot at a time!”"
+  }
+ },
+ "architecture_prompt_version": "agent004-script-architecture-v0.1",
+ "batch_run_id": "A003-1788411280266",
+ "episode_backlog_id": "07d622e9-a152-4107-b300-f052546405e3",
+ "episode_code": "EP-CANDIDATE-005",
+ "estimated_duration_seconds": 120,
+ "hypothesis": "A close-up clue reveal will reduce monotony and improve second-half retention.",
+ "new_asset_count": 3,
+ "primary_metric": "FIRST_30_SECOND_RETENTION",
+ "primary_variable": "Macro detail close-up at the correction point",
+ "production_prompt_version": "agent004-production-script-v0.1",
+ "production_script_json": {
+  "asset_summary": {
+   "tbd_asset_reference_count": 6,
+   "unique_new_asset_ids": [
+    "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+    "TMP_EP005_SOFT_CLOTH",
+    "TMP_EP005_HAND_MIRROR"
+   ],
+   "unique_reused_asset_ids": [
+    "Lumi clue chime",
+    "Mikko TRY whoosh",
+    "WIN sparkle chord"
+   ]
+  },
+  "episode_code": "EP-CANDIDATE-005",
+  "estimated_duration_seconds": 120,
+  "lineage": {
+   "architecture_json_changes": [
+    {
+     "new": "“A glint on his cheek!”",
+     "old": "“A little glint! Look at his cheek.”",
+     "path": [
+      "cue",
+      "lumi_notice"
+     ]
+    },
+    {
+     "new": "Lumi: “Find the next smudge!”",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "path": [
+      "cue",
+      "child_prompt"
+     ]
+    },
+    {
+     "new": "“By your mouth!”",
+     "old": "“I see a spot near your mouth.”",
+     "path": [
+      "three",
+      1,
+      "lumi_line"
+     ]
+    },
+    {
+     "new": "Lumi: “Find the next smudge!”",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "path": [
+      "three",
+      1,
+      "child_prompt"
+     ]
+    },
+    {
+     "new": "“One spot left!”",
+     "old": "“One tiny spot is still here.”",
+     "path": [
+      "three",
+      2,
+      "lumi_line"
+     ]
+    },
+    {
+     "new": "Lumi: “Find the next smudge!”",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "path": [
+      "three",
+      2,
+      "child_prompt"
+     ]
+    },
+    {
+     "new": "“By your mouth!”",
+     "old": "“I see a spot near your mouth”",
+     "path": [
+      "character_voice_check",
+      "lumi"
+     ]
+    }
+   ],
+   "authority": "Company Brain approved the exact Alternative B wording for S004/S012/S018 (Gilang instruction 2026-10-11, EP005 SCRIPT V03 GOVERNANCE + S028 BASE FRAME PREFLIGHT); version v05 and lineage placement per human answers 2026-10-11",
+   "dialogue_changes": [
+    {
+     "field": "production_script_json.shots[3].dialogue_lyric",
+     "new": "Lumi: “A glint on his cheek!”",
+     "old": "Lumi: “A little glint! Look at his cheek.”",
+     "shot_id": "S004"
+    },
+    {
+     "field": "production_script_json.shots[3].child_prompt",
+     "new": "Lumi: “Find the next smudge!”",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "shot_id": "S004"
+    },
+    {
+     "field": "production_script_json.shots[11].dialogue_lyric",
+     "new": "Lumi: “By your mouth!”",
+     "old": "Lumi: “I see a spot near your mouth.”",
+     "shot_id": "S012"
+    },
+    {
+     "field": "production_script_json.shots[11].child_prompt",
+     "new": "Lumi: “Find the next smudge!”",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "shot_id": "S012"
+    },
+    {
+     "field": "production_script_json.shots[17].dialogue_lyric",
+     "new": "Lumi: “One spot left!”",
+     "old": "Lumi: “One tiny spot is still here.”",
+     "shot_id": "S018"
+    },
+    {
+     "field": "production_script_json.shots[17].child_prompt",
+     "new": "Lumi: “Find the next smudge!”",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "shot_id": "S018"
+    }
+   ],
+   "parent_architecture_json_canonical_sha256": "97d9fe50e7cc139f657e54be79446e19f1f41cb7718d25608db37dee95264bdf",
+   "parent_production_script_json_canonical_sha256": "e91cf926055399c599e5cff48f15923d3360afd3e322fc5e12ab5f2d003acf80",
+   "parent_script_id": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+   "parent_script_version": "v02",
+   "parent_status": "APPROVED (immutable)",
+   "reason": "TIMING_FIT (Alternative B)",
+   "transform": "EP005_SCRIPT_V05_ALTB_v1 (deterministic, no LLM)",
+   "unchanged": "all other shots, timing, characterisation, structure, treatments, asset requirements, voices; approved_episode_snapshot (HISTORICAL_PROVENANCE_SNAPSHOT of episode_backlog 07d622e9)",
+   "version_note": "planned as \"v03\" in Batch 0C/0D; v03/v04 numbers belong to older REVIEW drafts 6b14e140/b5567e13"
+  },
+  "script_version": "v02",
+  "shots": [
+   {
+    "asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko tilts his head slightly. His reflection and all three marks move together. Lumi looks closely.",
+    "child_prompt": "",
+    "dialogue_lyric": "Mikko: “Berries on my face! I want to feel fresh.” Lumi: “I see three little smudges.”",
+    "end_seconds": 6,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Create three independently removable overlays. Keep Mikko’s anatomical left cheek consistent, including correct mirror reversal. Additional required prop: TMP_EP005_HAND_MIRROR, NEW_REQUIRED. Character and neutral-setting canonical IDs remain TBD. Save this composition for S025. The mirror glass itself is clean.",
+    "section": "OPENING",
+    "sfx": "Quiet background ambience; canonical asset identity TBD.",
+    "shot_id": "S001",
+    "start_seconds": 0,
+    "visual": "Close mirror composition shows Mikko’s reflection with exactly three berry smudges: his left cheek, skin beside his mouth, and his nose. Lumi holds the tiny hand mirror."
+   },
+   {
+    "asset_id": "TMP_EP005_SOFT_CLOTH",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko picks up the cloth and loosely folds it into his hand, ready to try.",
+    "child_prompt": "",
+    "dialogue_lyric": "Mikko: “Where shall I try first?”",
+    "end_seconds": 9.5,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "No face contact yet. Cloth design requires production definition. Participation later requires only pointing or pretend wiping with clean hands, not supplies.",
+    "section": "ONE",
+    "sfx": "Very light cloth handling; sound asset TBD.",
+    "shot_id": "S002",
+    "start_seconds": 6,
+    "visual": "Medium view in the same minimal, neutral setting. A soft cloth is within Mikko’s reach."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Lumi positions the mirror for Mikko and the audience. Mikko looks into it with the cloth lowered.",
+    "child_prompt": "",
+    "dialogue_lyric": "Lumi: “Let’s look for one little spot.”",
+    "end_seconds": 13,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Lumi controls the mirror throughout all cleaning actions. Keep all three marks visible. Do not establish a named location.",
+    "section": "ONE",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S003",
+    "start_seconds": 9.5,
+    "visual": "Over-shoulder view keeps Mikko’s face and its reflection readable."
+   },
+   {
+    "asset_id": "Lumi clue chime",
+    "asset_status": "REUSE",
+    "character_action": "Lumi notices the glint, then invites the audience to look. Mikko watches without pointing yet.",
+    "child_prompt": "Lumi: “Find the next smudge!”",
+    "dialogue_lyric": "Lumi: “A glint on his cheek!”",
+    "end_seconds": 18,
+    "music_cue": "No music bed.",
+    "pause_seconds": 0,
+    "production_notes": "Deliver dialogue, then prompt. Mirror prop: TMP_EP005_HAND_MIRROR, NEW_REQUIRED. Glint treatment identity TBD; keep it tiny and non-magical. This is the only CUE section.",
+    "section": "CUE",
+    "sfx": "Lumi clue chime, synchronized with the initial glint and completed before S005.",
+    "shot_id": "S004",
+    "start_seconds": 13,
+    "visual": "Lumi tilts the mirror. A tiny reflected glint draws attention to the marked cheek."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Lumi holds the mirror steady. Mikko waits with relaxed hands.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 22,
+    "music_cue": "None. No countdown or musical accent.",
+    "pause_seconds": 4,
+    "production_notes": "Four uninterrupted response seconds. No pointing by Mikko, target-confirming reaction, wiping, new glint, or answer-revealing sound.",
+    "section": "CUE",
+    "sfx": "Quiet ambience only; asset TBD.",
+    "shot_id": "S005",
+    "start_seconds": 18,
+    "visual": "Hold the clear mirror view with the cheek mark easy to locate."
+   },
+   {
+    "asset_id": "TBD",
+    "asset_status": "TBD",
+    "character_action": "After the response pause, Mikko points to his marked cheek with his free hand.",
+    "child_prompt": "",
+    "dialogue_lyric": "Mikko: “This cheek. I’ll try a gentle wipe.”",
+    "end_seconds": 24.5,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Character animation asset identity TBD. Do not imply Mikko heard or evaluated a child’s answer. No mark is removed.",
+    "section": "CUE",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S006",
+    "start_seconds": 22,
+    "visual": "Face-and-mirror view clearly connects the reflected mark with Mikko’s cheek."
+   },
+   {
+    "asset_id": "Mikko TRY whoosh",
+    "asset_status": "REUSE",
+    "character_action": "Mikko brings the cloth gently against the cheek without moving it across the skin.",
+    "child_prompt": "Mikko: “Can you pretend to wipe your cheek?”",
+    "dialogue_lyric": "Mikko: “Wipe your cheek with me. Soft and slow.”",
+    "end_seconds": 29.5,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Use TMP_EP005_SOFT_CLOTH, NEW_REQUIRED. Deliver line followed by prompt. Keep contact stationary; the smudge remains until the actual wipe.",
+    "section": "ACTION_1",
+    "sfx": "Mikko TRY whoosh, softly under the initial cloth lift; finish before the response pause.",
+    "shot_id": "S007",
+    "start_seconds": 24.5,
+    "visual": "Clear medium close-up of the marked cheek and soft cloth."
+   },
+   {
+    "asset_id": "TMP_EP005_SOFT_CLOTH",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko keeps the cloth still against the cheek while the child has time to copy the gesture.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 32.5,
+    "music_cue": "None.",
+    "pause_seconds": 3,
+    "production_notes": "Three full response seconds. No cloth motion, removal of marks, or confirming sound. Preserve participation time rather than rushing the first wipe.",
+    "section": "ACTION_1",
+    "sfx": "Quiet ambience only; asset TBD.",
+    "shot_id": "S008",
+    "start_seconds": 29.5,
+    "visual": "Hold the same readable cheek view."
+   },
+   {
+    "asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko makes one short, gentle wiping motion, then lifts the cloth away.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 34,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Remove only the cheek overlay, masked by cloth passage. Mouth-area and nose marks remain. First visible wipe completes at 34 seconds after the full response pauses. Stay away from the eye.",
+    "section": "ACTION_1",
+    "sfx": "A faint, soft cloth brush; asset TBD.",
+    "shot_id": "S009",
+    "start_seconds": 32.5,
+    "visual": "Unbroken close view shows the cloth crossing only the small cheek mark."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko lowers the cloth. Lumi observes the result without touching his face.",
+    "child_prompt": "",
+    "dialogue_lyric": "Lumi: “That cheek is clear. Two smudges left.”",
+    "end_seconds": 39,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Allow a short silent look after the line. The visible result must precede Lumi’s confirmation.",
+    "section": "ACTION_1",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S010",
+    "start_seconds": 34,
+    "visual": "Mirror shows the clear cheek beside the two remaining smudges."
+   },
+   {
+    "asset_id": "TBD",
+    "asset_status": "TBD",
+    "character_action": "Mikko gives a small pleased smile, checks his clear cheek, and rests the cloth below his chin. Lumi keeps the mirror steady.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 44,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Visual processing and reaction hold, not an additional participation pause. No extra wipe or premature clue.",
+    "section": "ACTION_1",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S011",
+    "start_seconds": 39,
+    "visual": "Relaxed two-shot with the mirror still readable."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Lumi studies the reflected spot. Mikko watches with the cloth lowered.",
+    "child_prompt": "Lumi: “Find the next smudge!”",
+    "dialogue_lyric": "Lumi: “By your mouth!”",
+    "end_seconds": 49,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Reuse the established visual ritual within ACTION_2, not a new CUE section. Glint finishes before the response hold. Cheek stays clear.",
+    "section": "ACTION_2",
+    "sfx": "Quiet ambience; asset TBD. No additional clue sound.",
+    "shot_id": "S012",
+    "start_seconds": 44,
+    "visual": "Lumi angles the mirror toward the small berry mark on the skin beside Mikko’s mouth. The established tiny glint appears."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Both characters wait calmly. Mikko does not move the cloth toward the target yet.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 53,
+    "music_cue": "None.",
+    "pause_seconds": 4,
+    "production_notes": "Four uninterrupted response seconds. No dialogue, countdown, answer-confirming motion, or mark removal.",
+    "section": "ACTION_2",
+    "sfx": "Quiet ambience only; asset TBD.",
+    "shot_id": "S013",
+    "start_seconds": 49,
+    "visual": "Hold the mirror view with the mouth-area mark visible."
+   },
+   {
+    "asset_id": "TMP_EP005_SOFT_CLOTH",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko brings the cloth closer and visibly eases the speed of his hand before contact.",
+    "child_prompt": "",
+    "dialogue_lyric": "Mikko: “I’ll slow my hand. One little wipe.”",
+    "end_seconds": 57,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "This is a calm speed adjustment, not a failed attempt or second problem. Complete the line before the wiping motion.",
+    "section": "ACTION_2",
+    "sfx": "Minimal cloth handling; asset TBD.",
+    "shot_id": "S014",
+    "start_seconds": 53,
+    "visual": "Clear face view emphasizes the small area beside the closed mouth."
+   },
+   {
+    "asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko makes one visibly slower, smaller wipe over the marked skin beside his mouth, then lifts away.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 60,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Remove only the mouth-area overlay as the cloth passes. No contact inside the mouth. Nose mark remains; cheek remains clear. Do not loop or repeat the wipe.",
+    "section": "ACTION_2",
+    "sfx": "Very light cloth brush; asset TBD.",
+    "shot_id": "S015",
+    "start_seconds": 57,
+    "visual": "Close view keeps cloth contact and the mouth-area mark unobscured enough to read."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Lumi checks the result. Mikko lowers his hand.",
+    "child_prompt": "",
+    "dialogue_lyric": "Lumi: “That spot is gone. One is left.”",
+    "end_seconds": 64,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Confirmation follows visible removal. Do not begin the final target-confirming response.",
+    "section": "ACTION_2",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S016",
+    "start_seconds": 60,
+    "visual": "The reflection now shows clear cheek and mouth-area skin, with the nose mark remaining."
+   },
+   {
+    "asset_id": "TBD",
+    "asset_status": "TBD",
+    "character_action": "Mikko relaxes his cloth hand and keeps looking. Lumi prepares a slight mirror-angle adjustment without yet making the macro reveal.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 68,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Brief processing hold. Keep emotional tension mild. No new task, frustration, or additional cleaning motion.",
+    "section": "ACTION_2",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S017",
+    "start_seconds": 64,
+    "visual": "Medium two-shot retains the same setting and lighting."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Lumi observes the detail while holding the mirror steady. Mikko makes no target-confirming gesture.",
+    "child_prompt": "Lumi: “Find the next smudge!”",
+    "dialogue_lyric": "Lumi: “One spot left!”",
+    "end_seconds": 74,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Create the scale change by reframing approved episode artwork, not a new environment or device. Show enough nose contour to identify the target. This is the third progress beat, not a fourth action. End the glint before S019.",
+    "section": "ACTION_3",
+    "sfx": "Quiet ambience; asset TBD. No new audio identity.",
+    "shot_id": "S018",
+    "start_seconds": 68,
+    "visual": "Lumi adjusts the mirror. Cut to a distinctly tighter macro view of its reflection: the final nose smudge is unmistakable. The established tiny glint appears once."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Lumi holds the mirror still. Mikko waits off the detail framing.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 79,
+    "music_cue": "None.",
+    "pause_seconds": 5,
+    "production_notes": "Five uninterrupted response seconds. Do not cut away, remove the mark, add another glint, or supply Mikko’s answer before the pause ends.",
+    "section": "ACTION_3",
+    "sfx": "Quiet ambience only; asset TBD.",
+    "shot_id": "S019",
+    "start_seconds": 74,
+    "visual": "Maintain the macro reflection at the same scale throughout the response window."
+   },
+   {
+    "asset_id": "TMP_EP005_SOFT_CLOTH",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko identifies his nose, then adjusts the cloth toward that small target.",
+    "child_prompt": "",
+    "dialogue_lyric": "Mikko: “My nose! I’ll wipe just that spot.”",
+    "end_seconds": 83,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Begin Mikko’s response only after S019. Keep the cloth away from the eyes. Finish speaking before the wipe.",
+    "section": "ACTION_3",
+    "sfx": "Minimal cloth handling; asset TBD.",
+    "shot_id": "S020",
+    "start_seconds": 79,
+    "visual": "Return to a clear face view showing the nose mark and both already-clear areas."
+   },
+   {
+    "asset_id": "TMP_EP005_BERRY_SMUDGE_OVERLAYS",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko settles the cloth on the marked nose area, makes one small gentle wipe, and lifts it away.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 87,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Use the opening second for careful positioning, then one short wipe and release. Remove only the nose overlay during cloth passage. All three marks are now absent. No magical clearing.",
+    "section": "ACTION_3",
+    "sfx": "A faint cloth brush; asset TBD.",
+    "shot_id": "S021",
+    "start_seconds": 83,
+    "visual": "Unbroken face view clearly shows the final cloth contact."
+   },
+   {
+    "asset_id": "TBD",
+    "asset_status": "TBD",
+    "character_action": "Lumi observes the finished result. Mikko lowers the cloth.",
+    "child_prompt": "",
+    "dialogue_lyric": "Lumi: “Your nose is clear, too.”",
+    "end_seconds": 90,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Character shot identity TBD. The final smudge has already disappeared through the wipe before Lumi speaks.",
+    "section": "ACTION_3",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S022",
+    "start_seconds": 87,
+    "visual": "Mikko’s clear nose is visible beside his clear cheek and mouth area."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko quietly checks his face. His cloth hand stays down; Lumi maintains the mirror angle.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 93,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "A readable result hold, not another search ritual. No glint or additional wipe.",
+    "section": "ACTION_3",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S023",
+    "start_seconds": 90,
+    "visual": "Medium view of Mikko looking into the mirror."
+   },
+   {
+    "asset_id": "TMP_EP005_HAND_MIRROR",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Lumi makes a small framing adjustment. Mikko holds still with a relaxed expression.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 95,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Prepare the direct three-marks-to-clean comparison. All marks remain absent throughout the move.",
+    "section": "ACTION_3",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S024",
+    "start_seconds": 93,
+    "visual": "Camera gently settles toward the saved opening mirror composition."
+   },
+   {
+    "asset_id": "TBD",
+    "asset_status": "TBD",
+    "character_action": "Mikko looks at his reflection. Lumi smiles softly.",
+    "child_prompt": "",
+    "dialogue_lyric": "Lumi: “Cheek, mouth, nose. All clear.”",
+    "end_seconds": 99,
+    "music_cue": "None yet.",
+    "pause_seconds": 0,
+    "production_notes": "Primary unresolved asset is the soft-pop sound. Mirror uses TMP_EP005_HAND_MIRROR, NEW_REQUIRED. Pop celebrates an already-clean face; it removes nothing. Match opening scale and angle.",
+    "section": "WIN",
+    "sfx": "One soft completion pop at the clean mirror reveal; specific sound asset TBD.",
+    "shot_id": "S025",
+    "start_seconds": 95,
+    "visual": "Match S001’s mirror composition, now showing Mikko’s clean, bright reflection."
+   },
+   {
+    "asset_id": "TMP_EP005_SOFT_CLOTH",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko holds up the cloth proudly, keeping it away from his face.",
+    "child_prompt": "",
+    "dialogue_lyric": "Mikko: “One little spot at a time!”",
+    "end_seconds": 104,
+    "music_cue": "None.",
+    "pause_seconds": 0,
+    "production_notes": "Hold the smile briefly after the line. Display the cloth without adding a fourth wipe.",
+    "section": "WIN",
+    "sfx": "Quiet ambience; asset TBD.",
+    "shot_id": "S026",
+    "start_seconds": 99,
+    "visual": "Medium two-shot includes Mikko’s clear face and the cloth."
+   },
+   {
+    "asset_id": "WIN sparkle chord",
+    "asset_status": "REUSE",
+    "character_action": "Mikko and Lumi smile and make a gentle happy shoulder lift.",
+    "child_prompt": "",
+    "dialogue_lyric": "Mikko: “We did it! I feel fresh.”",
+    "end_seconds": 109,
+    "music_cue": "WIN sparkle chord at the shared smile. Fade completely by 109 seconds.",
+    "pause_seconds": 0,
+    "production_notes": "Keep celebration small, without a new song or theme. Success concerns Mikko’s desired fresh feeling; do not suggest a messy face was bad.",
+    "section": "WIN",
+    "sfx": "Quiet ambience under the chord; asset TBD.",
+    "shot_id": "S027",
+    "start_seconds": 104,
+    "visual": "Both characters share a small, warm celebration in the same setting."
+   },
+   {
+    "asset_id": "TMP_EP005_SOFT_CLOTH",
+    "asset_status": "NEW_REQUIRED",
+    "character_action": "Mikko passes Lumi the cloth. Once the success chord has faded, she gives one cozy cloth pat on his shoulder. Mikko settles beside her.",
+    "child_prompt": "",
+    "dialogue_lyric": "Lumi: “You look comfy. Story time.” Mikko: “I’m ready to rest.”",
+    "end_seconds": 114,
+    "music_cue": "None. Success chord has fully faded.",
+    "pause_seconds": 0,
+    "production_notes": "Make the handoff readable. Lumi’s single pat touches the shoulder, never the face; it is comfort, not cleaning. No book, new task, or new location is introduced.",
+    "section": "COMFORT",
+    "sfx": "Barely audible cloth handling and shoulder pat; assets TBD. Quiet ambience continues.",
+    "shot_id": "S028",
+    "start_seconds": 109,
+    "visual": "Comfortable medium two-shot. Lumi lowers the mirror to her lap."
+   },
+   {
+    "asset_id": "TBD",
+    "asset_status": "TBD",
+    "character_action": "Both relax their shoulders and remain comfortably settled, with only subtle breathing.",
+    "child_prompt": "",
+    "dialogue_lyric": "",
+    "end_seconds": 120,
+    "music_cue": "None. No closing sting.",
+    "pause_seconds": 0,
+    "production_notes": "Six-second safe-state ending hold, not an additional response pause. Total explicit child-response time is 16 seconds across S005, S008, S013, and S019. No extra wipe, clue, challenge, or attention-grabbing end effect.",
+    "section": "COMFORT",
+    "sfx": "Quiet background ambience only; canonical identity TBD.",
+    "shot_id": "S029",
+    "start_seconds": 114,
+    "visual": "Calm, still two-shot of Mikko and Lumi resting together. The clean face remains visible; mirror and cloth rest quietly in Lumi’s lap."
+   }
+  ],
+  "title_working": "EP-CANDIDATE-005 v02 — Three Gentle Wipes"
+ },
+ "reused_asset_count": 3,
+ "script_run_id": "AMD-EP005-SCRIPT-V05-ALTB-1-FROM-A004-1788849454482",
+ "script_version": "v05",
+ "script_version_number": 5,
+ "search_term": "kids brushing teeth",
+ "shot_count": 29,
+ "status": "REVIEW",
+ "tbd_asset_count": 6,
+ "title_working": "EP-CANDIDATE-005 v05 — Three Gentle Wipes"
+}

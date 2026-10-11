@@ -1,0 +1,116 @@
+{
+ "status_counts": {
+  "SPEC": 26,
+  "BLOCKED": 3
+ },
+ "changed": {
+  "S004": {
+   "dialogue_slots": [
+    [
+     {
+      "shot_id": "S004",
+      "speaker": "Lumi",
+      "text": "A little glint! Look at his cheek.",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     },
+     {
+      "shot_id": "S004",
+      "speaker": "Lumi",
+      "text": "Can you help Mikko find the next berry smudge?",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     }
+    ],
+    [
+     {
+      "shot_id": "S004",
+      "speaker": "Lumi",
+      "text": "A glint on his cheek!",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     },
+     {
+      "shot_id": "S004",
+      "speaker": "Lumi",
+      "text": "Find the next smudge!",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     }
+    ]
+   ]
+  },
+  "S012": {
+   "dialogue_slots": [
+    [
+     {
+      "shot_id": "S012",
+      "speaker": "Lumi",
+      "text": "I see a spot near your mouth.",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     },
+     {
+      "shot_id": "S012",
+      "speaker": "Lumi",
+      "text": "Can you help Mikko find the next berry smudge?",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     }
+    ],
+    [
+     {
+      "shot_id": "S012",
+      "speaker": "Lumi",
+      "text": "By your mouth!",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     },
+     {
+      "shot_id": "S012",
+      "speaker": "Lumi",
+      "text": "Find the next smudge!",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     }
+    ]
+   ]
+  },
+  "S018": {
+   "dialogue_slots": [
+    [
+     {
+      "shot_id": "S018",
+      "speaker": "Lumi",
+      "text": "One tiny spot is still here.",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     },
+     {
+      "shot_id": "S018",
+      "speaker": "Lumi",
+      "text": "Can you help Mikko find the next berry smudge?",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     }
+    ],
+    [
+     {
+      "shot_id": "S018",
+      "speaker": "Lumi",
+      "text": "One spot left!",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     },
+     {
+      "shot_id": "S018",
+      "speaker": "Lumi",
+      "text": "Find the next smudge!",
+      "audio_asset_id": null,
+      "status": "DEFERRED_NO_VOICE_ASSET"
+     }
+    ]
+   ]
+  }
+ }
+}

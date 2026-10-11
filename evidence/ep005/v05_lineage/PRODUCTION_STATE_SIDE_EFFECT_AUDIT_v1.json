@@ -1,0 +1,23 @@
+{
+ "method": "server-side md5 over md5(row::text) ordered by id (storage: id||name||eTag||updated_at ordered by name); 'prior' = same hash excluding this task's authorised inserts",
+ "pre_write_2026-10-11": {
+  "episode_scripts": [4, "032cdcd7de12509db957be4fd7ddf8de"], "episode_production_manifests": [11, "c379d0b6ca36cf162739889455424ee4"],
+  "production_readiness_manifests": [7, "a4990071abb76ee1f0d2f4fc288322d8"], "asset_resolution_items": [72, "ec5a1a3867ea76d15f77da02c32480c5"],
+  "asset_registry": [27, "899d7f339d418fe9aa42f13febc86e1f"], "asset_creation_jobs": [11, "39796b2d3f6dbb51ca20afdb2a9be1ce"],
+  "asset_creation_batches": [3, "8157a85abf1320f05b200dd22348979e"], "shot_production_plans": [319, "c4feb519575d6d8b96f7915c3d6f01f8"],
+  "episode_backlog": [40, "e354a791a880a51739e89abcc3419278"], "storage.production-assets": [23, "0995f0bbfdfbd89c227b13059d266bd8"]},
+ "final_2026-10-11": {
+  "episode_scripts": [5, "649d63f9a75dc15f409ac80daee20037", "prior 4 rows 032cdcd7… UNCHANGED", "+6498ea8d (v05, APPROVED)"],
+  "episode_production_manifests": [12, "cefb8fa29bca3afb68a21d5aa5ffb1ae", "prior 11 rows c379d0b6… UNCHANGED", "+0325d35c (APPROVED)"],
+  "production_readiness_manifests": [8, "43f20944e4c3cffa434e5f18254c6559", "prior 7 rows a4990071… UNCHANGED", "+69bff641 (REVIEW, by Agent-006)"],
+  "asset_resolution_items": [86, "ce5ac459c443eeb77e7f4efe099e048a", "prior 72 rows ec5a1a38… UNCHANGED", "+14 under A006-1791761096896 (by Agent-006)"],
+  "asset_registry": [28, "00b40c9617ab9d61f3412701a93ff375", "prior 27 rows 899d7f33… UNCHANGED", "+739b9aec FRAME-EP005-S028-BASE-CAND-v01 (REVIEW)"],
+  "asset_creation_jobs": [11, "39796b2d3f6dbb51ca20afdb2a9be1ce", "UNCHANGED"], "asset_creation_batches": [3, "8157a85abf1320f05b200dd22348979e", "UNCHANGED"],
+  "shot_production_plans": [319, "c4feb519575d6d8b96f7915c3d6f01f8", "UNCHANGED"], "episode_backlog": [40, "e354a791a880a51739e89abcc3419278", "UNCHANGED"],
+  "storage.production-assets": [24, "0b98e2b7f9995ac1d20e87e1bf5beb70", "prior 23 objects 0995f0bb… UNCHANGED", "+d0e61c24 visual/production/ep005/frames/FRAME-EP005-S028-BASE-CAND-v01.png"]},
+ "status_only_updates": ["episode_scripts 6498ea8d REVIEW->APPROVED (only column changed)", "episode_production_manifests 0325d35c REVIEW->APPROVED (only column changed)"],
+ "n8n": {"executions_before": "latest 579 (2026-10-07)", "executions_this_task": ["580 caller N0R2or3Gv5Pbo439 manual success", "581 Agent-006 ZTBdnKFO8STSjJU4 integrated success 23:24:55.086Z-23:25:14.209Z"],
+         "agent006_version": "9bf6bbef-d49a-4f50-bce5-f8f146d43ca8 unchanged, unpublished", "caller": "created, executed once, archived", "agent007_executions": 0},
+ "provider_calls": {"ElevenLabs": 0, "Higgsfield": 0, "Seedance": 0, "image_generation": 0, "video_generation": 0, "paid": 0},
+ "migrations": 0, "c1_changes": 0, "billing_changes": 0
+}

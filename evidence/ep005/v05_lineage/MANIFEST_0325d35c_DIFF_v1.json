@@ -1,0 +1,399 @@
+{
+ "parent_manifest_id": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed",
+ "source_canonical_sha256": "e0c2e849fa00c8328dd2dd670e4b5bcd477d29dc6de967d70440abc0349b0d55",
+ "derived_canonical_sha256": "295a816e2f492a33f1fd2daef216b90b7e94b11652f3f0c86aff1025a0fe7d7c",
+ "row_column_changes": {
+  "production_plan_run_id": {
+   "before": "DRV-EP005-AUDIO-MAPPED-1-A005O-1790400144423",
+   "after": "DRV-EP005-SCRIPT-V05-ALTB-1-A005O-1790400144423"
+  },
+  "episode_script_id": {
+   "before": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+   "after": "6498ea8d-5902-4a3f-af03-0005ec0c81be"
+  },
+  "script_version": {
+   "before": "v02",
+   "after": "v05"
+  },
+  "title_working": {
+   "before": "EP-CANDIDATE-005 v02 — Three Gentle Wipes",
+   "after": "EP-CANDIDATE-005 v05 — Three Gentle Wipes"
+  },
+  "status": {
+   "before": "APPROVED",
+   "after": "REVIEW"
+  },
+  "agent_version": {
+   "before": "manifest-derivation-ep005-audio-mapped-v1",
+   "after": "manifest-derivation-ep005-v05-altb-v1"
+  }
+ },
+ "manifest_json_changes": [
+  {
+   "path": "$.derivation.approval",
+   "op": "changed",
+   "before": "derived row created REVIEW; requires separate human manifest approval before any Agent-006 use",
+   "after": "derived row created REVIEW; status-only approval after readback + local Agent-006 proof (human answer 2026-10-11)"
+  },
+  {
+   "path": "$.derivation.derived_from_manifest_id",
+   "op": "changed",
+   "before": "96df250f-7182-4d5f-a556-b0448e518375",
+   "after": "45cc7493-80b4-4e8d-b71d-fbd7fd3656ed"
+  },
+  {
+   "path": "$.derivation.derived_from_production_plan_run_id",
+   "op": "changed",
+   "before": "DRV-EP005-TBD-CLEANUP-1-A005O-1790400144423",
+   "after": "DRV-EP005-AUDIO-MAPPED-1-A005O-1790400144423"
+  },
+  {
+   "path": "$.derivation.derived_from_script_id",
+   "op": "added",
+   "after": "6498ea8d-5902-4a3f-af03-0005ec0c81be"
+  },
+  {
+   "path": "$.derivation.dialogue_changes",
+   "op": "added",
+   "after": [
+    {
+     "shot_id": "S004",
+     "path": "manifest_json.shot_plans[3].shot_plan.audio_plan.voice_lines[0]",
+     "old": "Lumi: “A little glint! Look at his cheek.”",
+     "new": "Lumi: “A glint on his cheek!”"
+    },
+    {
+     "shot_id": "S004",
+     "path": "manifest_json.shot_plans[3].shot_plan.audio_plan.voice_lines[1]",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "new": "Lumi: “Find the next smudge!”"
+    },
+    {
+     "shot_id": "S012",
+     "path": "manifest_json.shot_plans[11].shot_plan.audio_plan.voice_lines[0]",
+     "old": "Lumi: “I see a spot near your mouth.”",
+     "new": "Lumi: “By your mouth!”"
+    },
+    {
+     "shot_id": "S012",
+     "path": "manifest_json.shot_plans[11].shot_plan.audio_plan.voice_lines[1]",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "new": "Lumi: “Find the next smudge!”"
+    },
+    {
+     "shot_id": "S018",
+     "path": "manifest_json.shot_plans[17].shot_plan.audio_plan.voice_lines[0]",
+     "old": "Lumi: “One tiny spot is still here.”",
+     "new": "Lumi: “One spot left!”"
+    },
+    {
+     "shot_id": "S018",
+     "path": "manifest_json.shot_plans[17].shot_plan.audio_plan.voice_lines[1]",
+     "old": "Lumi: “Can you help Mikko find the next berry smudge?”",
+     "new": "Lumi: “Find the next smudge!”"
+    }
+   ]
+  },
+  {
+   "path": "$.derivation.human_decision",
+   "op": "changed",
+   "before": "Gilang approved the three mastered ElevenLabs EP005 audio files (ambience C, cloth C, pop A) on 2026-10-07 and the mapping of the three generic audio TBD requirements to exact approved assets",
+   "after": "Company Brain approved the exact Alternative B wording for S004/S012/S018 (Gilang instruction 2026-10-11, EP005 SCRIPT V03 GOVERNANCE + S028 BASE FRAME PREFLIGHT); version v05 and lineage placement per human answers 2026-10-11"
+  },
+  {
+   "path": "$.derivation.mapping",
+   "op": "removed",
+   "before": {
+    "TBD::AUDIO::AMBIENCE": "AMB-BATHROOM-QUIET-v01",
+    "TBD::AUDIO::FOLEY_CLOTH": "FOLEY-CLOTH-SOFT-v01",
+    "TBD::AUDIO::COMPLETION_SFX": "SFX-COMPLETION-POP-v01"
+   }
+  },
+  {
+   "path": "$.derivation.parent_script_id",
+   "op": "added",
+   "after": "14471926-f6fb-4bba-b355-109f3ae9e21c"
+  },
+  {
+   "path": "$.derivation.previous_derivation.derived_from_manifest_id",
+   "op": "changed",
+   "before": "3bcde9ee-6676-480f-90da-5695b64532a7",
+   "after": "96df250f-7182-4d5f-a556-b0448e518375"
+  },
+  {
+   "path": "$.derivation.previous_derivation.derived_from_production_plan_run_id",
+   "op": "changed",
+   "before": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423",
+   "after": "DRV-EP005-TBD-CLEANUP-1-A005O-1790400144423"
+  },
+  {
+   "path": "$.derivation.previous_derivation.dropped",
+   "op": "removed",
+   "before": [
+    "TBD::AUDIO::FOLEY_TOUCH"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.human_decision",
+   "op": "added",
+   "after": "Gilang approved the three mastered ElevenLabs EP005 audio files (ambience C, cloth C, pop A) on 2026-10-07 and the mapping of the three generic audio TBD requirements to exact approved assets"
+  },
+  {
+   "path": "$.derivation.previous_derivation.human_decisions_applied",
+   "op": "removed",
+   "before": {
+    "AMBIENCE": "CREATE_NEW_AUDIO later (proposed AMB-BATHROOM-QUIET-v01); unresolved, not mapped",
+    "FOLEY_CLOTH": "CREATE_NEW_AUDIO later (proposed FOLEY-CLOTH-SOFT-v01); unresolved, not mapped",
+    "FOLEY_TOUCH": "DROPPED: barely audible, narratively non-essential; no sound asset; S028 visual shoulder-pat action unchanged",
+    "COMPLETION_SFX": "CREATE_NEW_AUDIO later (proposed SFX-COMPLETION-POP-v01); unresolved, not mapped",
+    "Mirror glint treatment": "DERIVE/COMPOSITE_FROM_EXISTING (compositor preset; not an asset; never Agent-007)",
+    "Soft completion pop visual accent": "NOT_A_SEPARATE_ASSET, KEEP (deterministic bloom pulse; never Agent-007)",
+    "Mirror reflection/compositing treatment": "NOT_A_SEPARATE_ASSET (shot-level compositing; never Agent-007)"
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.informed_by_agent006_run",
+   "op": "removed",
+   "before": "A006-1791181098027"
+  },
+  {
+   "path": "$.derivation.previous_derivation.informed_by_readiness_manifest",
+   "op": "removed",
+   "before": "e32ef7eb-448d-4da8-8271-fabf51bdc81e"
+  },
+  {
+   "path": "$.derivation.previous_derivation.mapping",
+   "op": "added",
+   "after": {
+    "TBD::AUDIO::AMBIENCE": "AMB-BATHROOM-QUIET-v01",
+    "TBD::AUDIO::FOLEY_CLOTH": "FOLEY-CLOTH-SOFT-v01",
+    "TBD::AUDIO::COMPLETION_SFX": "SFX-COMPLETION-POP-v01"
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.continuity_gap_fills",
+   "op": "removed",
+   "before": [
+    "S013:OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.derived_from_manifest_id",
+   "op": "changed",
+   "before": "670b201b-6793-4518-ad5a-d051eb98d90c",
+   "after": "3bcde9ee-6676-480f-90da-5695b64532a7"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.derived_from_production_plan_run_id",
+   "op": "changed",
+   "before": "A005O-1790400144423",
+   "after": "DRV-EP005-BERRY-SPLIT-1-A005O-1790400144423"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.dropped",
+   "op": "added",
+   "after": [
+    "TBD::AUDIO::FOLEY_TOUCH"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.free_text_note",
+   "op": "removed",
+   "before": "two legacy production_order_notes (S002 shot_plan + shot_queue) mention the combined ID verbatim; intentionally unchanged"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.human_decisions_applied",
+   "op": "added",
+   "after": {
+    "AMBIENCE": "CREATE_NEW_AUDIO later (proposed AMB-BATHROOM-QUIET-v01); unresolved, not mapped",
+    "FOLEY_CLOTH": "CREATE_NEW_AUDIO later (proposed FOLEY-CLOTH-SOFT-v01); unresolved, not mapped",
+    "FOLEY_TOUCH": "DROPPED: barely audible, narratively non-essential; no sound asset; S028 visual shoulder-pat action unchanged",
+    "COMPLETION_SFX": "CREATE_NEW_AUDIO later (proposed SFX-COMPLETION-POP-v01); unresolved, not mapped",
+    "Mirror glint treatment": "DERIVE/COMPOSITE_FROM_EXISTING (compositor preset; not an asset; never Agent-007)",
+    "Soft completion pop visual accent": "NOT_A_SEPARATE_ASSET, KEEP (deterministic bloom pulse; never Agent-007)",
+    "Mirror reflection/compositing treatment": "NOT_A_SEPARATE_ASSET (shot-level compositing; never Agent-007)"
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.informed_by_agent006_run",
+   "op": "added",
+   "after": "A006-1791181098027"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.informed_by_readiness_manifest",
+   "op": "added",
+   "after": "e32ef7eb-448d-4da8-8271-fabf51bdc81e"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.previous_derivation",
+   "op": "added",
+   "after": {
+    "split": {
+     "TMP_EP005_BERRY_SMUDGE_OVERLAYS": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ]
+    },
+    "approval": "derived row created REVIEW; requires separate human manifest approval before any Agent-006 use",
+    "transform": "EP005_BERRY_REQUIREMENT_SPLIT_v1 (deterministic, no LLM)",
+    "free_text_note": "two legacy production_order_notes (S002 shot_plan + shot_queue) mention the combined ID verbatim; intentionally unchanged",
+    "continuity_gap_fills": [
+     "S013:OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+    ],
+    "shot_attribution_source": "shot_plans[].shot_plan.continuity_state.tracked_elements (visible_at_start OR visible_at_end)",
+    "derived_from_manifest_id": "670b201b-6793-4518-ad5a-d051eb98d90c",
+    "derived_from_production_plan_run_id": "A005O-1790400144423"
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.shot_attribution_source",
+   "op": "removed",
+   "before": "shot_plans[].shot_plan.continuity_state.tracked_elements (visible_at_start OR visible_at_end)"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.split",
+   "op": "removed",
+   "before": {
+    "TMP_EP005_BERRY_SMUDGE_OVERLAYS": [
+     "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+    ]
+   }
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.transform",
+   "op": "changed",
+   "before": "EP005_BERRY_REQUIREMENT_SPLIT_v1 (deterministic, no LLM)",
+   "after": "EP005_TBD_CLEANUP_v1 (deterministic, no LLM)"
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.unresolved_audio_remaining",
+   "op": "added",
+   "after": [
+    "AMBIENCE",
+    "FOLEY_CLOTH",
+    "COMPLETION_SFX"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.previous_derivation.visual_treatment_reclassification",
+   "op": "added",
+   "after": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01 <- Mirror glint treatment",
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01 <- Mirror reflection/compositing treatment",
+    "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01 <- Soft completion pop visual accent"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.transform",
+   "op": "changed",
+   "before": "EP005_TBD_CLEANUP_v1 (deterministic, no LLM)",
+   "after": "EP005_AUDIO_MAPPING_v1 (deterministic, no LLM)"
+  },
+  {
+   "path": "$.derivation.previous_derivation.unchanged",
+   "op": "added",
+   "after": "the 11 existing reusable requirements, visual/compositing treatment decisions, dropped FOLEY_TOUCH, all shot plans and assignments"
+  },
+  {
+   "path": "$.derivation.previous_derivation.unresolved_audio_remaining",
+   "op": "removed",
+   "before": [
+    "AMBIENCE",
+    "FOLEY_CLOTH",
+    "COMPLETION_SFX"
+   ]
+  },
+  {
+   "path": "$.derivation.previous_derivation.visual_treatment_reclassification",
+   "op": "removed",
+   "before": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01 <- Mirror glint treatment",
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01 <- Mirror reflection/compositing treatment",
+    "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01 <- Soft completion pop visual accent"
+   ]
+  },
+  {
+   "path": "$.derivation.transform",
+   "op": "changed",
+   "before": "EP005_AUDIO_MAPPING_v1 (deterministic, no LLM)",
+   "after": "EP005_SCRIPT_V05_ALTB_MANIFEST_v1 (deterministic, no LLM)"
+  },
+  {
+   "path": "$.derivation.unchanged",
+   "op": "changed",
+   "before": "the 11 existing reusable requirements, visual/compositing treatment decisions, dropped FOLEY_TOUCH, all shot plans and assignments",
+   "after": "all asset requirements and inventories, audio_asset_mappings, compositing treatments, dropped requirements, all other shot plans (incl. S027) and every non-dialogue field of S004/S012/S018"
+  },
+  {
+   "path": "$.episode.episode_script_id",
+   "op": "changed",
+   "before": "14471926-f6fb-4bba-b355-109f3ae9e21c",
+   "after": "6498ea8d-5902-4a3f-af03-0005ec0c81be"
+  },
+  {
+   "path": "$.episode.script_version",
+   "op": "changed",
+   "before": "v02",
+   "after": "v05"
+  },
+  {
+   "path": "$.episode.title_working",
+   "op": "changed",
+   "before": "EP-CANDIDATE-005 v02 — Three Gentle Wipes",
+   "after": "EP-CANDIDATE-005 v05 — Three Gentle Wipes"
+  },
+  {
+   "path": "$.manifest_version",
+   "op": "changed",
+   "before": "agent005-production-manifest-v0.1+berry-split-1+tbd-cleanup-1+audio-mapped-1",
+   "after": "agent005-production-manifest-v0.1+berry-split-1+tbd-cleanup-1+audio-mapped-1+script-v05-altb-1"
+  },
+  {
+   "path": "$.shot_plans[3].shot_plan.audio_plan.voice_lines[0]",
+   "op": "changed",
+   "before": "Lumi: “A little glint! Look at his cheek.”",
+   "after": "Lumi: “A glint on his cheek!”"
+  },
+  {
+   "path": "$.shot_plans[3].shot_plan.audio_plan.voice_lines[1]",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.shot_plans[11].shot_plan.audio_plan.voice_lines[0]",
+   "op": "changed",
+   "before": "Lumi: “I see a spot near your mouth.”",
+   "after": "Lumi: “By your mouth!”"
+  },
+  {
+   "path": "$.shot_plans[11].shot_plan.audio_plan.voice_lines[1]",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  },
+  {
+   "path": "$.shot_plans[17].shot_plan.audio_plan.voice_lines[0]",
+   "op": "changed",
+   "before": "Lumi: “One tiny spot is still here.”",
+   "after": "Lumi: “One spot left!”"
+  },
+  {
+   "path": "$.shot_plans[17].shot_plan.audio_plan.voice_lines[1]",
+   "op": "changed",
+   "before": "Lumi: “Can you help Mikko find the next berry smudge?”",
+   "after": "Lumi: “Find the next smudge!”"
+  }
+ ],
+ "changed_top_level_keys": [
+  "derivation",
+  "episode",
+  "manifest_version",
+  "shot_plans"
+ ],
+ "S027_shot_plan_canonical_sha256": "576e43ec1eb1489e932b163fb4bbbd6cb7edbcc0881a7e38794f2f2dd4fe747e",
+ "max_shot_plan_end_seconds": 0
+}

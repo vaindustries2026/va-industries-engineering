@@ -2478,3 +2478,28 @@ paid_action_triggered: false
 rollback: "revert commit"
 status: "EP005_BATCH0D_PREPRODUCTION_CLOSEOUT_READY + MIKKO_PRODUCTION_VOICE_APPROVED + LUMI_PRODUCTION_VOICE_APPROVED + LUMI_VOICE_BLOCKER_ALREADY_CLEARED + G09_IMPLEMENTED + DIALOGUE_TIMING_FAIL_CLOSED + S027_BEHAVIOUR_UNCHANGED + S028_HUMAN_DECISION_PACK_READY + S004_S012_S018_EXACT_ALTERNATIVE_B_TEXT_SURFACED + SCRIPT_AMENDMENT_AUTHORISED_FALSE + SCRIPT_V03_LINEAGE_PLAN_READY + PRODUCTION_MATRIX_V3_READY + NEXT_PRODUCTION_BATCH_RECOMMENDED + FULL_TEST_SUITE_PASS + ZERO_PROVIDER_CALLS + ZERO_GENERATIONS + ZERO_PRODUCTION_STATE_WRITES + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261011-EP005-V05-AND-S028-PREFLIGHT: script v05 (Alternative B), derived manifest, one Agent-006 run, S028 frame-119 REVIEW candidate, TTS package
+
+```yaml
+change_id: "ENG-20261011-EP005-V05-AND-S028-PREFLIGHT"
+timestamp: "2026-10-11"
+actor: "Claude"
+authorised_by: "Company Brain / Gilang (approved Alternative B wording; one Agent-006 run; S028 frame preservation as REVIEW). In-task human answers: REVIEW-then-status-only approval; version v05 (v03/v04 numbers taken); lineage in production_script_json.lineage"
+change_type: "PRODUCTION_STATE + EVIDENCE"
+script: {id: "6498ea8d-5902-4a3f-af03-0005ec0c81be", version: "v05", status: "APPROVED (status-only after verification)", parent: "14471926 v02 (unchanged)"}
+dialogue_classification: "8 older copies: 7 DERIVED_ACTIVE_FIELD updated, 1 HISTORICAL_PROVENANCE_SNAPSHOT (backlog copy) unchanged"
+manifest: {id: "0325d35c-d567-4488-bf78-c3887e819382", canonical_sha256: "295a816e2f492a33f1fd2daef216b90b7e94b11652f3f0c86aff1025a0fe7d7c", parent: "45cc7493 (unchanged)", status: "APPROVED (status-only after local proof)", shots: 29, duration_s: 120.0}
+agent006: {local_proof: "PASS 14/14 REUSE_EXISTING identical to 45cc7493", caller: "N0R2or3Gv5Pbo439 (archived)", caller_execution: 580, execution: 581, run_id: "A006-1791761096896", readiness: "69bff641-e056-4701-a23f-d91dbc2039b2 (REVIEW, READY_FOR_HUMAN_APPROVAL, 14 reuse, 0 create_new)", agent007: 0}
+s027: "script entry, shot plan, spec and all 4 approved assets unchanged (assembled 7b01c392...8fde)"
+s028_frame: {asset_id: "FRAME-EP005-S028-BASE-CAND-v01", registry_row: "739b9aec-d908-4699-baea-10bf9e6b4f3e", storage_key: "visual/production/ep005/frames/FRAME-EP005-S028-BASE-CAND-v01.png", storage_object: "d0e61c24-6453-434d-a12e-5964cbe2e1a5", sha256: "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0", dims: "1920x1080", bytes: 3091468, source: "86dddea5...0e25 frame 119", two_run_identical: true, status: "REVIEW", human_decision: "PENDING"}
+s028_tts: "package prepared (2 calls max, one attempt each); not executed"
+s028_timing: "PENDING_REAL_AUDIO; NO_SEEDANCE_BEFORE_REAL_DIALOGUE_TIMING_PASS=TRUE; S028_SEEDANCE_AUTHORISED=FALSE"
+evidence: ["evidence/EP005_V05_SCRIPT_LINEAGE_AND_S028_PREFLIGHT_v1.0.md", "evidence/ep005/v05_lineage/", "evidence/ep005/s028_base_frame/", "evidence/ep005/s028_tts/"]
+provider_calls: 0
+paid_action_triggered: false
+rollback: "see summary §Rollback (human instruction required)"
+status: "EP005_V05_AND_S028_PREFLIGHT_READY + SCRIPT_V05_CREATED + S004_S012_S018_APPROVED_DIALOGUE_APPLIED + OLD_APPROVED_SCRIPT_V02_IMMUTABLE + OLD_MANIFEST_IMMUTABLE + NEW_PRODUCTION_MANIFEST_DERIVED + AGENT006_LOCAL_PROOF_PASS + AGENT006_SINGLE_AUTHORISED_RUN_COMPLETE + NEW_READINESS_DERIVED + S027_UNCHANGED + S028_FRAME119_DERIVED_DETERMINISTICALLY + S028_FRAME_TWO_RUN_BYTE_IDENTICAL + S028_BASE_FRAME_REGISTERED_REVIEW + S028_BASE_FRAME_HUMAN_DECISION_PENDING + S028_TTS_PACKAGE_READY + S028_TTS_GENERATIONS=0 + S028_DIALOGUE_TIMING_STATUS=PENDING_REAL_AUDIO + S028_SEEDANCE_GENERATIONS=0 + ZERO_PAID_PROVIDER_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
+```
