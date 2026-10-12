@@ -2622,3 +2622,23 @@ provider_calls: 0
 render_calls: 0
 status: "EP005_S028_COMPLETE_APPROVED + S028_FINAL_SHOT_APPROVED + S028_PRODUCTION_STATUS=COMPLETE_APPROVED + S027_UNCHANGED + S029_NOT_STARTED + ZERO_PROVIDER_CALLS + ZERO_RENDER_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261012-EP005-S029-PREFLIGHT: read-only S029 production preflight
+
+```yaml
+change_id: "ENG-20261012-EP005-S029-PREFLIGHT"
+timestamp: "2026-10-12"
+actor: "Claude"
+change_type: "EVIDENCE (read-only audit)"
+s029: {duration_s: 6.0, frames: 144, dialogue: "none", audio: "AMB-BATHROOM-QUIET-v01 only", treatments: "none", end_treatment: "NO_SPECIAL_EPISODE_END_TREATMENT_SPECIFIED"}
+continuity_source: "MOTION-EP005-S028-SEEDANCE20-CAND-v01 341683c4...9b58 raw frame 119 (last frame of approved S028)"
+recommended_mode: "B (G04 derivation + G02 held shot), 0 provider calls, $0"
+human_decisions_needed: ["cloth rests on Mikko's shoulder at S028 end (spec says Lumi's lap)", "reconfirm static hold without breathing"]
+new_engineering_required: "NO (optional: deterministic breathing micro-motion for G02)"
+evidence: ["evidence/EP005_S029_PRODUCTION_PREFLIGHT_v1.0.md"]
+production_writes: 0
+provider_calls: 0
+status: "EP005_S029_PREFLIGHT_COMPLETE + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES"
+```
