@@ -2565,3 +2565,22 @@ seedance_generations: 0
 production_state_writes: 0
 status: "S028_SEEDANCE_NOT_SUBMITTED + HIGGSFIELD_BALANCE_CONFIRMED + FINAL_PRE_SUBMIT_GATE_FAIL + AUTHORISATION_UNSPENT"
 ```
+
+---
+
+## ENG-20261012-EP005-S028-RAW-MOTION-REVIEW: metadata cleaned, authoritative v2 package (hand-off + pat), ONE Seedance generation, raw motion preserved as REVIEW
+
+```yaml
+change_id: "ENG-20261012-EP005-S028-RAW-MOTION-REVIEW"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Company Brain / Gilang (metadata cleanup; rebuild + one Seedance <= $3.50; balance >= $3.46 confirmed)"
+change_type: "PRODUCTION_STATE + PAID_PROVIDER (1 Seedance) + EVIDENCE"
+metadata_cleanup: ["11880cb2 human_decision/human_approval APPROVED", "349d79ee human_decision/human_approval APPROVED", "739b9aec human_approval APPROVED, approved true"]
+package: {prompt_sha256: "18090c35fedbb28804646a636e31083b70cebd9d8b7ac2161b43117a33371b77", body_sha256: "8c80d5ac784ea638d822a60b9efd51e8fc3ea9e9946eaefc7ed4b5e28eaf41af", obsolete_v1: "d025c3cc... / 172ba858... not used"}
+gate: "PASS"
+generation: {provider_request_id: "5c3072bd-d998-4e90-8b88-6c54a83f3e27", attempt: 1, retries: 0, terminal: "COMPLETED", calculated_cost_usd: 3.4304, provider_cost_returned: null}
+raw: {asset_id: "MOTION-EP005-S028-SEEDANCE20-CAND-v01", row: "2e13b73d-a328-4cb9-b366-8d3cba5f350e", sha256: "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58", bytes: 4028811, video: "h264 1920x1080 24fps 121 frames 5.041667s", audio: "none", status: "REVIEW", human_decision: "PENDING"}
+evidence: ["evidence/EP005_S028_RAW_MOTION_REVIEW_v1.0.md", "evidence/agent008/phase1/s028/"]
+status: "EP005_S028_RAW_MOTION_READY_FOR_HUMAN_REVIEW + APPROVAL_METADATA_CLEAN + HIGGSFIELD_BALANCE_CONFIRMED + AUTHORITATIVE_S028_ACTION_PRESERVED + CLOTH_HANDOFF_INCLUDED + SHOULDER_PAT_INCLUDED + NEW_SEEDANCE_PROMPT_LOCKED + NEW_REQUEST_BODY_LOCKED + FINAL_PRE_SUBMIT_GATE_PASS + S028_SEEDANCE_GENERATIONS=1 + S028_SEEDANCE_RETRIES=0 + RAW_MOTION_SOURCE_PRESERVED + RAW_MOTION_STATUS=REVIEW + HUMAN_DECISION=PENDING + S027_UNCHANGED + S029_NOT_STARTED + EVIDENCE_COMMITTED_TO_GITHUB"
+```

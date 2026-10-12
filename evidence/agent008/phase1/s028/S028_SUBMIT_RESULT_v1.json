@@ -1,0 +1,26 @@
+{
+ "result": {
+  "provider": "higgsfield",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "provider_job_id": "5c3072bd-d998-4e90-8b88-6c54a83f3e27",
+  "source_frame_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "prompt_hash": "18090c35fedbb28804646a636e31083b70cebd9d8b7ac2161b43117a33371b77",
+  "provider_status": "COMPLETED",
+  "raw_output_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/s028n/work/raw/S028/5c3072bd-d998-4e90-8b88-6c54a83f3e27/21fd8e28-263f-44f7-826b-db2b22158472.mp4",
+  "raw_output_sha256": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+  "raw_original_filename": "21fd8e28-263f-44f7-826b-db2b22158472.mp4",
+  "raw_bytes": 4028811,
+  "raw_duration": 5.041667,
+  "raw_resolution": "1920x1080",
+  "raw_fps": "24/1",
+  "raw_codec": "mov,mp4,m4a,3gp,3g2,mj2/h264",
+  "created_at": "2026-10-12T02:13:19.075951+00:00",
+  "cost_or_usage_if_available": null,
+  "status": "REVIEW",
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png"
+ },
+ "output_url": {
+  "5c3072bd-d998-4e90-8b88-6c54a83f3e27": "https://d3u0tzju9qaucj.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/21fd8e28-263f-44f7-826b-db2b22158472.mp4"
+ }
+}
+exit=0
