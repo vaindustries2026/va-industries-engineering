@@ -1,0 +1,15 @@
+{
+ "date": "2026-10-12",
+ "instruction": "Company Brain: balance confirmed (>= USD 3.46); submit ONE S028 Seedance using the CURRENT revised package with cloth hand-off + shoulder pat; NEW_PROMPT_SHA256 / NEW_FINAL_REQUEST_BODY_SHA256 from the immediately preceding pre-submit task; STOP if any check fails",
+ "HIGGSFIELD_BALANCE_CONFIRMED": "YES (human confirmation recorded)",
+ "result": "STOPPED_BEFORE_SUBMIT",
+ "failed_checks": [
+  {"check": "revised package with authoritative cloth hand-off", "result": "FAIL", "detail": "No revised package exists. The only frozen package (prompt d025c3cc2ef5ff56b56c886cc9e164c8506f9d7cdfe698fba08916b4278d6c74, body 172ba8584ad3076922970794ba223e0fba1d3c7f7f0cb377dda2423c7efdfc41, commit a9c0c52) followed the 2026-10-12 Part 6 action list (Mikko keeps holding the cloth) and contains no hand-off. The instruction forbids using a package that omits it."},
+  {"check": "authoritative shoulder pat included", "result": "FAIL", "detail": "The frozen prompt contains no shoulder pat."},
+  {"check": "NEW_PROMPT_SHA256 / NEW_FINAL_REQUEST_BODY_SHA256 exist", "result": "FAIL", "detail": "No new prompt or body SHA was produced by any task; only d025c3cc.../172ba858... exist."},
+  {"check": "dialogue approval metadata = APPROVED", "result": "FAIL", "detail": "Both dialogue rows: status APPROVED, but metadata_json.human_decision = PENDING and human_approval = PENDING (status-only transition per the previous instruction; metadata merge not authorised)."},
+  {"check": "frame human approval metadata = APPROVED", "result": "PARTIAL", "detail": "human_decision = APPROVED; human_approval = PENDING; approved = false."}
+ ],
+ "passed_checks_unchanged_since_gate": ["frame SHA 9ac6ccc3...6ff0", "remote upload readback SHA match (ledger)", "v05 readiness APPROVED", "both dialogue rows status APPROVED", "G09 PASS", "5 s / 1080p / generate_audio false / 1 source image / 1 attempt / no retry", "worst-case cost $3.456 <= $3.50"],
+ "provider_calls_this_task": 0, "seedance_generations": 0, "ledger_generation_attempts": 0, "production_state_writes": 0
+}

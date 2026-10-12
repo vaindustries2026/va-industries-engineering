@@ -2547,3 +2547,21 @@ evidence: ["evidence/EP005_S028_SEEDANCE_PREFLIGHT_PAUSED_BEFORE_SUBMIT_v1.0.md"
 paid_action_triggered: false
 status: "EP005_S028_SEEDANCE_READY_TO_SUBMIT_PAUSED_FOR_BALANCE + LUMI_S028_DIALOGUE_APPROVED + MIKKO_S028_DIALOGUE_APPROVED + S028_FRAME_HUMAN_DECISION_METADATA_REPAIRED + S028_REAL_DIALOGUE_TIMING_APPROVED + S028_VOICEOVER_WITH_SOFT_NATURAL_MOUTH_MOTION + SOURCE_AUDIO_ASSETS_UNCHANGED + DERIVED_MIX_GAIN_PLAN_READY + S028_SEEDANCE_PROMPT_LOCKED + S028_SEEDANCE_GENERATIONS=0 + S029_NOT_STARTED + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261012-EP005-S028-SUBMIT-STOPPED: balance confirmed, but final gate failed (no revised hand-off/pat package; approval metadata PENDING); no submit
+
+```yaml
+change_id: "ENG-20261012-EP005-S028-SUBMIT-STOPPED"
+timestamp: "2026-10-12"
+actor: "Claude"
+result: "STOPPED_BEFORE_SUBMIT"
+balance: "confirmed by Gilang >= USD 3.46"
+failed_checks: ["no revised package containing cloth hand-off", "no shoulder pat in the frozen prompt", "no NEW prompt/body SHA exists (only d025c3cc.../172ba858...)", "dialogue metadata human_decision/human_approval PENDING", "frame metadata human_approval PENDING"]
+evidence: ["evidence/agent008/phase1/s028/S028_SUBMIT_STOPPED_GATE_FAIL_v1.json"]
+provider_calls: 0
+seedance_generations: 0
+production_state_writes: 0
+status: "S028_SEEDANCE_NOT_SUBMITTED + HIGGSFIELD_BALANCE_CONFIRMED + FINAL_PRE_SUBMIT_GATE_FAIL + AUTHORISATION_UNSPENT"
+```
