@@ -1,0 +1,15 @@
+{
+ "file_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+ "bytes": 3091468,
+ "format": "PNG",
+ "mode": "RGB",
+ "size": [
+  1920,
+  1080
+ ],
+ "pillow": "12.3.0",
+ "canonical_rgb_sha256": "f5dad881b8b8e48498b93381db225b034be867cec90d3950376284716570bc12",
+ "expected": "f5dad881b8b8e48498b93381db225b034be867cec90d3950376284716570bc12",
+ "match": true,
+ "file_sha_is_authoritative": true
+}

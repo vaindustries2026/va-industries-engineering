@@ -1,0 +1,62 @@
+{
+ "LUMI": {
+  "file": "tts_lumi/DLG-EP005-S028-LUMI-v01.mp3",
+  "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+  "bytes": 58965,
+  "provider_md5_b64": "Id9g0mQJcHYrJA9O2QGw2g==",
+  "local_md5_b64": "Id9g0mQJcHYrJA9O2QGw2g==",
+  "transport_md5_match": true,
+  "decode": {
+   "44100": {
+    "samples": 112640,
+    "decoded_duration_s": 2.554195,
+    "peak_dbfs": -19.55,
+    "audible_start_s": 0.12,
+    "audible_end_s": 2.21,
+    "lead_silence_s": 0.12,
+    "tail_silence_s": 0.344,
+    "threshold": "10 ms RMS windows > -50 dBFS"
+   },
+   "48000": {
+    "samples": 122601,
+    "decoded_duration_s": 2.554187,
+    "peak_dbfs": -19.54,
+    "audible_start_s": 0.12,
+    "audible_end_s": 2.21,
+    "lead_silence_s": 0.12,
+    "tail_silence_s": 0.344,
+    "threshold": "10 ms RMS windows > -50 dBFS"
+   }
+  }
+ },
+ "MIKKO": {
+  "file": "tts_mikko/DLG-EP005-S028-MIKKO-v01.mp3",
+  "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+  "bytes": 43501,
+  "provider_md5_b64": "Jivoh0uh29EnAmlFvrti/A==",
+  "local_md5_b64": "Jivoh0uh29EnAmlFvrti/A==",
+  "transport_md5_match": true,
+  "decode": {
+   "44100": {
+    "samples": 69632,
+    "decoded_duration_s": 1.578957,
+    "peak_dbfs": -3.16,
+    "audible_start_s": 0.08,
+    "audible_end_s": 1.25,
+    "lead_silence_s": 0.08,
+    "tail_silence_s": 0.329,
+    "threshold": "10 ms RMS windows > -50 dBFS"
+   },
+   "48000": {
+    "samples": 75790,
+    "decoded_duration_s": 1.578958,
+    "peak_dbfs": -3.15,
+    "audible_start_s": 0.08,
+    "audible_end_s": 1.25,
+    "lead_silence_s": 0.08,
+    "tail_silence_s": 0.329,
+    "threshold": "10 ms RMS windows > -50 dBFS"
+   }
+  }
+ }
+}

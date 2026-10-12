@@ -1,0 +1,22 @@
+{
+ "authorisation": "Company Brain 2026-10-12: exactly 2 ElevenLabs production TTS calls; no retries/alternates/auditions; max 60 credits AND max USD $0.10; existing balance only; no purchase/upgrade/billing change",
+ "workspace": "a2a81ab0f7fd406cb3fff9eef8e173c2",
+ "tool": "ElevenLabs MCP creative_generate_speech",
+ "pre_generation_estimates (estimate_only=true; nothing generated or charged)": [
+  {"line": "LUMI", "flow_id": "KV7bzLyub7mfsuOgwGLV", "credits": 27, "price_cents": 0.54},
+  {"line": "MIKKO", "flow_id": "eNWnH15Ti9en2YreaECk", "credits": 18, "price_cents": 0.36}],
+ "estimate_total": {"credits": 45, "usd": 0.009, "within_limits": true},
+ "generations": [
+  {"asset_id": "DLG-EP005-S028-LUMI-v01", "request": {"prompt": "You look comfy. Story time.", "voice_id": "f9imtLc2jfOLXtqe3Ihb", "model_id": "eleven_multilingual_v2", "generations_count": 1, "flow_id": "KV7bzLyub7mfsuOgwGLV"},
+   "node_id": "oILn8n4lfPqYQ5DW0csq", "session_id": "cTbMiK83fjuNVFZRrElu", "generation_id": "oeayskQWHY46ky1NAxYO", "status": "completed",
+   "created_at_unix_ms": 1791764494970, "provider_duration_secs": 2.5541950113378684, "credits": 27, "price_cents": 0.54,
+   "returned_voice_name": "Lola - Soft, Innocent and Calming", "returned_model_id": "eleven_multilingual_v2"},
+  {"asset_id": "DLG-EP005-S028-MIKKO-v01", "request": {"prompt": "I’m ready to rest.", "voice_id": "XjGYkUkzth8BPs29fmcV", "model_id": "eleven_multilingual_v2", "generations_count": 1, "flow_id": "eNWnH15Ti9en2YreaECk"},
+   "node_id": "kwDxg8D99AM6l3CITal2", "session_id": "TfYKoM8brzkN0zxRHqFp", "generation_id": "I9rtpWNtSGSJp9gqVrfE", "status": "completed",
+   "created_at_unix_ms": 1791764496200, "provider_duration_secs": 1.5789569160997732, "credits": 18, "price_cents": 0.36,
+   "returned_voice_name": "Teddy Twinkle - Cute Cartoon Boy", "returned_model_id": "eleven_multilingual_v2"}],
+ "ELEVENLABS_GENERATION_COUNT": 2, "ELEVENLABS_RETRY_COUNT": 0,
+ "TOTAL_CREDITS_USED": 45, "TOTAL_PROVIDER_COST_USD": 0.009,
+ "download": "provider signed URLs (2 h expiry; signatures not recorded); downloaded bytes' MD5 equals the provider x-goog-hash md5 for both files",
+ "purchases_upgrades_billing_changes": 0
+}

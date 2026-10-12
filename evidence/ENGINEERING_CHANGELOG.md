@@ -2503,3 +2503,26 @@ paid_action_triggered: false
 rollback: "see summary §Rollback (human instruction required)"
 status: "EP005_V05_AND_S028_PREFLIGHT_READY + SCRIPT_V05_CREATED + S004_S012_S018_APPROVED_DIALOGUE_APPLIED + OLD_APPROVED_SCRIPT_V02_IMMUTABLE + OLD_MANIFEST_IMMUTABLE + NEW_PRODUCTION_MANIFEST_DERIVED + AGENT006_LOCAL_PROOF_PASS + AGENT006_SINGLE_AUTHORISED_RUN_COMPLETE + NEW_READINESS_DERIVED + S027_UNCHANGED + S028_FRAME119_DERIVED_DETERMINISTICALLY + S028_FRAME_TWO_RUN_BYTE_IDENTICAL + S028_BASE_FRAME_REGISTERED_REVIEW + S028_BASE_FRAME_HUMAN_DECISION_PENDING + S028_TTS_PACKAGE_READY + S028_TTS_GENERATIONS=0 + S028_DIALOGUE_TIMING_STATUS=PENDING_REAL_AUDIO + S028_SEEDANCE_GENERATIONS=0 + ZERO_PAID_PROVIDER_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261012-EP005-S028-REAL-DIALOGUE-PREFLIGHT: v05 readiness approved, S028 frame approved via pixel bridge, 2 S028 TTS takes (REVIEW), G09 on real audio
+
+```yaml
+change_id: "ENG-20261012-EP005-S028-REAL-DIALOGUE-PREFLIGHT"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Company Brain / Gilang (accepted 15fa499; readiness approval; conditional frame approval; exactly 2 TTS calls <=60 credits and <=$0.10)"
+change_type: "PRODUCTION_STATE + PAID_PROVIDER (2 TTS) + EVIDENCE"
+readiness: "69bff641-e056-4701-a23f-d91dbc2039b2 REVIEW->APPROVED (status-only)"
+s028_frame: {row: "739b9aec-d908-4699-baea-10bf9e6b4f3e", canonical_rgb_sha256: "f5dad881b8b8e48498b93381db225b034be867cec90d3950376284716570bc12", pixel_match: true, status: "REVIEW->APPROVED (status-only)", bound_sha256: "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0", open_note: "metadata human_decision still PENDING (status-only instruction)"}
+tts: {generations: 2, retries: 0, credits: 45, usd: 0.009,
+      lumi: {asset_id: "DLG-EP005-S028-LUMI-v01", row: "11880cb2-37f2-4ab8-a99d-179e1d8a33d9", gen: "oeayskQWHY46ky1NAxYO", sha256: "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc", duration_s: 2.554195, status: "REVIEW"},
+      mikko: {asset_id: "DLG-EP005-S028-MIKKO-v01", row: "349d79ee-05c5-42ca-bd9f-ce8270b3f877", gen: "I9rtpWNtSGSJp9gqVrfE", sha256: "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0", duration_s: 1.578957, status: "REVIEW"}}
+g09: {back_to_back_fits: true, min_overlap_s: 0.0, proposed_lumi_start_s: 0.25, proposed_mikko_start_s: 2.804187, final_dialogue_end_s: 4.383146, end_hold_s: 0.616854, status: "PASS"}
+evidence: ["evidence/EP005_S028_REAL_DIALOGUE_PREFLIGHT_v1.0.md", "evidence/ep005/s028_dialogue/", "evidence/ep005/s028_base_frame/S028_PIXEL_EQUIVALENCE_PROOF_v1.json", "evidence/ep005/v05_lineage/READINESS_69bff641_APPROVED_READBACK_v1.json"]
+video_generations: 0
+seedance_authorised: false
+rollback: "see summary (human instruction required); 45 credits not recoverable"
+status: "EP005_S028_REAL_DIALOGUE_PREFLIGHT_READY + V05_READINESS_APPROVED + S028_FRAME_PIXEL_EQUIVALENCE_CHECKED + S028_BASE_FRAME_APPROVED_IF_MATCHED(MATCHED) + LUMI_S028_DIALOGUE_GENERATED_ONCE + MIKKO_S028_DIALOGUE_GENERATED_ONCE + LUMI_DIALOGUE_REGISTERED_REVIEW + MIKKO_DIALOGUE_REGISTERED_REVIEW + REAL_DIALOGUE_DURATIONS_MEASURED + G09_REAL_AUDIO_TIMING_COMPLETE + ELEVENLABS_GENERATIONS=2 + ELEVENLABS_RETRIES=0 + S028_SEEDANCE_AUTHORISED=NO + ZERO_VIDEO_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
+```

@@ -1,0 +1,21 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/2 200 
+content-type: audio/mpeg
+date: Mon, 12 Oct 2026 00:21:57 GMT
+cache-control: private, max-age=3600
+expires: Mon, 12 Oct 2026 01:21:57 GMT
+last-modified: Mon, 12 Oct 2026 00:21:37 GMT
+etag: "262be8874ba1dbd127026945bebb62fc"
+x-goog-generation: 1791764497873896
+x-goog-metageneration: 1
+x-goog-stored-content-encoding: identity
+x-goog-stored-content-length: 43501
+x-goog-hash: crc32c=jvvh/Q==
+x-goog-hash: md5=Jivoh0uh29EnAmlFvrti/A==
+x-goog-storage-class: STANDARD
+accept-ranges: bytes
+content-length: 43501
+vary: Origin
+server: UploadServer
+

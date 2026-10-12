@@ -1,0 +1,133 @@
+{
+ "shot": "S028",
+ "shot_duration_s": 5,
+ "slots": [
+  [
+   "Lumi",
+   "You look comfy. Story time."
+  ],
+  [
+   "Mikko",
+   "I’m ready to rest."
+  ]
+ ],
+ "cases": [
+  {
+   "case": "A_strict_back_to_back_from_0",
+   "g09": "PASS",
+   "lines": [
+    {
+     "slot": 0,
+     "speaker": "Lumi",
+     "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+     "start_sample": 0,
+     "end_sample": 122601,
+     "start_s": 0.0,
+     "end_s": 2.554187,
+     "duration_s": 2.554187
+    },
+    {
+     "slot": 1,
+     "speaker": "Mikko",
+     "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+     "start_sample": 122601,
+     "end_sample": 198391,
+     "start_s": 2.554187,
+     "end_s": 4.133146,
+     "duration_s": 1.578958
+    }
+   ],
+   "window": {
+    "start_s": 0.0,
+    "end_s": 5.0,
+    "pre_hold_seconds": 0.0,
+    "post_hold_seconds": 0.0
+   },
+   "visual_holds": {
+    "before_first_line_s": 0.0,
+    "after_last_line_s": 0.866854
+   },
+   "overlaps": []
+  },
+  {
+   "case": "A2_strict_back_to_back_pre_hold_0.25",
+   "g09": "PASS",
+   "lines": [
+    {
+     "slot": 0,
+     "speaker": "Lumi",
+     "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+     "start_sample": 12000,
+     "end_sample": 134601,
+     "start_s": 0.25,
+     "end_s": 2.804187,
+     "duration_s": 2.554187
+    },
+    {
+     "slot": 1,
+     "speaker": "Mikko",
+     "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+     "start_sample": 134601,
+     "end_sample": 210391,
+     "start_s": 2.804187,
+     "end_s": 4.383146,
+     "duration_s": 1.578958
+    }
+   ],
+   "window": {
+    "start_s": 0.25,
+    "end_s": 5.0,
+    "pre_hold_seconds": 0.25,
+    "post_hold_seconds": 0.0
+   },
+   "visual_holds": {
+    "before_first_line_s": 0.25,
+    "after_last_line_s": 0.616854
+   },
+   "overlaps": []
+  },
+  {
+   "case": "B_minimal_adjustment_none_needed (same as A2; overlap 0)",
+   "g09": "PASS",
+   "lines": [
+    {
+     "slot": 0,
+     "speaker": "Lumi",
+     "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+     "start_sample": 12000,
+     "end_sample": 134601,
+     "start_s": 0.25,
+     "end_s": 2.804187,
+     "duration_s": 2.554187
+    },
+    {
+     "slot": 1,
+     "speaker": "Mikko",
+     "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+     "start_sample": 134601,
+     "end_sample": 210391,
+     "start_s": 2.804187,
+     "end_s": 4.383146,
+     "duration_s": 1.578958
+    }
+   ],
+   "window": {
+    "start_s": 0.25,
+    "end_s": 5.0,
+    "pre_hold_seconds": 0.25,
+    "post_hold_seconds": 0.0
+   },
+   "visual_holds": {
+    "before_first_line_s": 0.25,
+    "after_last_line_s": 0.616854
+   },
+   "overlaps": []
+  },
+  {
+   "case": "C_unauthorised_overlap_check (Mikko 0.10 s early, must fail)",
+   "g09": "FAIL_CLOSED",
+   "code": "DIALOGUE_OVERLAP_UNAUTHORISED",
+   "detail": "S028: slots 0/1 overlap 0.100000 s"
+  }
+ ]
+}
