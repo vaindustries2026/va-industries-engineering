@@ -1,0 +1,99 @@
+{
+ "checks": {
+  "frame": {
+   "row": "739b9aec-d908-4699-baea-10bf9e6b4f3e",
+   "status": "APPROVED",
+   "human_decision": "APPROVED",
+   "sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+   "human_approval": "APPROVED",
+   "approved": true
+  },
+  "frame_stored_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "dialogue": {
+   "DLG-EP005-S028-LUMI-v01": [
+    "APPROVED",
+    "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc"
+   ],
+   "DLG-EP005-S028-MIKKO-v01": [
+    "APPROVED",
+    "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0"
+   ]
+  },
+  "dialogue_metadata": {
+   "DLG-EP005-S028-LUMI-v01": [
+    "APPROVED",
+    "APPROVED"
+   ],
+   "DLG-EP005-S028-MIKKO-v01": [
+    "APPROVED",
+    "APPROVED"
+   ]
+  },
+  "readiness": [
+   "69bff641-e056-4701-a23f-d91dbc2039b2",
+   "APPROVED"
+  ],
+  "manifest": [
+   "0325d35c-d567-4488-bf78-c3887e819382",
+   "APPROVED"
+  ],
+  "S028_spec": "SPEC",
+  "S028_engineering": {
+   "video_generation_required": true,
+   "overlays": 0,
+   "treatments": 0,
+   "frames": 120,
+   "duration_s": 5
+  },
+  "G09": {
+   "status": "PASS",
+   "lines": [
+    [
+     "Lumi",
+     0.25,
+     2.804187
+    ],
+    [
+     "Mikko",
+     2.804187,
+     4.383146
+    ]
+   ],
+   "end_hold_s": 0.616854
+  },
+  "prompt_sha256": "18090c35fedbb28804646a636e31083b70cebd9d8b7ac2161b43117a33371b77",
+  "authoritative_action": {
+   "cloth_handoff_mikko_to_lumi": true,
+   "single_shoulder_pat_by_lumi_on_mikko": true,
+   "pat_never_face": true,
+   "mirror_lowered_to_rest": true,
+   "settled_end_state": true,
+   "camera_locked": true
+  },
+  "balance": {
+   "HIGGSFIELD_BALANCE_CONFIRMED": "YES (Gilang, >= USD 3.46)",
+   "max_authorised_usd": 3.5
+  },
+  "request": {
+   "duration": 5,
+   "resolution": "1080p",
+   "generate_audio": false,
+   "source_frames": 1,
+   "max_attempts": 1,
+   "auto_retries": 0,
+   "model": "bytedance/seedance-2.0/image-to-video"
+  },
+  "expected_cost_usd": {
+   "1920x1080_5.000s": 3.402,
+   "1920x1080_121_frames": 3.4304,
+   "1920x1088_5.000s": 3.4272,
+   "1920x1088_121_frames": 3.4558
+  },
+  "ledger": {
+   "upload_attempts": 1,
+   "generation_attempts": 0
+  }
+ },
+ "problems": [],
+ "result": "PASS"
+}
