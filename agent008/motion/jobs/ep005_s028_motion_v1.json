@@ -1,0 +1,94 @@
+{
+ "job_id": "A008-MOTION-EP005-S028-v1",
+ "package_version": "v1",
+ "status": "AUTHORISED_ONE_GENERATION (Company Brain 2026-10-12, max $3.50, no retry)",
+ "shot_id": "S028",
+ "frame_id": "FRAME-EP005-S028-BASE-CAND-v01",
+ "source_frame": {
+  "asset_registry_id": "739b9aec-d908-4699-baea-10bf9e6b4f3e",
+  "registry_status": "APPROVED",
+  "human_decision": "APPROVED",
+  "asset_type": "SHOT_FRAME",
+  "asset_subtype": "BASE_FRAME",
+  "storage": "production-assets/visual/production/ep005/frames/FRAME-EP005-S028-BASE-CAND-v01.png",
+  "approved_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "canonical_rgb_sha256": "f5dad881b8b8e48498b93381db225b034be867cec90d3950376284716570bc12",
+  "bytes": 3091468,
+  "dimensions": "1920x1080",
+  "content_type": "image/png",
+  "derivation": "deterministic G04 extract of approved S027 raw motion 86dddea5...0e25 frame 119"
+ },
+ "approved_source_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+ "production_manifest_id": "0325d35c-d567-4488-bf78-c3887e819382",
+ "readiness_manifest_id": "69bff641-e056-4701-a23f-d91dbc2039b2",
+ "agent006_run_id": "A006-1791761096896",
+ "provider": "higgsfield",
+ "provider_model": "bytedance/seedance-2.0/image-to-video",
+ "provider_model_locked_for_this_attempt": true,
+ "fallback_model": "NONE (not authorised)",
+ "motion_prompt": "Animate this exact starting image as a calm, cosy preschool moment of rest. The starting frame stays visually dominant: keep the image as it is and add only small, soft, slow movement.\n\nMikko, the bear on the left, stays relaxed and content with his gentle smile. He keeps holding the blue cleaning cloth gently in his hand, low and away from his face, where it is now. He gives one small, calm, rest-ready response: a soft, slow settling of his shoulders and a tiny contented nod. His mouth may move softly and naturally, like calm quiet talking, with no exaggerated or fast mouth movement. He does not wipe his face, does not move the cloth toward his face, does not walk and does not change his pose.\n\nLumi, the glowing orb on the right, keeps her warm, gentle expression and floats in place. She slowly and gently lowers the pink flower mirror from where it is now to a relaxed resting position in front of her lower body, and keeps it there, held steady and clearly visible. Her mouth may move softly and naturally, like calm quiet talking, with no exaggerated or fast mouth movement. She stays floating at the same spot with only a very gentle, buoyant bob. She does not fly around the bathroom and does not change her pose beyond lowering the mirror.\n\nBoth characters stay comfortable and settled for the whole shot. Very small natural breathing and soft expression changes are fine.\n\nThe camera is completely locked: no pan, no tilt, no zoom, no dolly, no orbit, no reframing and no cuts. The bathroom stays exactly the same: no background changes, no moving fixtures, no new objects and no environmental effects.\n\nPreserve Mikko's and Lumi's exact identities, facial structure, proportions, clothing and colours from the starting image. Mikko's face stays clean, with zero berry marks or smudges. Keep exactly one cleaning cloth and exactly one pink flower mirror; do not duplicate either prop. Do not create extra limbs, fingers, hands, faces or characters. Do not morph the characters, change Mikko's fur colour, change Lumi's round orb shape, resize Lumi, or change costumes. No major pose changes. No text or logos. No mirror reflection event, no mirror glint, no magical effects and no sparkles. No exaggerated speech animation and no audio.",
+ "motion_prompt_sha256": "d025c3cc2ef5ff56b56c886cc9e164c8506f9d7cdfe698fba08916b4278d6c74",
+ "motion_prompt_file": "evidence/agent008/phase1/s028/S028_MOTION_PROMPT_v1.txt (exact bytes, no trailing newline)",
+ "negative_constraints": "",
+ "negative_constraints_folded_into_prompt": true,
+ "duration_seconds": 5,
+ "resolution": "1080p",
+ "generate_audio": false,
+ "aspect_ratio": "16:9",
+ "fps_target": 24,
+ "maximum_attempts": 1,
+ "automatic_retries": 0,
+ "visual_sync_decision": "VOICE_OVER_WITH_SOFT_NATURAL_MOUTH_MOTION (S028 only; Company Brain 2026-10-12; not a global policy)",
+ "action_note": "Company Brain S028 direction: Mikko keeps holding the cloth (no hand-off, no shoulder pat in the motion); Lumi lowers the mirror to a relaxed resting position in front of her lower body while floating. This narrows the manifest motion_description (hand-off + one cloth pat) by explicit Company Brain instruction.",
+ "expected_cost": {
+  "basis": "Higgsfield Seedance 2.0 token metering ceil(seconds*w*h*24/1024) x $0.014/1k tokens (S027 basis)",
+  "usd_1920x1080_5.000s": 3.402,
+  "usd_1920x1080_121_frames_5.0417s": 3.43,
+  "usd_1920x1088_121_frames": 3.456,
+  "max_authorised_usd": 3.5
+ },
+ "audio_timing_for_compositor": {
+  "dialogue": [
+   {
+    "shot_id": "S028",
+    "speaker": "Lumi",
+    "text": "You look comfy. Story time.",
+    "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+    "expected_sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+    "registry_status": "APPROVED",
+    "start_seconds": 0.25,
+    "gain_db": "PROPOSED +15.0"
+   },
+   {
+    "shot_id": "S028",
+    "speaker": "Mikko",
+    "text": "I’m ready to rest.",
+    "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+    "expected_sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+    "registry_status": "APPROVED",
+    "start_seconds": 2.804187,
+    "gain_db": "PROPOSED -4.0"
+   }
+  ],
+  "dialogue_window": {
+   "pre_hold_seconds": 0.25
+  },
+  "beds": {
+   "AMB-BATHROOM-QUIET-v01": {
+    "gain_db": 0.0
+   }
+  },
+  "named": {
+   "FOLEY-CLOTH-SOFT-v01": {
+    "start_seconds": "SET_AFTER_RAW_MOTION_REVIEW",
+    "gain_db": "PROPOSED -12.0"
+   }
+  }
+ },
+ "provider_params": {
+  "duration": 5,
+  "resolution": "1080p",
+  "generate_audio": false,
+  "image_url": "ASSIGNED_AT_UPLOAD"
+ }
+}

@@ -2526,3 +2526,24 @@ seedance_authorised: false
 rollback: "see summary (human instruction required); 45 credits not recoverable"
 status: "EP005_S028_REAL_DIALOGUE_PREFLIGHT_READY + V05_READINESS_APPROVED + S028_FRAME_PIXEL_EQUIVALENCE_CHECKED + S028_BASE_FRAME_APPROVED_IF_MATCHED(MATCHED) + LUMI_S028_DIALOGUE_GENERATED_ONCE + MIKKO_S028_DIALOGUE_GENERATED_ONCE + LUMI_DIALOGUE_REGISTERED_REVIEW + MIKKO_DIALOGUE_REGISTERED_REVIEW + REAL_DIALOGUE_DURATIONS_MEASURED + G09_REAL_AUDIO_TIMING_COMPLETE + ELEVENLABS_GENERATIONS=2 + ELEVENLABS_RETRIES=0 + S028_SEEDANCE_AUTHORISED=NO + ZERO_VIDEO_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261012-EP005-S028-SEEDANCE-PREFLIGHT-PAUSED: S028 dialogue approved, frame metadata repaired, Seedance package + upload + gate PASS; paused before paid submit (balance unverifiable)
+
+```yaml
+change_id: "ENG-20261012-EP005-S028-SEEDANCE-PREFLIGHT-PAUSED"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Company Brain / Gilang (dialogue approval, frame metadata repair, timing, S028 VO decision, one Seedance generation <= $3.50); in-task human answer: upload + gate, then pause"
+change_type: "PRODUCTION_STATE + PROVIDER_UPLOAD + EVIDENCE"
+dialogue: {lumi: "11880cb2 APPROVED (970f55a9...a8bc)", mikko: "349d79ee APPROVED (ab81173e...30b0)", method: "status-only"}
+frame: "739b9aec metadata_json.human_decision PENDING->APPROVED (only key)"
+timing: "Lumi 0.25 / Mikko 2.804187 / end 4.383146 / hold 0.616854; G09 PASS"
+visual_sync: "VOICE_OVER_WITH_SOFT_NATURAL_MOUTH_MOTION (S028 only)"
+gain_plan: {lumi_db: 15.0, mikko_db: -4.0, status: "PROPOSED"}
+seedance: {prompt_sha256: "d025c3cc2ef5ff56b56c886cc9e164c8506f9d7cdfe698fba08916b4278d6c74", final_body_sha256: "172ba8584ad3076922970794ba223e0fba1d3c7f7f0cb377dda2423c7efdfc41", source_upload: "1 (readback SHA match)", gate: "PASS", submits: 0, generations: 0, reason_paused: "Higgsfield API balance unreadable; S027 history suggests possibly insufficient"}
+evidence: ["evidence/EP005_S028_SEEDANCE_PREFLIGHT_PAUSED_BEFORE_SUBMIT_v1.0.md", "evidence/agent008/phase1/s028/", "agent008/motion/jobs/ep005_s028_motion_v1.json"]
+paid_action_triggered: false
+status: "EP005_S028_SEEDANCE_READY_TO_SUBMIT_PAUSED_FOR_BALANCE + LUMI_S028_DIALOGUE_APPROVED + MIKKO_S028_DIALOGUE_APPROVED + S028_FRAME_HUMAN_DECISION_METADATA_REPAIRED + S028_REAL_DIALOGUE_TIMING_APPROVED + S028_VOICEOVER_WITH_SOFT_NATURAL_MOUTH_MOTION + SOURCE_AUDIO_ASSETS_UNCHANGED + DERIVED_MIX_GAIN_PLAN_READY + S028_SEEDANCE_PROMPT_LOCKED + S028_SEEDANCE_GENERATIONS=0 + S029_NOT_STARTED + EVIDENCE_COMMITTED_TO_GITHUB"
+```

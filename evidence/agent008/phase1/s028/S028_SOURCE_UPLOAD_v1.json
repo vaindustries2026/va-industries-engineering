@@ -1,0 +1,17 @@
+{
+ "upload": {
+  "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png",
+  "upload_host": "fnf-api-input-prod-20250414194641741400000002.s3.amazonaws.com",
+  "content_type": "image/png",
+  "sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "bytes": 3091468,
+  "readback": "NOT_ATTEMPTED"
+ },
+ "readback": {
+  "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png",
+  "http_status": 200,
+  "bytes": 3091468,
+  "content_type": "image/png",
+  "sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0"
+ }
+}

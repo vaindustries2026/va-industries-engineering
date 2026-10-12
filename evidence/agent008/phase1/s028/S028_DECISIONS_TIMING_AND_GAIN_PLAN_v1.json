@@ -1,0 +1,28 @@
+{
+ "dialogue_approvals": {
+  "DLG-EP005-S028-LUMI-v01": {"row": "11880cb2-37f2-4ab8-a99d-179e1d8a33d9", "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc", "transition": "REVIEW->APPROVED (status-only, PATCH guarded on sha256 + REVIEW)"},
+  "DLG-EP005-S028-MIKKO-v01": {"row": "349d79ee-05c5-42ca-bd9f-ce8270b3f877", "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0", "transition": "REVIEW->APPROVED (status-only, PATCH guarded on sha256 + REVIEW)"},
+  "authority": "Gilang / Company Brain listened to both exact clips (2026-10-12)",
+  "open_note": "status-only per instruction: both rows' metadata_json.human_decision and human_approval still read PENDING (needs a separately authorised metadata-only merge)"
+ },
+ "frame_metadata_repair": {"row": "739b9aec-d908-4699-baea-10bf9e6b4f3e", "change": "metadata_json.human_decision PENDING->APPROVED (only key changed; status already APPROVED; sha256 9ac6ccc3...6ff0)",
+   "open_note": "metadata_json.human_approval still PENDING and approved=false (not in the authorised smallest change)"},
+ "accepted_g09_timing": {"LUMI_START": 0.25, "MIKKO_START": 2.804187, "FINAL_DIALOGUE_END": 4.383146, "REMAINING_END_HOLD": 0.616854,
+   "overlap": "none", "G09_STATUS": "PASS (re-verified in pre-submit validation against the stored approved bytes)", "time_stretch": false, "trim": false},
+ "visual_sync_decision": {"S028_DIALOGUE_VISUAL_SYNC_DECISION": "VOICE_OVER_WITH_SOFT_NATURAL_MOUTH_MOTION", "scope": "S028 only; no global policy",
+   "means": ["no lip-sync provider", "no phoneme-accurate mouth animation", "no dialogue-driven mouth regeneration", "subtle natural mouth movement allowed in Seedance motion", "no exaggerated/rapid mouth movement", "stable identity and facial structure"]},
+ "gain_plan": {
+  "source_assets_unchanged": true,
+  "measurement": "ffmpeg ebur128 (integrated LUFS, true peak) on the exact approved files",
+  "measured": {"LUMI": {"I_LUFS": -36.2, "peak_dbfs": -19.5}, "MIKKO": {"I_LUFS": -17.4, "peak_dbfs": -3.1},
+               "AMB-BATHROOM-QUIET-v01": {"I_LUFS": -42.0, "peak_dbfs": -29.9}, "FOLEY-CLOTH-SOFT-v01": {"I_LUFS": -14.6, "peak_dbfs": -5.9},
+               "reference_S027_approved_Mikko_line": {"I_LUFS": -21.4, "peak_dbfs": -5.5}},
+  "rationale": "match both S028 lines to the approved S027 dialogue level (-21.4 LUFS) for continuity across the S027->S028 cut; fixed gains only, no compression or normalisation",
+  "LUMI_DIALOGUE_GAIN_DB": 15.0, "MIKKO_DIALOGUE_GAIN_DB": -4.0,
+  "predicted_after_gain": {"LUMI": {"I_LUFS": -21.2, "peak_dbfs": -4.5}, "MIKKO": {"I_LUFS": -21.4, "peak_dbfs": -7.1}},
+  "ambience": "AMB bed at 0 dB (-42 LUFS, ~21 LU below dialogue; same as S027)",
+  "foley_proposal": "FOLEY-CLOTH-SOFT-v01 at -12 dB (~-26.6 LUFS, subtle); start time set after raw motion review",
+  "ceiling": "lines do not overlap; the largest single peak after gain is about -4.5 dBFS, under the -1.0 dBFS ceiling (Agent-008 enforces the ceiling at mix time)",
+  "status": "PROPOSED; applied only in the derived final mix after raw-motion approval"
+ }
+}

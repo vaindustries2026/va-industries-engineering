@@ -1,0 +1,187 @@
+{
+ "validation": {
+  "frame": {
+   "row": "739b9aec-d908-4699-baea-10bf9e6b4f3e",
+   "status": "APPROVED",
+   "human_decision": "APPROVED",
+   "sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0"
+  },
+  "frame_stored_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "dialogue": {
+   "DLG-EP005-S028-LUMI-v01": [
+    "APPROVED",
+    "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc"
+   ],
+   "DLG-EP005-S028-MIKKO-v01": [
+    "APPROVED",
+    "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0"
+   ]
+  },
+  "readiness": [
+   "69bff641-e056-4701-a23f-d91dbc2039b2",
+   "APPROVED"
+  ],
+  "manifest": [
+   "0325d35c-d567-4488-bf78-c3887e819382",
+   "APPROVED"
+  ],
+  "S028_spec": "SPEC",
+  "S028_engineering": {
+   "video_generation_required": true,
+   "overlays": 0,
+   "treatments": 0,
+   "frames": 120,
+   "duration_s": 5
+  },
+  "G09": {
+   "status": "PASS",
+   "lines": [
+    [
+     "Lumi",
+     0.25,
+     2.804187
+    ],
+    [
+     "Mikko",
+     2.804187,
+     4.383146
+    ]
+   ],
+   "end_hold_s": 0.616854
+  },
+  "prompt_sha256": "d025c3cc2ef5ff56b56c886cc9e164c8506f9d7cdfe698fba08916b4278d6c74",
+  "request": {
+   "duration": 5,
+   "resolution": "1080p",
+   "generate_audio": false,
+   "source_frames": 1,
+   "max_attempts": 1,
+   "auto_retries": 0,
+   "model": "bytedance/seedance-2.0/image-to-video"
+  },
+  "expected_cost_usd": {
+   "1920x1080_5.000s": 3.402,
+   "1920x1080_121_frames": 3.4304,
+   "1920x1088_5.000s": 3.4272,
+   "1920x1088_121_frames": 3.4558
+  },
+  "ledger": {
+   "upload_attempts": 1,
+   "generation_attempts": 0
+  }
+ },
+ "final_request_body": {
+  "prompt": "Animate this exact starting image as a calm, cosy preschool moment of rest. The starting frame stays visually dominant: keep the image as it is and add only small, soft, slow movement.\n\nMikko, the bear on the left, stays relaxed and content with his gentle smile. He keeps holding the blue cleaning cloth gently in his hand, low and away from his face, where it is now. He gives one small, calm, rest-ready response: a soft, slow settling of his shoulders and a tiny contented nod. His mouth may move softly and naturally, like calm quiet talking, with no exaggerated or fast mouth movement. He does not wipe his face, does not move the cloth toward his face, does not walk and does not change his pose.\n\nLumi, the glowing orb on the right, keeps her warm, gentle expression and floats in place. She slowly and gently lowers the pink flower mirror from where it is now to a relaxed resting position in front of her lower body, and keeps it there, held steady and clearly visible. Her mouth may move softly and naturally, like calm quiet talking, with no exaggerated or fast mouth movement. She stays floating at the same spot with only a very gentle, buoyant bob. She does not fly around the bathroom and does not change her pose beyond lowering the mirror.\n\nBoth characters stay comfortable and settled for the whole shot. Very small natural breathing and soft expression changes are fine.\n\nThe camera is completely locked: no pan, no tilt, no zoom, no dolly, no orbit, no reframing and no cuts. The bathroom stays exactly the same: no background changes, no moving fixtures, no new objects and no environmental effects.\n\nPreserve Mikko's and Lumi's exact identities, facial structure, proportions, clothing and colours from the starting image. Mikko's face stays clean, with zero berry marks or smudges. Keep exactly one cleaning cloth and exactly one pink flower mirror; do not duplicate either prop. Do not create extra limbs, fingers, hands, faces or characters. Do not morph the characters, change Mikko's fur colour, change Lumi's round orb shape, resize Lumi, or change costumes. No major pose changes. No text or logos. No mirror reflection event, no mirror glint, no magical effects and no sparkles. No exaggerated speech animation and no audio.",
+  "image_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png",
+  "duration": 5,
+  "resolution": "1080p",
+  "generate_audio": false
+ },
+ "final_request_body_wire_bytes": 2465,
+ "FINAL_REQUEST_BODY_SHA256": "172ba8584ad3076922970794ba223e0fba1d3c7f7f0cb377dda2423c7efdfc41",
+ "endpoint": "https://api.higgsfield.ai/bytedance/seedance-2.0/image-to-video",
+ "spend_authorisation": {
+  "approval_scope_id": "S028-MOTION-SEEDANCE20-1",
+  "authorised_by": "Gilang / Company Brain",
+  "provider": "HIGGSFIELD",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "shot_id": "S028",
+  "source_frame_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "prompt_sha256": "d025c3cc2ef5ff56b56c886cc9e164c8506f9d7cdfe698fba08916b4278d6c74",
+  "max_generations": 1,
+  "no_auto_retry": true,
+  "human_approved": true,
+  "maximum_authorised_cost_usd": 3.5
+ },
+ "preflight": {
+  "job_id": "A008-MOTION-EP005-S028-v1",
+  "ready_for_paid_call": true,
+  "checks": [
+   {
+    "check": "approved_shot_contract",
+    "result": "PASS",
+    "value": 120
+   },
+   {
+    "check": "shot_in_approved_video_shots",
+    "result": "PASS",
+    "value": true
+   },
+   {
+    "check": "manifest_ids",
+    "result": "PASS",
+    "value": [
+     "0325d35c-d567-4488-bf78-c3887e819382",
+     "69bff641-e056-4701-a23f-d91dbc2039b2",
+     "APPROVED"
+    ]
+   },
+   {
+    "check": "source_frame_sha256",
+    "result": "PASS",
+    "value": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0"
+   },
+   {
+    "check": "model_capability",
+    "result": "PASS",
+    "value": true
+   },
+   {
+    "check": "prompt_sha256",
+    "result": "PASS",
+    "value": "d025c3cc2ef5ff56b56c886cc9e164c8506f9d7cdfe698fba08916b4278d6c74"
+   },
+   {
+    "check": "requested_duration_resolution",
+    "result": "PASS",
+    "value": [
+     5,
+     "1080p",
+     "16:9"
+    ]
+   },
+   {
+    "check": "model_official_contract",
+    "result": "PASS",
+    "value": "bytedance/seedance-2.0/image-to-video"
+   },
+   {
+    "check": "provider_credentials",
+    "result": "PASS",
+    "value": true
+   },
+   {
+    "check": "source_frame_hosted_url",
+    "result": "PASS",
+    "value": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png"
+   },
+   {
+    "check": "spend_authorisation",
+    "result": "PASS",
+    "value": true
+   },
+   {
+    "check": "paid_generation_count_so_far",
+    "result": "PASS",
+    "value": 0
+   }
+  ],
+  "blockers": []
+ },
+ "runner_validate_pre_generation": {
+  "shot_id": "S028",
+  "production_manifest_id": "0325d35c-d567-4488-bf78-c3887e819382",
+  "readiness_manifest_id": "69bff641-e056-4701-a23f-d91dbc2039b2",
+  "source_frame_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "prompt_sha256": "d025c3cc2ef5ff56b56c886cc9e164c8506f9d7cdfe698fba08916b4278d6c74",
+  "duration_seconds": 5,
+  "resolution": "1080p",
+  "credentials": "present",
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png",
+  "paid_generations_so_far": 0
+ },
+ "generation_attempts_so_far": 0,
+ "problems": [],
+ "gate": "PASS"
+}
