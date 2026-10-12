@@ -1,0 +1,74 @@
+{
+ "asset_id": "FRAME-EP005-S029-BASE-CAND-v01",
+ "asset_name": "EP005 S029 Base Frame (derived from approved S028 raw frame 119)",
+ "asset_type": "SHOT_FRAME",
+ "asset_subtype": "BASE_FRAME",
+ "version": "v01",
+ "status": "REVIEW",
+ "aliases": [],
+ "storage_path": "production-assets/visual/production/ep005/frames/FRAME-EP005-S029-BASE-CAND-v01.png",
+ "source_url": null,
+ "metadata_json": {
+  "shot_id": "S029",
+  "frame_id": "FRAME-EP005-S029-BASE-CAND-v01",
+  "episode_code": "EP-CANDIDATE-005",
+  "sha256": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+  "bytes": 3100547,
+  "dimensions": "1920x1080",
+  "width": 1920,
+  "height": 1080,
+  "format": "PNG 8-bit RGB non-interlaced",
+  "content_type": "image/png",
+  "has_alpha": false,
+  "rgb24_sha256": "5e328d860d0e221881814400c962d207412c1240fd3dad29b7611ca53abbfc86",
+  "canon_role": "S029 held base frame (shot-specific; not global character canon)",
+  "canon_scope": "MIKKO_LUMI_EP005_SHOT_SPECIFIC_PRODUCTION_ASSET",
+  "not_c1_canon": true,
+  "derivation": {
+   "method": "DETERMINISTIC_FRAME_EXTRACTION (Agent-008 G04 agent008.derive.derive_frame)",
+   "source_asset_id": "MOTION-EP005-S028-SEEDANCE20-CAND-v01",
+   "source_registry_id": "2e13b73d-a328-4cb9-b366-8d3cba5f350e",
+   "source_classification": "SHOT_MOTION/RAW_MOTION_SOURCE",
+   "source_sha256": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+   "source_decoded_frames": 121,
+   "source_frame_index": 119,
+   "source_frame_timestamp_s": 4.958333,
+   "selected_frame_rgb24_sha256": "5e328d860d0e221881814400c962d207412c1240fd3dad29b7611ca53abbfc86",
+   "canonical_rgb_equals_source_frame119": true,
+   "crop": null,
+   "scale": null,
+   "colour_change": null,
+   "generative_modification": false,
+   "two_run_determinism": {
+    "runs": 2,
+    "byte_identical": true,
+    "run_sha256": [
+     "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+     "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4"
+    ]
+   },
+   "source_unchanged_after_derivation": true,
+   "continuity_basis": "raw frame 119 = last frame used by approved SHOT-EP005-S028-ASSEMBLED-v01 (1d5dfabd...7cc0)",
+   "provider_calls": 0
+  },
+  "s029_continuity_exception": {
+   "S029_CLOTH_LOCATION": "MIKKO_SHOULDER_IN_LUMI_HAND",
+   "authority": "Company Brain / Gilang 2026-10-12",
+   "detail": "S029 inherits the exact approved S028 end state (cloth against Mikko’s shoulder in Lumi’s hand, mirror lowered in front of Lumi’s lower body) instead of the written \"cloth in Lumi’s lap\"; S029 only; script/manifest records unchanged"
+  },
+  "s029_implementation_variance": {
+   "STATIC_HELD_POSE": "APPROVED",
+   "MINIMAL_BREATHING_IMPLEMENTATION": "OMITTED",
+   "authority": "Company Brain / Gilang 2026-10-12",
+   "scope": "S029 only"
+  },
+  "storage_object_id": "878200e1-6095-40be-80f4-8f5d5feb0d8e",
+  "storage_object_key": "visual/production/ep005/frames/FRAME-EP005-S029-BASE-CAND-v01.png",
+  "human_decision": "PENDING",
+  "human_approval": "PENDING",
+  "approved": false,
+  "approve_by": "exact sha256 a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+  "record": "ENG-20261012-EP005-S029-FINAL-SHOT-REVIEW"
+ },
+ "notes": "S029 base frame: deterministic G04 extraction of approved S028 raw frame 119; two runs byte-identical; no pixel changes. Not C1/global canon."
+}

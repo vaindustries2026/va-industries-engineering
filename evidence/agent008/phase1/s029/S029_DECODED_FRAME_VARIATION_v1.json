@@ -1,0 +1,10 @@
+{
+ "frames": 144,
+ "gop": "IBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBBPBBP",
+ "identical_to_f0": 1,
+ "max_abs_vs_f0": 13,
+ "max_mean_abs_vs_f0": 0.01138,
+ "max_px_gt2_vs_f0": 14,
+ "max_abs_consecutive": 13,
+ "max_mean_abs_consecutive": 0.00606
+}

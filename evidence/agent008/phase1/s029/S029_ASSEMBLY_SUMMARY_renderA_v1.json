@@ -1,0 +1,114 @@
+{
+ "label": "renderA",
+ "inputs": {
+  "FRAME-EP005-S029-BASE-CAND-v01": {
+   "registry_id": "c920490b-ba92-4af5-9966-7df78276731a",
+   "status": "APPROVED",
+   "asset_type": "SHOT_FRAME",
+   "asset_subtype": "BASE_FRAME",
+   "storage_path": "production-assets/visual/production/ep005/frames/FRAME-EP005-S029-BASE-CAND-v01.png",
+   "sha256": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+   "human_decision": "APPROVED"
+  },
+  "AMB-BATHROOM-QUIET-v01": {
+   "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "AMBIENCE",
+   "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+   "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+   "human_decision": null
+  }
+ },
+ "timing": {
+  "beds": {
+   "AMB-BATHROOM-QUIET-v01": {
+    "gain_db": 0.0
+   }
+  }
+ },
+ "outputs": {
+  "review_mp4": {
+   "file": "S029_STILL_REVIEW.mp4",
+   "sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+   "bytes": 680070
+  },
+  "mix_wav": {
+   "file": "S029_STILL_MIX.wav",
+   "sha256": "24cd56b86d516a1d1848e7bf48715f17f3a48b219d1073a3a5a88fbbea569f05"
+  }
+ },
+ "qc": {
+  "frames": 144,
+  "black_frames": [],
+  "longest_identical_run": 144,
+  "max_freeze_frames": 144,
+  "distinct_frames": 1,
+  "frame_hash_list_sha256": "d7d673a7c0b940f84e3bc3800f1e6d1e56d88927aa9c4980606c6135829e1bbe",
+  "issues": [],
+  "expected_frames": 144,
+  "output_frames": 144,
+  "output_resolution": "1920x1080",
+  "expected_resolution": "1920x1080",
+  "output_fps": "24/1",
+  "expected_fps": "24/1",
+  "output_duration_s": 6.0,
+  "expected_duration_s": 6,
+  "audio_streams": 1,
+  "audio_sample_rate": 48000,
+  "audio_peak_dbfs": -30.328,
+  "audio_silent_windows": 0,
+  "held_frame_rgb_sha256": "5e328d860d0e221881814400c962d207412c1240fd3dad29b7611ca53abbfc86",
+  "overlays_applied": 0,
+  "treatments_applied": 0,
+  "automatic_result": "PASS"
+ },
+ "layout": {
+  "source_size": [
+   1920,
+   1080
+  ],
+  "crop": null,
+  "fit_scale": 1.0,
+  "fitted_size": [
+   1920,
+   1080
+  ],
+  "pad_offset": [
+   0,
+   0
+  ],
+  "pad_color": "black",
+  "scale_flags": "lanczos+accurate_rnd+full_chroma_int+bitexact"
+ },
+ "audio_cues": [
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "kind": "BED",
+   "start_s": 0.0,
+   "end_s": 6.0,
+   "gain_db": 0.0
+  }
+ ],
+ "dialogue_tracks": [],
+ "dialogue_timing": {
+  "version": "agent008-g09-v1",
+  "shot_id": "S029",
+  "sample_rate": 48000,
+  "shot_end_s": 6.0,
+  "window": {
+   "start_s": 0.0,
+   "end_s": 6.0,
+   "pre_hold_seconds": 0.0,
+   "post_hold_seconds": 0.0
+  },
+  "lines": [],
+  "overlaps": []
+ },
+ "mix_peak_dbfs": -30.328,
+ "deterministic_core_sha256": "ce8f49113e1b454ccd70d9060ca932e8bba046d8717fe4c8cc549231cdefe385",
+ "sources_after_sha256": {
+  "FRAME-EP005-S029-BASE-CAND-v01": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+  "AMB-BATHROOM-QUIET-v01": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f"
+ }
+}

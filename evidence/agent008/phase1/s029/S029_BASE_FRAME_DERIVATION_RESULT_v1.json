@@ -1,0 +1,22 @@
+{
+ "png_sha256": [
+  "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+  "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4"
+ ],
+ "bytes": 3100547,
+ "dims": [
+  1920,
+  1080
+ ],
+ "byte_identical": true,
+ "canonical_rgb_sha256_PIL": "5e328d860d0e221881814400c962d207412c1240fd3dad29b7611ca53abbfc86",
+ "source_frame119_rgb_sha256": "5e328d860d0e221881814400c962d207412c1240fd3dad29b7611ca53abbfc86",
+ "selected_frame_rgb_sha256": "5e328d860d0e221881814400c962d207412c1240fd3dad29b7611ca53abbfc86",
+ "pixels_equal_source_frame119": true,
+ "crop": null,
+ "scale": null,
+ "source_unchanged": true,
+ "source_sha": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+ "core_sha_equal": true,
+ "frame_timestamp_s": 4.958333
+}

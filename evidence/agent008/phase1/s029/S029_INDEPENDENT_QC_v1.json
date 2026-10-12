@@ -1,0 +1,54 @@
+{
+ "mp4_sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+ "bytes": 680070,
+ "format_duration_s": 6.0,
+ "video": {
+  "codec": "h264",
+  "profile": "High",
+  "pix_fmt": "yuv420p",
+  "res": "1920x1080",
+  "r_frame_rate": "24/1",
+  "nb_frames": 144,
+  "nb_read_frames": 144,
+  "duration_s": 6.0
+ },
+ "audio": {
+  "streams": 1,
+  "codec": "aac",
+  "sample_rate": 48000,
+  "channels": 2,
+  "duration_s": 6.0
+ },
+ "decoded_frames": 144,
+ "distinct_decoded_frame_hashes": 74,
+ "min_frame_mean_luma_rgb": 155.55,
+ "black_frames": 0,
+ "held_frame_vs_source_png_mean_abs_error_8bit": 1.322,
+ "audio_peak_dbfs": -30.2,
+ "audio_rms_dbfs": -44.32,
+ "mix_wav_peak_dbfs": -30.33,
+ "audio_min_50ms_rms_dbfs_excl_edges": -47.54,
+ "audio_max_50ms_rms_dbfs": -41.22,
+ "clipped_samples": 0,
+ "sources_after": {
+  "s028_raw": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+  "ambience": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+  "s029_frame": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4"
+ },
+ "checks": {
+  "res": true,
+  "fps": true,
+  "frames_144": true,
+  "duration_6s": true,
+  "h264": true,
+  "one_audio_aac_48k_stereo": true,
+  "ambience_present": true,
+  "no_black": true,
+  "no_unexpected_frame_diff": false,
+  "no_clip": true,
+  "s028_raw_unchanged": true,
+  "ambience_unchanged": true,
+  "frame_unchanged": true
+ },
+ "result": "FAIL"
+}

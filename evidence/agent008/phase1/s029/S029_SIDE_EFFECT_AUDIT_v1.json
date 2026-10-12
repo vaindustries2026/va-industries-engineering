@@ -1,0 +1,26 @@
+{
+ "record": "ENG-20261012-EP005-S029-FINAL-SHOT-REVIEW",
+ "baseline": "fingerprints at end of ENG-20261012-EP005-S028-COMPLETE-APPROVED / S029 preflight",
+ "after": {
+  "episode_scripts": "5:649d63f9a75dc15f409ac80daee20037 (equal)",
+  "episode_production_manifests": "12:cefb8fa29bca3afb68a21d5aa5ffb1ae (equal)",
+  "production_readiness_manifests": "8:f5c646ee31c101af9fa091ec22563e55 (equal)",
+  "asset_resolution_items": "86:ce5ac459c443eeb77e7f4efe099e048a (equal)",
+  "asset_registry_excluding_S028_and_S029_rows": "27:899d7f339d418fe9aa42f13febc86e1f (equal)",
+  "asset_registry_total": "34 (32 + 2 new S029 rows)",
+  "storage_excluding_S029_objects": "28:c50f2619dcf550e546669a8e713c69b0 (equal)",
+  "storage_total": "30 (28 + 2 new S029 objects)"
+ },
+ "S027_rows": "FRAME/MOTION/DLG-L1/SHOT all APPROVED, SHAs and updated_at unchanged (latest 2026-10-09 23:09:14)",
+ "S028_rows": "FRAME 9ac6ccc3 / MOTION 341683c4 / DLG-LUMI 970f55a9 / DLG-MIKKO ab81173e / SHOT 1d5dfabd all APPROVED; updated_at all before this task (latest 2026-10-12 02:30:23)",
+ "S029_writes": {
+  "registry": ["c920490b-ba92-4af5-9966-7df78276731a FRAME-EP005-S029-BASE-CAND-v01 inserted REVIEW then APPROVED (pre-authorised; status + approval metadata only)",
+               "cf6584d5-9a4d-4788-b509-1d7320a8e28e SHOT-EP005-S029-ASSEMBLED-v01 inserted REVIEW, human_decision PENDING"],
+  "storage": ["878200e1-6095-40be-80f4-8f5d5feb0d8e visual/production/ep005/frames/FRAME-EP005-S029-BASE-CAND-v01.png (x-upsert false)",
+              "9ee8412a-9e55-4746-acd5-fa46bdd390da visual/production/ep005/shots/SHOT-EP005-S029-ASSEMBLED-v01.mp4 (x-upsert false)"]
+ },
+ "s029_base_frame_origin": "deterministic G04 derivation only (no generation, no pixel edit)",
+ "calls": {"provider": 0, "elevenlabs": 0, "higgsfield": 0, "seedance": 0, "image_or_video_generation": 0, "agent006": 0, "agent007": 0, "n8n_writes": 0},
+ "unchanged": ["script", "manifest", "readiness", "resolution items", "billing", "C1 canon", "Agent-008 code", "encoder"],
+ "anime_clip_farming": "untouched"
+}

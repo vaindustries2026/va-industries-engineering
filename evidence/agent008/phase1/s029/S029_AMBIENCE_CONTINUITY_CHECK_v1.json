@@ -1,0 +1,123 @@
+{
+ "s028_final_sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0",
+ "s028_audio_seconds": 5.013333,
+ "ambience_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+ "ambience_seconds": 25.00025,
+ "ambience_rms_dbfs": -44.21,
+ "ambience_peak_dbfs": -29.91,
+ "s029_mix_seconds": 6.0,
+ "s029_mix_peak_dbfs": -30.328,
+ "s029_cues": [
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "kind": "BED",
+   "start_s": 0.0,
+   "end_s": 6.0,
+   "gain_db": 0.0
+  }
+ ],
+ "s029_loop_points_s": [],
+ "s029_loop_seam_max_sample_step": [],
+ "s028_tail_last_500ms_rms_dbfs": -44.18,
+ "s028_tail_last_100ms_rms_dbfs": -44.74,
+ "s028_last_20ms_rms_dbfs": -67.83,
+ "s028_last_sample_abs": 1.764420858307858e-06,
+ "s029_first_20ms_rms_dbfs": -51.02,
+ "s029_first_sample_abs": 0.0,
+ "s029_first_100ms_rms_dbfs": -47.6,
+ "s029_first_500ms_rms_dbfs": -45.27,
+ "s029_steady_rms_dbfs": -44.2,
+ "seam_max_sample_step": 1.4504666129748025e-05,
+ "ambience_steady_max_sample_step": 0.008545756340026855,
+ "seam_envelope_10ms_dbfs": [
+  [
+   -0.1,
+   -42.82
+  ],
+  [
+   -0.09,
+   -42.43
+  ],
+  [
+   -0.08,
+   -43.18
+  ],
+  [
+   -0.07,
+   -44.03
+  ],
+  [
+   -0.06,
+   -46.35
+  ],
+  [
+   -0.05,
+   -41.92
+  ],
+  [
+   -0.04,
+   -44.16
+  ],
+  [
+   -0.03,
+   -49.01
+  ],
+  [
+   -0.02,
+   -64.86
+  ],
+  [
+   -0.01,
+   -85.33
+  ],
+  [
+   0.0,
+   -53.34
+  ],
+  [
+   0.01,
+   -49.51
+  ],
+  [
+   0.02,
+   -46.85
+  ],
+  [
+   0.03,
+   -48.01
+  ],
+  [
+   0.04,
+   -45.06
+  ],
+  [
+   0.05,
+   -46.8
+  ],
+  [
+   0.06,
+   -48.84
+  ],
+  [
+   0.07,
+   -47.18
+  ],
+  [
+   0.08,
+   -47.97
+  ],
+  [
+   0.09,
+   -46.75
+  ]
+ ],
+ "ambience_head_peak_to_rms_ratio": 4.452,
+ "level_jump_db_500ms_windows": -1.09,
+ "checks": {
+  "click_or_discontinuity": "NONE",
+  "level_jump_lt_1p5db": true,
+  "repeated_transient": "NONE",
+  "clip_free": true
+ },
+ "result": "CLEAN"
+}

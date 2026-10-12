@@ -2642,3 +2642,26 @@ production_writes: 0
 provider_calls: 0
 status: "EP005_S029_PREFLIGHT_COMPLETE + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES"
 ```
+
+---
+
+## ENG-20261012-EP005-S029-FINAL-SHOT-REVIEW: S029 base frame derived + approved; final S029 shot assembled and registered REVIEW
+
+```yaml
+change_id: "ENG-20261012-EP005-S029-FINAL-SHOT-REVIEW"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Gilang / Company Brain (S029 continuity exception MIKKO_SHOULDER_IN_LUMI_HAND; static hold approved; breathing omitted; base-frame approval pre-authorised)"
+change_type: "PRODUCTION_STATE (2 registry inserts, 1 pre-authorised approval, 2 storage objects) + EVIDENCE"
+base_frame: "FRAME-EP005-S029-BASE-CAND-v01 c920490b a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4 APPROVED (G04, S028 raw 341683c4...9b58 frame 119, two runs identical)"
+ambience_continuity: "CLEAN (20 ms ramps; no click; -1.09 dB; no loop point)"
+shot: "SHOT-EP005-S029-ASSEMBLED-v01 cf6584d5 REVIEW, human_decision PENDING"
+final_sha256: "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6"
+spec: "1920x1080, 24 fps, 144 frames, 6.000 s, H.264 + AAC 48 kHz stereo; AMB-BATHROOM-QUIET-v01 (ea28fad4...4d2f) 0.0 dB only"
+determinism: "PASS: two renders byte-identical (mp4 + mix wav 24cd56b8...9f05)"
+qc: "PASS (decoded-frame variation is H.264 residue only, mean <=0.011 levels)"
+non_regression: "S027 + S028 unchanged; scripts/manifests/readiness/ARI/other registry/storage fingerprints equal"
+evidence: ["evidence/EP005_S029_FINAL_SHOT_ASSEMBLED_REVIEW_v1.0.md", "evidence/agent008/phase1/s029/"]
+provider_calls: 0
+status: "EP005_S029_FINAL_SHOT_READY_FOR_HUMAN_REVIEW + S029_FINAL_SHOT_STATUS=REVIEW + HUMAN_DECISION=PENDING + ZERO_PAID_CALLS"
+```

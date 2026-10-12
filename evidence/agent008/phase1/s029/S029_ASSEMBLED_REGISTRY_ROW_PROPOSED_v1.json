@@ -1,0 +1,122 @@
+{
+ "asset_id": "SHOT-EP005-S029-ASSEMBLED-v01",
+ "asset_name": "EP005 S029 assembled shot (Agent-008 still-shot compositor)",
+ "asset_type": "SHOT_RENDER",
+ "asset_subtype": "ASSEMBLED_SHOT",
+ "version": "v01",
+ "status": "REVIEW",
+ "aliases": [],
+ "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S029-ASSEMBLED-v01.mp4",
+ "source_url": null,
+ "metadata_json": {
+  "shot_id": "S029",
+  "episode_code": "EP-CANDIDATE-005",
+  "sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+  "bytes": 680070,
+  "container": "mp4",
+  "video": "h264 High yuv420p 1920x1080 24/1, 144 frames",
+  "audio": "aac LC 48 kHz stereo",
+  "duration_s": 6.0,
+  "fps": "24/1",
+  "frames": 144,
+  "dimensions": "1920x1080",
+  "mix_wav_sha256": "24cd56b86d516a1d1848e7bf48715f17f3a48b219d1073a3a5a88fbbea569f05",
+  "mix_peak_dbfs": -30.328,
+  "integrated_lufs": -42.1,
+  "deterministic_core_sha256": "ce8f49113e1b454ccd70d9060ca932e8bba046d8717fe4c8cc549231cdefe385",
+  "determinism": "PASS: two renders byte-identical (mp4 + mix wav)",
+  "canon_scope": "MIKKO_LUMI_EP005_SHOT_SPECIFIC_PRODUCTION_ASSET",
+  "not_c1_canon": true,
+  "provenance": {
+   "compositor": "Agent-008 compose_still_shot (agent008-v0.3-still, G02); evidence/agent008/phase1/s029/s029_assemble.py",
+   "lineage": {
+    "script": "6498ea8d (v05)",
+    "manifest": "0325d35c",
+    "readiness": "69bff641"
+   },
+   "s028_raw_source": {
+    "asset_id": "MOTION-EP005-S028-SEEDANCE20-CAND-v01",
+    "registry_id": "2e13b73d-a328-4cb9-b366-8d3cba5f350e",
+    "sha256": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+    "frame_index": 119,
+    "frame_timestamp_s": 4.958333
+   },
+   "inputs": {
+    "FRAME-EP005-S029-BASE-CAND-v01": {
+     "registry_id": "c920490b-ba92-4af5-9966-7df78276731a",
+     "status": "APPROVED",
+     "sha256": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+     "rgb24_sha256": "5e328d860d0e221881814400c962d207412c1240fd3dad29b7611ca53abbfc86",
+     "derivation": "G04 deterministic extraction of S028 raw frame 119, two runs byte-identical"
+    },
+    "AMB-BATHROOM-QUIET-v01": {
+     "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+     "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f"
+    }
+   },
+   "s029_continuity_exception": {
+    "detail": "S029 inherits the exact approved S028 end state (cloth against Mikko’s shoulder in Lumi’s hand, mirror lowered in front of Lumi’s lower body) instead of the written \"cloth in Lumi’s lap\"; S029 only; script/manifest records unchanged",
+    "authority": "Company Brain / Gilang 2026-10-12",
+    "S029_CLOTH_LOCATION": "MIKKO_SHOULDER_IN_LUMI_HAND"
+   },
+   "s029_implementation_variance": {
+    "scope": "S029 only",
+    "authority": "Company Brain / Gilang 2026-10-12",
+    "STATIC_HELD_POSE": "APPROVED",
+    "MINIMAL_BREATHING_IMPLEMENTATION": "OMITTED"
+   },
+   "video": "approved base frame held unchanged for 144 frames (encoder input: 144 identical RGB frames = source rgb24 5e328d86...bc86); locked camera; crop none, fit_scale 1.0, no pad; no breathing, camera motion, zoom, pixel animation, overlay, treatment, fade, end card, logo, credits, black frame or text",
+   "decoded_frame_variation": {
+    "note": "H.264 quantisation residue only (lossy codec); not motion",
+    "max_mean_abs_vs_frame0": 0.01138,
+    "max_abs_vs_frame0": 13,
+    "max_samples_gt2_levels": 14
+   },
+   "ambience": {
+    "asset": "AMB-BATHROOM-QUIET-v01",
+    "start_s": 0.0,
+    "end_s": 6.0,
+    "gain_db": 0.0,
+    "loop": "governed Agent-008 tile-loop + 20 ms edge ramps (bed 25.00025 s > 6 s: no loop point reached)",
+    "s028_to_s029_continuity": {
+     "result": "CLEAN",
+     "level_jump_db_500ms": -1.09,
+     "seam_max_sample_step": 1.4504666129748025e-05,
+     "checks": {
+      "click_or_discontinuity": "NONE",
+      "level_jump_lt_1p5db": true,
+      "repeated_transient": "NONE",
+      "clip_free": true
+     }
+    }
+   },
+   "excluded": [
+    "dialogue",
+    "foley",
+    "SFX",
+    "music",
+    "breathing",
+    "camera motion",
+    "zoom",
+    "fade",
+    "end card",
+    "logo",
+    "credits",
+    "black frame",
+    "text",
+    "overlays",
+    "treatments",
+    "additional generation"
+   ],
+   "qc": "PASS"
+  },
+  "storage_object_id": "9ee8412a-9e55-4746-acd5-fa46bdd390da",
+  "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S029-ASSEMBLED-v01.mp4",
+  "human_decision": "PENDING",
+  "human_approval": "PENDING",
+  "approved": false,
+  "approve_by": "exact sha256 b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+  "record": "ENG-20261012-EP005-S029-FINAL-SHOT-REVIEW"
+ },
+ "notes": "REVIEW assembled S029 (Agent-008 G02 still shot, deterministic, two renders identical). Human decision pending on exact SHA-256."
+}
