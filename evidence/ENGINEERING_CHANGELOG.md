@@ -2603,3 +2603,22 @@ evidence: ["evidence/EP005_S028_FINAL_SHOT_ASSEMBLED_REVIEW_v1.0.md", "evidence/
 provider_calls: 0
 status: "EP005_S028_FINAL_SHOT_READY_FOR_HUMAN_REVIEW + S028_RAW_MOTION_APPROVED + S028_DIALOGUE_APPROVED + S028_G09_PASS + S028_AUDIO_MIX_COMPLETE + S028_CLOTH_FOLEY_TIMED_ONCE + TARGET 5.000s/120f/24fps/1920x1080 + TWO_RENDER_DETERMINISM_PASS + FINAL_SHOT_STATUS=REVIEW + HUMAN_DECISION=PENDING + S029_NOT_STARTED + ZERO_PROVIDER_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261012-EP005-S028-COMPLETE-APPROVED: S028 final assembled shot approved; S028 closed
+
+```yaml
+change_id: "ENG-20261012-EP005-S028-COMPLETE-APPROVED"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Gilang / Company Brain (final human approval of 1d5dfabd...7cc0)"
+change_type: "PRODUCTION_STATE (approval-only) + EVIDENCE"
+row: "2c438190-6fb8-4a92-9161-6b04359c0fb9 SHOT-EP005-S028-ASSEMBLED-v01 REVIEW->APPROVED (human_decision/human_approval APPROVED, approved true, approved_sha256 bound)"
+final_sha256: "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0"
+non_regression: "S027 unchanged (7b01c392...); scripts/manifests/readiness/ARI/other registry/storage fingerprints unchanged; S029 not started"
+evidence: ["evidence/agent008/phase1/s028/S028_CLOSURE_v1.json", "evidence/agent008/phase1/s028/S028_ASSEMBLED_ROW_APPROVED_READBACK_v1.json"]
+provider_calls: 0
+render_calls: 0
+status: "EP005_S028_COMPLETE_APPROVED + S028_FINAL_SHOT_APPROVED + S028_PRODUCTION_STATUS=COMPLETE_APPROVED + S027_UNCHANGED + S029_NOT_STARTED + ZERO_PROVIDER_CALLS + ZERO_RENDER_CALLS + EVIDENCE_COMMITTED_TO_GITHUB"
+```
