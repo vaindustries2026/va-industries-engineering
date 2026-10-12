@@ -1,0 +1,418 @@
+{
+ "agent": "AGENT-008 \u2014 Shot Assembly Specification & Deterministic Compositor",
+ "agent_version": "agent008-v0.2-motion",
+ "audio_cues": [
+  {
+   "asset_id": "DLG-EP005-S028-LUMI-v01",
+   "end_s": 2.8041875,
+   "gain_db": 15.0,
+   "kind": "DIALOGUE",
+   "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+   "start_s": 0.25
+  },
+  {
+   "asset_id": "DLG-EP005-S028-MIKKO-v01",
+   "end_s": 4.383145833333334,
+   "gain_db": -4.0,
+   "kind": "DIALOGUE",
+   "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+   "start_s": 2.8041875
+  },
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "end_s": 5.0,
+   "gain_db": 0.0,
+   "kind": "BED",
+   "start_s": 0.0
+  },
+  {
+   "asset_id": "FOLEY-CLOTH-SOFT-v01",
+   "end_s": 3.5233333333333334,
+   "fade_out_s": 0.0,
+   "gain_db": -12.0,
+   "kind": "EVENT",
+   "role": "FOLEY",
+   "start_s": 2.5833333333333335
+  }
+ ],
+ "deterministic_core_sha256": "96328a5288bab209f30653858b6e658df91848ade0770ba9daa7ff81104c35bd",
+ "dialogue_timing": {
+  "lines": [
+   {
+    "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+    "duration_s": 2.554187,
+    "end_s": 2.804187,
+    "end_sample": 134601,
+    "slot": 0,
+    "speaker": "Lumi",
+    "start_s": 0.25,
+    "start_sample": 12000
+   },
+   {
+    "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+    "duration_s": 1.578958,
+    "end_s": 4.383146,
+    "end_sample": 210391,
+    "slot": 1,
+    "speaker": "Mikko",
+    "start_s": 2.804187,
+    "start_sample": 134601
+   }
+  ],
+  "overlaps": [],
+  "sample_rate": 48000,
+  "shot_end_s": 5.0,
+  "shot_id": "S028",
+  "version": "agent008-g09-v1",
+  "visual_holds": {
+   "after_last_line_s": 0.616854,
+   "before_first_line_s": 0.25
+  },
+  "window": {
+   "end_s": 5.0,
+   "post_hold_seconds": 0.0,
+   "pre_hold_seconds": 0.25,
+   "start_s": 0.25
+  }
+ },
+ "dialogue_tracks": [
+  {
+   "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+   "gain_db": 15.0,
+   "registry_status": "APPROVED",
+   "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+   "shot_id": "S028",
+   "speaker": "Lumi",
+   "start_seconds": 0.25,
+   "text": "You look comfy. Story time.",
+   "text_sha256": "cb3da4f4e6ed175d0c1a6f5b3b72b5336658d171142adf3336044147f30d0af1"
+  },
+  {
+   "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+   "gain_db": -4.0,
+   "registry_status": "APPROVED",
+   "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+   "shot_id": "S028",
+   "speaker": "Mikko",
+   "start_seconds": 2.804187,
+   "text": "I\u2019m ready to rest.",
+   "text_sha256": "4f365a34f10c01c68d74c38a880130201cbc79c1bdc1e446ad0533c73a352676"
+  }
+ ],
+ "human_approval": {
+  "approve_by": "exact review mp4 sha256",
+  "approved": false,
+  "decisions": [
+   "APPROVE",
+   "REJECT",
+   "REGENERATE"
+  ],
+  "required": true
+ },
+ "mix_peak_dbfs": -7.5,
+ "motion_request": {
+  "approval_scope_id": "S028-MOTION-SEEDANCE20-1",
+  "aspect_ratio": "16:9",
+  "duration_seconds": 5,
+  "fps_target": 24,
+  "motion_prompt": "Animate this exact starting image as a calm, cosy preschool closing moment. The starting frame stays visually dominant: keep the image as it is and add only small, slow, gentle and clearly readable movement.\n\nThe action happens in this order, softly and without hurry:\n1. Mikko, the bear on the left, gently holds out the blue cleaning cloth and passes it to Lumi. Lumi, the glowing orb on the right, takes the cloth calmly with her free hand. The hand-off is small, slow and clearly readable in the open space between them.\n2. Lumi slowly lowers the pink flower mirror from where it is now to a relaxed resting position in front of her lower body while she keeps floating, and keeps it there, held steady and clearly visible.\n3. Lumi drifts only slightly closer to Mikko and gives exactly one soft, gentle, reassuring pat with the cloth on Mikko's shoulder. The pat touches only his shoulder, never his face, eyes, nose or mouth. It is comfort, not cleaning.\n4. Mikko settles beside Lumi into a comfortable, relaxed, rest-ready pose with soft shoulders and a contented smile. Lumi stays floating calmly beside him with the mirror and cloth resting low in front of her lower body.\n\nBoth characters keep warm, gentle expressions. Very small natural breathing is fine. Their mouths may move softly and naturally, like calm quiet talking, with no exaggerated or fast mouth movement. Lumi keeps floating with only a very gentle, buoyant bob and does not fly around the bathroom. Mikko does not walk around and does not wipe his face.\n\nThe camera is completely locked: no pan, no tilt, no zoom, no dolly, no orbit, no reframing, no cuts and no camera shake. The bathroom stays exactly the same: no background changes, no moving fixtures, no new objects and no environmental effects.\n\nPreserve Mikko's and Lumi's exact identities, facial structure, proportions, clothing and colours from the starting image, Mikko's fur colour, Lumi's round glowing orb shape, their scale relationship and left/right positions. Mikko's face stays clean, with zero berry marks or smudges. Keep exactly one blue cleaning cloth and exactly one pink flower mirror; do not duplicate either prop and add no other props. Do not create extra limbs, hands, fingers, faces or characters. Do not morph the characters or change costumes. No large body movements, no aggressive pat, no exaggerated hand-off and no exaggerated speech animation. No text or logos. No mirror reflection event, no mirror glint, no magical effects and no sparkles. No audio.",
+  "negative_constraints": "",
+  "negative_constraints_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "prompt_sha256": "18090c35fedbb28804646a636e31083b70cebd9d8b7ac2161b43117a33371b77",
+  "provider": "higgsfield",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "provider_params": {},
+  "resolution": "1080p",
+  "shot_id": "S028",
+  "source_frame_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/s028n/work/FRAME-EP005-S028-BASE-CAND-v01.png",
+  "source_frame_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png"
+ },
+ "motion_result": {
+  "cost_or_usage_if_available": null,
+  "created_at": "2026-10-12T02:13:19.075951+00:00",
+  "prompt_hash": "18090c35fedbb28804646a636e31083b70cebd9d8b7ac2161b43117a33371b77",
+  "provider": "higgsfield",
+  "provider_job_id": "5c3072bd-d998-4e90-8b88-6c54a83f3e27",
+  "provider_model": "bytedance/seedance-2.0/image-to-video",
+  "provider_status": "COMPLETED",
+  "raw_bytes": 4028811,
+  "raw_codec": "mov,mp4,m4a,3gp,3g2,mj2/h264",
+  "raw_duration": 5.041667,
+  "raw_fps": "24/1",
+  "raw_original_filename": "21fd8e28-263f-44f7-826b-db2b22158472.mp4",
+  "raw_output_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/s028a/asm/inputs/MOTION-EP005-S028-SEEDANCE20-CAND-v01.mp4",
+  "raw_output_sha256": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+  "raw_resolution": "1920x1080",
+  "source_frame_sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0",
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/9a294a94-a47b-47d3-b114-d4f28067ebe3.png",
+  "status": "REVIEW"
+ },
+ "output_spec": {
+  "audio_channels": 2,
+  "audio_sample_rate": 48000,
+  "canon_decision": false,
+  "fps": 24,
+  "height": 1080,
+  "output_status": "REVIEW",
+  "peak_ceiling_dbfs": -1.0,
+  "pixel_format": "yuv420p",
+  "review_audio_bitrate": "192k",
+  "review_audio_codec": "aac",
+  "spec_id": "A008-REVIEW-1080P24-PHASE0",
+  "video_codec": "libx264",
+  "width": 1920,
+  "x264_crf": 16,
+  "x264_preset": "medium"
+ },
+ "outputs": {
+  "mix_wav": {
+   "file": "S028_MOTION_MIX.wav",
+   "sha256": "cc959fcb64b2dfec8b776f741d1718be408d3c52202134cd2a062d949318e733"
+  },
+  "review_mp4": {
+   "bytes": 4879873,
+   "file": "MOTION_SMOKE_REVIEW.mp4",
+   "sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0"
+  }
+ },
+ "qc": {
+  "audio_peak_dbfs": -7.5,
+  "audio_silent_windows": 0,
+  "automatic_result": "PASS",
+  "black_frames": [],
+  "distinct_frames": 120,
+  "expected_duration_s": 5,
+  "expected_frames": 120,
+  "expected_resolution": "1920x1080",
+  "frame_hash_list_sha256": "6a0781f26dd7cc5b04756f1b421c02d21191ba658d222acc2b2a79b5a094a923",
+  "frames": 120,
+  "issues": [],
+  "longest_identical_run": 1,
+  "max_freeze_frames": 24,
+  "output_duration_s": 5.0,
+  "output_frames": 120,
+  "output_resolution": "1920x1080",
+  "overlays_applied": 0,
+  "treatments_applied": 0
+ },
+ "raw_output_verified_sha256": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+ "recipes": {
+  "encode_command": [
+   "ffmpeg",
+   "-v",
+   "error",
+   "-y",
+   "-f",
+   "rawvideo",
+   "-pix_fmt",
+   "rgb24",
+   "-s",
+   "1920x1080",
+   "-r",
+   "24",
+   "-i",
+   "-",
+   "-i",
+   "<OUT>/S028_MOTION_MIX.wav",
+   "-map",
+   "0:v:0",
+   "-map",
+   "1:a:0",
+   "-vf",
+   "scale=out_color_matrix=bt709:out_range=tv:flags=lanczos+accurate_rnd+full_chroma_int+bitexact,format=yuv420p",
+   "-c:v",
+   "libx264",
+   "-preset",
+   "medium",
+   "-crf",
+   "16",
+   "-threads",
+   "1",
+   "-color_primaries",
+   "bt709",
+   "-color_trc",
+   "bt709",
+   "-colorspace",
+   "bt709",
+   "-c:a",
+   "aac",
+   "-b:a",
+   "192k",
+   "-ar",
+   "48000",
+   "-frames:v",
+   "120",
+   "-fflags",
+   "+bitexact",
+   "-flags:v",
+   "+bitexact",
+   "-flags:a",
+   "+bitexact",
+   "-map_metadata",
+   "-1",
+   "-movflags",
+   "+faststart",
+   "<OUT>/MOTION_SMOKE_REVIEW.mp4"
+  ]
+ },
+ "safety": {
+  "auto_approved": false,
+  "auto_retry": false
+ },
+ "shot_id": "S028",
+ "shot_spec": {
+  "active_overlays": [],
+  "animation_method": "COMPOSITE",
+  "characters": [
+   {
+    "asset_id": "CHAR-MIKKO-MASTER-v01",
+    "asset_subtype": null,
+    "asset_type": "CHARACTER",
+    "character_name": "Mikko",
+    "expected_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+    "manifest_label": "TBD",
+    "object_key": "visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png",
+    "reference": "TBD::CHARACTER::Mikko",
+    "registry_row_id": "0d7a47e0-0adf-47d6-9cf9-f71ad7439747",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png"
+   },
+   {
+    "asset_id": "CHAR-LUMI-MASTER-v01",
+    "asset_subtype": null,
+    "asset_type": "CHARACTER",
+    "character_name": "Lumi",
+    "expected_sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+    "manifest_label": "TBD",
+    "object_key": "visual/canonical/characters/CHAR-LUMI-MASTER-v01.png",
+    "reference": "TBD::CHARACTER::Lumi",
+    "registry_row_id": "75cf9e5d-78ec-4cac-b1bb-49e696629bc2",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-LUMI-MASTER-v01.png"
+   }
+  ],
+  "clean_reveal": false,
+  "continuity_start_authority": {
+   "elements_inherited": 8,
+   "elements_not_redeclared": [],
+   "rule": "visible_at_start(N) = validated visible_at_end(N-1)",
+   "source_shot_id": "S027"
+  },
+  "dialogue_slots": [
+   {
+    "audio_asset_id": null,
+    "shot_id": "S028",
+    "speaker": "Lumi",
+    "status": "DEFERRED_NO_VOICE_ASSET",
+    "text": "You look comfy. Story time."
+   },
+   {
+    "audio_asset_id": null,
+    "shot_id": "S028",
+    "speaker": "Mikko",
+    "status": "DEFERRED_NO_VOICE_ASSET",
+    "text": "I\u2019m ready to rest."
+   }
+  ],
+  "duration_seconds": 5,
+  "environment": {
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "asset_subtype": null,
+   "asset_type": "ENVIRONMENT",
+   "expected_sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "manifest_label": "TBD",
+   "object_key": "visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png",
+   "reference": "TBD::ENVIRONMENT::Canonical environment/background",
+   "registry_row_id": "8cdeea80-1eb3-4a75-b50a-c209f1aae434",
+   "sha256_source": "asset_registry.metadata_json.sha256",
+   "status": "APPROVED",
+   "storage_path": "production-assets/visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png"
+  },
+  "episode_end_seconds": 114,
+  "episode_start_seconds": 109,
+  "event_audio": [
+   {
+    "asset_id": "FOLEY-CLOTH-SOFT-v01",
+    "asset_subtype": "FOLEY",
+    "asset_type": "AUDIO",
+    "audio_role": "FOLEY",
+    "expected_sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+    "object_key": "audio/foley/FOLEY-CLOTH-SOFT-v01.wav",
+    "reference": "FOLEY-CLOTH-SOFT-v01",
+    "registry_row_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+    "replaces_requirement": "TBD::AUDIO::FOLEY_CLOTH",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/audio/foley/FOLEY-CLOTH-SOFT-v01.wav"
+   }
+  ],
+  "frames": 120,
+  "informational_stale_labels": [
+   "TBD",
+   "TMP_EP005_HAND_MIRROR",
+   "TMP_EP005_SOFT_CLOTH"
+  ],
+  "mapped_audio": [
+   {
+    "asset_id": "AMB-BATHROOM-QUIET-v01",
+    "asset_subtype": "AMBIENCE",
+    "asset_type": "AUDIO",
+    "audio_role": "AMBIENCE",
+    "expected_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+    "object_key": "audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+    "reference": "AMB-BATHROOM-QUIET-v01",
+    "registry_row_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+    "replaces_requirement": "TBD::AUDIO::AMBIENCE",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav"
+   }
+  ],
+  "music_present": false,
+  "named_sfx": [],
+  "props": [
+   {
+    "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+    "asset_subtype": null,
+    "asset_type": "PROP",
+    "expected_sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+    "label_is_stale": true,
+    "manifest_label": "TMP_EP005_SOFT_CLOTH",
+    "object_key": "visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp",
+    "reference": "TMP_EP005_SOFT_CLOTH",
+    "registry_row_id": "ab33c77c-5fde-4642-9efb-706f619c4a7e",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp"
+   },
+   {
+    "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+    "asset_subtype": null,
+    "asset_type": "PROP",
+    "expected_sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+    "label_is_stale": true,
+    "manifest_label": "TMP_EP005_HAND_MIRROR",
+    "object_key": "visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp",
+    "reference": "TMP_EP005_HAND_MIRROR",
+    "registry_row_id": "a61c0af2-1e8d-40e2-88d1-8848390f2a17",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp"
+   }
+  ],
+  "protected_participation_hold": false,
+  "shot_id": "S028",
+  "shot_index": 28,
+  "treatments": [],
+  "video_generation_required": true
+ },
+ "stage": "8C->8D->8F",
+ "status": "REVIEW",
+ "toolchain": {
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3"
+ }
+}

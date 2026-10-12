@@ -1,0 +1,226 @@
+{
+ "label": "renderB",
+ "inputs": {
+  "MOTION-EP005-S028-SEEDANCE20-CAND-v01": {
+   "registry_id": "2e13b73d-a328-4cb9-b366-8d3cba5f350e",
+   "status": "APPROVED",
+   "asset_type": "SHOT_MOTION",
+   "asset_subtype": "RAW_MOTION_SOURCE",
+   "storage_path": "production-assets/visual/production/ep005/motion/MOTION-EP005-S028-SEEDANCE20-CAND-v01.mp4",
+   "sha256": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+   "human_decision": "APPROVED"
+  },
+  "DLG-EP005-S028-LUMI-v01": {
+   "registry_id": "11880cb2-37f2-4ab8-a99d-179e1d8a33d9",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "DIALOGUE",
+   "storage_path": "production-assets/audio/dialogue/DLG-EP005-S028-LUMI-v01.mp3",
+   "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+   "human_decision": "APPROVED"
+  },
+  "DLG-EP005-S028-MIKKO-v01": {
+   "registry_id": "349d79ee-05c5-42ca-bd9f-ce8270b3f877",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "DIALOGUE",
+   "storage_path": "production-assets/audio/dialogue/DLG-EP005-S028-MIKKO-v01.mp3",
+   "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+   "human_decision": "APPROVED"
+  },
+  "AMB-BATHROOM-QUIET-v01": {
+   "registry_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "AMBIENCE",
+   "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+   "sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+   "human_decision": null
+  },
+  "FOLEY-CLOTH-SOFT-v01": {
+   "registry_id": "34c7e5f4-8250-4058-9b84-3ce80d5f2030",
+   "status": "APPROVED",
+   "asset_type": "AUDIO",
+   "asset_subtype": "FOLEY",
+   "storage_path": "production-assets/audio/foley/FOLEY-CLOTH-SOFT-v01.wav",
+   "sha256": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f",
+   "human_decision": null
+  }
+ },
+ "timing": {
+  "beds": {
+   "AMB-BATHROOM-QUIET-v01": {
+    "gain_db": 0.0
+   }
+  },
+  "named": {
+   "FOLEY-CLOTH-SOFT-v01": {
+    "start_seconds": 2.5833333333333335,
+    "gain_db": -12.0
+   }
+  },
+  "dialogue": [
+   {
+    "shot_id": "S028",
+    "speaker": "Lumi",
+    "text": "You look comfy. Story time.",
+    "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+    "expected_sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+    "registry_status": "APPROVED",
+    "start_seconds": 0.25,
+    "gain_db": 15.0
+   },
+   {
+    "shot_id": "S028",
+    "speaker": "Mikko",
+    "text": "I’m ready to rest.",
+    "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+    "expected_sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+    "registry_status": "APPROVED",
+    "start_seconds": 2.804187,
+    "gain_db": -4.0
+   }
+  ],
+  "dialogue_window": {
+   "pre_hold_seconds": 0.25
+  }
+ },
+ "foley_frame": 62,
+ "outputs": {
+  "review_mp4": {
+   "file": "MOTION_SMOKE_REVIEW.mp4",
+   "sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0",
+   "bytes": 4879873
+  },
+  "mix_wav": {
+   "file": "S028_MOTION_MIX.wav",
+   "sha256": "cc959fcb64b2dfec8b776f741d1718be408d3c52202134cd2a062d949318e733"
+  }
+ },
+ "qc": {
+  "frames": 120,
+  "black_frames": [],
+  "longest_identical_run": 1,
+  "max_freeze_frames": 24,
+  "distinct_frames": 120,
+  "frame_hash_list_sha256": "6a0781f26dd7cc5b04756f1b421c02d21191ba658d222acc2b2a79b5a094a923",
+  "issues": [],
+  "expected_frames": 120,
+  "output_frames": 120,
+  "output_resolution": "1920x1080",
+  "expected_resolution": "1920x1080",
+  "output_duration_s": 5.0,
+  "expected_duration_s": 5,
+  "audio_peak_dbfs": -7.5,
+  "audio_silent_windows": 0,
+  "overlays_applied": 0,
+  "treatments_applied": 0,
+  "automatic_result": "PASS"
+ },
+ "audio_cues": [
+  {
+   "asset_id": "DLG-EP005-S028-LUMI-v01",
+   "kind": "DIALOGUE",
+   "start_s": 0.25,
+   "end_s": 2.8041875,
+   "gain_db": 15.0,
+   "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc"
+  },
+  {
+   "asset_id": "DLG-EP005-S028-MIKKO-v01",
+   "kind": "DIALOGUE",
+   "start_s": 2.8041875,
+   "end_s": 4.383145833333334,
+   "gain_db": -4.0,
+   "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0"
+  },
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "kind": "BED",
+   "start_s": 0.0,
+   "end_s": 5.0,
+   "gain_db": 0.0
+  },
+  {
+   "asset_id": "FOLEY-CLOTH-SOFT-v01",
+   "kind": "EVENT",
+   "role": "FOLEY",
+   "start_s": 2.5833333333333335,
+   "end_s": 3.5233333333333334,
+   "gain_db": -12.0,
+   "fade_out_s": 0.0
+  }
+ ],
+ "dialogue_tracks": [
+  {
+   "shot_id": "S028",
+   "speaker": "Lumi",
+   "text": "You look comfy. Story time.",
+   "text_sha256": "cb3da4f4e6ed175d0c1a6f5b3b72b5336658d171142adf3336044147f30d0af1",
+   "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+   "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+   "registry_status": "APPROVED",
+   "start_seconds": 0.25,
+   "gain_db": 15.0
+  },
+  {
+   "shot_id": "S028",
+   "speaker": "Mikko",
+   "text": "I’m ready to rest.",
+   "text_sha256": "4f365a34f10c01c68d74c38a880130201cbc79c1bdc1e446ad0533c73a352676",
+   "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+   "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+   "registry_status": "APPROVED",
+   "start_seconds": 2.804187,
+   "gain_db": -4.0
+  }
+ ],
+ "dialogue_timing": {
+  "version": "agent008-g09-v1",
+  "shot_id": "S028",
+  "sample_rate": 48000,
+  "shot_end_s": 5.0,
+  "window": {
+   "start_s": 0.25,
+   "end_s": 5.0,
+   "pre_hold_seconds": 0.25,
+   "post_hold_seconds": 0.0
+  },
+  "lines": [
+   {
+    "slot": 0,
+    "speaker": "Lumi",
+    "audio_asset_id": "DLG-EP005-S028-LUMI-v01",
+    "start_sample": 12000,
+    "end_sample": 134601,
+    "start_s": 0.25,
+    "end_s": 2.804187,
+    "duration_s": 2.554187
+   },
+   {
+    "slot": 1,
+    "speaker": "Mikko",
+    "audio_asset_id": "DLG-EP005-S028-MIKKO-v01",
+    "start_sample": 134601,
+    "end_sample": 210391,
+    "start_s": 2.804187,
+    "end_s": 4.383146,
+    "duration_s": 1.578958
+   }
+  ],
+  "overlaps": [],
+  "visual_holds": {
+   "before_first_line_s": 0.25,
+   "after_last_line_s": 0.616854
+  }
+ },
+ "mix_peak_dbfs": -7.5,
+ "deterministic_core_sha256": "96328a5288bab209f30653858b6e658df91848ade0770ba9daa7ff81104c35bd",
+ "sources_after_sha256": {
+  "MOTION-EP005-S028-SEEDANCE20-CAND-v01": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58",
+  "DLG-EP005-S028-LUMI-v01": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc",
+  "DLG-EP005-S028-MIKKO-v01": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0",
+  "AMB-BATHROOM-QUIET-v01": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+  "FOLEY-CLOTH-SOFT-v01": "11fe4284b8540f84dc693f1b5ec9282123a930dfcb9f9209a6bc5c86cb00682f"
+ }
+}
