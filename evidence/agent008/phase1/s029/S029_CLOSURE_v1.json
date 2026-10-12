@@ -1,0 +1,30 @@
+{
+ "S029_PRODUCTION_STATUS": "COMPLETE_APPROVED",
+ "S029_FINAL_ASSET_ID": "SHOT-EP005-S029-ASSEMBLED-v01",
+ "S029_FINAL_REGISTRY_ROW": "cf6584d5-9a4d-4788-b509-1d7320a8e28e",
+ "S029_FINAL_SHA256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+ "S029_HUMAN_DECISION": "APPROVED (Gilang / Company Brain, 2026-10-12; evidence basis b794d235a1d4d24f6c8afe7c53711e341447eee2)",
+ "S029_H264_STATIC_FRAME_VARIANCE": "ACCEPTED_CODEC_BEHAVIOUR (144 identical encoder-input frames; decoded differences = H.264 quantisation / temporal-prediction residue, mean <=0.011 levels, <=14 samples >2 levels; not visual motion; not a blocker; encoder unchanged; no re-render)",
+ "transition": "REVIEW->APPROVED; metadata human_decision/human_approval APPROVED, approved true, approved_sha256 bound, approval_authority, approval_basis, S029_H264_STATIC_FRAME_VARIANCE; no other column changed; MP4 bytes unchanged (stored object re-hashed before and after)",
+ "readback": {"asset_type": "SHOT_RENDER", "asset_subtype": "ASSEMBLED_SHOT", "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S029-ASSEMBLED-v01.mp4", "duration_s": 6.0, "dimensions": "1920x1080", "fps": "24/1", "frames": 144},
+ "approved_production_decisions": {
+  "continuity_source": "MOTION-EP005-S028-SEEDANCE20-CAND-v01 341683c4...9b58 raw frame 119",
+  "base_frame": "FRAME-EP005-S029-BASE-CAND-v01 a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4 APPROVED",
+  "S029_CLOTH_LOCATION": "MIKKO_SHOULDER_IN_LUMI_HAND (S029-only continuity exception)",
+  "STATIC_HELD_POSE": "APPROVED (completely static 6.000 s hold)",
+  "MINIMAL_BREATHING_IMPLEMENTATION": "OMITTED",
+  "audio": "AMB-BATHROOM-QUIET-v01 ea28fad4...4d2f only, 0.0 dB",
+  "excluded": ["dialogue", "foley", "SFX", "music", "fade", "end card", "logo", "credits"]
+ },
+ "non_regression": {"S027": "COMPLETE_APPROVED; rows + stored assembled 7b01c392...8fde unchanged",
+   "S028": "COMPLETE_APPROVED; rows + stored assembled 1d5dfabd...7cc0 unchanged",
+   "S029_base_frame": "APPROVED; stored bytes a8b0d0fc... unchanged",
+   "script_v05": "6498ea8d APPROVED, unchanged (episode_scripts 5:649d63f9...)",
+   "manifest": "0325d35c APPROVED, unchanged (episode_production_manifests 12:cefb8fa2...)",
+   "readiness": "69bff641 APPROVED, unchanged (production_readiness_manifests 8:f5c646ee...)",
+   "resolution_items": "86:ce5ac459... unchanged",
+   "ambience": "AMB-BATHROOM-QUIET-v01 APPROVED; stored bytes ea28fad4...4d2f unchanged",
+   "registry_outside_S028_S029": "899d7f33... unchanged", "storage_outside_S029": "28:c50f2619... unchanged"},
+ "calls": {"provider": 0, "render": 0, "agent006": 0, "agent007": 0},
+ "reopen_policy": "do not create another S029 candidate or reopen S029 unless Company Brain explicitly authorises it"
+}

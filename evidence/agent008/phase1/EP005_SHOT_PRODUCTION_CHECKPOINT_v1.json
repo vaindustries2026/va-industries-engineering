@@ -1,0 +1,884 @@
+{
+ "readiness": "69bff641-e056-4701-a23f-d91dbc2039b2",
+ "authoritative_shots": 29,
+ "final_approved_assembled_shots": 3,
+ "complete_approved": [
+  {
+   "shot_id": "S027",
+   "asset_id": "SHOT-EP005-S027-ASSEMBLED-v01",
+   "registry_id": "6c290db5-e47b-456c-a51c-736d7568e018",
+   "sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde"
+  },
+  {
+   "shot_id": "S028",
+   "asset_id": "SHOT-EP005-S028-ASSEMBLED-v01",
+   "registry_id": "2c438190-6fb8-4a92-9161-6b04359c0fb9",
+   "sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0"
+  },
+  {
+   "shot_id": "S029",
+   "asset_id": "SHOT-EP005-S029-ASSEMBLED-v01",
+   "registry_id": "cf6584d5-9a4d-4788-b509-1d7320a8e28e",
+   "sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6"
+  }
+ ],
+ "remaining_count": 26,
+ "remaining": [
+  {
+   "shot_id": "S001",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 144,
+   "duration_s": 6,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 2,
+   "overlays": 3,
+   "treatments": 0,
+   "base_frame_source": "F-MIRROR-OPEN",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "Berries on my face! I want to feel fresh.",
+    "I see three little smudges."
+   ],
+   "note": "Manifest video shot: Mikko head tilt with face, reflection and all three smudges moving together. Provider motion plus deterministic smudges (pre-composited into the base frame on face and reflection)."
+  },
+  {
+   "shot_id": "S002",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 84,
+   "duration_s": 3.5,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 1,
+   "overlays": 3,
+   "treatments": 0,
+   "base_frame_source": "F-MEDIUM-TWOSHOT",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "Where shall I try first?"
+   ],
+   "note": "Manifest video shot: cloth pick-up and fold (prop interaction). Three smudges present -> pre-composited into the F-MEDIUM-TWOSHOT clean base."
+  },
+  {
+   "shot_id": "S003",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 84,
+   "duration_s": 3.5,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 1,
+   "overlays": 3,
+   "treatments": 0,
+   "base_frame_source": "F-OVERSHOULDER-MIRROR",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "Let’s look for one little spot."
+   ],
+   "note": "Manifest compositor-only (video_generation_required=false): nearly static over-shoulder hold; smudges as static overlays; Lumi line. Minor mirror positioning represented by the held pose."
+  },
+  {
+   "shot_id": "S004",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 120,
+   "duration_s": 5,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 2,
+   "overlays": 3,
+   "treatments": 1,
+   "base_frame_source": "F-OVERSHOULDER-MIRROR",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "A glint on his cheek!",
+    "Find the next smudge!"
+   ],
+   "note": "Manifest compositor-only: static frame + TREATMENT-EP005-MIRROR-GLINT-v01 + clue chime. Mirror tilt represented by the glint (human acceptance needed). Two Lumi lines: known S004 TIMING_CONFLICT and unapplied D-3 wording decision."
+  },
+  {
+   "shot_id": "S005",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 96,
+   "duration_s": 4,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 0,
+   "overlays": 3,
+   "treatments": 0,
+   "base_frame_source": "F-OVERSHOULDER-MIRROR",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Protected 4.0 s participation hold: static frame identical to S004 end state; no events."
+  },
+  {
+   "shot_id": "S006",
+   "agent008_classification": "provider motion required",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "frames": 60,
+   "duration_s": 2.5,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 1,
+   "overlays": 3,
+   "treatments": 1,
+   "base_frame_source": "F-FACE-MIRROR-POINT",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "This cheek. I’ll try a gentle wipe."
+   ],
+   "note": "Manifest compositor-only: held pointing pose + reflection treatment + Mikko line; pointing gesture represented by a held pose (human acceptance needed)."
+  },
+  {
+   "shot_id": "S007",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 120,
+   "duration_s": 5.0,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 2,
+   "overlays": 3,
+   "treatments": 1,
+   "base_frame_source": "F-CHEEK-CLOTH",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 2,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "Wipe your cheek with me. Soft and slow.",
+    "Can you pretend to wipe your cheek?"
+   ],
+   "note": "Manifest video shot: cloth lift into stationary contact with the marked cheek; smudges + reflection pre-composited into base frame; two Mikko lines; TRY whoosh."
+  },
+  {
+   "shot_id": "S008",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 72,
+   "duration_s": 3.0,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 0,
+   "overlays": 3,
+   "treatments": 0,
+   "base_frame_source": "F-CHEEK-CLOTH",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Protected 3.0 s hold: last frame of the approved S007 raw motion held (continuity rule visible_at_start(N)=visible_at_end(N-1))."
+  },
+  {
+   "shot_id": "S009",
+   "agent008_classification": "blocked",
+   "spec_state": "BLOCKED",
+   "plan_method": "D",
+   "matrix_v3_classification": "BLOCKED",
+   "frames": null,
+   "duration_s": null,
+   "video_generation_required_in_spec": null,
+   "dialogue_lines": 0,
+   "overlays": 0,
+   "treatments": 0,
+   "base_frame_source": "F-CHEEK-CLOTH",
+   "base_frame_status": "BLOCKED",
+   "open_code_gaps": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Cheek smudge must disappear only under the cloth pass: needs mask removal tracked to provider-generated cloth motion. No governed capability (Agent-008 fails closed on motion overlays; provider prompting cannot be bound to an exact overlay removal)."
+  },
+  {
+   "shot_id": "S010",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 120,
+   "duration_s": 5,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 1,
+   "overlays": 2,
+   "treatments": 1,
+   "base_frame_source": "F-FACE-MIRROR",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "That cheek is clear. Two smudges left."
+   ],
+   "note": "Manifest video shot: Mikko lowers cloth; mouth+nose smudges and clean reflection pre-composited; Lumi line."
+  },
+  {
+   "shot_id": "S011",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 120,
+   "duration_s": 5,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 0,
+   "overlays": 2,
+   "treatments": 1,
+   "base_frame_source": "F-FACE-MIRROR",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Manifest video shot: small pleased smile and cloth settle; base = last frame of approved S010 raw motion."
+  },
+  {
+   "shot_id": "S012",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 120,
+   "duration_s": 5,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 2,
+   "overlays": 2,
+   "treatments": 1,
+   "base_frame_source": "F-FACE-MIRROR",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "By your mouth!",
+    "Find the next smudge!"
+   ],
+   "note": "Manifest compositor-only: F-FACE-MIRROR clean base + mouth/nose overlays + glint; two Lumi lines (same D-3/timing review as S004)."
+  },
+  {
+   "shot_id": "S013",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 96,
+   "duration_s": 4,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 0,
+   "overlays": 2,
+   "treatments": 0,
+   "base_frame_source": "F-FACE-MIRROR",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Protected 4.0 s hold: S012 end frame held."
+  },
+  {
+   "shot_id": "S014",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 96,
+   "duration_s": 4,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 1,
+   "overlays": 2,
+   "treatments": 1,
+   "base_frame_source": "F-MOUTH-CLOTH",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "I’ll slow my hand. One little wipe."
+   ],
+   "note": "Manifest video shot: slow hand approach with cloth, no contact; mouth+nose smudges and clean reflection pre-composited; Mikko line; soft cloth foley."
+  },
+  {
+   "shot_id": "S015",
+   "agent008_classification": "blocked",
+   "spec_state": "BLOCKED",
+   "plan_method": "D",
+   "matrix_v3_classification": "BLOCKED",
+   "frames": null,
+   "duration_s": null,
+   "video_generation_required_in_spec": null,
+   "dialogue_lines": 0,
+   "overlays": 0,
+   "treatments": 0,
+   "base_frame_source": "F-MOUTH-CLOTH",
+   "base_frame_status": "BLOCKED",
+   "open_code_gaps": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Mouth smudge removal synchronised to a provider-generated cloth pass: same unsolved tracked-removal capability as S009."
+  },
+  {
+   "shot_id": "S016",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 96,
+   "duration_s": 4,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 1,
+   "overlays": 1,
+   "treatments": 0,
+   "base_frame_source": "F-FACE-MIRROR",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "That spot is gone. One is left."
+   ],
+   "note": "Manifest video shot: Mikko lowers his hand; F-FACE-MIRROR clean base with nose overlay pre-composited; Lumi line."
+  },
+  {
+   "shot_id": "S017",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 96,
+   "duration_s": 4,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 0,
+   "overlays": 1,
+   "treatments": 0,
+   "base_frame_source": "F-MEDIUM-TWOSHOT",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Manifest compositor-only processing hold: F-MEDIUM-TWOSHOT clean base + nose overlay; no dialogue."
+  },
+  {
+   "shot_id": "S018",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 144,
+   "duration_s": 6,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 2,
+   "overlays": 1,
+   "treatments": 1,
+   "base_frame_source": "F-MACRO-REFLECTION",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT",
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [
+    "One spot left!",
+    "Find the next smudge!"
+   ],
+   "note": "Manifest compositor-only: macro reflection + nose overlay + glint; in-shot cut/reframe (CODE_GAP); two Lumi lines."
+  },
+  {
+   "shot_id": "S019",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 120,
+   "duration_s": 5,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 0,
+   "overlays": 1,
+   "treatments": 0,
+   "base_frame_source": "F-MACRO-REFLECTION",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Protected 5.0 s hold: S018 end frame held."
+  },
+  {
+   "shot_id": "S020",
+   "agent008_classification": "provider motion required (hybrid: provider motion + deterministic composite)",
+   "spec_state": "SPEC",
+   "plan_method": "C",
+   "matrix_v3_classification": "HYBRID",
+   "frames": 96,
+   "duration_s": 4,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 1,
+   "overlays": 1,
+   "treatments": 0,
+   "base_frame_source": "F-NOSE-CLOTH",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [
+    "G03_OVERLAY_ANCHOR_PLACEMENT"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "My nose! I’ll wipe just that spot."
+   ],
+   "note": "Manifest video shot: return from macro to close face, Mikko recognises nose and adjusts cloth; nose smudge pre-composited; Mikko line; cloth foley."
+  },
+  {
+   "shot_id": "S021",
+   "agent008_classification": "blocked",
+   "spec_state": "BLOCKED",
+   "plan_method": "D",
+   "matrix_v3_classification": "BLOCKED",
+   "frames": null,
+   "duration_s": null,
+   "video_generation_required_in_spec": null,
+   "dialogue_lines": 0,
+   "overlays": 0,
+   "treatments": 0,
+   "base_frame_source": "F-NOSE-CLOTH",
+   "base_frame_status": "BLOCKED",
+   "open_code_gaps": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Nose smudge removal synchronised to a provider-generated cloth pass: same unsolved tracked-removal capability as S009/S015."
+  },
+  {
+   "shot_id": "S022",
+   "agent008_classification": "provider motion required",
+   "spec_state": "SPEC",
+   "plan_method": "B",
+   "matrix_v3_classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "frames": 72,
+   "duration_s": 3,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 1,
+   "overlays": 0,
+   "treatments": 0,
+   "base_frame_source": "F-NOSE-CLOTH",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "Your nose is clear, too."
+   ],
+   "note": "Manifest video shot with zero overlays/treatments: Mikko lowers the cloth; clean base = F-NOSE-CLOTH clean; Lumi line. 3.0 s: generate 4 s and trim to 72 frames."
+  },
+  {
+   "shot_id": "S023",
+   "agent008_classification": "deterministic derived-frame",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 72,
+   "duration_s": 3,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 0,
+   "overlays": 0,
+   "treatments": 0,
+   "base_frame_source": "F-MEDIUM-TWOSHOT",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [],
+   "zero_spend_code_ready": true,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": "S022 end state: derived frame from approved S022 raw motion (EP005_BATCH0C_FACTORY_PATHS_v1.md)",
+   "dialogue_text": [],
+   "note": "Manifest compositor-only 3 s readable-result hold, clean face, no overlays."
+  },
+  {
+   "shot_id": "S024",
+   "agent008_classification": "deterministic still",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 48,
+   "duration_s": 2,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 0,
+   "overlays": 0,
+   "treatments": 0,
+   "base_frame_source": "F-MIRROR-OPEN",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [],
+   "derived_from": null,
+   "dialogue_text": [],
+   "note": "Manifest compositor-only 2 s camera settle toward the opening composition: deterministic crop/scale ramp on the F-MIRROR-OPEN clean frame ending on the exact S025 framing (CODE_GAP: keyframed crop)."
+  },
+  {
+   "shot_id": "S025",
+   "agent008_classification": "deterministic composite",
+   "spec_state": "SPEC",
+   "plan_method": "A",
+   "matrix_v3_classification": "STATIC_OR_DETERMINISTIC_ONLY",
+   "frames": 96,
+   "duration_s": 4,
+   "video_generation_required_in_spec": false,
+   "dialogue_lines": 1,
+   "overlays": 0,
+   "treatments": 2,
+   "base_frame_source": "F-MIRROR-OPEN",
+   "base_frame_status": "CAN_DERIVE_DETERMINISTICALLY",
+   "open_code_gaps": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "Cheek, mouth, nose. All clear."
+   ],
+   "note": "Manifest compositor-only CLEAN REVEAL: F-MIRROR-OPEN clean + clean reflection + completion pop accent + pop SFX; ZERO berry overlays; Lumi line."
+  },
+  {
+   "shot_id": "S026",
+   "agent008_classification": "provider motion required",
+   "spec_state": "SPEC",
+   "plan_method": "B",
+   "matrix_v3_classification": "HIGGSFIELD_MOTION_REQUIRED",
+   "frames": 120,
+   "duration_s": 5,
+   "video_generation_required_in_spec": true,
+   "dialogue_lines": 1,
+   "overlays": 0,
+   "treatments": 0,
+   "base_frame_source": "F-MEDIUM-TWOSHOT",
+   "base_frame_status": "NEEDS_NEW_SHOT_FRAME",
+   "open_code_gaps": [],
+   "zero_spend_code_ready": false,
+   "provider_calls_planned": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "derived_from": null,
+   "dialogue_text": [
+    "One little spot at a time!"
+   ],
+   "note": "Manifest video shot, zero overlays/treatments: Mikko lifts cloth proudly and speaks; clean F-MEDIUM-TWOSHOT base (the same new frame also serves S002/S017/S023 with overlays as needed)."
+  }
+ ],
+ "by_classification": {
+  "provider motion required (hybrid: provider motion + deterministic composite)": [
+   "S001",
+   "S002",
+   "S007",
+   "S010",
+   "S011",
+   "S014",
+   "S016",
+   "S020"
+  ],
+  "deterministic composite": [
+   "S003",
+   "S004",
+   "S005",
+   "S008",
+   "S012",
+   "S013",
+   "S017",
+   "S018",
+   "S019",
+   "S025"
+  ],
+  "provider motion required": [
+   "S006",
+   "S022",
+   "S026"
+  ],
+  "blocked": [
+   "S009",
+   "S015",
+   "S021"
+  ],
+  "deterministic derived-frame": [
+   "S023"
+  ],
+  "deterministic still": [
+   "S024"
+  ]
+ }
+}

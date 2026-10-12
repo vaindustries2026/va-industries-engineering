@@ -2665,3 +2665,24 @@ evidence: ["evidence/EP005_S029_FINAL_SHOT_ASSEMBLED_REVIEW_v1.0.md", "evidence/
 provider_calls: 0
 status: "EP005_S029_FINAL_SHOT_READY_FOR_HUMAN_REVIEW + S029_FINAL_SHOT_STATUS=REVIEW + HUMAN_DECISION=PENDING + ZERO_PAID_CALLS"
 ```
+
+---
+
+## ENG-20261012-EP005-S029-COMPLETE-APPROVED: S029 final assembled shot approved; S029 closed; EP005 shot checkpoint
+
+```yaml
+change_id: "ENG-20261012-EP005-S029-COMPLETE-APPROVED"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Gilang / Company Brain (final human approval of b8a4e3b4...37d6; evidence basis b794d235)"
+change_type: "PRODUCTION_STATE (approval-only) + EVIDENCE (read-only checkpoint)"
+row: "cf6584d5-9a4d-4788-b509-1d7320a8e28e SHOT-EP005-S029-ASSEMBLED-v01 REVIEW->APPROVED (human_decision/human_approval APPROVED, approved true, approved_sha256 bound)"
+final_sha256: "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6"
+codec_decision: "S029_H264_STATIC_FRAME_VARIANCE = ACCEPTED_CODEC_BEHAVIOUR (no encoder change, no re-render)"
+non_regression: "S027 + S028 COMPLETE_APPROVED unchanged; S029 base frame APPROVED; script v05 / manifest / readiness / ARI / ambience unchanged; registry outside S028-S029 and storage outside S029 fingerprints equal"
+checkpoint: "3/29 COMPLETE_APPROVED (S027, S028, S029); 26 remaining; smallest next production batch S026 (no open code gaps; needs image + Mikko TTS + H4 + Seedance authorisations); zero-spend alternative G03 engineering"
+evidence: ["evidence/EP005_S029_COMPLETE_APPROVED_AND_SHOT_CHECKPOINT_v1.0.md", "evidence/agent008/phase1/s029/S029_CLOSURE_v1.json", "evidence/agent008/phase1/EP005_SHOT_PRODUCTION_CHECKPOINT_v1.json"]
+provider_calls: 0
+render_calls: 0
+status: "EP005_S029_COMPLETE_APPROVED + S029_FINAL_SHOT_APPROVED + S029_H264_STATIC_FRAME_VARIANCE_ACCEPTED + S029_PRODUCTION_STATUS=COMPLETE_APPROVED + S027_UNCHANGED + S028_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_RENDER_CALLS + EP005_REMAINING_SHOT_CHECKPOINT_READY + EVIDENCE_COMMITTED_TO_GITHUB"
+```

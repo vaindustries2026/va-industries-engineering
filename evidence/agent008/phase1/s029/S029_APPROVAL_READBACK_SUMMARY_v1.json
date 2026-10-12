@@ -1,0 +1,20 @@
+{
+ "id": "cf6584d5-9a4d-4788-b509-1d7320a8e28e",
+ "asset_id": "SHOT-EP005-S029-ASSEMBLED-v01",
+ "asset_type": "SHOT_RENDER",
+ "asset_subtype": "ASSEMBLED_SHOT",
+ "status": "APPROVED",
+ "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S029-ASSEMBLED-v01.mp4",
+ "human_decision": "APPROVED",
+ "human_approval": "APPROVED",
+ "approved": true,
+ "sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+ "approved_sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+ "duration_s": 6.0,
+ "dimensions": "1920x1080",
+ "fps": "24/1",
+ "frames": 144,
+ "S029_H264_STATIC_FRAME_VARIANCE": "ACCEPTED_CODEC_BEHAVIOUR",
+ "stored_object_sha256_after": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+ "stored_bytes_after": 680070
+}

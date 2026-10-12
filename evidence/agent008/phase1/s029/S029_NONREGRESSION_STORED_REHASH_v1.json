@@ -1,0 +1,37 @@
+{
+ "SHOT-EP005-S027-ASSEMBLED-v01": {
+  "status": "APPROVED",
+  "registry_sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
+  "stored_sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde",
+  "equal": true,
+  "bytes": 4307940
+ },
+ "SHOT-EP005-S028-ASSEMBLED-v01": {
+  "status": "APPROVED",
+  "registry_sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0",
+  "stored_sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0",
+  "equal": true,
+  "bytes": 4879873
+ },
+ "SHOT-EP005-S029-ASSEMBLED-v01": {
+  "status": "APPROVED",
+  "registry_sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+  "stored_sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6",
+  "equal": true,
+  "bytes": 680070
+ },
+ "FRAME-EP005-S029-BASE-CAND-v01": {
+  "status": "APPROVED",
+  "registry_sha256": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+  "stored_sha256": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4",
+  "equal": true,
+  "bytes": 3100547
+ },
+ "AMB-BATHROOM-QUIET-v01": {
+  "status": "APPROVED",
+  "registry_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+  "stored_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+  "equal": true,
+  "bytes": 7200174
+ }
+}
