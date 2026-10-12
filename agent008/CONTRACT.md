@@ -180,3 +180,27 @@ Model configuration (not canon):
 Seedance negative prompt: the verified schema has no negative-prompt field, so `negative_constraints` are hashed and recorded but not transmitted (open decision; see evidence).
 
 Tests: T-A008-HF01..HF13 plus upload-security regression in `tests/test_higgsfield_transport.py`. All mocked; no sockets.
+
+---
+
+# v0.3 G03: deterministic overlay placement (`agent008/overlay.py`)
+
+Status: built and tested offline (synthetic fixtures). No production frame has been composited. Full contract: `evidence/agent008/g03/G03_CONTRACT_v1.md`.
+
+- **Input:**
+  - an approved SHOT_FRAME (BASE or DERIVED) for the shot, verified by SHA-256
+  - the shot's active overlays from the spec: governed OVERLAY_VFX, APPROVED/LOCKED, SHA-verified
+  - a human-approved placement record (`AGENT008_G03_OVERLAY_PLACEMENT_v1`), bound by its canonical SHA-256 to the shot and to the base-frame SHA
+- **Supported:**
+  - whole-shot persistent overlays, several per frame
+  - each asset at most once per surface: FACE, or REFLECTION (which must be mirrored)
+  - CENTER anchor at integer base-frame pixels
+  - alpha-trim and lanczos-bitexact width scale with no upscale; optional rotation
+  - full opacity
+- **Rejected (fail closed):** partial opacity, z-order, other anchors, overlap, clipping, per-overlay timing or removal (G11), and undeclared, duplicate or unapproved overlays.
+- **Output:** a new lossless PNG, REVIEW only (proposed SHOT_FRAME/DERIVED_FRAME), with provenance `overlays_composited`. Inputs are re-hashed after the run.
+- **Consumers:**
+  - G02 `compose_still_shot` accepts a shot with overlays only from such a frame, with a matching set.
+  - `motion.compose.compose_motion_shot(..., overlays_composited=)` accepts persistent overlays pre-composited into the motion base frame, bound to `source_frame_sha256`.
+  - Treatments remain G08.
+  - Shots without overlays are byte-unchanged.

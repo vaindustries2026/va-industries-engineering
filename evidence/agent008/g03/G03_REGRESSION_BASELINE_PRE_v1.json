@@ -1,0 +1,128 @@
+{
+ "g02_still": {
+  "core": "ef0c6cb7e932e02e6ad8235ef97b3b98ea2d300e57f8232c54b68c1d985797d9",
+  "keys": [
+   "agent",
+   "agent_version",
+   "audio_cues",
+   "deterministic_core_sha256",
+   "dialogue_timing",
+   "dialogue_tracks",
+   "human_approval",
+   "layout",
+   "mix_peak_dbfs",
+   "output_spec",
+   "outputs",
+   "qc",
+   "recipes",
+   "safety",
+   "shot_id",
+   "shot_spec",
+   "source_frame",
+   "stage",
+   "status",
+   "toolchain"
+  ],
+  "outputs": {
+   "mix_wav": {
+    "file": "TEST-S023_STILL_MIX.wav",
+    "sha256": "d1f94f597ad508db48decdd1321186cc4495cebfbe75a852d89d99dd834a9867"
+   },
+   "review_mp4": {
+    "bytes": 77823,
+    "file": "TEST-S023_STILL_REVIEW.mp4",
+    "sha256": "a1004d58a6fe792d3a9b5cd7d499a0fb866db6df9ea1034c1708d86a52d3c32a"
+   }
+  },
+  "qc_keys": [
+   "audio_peak_dbfs",
+   "audio_sample_rate",
+   "audio_silent_windows",
+   "audio_streams",
+   "automatic_result",
+   "black_frames",
+   "distinct_frames",
+   "expected_duration_s",
+   "expected_fps",
+   "expected_frames",
+   "expected_resolution",
+   "frame_hash_list_sha256",
+   "frames",
+   "held_frame_rgb_sha256",
+   "issues",
+   "longest_identical_run",
+   "max_freeze_frames",
+   "output_duration_s",
+   "output_fps",
+   "output_frames",
+   "output_resolution",
+   "overlays_applied",
+   "treatments_applied"
+  ],
+  "source_frame_keys": [
+   "asset_id",
+   "classification",
+   "registry_id",
+   "registry_status",
+   "shot_id",
+   "verified_sha256"
+  ]
+ },
+ "v02_motion": {
+  "core": "98035b11837b3d84377959b2590442be1ba187a4a55678b02f6cc020f9c3e1eb",
+  "keys": [
+   "agent",
+   "agent_version",
+   "audio_cues",
+   "deterministic_core_sha256",
+   "dialogue_timing",
+   "dialogue_tracks",
+   "human_approval",
+   "mix_peak_dbfs",
+   "motion_request",
+   "motion_result",
+   "output_spec",
+   "outputs",
+   "qc",
+   "raw_output_verified_sha256",
+   "recipes",
+   "safety",
+   "shot_id",
+   "shot_spec",
+   "stage",
+   "status",
+   "toolchain"
+  ],
+  "outputs": {
+   "mix_wav": {
+    "file": "S027_MOTION_MIX.wav",
+    "sha256": "c7b1f3dfcc092908e91a44bba4bb33c272c3cc53af168e45c90f1930ee4d307a"
+   },
+   "review_mp4": {
+    "bytes": 1339419,
+    "file": "MOTION_SMOKE_REVIEW.mp4",
+    "sha256": "d6214ad40a59673558ad62b7a87fda8cc9d652ac299fe29c89a412bbf4ff5b47"
+   }
+  },
+  "qc_keys": [
+   "audio_peak_dbfs",
+   "audio_silent_windows",
+   "automatic_result",
+   "black_frames",
+   "distinct_frames",
+   "expected_duration_s",
+   "expected_frames",
+   "expected_resolution",
+   "frame_hash_list_sha256",
+   "frames",
+   "issues",
+   "longest_identical_run",
+   "max_freeze_frames",
+   "output_duration_s",
+   "output_frames",
+   "output_resolution",
+   "overlays_applied",
+   "treatments_applied"
+  ]
+ }
+}

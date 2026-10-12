@@ -2686,3 +2686,27 @@ provider_calls: 0
 render_calls: 0
 status: "EP005_S029_COMPLETE_APPROVED + S029_FINAL_SHOT_APPROVED + S029_H264_STATIC_FRAME_VARIANCE_ACCEPTED + S029_PRODUCTION_STATUS=COMPLETE_APPROVED + S027_UNCHANGED + S028_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_RENDER_CALLS + EP005_REMAINING_SHOT_CHECKPOINT_READY + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261012-AGENT008-G03-OVERLAY-PLACEMENT: deterministic overlay placement (engineering only)
+
+```yaml
+change_id: "ENG-20261012-AGENT008-G03-OVERLAY-PLACEMENT"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Company Brain (FACTORY_CAPABILITY_FIRST; G03 engineering task; S026 production deferred)"
+change_type: "CODE (Agent-008 G03) + TESTS + EVIDENCE (read-only audit/validation)"
+code: ["agent008/overlay.py (new)", "agent008/still.py (accept approved G03 frame for shots with overlays)", "agent008/motion/compose.py (optional overlays_composited for pre-composited motion base frames)", "agent008/tests/test_g03.py (22 tests)", "agent008/CONTRACT.md (v0.3 G03 section)"]
+contract: "AGENT008_G03_OVERLAY_PLACEMENT_v1 (evidence/agent008/g03/G03_CONTRACT_v1.md)"
+audit: "G03_DEPENDENT_SHOTS = 18 verified from live specs (S001-S008, S010-S014, S016-S020); placement/scale/anchor = G03_SPEC_GAP everywhere (closed by a human-approved per-base-frame placement record); S009/S015/S021 = G11"
+tests: "160/160 OK (138 existing unchanged + 22 G03)"
+determinism: "PASS (two-run identical PNG/core/downstream still MP4, straight + rotated); no-overlay G02 output + core and v0.2 motion MP4/WAV identical pre/post"
+live_validation: "18/18 G03-dependent shots SUPPORTED; code-ready 3 -> 13/26; remaining code blockers G08 (9 incl. newly found reflection-on-motion S007/S010/S011/S014), G07 (1), G06 (1), G11 (3); 7 code-ready and dependency-clear"
+recommendation: "B: implement G08 next (8 shots fully unlocked -> 21/26 code-ready; dependency-clear 7 -> 18; $0)"
+non_regression: "S027/S028/S029 stored assets re-hashed equal + APPROVED + updated_at unchanged; scripts/manifests/readiness/ARI/registry/storage fingerprints unchanged"
+evidence: ["evidence/AGENT008_G03_OVERLAY_PLACEMENT_v1.0.md", "evidence/agent008/g03/"]
+provider_calls: 0
+production_writes: 0
+status: "AGENT008_G03_DETERMINISTIC_OVERLAY_PLACEMENT_COMPLETE + G03_REQUIREMENTS_AUDITED + G03_CONTRACT_LOCKED + G03_IMPLEMENTED + G03_FAIL_CLOSED + G03_DETERMINISM_PASS + FULL_TEST_SUITE_PASS + EP005_G03_DEPENDENT_SHOTS_REVALIDATED + UPDATED_PRODUCTION_MATRIX_READY + S027_UNCHANGED + S028_UNCHANGED + S029_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES + NEXT_BATCH_RECOMMENDATION_READY"
+```

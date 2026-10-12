@@ -153,7 +153,10 @@ def mix_motion_audio(spec_shot, inputs, timing, spec, dialogue=()):
 
 
 def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_paths, timing, out_dir,
-                        max_freeze_frames=24):
+                        max_freeze_frames=24, overlays_composited=None):
+    """overlays_composited (G03): the provenance overlay set of the approved G03 frame that was uploaded as the motion
+    base frame. Persistent overlays then travel with the provider motion and need no tracking; it must equal the
+    shot's active overlay set and be bound to motion_request.source_frame_sha256. Treatments still fail closed."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     if motion_result.provider_status != 'COMPLETED':
@@ -164,9 +167,12 @@ def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_pa
         raise FailClosed('MOTION_RESULT_REQUEST_MISMATCH')
     if spec_shot['shot_id'] != motion_request.shot_id:
         raise FailClosed('SHOT_IDENTITY_MISMATCH')
-    if spec_shot['active_overlays'] or spec_shot['treatments']:
+    if spec_shot['treatments'] or (spec_shot['active_overlays'] and not overlays_composited):
         raise FailClosed('MOTION_TREATMENTS_NEED_TRACKING_V02',
                          'overlays/treatments on generated motion need tracked placement (not in v0.2)')
+    if overlays_composited:
+        from ..overlay import precomposited_overlay_set
+        precomposited_overlay_set(spec_shot, overlays_composited, motion_request.source_frame_sha256)
     dialogue = resolve_dialogue(spec_shot, asset_paths, timing)
     dialogue_timing = govern_dialogue_timing(spec_shot, dialogue, asset_paths, timing, spec)
     frames = decode_normalised(motion_result.raw_output_path, spec, spec_shot['frames'])[:spec_shot['frames']]
@@ -184,6 +190,8 @@ def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_pa
                'output_duration_s': float(pr['format']['duration']), 'expected_duration_s': spec_shot['duration_seconds'],
                'audio_peak_dbfs': ar['peak_dbfs'], 'audio_silent_windows': ar['silent_windows_below_floor'],
                'overlays_applied': 0, 'treatments_applied': 0})
+    if overlays_composited:
+        qc['overlays_precomposited_in_base_frame'] = len({o['asset_id'] for o in overlays_composited['overlays']})
     if qc['output_frames'] != qc['expected_frames']:
         qc['issues'].append('frame count mismatch')
     if qc['output_resolution'] != qc['expected_resolution']:
@@ -194,6 +202,7 @@ def compose_motion_shot(motion_result, motion_request, spec_shot, spec, asset_pa
         'shot_id': spec_shot['shot_id'], 'motion_request': motion_request.to_dict(),
         'motion_result': motion_result.to_dict(), 'raw_output_verified_sha256': raw,
         'output_spec': spec.to_dict(), 'shot_spec': spec_shot, 'dialogue_tracks': dialogue,
+        **({'overlays_composited_in_base_frame': overlays_composited} if overlays_composited else {}),
         'dialogue_timing': dialogue_timing, 'audio_cues': cues, 'mix_peak_dbfs': peak_db,
         'qc': qc, 'recipes': {'encode_command': [c if not str(c).startswith('/') else '<OUT>/' + Path(c).name for c in cmd]},
         'outputs': {'review_mp4': {'file': mp4.name, 'sha256': sha256_file(mp4), 'bytes': mp4.stat().st_size},

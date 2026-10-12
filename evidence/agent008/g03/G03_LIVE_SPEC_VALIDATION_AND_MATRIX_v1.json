@@ -1,0 +1,1002 @@
+{
+ "readiness": "69bff641-e056-4701-a23f-d91dbc2039b2",
+ "overlay_assets": {
+  "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01": {
+   "registry_row_id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+   "status": "APPROVED",
+   "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+   "expected_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+   "storage_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+   "canvas_size": [
+    1447,
+    1087
+   ],
+   "alpha_min_max": [
+    0,
+    255
+   ],
+   "trimmed_size": [
+    1356,
+    637
+   ],
+   "g03_governance": "PASS"
+  },
+  "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01": {
+   "registry_row_id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+   "status": "APPROVED",
+   "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+   "expected_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+   "storage_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+   "canvas_size": [
+    1448,
+    1086
+   ],
+   "alpha_min_max": [
+    0,
+    255
+   ],
+   "trimmed_size": [
+    1380,
+    568
+   ],
+   "g03_governance": "PASS"
+  },
+  "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01": {
+   "registry_row_id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+   "status": "APPROVED",
+   "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+   "expected_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+   "storage_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+   "canvas_size": [
+    1446,
+    1087
+   ],
+   "alpha_min_max": [
+    0,
+    255
+   ],
+   "trimmed_size": [
+    885,
+    947
+   ],
+   "g03_governance": "PASS"
+  }
+ },
+ "matrix": [
+  {
+   "SHOT_ID": "S001",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_BASE_FRAME_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-MIRROR-OPEN, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Mikko: Berries on my face! I want to feel fresh.",
+    "Lumi: I see three little smudges."
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": true
+  },
+  {
+   "SHOT_ID": "S002",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_BASE_FRAME_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-MEDIUM-TWOSHOT, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Mikko: Where shall I try first?"
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": true
+  },
+  {
+   "SHOT_ID": "S003",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "G02_STILL_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-OVERSHOULDER-MIRROR, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Lumi: Let’s look for one little spot."
+   ],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": true
+  },
+  {
+   "SHOT_ID": "S004",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "STILL_TREATMENTS_NEED_G08",
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-OVERSHOULDER-MIRROR, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Lumi: A glint on his cheek!",
+    "Lumi: Find the next smudge!"
+   ],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S005",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "G02_STILL_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-OVERSHOULDER-MIRROR, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": "S004",
+   "UPSTREAM_CODE_BLOCKED_SHOT": "S004",
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S006",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_TREATMENTS_NEED_TRACKING_V02",
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-FACE-MIRROR-POINT, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Mikko: This cheek. I’ll try a gentle wipe."
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S007",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_TREATMENTS_NEED_TRACKING_V02",
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_MOTION (reflection treatment on provider motion)"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-CHEEK-CLOTH, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Mikko: Wipe your cheek with me. Soft and slow.",
+    "Mikko: Can you pretend to wipe your cheek?"
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 2,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S008",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "G02_STILL_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-CHEEK-CLOTH, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": "S007",
+   "UPSTREAM_CODE_BLOCKED_SHOT": "S007",
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S009",
+   "G03_STATUS": "NOT_APPLICABLE_BLOCKED_G11 (in-shot removal; spec fails closed OVERLAY_TRANSITION_UNSUPPORTED_V01)",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-CHEEK-CLOTH, BLOCKED)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [],
+   "active_overlays": [],
+   "treatments": [],
+   "spec_video_generation_required": null,
+   "plan_method": "D",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S010",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_TREATMENTS_NEED_TRACKING_V02",
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_MOTION (reflection treatment on provider motion)"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-FACE-MIRROR, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Lumi: That cheek is clear. Two smudges left."
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S011",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_TREATMENTS_NEED_TRACKING_V02",
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_MOTION (reflection treatment on provider motion)"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-FACE-MIRROR, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": "S010",
+   "UPSTREAM_CODE_BLOCKED_SHOT": "S010",
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S012",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "STILL_TREATMENTS_NEED_G08",
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-FACE-MIRROR, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Lumi: By your mouth!",
+    "Lumi: Find the next smudge!"
+   ],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S013",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "G02_STILL_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-FACE-MIRROR, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": "S012",
+   "UPSTREAM_CODE_BLOCKED_SHOT": "S012",
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S014",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_TREATMENTS_NEED_TRACKING_V02",
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_MOTION (reflection treatment on provider motion)"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-MOUTH-CLOTH, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Mikko: I’ll slow my hand. One little wipe."
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S015",
+   "G03_STATUS": "NOT_APPLICABLE_BLOCKED_G11 (in-shot removal; spec fails closed OVERLAY_TRANSITION_UNSUPPORTED_V01)",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-MOUTH-CLOTH, BLOCKED)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [],
+   "active_overlays": [],
+   "treatments": [],
+   "spec_video_generation_required": null,
+   "plan_method": "D",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S016",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_BASE_FRAME_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-FACE-MIRROR, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Lumi: That spot is gone. One is left."
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": true
+  },
+  {
+   "SHOT_ID": "S017",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "G02_STILL_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-MEDIUM-TWOSHOT, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": true
+  },
+  {
+   "SHOT_ID": "S018",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "STILL_TREATMENTS_NEED_G08",
+   "OTHER_CODE_BLOCKERS": [
+    "G07_IN_SHOT_CUT",
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-MACRO-REFLECTION, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Lumi: One spot left!",
+    "Lumi: Find the next smudge!"
+   ],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 2
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S019",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "G02_STILL_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-MACRO-REFLECTION, CAN_DERIVE_DETERMINISTICALLY) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": "S018",
+   "UPSTREAM_CODE_BLOCKED_SHOT": "S018",
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S020",
+   "G03_STATUS": "SUPPORTED",
+   "downstream_gate_with_g03_frame": "MOTION_BASE_FRAME_GATE_PASS",
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-NOSE-CLOTH, NEEDS_NEW_SHOT_FRAME) + G03 placement record (needs the approved base frame first)",
+   "MISSING_DIALOGUE": [
+    "Mikko: My nose! I’ll wipe just that spot."
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "spec_video_generation_required": true,
+   "plan_method": "C",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": true
+  },
+  {
+   "SHOT_ID": "S021",
+   "G03_STATUS": "NOT_APPLICABLE_BLOCKED_G11 (in-shot removal; spec fails closed OVERLAY_TRANSITION_UNSUPPORTED_V01)",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-NOSE-CLOTH, BLOCKED)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [],
+   "active_overlays": [],
+   "treatments": [],
+   "spec_video_generation_required": null,
+   "plan_method": "D",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S022",
+   "G03_STATUS": "NOT_REQUIRED",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-NOSE-CLOTH, CAN_DERIVE_DETERMINISTICALLY)",
+   "MISSING_DIALOGUE": [
+    "Lumi: Your nose is clear, too."
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 1,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [],
+   "treatments": [],
+   "spec_video_generation_required": true,
+   "plan_method": "B",
+   "CONTINUITY_SOURCE_SHOT": "S021",
+   "UPSTREAM_CODE_BLOCKED_SHOT": "S021",
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S023",
+   "G03_STATUS": "NOT_REQUIRED",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-MEDIUM-TWOSHOT, CAN_DERIVE_DETERMINISTICALLY)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [],
+   "active_overlays": [],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": "S022",
+   "UPSTREAM_CODE_BLOCKED_SHOT": "S021",
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S024",
+   "G03_STATUS": "NOT_REQUIRED",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-MIRROR-OPEN, CAN_DERIVE_DETERMINISTICALLY)",
+   "MISSING_DIALOGUE": [],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [],
+   "active_overlays": [],
+   "treatments": [],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S025",
+   "G03_STATUS": "NOT_REQUIRED",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [
+    "G08_TREATMENTS_ON_STILL_PRODUCTION"
+   ],
+   "MISSING_BASE_FRAME": "YES (F-MIRROR-OPEN, CAN_DERIVE_DETERMINISTICALLY)",
+   "MISSING_DIALOGUE": [
+    "Lumi: Cheek, mouth, nose. All clear."
+   ],
+   "PROVIDER_MOTION_REQUIRED": false,
+   "planned_provider_calls": {
+    "image": 0,
+    "video": 0,
+    "tts_mikko": 0,
+    "tts_lumi_after_voice_approval": 1
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": false,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+    "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01"
+   ],
+   "spec_video_generation_required": false,
+   "plan_method": "A",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": false
+  },
+  {
+   "SHOT_ID": "S026",
+   "G03_STATUS": "NOT_REQUIRED",
+   "downstream_gate_with_g03_frame": null,
+   "OTHER_CODE_BLOCKERS": [],
+   "MISSING_BASE_FRAME": "YES (F-MEDIUM-TWOSHOT, NEEDS_NEW_SHOT_FRAME)",
+   "MISSING_DIALOGUE": [
+    "Mikko: One little spot at a time!"
+   ],
+   "PROVIDER_MOTION_REQUIRED": true,
+   "planned_provider_calls": {
+    "image": 1,
+    "video": 1,
+    "tts_mikko": 1,
+    "tts_lumi_after_voice_approval": 0
+   },
+   "CAN_PRODUCE_AFTER_INPUTS_EXIST": true,
+   "human_decisions_open": [
+    "H4_VISIBLE_SPEECH"
+   ],
+   "active_overlays": [],
+   "treatments": [],
+   "spec_video_generation_required": true,
+   "plan_method": "B",
+   "CONTINUITY_SOURCE_SHOT": null,
+   "UPSTREAM_CODE_BLOCKED_SHOT": null,
+   "PRODUCIBLE_NOW_IN_DEPENDENCY_ORDER_ONCE_INPUTS_EXIST": true
+  }
+ ],
+ "impact": {
+  "G03_DEPENDENT_SHOTS_BEFORE": [
+   "S001",
+   "S002",
+   "S003",
+   "S004",
+   "S005",
+   "S006",
+   "S007",
+   "S008",
+   "S010",
+   "S011",
+   "S012",
+   "S013",
+   "S014",
+   "S016",
+   "S017",
+   "S018",
+   "S019",
+   "S020"
+  ],
+  "G03_DEPENDENT_SHOTS_NOW_SUPPORTED": [
+   "S001",
+   "S002",
+   "S003",
+   "S004",
+   "S005",
+   "S006",
+   "S007",
+   "S008",
+   "S010",
+   "S011",
+   "S012",
+   "S013",
+   "S014",
+   "S016",
+   "S017",
+   "S018",
+   "S019",
+   "S020"
+  ],
+  "SHOTS_STILL_BLOCKED_BY_G03": [],
+  "TOTAL_REMAINING_SHOTS": 26,
+  "SHOTS_WITH_ALL_CODE_PATHS_SUPPORTED_AFTER_G03": [
+   "S001",
+   "S002",
+   "S003",
+   "S005",
+   "S008",
+   "S013",
+   "S016",
+   "S017",
+   "S019",
+   "S020",
+   "S022",
+   "S023",
+   "S026"
+  ],
+  "SHOTS_STILL_BLOCKED_BY_G06": [
+   "S024"
+  ],
+  "SHOTS_STILL_BLOCKED_BY_G07": [
+   "S018"
+  ],
+  "SHOTS_STILL_BLOCKED_BY_G08": [
+   "S004",
+   "S006",
+   "S007",
+   "S010",
+   "S011",
+   "S012",
+   "S014",
+   "S018",
+   "S025"
+  ],
+  "SHOTS_STILL_BLOCKED_BY_G11": [
+   "S009",
+   "S015",
+   "S021"
+  ],
+  "SHOTS_BLOCKED_ONLY_BY_MISSING_ASSETS_OR_DIALOGUE": [
+   "S001",
+   "S002",
+   "S003",
+   "S005",
+   "S008",
+   "S013",
+   "S016",
+   "S017",
+   "S019",
+   "S020",
+   "S022",
+   "S023",
+   "S026"
+  ],
+  "CODE_READY_BUT_UPSTREAM_CONTINUITY_BLOCKED": {
+   "S005": "S004",
+   "S008": "S007",
+   "S013": "S012",
+   "S019": "S018",
+   "S022": "S021",
+   "S023": "S021"
+  },
+  "CODE_READY_AND_DEPENDENCY_CLEAR": [
+   "S001",
+   "S002",
+   "S003",
+   "S016",
+   "S017",
+   "S020",
+   "S026"
+  ],
+  "SHOTS_BLOCKED_ONLY_BY_G08": [
+   "S004",
+   "S006",
+   "S007",
+   "S010",
+   "S011",
+   "S012",
+   "S014",
+   "S025"
+  ],
+  "counts": {
+   "G03_DEPENDENT_SHOTS_BEFORE": 18,
+   "G03_DEPENDENT_SHOTS_NOW_SUPPORTED": 18,
+   "SHOTS_STILL_BLOCKED_BY_G03": 0,
+   "TOTAL_REMAINING_SHOTS": 26,
+   "SHOTS_WITH_ALL_CODE_PATHS_SUPPORTED_AFTER_G03": 13,
+   "SHOTS_STILL_BLOCKED_BY_G06": 1,
+   "SHOTS_STILL_BLOCKED_BY_G07": 1,
+   "SHOTS_STILL_BLOCKED_BY_G08": 9,
+   "SHOTS_STILL_BLOCKED_BY_G11": 3,
+   "SHOTS_BLOCKED_ONLY_BY_MISSING_ASSETS_OR_DIALOGUE": 13,
+   "CODE_READY_BUT_UPSTREAM_CONTINUITY_BLOCKED": {
+    "S005": "S004",
+    "S008": "S007",
+    "S013": "S012",
+    "S019": "S018",
+    "S022": "S021",
+    "S023": "S021"
+   },
+   "CODE_READY_AND_DEPENDENCY_CLEAR": 7,
+   "SHOTS_BLOCKED_ONLY_BY_G08": 8
+  }
+ }
+}

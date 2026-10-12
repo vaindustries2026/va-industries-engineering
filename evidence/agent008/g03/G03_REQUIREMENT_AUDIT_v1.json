@@ -1,0 +1,1525 @@
+{
+ "manifest": "0325d35c-d567-4488-bf78-c3887e819382",
+ "readiness": "69bff641-e056-4701-a23f-d91dbc2039b2",
+ "shots_with_overlay_requirements": [
+  "S001",
+  "S002",
+  "S003",
+  "S004",
+  "S005",
+  "S006",
+  "S007",
+  "S008",
+  "S009",
+  "S010",
+  "S011",
+  "S012",
+  "S013",
+  "S014",
+  "S015",
+  "S016",
+  "S017",
+  "S018",
+  "S019",
+  "S020",
+  "S021"
+ ],
+ "G03_DEPENDENT_SHOTS": [
+  "S001",
+  "S002",
+  "S003",
+  "S004",
+  "S005",
+  "S006",
+  "S007",
+  "S008",
+  "S010",
+  "S011",
+  "S012",
+  "S013",
+  "S014",
+  "S016",
+  "S017",
+  "S018",
+  "S019",
+  "S020"
+ ],
+ "G03_DEPENDENT_COUNT": 18,
+ "G11_REMOVAL_SHOTS_NOT_G03": [
+  "S009",
+  "S015",
+  "S021"
+ ],
+ "overlay_assets": {
+  "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01": {
+   "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+   "status": "APPROVED",
+   "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+   "dimensions": "1447x1087",
+   "has_alpha": true,
+   "format": "WEBP (lossy VP8, ICC profile)"
+  },
+  "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01": {
+   "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+   "status": "APPROVED",
+   "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+   "dimensions": "1448x1086",
+   "has_alpha": true,
+   "format": "WEBP (lossy VP8, ICC profile)"
+  },
+  "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01": {
+   "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+   "status": "APPROVED",
+   "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+   "dimensions": "1446x1087",
+   "has_alpha": true,
+   "format": "WEBP (lossy VP8, ICC profile)"
+  }
+ },
+ "spec_gap_summary": {
+  "placement_xy": "G03_SPEC_GAP for every dependent shot: the manifest names anatomy only",
+  "scale": "G03_SPEC_GAP for every dependent shot",
+  "anchor": "G03_SPEC_GAP for every dependent shot (no approved base frame exists for S001-S026, so no anchor can be measured yet)",
+  "resolution": "per-base-frame human-approved overlay placement record (recorded G03 design: x, y, scale, rotation, mirror)"
+ },
+ "shots": [
+  {
+   "SHOT_ID": "S001",
+   "spec_state": "SPEC",
+   "frames": 144,
+   "video_generation_required": true,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-143 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's anatomical left cheek\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's anatomical left cheek\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Use as an independently removable overlay on the reflected face; preserve correct mirror reversal and keep visible in S001.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": true
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-143 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Use as an independently removable overlay beside, not inside, the mouth; keep visible in S001.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": true
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-143 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Use as an independently removable overlay on the nose; keep visible in S001.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": true
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S002",
+   "spec_state": "SPEC",
+   "frames": 84,
+   "video_generation_required": true,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on Mikko's anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-83 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's anatomical left cheek\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's anatomical left cheek\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain exactly three visible berry smudges on Mikko’s face and their corresponding reflected marks. No removal or movement occurs in S002.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s anatomical left cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-83 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain exactly three visible berry smudges on Mikko’s face and their corresponding reflected marks. No removal or movement occurs in S002.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s anatomical left cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-83 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain exactly three visible berry smudges on Mikko’s face and their corresponding reflected marks. No removal or movement occurs in S002.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s anatomical left cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S003",
+   "spec_state": "SPEC",
+   "frames": 84,
+   "video_generation_required": false,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko’s anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-83 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: 'Berry smudge on Mikko’s anatomical left cheek')",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy 'Berry smudge on Mikko’s anatomical left cheek'; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the first visible berry mark on Mikko’s anatomical left cheek and its corresponding reflection.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on skin beside Mikko’s mouth",
+     "AFFECTED_FRAME_RANGE": "0-83 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: 'Berry smudge on skin beside Mikko’s mouth')",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy 'Berry smudge on skin beside Mikko’s mouth'; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the second visible berry mark beside the mouth and its corresponding reflection.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko’s nose",
+     "AFFECTED_FRAME_RANGE": "0-83 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: 'Berry smudge on Mikko’s nose')",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy 'Berry smudge on Mikko’s nose'; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the third visible berry mark on the nose and its corresponding reflection.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S004",
+   "spec_state": "SPEC",
+   "frames": 120,
+   "video_generation_required": false,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on Mikko's anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's anatomical left cheek\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's anatomical left cheek\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain all three existing smudges in the mirror reflection, with the anatomical left cheek mark serving as the selected clue.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain all three existing smudges in the mirror reflection, with the anatomical left cheek mark serving as the selected clue.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain all three existing smudges in the mirror reflection, with the anatomical left cheek mark serving as the selected clue.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S005",
+   "spec_state": "SPEC",
+   "frames": 96,
+   "video_generation_required": false,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on Mikko's anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's anatomical left cheek\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's anatomical left cheek\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the three existing smudges: anatomical left cheek, skin beside the mouth, and nose. The cheek mark must be easy to locate without adding emphasis.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s reflected face",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the three existing smudges: anatomical left cheek, skin beside the mouth, and nose. The cheek mark must be easy to locate without adding emphasis.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s reflected face",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the three existing smudges: anatomical left cheek, skin beside the mouth, and nose. The cheek mark must be easy to locate without adding emphasis.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s reflected face",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S006",
+   "spec_state": "SPEC",
+   "frames": 60,
+   "video_generation_required": false,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "reflection_treatment": true,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-59 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's anatomical left cheek\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's anatomical left cheek\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain exactly three visible berry smudges and ensure the anatomical left cheek mark aligns with its clean mirror reflection.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-59 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain exactly three visible berry smudges and ensure the anatomical left cheek mark aligns with its clean mirror reflection.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-59 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain exactly three visible berry smudges and ensure the anatomical left cheek mark aligns with its clean mirror reflection.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s cheek, skin beside the mouth, and nose",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S007",
+   "spec_state": "SPEC",
+   "frames": 120,
+   "video_generation_required": true,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "reflection_treatment": true,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on Mikko’s anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: 'Berry smudge on Mikko’s anatomical left cheek')",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy 'Berry smudge on Mikko’s anatomical left cheek'; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the selected cheek smudge from S006 through the end of S007; no removal occurs during this stationary cloth contact.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on skin beside Mikko’s mouth",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: 'Berry smudge on skin beside Mikko’s mouth')",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy 'Berry smudge on skin beside Mikko’s mouth'; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Keep the second berry smudge present and unchanged as continuity support.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on Mikko’s nose",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: 'Berry smudge on Mikko’s nose')",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy 'Berry smudge on Mikko’s nose'; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Keep the third berry smudge present and unchanged as continuity support.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S008",
+   "spec_state": "SPEC",
+   "frames": 72,
+   "video_generation_required": false,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on Mikko's anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "0-71 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's anatomical left cheek\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's anatomical left cheek\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the three existing berry smudges consistently, including the selected cheek smudge under the stationary cloth; do not remove or alter any smudge during this shot.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-71 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the three existing berry smudges consistently, including the selected cheek smudge under the stationary cloth; do not remove or alter any smudge during this shot.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-71 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the three existing berry smudges consistently, including the selected cheek smudge under the stationary cloth; do not remove or alter any smudge during this shot.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S009",
+   "spec_state": "BLOCKED",
+   "frames": 36,
+   "video_generation_required": true,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "BLOCKED_G11_REMOVAL",
+   "g03_dependent": false,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "e2fc6426-bf97-437e-9515-d86419a0498a",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "dimensions": "1447x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's anatomical left cheek",
+     "AFFECTED_FRAME_RANGE": "TRANSITION visible_at_start=True visible_at_end=False; removal frame not defined -> G03_SPEC_GAP",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's anatomical left cheek\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's anatomical left cheek\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "REMOVAL_IN_SHOT (G11, not G03): Begin with the cheek, mouth-area, and nose smudges present. Mask/remove only the cheek overlay during the cloth passage; retain the mouth-area and nose overlays.",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Begin with the cheek, mouth-area, and nose smudges present. Mask/remove only the cheek overlay during the cloth passage; retain the mouth-area and nose overlays.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-35 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Begin with the cheek, mouth-area, and nose smudges present. Mask/remove only the cheek overlay during the cloth passage; retain the mouth-area and nose overlays.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-35 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Begin with the cheek, mouth-area, and nose smudges present. Mask/remove only the cheek overlay during the cloth passage; retain the mouth-area and nose overlays.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S010",
+   "spec_state": "SPEC",
+   "frames": 120,
+   "video_generation_required": true,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "reflection_treatment": true,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the smudge beside Mikko’s mouth and the smudge on his nose in the mirror reflection. Do not restore the removed cheek smudge.",
+      "derived_from_element": "Berry smudge overlays for the two remaining marks on Mikko’s reflected face",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the smudge beside Mikko’s mouth and the smudge on his nose in the mirror reflection. Do not restore the removed cheek smudge.",
+      "derived_from_element": "Berry smudge overlays for the two remaining marks on Mikko’s reflected face",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S011",
+   "spec_state": "SPEC",
+   "frames": 120,
+   "video_generation_required": true,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "reflection_treatment": true,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Composite the remaining berry smudge beside Mikko’s mouth and the remaining berry smudge on his nose. Keep the anatomical left cheek clear and do not add a new mark.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s skin",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "STATE_MARK",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Composite the remaining berry smudge beside Mikko’s mouth and the remaining berry smudge on his nose. Keep the anatomical left cheek clear and do not add a new mark.",
+      "derived_from_element": "Berry smudge overlays on Mikko’s skin",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S012",
+   "spec_state": "SPEC",
+   "frames": 120,
+   "video_generation_required": false,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the small berry mark on the skin beside Mikko’s mouth in the reflected face. Do not restore the removed cheek smudge; preserve the nose smudge in story continuity if visible.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the small berry mark on the skin beside Mikko’s mouth in the reflected face. Do not restore the removed cheek smudge; preserve the nose smudge in story continuity if visible.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S013",
+   "spec_state": "SPEC",
+   "frames": 96,
+   "video_generation_required": false,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on skin beside Mikko’s mouth",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: 'Berry smudge on skin beside Mikko’s mouth')",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy 'Berry smudge on skin beside Mikko’s mouth'; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Static composited mark visible in the mirror reflection for the entire hold. No removal, animation, glow, sparkle, or reveal effect.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Static composited mark visible in the mirror reflection for the entire hold. No removal, animation, glow, sparkle, or reveal effect.",
+      "derived_from_element": null,
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S014",
+   "spec_state": "SPEC",
+   "frames": 96,
+   "video_generation_required": true,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "reflection_treatment": true,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the remaining berry smudge beside Mikko’s mouth and the nose smudge as governed face overlays; keep the previously removed anatomical-left-cheek smudge absent. Ensure the mouth-area mark stays readable and unobscured.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the remaining berry smudge beside Mikko’s mouth and the nose smudge as governed face overlays; keep the previously removed anatomical-left-cheek smudge absent. Ensure the mouth-area mark stays readable and unobscured.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S015",
+   "spec_state": "BLOCKED",
+   "frames": 72,
+   "video_generation_required": true,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "BLOCKED_G11_REMOVAL",
+   "g03_dependent": false,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "dimensions": "1448x1086"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on skin beside Mikko's mouth",
+     "AFFECTED_FRAME_RANGE": "TRANSITION visible_at_start=True visible_at_end=False; removal frame not defined -> G03_SPEC_GAP",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on skin beside Mikko's mouth\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on skin beside Mikko's mouth\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "REMOVAL_IN_SHOT (G11, not G03): Keep the mouth-area smudge present at the start. Remove only the mouth-area overlay precisely as the cloth passes. Keep the nose overlay present; do not restore the cheek overlay.",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Keep the mouth-area smudge present at the start. Remove only the mouth-area overlay precisely as the cloth passes. Keep the nose overlay present; do not restore the cheek overlay.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    },
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-71 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Keep the mouth-area smudge present at the start. Remove only the mouth-area overlay precisely as the cloth passes. Keep the nose overlay present; do not restore the cheek overlay.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S016",
+   "spec_state": "SPEC",
+   "frames": 96,
+   "video_generation_required": true,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Retain only the approved berry smudge on Mikko’s nose in the reflection; cheek and mouth-area smudges remain absent.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S017",
+   "spec_state": "SPEC",
+   "frames": 96,
+   "video_generation_required": false,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Composite the remaining nose smudge accurately in Mikko's reflection. Do not restore the removed cheek or mouth-area smudges.",
+      "derived_from_element": "Berry smudge overlays on Mikko's face reflection: nose smudge only in the current continuity state",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S018",
+   "spec_state": "SPEC",
+   "frames": 144,
+   "video_generation_required": false,
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-143 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the single remaining berry smudge on Mikko’s nose in the reflection; do not restore cheek or mouth smudges.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S019",
+   "spec_state": "SPEC",
+   "frames": 120,
+   "video_generation_required": false,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "STILL_COMPOSITE",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "OTHER",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-119 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the single remaining berry smudge on Mikko's nose in the reflection. Do not animate, remove, restore, or add any smudge.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S020",
+   "spec_state": "SPEC",
+   "frames": 96,
+   "video_generation_required": true,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "HYBRID_PRECOMPOSITE_INTO_MOTION_BASE_FRAME",
+   "g03_dependent": true,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "CLUE_HIGHLIGHT",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "0-95 (whole shot; continuity visible_at_start=visible_at_end=true)",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "NONE in this shot",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain one visible smudge on Mikko's nose and preserve the already-clear anatomical left cheek and skin beside the mouth in the face and mirror reflection.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": true,
+      "independently_removable": false
+     }
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S021",
+   "spec_state": "BLOCKED",
+   "frames": 96,
+   "video_generation_required": true,
+   "treatments": [],
+   "reflection_treatment": false,
+   "g03_path": "BLOCKED_G11_REMOVAL",
+   "g03_dependent": false,
+   "overlays": [
+    {
+     "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "OVERLAY_REGISTRY": {
+      "id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+      "status": "APPROVED",
+      "type": "OVERLAY_VFX/BERRY_SMUDGE_OVERLAY",
+      "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "dimensions": "1446x1087"
+     },
+     "OVERLAY_ROLE": "COMPOSITING",
+     "ELEMENT": "Berry smudge on Mikko's nose",
+     "AFFECTED_FRAME_RANGE": "TRANSITION visible_at_start=True visible_at_end=False; removal frame not defined -> G03_SPEC_GAP",
+     "PLACEMENT_REQUIREMENT": "G03_SPEC_GAP (no x/y in manifest; anatomical description only: \"Berry smudge on Mikko's nose\")",
+     "SCALE_REQUIREMENT": "G03_SPEC_GAP (no size/scale in manifest)",
+     "OPACITY_REQUIREMENT": "NOT_DECLARED (no partial-opacity requirement in manifest; only full presence/absence is governed)",
+     "Z_ORDER_REQUIREMENT": "NOT_DECLARED (overlays sit on Mikko; no inter-overlay order stated)",
+     "ANCHOR_REQUIREMENT": "G03_SPEC_GAP (anchored to Mikko anatomy \"Berry smudge on Mikko's nose\"; no numeric anchor; base frame not yet existing)",
+     "REMOVAL_REQUIREMENT": "REMOVAL_IN_SHOT (G11, not G03): Maintain the nose smudge at shot start, remove only the nose overlay during cloth passage, and keep the cheek and mouth-area overlays absent. No magical dissolve or clearing effect.",
+     "ANY_OTHER_GOVERNED_BEHAVIOUR": {
+      "usage": "Maintain the nose smudge at shot start, remove only the nose overlay during cloth passage, and keep the cheek and mouth-area overlays absent. No magical dissolve or clearing effect.",
+      "derived_from_element": "Berry smudge overlays",
+      "manifest_placement_fields_present": [],
+      "mirror_reversal_required": false,
+      "independently_removable": false
+     }
+    }
+   ]
+  }
+ ]
+}

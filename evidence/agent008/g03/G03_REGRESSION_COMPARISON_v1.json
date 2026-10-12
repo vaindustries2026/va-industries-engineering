@@ -1,0 +1,5 @@
+{
+ "g02_still_identical_incl_core": true,
+ "v02_motion_outputs_and_keys_identical": true,
+ "note": "v0.2 motion deterministic_core embeds the fixture temp raw path/created_at and differs run-to-run even on unchanged code; mp4/wav/key sets are compared instead"
+}

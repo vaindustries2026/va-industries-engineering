@@ -3,9 +3,11 @@
 Holds one hash-verified, human-approved shot frame (SHOT_FRAME / BASE_FRAME or DERIVED_FRAME) for exactly
 the shot's frame count, with deterministic crop / fit-scale / pad only, places the shot's governed audio
 (AMBIENCE bed, FOLEY/SFX one-shot events, approved dialogue; fail closed otherwise) through the same mix used
-for motion shots, encodes a REVIEW mp4 and verifies it. Not supported here, and failing closed rather than
-being approximated: overlay placement (needs G03 anchors), treatments on stills (G08), camera moves (G06),
-in-shot cuts (G07). Nothing here calls a provider, uploads, registers or approves.
+for motion shots, encodes a REVIEW mp4 and verifies it. Shots with active overlays are accepted only when the
+frame is an approved G03 DERIVED_FRAME whose composited overlay set equals the shot contract
+(frame['overlays_composited'], from the G03 provenance). Not supported here, and failing closed rather than
+being approximated: treatments on stills (G08), camera moves (G06), in-shot cuts (G07).
+Nothing here calls a provider, uploads, registers or approves.
 """
 import json
 from pathlib import Path
@@ -17,6 +19,7 @@ from .dialogue_timing import govern_dialogue_timing
 from .errors import FailClosed
 from .hashing import canonical_sha256, sha256_bytes, sha256_file, verify_file
 from .motion.compose import auto_qc_frames, mix_motion_audio, resolve_dialogue
+from .overlay import precomposited_overlay_set
 from .verify import audio_report
 
 AGENT_VERSION_G02 = 'agent008-v0.3-still'
@@ -26,13 +29,12 @@ REQUIRED_PROVENANCE = ('agent_version', 'status', 'shot_id', 'source_frame', 'la
                        'qc', 'outputs', 'human_approval', 'safety')
 
 
-def check_still_contract(spec_shot, spec):
+def check_still_contract(spec_shot, spec, overlays_composited=None, frame_sha256=None):
     sid = spec_shot['shot_id']
     if spec_shot.get('video_generation_required'):
         raise FailClosed('STILL_PATH_NOT_FOR_MOTION_SHOT', sid)
-    if spec_shot['active_overlays']:
-        raise FailClosed('STILL_OVERLAYS_NEED_G03_ANCHORS',
-                         f"{sid}: {[o['asset_id'] for o in spec_shot['active_overlays']]}")
+    if spec_shot['active_overlays'] or overlays_composited:      # G03: only a matching pre-composited frame
+        precomposited_overlay_set(spec_shot, overlays_composited, frame_sha256)
     if spec_shot['treatments']:
         raise FailClosed('STILL_TREATMENTS_NEED_G08', f"{sid}: {[t.get('treatment_id') for t in spec_shot['treatments']]}")
     if spec_shot['frames'] != int(round(spec_shot['duration_seconds'] * spec.fps)):
@@ -76,7 +78,10 @@ def layout_frame(path, spec, crop=None):
 
 def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, crop=None):
     out_dir = Path(out_dir)
-    check_still_contract(spec_shot, spec)
+    composited = frame.get('overlays_composited')
+    if composited and frame.get('classification') != 'SHOT_FRAME/DERIVED_FRAME':
+        raise FailClosed('OVERLAY_PRECOMPOSITE_NOT_DERIVED_FRAME', str(frame.get('asset_id')))
+    check_still_contract(spec_shot, spec, composited, frame.get('expected_sha256') if composited else None)
     frame_sha = verify_source_frame(frame, spec_shot)
     dialogue = resolve_dialogue(spec_shot, asset_paths, timing)
     dialogue_timing = govern_dialogue_timing(spec_shot, dialogue, asset_paths, timing, spec)
@@ -108,6 +113,8 @@ def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, cro
                'audio_peak_dbfs': ar['peak_dbfs'], 'audio_silent_windows': ar['silent_windows_below_floor'],
                'held_frame_rgb_sha256': sha256_bytes(img.tobytes()),
                'overlays_applied': 0, 'treatments_applied': 0})
+    if composited:
+        qc['overlays_precomposited'] = len({o['asset_id'] for o in composited['overlays']})
     for ok, msg in ((qc['output_frames'] == n, 'frame count mismatch'),
                     (qc['output_resolution'] == qc['expected_resolution'], 'resolution mismatch'),
                     (qc['output_fps'] == qc['expected_fps'], 'fps mismatch'),
@@ -120,7 +127,8 @@ def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, cro
         'agent': AGENT_NAME, 'agent_version': AGENT_VERSION_G02, 'stage': 'G02 still shot', 'status': 'REVIEW',
         'shot_id': sid,
         'source_frame': {k: frame.get(k) for k in ('asset_id', 'registry_id', 'classification', 'registry_status',
-                                                   'shot_id')} | {'verified_sha256': frame_sha},
+                                                   'shot_id')} | {'verified_sha256': frame_sha}
+                        | ({'overlays_composited': composited} if composited else {}),
         'layout': layout, 'output_spec': spec.to_dict(), 'shot_spec': spec_shot, 'dialogue_tracks': dialogue,
         'dialogue_timing': dialogue_timing,
         'audio_cues': cues, 'mix_peak_dbfs': peak_db, 'qc': qc,
