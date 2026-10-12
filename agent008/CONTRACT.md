@@ -204,3 +204,27 @@ Status: built and tested offline (synthetic fixtures). No production frame has b
   - `motion.compose.compose_motion_shot(..., overlays_composited=)` accepts persistent overlays pre-composited into the motion base frame, bound to `source_frame_sha256`.
   - Treatments remain G08.
   - Shots without overlays are byte-unchanged.
+
+---
+
+# v0.3 G08: governed visual treatments (`agent008/g08.py`)
+
+Status: built and tested offline (synthetic fixtures). Nothing has been produced. Full contract: `evidence/agent008/g08/G08_CONTRACT_v1.md`.
+
+- **Supported treatments:** exactly the three manifest treatments: mirror reflection (static), mirror glint (6–10 frames), completion pop (6–8 frames).
+- **Geometry:** a human-approved treatment record (`AGENT008_G08_TREATMENTS_v1`) bound by canonical SHA-256 to the shot and to the frame entering G08. It holds the glass ellipse, reflection mode and mapping, and the glint/pop windows.
+- **Order:** base frame → G03 → G08 reflection → [G07] → glint → pop.
+- **Reflection:**
+  - PRESERVE: certifies the G03 REFLECTION marks inside the glass.
+  - COMPOSITE: left-right reversed face region, no upscale, light tint, clipped to the glass.
+  - In both modes FACE marks may not touch the glass.
+- **Timed treatments:**
+  - Glint: inside the glass, on top, `soft_attack_decay` envelope.
+  - Pop: glass-only lift, gain ≤ 0.12, clean frame only.
+  - Manifest-governed sync: S004 glint ↔ `SFX-LUMI-CLUE-CHIME`, S025 pop ↔ `SFX-COMPLETION-POP-v01` (frame-exact).
+  - Manifest-governed glint targets: S004 cheek, S012 mouth.
+- **Consumers:**
+  - G02 `compose_still_shot(..., treatment_record=)`.
+  - `compose_motion_shot(..., treatments_composited=)`: the certified static reflection on the uploaded motion base frame only; glint and pop on motion still fail closed.
+  - S018 is refused by the still path until G07 exists.
+- **Non-regression:** treatment-free shots are byte-unchanged.

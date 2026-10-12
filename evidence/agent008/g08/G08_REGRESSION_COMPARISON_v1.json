@@ -1,0 +1,6 @@
+{
+ "baseline": "G03_REGRESSION_BASELINE_PRE_v1.json (code before G03 and G08)",
+ "g02_still_identical_incl_core": true,
+ "v02_motion_outputs_and_keys_identical": true,
+ "note": "treatment-free and overlay-free shots are byte-identical through G02 and v0.2 motion after G03+G08"
+}

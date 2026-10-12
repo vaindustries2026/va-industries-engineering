@@ -1,0 +1,453 @@
+{
+ "manifest": "0325d35c-d567-4488-bf78-c3887e819382",
+ "readiness": "69bff641-e056-4701-a23f-d91dbc2039b2",
+ "G08_DEPENDENT_SHOTS": [
+  "S004",
+  "S006",
+  "S007",
+  "S010",
+  "S011",
+  "S012",
+  "S014",
+  "S018",
+  "S025"
+ ],
+ "G08_TREATMENT_TYPES_REQUIRED": [
+  "BLOOM_PULSE",
+  "GLINT",
+  "MIRROR_REFLECTION"
+ ],
+ "treatment_definitions": {
+  "TREATMENT-EP005-MIRROR-GLINT-v01": {
+   "handling": "One deterministic compositor preset across all listed shots: small soft specular glint, short opacity/scale envelope of approximately 6-10 frames, placed on the mirror glass near the relevant reflected mark, non-magical, same established look each time.",
+   "affected_shots": [
+    "S004",
+    "S012",
+    "S018"
+   ],
+   "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+   "human_decision": "DERIVE/COMPOSITE FROM EXISTING; not a standalone production asset"
+  },
+  "TREATMENT-EP005-MIRROR-REFLECTION-v01": {
+   "handling": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+   "affected_shots": [
+    "S006",
+    "S007",
+    "S010",
+    "S011",
+    "S014",
+    "S025"
+   ],
+   "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+   "human_decision": "NOT A SEPARATE ASSET; shot-level compositing logic"
+  },
+  "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01": {
+   "handling": "Deterministic subtle brightness/bloom pulse on the mirror glass at S025, approximately 6-8 frames, synchronised with the completion-pop audio (COMPLETION_SFX). Must not imply that anything is being removed.",
+   "affected_shots": [
+    "S025"
+   ],
+   "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+   "human_decision": "NOT A SEPARATE ASSET; human decision: KEEP the effect"
+  }
+ },
+ "shots": [
+  {
+   "SHOT_ID": "S004",
+   "frames": 120,
+   "video_generation_required_in_spec": false,
+   "planned_path": "G02_STILL",
+   "held_pose_approved": true,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "named_sfx": [
+    "SFX-LUMI-CLUE-CHIME"
+   ],
+   "event_audio": [],
+   "motion_description": "Animate Lumi’s small mirror tilt and Mikko’s restrained attentive hold. Composite the clean mirror reflection, persistent smudge overlays, and one tiny reflected glint. Keep the glint brief and subtle; do not animate a wipe, pointing gesture, smudge removal, or target-confirming response.",
+   "CURRENT_CODE_SUPPORT": "G02 still rejects any treatment (STILL_TREATMENTS_NEED_G08); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: glint centre, size and start frame",
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-GLINT-v01",
+     "TREATMENT_TYPE": "GLINT",
+     "TREATMENT_PURPOSE": "Add one small, non-magical glint synchronized with the initial mirror tilt and clue chime; complete it before S005.",
+     "element": "Tiny reflected glint on the mirror near the selected cheek",
+     "overlay_role": "CLUE_HIGHLIGHT",
+     "manifest_handling": "One deterministic compositor preset across all listed shots: small soft specular glint, short opacity/scale envelope of approximately 6-10 frames, placed on the mirror glass near the relevant reflected mark, non-magical, same established look each time.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "one window of 6-10 frames inside 0-119, ending before the shot end; start frame: G08_SPEC_GAP (not numerically defined)",
+     "VISUAL_SOURCE": "deterministic procedural soft specular sprite (compositor.glint_sprite); not an asset",
+     "TIMING_REQUIREMENT": "synchronised with the initial mirror tilt and the Lumi clue chime; complete before S005",
+     "audio_sync_evidence": [
+      "Lumi clue chime, synchronized with the initial glint and completed before S005.",
+      "Clue chime starts with the initial glint and ends before S005."
+     ],
+     "PLACEMENT_REQUIREMENT": "on the mirror glass near the relevant reflected mark (Tiny reflected glint on the mirror near the selected cheek); coordinates: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "glint is a specular on the glass surface: drawn above the reflected content; not mirrored",
+     "COMPOSITING_REQUIREMENT": "small, soft, brief, non-magical, same established look each time; opacity envelope",
+     "qc_evidence": [
+      "The tiny glint is reflected, brief, non-magical, and focused on the selected cheek.",
+      "Clue chime starts with the initial glint and ends before S005."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S006",
+   "frames": 60,
+   "video_generation_required_in_spec": false,
+   "planned_path": "PROVIDER_MOTION",
+   "held_pose_approved": false,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "named_sfx": [],
+   "event_audio": [],
+   "motion_description": "Use a stable face-and-mirror hold with minimal natural character motion. Animate Mikko’s free hand raising or settling into a clear point toward the marked cheek after the pause, while Lumi keeps the mirror steady. Do not animate wiping or smudge removal.",
+   "CURRENT_CODE_SUPPORT": "motion compose rejects any treatment (MOTION_TREATMENTS_NEED_TRACKING_V02); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)",
+    "G08_SPEC_GAP: reflection mode (preserve vs composite) and, if composited, the face source region and its mapping into the glass"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+     "TREATMENT_TYPE": "MIRROR_REFLECTION",
+     "TREATMENT_PURPOSE": "Composite the mirror reflection so the cheek mark corresponds clearly to Mikko’s physical anatomical left cheek; mirror glass remains clean.",
+     "element": "Physical-to-reflection alignment support",
+     "overlay_role": "CLUE_HIGHLIGHT",
+     "manifest_handling": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "whole shot 0-59 (persistent composition)",
+     "VISUAL_SOURCE": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "TIMING_REQUIREMENT": "static for the whole shot",
+     "PLACEMENT_REQUIREMENT": "reflection inside the mirror glass of the shot frame; glass region and (if composited) reflected-face mapping: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "reflected marks are the left-right reversal of the face marks; \"Composite or preserve\" the reflection; the glass itself stays clean (no mark on the glass surface)",
+     "COMPOSITING_REQUIREMENT": "Composite the mirror reflection so the cheek mark corresponds clearly to Mikko’s physical anatomical left cheek; mirror glass remains clean.",
+     "qc_evidence": [
+      "The selected smudge is on Mikko’s anatomical left cheek and is clearly connected to its mirror reflection.",
+      "Mirror glass is clean; no dirt or smudge is placed on the mirror surface."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S007",
+   "frames": 120,
+   "video_generation_required_in_spec": true,
+   "planned_path": "PROVIDER_MOTION",
+   "held_pose_approved": false,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "named_sfx": [
+    "SFX-MIKKO-TRY-WHOOSH"
+   ],
+   "event_audio": [],
+   "motion_description": "Animate a gentle cloth lift into contact with Mikko’s anatomical left cheek, then hold the cloth still. Preserve the smudge overlay without displacement, fading, or removal. Keep Lumi’s mirror hold stable and maintain the clean glass reflection.",
+   "CURRENT_CODE_SUPPORT": "motion compose rejects any treatment (MOTION_TREATMENTS_NEED_TRACKING_V02); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)",
+    "G08_SPEC_GAP: reflection mode (preserve vs composite) and, if composited, the face source region and its mapping into the glass"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+     "TREATMENT_TYPE": "MIRROR_REFLECTION",
+     "TREATMENT_PURPOSE": "Composite or preserve the mirror reflection so the face marks are reflected while the mirror glass itself remains clean.",
+     "element": "Clean mirror reflection/compositing",
+     "overlay_role": "COMPOSITING",
+     "manifest_handling": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "whole shot 0-119 (persistent composition)",
+     "VISUAL_SOURCE": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "TIMING_REQUIREMENT": "static for the whole shot",
+     "PLACEMENT_REQUIREMENT": "reflection inside the mirror glass of the shot frame; glass region and (if composited) reflected-face mapping: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "reflected marks are the left-right reversal of the face marks; \"Composite or preserve\" the reflection; the glass itself stays clean (no mark on the glass surface)",
+     "COMPOSITING_REQUIREMENT": "Composite or preserve the mirror reflection so the face marks are reflected while the mirror glass itself remains clean.",
+     "qc_evidence": [
+      "The mirror glass remains clean while Mikko’s face and marks are reflected."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S010",
+   "frames": 120,
+   "video_generation_required_in_spec": true,
+   "planned_path": "PROVIDER_MOTION",
+   "held_pose_approved": false,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "named_sfx": [],
+   "event_audio": [],
+   "motion_description": "Animate or construct a stable close reflection, with Mikko lowering the cloth and Lumi maintaining the mirror angle. Preserve the clear cheek and two remaining smudges without introducing a new wipe or mark change.",
+   "CURRENT_CODE_SUPPORT": "motion compose rejects any treatment (MOTION_TREATMENTS_NEED_TRACKING_V02); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)",
+    "G08_SPEC_GAP: reflection mode (preserve vs composite) and, if composited, the face source region and its mapping into the glass"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+     "TREATMENT_TYPE": "MIRROR_REFLECTION",
+     "TREATMENT_PURPOSE": "Composite the clean cheek and remaining smudges into the mirror reflection while keeping the mirror glass itself clean.",
+     "element": "Clean-reflection compositing treatment",
+     "overlay_role": "COMPOSITING",
+     "manifest_handling": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "whole shot 0-119 (persistent composition)",
+     "VISUAL_SOURCE": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "TIMING_REQUIREMENT": "static for the whole shot",
+     "PLACEMENT_REQUIREMENT": "reflection inside the mirror glass of the shot frame; glass region and (if composited) reflected-face mapping: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "reflected marks are the left-right reversal of the face marks; \"Composite or preserve\" the reflection; the glass itself stays clean (no mark on the glass surface)",
+     "COMPOSITING_REQUIREMENT": "Composite the clean cheek and remaining smudges into the mirror reflection while keeping the mirror glass itself clean.",
+     "qc_evidence": [
+      "Confirm the mirror glass is clean and only Mikko’s reflected face carries the smudges."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S011",
+   "frames": 120,
+   "video_generation_required_in_spec": true,
+   "planned_path": "PROVIDER_MOTION",
+   "held_pose_approved": false,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "named_sfx": [],
+   "event_audio": [],
+   "motion_description": "Use the established two-shot base with subtle controlled animation: Mikko makes a small pleased smile, checks the clear cheek, and settles the cloth below his chin; Lumi and the mirror remain steady. Preserve the two remaining smudges throughout the shot.",
+   "CURRENT_CODE_SUPPORT": "motion compose rejects any treatment (MOTION_TREATMENTS_NEED_TRACKING_V02); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)",
+    "G08_SPEC_GAP: reflection mode (preserve vs composite) and, if composited, the face source region and its mapping into the glass"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+     "TREATMENT_TYPE": "MIRROR_REFLECTION",
+     "TREATMENT_PURPOSE": "Composite or preserve the clean mirror glass and Mikko’s reflected face so the clear cheek and two remaining smudges remain legible.",
+     "element": "Readable clean mirror reflection composite",
+     "overlay_role": "COMPOSITING",
+     "manifest_handling": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "whole shot 0-119 (persistent composition)",
+     "VISUAL_SOURCE": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "TIMING_REQUIREMENT": "static for the whole shot",
+     "PLACEMENT_REQUIREMENT": "reflection inside the mirror glass of the shot frame; glass region and (if composited) reflected-face mapping: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "reflected marks are the left-right reversal of the face marks; \"Composite or preserve\" the reflection; the glass itself stays clean (no mark on the glass surface)",
+     "COMPOSITING_REQUIREMENT": "Composite or preserve the clean mirror glass and Mikko’s reflected face so the clear cheek and two remaining smudges remain legible.",
+     "qc_evidence": [
+      "Verify the mirror glass remains clean; only Mikko’s reflected facial marks are visible."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S012",
+   "frames": 120,
+   "video_generation_required_in_spec": false,
+   "planned_path": "G02_STILL",
+   "held_pose_approved": true,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "named_sfx": [],
+   "event_audio": [],
+   "motion_description": "Animate Lumi’s small mirror-angle adjustment, Mikko’s restrained attentive hold, the readable reflection, and the brief established glint. Keep the cloth lowered and prevent any wiping or smudge removal.",
+   "CURRENT_CODE_SUPPORT": "G02 still rejects any treatment (STILL_TREATMENTS_NEED_G08); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: glint centre, size and start frame",
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-GLINT-v01",
+     "TREATMENT_TYPE": "GLINT",
+     "TREATMENT_PURPOSE": "Add the established tiny glint to the reflected mouth-area clue after Lumi angles the mirror. It finishes within this shot before any later response hold.",
+     "element": "Established tiny glint",
+     "overlay_role": "CLUE_HIGHLIGHT",
+     "manifest_handling": "One deterministic compositor preset across all listed shots: small soft specular glint, short opacity/scale envelope of approximately 6-10 frames, placed on the mirror glass near the relevant reflected mark, non-magical, same established look each time.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "one window of 6-10 frames inside 0-119, ending before the shot end; start frame: G08_SPEC_GAP (not numerically defined)",
+     "VISUAL_SOURCE": "deterministic procedural soft specular sprite (compositor.glint_sprite); not an asset",
+     "TIMING_REQUIREMENT": "after Lumi angles the mirror; finishes within the shot before any later response hold",
+     "audio_sync_evidence": [],
+     "PLACEMENT_REQUIREMENT": "on the mirror glass near the relevant reflected mark (Established tiny glint); coordinates: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "glint is a specular on the glass surface: drawn above the reflected content; not mirrored",
+     "COMPOSITING_REQUIREMENT": "small, soft, brief, non-magical, same established look each time; opacity envelope",
+     "qc_evidence": [
+      "Verify the established tiny glint appears at the mouth-area clue and finishes before the next response hold."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S014",
+   "frames": 96,
+   "video_generation_required_in_spec": true,
+   "planned_path": "PROVIDER_MOTION",
+   "held_pose_approved": false,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "named_sfx": [],
+   "event_audio": [
+    "FOLEY-CLOTH-SOFT-v01"
+   ],
+   "motion_description": "Composite a stable close face-and-mirror image with restrained hand-and-cloth motion. Animate Mikko’s hand approaching slowly, with a clearly reduced speed before contact; preserve the mouth-area smudge and do not animate a wipe or removal.",
+   "CURRENT_CODE_SUPPORT": "motion compose rejects any treatment (MOTION_TREATMENTS_NEED_TRACKING_V02); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)",
+    "G08_SPEC_GAP: reflection mode (preserve vs composite) and, if composited, the face source region and its mapping into the glass"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+     "TREATMENT_TYPE": "MIRROR_REFLECTION",
+     "TREATMENT_PURPOSE": "Keep the mirror glass visually clean while showing Mikko’s reflection; do not depict the glass as the object being cleaned.",
+     "element": "Clean mirror-glass treatment",
+     "overlay_role": "COMPOSITING",
+     "manifest_handling": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "whole shot 0-95 (persistent composition)",
+     "VISUAL_SOURCE": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "TIMING_REQUIREMENT": "static for the whole shot",
+     "PLACEMENT_REQUIREMENT": "reflection inside the mirror glass of the shot frame; glass region and (if composited) reflected-face mapping: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "reflected marks are the left-right reversal of the face marks; \"Composite or preserve\" the reflection; the glass itself stays clean (no mark on the glass surface)",
+     "COMPOSITING_REQUIREMENT": "Keep the mirror glass visually clean while showing Mikko’s reflection; do not depict the glass as the object being cleaned.",
+     "qc_evidence": [
+      "Verify the mirror glass is clean and only Mikko’s face marks appear in the reflection."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S018",
+   "frames": 144,
+   "video_generation_required_in_spec": false,
+   "planned_path": "G02_STILL",
+   "held_pose_approved": true,
+   "active_overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "named_sfx": [],
+   "event_audio": [],
+   "motion_description": "Animate Lumi’s small mirror-angle adjustment in the opening portion, cut to a tighter macro reframe of the approved reflection artwork, hold the reflection steady, and time one brief glint before the shot ends.",
+   "CURRENT_CODE_SUPPORT": "G02 still rejects any treatment (STILL_TREATMENTS_NEED_G08); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: glint centre, size and start frame",
+    "G08_SPEC_GAP: in-shot cut frame (G07)",
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-GLINT-v01",
+     "TREATMENT_TYPE": "GLINT",
+     "TREATMENT_PURPOSE": "Composite one brief glint on or around the mirror reflection, appearing once and ending before S019.",
+     "element": "Established tiny glint",
+     "overlay_role": "COMPOSITING",
+     "manifest_handling": "One deterministic compositor preset across all listed shots: small soft specular glint, short opacity/scale envelope of approximately 6-10 frames, placed on the mirror glass near the relevant reflected mark, non-magical, same established look each time.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "one window of 6-10 frames inside 0-143, ending before the shot end; start frame: G08_SPEC_GAP (not numerically defined)",
+     "VISUAL_SOURCE": "deterministic procedural soft specular sprite (compositor.glint_sprite); not an asset",
+     "TIMING_REQUIREMENT": "appears exactly once and ends before S019 (in the macro part after the in-shot cut)",
+     "audio_sync_evidence": [],
+     "PLACEMENT_REQUIREMENT": "on the mirror glass near the relevant reflected mark (Established tiny glint); coordinates: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "glint is a specular on the glass surface: drawn above the reflected content; not mirrored",
+     "COMPOSITING_REQUIREMENT": "small, soft, brief, non-magical, same established look each time; opacity envelope",
+     "qc_evidence": [
+      "The tiny glint appears exactly once and ends before S019."
+     ]
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S025",
+   "frames": 96,
+   "video_generation_required_in_spec": false,
+   "planned_path": "G02_STILL",
+   "held_pose_approved": true,
+   "active_overlays": [],
+   "named_sfx": [],
+   "event_audio": [
+    "SFX-COMPLETION-POP-v01"
+   ],
+   "motion_description": "Hold the matched composition while animating Mikko's settled gaze toward the reflection and Lumi's restrained soft smile. Keep the mirror stable and the reflection aligned. Add only a subtle clean-reveal emphasis at the completion pop.",
+   "CURRENT_CODE_SUPPORT": "G02 still rejects any treatment (STILL_TREATMENTS_NEED_G08); primitives exist (compositor.glint_sprite / brightness_pulse / flip_h / disc_mask / tint, treatments.envelope / validate_window) but are only wired into the Phase-0 stand-in render",
+   "SPEC_GAPS": [
+    "G08_SPEC_GAP: completion-pop start time (audio start not numerically defined)",
+    "G08_SPEC_GAP: mirror-glass region in base-frame pixels (no approved base frame exists)",
+    "G08_SPEC_GAP: reflection mode (preserve vs composite) and, if composited, the face source region and its mapping into the glass"
+   ],
+   "treatments": [
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+     "TREATMENT_TYPE": "MIRROR_REFLECTION",
+     "TREATMENT_PURPOSE": "Composite the clean, bright Mikko reflection inside the clean mirror glass while preserving the matched mirror composition.",
+     "element": "Clean reflection treatment",
+     "overlay_role": "COMPOSITING",
+     "manifest_handling": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "whole shot 0-95 (persistent composition)",
+     "VISUAL_SOURCE": "Composite using PROP-EP005-HAND-MIRROR-v01, CHAR-MIKKO-MASTER-v01 and the berry overlays active per continuity (OVERLAY-EP005-BERRY-SMUDGE-CHEEK/MOUTH/NOSE-v01); mirror-glass treatment and continuity logic stay in the shot instructions.",
+     "TIMING_REQUIREMENT": "static for the whole shot",
+     "PLACEMENT_REQUIREMENT": "reflection inside the mirror glass of the shot frame; glass region and (if composited) reflected-face mapping: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "reflected marks are the left-right reversal of the face marks; \"Composite or preserve\" the reflection; the glass itself stays clean (no mark on the glass surface)",
+     "COMPOSITING_REQUIREMENT": "Composite the clean, bright Mikko reflection inside the clean mirror glass while preserving the matched mirror composition.",
+     "qc_evidence": [
+      "Mikko is looking at his reflection and Lumi is smiling softly while holding the mirror.",
+      "Mirror glass is clean and is not treated as the object being cleaned."
+     ]
+    },
+    {
+     "TREATMENT_ID": "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01",
+     "TREATMENT_TYPE": "BLOOM_PULSE",
+     "TREATMENT_PURPOSE": "If a visual accent is used, keep it subtle and synchronized with the clean mirror reveal; it must not imply that anything is being removed in this shot.",
+     "element": "Soft completion pop visual accent",
+     "overlay_role": "OTHER",
+     "manifest_handling": "Deterministic subtle brightness/bloom pulse on the mirror glass at S025, approximately 6-8 frames, synchronised with the completion-pop audio (COMPLETION_SFX). Must not imply that anything is being removed.",
+     "classification": "COMPOSITING_TREATMENT_NOT_AN_ASSET",
+     "paid_generation_required": false,
+     "AFFECTED_FRAME_RANGE": "one window of 6-8 frames inside 0-95; start frame = completion-pop audio start (G08_SPEC_GAP: audio start not numerically defined)",
+     "VISUAL_SOURCE": "deterministic brightness/bloom pulse (compositor.brightness_pulse, max gain 0.12); not an asset",
+     "TIMING_REQUIREMENT": "synchronised with the completion-pop audio (SFX-COMPLETION-POP-v01 mapped to S025) at the clean mirror reveal",
+     "PLACEMENT_REQUIREMENT": "on the mirror glass; glass region: G08_SPEC_GAP",
+     "MIRROR_BEHAVIOUR": "not mirrored; lifts the glass region",
+     "COMPOSITING_REQUIREMENT": "subtle; must not imply that anything is being removed; overlay state unchanged (zero berry overlays)",
+     "qc_evidence": [
+      "All three smudges remain absent: anatomical left cheek, skin beside the mouth, and nose.",
+      "Only one soft completion pop is present, at the clean mirror reveal."
+     ]
+    }
+   ]
+  }
+ ]
+}

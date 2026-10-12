@@ -2710,3 +2710,27 @@ provider_calls: 0
 production_writes: 0
 status: "AGENT008_G03_DETERMINISTIC_OVERLAY_PLACEMENT_COMPLETE + G03_REQUIREMENTS_AUDITED + G03_CONTRACT_LOCKED + G03_IMPLEMENTED + G03_FAIL_CLOSED + G03_DETERMINISM_PASS + FULL_TEST_SUITE_PASS + EP005_G03_DEPENDENT_SHOTS_REVALIDATED + UPDATED_PRODUCTION_MATRIX_READY + S027_UNCHANGED + S028_UNCHANGED + S029_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES + NEXT_BATCH_RECOMMENDATION_READY"
 ```
+
+---
+
+## ENG-20261012-AGENT008-G08-GOVERNED-VISUAL-TREATMENTS: mirror reflection, mirror glint, completion pop (engineering only)
+
+```yaml
+change_id: "ENG-20261012-AGENT008-G08-GOVERNED-VISUAL-TREATMENTS"
+timestamp: "2026-10-12"
+actor: "Claude"
+authorised_by: "Company Brain (FACTORY_CAPABILITY_FIRST; G08 engineering task)"
+change_type: "CODE (Agent-008 G08) + TESTS + EVIDENCE (read-only audit/validation)"
+code: ["agent008/g08.py (new)", "agent008/still.py (treatment_record; certified reflection; frame-exact glint/pop; G07 guard)", "agent008/motion/compose.py (treatments_composited: certified static reflection only)", "agent008/spec.py (IN_SHOT_CUT_SHOTS)", "agent008/tests/test_g08.py (21 tests)", "agent008/CONTRACT.md (v0.3 G08 section)"]
+contract: "AGENT008_G08_TREATMENTS_v1 (evidence/agent008/g08/G08_CONTRACT_v1.md): mirror-reflection pipeline, glint contract, completion/clean-reveal contract, S018 operation order"
+audit: "G08_DEPENDENT_SHOTS = 9 verified (S004, S006, S007, S010, S011, S012, S014, S018, S025); types = MIRROR_GLINT, MIRROR_REFLECTION, COMPLETION_POP_ACCENT; CLEAN_REVEAL = state rule; geometry/timing values = G08_SPEC_GAP until approved base frames exist"
+tests: "181/181 OK (160 existing unchanged + 21 G08)"
+determinism: "PASS for every treatment type (reflection COMPOSITE/PRESERVE, glint, pop, G03->G08 chain); treatment-free G02 output+core and v0.2 motion outputs identical to the pre-G03 baseline"
+live_validation: "9/9 G08-dependent shots SUPPORTED; code-ready 13 -> 21/26; remaining code blockers G06 (S024), G07 (S018), G11 (S009, S015, S021); 18 shots producible in dependency order once inputs exist"
+recommendation: "A: approved base-frame production batch (9 families, ~8 image generations; needs explicit paid authorisation)"
+non_regression: "S027/S028/S029 stored assets re-hashed equal + APPROVED; scripts/manifests/readiness/ARI/registry/storage fingerprints unchanged"
+evidence: ["evidence/AGENT008_G08_GOVERNED_VISUAL_TREATMENTS_v1.0.md", "evidence/agent008/g08/"]
+provider_calls: 0
+production_writes: 0
+status: "AGENT008_G08_GOVERNED_VISUAL_TREATMENTS_COMPLETE + G08_REQUIREMENTS_AUDITED + G08_TREATMENT_CONTRACT_LOCKED + MIRROR_REFLECTION_SUPPORTED + MIRROR_GLINT_SUPPORTED + COMPLETION_TREATMENTS_SUPPORTED + G08_FAIL_CLOSED + G08_DETERMINISM_PASS + FULL_TEST_SUITE_PASS + G08_DEPENDENT_SHOTS_REVALIDATED + UPDATED_FACTORY_MATRIX_READY + S027_UNCHANGED + S028_UNCHANGED + S029_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES + NEXT_FACTORY_STEP_READY"
+```

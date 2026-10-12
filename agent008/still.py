@@ -19,7 +19,8 @@ from .dialogue_timing import govern_dialogue_timing
 from .errors import FailClosed
 from .hashing import canonical_sha256, sha256_bytes, sha256_file, verify_file
 from .motion.compose import auto_qc_frames, mix_motion_audio, resolve_dialogue
-from .overlay import precomposited_overlay_set
+from . import g08
+from .spec import IN_SHOT_CUT_SHOTS
 from .verify import audio_report
 
 AGENT_VERSION_G02 = 'agent008-v0.3-still'
@@ -29,14 +30,19 @@ REQUIRED_PROVENANCE = ('agent_version', 'status', 'shot_id', 'source_frame', 'la
                        'qc', 'outputs', 'human_approval', 'safety')
 
 
-def check_still_contract(spec_shot, spec, overlays_composited=None, frame_sha256=None):
+def check_still_contract(spec_shot, spec, overlays_composited=None, frame_sha256=None, treatments_composited=None,
+                         treatment_record=None):
     sid = spec_shot['shot_id']
     if spec_shot.get('video_generation_required'):
         raise FailClosed('STILL_PATH_NOT_FOR_MOTION_SHOT', sid)
-    if spec_shot['active_overlays'] or overlays_composited:      # G03: only a matching pre-composited frame
-        precomposited_overlay_set(spec_shot, overlays_composited, frame_sha256)
-    if spec_shot['treatments']:
+    if sid in IN_SHOT_CUT_SHOTS:
+        raise FailClosed('STILL_IN_SHOT_CUT_NEEDS_G07', sid)
+    if spec_shot['treatments'] and not treatment_record:
         raise FailClosed('STILL_TREATMENTS_NEED_G08', f"{sid}: {[t.get('treatment_id') for t in spec_shot['treatments']]}")
+    if treatment_record and not spec_shot['treatments']:
+        raise FailClosed('TREATMENT_UNDECLARED', f'{sid}: treatment record for a shot without treatments')
+    if spec_shot['active_overlays'] or overlays_composited or treatments_composited:   # G03 / G08 frame chain
+        g08.resolve_frame_chain(spec_shot, frame_sha256, overlays_composited, treatments_composited)
     if spec_shot['frames'] != int(round(spec_shot['duration_seconds'] * spec.fps)):
         raise FailClosed('STILL_DURATION_FRAME_MISMATCH', f"{sid}: {spec_shot['frames']} vs {spec_shot['duration_seconds']} s")
 
@@ -76,18 +82,39 @@ def layout_frame(path, spec, crop=None):
                  'pad_offset': [ox, oy], 'pad_color': 'black', 'scale_flags': media.SCALE_FLAGS}
 
 
-def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, crop=None):
+def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, crop=None, treatment_record=None):
     out_dir = Path(out_dir)
     composited = frame.get('overlays_composited')
+    tcomp = frame.get('treatments_composited')
     if composited and frame.get('classification') != 'SHOT_FRAME/DERIVED_FRAME':
         raise FailClosed('OVERLAY_PRECOMPOSITE_NOT_DERIVED_FRAME', str(frame.get('asset_id')))
-    check_still_contract(spec_shot, spec, composited, frame.get('expected_sha256') if composited else None)
+    check_still_contract(spec_shot, spec, composited, frame.get('expected_sha256') if (composited or tcomp) else None,
+                         tcomp, treatment_record)
     frame_sha = verify_source_frame(frame, spec_shot)
     dialogue = resolve_dialogue(spec_shot, asset_paths, timing)
     dialogue_timing = govern_dialogue_timing(spec_shot, dialogue, asset_paths, timing, spec)
     img, layout = layout_frame(frame['path'], spec, crop)
     n = spec_shot['frames']
-    qc, _ = auto_qc_frames(np.broadcast_to(img, (n, *img.shape)), max_freeze_frames=n, intended_freeze=True)
+    plan = None
+    if treatment_record:
+        if crop or layout['fit_scale'] != 1.0 or layout['pad_offset'] != [0, 0]:
+            raise FailClosed('TREATMENT_LAYOUT_NOT_IDENTITY', 'treatment geometry is in frame pixels; crop/scale/pad not allowed')
+        plan = g08.plan_timed(spec_shot, treatment_record, frame_sha, (img.shape[1], img.shape[0]), timing, spec.fps,
+                              tcomp, composited)
+        window = sorted({w['start_frame'] + j for w in plan['windows'] for j in range(w['frames'])})
+        distinct = {i: g08.render_frame(img, plan, i) for i in window}
+        frame_at = lambda i: distinct.get(i, img)  # noqa: E731
+        qc, _ = auto_qc_frames(np.stack([img] + [distinct[i] for i in window]), max_freeze_frames=n, intended_freeze=True)
+        hashes = [sha256_bytes(frame_at(i).tobytes()) for i in range(n)]
+        run, longest = 1, 1
+        for a_, b_ in zip(hashes, hashes[1:]):
+            run = run + 1 if a_ == b_ else 1
+            longest = max(longest, run)
+        qc.update({'frames': n, 'longest_identical_run': longest, 'distinct_frames': len(set(hashes)),
+                   'frame_hash_list_sha256': sha256_bytes('\n'.join(hashes).encode())})
+    else:
+        frame_at = lambda i: img  # noqa: E731
+        qc, _ = auto_qc_frames(np.broadcast_to(img, (n, *img.shape)), max_freeze_frames=n, intended_freeze=True)
     audio, cues, peak_db = mix_motion_audio(spec_shot, asset_paths, timing, spec, dialogue)
     out_dir.mkdir(parents=True, exist_ok=True)
     sid = spec_shot['shot_id']
@@ -97,7 +124,7 @@ def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, cro
         if p.exists():
             raise FailClosed('OUTPUT_EXISTS', str(p))
     media.write_wav24(audio, spec.audio_sample_rate, wav)
-    cmd = media.encode_review((img for _ in range(n)), n, spec, wav, mp4)
+    cmd = media.encode_review((frame_at(i) for i in range(n)), n, spec, wav, mp4)
     if sha256_file(frame['path']) != frame_sha:
         raise FailClosed('SOURCE_MUTATED', str(frame['path']))
 
@@ -115,6 +142,9 @@ def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, cro
                'overlays_applied': 0, 'treatments_applied': 0})
     if composited:
         qc['overlays_precomposited'] = len({o['asset_id'] for o in composited['overlays']})
+    if plan:
+        qc['treatments_applied'] = len(plan['windows'])
+        qc['treatments_precomposited'] = len((tcomp or {}).get('treatments') or [])
     for ok, msg in ((qc['output_frames'] == n, 'frame count mismatch'),
                     (qc['output_resolution'] == qc['expected_resolution'], 'resolution mismatch'),
                     (qc['output_fps'] == qc['expected_fps'], 'fps mismatch'),
@@ -128,9 +158,12 @@ def compose_still_shot(spec_shot, frame, spec, asset_paths, timing, out_dir, cro
         'shot_id': sid,
         'source_frame': {k: frame.get(k) for k in ('asset_id', 'registry_id', 'classification', 'registry_status',
                                                    'shot_id')} | {'verified_sha256': frame_sha}
-                        | ({'overlays_composited': composited} if composited else {}),
+                        | ({'overlays_composited': composited} if composited else {})
+                        | ({'treatments_composited': tcomp} if tcomp else {}),
         'layout': layout, 'output_spec': spec.to_dict(), 'shot_spec': spec_shot, 'dialogue_tracks': dialogue,
         'dialogue_timing': dialogue_timing,
+        **({'treatments': {'record_sha256': plan['record_sha256'], 'glass': plan['glass'],
+                           'windows': [{k: v for k, v in w.items()} for w in plan['windows']]}} if plan else {}),
         'audio_cues': cues, 'mix_peak_dbfs': peak_db, 'qc': qc,
         'recipes': {'encode_command': [c if not str(c).startswith('/') else '<OUT>/' + Path(c).name for c in cmd]},
         'outputs': {'review_mp4': {'file': mp4.name, 'sha256': sha256_file(mp4), 'bytes': mp4.stat().st_size},

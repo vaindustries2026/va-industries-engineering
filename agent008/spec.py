@@ -16,6 +16,8 @@ SPEAKER_LINE = re.compile(r'^\s*([^:]+):\s*[“"](.*)[”"]\s*$')
 
 # Future validation rules (encoded now, applied whenever these shots are specified).
 CLEAN_REVEAL_SHOTS = {'S025'}
+# Shots whose approved animation plan contains an in-shot cut/reframe (G07); single-segment paths must refuse them.
+IN_SHOT_CUT_SHOTS = {'S018'}
 
 # Governed audio roles (registry AUDIO asset_subtype). Only AMBIENCE may span/loop a shot, as a bed.
 # FOLEY and SFX are events: placed once at an explicit timestamp, never looped or stretched.
