@@ -10,13 +10,13 @@ Build a human-governed system that turns anime research into **original V&A comm
 
 | | |
 |---|---|
-| Last completed | **Pre-CF-001 database hardening** (2026-10-07): migration 0003 applied (version 20261007113241), F-6 and F-7 fixed, advisor 0 findings. Before it: **Pre-CF-001 database activation** (2026-10-07, branch `engine2/clip-farming-sprint-01-preflight`): migrations 0001 and 0002 applied and verified. Before it: pre-Sprint 1 provisioning and preflight, then Sprint 0 (foundation) on `engine2/clip-farming-sprint-00-foundation` |
-| Status | **Stopped.** The database foundation is applied. The runtime role has no password yet; the n8n credential waits on a human. CF-001 is not authorised |
+| Last completed | **Sprint 1 — CF-001 Market & Trend Radar v0.1** (2026-10-13): workflow `AJklHNEXHrtqkb0x` built (inactive, manual only), live smoke and replay passed, branch `engine2/clip-farming-sprint-01-cf001`. Before it: pre-CF-001 database hardening (migration 0003) and activation (0001, 0002) on 2026-10-07 |
+| Status | **Stopped before CF-002.** CF-001 is built and inactive; 8 research candidates exist for window 2026-W42. See [Sprint 1](sprints/SPRINT_01_CF001/README.md) |
 | Database | Dedicated Supabase project `V&A Anime Clip Farming — Engine 2` (ref `mkeldytatorxxszjdngt`, eu-north-1, Free plan), schema `cf` ([ADR-001](architecture/decisions/ADR-001_DEDICATED_SUPABASE_PROJECT.md)). 7 tables, empty apart from 14 transition rows and 3 kill switches (all off) |
 | Implemented live | The dedicated project; role `cf_n8n_runtime` (no password); migration `0001_cf_sprint01` (7 `cf` tables, 4 functions, 12 triggers, minimal runtime grants); migration `0002_cf_runtime_human_admin_guard` ([ADR-002](architecture/decisions/ADR-002_RUNTIME_ROLE_CANNOT_MAKE_HUMAN_ADMIN_TRANSITIONS.md): the runtime role cannot make HUMAN_ADMIN transitions) | Migration `0003_cf_freeze_generated_columns_and_search_path` ([ADR-003](architecture/decisions/ADR-003_FREEZE_IGNORES_GENERATED_COLUMNS_AND_PINNED_SEARCH_PATH.md)) fixes F-6 and F-7.
 | Design only | Data model, full schema (DESIGN ONLY — NOT APPLIED), identities, state model, gates, CF-001…CF-009 contracts, dependency map, test strategy |
 | Other live Engine 2 objects | One experimental, unpublished, never-executed n8n workflow `WStqWRlqax7iocOx` (ANIME-LAB — VIDEO-SMOKE-001). No CF workflow, no CF credential |
-| Next | A human sets the `cf_n8n_runtime` password and creates the n8n credential; then Sprint 1 — CF-001 Market & Trend Radar. **Sprint 1 is not authorised.** No sprint is ever automatically authorised by a previous one or by any document in this folder |
+| Next | Company Brain reconciliation; CF-002 is **not authorised**. Open items: CF-SSL-001, scoring v0.2 calibration |
 
 ## Engine 2 architecture
 
@@ -79,7 +79,8 @@ projects/anime-clip-farming/
       STATE_MODEL_v0.1.md                     vocabulary + per-object transitions
   sprints/
     SPRINT_00_FOUNDATION/                     discovery, gap analysis, test strategy, final report
-    SPRINT_01_CF001/ … SPRINT_11_CF000/       placeholders — NOT AUTHORISED
+    SPRINT_01_CF001/                          COMPLETE (CF-001 v0.1)
+    SPRINT_02_CF002/ … SPRINT_11_CF000/       placeholders — NOT AUTHORISED
   evidence/
     SPRINT_00_BASELINE_EVIDENCE.md            read-only baseline
     SPRINT_00_STATIC_TEST_OUTPUT.txt          local static test run

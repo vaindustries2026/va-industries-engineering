@@ -4,6 +4,22 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-13 — ENGINE 2 — SPRINT 1: CF-001 MARKET & TREND RADAR v0.1
+
+- **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-13T03:30Z; credential confirmation 03:48Z.
+- **Branch:** `engine2/clip-farming-sprint-01-cf001` from `74f57c4`. Not merged; no PR.
+- **Live n8n:** created `CF-001 — Market & Trend Radar v0.1` (`AJklHNEXHrtqkb0x`, 25 nodes, inactive, versionId `121cfea5-9634-4911-91b3-b16acea54aa8`) and two inactive TEST workflows (`lNeYt1t1KmMxn5mn`, `g4IlvDOWWGTkrksR`). Executions 582-591. Credential `e08pNFP1Th42jXyO` used by id only.
+- **Live Supabase (`mkeldytatorxxszjdngt`):** runtime-role writes only: 1 agent_run, 8 franchises, 8 titles, 8 candidates (window 2026-W42, all READY). No schema, grant or flag change; migrations still 0001-0003.
+- **Result:** live run SUCCEEDED (4 AniList requests, 60 records, 8 accepted), replay returned the same run with 0 calls and 0 writes, 53 live negative checks passed (rolled back), error paths 429/5xx/GraphQL/malformed/timeout/zero-input behave as specified.
+- **Repo:** sprint docs, `CF-SSL-001` record, `evidence/cf-001-tools/` (sources, SQL, generated SDK code, tests, results). Nothing outside `projects/anime-clip-farming/`.
+- **Not changed:** migrations 0001-0003 and their companions, Sprint 0 history, the credential, any other V&A project or workflow.
+- **Counters:** LLM calls 0, paid calls 0, cost $0 · AniList requests 5 (free, public) · publications 0, schedules 0, Slack messages 0 · kill switches all false.
+- **Findings:** CF-SSL-001 (SSL verification bypass, known debt); scoring reference constants below live maxima (v0.2 recommendation); 8 smoke rows persist by design.
+- **Rollback:** archive the n8n workflows (human); repo: delete the branch; DB rows cannot be removed by the runtime role by design.
+- **Stop state:** STOPPED before CF-002. Awaiting Company Brain reconciliation.
+
+---
+
 ## 2026-10-07 — ENGINE 2 — PRE-CF001 DATABASE HARDENING (migration 0003: F-6 + F-7)
 
 - **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-07T11:23Z.
