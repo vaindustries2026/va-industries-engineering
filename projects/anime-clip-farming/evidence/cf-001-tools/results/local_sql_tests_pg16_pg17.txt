@@ -1,0 +1,147 @@
+=== Cluster 16: PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit ===
+PASS S1 run row RUNNING attempt 1, key = sha256(basis) computed in SQL
+PASS S1 run SUCCEEDED, paid=0, cost=0, calls=4, no model
+PASS S1 franchise/title/candidate counts match payload
+PASS S1 READY/REJECTED split as planned; evidence present; signals bounded
+PASS S1 blocked franchises/titles carry no candidates
+PASS S1 dedupe_key = sha256(title|topic|lane|window)
+PASS S1 db_verified summary present and consistent
+PASS S2 replay did not touch run (still SUCCEEDED attempt 1)
+PASS S2 exactly one run row for the key
+PASS S3 mark-failed refuses a SUCCEEDED run
+PASS S3 re-claim -> same run id, RUNNING, attempt 2
+PASS S3 no duplicate franchise/title/candidate after re-persist
+PASS S3 candidate statuses not regressed and run SUCCEEDED attempt 2
+PASS S4 fresh RUNNING stays RUNNING attempt 2
+PASS S4 stale RUNNING (>15 min) re-claimed attempt 3
+PASS S6 next window: second run, titles/franchises reused, candidates doubled (one per window)
+PASS S6 zero input: SUCCEEDED NO_INPUT, zero outputs for that run
+PASS S6 failed run: FAILED + error_code + zero candidates
+psql:/home/pgtest/work_cf1/negative_phase_b.sql:99: ERROR:  CF001_NEG_REPORT pass=53 fail=0
+PASS P01 ON CONFLICT (dedupe_key) DO NOTHING inserts 0 rows (expected dedupe, not an error)
+PASS P02 positive controls: franchise, title, candidate walked DRAFT/IDEA -> READY as the runtime role
+PASS N01 DELETE on cf.agent_runs is denied [42501]
+PASS N02 DELETE on cf.anime_franchises is denied [42501]
+PASS N03 DELETE on cf.anime_titles is denied [42501]
+PASS N04 DELETE on cf.research_candidates is denied [42501]
+PASS N05 DELETE on cf.reviewers is denied [42501]
+PASS N06 DELETE on cf.system_flags is denied [42501]
+PASS N07 DELETE on cf.allowed_transitions is denied [42501]
+PASS N08 TRUNCATE cf.research_candidates is denied [42501]
+PASS N10 INSERT into cf.reviewers is denied [42501]
+PASS N11 UPDATE cf.reviewers is denied [42501]
+PASS N12 UPDATE cf.system_flags (kill switches) is denied [42501]
+PASS N13 INSERT into cf.system_flags is denied [42501]
+PASS N14 INSERT into cf.allowed_transitions is denied [42501]
+PASS N15 UPDATE cf.allowed_transitions is denied [42501]
+PASS N20 CREATE TABLE in schema cf is denied [42501]
+PASS N21 CREATE SCHEMA is denied [42501]
+PASS N22 CREATE FUNCTION in schema cf is denied [42501]
+PASS N23 CREATE TABLE in schema public is denied [42501]
+PASS N24 CREATE TRIGGER on a cf table is denied [42501]
+PASS N25 ALTER TABLE cf.anime_titles ADD COLUMN is denied [42501]
+PASS N30 ALTER TABLE ... DISABLE TRIGGER ALL is denied [42501]
+PASS N31 ALTER TABLE ... DISABLE a named trigger is denied [42501]
+PASS N32 SET session_replication_role = replica is denied [42501]
+PASS N33 SET ROLE postgres is denied [42501]
+PASS N34 SET ROLE service_role is denied [42501]
+PASS N35 ALTER FUNCTION cf.guard_status_transition() is denied [42501]
+PASS N36 CREATE OR REPLACE the freeze function is denied [42501]
+PASS N41 EXECUTE on cf.guard_status_transition() is denied [42501]
+PASS N42 EXECUTE on cf.freeze_after_first_status() is denied [42501]
+PASS N43 EXECUTE on cf.forbid_delete() is denied [42501]
+PASS N44 EXECUTE on cf.touch_updated_at() is denied [42501]
+PASS N50 franchise insert straight to READY (NEW->READY) is rejected [23514]
+PASS N51 HUMAN_ADMIN transition franchise READY->RETIRED is denied [42501]
+PASS N52 HUMAN_ADMIN transition title READY->RETIRED is denied [42501]
+PASS N53 HUMAN_ADMIN transition BLOCKED->READY is denied [42501]
+PASS N54 candidate READY->IDEA (regression) is rejected [23514]
+PASS N55 franchise normalised_key is frozen after READY (CF_IMMUTABLE_ROW) [23514]
+PASS N56 title start_year is frozen after READY (CF_IMMUTABLE_ROW, generated column era_decade does not interfere) [23514]
+PASS N57 candidate content (signal_evidence) is frozen after READY [23514]
+PASS N58 candidate demand_signal is frozen after READY [23514]
+PASS N60 plain duplicate same-window candidate (same dedupe_key) is a unique violation [23505]
+PASS N61 duplicate anilist_id title is a unique violation [23505]
+PASS N62 duplicate franchise normalised_key is a unique violation [23505]
+PASS N63 duplicate run idempotency_key is a unique violation [23505]
+PASS N64 a paid call without an authorisation ref is rejected by the CHECK [23514]
+PASS N65 out-of-range signal (1.5) is rejected [23514]
+PASS N66 empty signal_evidence is rejected [23514]
+PASS N67 malformed observation_window is rejected [23514]
+PASS N68 candidate pointing at a nonexistent title is rejected (foreign key) [23503]
+PASS N37 GRANT DELETE on a cf table grants nothing (PostgreSQL warns, privilege check stays false) [statement ran, nothing granted]
+PASS Z01 all kill switches still false
+=== Cluster 17: PostgreSQL 17.10 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit ===
+PASS S1 run row RUNNING attempt 1, key = sha256(basis) computed in SQL
+PASS S1 run SUCCEEDED, paid=0, cost=0, calls=4, no model
+PASS S1 franchise/title/candidate counts match payload
+PASS S1 READY/REJECTED split as planned; evidence present; signals bounded
+PASS S1 blocked franchises/titles carry no candidates
+PASS S1 dedupe_key = sha256(title|topic|lane|window)
+PASS S1 db_verified summary present and consistent
+PASS S2 replay did not touch run (still SUCCEEDED attempt 1)
+PASS S2 exactly one run row for the key
+PASS S3 mark-failed refuses a SUCCEEDED run
+PASS S3 re-claim -> same run id, RUNNING, attempt 2
+PASS S3 no duplicate franchise/title/candidate after re-persist
+PASS S3 candidate statuses not regressed and run SUCCEEDED attempt 2
+PASS S4 fresh RUNNING stays RUNNING attempt 2
+PASS S4 stale RUNNING (>15 min) re-claimed attempt 3
+PASS S6 next window: second run, titles/franchises reused, candidates doubled (one per window)
+PASS S6 zero input: SUCCEEDED NO_INPUT, zero outputs for that run
+PASS S6 failed run: FAILED + error_code + zero candidates
+psql:/home/pgtest/work_cf1/negative_phase_b.sql:99: ERROR:  CF001_NEG_REPORT pass=53 fail=0
+PASS P01 ON CONFLICT (dedupe_key) DO NOTHING inserts 0 rows (expected dedupe, not an error)
+PASS P02 positive controls: franchise, title, candidate walked DRAFT/IDEA -> READY as the runtime role
+PASS N01 DELETE on cf.agent_runs is denied [42501]
+PASS N02 DELETE on cf.anime_franchises is denied [42501]
+PASS N03 DELETE on cf.anime_titles is denied [42501]
+PASS N04 DELETE on cf.research_candidates is denied [42501]
+PASS N05 DELETE on cf.reviewers is denied [42501]
+PASS N06 DELETE on cf.system_flags is denied [42501]
+PASS N07 DELETE on cf.allowed_transitions is denied [42501]
+PASS N08 TRUNCATE cf.research_candidates is denied [42501]
+PASS N10 INSERT into cf.reviewers is denied [42501]
+PASS N11 UPDATE cf.reviewers is denied [42501]
+PASS N12 UPDATE cf.system_flags (kill switches) is denied [42501]
+PASS N13 INSERT into cf.system_flags is denied [42501]
+PASS N14 INSERT into cf.allowed_transitions is denied [42501]
+PASS N15 UPDATE cf.allowed_transitions is denied [42501]
+PASS N20 CREATE TABLE in schema cf is denied [42501]
+PASS N21 CREATE SCHEMA is denied [42501]
+PASS N22 CREATE FUNCTION in schema cf is denied [42501]
+PASS N23 CREATE TABLE in schema public is denied [42501]
+PASS N24 CREATE TRIGGER on a cf table is denied [42501]
+PASS N25 ALTER TABLE cf.anime_titles ADD COLUMN is denied [42501]
+PASS N30 ALTER TABLE ... DISABLE TRIGGER ALL is denied [42501]
+PASS N31 ALTER TABLE ... DISABLE a named trigger is denied [42501]
+PASS N32 SET session_replication_role = replica is denied [42501]
+PASS N33 SET ROLE postgres is denied [42501]
+PASS N34 SET ROLE service_role is denied [42501]
+PASS N35 ALTER FUNCTION cf.guard_status_transition() is denied [42501]
+PASS N36 CREATE OR REPLACE the freeze function is denied [42501]
+PASS N41 EXECUTE on cf.guard_status_transition() is denied [42501]
+PASS N42 EXECUTE on cf.freeze_after_first_status() is denied [42501]
+PASS N43 EXECUTE on cf.forbid_delete() is denied [42501]
+PASS N44 EXECUTE on cf.touch_updated_at() is denied [42501]
+PASS N50 franchise insert straight to READY (NEW->READY) is rejected [23514]
+PASS N51 HUMAN_ADMIN transition franchise READY->RETIRED is denied [42501]
+PASS N52 HUMAN_ADMIN transition title READY->RETIRED is denied [42501]
+PASS N53 HUMAN_ADMIN transition BLOCKED->READY is denied [42501]
+PASS N54 candidate READY->IDEA (regression) is rejected [23514]
+PASS N55 franchise normalised_key is frozen after READY (CF_IMMUTABLE_ROW) [23514]
+PASS N56 title start_year is frozen after READY (CF_IMMUTABLE_ROW, generated column era_decade does not interfere) [23514]
+PASS N57 candidate content (signal_evidence) is frozen after READY [23514]
+PASS N58 candidate demand_signal is frozen after READY [23514]
+PASS N60 plain duplicate same-window candidate (same dedupe_key) is a unique violation [23505]
+PASS N61 duplicate anilist_id title is a unique violation [23505]
+PASS N62 duplicate franchise normalised_key is a unique violation [23505]
+PASS N63 duplicate run idempotency_key is a unique violation [23505]
+PASS N64 a paid call without an authorisation ref is rejected by the CHECK [23514]
+PASS N65 out-of-range signal (1.5) is rejected [23514]
+PASS N66 empty signal_evidence is rejected [23514]
+PASS N67 malformed observation_window is rejected [23514]
+PASS N68 candidate pointing at a nonexistent title is rejected (foreign key) [23503]
+PASS N37 GRANT DELETE on a cf table grants nothing (PostgreSQL warns, privilege check stays false) [statement ran, nothing granted]
+PASS Z01 all kill switches still false
+TOTAL pass=142 fail=0

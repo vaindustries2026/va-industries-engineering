@@ -1,0 +1,54 @@
+PASS window 2026-10-13 is 2026-W42
+PASS window boundaries (ISO week)
+PASS window start is the Monday
+PASS same week, different clock time -> identical basis
+PASS next week -> different basis
+PASS idempotency key is sha256 of agent|version|canonical config; stable
+PASS canonical config has sorted keys and no timestamp
+PASS query set: exactly 4 requests, one per lane, within request budget
+PASS query set: nostalgia cutoff = (window year - 10) 0101
+PASS query set: adult content excluded, anime only, no auth header in query node
+PASS validate OK: records headers and counts
+PASS HTTP 429 -> CF001_ANILIST_RATE_LIMITED with retry_after, fails closed
+PASS HTTP 403 -> CF001_ANILIST_UNAVAILABLE
+PASS HTTP 502 -> CF001_ANILIST_5XX
+PASS HTTP 404 plain -> CF001_ANILIST_HTTP_ERROR
+PASS network timeout (no response) -> CF001_ANILIST_NETWORK_ERROR
+PASS missing response item -> CF001_ANILIST_NETWORK_ERROR
+PASS GraphQL errors (HTTP 200) -> CF001_ANILIST_GRAPHQL_ERROR
+PASS GraphQL errors (HTTP 400) -> CF001_ANILIST_GRAPHQL_ERROR
+PASS malformed JSON string -> CF001_ANILIST_MALFORMED_RESPONSE
+PASS media not an array -> CF001_ANILIST_MALFORMED_RESPONSE
+PASS error evidence never contains tokens/auth
+PASS normalise: 14 raw records over 4 lanes accepted/rejected as designed
+PASS normalise: duplicates across lanes merged, lanes retained, sorted by id
+PASS normalise: missing metrics stay null, never invented
+PASS normalise: key folding and franchise derivation
+PASS normalise: native-only title is used as display only when it folds to a key (CJK rejected, not fabricated)
+PASS keys: ASCII folding of macrons and punctuation
+PASS score: independent re-computation matches for a finished older title (9101)
+PASS score: every numeric signal within 0.0000-1.0000 with <=4 decimals
+PASS score: unknown start year -> nostalgia null; all-null metrics -> zeros not invented
+PASS score: trend_state vocabulary, no direction states without history
+PASS score: deterministic (two runs byte-identical) and no randomness/clock in scoring source
+PASS select: capped at max_candidates, deterministic order, one per title
+PASS select: primary lane by fixed priority (9002 found by trending+popular -> CURRENT_TRENDING)
+PASS select: lane quota honoured (each populated lane contributes up to 2)
+PASS resolve: every candidate has non-empty evidence with source, retrieval time, scoring version, lane hits
+PASS resolve: no field implies legal/rights authorisation
+PASS resolve: Juliet seasons share one franchise; Lima near-match keys are BLOCKED and produce no candidates
+PASS resolve: forced near-match against an existing franchise key blocks the new one, exact match does not
+PASS resolve: title identity collision inside the batch -> both BLOCKED AMBIGUOUS_SOURCE_IDENTITY
+PASS resolve: candidate without popularity/favourites is REJECTED INSUFFICIENT_SIGNAL_DATA, not READY
+PASS resolve: dedupe-relevant fields contain no timestamp/uuid
+PASS replay of identical input -> identical payload apart from retrieval timestamp
+PASS zero usable records -> ok, zero_input, empty payload, nothing fabricated
+PASS all records rejected -> zero input with rejection evidence
+PASS shape failure: pure-stage failure and DB error both normalise; detail truncated
+PASS raise failure always throws
+PASS replay summary reports zero provider calls and zero paid calls
+PASS no LLM/paid provider names, secrets or admin roles anywhere in sources or SQL
+PASS SQL touches only cf.* and only allowed verbs (no DELETE/DROP/ALTER/CREATE/GRANT/SET ROLE/TRIGGER/function exec)
+PASS run summary: zero LLM/paid calls, source label, request count, JSON-serialisable
+
+52 passed, 0 failed
