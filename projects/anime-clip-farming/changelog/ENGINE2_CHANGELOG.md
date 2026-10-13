@@ -4,6 +4,12 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-13 — ENGINE 2 — CF-002 LIVE VALIDATION DECISION (docs only)
+
+- Recorded CF002-POLICY-SPOILER-001 and CF002-VALIDATION-POKEMON-001 in `sprints/SPRINT_02_CF002/CF002_POLICY_AND_VALIDATION_DECISIONS.md`. No DB, n8n or schema change. Official clip could not be observed from this environment (YouTube blocked); exact scene timestamps requested. Status stays `CF002_BUILD_COMPLETE_LIVE_SOURCE_PENDING`; stopped before CF-003.
+
+---
+
 ## 2026-10-13 — ENGINE 2 — SPRINT 2: CF-002 SCENE INTELLIGENCE & PROVENANCE v0.1
 
 - **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-13T04:31Z.
