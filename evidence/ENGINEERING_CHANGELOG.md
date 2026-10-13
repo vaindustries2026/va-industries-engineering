@@ -2755,3 +2755,26 @@ provider_calls: 0
 production_writes: 0
 status: "EP005_BASE_FRAME_BATCH_PREFLIGHT_COMPLETE + FRAME_FAMILIES_VERIFIED + DERIVATION_OPPORTUNITIES_IDENTIFIED + PAID_IMAGE_REQUIREMENTS_IDENTIFIED + IMAGE_COST_PREFLIGHT_COMPLETE + G03_FUTURE_RECORD_MAP_READY + G08_FUTURE_RECORD_MAP_READY + DIALOGUE_DEPENDENCY_MAP_READY + RECOMMENDED_FIRST_FRAME_BATCH_READY + AUTO_BATCH_PLAN_READY + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES"
 ```
+
+---
+
+## ENG-20261013-AGENT008-BATCH-DRIVER-V01-G04-CHAIN: batch driver v0.1 + G04 overlay/treatment certificate chain (engineering only)
+
+```yaml
+change_id: "ENG-20261013-AGENT008-BATCH-DRIVER-V01-G04-CHAIN"
+timestamp: "2026-10-13"
+actor: "Claude"
+authorised_by: "Company Brain (batch driver v0.1 + G04 chain; engineering only; no spend)"
+change_type: "CODE (Agent-008, additive) + TESTS + EVIDENCE (read-only dry run)"
+code: ["agent008/batch.py (new)", "agent008/g04chain.py (new)", "agent008/tests/test_batch_driver.py (24 tests)", "agent008/CONTRACT.md (section)"]
+contract: "evidence/agent008/batch_driver/AGENT008_BATCH_DRIVER_CONTRACT_v0.1.md"
+tests: "205/205 OK (181 existing unchanged + 24 new)"
+determinism: "PLAN_ONLY first-batch plan identical across two runs; synthetic 9-shot plan + manifest identical; G02/motion regression identical to pre-G03 baseline"
+first_batch_dry_run: "S001/S005/S013/S025 (F01), S004/S012 (F03), S017 (F09): WAITING_FOR_BASE_FRAME; S019 (F15): WAITING_FOR_UPSTREAM (F09 approval -> crop); S026 (F11): WAITING_FOR_FRAME_APPROVAL (reuse binding of FRAME-EP005-S027-BASE-v01); 9 waiting human, 0 blocked, 0 failed"
+readiness: "FIRST_BATCH: 3 paid images (cost UNKNOWN), 2 provider video shots (S001, S026), 7 deterministic stills, 8 TTS lines, 7 G03 + 3 G08 records, 2 event timings; can auto-advance deterministic stages after frame approval"
+non_regression: "S027/S028/S029 stored assets re-hashed equal + APPROVED; production fingerprints unchanged"
+evidence: ["evidence/AGENT008_BATCH_DRIVER_V01_AND_G04_CHAIN_v1.0.md", "evidence/agent008/batch_driver/"]
+provider_calls: 0
+production_writes: 0
+status: "AGENT008_BATCH_DRIVER_V01_COMPLETE + BATCH_DRIVER_IMPLEMENTED + FAIL_CLOSED_STATE_MACHINE + EXPLICIT_SHOT_ALLOWLIST + G04_OVERLAY_CHAIN_COMPLETE + PLAN_ONLY_PASS + FIRST_BATCH_DRY_RUN_PASS + BATCH_REVIEW_MANIFEST_READY + FULL_TEST_SUITE_PASS + S027_UNCHANGED + S028_UNCHANGED + S029_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES + FIRST_PAID_FRAME_BATCH_READY_FOR_AUTHORISATION"
+```

@@ -228,3 +228,18 @@ Status: built and tested offline (synthetic fixtures). Nothing has been produced
   - `compose_motion_shot(..., treatments_composited=)`: the certified static reflection on the uploaded motion base frame only; glint and pop on motion still fail closed.
   - S018 is refused by the still path until G07 exists.
 - **Non-regression:** treatment-free shots are byte-unchanged.
+
+---
+
+# v0.3 Batch driver v0.1 (`agent008/batch.py`) and G04 certificate chain (`agent008/g04chain.py`)
+
+Full contract: `evidence/agent008/batch_driver/AGENT008_BATCH_DRIVER_CONTRACT_v0.1.md`.
+
+**Batch driver:**
+- **Input:** an explicit shot allowlist, the authoritative specs, the frame-family map and an inventory of authoritative artifacts.
+- **State:** each shot gets a state from a deterministic fail-closed ladder: base frame → records → audio timing → dialogue → still render, or provider preflight → spend authorisation → output → raw approval → assembly. Each state carries its next human gate and next automated stage.
+- **Isolation:** shots are independent. There is no retry, no replacement and no fallback.
+- **Modes:** PLAN_ONLY (no writes), LOCAL_PREPARE_ONLY, LOCAL_RENDER_ONLY and PROVIDER_PREFLIGHT_ONLY (scratch only, never submits). There is no paid mode.
+- **Output:** `review_manifest` builds the single batch review packet.
+
+**G04 certificate chain:** a G04 frame from an approved motion whose base frame carried G03/G08 certificates re-issues those certificates for the target shot, bound to the derived frame SHA. It is provenance only; no pixels are re-applied. Stale, missing or broken certificates fail closed, as do undeclared or mismatched frame indices and mismatched sets.

@@ -1,0 +1,1093 @@
+{
+ "batch": {
+  "batch_id": "EP005-FIRST-FRAME-BATCH-DRY-RUN-v1",
+  "shot_ids": [
+   "S001",
+   "S004",
+   "S005",
+   "S012",
+   "S013",
+   "S017",
+   "S019",
+   "S025",
+   "S026"
+  ],
+  "mode": "PLAN_ONLY"
+ },
+ "plan_sha256_run_a": "d3e6fe5efbc92961f19f67ba49ae8a9f5b1e56aed9910fbebaf81a5b9a458574",
+ "plan_sha256_run_b": "d3e6fe5efbc92961f19f67ba49ae8a9f5b1e56aed9910fbebaf81a5b9a458574",
+ "deterministic": true,
+ "FIRST_BATCH_DRY_RUN": [
+  {
+   "SHOT_ID": "S001",
+   "FRAME_FAMILY": "F01-MIRROR-OPEN",
+   "FRAME_KIND": "GENERATE",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_BASE_FRAME",
+   "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+   "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+   "DIALOGUE_COUNT": 2,
+   "G03_RECORD_COUNT": 1,
+   "G03_OVERLAYS": 3,
+   "G08_RECORD_COUNT": 0,
+   "G08_TREATMENTS": [],
+   "EVENT_TIMING_REQUIRED": [],
+   "PROVIDER_VIDEO_CALL_REQUIRED": true,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 static -> provider preflight -> [spend auth] -> Seedance -> [raw approval] -> motion assembly x2 -> REVIEW",
+   "OUTSTANDING": [
+    "DIALOGUE: Mikko: Berries on my face! I want to feel fresh.",
+    "DIALOGUE: Lumi: I see three little smudges.",
+    "G03_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S004",
+   "FRAME_FAMILY": "F03-OVERSHOULDER-LUMI",
+   "FRAME_KIND": "GENERATE",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_BASE_FRAME",
+   "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F03-OVERSHOULDER-LUMI",
+   "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+   "DIALOGUE_COUNT": 2,
+   "G03_RECORD_COUNT": 1,
+   "G03_OVERLAYS": 3,
+   "G08_RECORD_COUNT": 1,
+   "G08_TREATMENTS": [
+    "MIRROR-GLINT"
+   ],
+   "EVENT_TIMING_REQUIRED": [
+    "SFX-LUMI-CLUE-CHIME"
+   ],
+   "PROVIDER_VIDEO_CALL_REQUIRED": false,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 -> G02 still x2 (glint/pop frame-exact, dialogue G09) -> QC -> REVIEW",
+   "OUTSTANDING": [
+    "DIALOGUE: Lumi: A glint on his cheek!",
+    "DIALOGUE: Lumi: Find the next smudge!",
+    "G03_RECORD",
+    "G08_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S005",
+   "FRAME_FAMILY": "F01-MIRROR-OPEN",
+   "FRAME_KIND": "GENERATE",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_BASE_FRAME",
+   "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+   "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+   "DIALOGUE_COUNT": 0,
+   "G03_RECORD_COUNT": 1,
+   "G03_OVERLAYS": 3,
+   "G08_RECORD_COUNT": 0,
+   "G08_TREATMENTS": [],
+   "EVENT_TIMING_REQUIRED": [],
+   "PROVIDER_VIDEO_CALL_REQUIRED": false,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 -> G02 still x2 (dialogue G09) -> QC -> REVIEW",
+   "OUTSTANDING": [
+    "G03_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S012",
+   "FRAME_FAMILY": "F03-OVERSHOULDER-LUMI",
+   "FRAME_KIND": "GENERATE",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_BASE_FRAME",
+   "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F03-OVERSHOULDER-LUMI",
+   "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+   "DIALOGUE_COUNT": 2,
+   "G03_RECORD_COUNT": 1,
+   "G03_OVERLAYS": 2,
+   "G08_RECORD_COUNT": 1,
+   "G08_TREATMENTS": [
+    "MIRROR-GLINT"
+   ],
+   "EVENT_TIMING_REQUIRED": [],
+   "PROVIDER_VIDEO_CALL_REQUIRED": false,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 -> G02 still x2 (glint/pop frame-exact, dialogue G09) -> QC -> REVIEW",
+   "OUTSTANDING": [
+    "DIALOGUE: Lumi: By your mouth!",
+    "DIALOGUE: Lumi: Find the next smudge!",
+    "G03_RECORD",
+    "G08_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S013",
+   "FRAME_FAMILY": "F01-MIRROR-OPEN",
+   "FRAME_KIND": "GENERATE",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_BASE_FRAME",
+   "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+   "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+   "DIALOGUE_COUNT": 0,
+   "G03_RECORD_COUNT": 1,
+   "G03_OVERLAYS": 2,
+   "G08_RECORD_COUNT": 0,
+   "G08_TREATMENTS": [],
+   "EVENT_TIMING_REQUIRED": [],
+   "PROVIDER_VIDEO_CALL_REQUIRED": false,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 -> G02 still x2 (dialogue G09) -> QC -> REVIEW",
+   "OUTSTANDING": [
+    "G03_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S017",
+   "FRAME_FAMILY": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "FRAME_KIND": "GENERATE",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_BASE_FRAME",
+   "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+   "DIALOGUE_COUNT": 0,
+   "G03_RECORD_COUNT": 1,
+   "G03_OVERLAYS": 1,
+   "G08_RECORD_COUNT": 0,
+   "G08_TREATMENTS": [],
+   "EVENT_TIMING_REQUIRED": [],
+   "PROVIDER_VIDEO_CALL_REQUIRED": false,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 -> G02 still x2 (dialogue G09) -> QC -> REVIEW",
+   "OUTSTANDING": [
+    "G03_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S019",
+   "FRAME_FAMILY": "F15-MACRO-REFLECTION",
+   "FRAME_KIND": "DERIVE_CROP",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_UPSTREAM",
+   "BLOCKER": "CROP_SOURCE_FAMILY_NOT_APPROVED:F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "NEXT_REQUIRED_HUMAN_GATE": "complete the upstream shot / source approval",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "derive the base frame once the source is approved",
+   "DIALOGUE_COUNT": 0,
+   "G03_RECORD_COUNT": 1,
+   "G03_OVERLAYS": 1,
+   "G08_RECORD_COUNT": 0,
+   "G08_TREATMENTS": [],
+   "EVENT_TIMING_REQUIRED": [],
+   "PROVIDER_VIDEO_CALL_REQUIRED": false,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 -> G02 still x2 (dialogue G09) -> QC -> REVIEW",
+   "OUTSTANDING": [
+    "G03_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S025",
+   "FRAME_FAMILY": "F01-MIRROR-OPEN",
+   "FRAME_KIND": "GENERATE",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_BASE_FRAME",
+   "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+   "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+   "DIALOGUE_COUNT": 1,
+   "G03_RECORD_COUNT": 0,
+   "G03_OVERLAYS": 0,
+   "G08_RECORD_COUNT": 1,
+   "G08_TREATMENTS": [
+    "MIRROR-REFLECTION",
+    "COMPLETION-POP-ACCENT"
+   ],
+   "EVENT_TIMING_REQUIRED": [
+    "SFX-COMPLETION-POP-v01"
+   ],
+   "PROVIDER_VIDEO_CALL_REQUIRED": false,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 -> G08 reflection -> G02 still x2 (glint/pop frame-exact, dialogue G09) -> QC -> REVIEW",
+   "OUTSTANDING": [
+    "DIALOGUE: Lumi: Cheek, mouth, nose. All clear.",
+    "G08_RECORD",
+    "BASE_FRAME"
+   ]
+  },
+  {
+   "SHOT_ID": "S026",
+   "FRAME_FAMILY": "F11-S027-START-REUSE",
+   "FRAME_KIND": "REUSE_APPROVED_ASSET",
+   "CURRENT_BATCH_STATE": "WAITING_FOR_FRAME_APPROVAL",
+   "BLOCKER": "REUSE_BINDING_NOT_APPROVED:FRAME-EP005-S027-BASE-v01",
+   "NEXT_REQUIRED_HUMAN_GATE": "APPROVE/REJECT the base frame (or the reuse binding) by exact SHA",
+   "NEXT_REQUIRED_AUTOMATED_STAGE": null,
+   "DIALOGUE_COUNT": 1,
+   "G03_RECORD_COUNT": 0,
+   "G03_OVERLAYS": 0,
+   "G08_RECORD_COUNT": 0,
+   "G08_TREATMENTS": [],
+   "EVENT_TIMING_REQUIRED": [],
+   "PROVIDER_VIDEO_CALL_REQUIRED": true,
+   "EXPECTED_FINAL_PRODUCTION_PATH": "frame -> G03 static -> provider preflight -> [spend auth] -> Seedance -> [raw approval] -> motion assembly x2 -> REVIEW",
+   "OUTSTANDING": [
+    "DIALOGUE: Mikko: One little spot at a time!",
+    "BASE_FRAME"
+   ]
+  }
+ ],
+ "BATCH_REVIEW_MANIFEST": {
+  "BATCH_ID": "EP005-FIRST-FRAME-BATCH-DRY-RUN-v1",
+  "DRIVER": "AGENT008_BATCH_DRIVER_v0.1",
+  "MODE": "PLAN_ONLY",
+  "PLAN_SHA256": "d3e6fe5efbc92961f19f67ba49ae8a9f5b1e56aed9910fbebaf81a5b9a458574",
+  "SHOT_COUNT": 9,
+  "COMPLETE_COUNT": 0,
+  "BLOCKED_COUNT": 0,
+  "WAITING_HUMAN_COUNT": 9,
+  "WAITING_PROVIDER_COUNT": 0,
+  "READY_AUTOMATED_COUNT": 0,
+  "FAILED_COUNT": 0,
+  "shots": [
+   {
+    "SHOT_ID": "S001",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "PROVIDER_COST": null,
+    "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+    "OUTSTANDING": [
+     "DIALOGUE: Mikko: Berries on my face! I want to feel fresh.",
+     "DIALOGUE: Lumi: I see three little smudges.",
+     "G03_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S004",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "PROVIDER_COST": null,
+    "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F03-OVERSHOULDER-LUMI",
+    "OUTSTANDING": [
+     "DIALOGUE: Lumi: A glint on his cheek!",
+     "DIALOGUE: Lumi: Find the next smudge!",
+     "G03_RECORD",
+     "G08_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S005",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "PROVIDER_COST": null,
+    "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S012",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "PROVIDER_COST": null,
+    "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F03-OVERSHOULDER-LUMI",
+    "OUTSTANDING": [
+     "DIALOGUE: Lumi: By your mouth!",
+     "DIALOGUE: Lumi: Find the next smudge!",
+     "G03_RECORD",
+     "G08_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S013",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "PROVIDER_COST": null,
+    "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S017",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "PROVIDER_COST": null,
+    "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S019",
+    "STATE": "WAITING_FOR_UPSTREAM",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "complete the upstream shot / source approval",
+    "NEXT_AUTOMATED_STAGE": "derive the base frame once the source is approved",
+    "PROVIDER_COST": null,
+    "BLOCKER": "CROP_SOURCE_FAMILY_NOT_APPROVED:F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S025",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "PROVIDER_COST": null,
+    "BLOCKER": "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN",
+    "OUTSTANDING": [
+     "DIALOGUE: Lumi: Cheek, mouth, nose. All clear.",
+     "G08_RECORD",
+     "BASE_FRAME"
+    ]
+   },
+   {
+    "SHOT_ID": "S026",
+    "STATE": "WAITING_FOR_FRAME_APPROVAL",
+    "CATEGORY": "HUMAN",
+    "INPUT_SHAS": {},
+    "OUTPUT_SHAS": {},
+    "QC_STATUS": "NOT_RUN",
+    "HUMAN_GATE": "APPROVE/REJECT the base frame (or the reuse binding) by exact SHA",
+    "NEXT_AUTOMATED_STAGE": null,
+    "PROVIDER_COST": null,
+    "BLOCKER": "REUSE_BINDING_NOT_APPROVED:FRAME-EP005-S027-BASE-v01",
+    "OUTSTANDING": [
+     "DIALOGUE: Mikko: One little spot at a time!",
+     "BASE_FRAME"
+    ]
+   }
+  ],
+  "manifest_sha256": "d44000507b0b1ac95a4583c9500545a2b53056a83a6c45a031e856039e26d23a"
+ },
+ "plan": {
+  "driver": "AGENT008_BATCH_DRIVER_v0.1",
+  "batch_id": "EP005-FIRST-FRAME-BATCH-DRY-RUN-v1",
+  "mode": "PLAN_ONLY",
+  "shot_ids": [
+   "S001",
+   "S004",
+   "S005",
+   "S012",
+   "S013",
+   "S017",
+   "S019",
+   "S025",
+   "S026"
+  ],
+  "shots": [
+   {
+    "SHOT_ID": "S001",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "c86a2b13a229ea762ebc86bad577da505f53c46bdde538eaaaa84a22189e0c20",
+     "frames": 144,
+     "duration_s": 6
+    },
+    "PRODUCTION_MODE": "PROVIDER_MOTION",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F01-MIRROR-OPEN",
+     "kind": "GENERATE",
+     "provider_motion": true
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [
+     {
+      "speaker": "Mikko",
+      "text": "Berries on my face! I want to feel fresh."
+     },
+     {
+      "speaker": "Lumi",
+      "text": "I see three little smudges."
+     }
+    ],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [
+      "AMB-BATHROOM-QUIET-v01"
+     ],
+     "events": [],
+     "event_timing_required": false
+    },
+    "PROVIDER_MOTION_REQUIRED": true,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [],
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "CURRENT_BLOCKERS": [
+     "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN"
+    ],
+    "OUTSTANDING": [
+     "DIALOGUE: Mikko: Berries on my face! I want to feel fresh.",
+     "DIALOGUE: Lumi: I see three little smudges.",
+     "G03_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S004",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "50ca2d82e1fb98688f308f2291d0a343f38ae583fcf1458cf2b0e847f55e7f34",
+     "frames": 120,
+     "duration_s": 5
+    },
+    "PRODUCTION_MODE": "G02_STILL",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F03-OVERSHOULDER-LUMI",
+     "kind": "GENERATE",
+     "provider_motion": false
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [
+      "TREATMENT-EP005-MIRROR-GLINT-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [
+     {
+      "speaker": "Lumi",
+      "text": "A glint on his cheek!"
+     },
+     {
+      "speaker": "Lumi",
+      "text": "Find the next smudge!"
+     }
+    ],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [],
+     "events": [
+      "SFX-LUMI-CLUE-CHIME"
+     ],
+     "event_timing_required": true
+    },
+    "PROVIDER_MOTION_REQUIRED": false,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [],
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "CURRENT_BLOCKERS": [
+     "FAMILY_FRAME_NOT_GENERATED:F03-OVERSHOULDER-LUMI"
+    ],
+    "OUTSTANDING": [
+     "DIALOGUE: Lumi: A glint on his cheek!",
+     "DIALOGUE: Lumi: Find the next smudge!",
+     "G03_RECORD",
+     "G08_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S005",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "6609be93190ec3f14d47412e109704e1b50dd19d985b3074dca903175c2a287f",
+     "frames": 96,
+     "duration_s": 4
+    },
+    "PRODUCTION_MODE": "G02_STILL",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F01-MIRROR-OPEN",
+     "kind": "GENERATE",
+     "provider_motion": false
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [
+      "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [
+      "AMB-BATHROOM-QUIET-v01"
+     ],
+     "events": [],
+     "event_timing_required": false
+    },
+    "PROVIDER_MOTION_REQUIRED": false,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [],
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "CURRENT_BLOCKERS": [
+     "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN"
+    ],
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S012",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "385919cef3b83403cdff2af7ac3aef8c67cb2062246870f7159a620af64e890c",
+     "frames": 120,
+     "duration_s": 5
+    },
+    "PRODUCTION_MODE": "G02_STILL",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F03-OVERSHOULDER-LUMI",
+     "kind": "GENERATE",
+     "provider_motion": false
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [
+      "TREATMENT-EP005-MIRROR-GLINT-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [
+     {
+      "speaker": "Lumi",
+      "text": "By your mouth!"
+     },
+     {
+      "speaker": "Lumi",
+      "text": "Find the next smudge!"
+     }
+    ],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [
+      "AMB-BATHROOM-QUIET-v01"
+     ],
+     "events": [],
+     "event_timing_required": false
+    },
+    "PROVIDER_MOTION_REQUIRED": false,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [],
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "CURRENT_BLOCKERS": [
+     "FAMILY_FRAME_NOT_GENERATED:F03-OVERSHOULDER-LUMI"
+    ],
+    "OUTSTANDING": [
+     "DIALOGUE: Lumi: By your mouth!",
+     "DIALOGUE: Lumi: Find the next smudge!",
+     "G03_RECORD",
+     "G08_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S013",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "c50e44cc5b9e7c18cdf52e0f31bf80ae481f63ea5001333e144ca3a55ee1cb4f",
+     "frames": 96,
+     "duration_s": 4
+    },
+    "PRODUCTION_MODE": "G02_STILL",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F01-MIRROR-OPEN",
+     "kind": "GENERATE",
+     "provider_motion": false
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [
+      "AMB-BATHROOM-QUIET-v01"
+     ],
+     "events": [],
+     "event_timing_required": false
+    },
+    "PROVIDER_MOTION_REQUIRED": false,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [],
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "CURRENT_BLOCKERS": [
+     "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN"
+    ],
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S017",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "bf3df754bbf9105d3d04afd73333c8e13c5642a4ff570d8c80c171e6c58b4fb3",
+     "frames": 96,
+     "duration_s": 4
+    },
+    "PRODUCTION_MODE": "G02_STILL",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+     "kind": "GENERATE",
+     "provider_motion": false
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [
+      "AMB-BATHROOM-QUIET-v01"
+     ],
+     "events": [],
+     "event_timing_required": false
+    },
+    "PROVIDER_MOTION_REQUIRED": false,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [],
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "CURRENT_BLOCKERS": [
+     "FAMILY_FRAME_NOT_GENERATED:F09-MEDIUM-TWOSHOT-MIRROR-FRONT"
+    ],
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S019",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "1a41065fd3a3d485af45d0bcf10b6e7ed51981e2af97cdebbcaca9581026c240",
+     "frames": 120,
+     "duration_s": 5
+    },
+    "PRODUCTION_MODE": "G02_STILL",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F15-MACRO-REFLECTION",
+     "kind": "DERIVE_CROP",
+     "source": {
+      "family_id": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT"
+     },
+     "crop": "MEASURED_AFTER_F09_APPROVAL",
+     "scale": {
+      "w": 1920,
+      "h": 1080
+     },
+     "provider_motion": false
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [
+      "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [
+      "AMB-BATHROOM-QUIET-v01"
+     ],
+     "events": [],
+     "event_timing_required": false
+    },
+    "PROVIDER_MOTION_REQUIRED": false,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [
+     {
+      "family_id": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT"
+     }
+    ],
+    "STATE": "WAITING_FOR_UPSTREAM",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "complete the upstream shot / source approval",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "derive the base frame once the source is approved",
+    "CURRENT_BLOCKERS": [
+     "CROP_SOURCE_FAMILY_NOT_APPROVED:F09-MEDIUM-TWOSHOT-MIRROR-FRONT"
+    ],
+    "OUTSTANDING": [
+     "G03_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S025",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "7d5ed7a51a78586b3e9492c714794a68d2426df6d3c8cbcd6dcbb2e9dd8a5618",
+     "frames": 96,
+     "duration_s": 4
+    },
+    "PRODUCTION_MODE": "G02_STILL",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F01-MIRROR-OPEN",
+     "kind": "GENERATE",
+     "provider_motion": false
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [
+      "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+      "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01"
+     ],
+     "record_required": true,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [
+     {
+      "speaker": "Lumi",
+      "text": "Cheek, mouth, nose. All clear."
+     }
+    ],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [],
+     "events": [
+      "SFX-COMPLETION-POP-v01"
+     ],
+     "event_timing_required": true
+    },
+    "PROVIDER_MOTION_REQUIRED": false,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [],
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "authorise the base-frame generation (paid) for the family",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": "normalise + hash the generated frame (G04)",
+    "CURRENT_BLOCKERS": [
+     "FAMILY_FRAME_NOT_GENERATED:F01-MIRROR-OPEN"
+    ],
+    "OUTSTANDING": [
+     "DIALOGUE: Lumi: Cheek, mouth, nose. All clear.",
+     "G08_RECORD",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   },
+   {
+    "SHOT_ID": "S026",
+    "AUTHORITATIVE_SPEC": {
+     "status": "SPEC",
+     "sha256": "049fad1afe5a2dcdbe31ab99a77a6a9a2d3a7235de91759ca24e5def2b9170f3",
+     "frames": 120,
+     "duration_s": 5
+    },
+    "PRODUCTION_MODE": "PROVIDER_MOTION",
+    "BASE_FRAME_REQUIREMENT": {
+     "family_id": "F11-S027-START-REUSE",
+     "kind": "REUSE_APPROVED_ASSET",
+     "source": {
+      "asset_id": "FRAME-EP005-S027-BASE-v01",
+      "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+     },
+     "provider_motion": true
+    },
+    "G03_REQUIREMENT": {
+     "overlays": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G08_REQUIREMENT": {
+     "treatments": [],
+     "record_required": false,
+     "satisfied_by_inherited_certificate": false
+    },
+    "G06_REQUIREMENT": false,
+    "G07_REQUIREMENT": false,
+    "G11_REQUIREMENT": false,
+    "DIALOGUE_REQUIREMENTS": [
+     {
+      "speaker": "Mikko",
+      "text": "One little spot at a time!"
+     }
+    ],
+    "AUDIO_REQUIREMENTS": {
+     "beds": [
+      "AMB-BATHROOM-QUIET-v01"
+     ],
+     "events": [],
+     "event_timing_required": false
+    },
+    "PROVIDER_MOTION_REQUIRED": true,
+    "UPSTREAM_CONTINUITY_DEPENDENCIES": [
+     {
+      "asset_id": "FRAME-EP005-S027-BASE-v01",
+      "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+     }
+    ],
+    "STATE": "WAITING_FOR_FRAME_APPROVAL",
+    "CATEGORY": "HUMAN",
+    "NEXT_REQUIRED_HUMAN_GATE": "APPROVE/REJECT the base frame (or the reuse binding) by exact SHA",
+    "NEXT_REQUIRED_AUTOMATED_STAGE": null,
+    "CURRENT_BLOCKERS": [
+     "REUSE_BINDING_NOT_APPROVED:FRAME-EP005-S027-BASE-v01"
+    ],
+    "OUTSTANDING": [
+     "DIALOGUE: Mikko: One little spot at a time!",
+     "BASE_FRAME"
+    ],
+    "ERRORS": []
+   }
+  ],
+  "plan_sha256": "d3e6fe5efbc92961f19f67ba49ae8a9f5b1e56aed9910fbebaf81a5b9a458574"
+ },
+ "FUTURE_FLOW_SIMULATION": {
+  "S025_deterministic_still": [
+   {
+    "after": "start (no frame)",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "human_gate": "authorise the base-frame generation (paid) for the family",
+    "automated_stage": "normalise + hash the generated frame (G04)"
+   },
+   {
+    "after": "F01 frame generated -> REVIEW",
+    "STATE": "WAITING_FOR_FRAME_APPROVAL",
+    "human_gate": "APPROVE/REJECT the base frame (or the reuse binding) by exact SHA",
+    "automated_stage": null
+   },
+   {
+    "after": "frame APPROVED",
+    "STATE": "WAITING_FOR_G08_RECORD",
+    "human_gate": "approve the G08 treatment record measured on the approved frame",
+    "automated_stage": "apply G08 once approved"
+   },
+   {
+    "after": "G08 record approved",
+    "STATE": "WAITING_FOR_AUDIO_TIMING",
+    "human_gate": "approve the event-audio timing (SFX/foley start frames)",
+    "automated_stage": null
+   },
+   {
+    "after": "pop SFX timing approved",
+    "STATE": "WAITING_FOR_DIALOGUE",
+    "human_gate": "authorise TTS for the missing lines",
+    "automated_stage": "bind clips with G09 once approved"
+   },
+   {
+    "after": "Lumi clip generated -> REVIEW",
+    "STATE": "WAITING_FOR_DIALOGUE_APPROVAL",
+    "human_gate": "APPROVE/REJECT each clip by exact SHA",
+    "automated_stage": "bind clips with G09"
+   },
+   {
+    "after": "Lumi clip APPROVED",
+    "STATE": "READY_FOR_LOCAL_RENDER",
+    "human_gate": null,
+    "automated_stage": "G03/G08 static stages -> G02 still render x2 -> QC -> REVIEW"
+   },
+   {
+    "after": "LOCAL_RENDER_ONLY produced REVIEW shot",
+    "STATE": "WAITING_FOR_FINAL_SHOT_APPROVAL",
+    "human_gate": "APPROVE/REJECT the assembled shot by exact SHA",
+    "automated_stage": null
+   },
+   {
+    "after": "final shot APPROVED",
+    "STATE": "COMPLETE_APPROVED",
+    "human_gate": null,
+    "automated_stage": null
+   }
+  ],
+  "S001_provider_motion": [
+   {
+    "after": "start (no frame)",
+    "STATE": "WAITING_FOR_BASE_FRAME",
+    "human_gate": "authorise the base-frame generation (paid) for the family",
+    "automated_stage": "normalise + hash the generated frame (G04)"
+   },
+   {
+    "after": "F01 frame APPROVED",
+    "STATE": "WAITING_FOR_G03_RECORD",
+    "human_gate": "approve the G03 placement record measured on the approved frame",
+    "automated_stage": "apply G03 once approved"
+   },
+   {
+    "after": "G03 record approved",
+    "STATE": "WAITING_FOR_DIALOGUE",
+    "human_gate": "authorise TTS for the missing lines",
+    "automated_stage": "bind clips with G09 once approved"
+   },
+   {
+    "after": "both clips APPROVED",
+    "STATE": "READY_FOR_PROVIDER_PREFLIGHT",
+    "human_gate": null,
+    "automated_stage": "G03/G08 static stages -> freeze provider package (no submit)"
+   },
+   {
+    "after": "PROVIDER_PREFLIGHT_ONLY froze the package",
+    "STATE": "WAITING_FOR_PROVIDER_AUTHORISATION",
+    "human_gate": "authorise the provider spend (scope, ceiling, balance)",
+    "automated_stage": null
+   },
+   {
+    "after": "spend authorised with ceiling",
+    "STATE": "WAITING_FOR_PROVIDER_AUTHORISATION",
+    "human_gate": "authorise the provider spend (scope, ceiling, balance)",
+    "automated_stage": null
+   },
+   {
+    "after": "(future paid mode) submitted",
+    "STATE": "WAITING_FOR_PROVIDER_OUTPUT",
+    "human_gate": null,
+    "automated_stage": "retrieve + preserve the raw output exactly"
+   },
+   {
+    "after": "raw output retrieved",
+    "STATE": "WAITING_FOR_RAW_MOTION_APPROVAL",
+    "human_gate": "APPROVE/REJECT the raw motion by exact SHA",
+    "automated_stage": null
+   },
+   {
+    "after": "raw motion APPROVED",
+    "STATE": "READY_FOR_ASSEMBLY",
+    "human_gate": null,
+    "automated_stage": "deterministic motion assembly x2 -> QC -> REVIEW"
+   },
+   {
+    "after": "assembly produced REVIEW shot",
+    "STATE": "WAITING_FOR_FINAL_SHOT_APPROVAL",
+    "human_gate": "APPROVE/REJECT the assembled shot by exact SHA",
+    "automated_stage": null
+   },
+   {
+    "after": "final shot APPROVED",
+    "STATE": "COMPLETE_APPROVED",
+    "human_gate": null,
+    "automated_stage": null
+   }
+  ]
+ },
+ "production_writes": 0,
+ "provider_calls": 0
+}
