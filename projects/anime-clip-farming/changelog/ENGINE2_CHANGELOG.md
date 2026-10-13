@@ -4,6 +4,20 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-13 — ENGINE 2 — SPRINT 2: CF-002 SCENE INTELLIGENCE & PROVENANCE v0.1
+
+- **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-13T04:31Z.
+- **Branch:** `engine2/clip-farming-sprint-02-cf002` from `e9023df`. Not merged; no PR.
+- **Live Supabase (`mkeldytatorxxszjdngt`):** applied migration `0004_cf002_scene_intelligence` (version `20261013044838`): 2 tables, 1 view, 1 type, 11 transitions, 8 triggers, minimal runtime grants. Advisor 0 lints. 0001-0003 untouched.
+- **Live n8n:** created `CF-002 — Scene Intelligence & Provenance v0.1` (`tmqsoycNV6k4iKr6`, 24 nodes, inactive, manual only) and inactive `TEST — CF-002 DB negative tests` (`HFdXgTMf5eQ57sQo`). Executions 592-599.
+- **Result:** 302/302 local SQL checks on PG16 and 17; 33 live rolled-back negative checks pass; zero-input live run and replay pass. No scene persisted: no legitimate human observation supplied.
+- **Not changed:** CF-001 rows, migrations 0001-0003, the credential, CF-SSL-001, kill switches.
+- **Counters:** LLM 0, paid 0, cost $0 · publications 0, schedules 0.
+- **Rollback:** `0004 ... ROLLBACK.sql`; archive the n8n workflows (human); delete the branch.
+- **Stop state:** `CF002_BUILD_COMPLETE_LIVE_SOURCE_PENDING`. STOPPED before CF-003.
+
+---
+
 ## 2026-10-13 — ENGINE 2 — SPRINT 1: CF-001 MARKET & TREND RADAR v0.1
 
 - **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-13T03:30Z; credential confirmation 03:48Z.

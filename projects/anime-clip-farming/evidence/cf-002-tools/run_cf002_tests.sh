@@ -12,7 +12,7 @@ PG16BIN=${2:-/usr/lib/postgresql/16/bin}
 PG17BIN=${3:-}; PG17LIB=${4:-}
 rm -rf "$WORK"; mkdir -p "$WORK"
 cp "$PKG"/0001_cf_sprint01.sql "$PKG"/0002_cf_runtime_human_admin_guard.sql "$PKG"/0003_cf_freeze_generated_columns_and_search_path.sql "$PKG"/0004_cf002_scene_intelligence*.sql "$WORK"/
-cp "$TOOLS"/test/cf_test_helpers.sql "$TOOLS"/test/seed_upstream.sql "$WORK"/
+cp "$TOOLS"/test/negative_live.sql "$TOOLS"/test/cf_test_helpers.sql "$TOOLS"/test/seed_upstream.sql "$WORK"/
 node "$TOOLS/test/gen_sql_tests.js" "$WORK" >"$WORK/gen.txt" || exit 2
 chown -R pgtest:pgtest "$WORK"
 : >"$OUT"
@@ -81,6 +81,13 @@ SQL
   grep -hE 'NOTICE:  (PASS|FAIL)' $WORK/of_$tag.txt | sed 's/^.*NOTICE:  //' >>"$OUT"
   [ $rcf -ne 0 ] && { log "FAIL s_flow exit $rcf"; grep -E 'ERROR|psql:' $WORK/of_$tag.txt | head -6 | tee -a "$OUT"; }
 
+  # ---- live negative block (the exact SQL the TEST workflow runs), here as the real restricted login ----
+  base t11; q $tag $port postgres t11 -f $WORK/seed_upstream.sql; m4 t11 >/dev/null 2>&1
+  q $tag $port cf_n8n_runtime t11 -f $WORK/negative_live.sql >$WORK/on_$tag.txt 2>&1
+  true
+  grep -E '^(PASS|FAIL) ' $WORK/on_$tag.txt >>"$OUT"
+  chk "NEG live block left nothing behind (rolled back)" $(q $tag $port postgres t11 -At -c "select ((select count(*) from cf.anime_source_episodes)=0 and (select count(*) from cf.anime_scene_intelligence)=0)::text" | cut -c1)
+
   # ---- T2 wrong-project guard ----
   base t3; q $tag $port postgres t3 -c "create table public.videos (id int)"
   m4 t3 >$WORK/a3_$tag.txt 2>&1; grep -q CF_WRONG_TARGET $WORK/a3_$tag.txt && log "PASS T2 wrong-project guard refuses (YouTube Kids table present)" || { log "FAIL T2"; head -3 $WORK/a3_$tag.txt | tee -a "$OUT"; }
@@ -107,7 +114,7 @@ SQL
   base t10; q $tag $port postgres t10 -f $WORK/seed_upstream.sql; m4 t10 >/dev/null 2>&1
   q $tag $port postgres t10 --single-transaction -f $WORK/0004_cf002_scene_intelligence.ROLLBACK.sql >$WORK/r1_$tag.txt 2>&1 && log "PASS T19 rollback of empty 0004 succeeds" || { log "FAIL T19 rollback"; head -5 $WORK/r1_$tag.txt | tee -a "$OUT"; }
   chk "T19c after rollback: 0004 objects gone, 14 transitions, 12 triggers, 4 functions, md5 of original 14 rows unchanged" $(q $tag $port postgres t10 -At -c "select (to_regclass('cf.anime_scene_intelligence') is null and to_regclass('cf.anime_source_episodes') is null and to_regclass('cf.v_scene_publication_status') is null and to_regtype('cf.research_access_basis') is null and (select count(*) from cf.allowed_transitions)=14 and (select count(*) from pg_trigger t join pg_class c on c.oid=t.tgrelid where c.relnamespace='cf'::regnamespace and not t.tgisinternal)=12 and (select count(*) from pg_proc where pronamespace='cf'::regnamespace)=4 and (select md5(string_agg(concat_ws('|', object_type, from_status, to_status, coalesce(required_gate::text,''), coalesce(required_decision::text,''), mode), ';' order by object_type, from_status, to_status)) from cf.allowed_transitions)='6ea6f7a4fafee461dc64345d400b648c' and not exists (select 1 from pg_indexes where indexname='research_candidates_id_title_uq'))::text" | cut -c1)
-  chk "T19d CF-001 data untouched by rollback (1 candidate)" $(q $tag $port postgres t10 -At -c "select ((select count(*) from cf.research_candidates)=1)::text" | cut -c1)
+  chk "T19d CF-001 data untouched by rollback (2 candidates)" $(q $tag $port postgres t10 -At -c "select ((select count(*) from cf.research_candidates)=2)::text" | cut -c1)
   m4 t10 >$WORK/r2_$tag.txt 2>&1 && log "PASS T20 reapply after rollback succeeds" || { log "FAIL T20"; head -5 $WORK/r2_$tag.txt | tee -a "$OUT"; }
   nf=$(q $tag $port postgres t10 -At -c "select count(*) filter (where value <> 'true') || '/' || count(*) from jsonb_each_text((select to_jsonb(v) from ($vq) v))")
   [ "${nf%%/*}" = "0" ] && log "PASS T20b VERIFY all ${nf#*/} true after rollback and reapply" || log "FAIL T20b ($nf)"
@@ -116,6 +123,6 @@ SQL
   runuser -u pgtest -- rm -rf $data $sock; }
 run_version 16 "$PG16BIN" 55470 ""
 [ -n "$PG17BIN" ] && run_version 17 "$PG17BIN" 55471 "$PG17LIB"
-P=$(grep -c '^PASS' "$OUT"); F=$(grep -c '^FAIL' "$OUT")
+P=$(grep -c "^PASS" "$OUT"); F=$(grep -c "^FAIL" "$OUT")
 log "TOTAL pass=$P fail=$F"
 [ "$F" -eq 0 ]

@@ -102,6 +102,40 @@ PASS S7 zero input: SUCCEEDED NO_INPUT, nothing created for that run
 PASS S8 expected 2 found 1 -> run FAILED CF002_VERIFY_MISMATCH
 PASS S9 run economics across all runs: paid 0, cost 0, provider 0
 PASS S9 every stored scene reads UNKNOWN publication status and has complete provenance
+PASS P01 two scenes in one episode persisted
+PASS P02 DRAFT->READY and human-verified flag work; status UNKNOWN
+PASS P03 episode replay inserts nothing
+PASS N01 DELETE scene (42501)
+PASS N02 DELETE episode (42501)
+PASS N03 TRUNCATE (42501)
+PASS N04 update scene text (42501)
+PASS N05 update research_access_basis (42501)
+PASS N06 write reviewers (42501)
+PASS N07 enable kill switch (42501)
+PASS N08 add transition (42501)
+PASS N09 disable trigger (42501)
+PASS N10 session_replication_role (42501)
+PASS N11 call cf function (42501)
+PASS N12 SET ROLE postgres (42501)
+PASS N13 CREATE TABLE cf (no CF-003 data) (42501)
+PASS N14 CREATE TABLE public (42501)
+PASS N15 ALTER TABLE add publication column (42501)
+PASS N16 write publication view (0A000)
+PASS N17 publication column absent (42703)
+PASS N18 scene status APPROVED (23514)
+PASS N19 end = start (23514)
+PASS N20 negative start (23514)
+PASS N21 empty source reference (23514)
+PASS N22 token in source reference (23514)
+PASS N23 NULL source reference (23502)
+PASS N24 access basis outside enum (22P02)
+PASS N25 candidate of another title (23503)
+PASS N26 HUMAN_ADMIN scene DRAFT->REJECTED (F-2) (42501)
+PASS N27 HUMAN_ADMIN episode READY->RETIRED (F-2) (42501)
+PASS N28 episode identity frozen (42501)
+PASS N29 duplicate natural-key episode (23505)
+PASS N30 duplicate scene dedupe_key (23505)
+PASS NEG live block left nothing behind (rolled back)
 PASS T2 wrong-project guard refuses (YouTube Kids table present)
 PASS T2b refused apply left no 0004 object
 PASS T4a unpinned search_path (F-7 drift) refused
@@ -113,7 +147,7 @@ PASS T19a rollback refused while the tables hold rows
 PASS T19b refused rollback left everything in place
 PASS T19 rollback of empty 0004 succeeds
 PASS T19c after rollback: 0004 objects gone, 14 transitions, 12 triggers, 4 functions, md5 of original 14 rows unchanged
-PASS T19d CF-001 data untouched by rollback (1 candidate)
+PASS T19d CF-001 data untouched by rollback (2 candidates)
 PASS T20 reapply after rollback succeeds
 PASS T20b VERIFY all 25 true after rollback and reapply
 === Cluster 17: PostgreSQL 17.10 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit ===
@@ -220,6 +254,40 @@ PASS S7 zero input: SUCCEEDED NO_INPUT, nothing created for that run
 PASS S8 expected 2 found 1 -> run FAILED CF002_VERIFY_MISMATCH
 PASS S9 run economics across all runs: paid 0, cost 0, provider 0
 PASS S9 every stored scene reads UNKNOWN publication status and has complete provenance
+PASS P01 two scenes in one episode persisted
+PASS P02 DRAFT->READY and human-verified flag work; status UNKNOWN
+PASS P03 episode replay inserts nothing
+PASS N01 DELETE scene (42501)
+PASS N02 DELETE episode (42501)
+PASS N03 TRUNCATE (42501)
+PASS N04 update scene text (42501)
+PASS N05 update research_access_basis (42501)
+PASS N06 write reviewers (42501)
+PASS N07 enable kill switch (42501)
+PASS N08 add transition (42501)
+PASS N09 disable trigger (42501)
+PASS N10 session_replication_role (42501)
+PASS N11 call cf function (42501)
+PASS N12 SET ROLE postgres (42501)
+PASS N13 CREATE TABLE cf (no CF-003 data) (42501)
+PASS N14 CREATE TABLE public (42501)
+PASS N15 ALTER TABLE add publication column (42501)
+PASS N16 write publication view (0A000)
+PASS N17 publication column absent (42703)
+PASS N18 scene status APPROVED (23514)
+PASS N19 end = start (23514)
+PASS N20 negative start (23514)
+PASS N21 empty source reference (23514)
+PASS N22 token in source reference (23514)
+PASS N23 NULL source reference (23502)
+PASS N24 access basis outside enum (22P02)
+PASS N25 candidate of another title (23503)
+PASS N26 HUMAN_ADMIN scene DRAFT->REJECTED (F-2) (42501)
+PASS N27 HUMAN_ADMIN episode READY->RETIRED (F-2) (42501)
+PASS N28 episode identity frozen (42501)
+PASS N29 duplicate natural-key episode (23505)
+PASS N30 duplicate scene dedupe_key (23505)
+PASS NEG live block left nothing behind (rolled back)
 PASS T2 wrong-project guard refuses (YouTube Kids table present)
 PASS T2b refused apply left no 0004 object
 PASS T4a unpinned search_path (F-7 drift) refused
@@ -231,7 +299,7 @@ PASS T19a rollback refused while the tables hold rows
 PASS T19b refused rollback left everything in place
 PASS T19 rollback of empty 0004 succeeds
 PASS T19c after rollback: 0004 objects gone, 14 transitions, 12 triggers, 4 functions, md5 of original 14 rows unchanged
-PASS T19d CF-001 data untouched by rollback (1 candidate)
+PASS T19d CF-001 data untouched by rollback (2 candidates)
 PASS T20 reapply after rollback succeeds
 PASS T20b VERIFY all 25 true after rollback and reapply
-TOTAL pass=234 fail=0
+TOTAL pass=302 fail=0
