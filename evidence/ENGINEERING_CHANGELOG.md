@@ -2734,3 +2734,24 @@ provider_calls: 0
 production_writes: 0
 status: "AGENT008_G08_GOVERNED_VISUAL_TREATMENTS_COMPLETE + G08_REQUIREMENTS_AUDITED + G08_TREATMENT_CONTRACT_LOCKED + MIRROR_REFLECTION_SUPPORTED + MIRROR_GLINT_SUPPORTED + COMPLETION_TREATMENTS_SUPPORTED + G08_FAIL_CLOSED + G08_DETERMINISM_PASS + FULL_TEST_SUITE_PASS + G08_DEPENDENT_SHOTS_REVALIDATED + UPDATED_FACTORY_MATRIX_READY + S027_UNCHANGED + S028_UNCHANGED + S029_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES + NEXT_FACTORY_STEP_READY"
 ```
+
+---
+
+## ENG-20261013-EP005-BASE-FRAME-BATCH-PREFLIGHT: read-only base-frame batch preflight
+
+```yaml
+change_id: "ENG-20261013-EP005-BASE-FRAME-BATCH-PREFLIGHT"
+timestamp: "2026-10-13"
+actor: "Claude"
+authorised_by: "Company Brain (EP005 BASE-FRAME BATCH PREFLIGHT, read-only, no paid generation)"
+change_type: "EVIDENCE (read-only analysis)"
+families: "16 (live-verified; old estimate 9/8 superseded): 10 need new image generation (F01-F10), 6 derivable (F11 reuse FRAME-EP005-S027-BASE-v01 for S026 now; F15 macro crop of F09; F12/F13/F14/F16 from future approved motions)"
+new_gap: "G04_OVERLAY_CHAIN: frames derived from G03/G08-pre-composited motion (S008 from S007, S011 from S010) cannot carry the overlay/treatment certificate yet"
+provider_cost: "Higgsfield Marketing Studio Image 2.5 Flare (S027 precedent); cost per call UNKNOWN (never exposed); balance UNKNOWN (Gilang must confirm); output 2688x1520 -> deterministic G04 normalisation to 1920x1080 (verified on synthetic file)"
+recommended_first_frame_batch: "F01 + F03 + F09 (3 image calls) + F11 reuse + F15 crop -> 9 shots (S001, S004, S005, S012, S013, S017, S019, S025, S026); 7 stills; 8 TTS lines; cost UNKNOWN"
+maps: "G03 future records 39 shot x overlay entries; G08 future records 10; dialogue 8 Mikko + 12 Lumi lines"
+evidence: ["evidence/EP005_BASE_FRAME_BATCH_PREFLIGHT_v1.0.md", "evidence/ep005/base_frame_preflight/"]
+provider_calls: 0
+production_writes: 0
+status: "EP005_BASE_FRAME_BATCH_PREFLIGHT_COMPLETE + FRAME_FAMILIES_VERIFIED + DERIVATION_OPPORTUNITIES_IDENTIFIED + PAID_IMAGE_REQUIREMENTS_IDENTIFIED + IMAGE_COST_PREFLIGHT_COMPLETE + G03_FUTURE_RECORD_MAP_READY + G08_FUTURE_RECORD_MAP_READY + DIALOGUE_DEPENDENCY_MAP_READY + RECOMMENDED_FIRST_FRAME_BATCH_READY + AUTO_BATCH_PLAN_READY + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES"
+```

@@ -1,0 +1,1687 @@
+{
+ "manifest": "0325d35c-d567-4488-bf78-c3887e819382",
+ "readiness": "69bff641-e056-4701-a23f-d91dbc2039b2",
+ "TOTAL_FRAME_FAMILIES": 16,
+ "FAMILIES_REQUIRING_NEW_IMAGE_GENERATION": [
+  "F01-MIRROR-OPEN",
+  "F02-OVERSHOULDER-MIKKO",
+  "F03-OVERSHOULDER-LUMI",
+  "F04-FACE-MIRROR-3Q",
+  "F05-MIRROR-CLOTH-RAISED-CHEEK",
+  "F06-MIRROR-HAND-RAISED-MOUTH",
+  "F07-FACE-CLOTH-LOW",
+  "F08-MEDIUM-TWOSHOT-REACH",
+  "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+  "F10-MEDIUM-MIKKO-FACING-MIRROR"
+ ],
+ "FAMILIES_DERIVABLE_FROM_APPROVED_ASSETS": [
+  "F11-S027-START-REUSE",
+  "F12-S007-END",
+  "F13-S010-END",
+  "F14-S014-END",
+  "F15-MACRO-REFLECTION",
+  "F16-S020-S021-END"
+ ],
+ "derivable_now_from_existing_approved_assets": [
+  "F11-S027-START-REUSE"
+ ],
+ "derivable_only_after_future_approvals": [
+  "F12-S007-END",
+  "F13-S010-END",
+  "F14-S014-END",
+  "F15-MACRO-REFLECTION",
+  "F16-S020-S021-END"
+ ],
+ "reference_assets_live": {
+  "CHAR-MIKKO-MASTER-v01": {
+   "id": "0d7a47e0-0adf-47d6-9cf9-f71ad7439747",
+   "status": "APPROVED",
+   "type": "CHARACTER/None",
+   "sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+   "dimensions": null,
+   "storage_path": "production-assets/visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png"
+  },
+  "CHAR-LUMI-MASTER-v01": {
+   "id": "75cf9e5d-78ec-4cac-b1bb-49e696629bc2",
+   "status": "APPROVED",
+   "type": "CHARACTER/None",
+   "sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+   "dimensions": null,
+   "storage_path": "production-assets/visual/canonical/characters/CHAR-LUMI-MASTER-v01.png"
+  },
+  "WORLD-EP005-BATHROOM-MASTER-v01": {
+   "id": "8cdeea80-1eb3-4a75-b50a-c209f1aae434",
+   "status": "APPROVED",
+   "type": "ENVIRONMENT/None",
+   "sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "dimensions": null,
+   "storage_path": "production-assets/visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png"
+  },
+  "PROP-EP005-HAND-MIRROR-v01": {
+   "id": "a61c0af2-1e8d-40e2-88d1-8848390f2a17",
+   "status": "APPROVED",
+   "type": "PROP/None",
+   "sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "dimensions": "1448x1086",
+   "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp"
+  },
+  "PROP-EP005-CLEANING-CLOTH-v01": {
+   "id": "ab33c77c-5fde-4642-9efb-706f619c4a7e",
+   "status": "APPROVED",
+   "type": "PROP/None",
+   "sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "dimensions": "1447x1087",
+   "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp"
+  },
+  "FRAME-EP005-S027-BASE-v01": {
+   "id": "d2a07b22-cf25-42ff-b86a-c4080ff24bc2",
+   "status": "APPROVED",
+   "type": "SHOT_FRAME/BASE_FRAME",
+   "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+   "dimensions": "2688x1520",
+   "storage_path": "production-assets/visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png"
+  }
+ },
+ "families": [
+  {
+   "id": "F01-MIRROR-OPEN",
+   "kind": "GEN",
+   "primary": "S001",
+   "members": [
+    "S001",
+    "S005",
+    "S013",
+    "S024",
+    "S025"
+   ],
+   "reflection_visible": true,
+   "state": "CLOSE, front-facing into Lumi's hand mirror; reflection of Mikko's face large and centred; enough of Mikko's face and Lumi's holding hand; Mikko's hands at rest, cloth not in hand (resting out of frame / below frame); clean face, clean glass, clean reflection (G03 adds smudges, G08 measures the glass)",
+   "variance": "S025 calls for Lumi's soft smile and Mikko's settled gaze (held pose approved for S025): accept the neutral-attentive F01 expression for S025, else S025 needs its own generation. S024 is G06-blocked (shares the frame).",
+   "code_ready_members": [
+    "S001",
+    "S005",
+    "S013",
+    "S025"
+   ],
+   "blocked_only_members": [
+    "S024"
+   ]
+  },
+  {
+   "id": "F02-OVERSHOULDER-MIKKO",
+   "kind": "GEN",
+   "primary": "S003",
+   "members": [
+    "S003"
+   ],
+   "reflection_visible": true,
+   "state": "CLOSE over MIKKO's shoulder toward the mirror; Mikko's face side-on plus his readable reflection; Lumi holds the mirror; cloth lowered within reach",
+   "variance": null,
+   "code_ready_members": [
+    "S003"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F03-OVERSHOULDER-LUMI",
+   "kind": "GEN",
+   "primary": "S004",
+   "members": [
+    "S004",
+    "S012"
+   ],
+   "reflection_visible": true,
+   "state": "CLOSE over LUMI's shoulder toward the mirror; Lumi's tiny hands holding the mirror angled; Mikko's reflection readable; Mikko attentive, cloth lowered, not pointing",
+   "variance": "S004 (3 marks) and S012 (2 marks) differ only in G03 overlays; the mirror tilt/angle animation is represented by the held pose + glint (Batch 0C approval).",
+   "code_ready_members": [
+    "S004",
+    "S012"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F04-FACE-MIRROR-3Q",
+   "kind": "GEN",
+   "primary": "S006",
+   "members": [
+    "S006",
+    "S007"
+   ],
+   "reflection_visible": true,
+   "state": "CLOSE front three-quarter: Mikko's physical anatomical-left cheek and its reflection both readable; Lumi holds the mirror; Mikko's free hand at rest, cloth held low in the other hand",
+   "variance": "motion start frame for both S006 (pointing) and S007 (cloth lift); S007 is \"cheek-focused\" but explicitly \"consistent with the preceding face-and-mirror view\".",
+   "code_ready_members": [
+    "S006",
+    "S007"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F05-MIRROR-CLOTH-RAISED-CHEEK",
+   "kind": "GEN",
+   "primary": "S010",
+   "members": [
+    "S010"
+   ],
+   "reflection_visible": true,
+   "state": "CLOSE mirror-centric: tiny hand mirror and Mikko's reflected face; Mikko's cloth hand raised near the (clear) cheek, about to lower",
+   "variance": "continuity source S009 end is G11-blocked; an independent start frame unblocks S010.",
+   "code_ready_members": [
+    "S010"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F06-MIRROR-HAND-RAISED-MOUTH",
+   "kind": "GEN",
+   "primary": "S016",
+   "members": [
+    "S016"
+   ],
+   "reflection_visible": true,
+   "state": "CLOSE mirror-centric with face context; Mikko's hand (cloth) raised near the (clear) mouth area, about to lower",
+   "variance": "continuity source S015 end is G11-blocked; an independent start frame unblocks S016.",
+   "code_ready_members": [
+    "S016"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F07-FACE-CLOTH-LOW",
+   "kind": "GEN",
+   "primary": "S014",
+   "members": [
+    "S014",
+    "S020"
+   ],
+   "reflection_visible": true,
+   "state": "CLOSE front-facing face-and-mirror; Mikko's face (closed mouth, nose) and the clean reflection readable; cloth held low in Mikko's hand, ready to approach; Lumi visibly holding/angling the mirror",
+   "variance": "motion start frame for S014 (toward mouth) and S020 (toward nose).",
+   "code_ready_members": [
+    "S014",
+    "S020"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F08-MEDIUM-TWOSHOT-REACH",
+   "kind": "GEN",
+   "primary": "S002",
+   "members": [
+    "S002"
+   ],
+   "reflection_visible": false,
+   "state": "MEDIUM two-shot, straight-on/slight 3/4; Lumi holds the mirror; the cloth rests within Mikko's reach (NOT in hand)",
+   "variance": "the old plan derived S002 from the shared two-shot frame; live specs give a different cloth state (pick-up start), so it is not derivable.",
+   "code_ready_members": [
+    "S002"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "kind": "GEN",
+   "primary": "S017",
+   "members": [
+    "S017"
+   ],
+   "reflection_visible": true,
+   "state": "MEDIUM two-shot front-facing, mirror visible between the characters, Mikko's reflection readable; Mikko's relaxed cloth hand",
+   "variance": "source of the S018/S019 macro crop (F15).",
+   "code_ready_members": [
+    "S017"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F10-MEDIUM-MIKKO-FACING-MIRROR",
+   "kind": "GEN",
+   "primary": "S023",
+   "members": [
+    "S023"
+   ],
+   "reflection_visible": true,
+   "state": "MEDIUM three-quarter toward Mikko facing the hand mirror; Lumi's supporting hand / partial presence; lowered cloth; clean face and reflection",
+   "variance": "Batch 0C recorded S023 = S022 end state, but S022 is CLOSE and S023 MEDIUM: an S023 frame of its own removes the S021/G11 upstream dependency (human decision).",
+   "code_ready_members": [
+    "S023"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F11-S027-START-REUSE",
+   "kind": "DER",
+   "primary": "S026",
+   "members": [
+    "S026"
+   ],
+   "reflection_visible": false,
+   "source_asset_id": "FRAME-EP005-S027-BASE-v01",
+   "method": "REUSE the exact approved bytes as the S026 motion base frame (no pixel change; provider input as-is, like S027)",
+   "expected_output": "S026 base = knees-up two-shot, clean face, cloth folded at chest height, Lumi holding the mirror upright",
+   "continuity": "S026 precedes S027 and the frame is S027's approved opening state: identical characters, props, clean face, setting and framing. S026's lift motion moves away from it, so the S026->S027 cut returns to this pose (human acceptance). S026 has no overlays or treatments.",
+   "state": "see source",
+   "variance": "MEDIUM (spec) vs knees-up two-shot: same class as S027; human acceptance.",
+   "code_ready_members": [
+    "S026"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F12-S007-END",
+   "kind": "DER",
+   "primary": "S008",
+   "members": [
+    "S008",
+    "S009"
+   ],
+   "reflection_visible": true,
+   "source_asset_id": "future approved S007 raw motion",
+   "source_frame_index": "last frame used by the approved S007 shot",
+   "method": "G04 derive_frame (exact index; crop/scale only if needed)",
+   "expected_output": "S007 end: cloth resting still on the marked cheek, three smudges as composited into the S007 base frame",
+   "continuity": "manifest: S008 \"Same face-to-mirror angle as S007\"; protected hold of S007 end (visible_at_start(N)=visible_at_end(N-1))",
+   "state": "see source",
+   "variance": "needs S007 motion first; the smudges are baked into the motion, so the G03 overlay set must be inherited through G04 (engineering gap G04_OVERLAY_CHAIN). S009 is G11-blocked.",
+   "code_ready_members": [
+    "S008"
+   ],
+   "blocked_only_members": [
+    "S009"
+   ]
+  },
+  {
+   "id": "F13-S010-END",
+   "kind": "DER",
+   "primary": "S011",
+   "members": [
+    "S011"
+   ],
+   "reflection_visible": true,
+   "source_asset_id": "future approved S010 raw motion",
+   "source_frame_index": "last frame used by the approved S010 shot",
+   "method": "G04 derive_frame",
+   "expected_output": "S010 end: cloth lowered, clear cheek, mouth + nose smudges, readable reflection",
+   "continuity": "plan: \"base = last frame of approved S010 raw motion\"",
+   "state": "see source",
+   "variance": "live S011 framing is a \"relaxed two-shot\" while S010 is mirror-centric: human must accept the S010 end framing for S011, else S011 needs its own generation. Also needs G04_OVERLAY_CHAIN (overlays + reflection certificate).",
+   "code_ready_members": [
+    "S011"
+   ],
+   "blocked_only_members": []
+  },
+  {
+   "id": "F14-S014-END",
+   "kind": "DER",
+   "primary": "S015",
+   "members": [
+    "S015"
+   ],
+   "reflection_visible": true,
+   "source_asset_id": "future approved S014 raw motion",
+   "method": "G04 derive_frame",
+   "expected_output": "S014 end",
+   "continuity": "S015 continues S014",
+   "state": "see source",
+   "variance": "S015 is G11-blocked: do not prioritise.",
+   "code_ready_members": [],
+   "blocked_only_members": [
+    "S015"
+   ]
+  },
+  {
+   "id": "F15-MACRO-REFLECTION",
+   "kind": "DER",
+   "primary": "S019",
+   "members": [
+    "S018",
+    "S019"
+   ],
+   "reflection_visible": true,
+   "source_asset_id": "future approved F09 frame (S017)",
+   "method": "deterministic crop (+ lanczos scale) of the mirror reflection region (G04 crop/scale on the still)",
+   "expected_output": "tighter macro of the clean-glass reflection",
+   "continuity": "manifest S018: image_generation_required=false, \"cut to a tighter macro reframe of the approved reflection artwork\", production notes \"Prepare the approved S017 artwork\"; S019 holds the S018 macro view",
+   "state": "see source",
+   "variance": "quality risk: a macro crop of a MEDIUM frame upscales the reflection (human check). S018 is G07-blocked; S019 (static macro hold) can use F15 without G07.",
+   "code_ready_members": [
+    "S019"
+   ],
+   "blocked_only_members": [
+    "S018"
+   ]
+  },
+  {
+   "id": "F16-S020-S021-END",
+   "kind": "DER",
+   "primary": "S022",
+   "members": [
+    "S021",
+    "S022"
+   ],
+   "reflection_visible": true,
+   "source_asset_id": "future approved S020 raw motion (S021) / S021 raw motion (S022)",
+   "method": "G04 derive_frame",
+   "expected_output": "cloth at the nose, then lowered from the clear nose",
+   "continuity": "S021 continues S020; S022 continues S021",
+   "state": "see source",
+   "variance": "S021 is G11-blocked, so S022 waits on G11 unless a human accepts F07 (cloth low, clean face) as S022's start.",
+   "code_ready_members": [
+    "S022"
+   ],
+   "blocked_only_members": [
+    "S021"
+   ]
+  }
+ ],
+ "shots": {
+  "S001": {
+   "family": "F01-MIRROR-OPEN",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Slightly front-facing view into the hand mirror, aligned to preserve correct mirror reversal of Mikko's anatomical left cheek.",
+   "framing": "Close composition centered on the clean hand-mirror reflection, with Mikko's reflected face large enough to clearly read all three berry smudges. Include enough of Lumi's hands and partial presence to show that she is holding and angling the mirror.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "Berries on my face! I want to feel fresh."
+    },
+    {
+     "speaker": "Lumi",
+     "text": "I see three little smudges."
+    }
+   ]
+  },
+  "S002": {
+   "family": "F08-MEDIUM-TWOSHOT-REACH",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "MEDIUM",
+   "angle": "Straight-on or slight three-quarter angle consistent with S001, maintaining readable facial marks and the mirror as a held prop.",
+   "framing": "Medium view of Mikko and Lumi in the same neutral setting. Mikko, the cloth, Lumi, and the hand mirror remain readable.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "Where shall I try first?"
+    }
+   ]
+  },
+  "S003": {
+   "family": "F02-OVERSHOULDER-MIKKO",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Over Mikko’s shoulder, angled toward the mirror so the reflected face and all three marks remain readable.",
+   "framing": "Close over-shoulder composition from behind or slightly beside Mikko, showing Mikko’s face and the mirror reflection together.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "Let’s look for one little spot."
+    }
+   ]
+  },
+  "S004": {
+   "family": "F03-OVERSHOULDER-LUMI",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Over Lumi’s shoulder toward the mirror, maintaining continuity with S003 and keeping Mikko’s reflection oriented consistently.",
+   "framing": "Close over-shoulder mirror view showing Lumi’s hands and the mirror reflection of Mikko’s face, with the selected cheek mark readable.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "A glint on his cheek!"
+    },
+    {
+     "speaker": "Lumi",
+     "text": "Find the next smudge!"
+    }
+   ]
+  },
+  "S005": {
+   "family": "F01-MIRROR-OPEN",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Front-facing close angle aligned with the mirror reflection; maintain a readable, unobstructed view of the cheek mark and clean mirror glass.",
+   "framing": "Steady face-and-mirror composition showing Lumi holding the mirror and a clear reflected view of Mikko’s marked anatomical left cheek.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S006": {
+   "family": "F04-FACE-MIRROR-3Q",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Front three-quarter angle aligned so the physical cheek and its mirror reflection can be compared without ambiguity.",
+   "framing": "Close face-and-mirror composition showing Mikko’s face, the selected cheek, Lumi’s hand-held mirror, and the reflected cheek mark clearly.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "This cheek. I’ll try a gentle wipe."
+    }
+   ]
+  },
+  "S007": {
+   "family": "F04-FACE-MIRROR-3Q",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Front three-quarter angle consistent with the preceding face-and-mirror view; preserve the selected cheek orientation.",
+   "framing": "Clear cheek-focused view including Mikko’s hand, the soft cloth, and enough facial context to identify the anatomical left cheek.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "Wipe your cheek with me. Soft and slow."
+    },
+    {
+     "speaker": "Mikko",
+     "text": "Can you pretend to wipe your cheek?"
+    }
+   ]
+  },
+  "S008": {
+   "family": "F12-S007-END",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Same face-to-mirror angle and screen orientation as S007.",
+   "framing": "Locked close view matching the cheek composition established in S007; the selected cheek, stationary cloth, and enough of the mirror/reflection context remain readable.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S009": {
+   "family": "F12-S007-END",
+   "code_ready": false,
+   "code_blockers": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Three-quarter facial angle matching the selected cheek and the previous shot’s readable cheek orientation.",
+   "framing": "Unbroken close view of Mikko’s cheek and the nearby lower-face area, with the cloth passage clearly readable.",
+   "image_generation_required_manifest": false,
+   "video_generation_required_manifest": true,
+   "overlays": [],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S010": {
+   "family": "F05-MIRROR-CLOTH-RAISED-CHEEK",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Slightly front-facing angle toward the mirror, aligned with the reflection rather than looking at the mirror glass as a dirty surface.",
+   "framing": "Close view of the tiny hand mirror and Mikko’s reflected face, composed so the clear anatomical left cheek and the two remaining smudges are simultaneously readable.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "That cheek is clear. Two smudges left."
+    }
+   ]
+  },
+  "S011": {
+   "family": "F13-S010-END",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Eye-level three-quarter angle that preserves the established mirror readability and keeps Mikko’s anatomical left cheek consistent.",
+   "framing": "Relaxed two-shot with Mikko and Lumi both readable and the mirror face visible enough to confirm the clear cheek and remaining smudges.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "dialogue": []
+  },
+  "S012": {
+   "family": "F03-OVERSHOULDER-LUMI",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Slight over-shoulder angle from Lumi’s side toward Mikko and the mirror surface; keep the reflection readable without showing a dirty mirror.",
+   "framing": "Close two-character mirror-view composition, prioritizing Lumi’s mirror angle and the reflected mouth-area berry mark while retaining enough of Mikko’s face and lowered cloth to show the action.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "By your mouth!"
+    },
+    {
+     "speaker": "Lumi",
+     "text": "Find the next smudge!"
+    }
+   ]
+  },
+  "S013": {
+   "family": "F01-MIRROR-OPEN",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Mirror-facing angle that clearly shows the reflected mouth-area mark while retaining enough of Lumi’s hand and Mikko’s lowered cloth for continuity.",
+   "framing": "Close, steady view centered on the hand mirror reflection and the visible skin beside Mikko’s closed mouth.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S014": {
+   "family": "F07-FACE-CLOTH-LOW",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Front-facing angle aligned with the mirror reflection; keep Mikko’s face and the reflected target area visually consistent with S013.",
+   "framing": "Clear close face-and-mirror view, with Mikko’s closed mouth and the small smudge beside it readable while Lumi’s mirror remains visibly held and angled.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "I’ll slow my hand. One little wipe."
+    }
+   ]
+  },
+  "S015": {
+   "family": "F14-S014-END",
+   "code_ready": false,
+   "code_blockers": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Front-facing angle aligned with the established mirror composition; keep the cloth contact area unobscured.",
+   "framing": "Close face view centered on the mouth-area mark and the approaching cloth, with enough surrounding facial area to confirm the nose mark remains and the cheek is clear.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S016": {
+   "family": "F06-MIRROR-HAND-RAISED-MOUTH",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Aligned with the mirror reflection from the established setting and lighting; preserve the readable reflection angle from S015.",
+   "framing": "Close view centered on the tiny hand mirror and its reflection, with enough surrounding face context to read the cleared cheek and mouth area and the remaining nose mark.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "That spot is gone. One is left."
+    }
+   ]
+  },
+  "S017": {
+   "family": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "MEDIUM",
+   "angle": "Established front-facing angle with the mirror visible between the characters.",
+   "framing": "Medium two-shot matching the established setting and lighting; Mikko and Lumi, the hand mirror, and Mikko's reflection remain readable.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S018": {
+   "family": "F15-MACRO-REFLECTION",
+   "code_ready": false,
+   "code_blockers": [
+    "G07_IN_SHOT_CUT"
+   ],
+   "provider_motion": false,
+   "framing_scale": "MACRO",
+   "angle": "Mirror-aligned reflection angle, matching the established mirror composition while tightening scale.",
+   "framing": "Begin on the approved episode artwork with Lumi adjusting the mirror, then cut to a tighter macro reflection showing enough of Mikko’s nose contour to identify the final smudge.",
+   "image_generation_required_manifest": false,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-GLINT-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "One spot left!"
+    },
+    {
+     "speaker": "Lumi",
+     "text": "Find the next smudge!"
+    }
+   ]
+  },
+  "S019": {
+   "family": "F15-MACRO-REFLECTION",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "MACRO",
+   "angle": "Match the reflection angle established at the end of S018.",
+   "framing": "Maintain the macro view of the clean mirror glass and Mikko's reflection, with the remaining nose smudge clearly visible.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S020": {
+   "family": "F07-FACE-CLOTH-LOW",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Front-facing conversational angle aligned with the mirror so the nose smudge and both cleared areas are readable in Mikko's face and reflection.",
+   "framing": "Close face view including Mikko's face, the clean mirror reflection, Lumi's mirror-holding presence, and the cloth moving toward Mikko's nose.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [
+    "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01"
+   ],
+   "treatments": [],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "My nose! I’ll wipe just that spot."
+    }
+   ]
+  },
+  "S021": {
+   "family": "F16-S020-S021-END",
+   "code_ready": false,
+   "code_blockers": [
+    "G11_TRACKED_OVERLAY_REMOVAL"
+   ],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Front-facing angle comparable to the opening and final mirror compositions, with Mikko’s face and reflected face aligned clearly.",
+   "framing": "Unbroken close face view of Mikko with Lumi’s tiny hand mirror visible enough to establish the reflection and final cloth contact.",
+   "image_generation_required_manifest": false,
+   "video_generation_required_manifest": true,
+   "overlays": [],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S022": {
+   "family": "F16-S020-S021-END",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "CLOSE",
+   "angle": "Front-facing angle aligned with the established mirror view; keep Mikko’s face and reflected face visually consistent with the prior shot.",
+   "framing": "Close facial detail including Mikko’s nose, cheek, mouth area, the lowered cloth hand, and enough of Lumi’s mirror-holding presence to establish the observation.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [],
+   "treatments": [],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "Your nose is clear, too."
+    }
+   ]
+  },
+  "S023": {
+   "family": "F10-MEDIUM-MIKKO-FACING-MIRROR",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "MEDIUM",
+   "angle": "Three-quarter angle toward Mikko and the mirror, preserving the established opening/final mirror composition relationship.",
+   "framing": "Medium view of Mikko facing the hand mirror, with Lumi’s supporting hand and partial presence readable in frame.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S024": {
+   "family": "F01-MIRROR-OPEN",
+   "code_ready": false,
+   "code_blockers": [
+    "G06_KEYFRAMED_CROP_SCALE"
+   ],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Front-facing mirror angle, aligned for a comparable opening/final composition.",
+   "framing": "Close view matching the saved opening mirror composition, including Mikko’s face and mirror reflection.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [],
+   "treatments": [],
+   "dialogue": []
+  },
+  "S025": {
+   "family": "F01-MIRROR-OPEN",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": false,
+   "framing_scale": "CLOSE",
+   "angle": "Match S001's established camera angle and mirror angle; preserve the comparable opening/final transformation view.",
+   "framing": "Matched mirror composition from S001, showing Mikko, Lumi's mirror hold, and Mikko's clean reflection.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": false,
+   "overlays": [],
+   "treatments": [
+    "TREATMENT-EP005-MIRROR-REFLECTION-v01",
+    "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01"
+   ],
+   "dialogue": [
+    {
+     "speaker": "Lumi",
+     "text": "Cheek, mouth, nose. All clear."
+    }
+   ]
+  },
+  "S026": {
+   "family": "F11-S027-START-REUSE",
+   "code_ready": true,
+   "code_blockers": [],
+   "provider_motion": true,
+   "framing_scale": "MEDIUM",
+   "angle": "Front-facing angle consistent with the established mirror composition and the clean-reflection continuity from S025.",
+   "framing": "Medium two-shot including Mikko’s clear face, the cloth held away from his face, Lumi, and the hand mirror.",
+   "image_generation_required_manifest": true,
+   "video_generation_required_manifest": true,
+   "overlays": [],
+   "treatments": [],
+   "dialogue": [
+    {
+     "speaker": "Mikko",
+     "text": "One little spot at a time!"
+    }
+   ]
+  }
+ },
+ "G03_FUTURE_RECORDS": [
+  {
+   "SHOT_ID": "S001",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S001",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S001",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S002",
+   "FRAME_FAMILY_ID": "F08-MEDIUM-TWOSHOT-REACH",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S002",
+   "FRAME_FAMILY_ID": "F08-MEDIUM-TWOSHOT-REACH",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S002",
+   "FRAME_FAMILY_ID": "F08-MEDIUM-TWOSHOT-REACH",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S003",
+   "FRAME_FAMILY_ID": "F02-OVERSHOULDER-MIKKO",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S003",
+   "FRAME_FAMILY_ID": "F02-OVERSHOULDER-MIKKO",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S003",
+   "FRAME_FAMILY_ID": "F02-OVERSHOULDER-MIKKO",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S004",
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S004",
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S004",
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S005",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S005",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S005",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S006",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S006",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S006",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S007",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S007",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S007",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S008",
+   "FRAME_FAMILY_ID": "F12-S007-END",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+   "PLACEMENT_RECORD_REQUIRED": false,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": false,
+   "note": "inherited from the source motion via G04 (needs G04_OVERLAY_CHAIN), no new record",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S008",
+   "FRAME_FAMILY_ID": "F12-S007-END",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": false,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": false,
+   "note": "inherited from the source motion via G04 (needs G04_OVERLAY_CHAIN), no new record",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S008",
+   "FRAME_FAMILY_ID": "F12-S007-END",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": false,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": false,
+   "note": "inherited from the source motion via G04 (needs G04_OVERLAY_CHAIN), no new record",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S010",
+   "FRAME_FAMILY_ID": "F05-MIRROR-CLOTH-RAISED-CHEEK",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S010",
+   "FRAME_FAMILY_ID": "F05-MIRROR-CLOTH-RAISED-CHEEK",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S011",
+   "FRAME_FAMILY_ID": "F13-S010-END",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": false,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": false,
+   "note": "inherited from the source motion via G04 (needs G04_OVERLAY_CHAIN), no new record",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S011",
+   "FRAME_FAMILY_ID": "F13-S010-END",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": false,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": false,
+   "note": "inherited from the source motion via G04 (needs G04_OVERLAY_CHAIN), no new record",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S012",
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S012",
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S013",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S013",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S014",
+   "FRAME_FAMILY_ID": "F07-FACE-CLOTH-LOW",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S014",
+   "FRAME_FAMILY_ID": "F07-FACE-CLOTH-LOW",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": null,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": "REFLECTION placement only if the reflection is PRESERVEd; COMPOSITE copies the FACE marks",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S016",
+   "FRAME_FAMILY_ID": "F06-MIRROR-HAND-RAISED-MOUTH",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S017",
+   "FRAME_FAMILY_ID": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S018",
+   "FRAME_FAMILY_ID": "F15-MACRO-REFLECTION",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": false
+  },
+  {
+   "SHOT_ID": "S019",
+   "FRAME_FAMILY_ID": "F15-MACRO-REFLECTION",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S020",
+   "FRAME_FAMILY_ID": "F07-FACE-CLOTH-LOW",
+   "OVERLAY_ASSET": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "PLACEMENT_RECORD_REQUIRED": true,
+   "MIRROR_COPY_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "note": null,
+   "code_ready": true
+  }
+ ],
+ "G08_FUTURE_RECORDS": [
+  {
+   "SHOT_ID": "S004",
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "TREATMENT_TYPE": "MIRROR-GLINT",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": true,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": false,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": "SFX-LUMI-CLUE-CHIME",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S006",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "TREATMENT_TYPE": "MIRROR-REFLECTION",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": false,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S007",
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "TREATMENT_TYPE": "MIRROR-REFLECTION",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": false,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S010",
+   "FRAME_FAMILY_ID": "F05-MIRROR-CLOTH-RAISED-CHEEK",
+   "TREATMENT_TYPE": "MIRROR-REFLECTION",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": false,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S011",
+   "FRAME_FAMILY_ID": "F13-S010-END",
+   "TREATMENT_TYPE": "MIRROR-REFLECTION",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": false,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S012",
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "TREATMENT_TYPE": "MIRROR-GLINT",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": true,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": false,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S014",
+   "FRAME_FAMILY_ID": "F07-FACE-CLOTH-LOW",
+   "TREATMENT_TYPE": "MIRROR-REFLECTION",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": false,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": null,
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S018",
+   "FRAME_FAMILY_ID": "F15-MACRO-REFLECTION",
+   "TREATMENT_TYPE": "MIRROR-GLINT",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": true,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": false,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": null,
+   "code_ready": false
+  },
+  {
+   "SHOT_ID": "S025",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "TREATMENT_TYPE": "MIRROR-REFLECTION",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": false,
+   "POP_RECORD_REQUIRED": false,
+   "REFLECTION_RECORD_REQUIRED": true,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": "SFX-COMPLETION-POP-v01",
+   "code_ready": true
+  },
+  {
+   "SHOT_ID": "S025",
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "TREATMENT_TYPE": "COMPLETION-POP-ACCENT",
+   "MIRROR_REGION_RECORD_REQUIRED": true,
+   "GLINT_RECORD_REQUIRED": false,
+   "POP_RECORD_REQUIRED": true,
+   "REFLECTION_RECORD_REQUIRED": false,
+   "HUMAN_MEASUREMENT_REQUIRED": true,
+   "audio_sync": "SFX-COMPLETION-POP-v01",
+   "code_ready": true
+  }
+ ],
+ "DIALOGUE_DEPENDENCY": [
+  {
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "SHOTS": [
+    "S001",
+    "S005",
+    "S013",
+    "S024",
+    "S025"
+   ],
+   "MIKKO_LINES_REQUIRED": [
+    "S001: Berries on my face! I want to feel fresh."
+   ],
+   "LUMI_LINES_REQUIRED": [
+    "S001: I see three little smudges.",
+    "S025: Cheek, mouth, nose. All clear."
+   ],
+   "TOTAL_TTS_LINES": 3
+  },
+  {
+   "FRAME_FAMILY_ID": "F02-OVERSHOULDER-MIKKO",
+   "SHOTS": [
+    "S003"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [
+    "S003: Let’s look for one little spot."
+   ],
+   "TOTAL_TTS_LINES": 1
+  },
+  {
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "SHOTS": [
+    "S004",
+    "S012"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [
+    "S004: A glint on his cheek!",
+    "S004: Find the next smudge!",
+    "S012: By your mouth!",
+    "S012: Find the next smudge!"
+   ],
+   "TOTAL_TTS_LINES": 4
+  },
+  {
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "SHOTS": [
+    "S006",
+    "S007"
+   ],
+   "MIKKO_LINES_REQUIRED": [
+    "S006: This cheek. I’ll try a gentle wipe.",
+    "S007: Wipe your cheek with me. Soft and slow.",
+    "S007: Can you pretend to wipe your cheek?"
+   ],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 3
+  },
+  {
+   "FRAME_FAMILY_ID": "F05-MIRROR-CLOTH-RAISED-CHEEK",
+   "SHOTS": [
+    "S010"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [
+    "S010: That cheek is clear. Two smudges left."
+   ],
+   "TOTAL_TTS_LINES": 1
+  },
+  {
+   "FRAME_FAMILY_ID": "F06-MIRROR-HAND-RAISED-MOUTH",
+   "SHOTS": [
+    "S016"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [
+    "S016: That spot is gone. One is left."
+   ],
+   "TOTAL_TTS_LINES": 1
+  },
+  {
+   "FRAME_FAMILY_ID": "F07-FACE-CLOTH-LOW",
+   "SHOTS": [
+    "S014",
+    "S020"
+   ],
+   "MIKKO_LINES_REQUIRED": [
+    "S014: I’ll slow my hand. One little wipe.",
+    "S020: My nose! I’ll wipe just that spot."
+   ],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 2
+  },
+  {
+   "FRAME_FAMILY_ID": "F08-MEDIUM-TWOSHOT-REACH",
+   "SHOTS": [
+    "S002"
+   ],
+   "MIKKO_LINES_REQUIRED": [
+    "S002: Where shall I try first?"
+   ],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 1
+  },
+  {
+   "FRAME_FAMILY_ID": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "SHOTS": [
+    "S017"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 0
+  },
+  {
+   "FRAME_FAMILY_ID": "F10-MEDIUM-MIKKO-FACING-MIRROR",
+   "SHOTS": [
+    "S023"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 0
+  },
+  {
+   "FRAME_FAMILY_ID": "F11-S027-START-REUSE",
+   "SHOTS": [
+    "S026"
+   ],
+   "MIKKO_LINES_REQUIRED": [
+    "S026: One little spot at a time!"
+   ],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 1
+  },
+  {
+   "FRAME_FAMILY_ID": "F12-S007-END",
+   "SHOTS": [
+    "S008",
+    "S009"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 0
+  },
+  {
+   "FRAME_FAMILY_ID": "F13-S010-END",
+   "SHOTS": [
+    "S011"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 0
+  },
+  {
+   "FRAME_FAMILY_ID": "F14-S014-END",
+   "SHOTS": [
+    "S015"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [],
+   "TOTAL_TTS_LINES": 0
+  },
+  {
+   "FRAME_FAMILY_ID": "F15-MACRO-REFLECTION",
+   "SHOTS": [
+    "S018",
+    "S019"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [
+    "S018: One spot left!",
+    "S018: Find the next smudge!"
+   ],
+   "TOTAL_TTS_LINES": 2
+  },
+  {
+   "FRAME_FAMILY_ID": "F16-S020-S021-END",
+   "SHOTS": [
+    "S021",
+    "S022"
+   ],
+   "MIKKO_LINES_REQUIRED": [],
+   "LUMI_LINES_REQUIRED": [
+    "S022: Your nose is clear, too."
+   ],
+   "TOTAL_TTS_LINES": 1
+  }
+ ],
+ "families_only_for_blocked_shots": [
+  "F14-S014-END"
+ ],
+ "RECOMMENDED_FIRST_FRAME_BATCH": {
+  "families": [
+   "F01-MIRROR-OPEN",
+   "F03-OVERSHOULDER-LUMI",
+   "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "F11-S027-START-REUSE",
+   "F15-MACRO-REFLECTION"
+  ],
+  "image_calls_required": 3,
+  "shots_unlocked": [
+   "S001",
+   "S004",
+   "S005",
+   "S012",
+   "S013",
+   "S017",
+   "S019",
+   "S025",
+   "S026"
+  ],
+  "stills_no_video": [
+   "S004",
+   "S005",
+   "S012",
+   "S013",
+   "S017",
+   "S019",
+   "S025"
+  ],
+  "motion_shots_needing_separate_seedance_authorisation": [
+   "S001",
+   "S026"
+  ],
+  "tts_lines": [
+   "S001: Mikko: Berries on my face! I want to feel fresh.",
+   "S001: Lumi: I see three little smudges.",
+   "S004: Lumi: A glint on his cheek!",
+   "S004: Lumi: Find the next smudge!",
+   "S012: Lumi: By your mouth!",
+   "S012: Lumi: Find the next smudge!",
+   "S025: Lumi: Cheek, mouth, nose. All clear.",
+   "S026: Mikko: One little spot at a time!"
+  ],
+  "g03_records": [
+   "S001",
+   "S004",
+   "S005",
+   "S012",
+   "S013",
+   "S017",
+   "S019"
+  ],
+  "g08_records": [
+   "S004",
+   "S012",
+   "S025"
+  ]
+ }
+}

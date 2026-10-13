@@ -1,0 +1,291 @@
+{
+ "source_wording": "APPROVED S027 Flare package (GENERATION_PACKAGE_v2.json, prompt_sha256 d24d0bab891cd9ea0eece2039f3980b989e8fc2d0c890d5f43c05dabfa70e2d9)",
+ "references_required": [
+  {
+   "n": 1,
+   "asset_id": "CHAR-MIKKO-MASTER-v01",
+   "sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8"
+  },
+  {
+   "n": 2,
+   "asset_id": "CHAR-LUMI-MASTER-v01",
+   "sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41"
+  },
+  {
+   "n": 3,
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733"
+  },
+  {
+   "n": 4,
+   "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+   "sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac"
+  },
+  {
+   "n": 5,
+   "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+   "sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db"
+  }
+ ],
+ "briefs": [
+  {
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "REQUIRED_SHOTS": [
+    "S001",
+    "S005",
+    "S013",
+    "S024",
+    "S025"
+   ],
+   "CAMERA": "CLOSE, slightly front-facing view into the hand mirror, locked",
+   "COMPOSITION": "the hand mirror large and centred, Mikko's reflection filling most of the glass; the edge of Mikko's face/cheek and Lumi's tiny holding hand visible at the frame edge",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko looks calmly and attentively into the mirror, hands relaxed and out of the way; the soft light-blue fleece cleaning cloth from reference image 5 is not in his hands and is not in view. Lumi holds the mirror steady by its handle with a gentle, attentive expression.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, slightly front-facing view into the hand mirror, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: the hand mirror large and centred, Mikko's reflection filling most of the glass; the edge of Mikko's face/cheek and Lumi's tiny holding hand visible at the frame edge. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko looks calmly and attentively into the mirror, hands relaxed and out of the way; the soft light-blue fleece cleaning cloth from reference image 5 is not in his hands and is not in view. Lumi holds the mirror steady by its handle with a gentle, attentive expression. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "c4569262cb3ff27e971d062dc9cf6298ddc0ace2465549b70c51a9d4a799012e",
+   "brief_chars": 2433
+  },
+  {
+   "FRAME_FAMILY_ID": "F02-OVERSHOULDER-MIKKO",
+   "REQUIRED_SHOTS": [
+    "S003"
+   ],
+   "CAMERA": "CLOSE, over Mikko's shoulder toward the mirror, locked",
+   "COMPOSITION": "Mikko's shoulder and the side of his head in the foreground, the hand mirror held by Lumi beyond it, Mikko's reflected face readable in the glass",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko looks into the mirror, calm; the soft light-blue fleece cleaning cloth from reference image 5 lowered, resting within his reach. Lumi floats beside the mirror holding it steady.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, over Mikko's shoulder toward the mirror, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Mikko's shoulder and the side of his head in the foreground, the hand mirror held by Lumi beyond it, Mikko's reflected face readable in the glass. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko looks into the mirror, calm; the soft light-blue fleece cleaning cloth from reference image 5 lowered, resting within his reach. Lumi floats beside the mirror holding it steady. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "0ef61b9f5b79f41bbaec476d13ec222e27b11969e9cfc979b1716340d4e14400",
+   "brief_chars": 2317
+  },
+  {
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "REQUIRED_SHOTS": [
+    "S004",
+    "S012"
+   ],
+   "CAMERA": "CLOSE, over Lumi's shoulder toward the mirror and Mikko, locked",
+   "COMPOSITION": "Lumi's round glowing back and tiny hands in the foreground holding the mirror slightly angled; Mikko's reflected face readable in the glass, Mikko watching attentively",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko watches calmly, not pointing, the soft light-blue fleece cleaning cloth from reference image 5 lowered in his hand. Lumi gently angles the mirror toward him.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, over Lumi's shoulder toward the mirror and Mikko, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Lumi's round glowing back and tiny hands in the foreground holding the mirror slightly angled; Mikko's reflected face readable in the glass, Mikko watching attentively. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko watches calmly, not pointing, the soft light-blue fleece cleaning cloth from reference image 5 lowered in his hand. Lumi gently angles the mirror toward him. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "ef2a65b0a0d17fafba30e730b61eaa44e5c430e721b5875d6eec5725153d410d",
+   "brief_chars": 2328
+  },
+  {
+   "FRAME_FAMILY_ID": "F04-FACE-MIRROR-3Q",
+   "REQUIRED_SHOTS": [
+    "S006",
+    "S007"
+   ],
+   "CAMERA": "CLOSE, front three-quarter, locked",
+   "COMPOSITION": "Mikko's face (his anatomical left cheek toward camera) and the hand mirror beside it, so the physical cheek and its reflection can be compared directly",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko's free hand rests relaxed at his side; the soft light-blue fleece cleaning cloth from reference image 5 is held low in his other hand. Lumi holds the mirror steady.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, front three-quarter, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Mikko's face (his anatomical left cheek toward camera) and the hand mirror beside it, so the physical cheek and its reflection can be compared directly. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko's free hand rests relaxed at his side; the soft light-blue fleece cleaning cloth from reference image 5 is held low in his other hand. Lumi holds the mirror steady. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "cd5a04f82480597f6c9f27843fb7cce70d26e7bb45c44f08bad7ede52ab1ef88",
+   "brief_chars": 2290
+  },
+  {
+   "FRAME_FAMILY_ID": "F05-MIRROR-CLOTH-RAISED-CHEEK",
+   "REQUIRED_SHOTS": [
+    "S010"
+   ],
+   "CAMERA": "CLOSE, slightly front-facing toward the mirror, locked",
+   "COMPOSITION": "the tiny hand mirror and Mikko's reflected face prominent, enough of Mikko's real face for context",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko holds the soft light-blue fleece cleaning cloth from reference image 5 raised near (not touching) his anatomical left cheek, about to lower it; calm, pleased expression. Lumi holds the mirror steady.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, slightly front-facing toward the mirror, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: the tiny hand mirror and Mikko's reflected face prominent, enough of Mikko's real face for context. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko holds the soft light-blue fleece cleaning cloth from reference image 5 raised near (not touching) his anatomical left cheek, about to lower it; calm, pleased expression. Lumi holds the mirror steady. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "7ed4a527917f736a6de33705125a22e6afbad81f447f7f46570ef9f0252e20cd",
+   "brief_chars": 2292
+  },
+  {
+   "FRAME_FAMILY_ID": "F06-MIRROR-HAND-RAISED-MOUTH",
+   "REQUIRED_SHOTS": [
+    "S016"
+   ],
+   "CAMERA": "CLOSE, aligned with the mirror reflection, locked",
+   "COMPOSITION": "the tiny hand mirror and its reflection centred, with surrounding face context",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko's hand holding the soft light-blue fleece cleaning cloth from reference image 5 is raised near (not touching) the skin beside his mouth, about to lower; Lumi holds the mirror and looks at the result.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, aligned with the mirror reflection, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: the tiny hand mirror and its reflection centred, with surrounding face context. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko's hand holding the soft light-blue fleece cleaning cloth from reference image 5 is raised near (not touching) the skin beside his mouth, about to lower; Lumi holds the mirror and looks at the result. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "72dbc185c15cee966575542ff3382c485937710181f0c48b8ca16df6960c8b10",
+   "brief_chars": 2267
+  },
+  {
+   "FRAME_FAMILY_ID": "F07-FACE-CLOTH-LOW",
+   "REQUIRED_SHOTS": [
+    "S014",
+    "S020"
+   ],
+   "CAMERA": "CLOSE, front-facing, aligned with the mirror reflection, locked",
+   "COMPOSITION": "Mikko's face (closed mouth and nose readable) with the hand mirror and its clean reflection beside it",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko holds the soft light-blue fleece cleaning cloth from reference image 5 low in front of his chest, ready to bring it up slowly; Lumi visibly holds and angles the mirror.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, front-facing, aligned with the mirror reflection, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Mikko's face (closed mouth and nose readable) with the hand mirror and its clean reflection beside it. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko holds the soft light-blue fleece cleaning cloth from reference image 5 low in front of his chest, ready to bring it up slowly; Lumi visibly holds and angles the mirror. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "25061e5ca4383418f2ea7738864355a20198cd01b30554fca58210d8dac5a111",
+   "brief_chars": 2273
+  },
+  {
+   "FRAME_FAMILY_ID": "F08-MEDIUM-TWOSHOT-REACH",
+   "REQUIRED_SHOTS": [
+    "S002"
+   ],
+   "CAMERA": "MEDIUM, straight-on or slight three-quarter, locked",
+   "COMPOSITION": "Mikko and Lumi both fully readable, Lumi holding the hand mirror, a little space between them",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "the soft light-blue fleece cleaning cloth from reference image 5 lies neatly within Mikko's reach (for example on the vanity edge beside him), not in his hands; Mikko about to reach for it, Lumi holds the mirror.",
+   "MIRROR_STATE": "clean glass, full outline visible, plain sheen",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. MEDIUM, straight-on or slight three-quarter, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Mikko and Lumi both fully readable, Lumi holding the hand mirror, a little space between them. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: the soft light-blue fleece cleaning cloth from reference image 5 lies neatly within Mikko's reach (for example on the vanity edge beside him), not in his hands; Mikko about to reach for it, Lumi holds the mirror. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror glass shows a plain pale-blue sheen. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "aea40c2d3a170115fcca3881c098294669393b450bb3fe6ef21cd27d4d5ba870",
+   "brief_chars": 2216
+  },
+  {
+   "FRAME_FAMILY_ID": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "REQUIRED_SHOTS": [
+    "S017",
+    "S018 (macro source)",
+    "S019 (macro source)"
+   ],
+   "CAMERA": "MEDIUM, front-facing, locked",
+   "COMPOSITION": "Mikko and Lumi both readable with the hand mirror visible between them; the mirror large enough that Mikko's reflection is readable and can later be cropped to a macro view",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko relaxed, the soft light-blue fleece cleaning cloth from reference image 5 loosely in his lowered hand; Lumi holds the mirror up between them.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. MEDIUM, front-facing, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Mikko and Lumi both readable with the hand mirror visible between them; the mirror large enough that Mikko's reflection is readable and can later be cropped to a macro view. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko relaxed, the soft light-blue fleece cleaning cloth from reference image 5 loosely in his lowered hand; Lumi holds the mirror up between them. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "5cd6922bba82e8c7674e3b563b94242beac338afe952399360712198b800cb6c",
+   "brief_chars": 2282
+  },
+  {
+   "FRAME_FAMILY_ID": "F10-MEDIUM-MIKKO-FACING-MIRROR",
+   "REQUIRED_SHOTS": [
+    "S023"
+   ],
+   "CAMERA": "MEDIUM, three-quarter toward Mikko and the mirror, locked",
+   "COMPOSITION": "Mikko facing the hand mirror, his reflected face readable; Lumi's supporting hand and partial presence in frame",
+   "CHARACTERS": [
+    "CHAR-MIKKO-MASTER-v01 (ref 1)",
+    "CHAR-LUMI-MASTER-v01 (ref 2)"
+   ],
+   "PROPS": [
+    "PROP-EP005-HAND-MIRROR-v01 (ref 4)",
+    "PROP-EP005-CLEANING-CLOTH-v01 (ref 5)"
+   ],
+   "BACKGROUND": "WORLD-EP005-BATHROOM-MASTER-v01 (ref 3), unchanged, softly out of focus",
+   "FACIAL_STATE": "Mikko checks his reflection with a calm, pleased look; the soft light-blue fleece cleaning cloth from reference image 5 lowered in his hand.",
+   "MIRROR_STATE": "clean glass, full outline visible, clean readable mirror-reversed reflection of Mikko (G03 REFLECTION marks + G08 PRESERVE)",
+   "CLEAN_FACE_OR_SMUDGE_STATE": "CLEAN (zero smudges; G03 adds the shot's smudges deterministically)",
+   "CONTINUITY_CONSTRAINTS": "same character models, outfits, cloth, mirror and bathroom as S027-S029; locked camera; output normalised by G04 (crop to 16:9, scale to 1920x1080) before approval",
+   "NEGATIVE_CONSTRAINTS": "Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "EXACT_VISUAL_BRIEF": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. MEDIUM, three-quarter toward Mikko and the mirror, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Mikko facing the hand mirror, his reflected face readable; Lumi's supporting hand and partial presence in frame. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Pose: Mikko checks his reflection with a calm, pleased look; the soft light-blue fleece cleaning cloth from reference image 5 lowered in his hand. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "brief_sha256": "fcae5de644c12bf96c9ae9b6b0675c66d889a658245fcc68cd2255e8e7de8a87",
+   "brief_chars": 2243
+  }
+ ]
+}
