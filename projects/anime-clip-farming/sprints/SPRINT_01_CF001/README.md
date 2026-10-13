@@ -1,6 +1,15 @@
-# SPRINT_01_CF001
+# SPRINT_01_CF001 — Market & Trend Radar v0.1
 
-NOT AUTHORISED. Placeholder created by Sprint 0 so the folder map exists.
-Nothing in this folder is implemented. A separate Company Brain brief must authorise this sprint before any work starts here.
+**Status: COMPLETE (2026-10-13). STOPPED before CF-002.** Authorised by Company Brain (Aquila) 2026-10-13T03:30Z.
 
-**Pre-Sprint 1 status (2026-10-07):** the dedicated Supabase project and the runtime role `cf_n8n_runtime` exist; migrations 0001 and 0002 have been applied and verified (2026-10-07); the runtime role has no password and the n8n credential waits on a human. See `../../evidence/PRE_CF001_DATABASE_ACTIVATION_EVIDENCE.md`. CF-001 itself is still not authorised.
+| Document | Content |
+|---|---|
+| [CF001_WORKFLOW_DESIGN.md](CF001_WORKFLOW_DESIGN.md) | n8n workflow `AJklHNEXHrtqkb0x`, 25 nodes, DB contract, idempotency |
+| [CF001_DATA_SOURCE_AND_SCORING_v0.1.md](CF001_DATA_SOURCE_AND_SCORING_v0.1.md) | AniList queries, lane vocabulary and scoring formulas (Sprint 1 implementation decisions), calibration finding |
+| [CF001_TEST_PLAN_AND_RESULTS.md](CF001_TEST_PLAN_AND_RESULTS.md) | Phases A-D, replay, error paths, honest gaps |
+| [CF001_LIVE_SMOKE_EVIDENCE.md](CF001_LIVE_SMOKE_EVIDENCE.md) | Live run, rows, before/after counts |
+| [CF001_FINAL_REPORT.md](CF001_FINAL_REPORT.md) | Status, findings, rollback, stop condition |
+| [CF-SSL-001](CF-SSL-001_N8N_POSTGRES_SSL_EXCEPTION.md) | Known infrastructure security debt record |
+
+Tools, generated SDK code and raw results: `../../evidence/cf-001-tools/`.
+CF-002 and later sprints remain NOT AUTHORISED.
