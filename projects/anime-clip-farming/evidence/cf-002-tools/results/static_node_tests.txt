@@ -1,0 +1,41 @@
+PASS valid scene passes with ms timestamps and UNKNOWN publication
+PASS payload carries no rights/publication field
+PASS same-scene replay: identical idempotency basis and state basis
+PASS summary text change does not change identity basis (summary is not identity)
+PASS MM:SS and integer ms for the same boundary give the same identity
+PASS different boundaries change identity
+PASS two distinct scenes in the same episode both pass, ordered
+PASS overlapping but materially distinct ranges (<80%) pass
+PASS >=80% overlap inside one intake is refused
+PASS identical boundaries twice in one intake refused
+PASS more than 3 scenes refused
+PASS invalid source reference: spaces/garbage
+PASS http (non-https) reference refused
+PASS URL with token/cookie/signature refused
+PASS missing source reference
+PASS missing research_access_basis
+PASS invalid research_access_basis (not in enum)
+PASS missing observed_at
+PASS observed_at in the future refused
+PASS human-viewed basis without observer refused
+PASS missing episode / unresolved episode number
+PASS scene_end == scene_start refused
+PASS scene_end < scene_start refused
+PASS negative / malformed / missing timestamp refused
+PASS scene beyond stated episode duration refused
+PASS unknown anime title
+PASS unknown candidate
+PASS candidate/title mismatch
+PASS candidate not READY / title not READY / franchise not READY
+PASS malformed ids
+PASS publication status APPROVED attempted as a key is rejected
+PASS "I watched this on Crunchyroll therefore APPROVED" in notes is rejected
+PASS neutral notes accepted
+PASS unknown field rejected
+PASS zero input -> NO_INPUT, nothing in payload
+PASS quote limit: >25 quoted words refused, short quote accepted
+PASS text limits and enums
+PASS model-owned fields stay null; no prompt/model fields in payload
+PASS no secrets, LLM or paid-provider names in any Code-node source
+PASS assembled stages are self-contained (no unresolved helper)
+TOTAL pass=40 fail=0

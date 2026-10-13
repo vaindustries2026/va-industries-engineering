@@ -1,0 +1,237 @@
+=== Cluster 16: PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit ===
+PASS T1 0004 applies on top of 0001-0003 (single transaction)
+PASS T1b VERIFY: all 25 columns true
+PASS T16-18 F-2/F-6/F-7: the four cf function bodies are byte-identical after 0004
+PASS T3 second apply refused (CF_ALREADY_APPLIED)
+PASS T3b refused second apply changed nothing (25 transitions, 20 triggers)
+PASS T0 session is the restricted runtime role
+PASS T9a natural-key duplicate episode rejected (23505)
+PASS T9b replay ON CONFLICT inserts 0 rows, still 1 episode, same id
+PASS T9c same number, different variant is a different episode; "Episode 12" text is not identity
+PASS T9d episode of an unknown title rejected (23503)
+PASS T9e episode inserted directly as READY rejected by the guard
+PASS T9f episode DRAFT -> READY (deterministic edge) works for the runtime
+PASS T12 two legitimate scenes of one episode coexist (source_episode_id is not unique in scenes)
+PASS T12b no unique constraint or index on source_episode_id alone
+PASS T10 dedupe_key = sha256(episode|floor(start s)|ceil(end s)), no summary/timestamp/random in it
+PASS T11a plain duplicate scene insert rejected (23505)
+PASS T11b same scene discovered twice (new words, new source) inserts 0 rows; original provenance kept
+PASS T11c overlapping-but-distinct range gets its own scene id (3 scenes, 3 distinct keys)
+PASS T13a end = start rejected (23514)
+PASS T13b end < start rejected (23514)
+PASS T13c negative start rejected (23514)
+PASS T13d end beyond 24h rejected (23514)
+PASS T14 rejected: NULL source reference
+PASS T14 rejected: empty source reference
+PASS T14 rejected: secret-looking reference (token=)
+PASS T14 rejected: cookie in reference
+PASS T14 rejected: NULL access basis
+PASS T14 rejected: access basis not in enum (LICENSED)
+PASS T14 rejected: NULL observed_at
+PASS T14 rejected: NULL platform
+PASS T14 rejected: lower-case platform
+PASS T14 rejected: NULL summary
+PASS T14 rejected: blank summary
+PASS T14 rejected: summary over 800 chars
+PASS T14 rejected: NULL why_scene_matters
+PASS T14 rejected: bad spoiler level
+PASS T14 rejected: NULL agent_run_id
+PASS T14 rejected: bad editorial_strength / visual_strength (separate columns)
+PASS T14 rejected: scene with a title that does not own the episode (composite FK)
+PASS T14 rejected: candidate that belongs to a different title (scene_candidate_title_fk)
+PASS T14 rejected: visual_strength above 1
+PASS T14 rejected: bad dedupe_key shape
+PASS T15a every scene reads publication_source_status UNKNOWN
+PASS T15b cannot insert a publication_source_status column (42703)
+PASS T15c cannot write the status view (not updatable; no privilege)
+PASS T15d status APPROVED / PUBLISHED / CLEARED refused on scenes
+PASS T15e status PUBLISHED refused on scenes
+PASS T15f research_access_basis cannot be changed afterwards (no column grant)
+PASS T15g no scene row carries a rights claim in its stored notes
+PASS T7a runtime DELETE on scenes denied
+PASS T7b runtime DELETE on episodes denied
+PASS T7c runtime TRUNCATE denied
+PASS T5a runtime cannot UPDATE scene text (column-level grant only)
+PASS T5b runtime cannot UPDATE source_episode_id
+PASS T5c runtime cannot UPDATE episode season/number
+PASS T5d runtime cannot write reviewers
+PASS T5e runtime cannot enable a kill switch
+PASS T5f runtime cannot add a transition
+PASS T5g runtime cannot disable a trigger
+PASS T5h runtime cannot change session_replication_role
+PASS T5i runtime cannot call cf functions
+PASS T5j a GRANT by the runtime role grants nothing (it is not the owner)
+PASS T5k runtime cannot SET ROLE postgres
+PASS T8a runtime cannot CREATE TABLE in cf
+PASS T8b runtime cannot CREATE TABLE in public
+PASS T8c runtime cannot CREATE a function in cf
+PASS T6 Supabase API roles have no access to the new tables and view
+PASS T5l no CF-003+ table exists (10 cf objects)
+PASS T16a runtime scene DRAFT -> REJECTED (HUMAN_ADMIN) denied
+PASS T16b runtime episode READY -> RETIRED (HUMAN_ADMIN) denied
+PASS T16c DRAFT -> BLOCKED (deterministic) works for the runtime
+PASS T16d runtime episode BLOCKED -> READY (HUMAN_ADMIN) denied
+PASS T10b scene DRAFT -> READY works; scene_id and key unchanged
+PASS T17a timestamps_human_verified is the one mutable evidence column and works
+PASS T0b kill switches stay false
+PASS T17 F-6 freeze: content of a READY scene is immutable even for postgres (CF_IMMUTABLE_ROW)
+PASS T7d forbid_delete trigger blocks DELETE even for postgres
+PASS T17b episode identity columns and scene boundaries are frozen after DRAFT
+PASS S1 run SUCCEEDED attempt 1, CF-002 v0.1, paid 0, cost 0, provider 0, no model
+PASS S1 idempotency key = sha256(basis), input hash present, ids recorded
+PASS S1 one episode READY, one scene READY, linked to run, title, episode and candidate
+PASS S1 provenance stored exactly (platform, reference, basis, observer, observed_at), verified flag, ms boundaries
+PASS S1 publication_source_status UNKNOWN for the scene
+PASS S1 run summary has verification (found 1, ready 1, all UNKNOWN)
+PASS S2 replay leaves the run SUCCEEDED attempt 1 (REPLAY disposition, no re-claim)
+PASS S2 only one run row for the key
+PASS S2 forced replay: still 1 episode, 1 scene, same ids, same key
+PASS S2 forced replay did not re-complete or alter the SUCCEEDED run
+PASS S3 new run, episode reused (still 1), two distinct scenes, both READY, distinct ids/keys
+PASS S3 first scene untouched by the second run (id, key, run)
+PASS S3b batch of two scenes persisted, 4 scenes total, still one episode
+PASS S4 near-duplicate stored DRAFT with possible_duplicate_of pointing at the original, not promoted
+PASS S4 original untouched; run SUCCEEDED with draft_held 1 flagged 1
+PASS S5 candidate/title mismatch visible to the Code node (candidate_title_id <> title_id)
+PASS S6 failed run: FAILED + error code + zero provider/paid, no scenes
+PASS S6 mark-failed only touches RUNNING runs
+PASS S6 FAILED run re-claimed: same id, RUNNING, attempt 2
+PASS S6 fresh RUNNING is IN_PROGRESS, not re-claimed (attempt stays 2)
+PASS S6 stale RUNNING (>15 min) re-claimed attempt 3
+PASS S7 zero input: SUCCEEDED NO_INPUT, nothing created for that run
+PASS S8 expected 2 found 1 -> run FAILED CF002_VERIFY_MISMATCH
+PASS S9 run economics across all runs: paid 0, cost 0, provider 0
+PASS S9 every stored scene reads UNKNOWN publication status and has complete provenance
+PASS T2 wrong-project guard refuses (YouTube Kids table present)
+PASS T2b refused apply left no 0004 object
+PASS T4a unpinned search_path (F-7 drift) refused
+PASS T4b drifted function body refused (touch_updated_at)
+PASS T4c F-2 guard replaced by a permissive body refused
+PASS T4d runtime role with CREATEDB refused
+PASS T4e apply refused while a kill switch is on
+PASS T19a rollback refused while the tables hold rows
+PASS T19b refused rollback left everything in place
+PASS T19 rollback of empty 0004 succeeds
+PASS T19c after rollback: 0004 objects gone, 14 transitions, 12 triggers, 4 functions, md5 of original 14 rows unchanged
+PASS T19d CF-001 data untouched by rollback (1 candidate)
+PASS T20 reapply after rollback succeeds
+PASS T20b VERIFY all 25 true after rollback and reapply
+=== Cluster 17: PostgreSQL 17.10 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit ===
+PASS T1 0004 applies on top of 0001-0003 (single transaction)
+PASS T1b VERIFY: all 25 columns true
+PASS T16-18 F-2/F-6/F-7: the four cf function bodies are byte-identical after 0004
+PASS T3 second apply refused (CF_ALREADY_APPLIED)
+PASS T3b refused second apply changed nothing (25 transitions, 20 triggers)
+PASS T0 session is the restricted runtime role
+PASS T9a natural-key duplicate episode rejected (23505)
+PASS T9b replay ON CONFLICT inserts 0 rows, still 1 episode, same id
+PASS T9c same number, different variant is a different episode; "Episode 12" text is not identity
+PASS T9d episode of an unknown title rejected (23503)
+PASS T9e episode inserted directly as READY rejected by the guard
+PASS T9f episode DRAFT -> READY (deterministic edge) works for the runtime
+PASS T12 two legitimate scenes of one episode coexist (source_episode_id is not unique in scenes)
+PASS T12b no unique constraint or index on source_episode_id alone
+PASS T10 dedupe_key = sha256(episode|floor(start s)|ceil(end s)), no summary/timestamp/random in it
+PASS T11a plain duplicate scene insert rejected (23505)
+PASS T11b same scene discovered twice (new words, new source) inserts 0 rows; original provenance kept
+PASS T11c overlapping-but-distinct range gets its own scene id (3 scenes, 3 distinct keys)
+PASS T13a end = start rejected (23514)
+PASS T13b end < start rejected (23514)
+PASS T13c negative start rejected (23514)
+PASS T13d end beyond 24h rejected (23514)
+PASS T14 rejected: NULL source reference
+PASS T14 rejected: empty source reference
+PASS T14 rejected: secret-looking reference (token=)
+PASS T14 rejected: cookie in reference
+PASS T14 rejected: NULL access basis
+PASS T14 rejected: access basis not in enum (LICENSED)
+PASS T14 rejected: NULL observed_at
+PASS T14 rejected: NULL platform
+PASS T14 rejected: lower-case platform
+PASS T14 rejected: NULL summary
+PASS T14 rejected: blank summary
+PASS T14 rejected: summary over 800 chars
+PASS T14 rejected: NULL why_scene_matters
+PASS T14 rejected: bad spoiler level
+PASS T14 rejected: NULL agent_run_id
+PASS T14 rejected: bad editorial_strength / visual_strength (separate columns)
+PASS T14 rejected: scene with a title that does not own the episode (composite FK)
+PASS T14 rejected: candidate that belongs to a different title (scene_candidate_title_fk)
+PASS T14 rejected: visual_strength above 1
+PASS T14 rejected: bad dedupe_key shape
+PASS T15a every scene reads publication_source_status UNKNOWN
+PASS T15b cannot insert a publication_source_status column (42703)
+PASS T15c cannot write the status view (not updatable; no privilege)
+PASS T15d status APPROVED / PUBLISHED / CLEARED refused on scenes
+PASS T15e status PUBLISHED refused on scenes
+PASS T15f research_access_basis cannot be changed afterwards (no column grant)
+PASS T15g no scene row carries a rights claim in its stored notes
+PASS T7a runtime DELETE on scenes denied
+PASS T7b runtime DELETE on episodes denied
+PASS T7c runtime TRUNCATE denied
+PASS T5a runtime cannot UPDATE scene text (column-level grant only)
+PASS T5b runtime cannot UPDATE source_episode_id
+PASS T5c runtime cannot UPDATE episode season/number
+PASS T5d runtime cannot write reviewers
+PASS T5e runtime cannot enable a kill switch
+PASS T5f runtime cannot add a transition
+PASS T5g runtime cannot disable a trigger
+PASS T5h runtime cannot change session_replication_role
+PASS T5i runtime cannot call cf functions
+PASS T5j a GRANT by the runtime role grants nothing (it is not the owner)
+PASS T5k runtime cannot SET ROLE postgres
+PASS T8a runtime cannot CREATE TABLE in cf
+PASS T8b runtime cannot CREATE TABLE in public
+PASS T8c runtime cannot CREATE a function in cf
+PASS T6 Supabase API roles have no access to the new tables and view
+PASS T5l no CF-003+ table exists (10 cf objects)
+PASS T16a runtime scene DRAFT -> REJECTED (HUMAN_ADMIN) denied
+PASS T16b runtime episode READY -> RETIRED (HUMAN_ADMIN) denied
+PASS T16c DRAFT -> BLOCKED (deterministic) works for the runtime
+PASS T16d runtime episode BLOCKED -> READY (HUMAN_ADMIN) denied
+PASS T10b scene DRAFT -> READY works; scene_id and key unchanged
+PASS T17a timestamps_human_verified is the one mutable evidence column and works
+PASS T0b kill switches stay false
+PASS T17 F-6 freeze: content of a READY scene is immutable even for postgres (CF_IMMUTABLE_ROW)
+PASS T7d forbid_delete trigger blocks DELETE even for postgres
+PASS T17b episode identity columns and scene boundaries are frozen after DRAFT
+PASS S1 run SUCCEEDED attempt 1, CF-002 v0.1, paid 0, cost 0, provider 0, no model
+PASS S1 idempotency key = sha256(basis), input hash present, ids recorded
+PASS S1 one episode READY, one scene READY, linked to run, title, episode and candidate
+PASS S1 provenance stored exactly (platform, reference, basis, observer, observed_at), verified flag, ms boundaries
+PASS S1 publication_source_status UNKNOWN for the scene
+PASS S1 run summary has verification (found 1, ready 1, all UNKNOWN)
+PASS S2 replay leaves the run SUCCEEDED attempt 1 (REPLAY disposition, no re-claim)
+PASS S2 only one run row for the key
+PASS S2 forced replay: still 1 episode, 1 scene, same ids, same key
+PASS S2 forced replay did not re-complete or alter the SUCCEEDED run
+PASS S3 new run, episode reused (still 1), two distinct scenes, both READY, distinct ids/keys
+PASS S3 first scene untouched by the second run (id, key, run)
+PASS S3b batch of two scenes persisted, 4 scenes total, still one episode
+PASS S4 near-duplicate stored DRAFT with possible_duplicate_of pointing at the original, not promoted
+PASS S4 original untouched; run SUCCEEDED with draft_held 1 flagged 1
+PASS S5 candidate/title mismatch visible to the Code node (candidate_title_id <> title_id)
+PASS S6 failed run: FAILED + error code + zero provider/paid, no scenes
+PASS S6 mark-failed only touches RUNNING runs
+PASS S6 FAILED run re-claimed: same id, RUNNING, attempt 2
+PASS S6 fresh RUNNING is IN_PROGRESS, not re-claimed (attempt stays 2)
+PASS S6 stale RUNNING (>15 min) re-claimed attempt 3
+PASS S7 zero input: SUCCEEDED NO_INPUT, nothing created for that run
+PASS S8 expected 2 found 1 -> run FAILED CF002_VERIFY_MISMATCH
+PASS S9 run economics across all runs: paid 0, cost 0, provider 0
+PASS S9 every stored scene reads UNKNOWN publication status and has complete provenance
+PASS T2 wrong-project guard refuses (YouTube Kids table present)
+PASS T2b refused apply left no 0004 object
+PASS T4a unpinned search_path (F-7 drift) refused
+PASS T4b drifted function body refused (touch_updated_at)
+PASS T4c F-2 guard replaced by a permissive body refused
+PASS T4d runtime role with CREATEDB refused
+PASS T4e apply refused while a kill switch is on
+PASS T19a rollback refused while the tables hold rows
+PASS T19b refused rollback left everything in place
+PASS T19 rollback of empty 0004 succeeds
+PASS T19c after rollback: 0004 objects gone, 14 transitions, 12 triggers, 4 functions, md5 of original 14 rows unchanged
+PASS T19d CF-001 data untouched by rollback (1 candidate)
+PASS T20 reapply after rollback succeeds
+PASS T20b VERIFY all 25 true after rollback and reapply
+TOTAL pass=234 fail=0
