@@ -77,7 +77,7 @@ PASS T0b kill switches stay false
 PASS T17 F-6 freeze: content of a READY scene is immutable even for postgres (CF_IMMUTABLE_ROW)
 PASS T7d forbid_delete trigger blocks DELETE even for postgres
 PASS T17b episode identity columns and scene boundaries are frozen after DRAFT
-PASS S1 run SUCCEEDED attempt 1, CF-002 v0.1, paid 0, cost 0, provider 0, no model
+PASS S1 run SUCCEEDED attempt 1, CF-002 v0.1.1, paid 0, cost 0, provider 0, no model
 PASS S1 idempotency key = sha256(basis), input hash present, ids recorded
 PASS S1 one episode READY, one scene READY, linked to run, title, episode and candidate
 PASS S1 provenance stored exactly (platform, reference, basis, observer, observed_at), verified flag, ms boundaries
@@ -100,6 +100,12 @@ PASS S6 fresh RUNNING is IN_PROGRESS, not re-claimed (attempt stays 2)
 PASS S6 stale RUNNING (>15 min) re-claimed attempt 3
 PASS S7 zero input: SUCCEEDED NO_INPUT, nothing created for that run
 PASS S8 expected 2 found 1 -> run FAILED CF002_VERIFY_MISMATCH
+PASS S10 franchise and title created DRAFT (never READY), stamped with the CF-002 run, lineage not CF-001
+PASS S10 scene has NULL research_candidate_id, carries the lineage marker, publication UNKNOWN, v0.1.1
+PASS S10 no research candidate created or changed
+PASS S10 run SUCCEEDED, verification shows null-candidate scene and DRAFT catalog
+PASS S10 forced replay: same franchise, title, episode and scene ids; zero duplicate catalog, episode or scene rows
+PASS S10 replay left catalog DRAFT and candidates unchanged
 PASS S9 run economics across all runs: paid 0, cost 0, provider 0
 PASS S9 every stored scene reads UNKNOWN publication status and has complete provenance
 PASS P01 two scenes in one episode persisted
@@ -135,6 +141,17 @@ PASS N27 HUMAN_ADMIN episode READY->RETIRED (F-2) (42501)
 PASS N28 episode identity frozen (42501)
 PASS N29 duplicate natural-key episode (23505)
 PASS N30 duplicate scene dedupe_key (23505)
+VALIDATION-LIVE PASS V01 bootstrap created franchise and title, both DRAFT
+VALIDATION-LIVE PASS V02 scene persisted with NULL candidate, lineage marker, READY, publication UNKNOWN
+VALIDATION-LIVE PASS V03 verification: 1 scene, null candidate, DRAFT catalog, all UNKNOWN
+VALIDATION-LIVE PASS V04 replay: same franchise and title, nothing created, still DRAFT
+VALIDATION-LIVE PASS V05 replay: same episode, no scene inserted, 1 scene row
+VALIDATION-LIVE PASS V06 no duplicate catalog rows; research candidates unchanged
+VALIDATION-LIVE PASS V11 denied (42501)
+VALIDATION-LIVE PASS V12 denied (42501)
+VALIDATION-LIVE PASS V13 denied (23502)
+VALIDATION-LIVE PASS V14 denied (42703)
+PASS VAL live validation-mode block: fails=0
 PASS NEG live block left nothing behind (rolled back)
 PASS T2 wrong-project guard refuses (YouTube Kids table present)
 PASS T2b refused apply left no 0004 object
@@ -229,7 +246,7 @@ PASS T0b kill switches stay false
 PASS T17 F-6 freeze: content of a READY scene is immutable even for postgres (CF_IMMUTABLE_ROW)
 PASS T7d forbid_delete trigger blocks DELETE even for postgres
 PASS T17b episode identity columns and scene boundaries are frozen after DRAFT
-PASS S1 run SUCCEEDED attempt 1, CF-002 v0.1, paid 0, cost 0, provider 0, no model
+PASS S1 run SUCCEEDED attempt 1, CF-002 v0.1.1, paid 0, cost 0, provider 0, no model
 PASS S1 idempotency key = sha256(basis), input hash present, ids recorded
 PASS S1 one episode READY, one scene READY, linked to run, title, episode and candidate
 PASS S1 provenance stored exactly (platform, reference, basis, observer, observed_at), verified flag, ms boundaries
@@ -252,6 +269,12 @@ PASS S6 fresh RUNNING is IN_PROGRESS, not re-claimed (attempt stays 2)
 PASS S6 stale RUNNING (>15 min) re-claimed attempt 3
 PASS S7 zero input: SUCCEEDED NO_INPUT, nothing created for that run
 PASS S8 expected 2 found 1 -> run FAILED CF002_VERIFY_MISMATCH
+PASS S10 franchise and title created DRAFT (never READY), stamped with the CF-002 run, lineage not CF-001
+PASS S10 scene has NULL research_candidate_id, carries the lineage marker, publication UNKNOWN, v0.1.1
+PASS S10 no research candidate created or changed
+PASS S10 run SUCCEEDED, verification shows null-candidate scene and DRAFT catalog
+PASS S10 forced replay: same franchise, title, episode and scene ids; zero duplicate catalog, episode or scene rows
+PASS S10 replay left catalog DRAFT and candidates unchanged
 PASS S9 run economics across all runs: paid 0, cost 0, provider 0
 PASS S9 every stored scene reads UNKNOWN publication status and has complete provenance
 PASS P01 two scenes in one episode persisted
@@ -287,6 +310,17 @@ PASS N27 HUMAN_ADMIN episode READY->RETIRED (F-2) (42501)
 PASS N28 episode identity frozen (42501)
 PASS N29 duplicate natural-key episode (23505)
 PASS N30 duplicate scene dedupe_key (23505)
+VALIDATION-LIVE PASS V01 bootstrap created franchise and title, both DRAFT
+VALIDATION-LIVE PASS V02 scene persisted with NULL candidate, lineage marker, READY, publication UNKNOWN
+VALIDATION-LIVE PASS V03 verification: 1 scene, null candidate, DRAFT catalog, all UNKNOWN
+VALIDATION-LIVE PASS V04 replay: same franchise and title, nothing created, still DRAFT
+VALIDATION-LIVE PASS V05 replay: same episode, no scene inserted, 1 scene row
+VALIDATION-LIVE PASS V06 no duplicate catalog rows; research candidates unchanged
+VALIDATION-LIVE PASS V11 denied (42501)
+VALIDATION-LIVE PASS V12 denied (42501)
+VALIDATION-LIVE PASS V13 denied (23502)
+VALIDATION-LIVE PASS V14 denied (42703)
+PASS VAL live validation-mode block: fails=0
 PASS NEG live block left nothing behind (rolled back)
 PASS T2 wrong-project guard refuses (YouTube Kids table present)
 PASS T2b refused apply left no 0004 object
@@ -302,4 +336,4 @@ PASS T19c after rollback: 0004 objects gone, 14 transitions, 12 triggers, 4 func
 PASS T19d CF-001 data untouched by rollback (2 candidates)
 PASS T20 reapply after rollback succeeds
 PASS T20b VERIFY all 25 true after rollback and reapply
-TOTAL pass=302 fail=0
+TOTAL pass=316 fail=0

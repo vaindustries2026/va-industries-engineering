@@ -17,3 +17,7 @@ Provide, for one of the 8 CF-001 candidates (candidate id and its title id), one
 3. Observer name or initials and `observed_at` (not in the future).
 4. Per scene: start and end (MM:SS or ms), an original concise summary, why it matters, spoiler level.
 The intake is embedded in Run Config `DEFAULT_INTAKE` and run once via execute_workflow. Needs explicit authorisation as a bounded task.
+
+## Update 2026-10-13 (v0.1.1, Pokémon validation approved)
+Live state is unchanged: 8 franchises, 8 titles, 8 candidates (all CF-001), 0 episodes, 0 scenes, 2 agent runs, paid 0, cost 0 (checked after the rolled-back execution 600). The Pokémon scene is not persisted: this environment cannot reach the official clip (YouTube returns 403 through the proxy), and exact timestamps were not guessed.
+Needed from a human: clip total duration, scene start and end on the clip timeline, and the real time the clip was watched. Everything else is prepared in `evidence/cf-002-tools/intake/pokemon_xyz_validation_intake.TEMPLATE.json`. Once supplied, the intake is embedded in Run Config `DEFAULT_INTAKE`, run once, then replayed.

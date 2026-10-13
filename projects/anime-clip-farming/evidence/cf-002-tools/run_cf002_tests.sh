@@ -12,7 +12,7 @@ PG16BIN=${2:-/usr/lib/postgresql/16/bin}
 PG17BIN=${3:-}; PG17LIB=${4:-}
 rm -rf "$WORK"; mkdir -p "$WORK"
 cp "$PKG"/0001_cf_sprint01.sql "$PKG"/0002_cf_runtime_human_admin_guard.sql "$PKG"/0003_cf_freeze_generated_columns_and_search_path.sql "$PKG"/0004_cf002_scene_intelligence*.sql "$WORK"/
-cp "$TOOLS"/test/negative_live.sql "$TOOLS"/test/cf_test_helpers.sql "$TOOLS"/test/seed_upstream.sql "$WORK"/
+cp "$TOOLS"/test/validation_live.sql "$TOOLS"/test/negative_live.sql "$TOOLS"/test/cf_test_helpers.sql "$TOOLS"/test/seed_upstream.sql "$WORK"/
 node "$TOOLS/test/gen_sql_tests.js" "$WORK" >"$WORK/gen.txt" || exit 2
 chown -R pgtest:pgtest "$WORK"
 : >"$OUT"
@@ -86,6 +86,9 @@ SQL
   q $tag $port cf_n8n_runtime t11 -f $WORK/negative_live.sql >$WORK/on_$tag.txt 2>&1
   true
   grep -E '^(PASS|FAIL) ' $WORK/on_$tag.txt >>"$OUT"
+  q $tag $port cf_n8n_runtime t11 -f $WORK/validation_live.sql >$WORK/ov_$tag.txt 2>&1
+  grep -E '^(PASS|FAIL) V' $WORK/ov_$tag.txt | sed 's/^/VALIDATION-LIVE /' >>"$OUT"
+  grep -q 'CF002_VAL_REPORT fails=0' $WORK/ov_$tag.txt && log "PASS VAL live validation-mode block: fails=0" || { log "FAIL VAL live validation-mode block"; head -12 $WORK/ov_$tag.txt | tee -a "$OUT"; }
   chk "NEG live block left nothing behind (rolled back)" $(q $tag $port postgres t11 -At -c "select ((select count(*) from cf.anime_source_episodes)=0 and (select count(*) from cf.anime_scene_intelligence)=0)::text" | cut -c1)
 
   # ---- T2 wrong-project guard ----

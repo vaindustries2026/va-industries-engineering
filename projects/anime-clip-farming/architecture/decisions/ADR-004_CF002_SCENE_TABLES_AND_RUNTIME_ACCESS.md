@@ -12,3 +12,6 @@
 
 ## Consequences
 Runtime cannot delete or alter content; rollback needs a human and an explicit data-destroy flag if rows exist.
+
+## Addendum 2026-10-13: validation mode needs no schema change
+`research_candidate_id` was already nullable, and the DRAFT catalog rows use the existing runtime INSERT grants from 0001. The v0.1.1 validation mode (CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH) is therefore workflow-only: no migration, no new privilege. The lineage marker lives in the scene's `research_access_notes` and the run's input and output evidence because the catalog tables have no notes column and none was added. Spoiler policy is a business rule (CF002-POLICY-SPOILER-001), not a schema rule: `spoiler_level` stays NOT NULL descriptive metadata and gates nothing.

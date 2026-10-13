@@ -12,7 +12,7 @@ INSERT INTO cf.anime_scene_intelligence (source_episode_id, anime_title_id, rese
        why_scene_matters, possible_editorial_angles, context_requirement, spoiler_level, visual_strength, nostalgia_signal, editorial_strength,
        research_source_platform, research_source_reference, research_access_basis, research_access_notes, research_observed_at, research_observer,
        timestamps_human_verified, possible_duplicate_of_scene_id, dedupe_key, status, agent_run_id, agent_version)
-SELECT $2::uuid, $3::uuid, $4::uuid, x.start_ms, x.end_ms,
+SELECT $2::uuid, $3::uuid, NULLIF($4::text, '')::uuid, x.start_ms, x.end_ms,
        coalesce(ARRAY(SELECT jsonb_array_elements_text(x.characters_present)), ARRAY[]::text[]), x.scene_summary, x.scene_function,
        x.why_scene_matters, coalesce(ARRAY(SELECT jsonb_array_elements_text(x.possible_editorial_angles)), ARRAY[]::text[]), x.context_requirement,
        x.spoiler_level, x.visual_strength, x.nostalgia_signal, x.editorial_strength,

@@ -28,6 +28,11 @@ const input_ids = {
   source: { platform: so.platform === undefined ? null : so.platform, reference: so.reference === undefined ? null : so.reference },
   scene_boundaries_ms: boundaries,
 };
+if (src.validation_mode !== undefined) {
+  const cat = isObj(src.catalog) ? src.catalog : {}, fr = isObj(cat.franchise) ? cat.franchise : {}, ti = isObj(cat.title) ? cat.title : {};
+  input_ids.validation_mode = src.validation_mode;
+  input_ids.catalog = { franchise_key: fr.normalised_key === undefined ? null : fr.normalised_key, title_key: ti.normalised_title_key === undefined ? null : ti.normalised_title_key, start_year: ti.start_year === undefined ? null : ti.start_year, media_type: ti.media_type === undefined ? 'TV' : ti.media_type };
+}
 const idem = CF_AGENT_CODE + '|' + CF_AGENT_VERSION + '|' + canon(input_ids);
 return [{ json: { ok: true, zero_input: false, intake: intake, now_iso: NOW, agent_code: CF_AGENT_CODE, agent_version: CF_AGENT_VERSION,
   input_ids: input_ids, idempotency_basis: idem, input_state_basis: canon({ config_version: CF_CONFIG_VERSION, intake: intake }), notice: CF_NOTICE } }];

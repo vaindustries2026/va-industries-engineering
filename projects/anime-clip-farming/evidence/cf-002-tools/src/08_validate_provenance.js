@@ -16,10 +16,13 @@ if (errs.length > 0) return [{ json: { ok: false, zero_input: false, error_code:
 const ep = ctx.intake.episode;
 const episode = { season_number: ep.season_number, episode_number: ep.episode_number, episode_variant: ep.episode_variant === undefined ? 'TV' : ep.episode_variant,
   episode_title_display: ep.episode_title === undefined || clean(ep.episode_title) === '' ? null : clean(ep.episode_title), duration_seconds: ep.duration_seconds === undefined ? null : ep.duration_seconds };
-const payload = { research_candidate_id: ctx.intake.research_candidate_id.toLowerCase(), anime_title_id: ctx.intake.anime_title_id.toLowerCase(), episode: episode,
+const vm = ctx.validation_mode === CF_VALIDATION_MODE;
+const catalog = vm ? { franchise: { normalised_key: ctx.intake.catalog.franchise.normalised_key, display_name: clean(ctx.intake.catalog.franchise.display_name) },
+  title: { normalised_title_key: ctx.intake.catalog.title.normalised_title_key, display_title: clean(ctx.intake.catalog.title.display_title), media_type: ctx.intake.catalog.title.media_type === undefined ? 'TV' : ctx.intake.catalog.title.media_type, start_year: ctx.intake.catalog.title.start_year === undefined ? null : ctx.intake.catalog.title.start_year } } : null;
+const payload = { research_candidate_id: vm ? null : ctx.intake.research_candidate_id.toLowerCase(), anime_title_id: vm ? null : ctx.intake.anime_title_id.toLowerCase(), catalog: catalog, validation_mode: vm ? CF_VALIDATION_MODE : null, episode: episode,
   scenes: ctx.scenes_built, boundaries: ctx.scenes_built.map(function (s) { return { start_ms: s.start_ms, end_ms: s.end_ms }; }) };
 const summary = { result: 'COMPLETED', agent: CF_AGENT_CODE + ' ' + CF_AGENT_VERSION, model: 'none', llm_calls: 0, provider_calls: 0, paid_calls: 0, estimated_cost_usd: 0,
-  config_version: CF_CONFIG_VERSION, notice: CF_NOTICE, publication_source_status: 'UNKNOWN', research_candidate_id: payload.research_candidate_id, anime_title_id: payload.anime_title_id,
+  config_version: CF_CONFIG_VERSION, notice: CF_NOTICE, publication_source_status: 'UNKNOWN', validation_mode: payload.validation_mode, lineage: vm ? 'NOT_FROM_CF001_BATCH' : 'CF001_CANDIDATE', research_candidate_id: payload.research_candidate_id, anime_title_id: payload.anime_title_id,
   title: ctx.title.display_title, episode: { season_number: episode.season_number, episode_number: episode.episode_number, episode_variant: episode.episode_variant },
   source: { platform: ctx.scenes_built[0].research_source_platform, reference: ctx.scenes_built[0].research_source_reference, research_access_basis: ctx.scenes_built[0].research_access_basis, observed_at: ctx.scenes_built[0].research_observed_at },
   scenes_in_payload: payload.scenes.length, scenes: payload.scenes.map(function (s) { return { ordinal: s.ordinal, start: s.start_display, end: s.end_display, start_ms: s.start_ms, end_ms: s.end_ms }; }) };

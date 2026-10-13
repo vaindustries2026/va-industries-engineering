@@ -7,7 +7,7 @@ WITH k AS (
 ), ins AS (
   INSERT INTO cf.agent_runs (agent_code, agent_version, n8n_workflow_id, n8n_execution_id, idempotency_key, input_ids, input_state_hash,
                              run_state, attempt_count, provider_call_count, paid_call_count, estimated_cost_usd, output_summary, started_at)
-  SELECT 'CF-002', 'v0.1', $4::text, $5::text, k.idem, $3::jsonb, k.state_hash,
+  SELECT 'CF-002', $3::jsonb->>'agent_version', $4::text, $5::text, k.idem, $3::jsonb, k.state_hash,
          'RUNNING', 1, 0, 0, 0, '{"model":"none","llm_calls":0,"paid_calls":0}'::jsonb, now()
     FROM k
   ON CONFLICT (idempotency_key) DO UPDATE

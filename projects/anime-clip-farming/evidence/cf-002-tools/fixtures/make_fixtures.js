@@ -14,4 +14,11 @@ const intake = (o) => Object.assign({
   episode: { season_number: 1, episode_number: 12, episode_variant: 'TV', episode_title: 'Synthetic Episode', duration_seconds: 1440 },
   source: { platform: 'HUMAN_RESEARCH_OBSERVATION', reference: 'human-observation:synthetic-0001', research_access_basis: 'HUMAN_VIEWED_LICENSED_PLATFORM', observed_at: '2026-10-13T05:00:00Z', observer: 'TEST' },
   scenes: [scene()] }, o || {});
-module.exports = { CAND, TITLE, OTHER_TITLE, NOW, upstream, scene, intake };
+// v0.1.1 validation mode (source outside the CF-001 batch). SYNTHETIC names: local tests only.
+const vintake = (o) => Object.assign({
+  validation_mode: 'CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH',
+  catalog: { franchise: { normalised_key: 'synthetic validation franchise', display_name: 'Synthetic Validation Franchise' }, title: { normalised_title_key: 'synthetic validation title', display_title: 'Synthetic Validation Title', media_type: 'TV' } },
+  episode: { season_number: 2, episode_number: 7, episode_variant: 'TV', episode_title: 'Synthetic Validation Episode' },
+  source: { platform: 'OFFICIAL_SYNTHETIC_CHANNEL', reference: 'https://example.org/watch/synthetic-clip', research_access_basis: 'PUBLIC_OFFICIAL_UPLOAD', observed_at: '2026-10-13T05:00:00Z', observer: 'VA_HUMAN_RESEARCHER_01' },
+  scenes: [scene({ start: '00:00', end: '02:10', timestamps_human_verified: true })] }, o || {});
+module.exports = { vintake, CAND, TITLE, OTHER_TITLE, NOW, upstream, scene, intake };

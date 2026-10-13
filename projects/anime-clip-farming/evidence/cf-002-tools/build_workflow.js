@@ -31,26 +31,29 @@ w += cd('buildIntel', 'Build Intelligence', '07_build_intelligence.js');
 w += cd('validateProv', 'Validate Provenance', '08_validate_provenance.js');
 w += IF('runOk', 'Run Still OK?', '$json.ok', { right: "''", op: "{ type: 'boolean', operation: 'true', singleValue: true }" });
 w += IF('hasInput', 'Has Input?', '$json.zero_input', { right: "''", op: "{ type: 'boolean', operation: 'false', singleValue: true }" });
-w += pg('upEp', 'Upsert Episode', '04_upsert_episode.sql', `[JSON.stringify(${PL}.episode), ${PL}.anime_title_id, ${BR}.agent_run_id]`, E);
+const TID = "$('Bootstrap Catalog').first().json.anime_title_id";
+w += pg('bootCat', 'Bootstrap Catalog', '03b_bootstrap_catalog.sql', `[JSON.stringify(${PL}.catalog), String(${PL}.anime_title_id || ''), ${BR}.agent_run_id]`, E);
+w += pg('upEp', 'Upsert Episode', '04_upsert_episode.sql', `[JSON.stringify(${PL}.episode), ${TID}, ${BR}.agent_run_id]`, E);
 w += pg('proEp', 'Promote Episode', '05_promote_episode.sql', `[${EP}]`, E);
-w += pg('insSc', 'Insert Scenes', '06_insert_scenes.sql', `[JSON.stringify(${PL}.scenes), ${EP}, ${PL}.anime_title_id, ${PL}.research_candidate_id, ${BR}.agent_run_id, 'v0.1']`, E + ' alwaysOutputData: true,');
+w += pg('insSc', 'Insert Scenes', '06_insert_scenes.sql', `[JSON.stringify(${PL}.scenes), ${EP}, ${TID}, String(${PL}.research_candidate_id || ''), ${BR}.agent_run_id, 'v0.1.1']`, E + ' alwaysOutputData: true,');
 w += pg('proSc', 'Promote Scenes', '07_promote_scenes.sql', `[${EP}, JSON.stringify(${PL}.boundaries)]`, E + ' alwaysOutputData: true,');
-w += pg('verify', 'Verify Persisted', '08_verify_persisted.sql', `[${EP}, JSON.stringify(${PL}.boundaries), ${PL}.anime_title_id]`, E);
+w += pg('verify', 'Verify Persisted', '08_verify_persisted.sql', `[${EP}, JSON.stringify(${PL}.boundaries), ${TID}]`, E);
 w += pg('complete', 'Complete Run', '09_complete_run.sql', `[${BR}.agent_run_id, JSON.stringify(${VP}.summary), ${VP}.payload === null ? 'null' : JSON.stringify($('Verify Persisted').first().json.verification)]`, E + ' alwaysOutputData: true,');
 w += cd('retSummary', 'Return Run Summary', '09_return_summary.js');
 w += cd('shapeFail', 'Shape Failure', '10_shape_failure.js');
 w += pg('markFailed', 'Mark Run Failed', '10_mark_run_failed.sql', "[$json.agent_run_id, $json.error_code, $json.error_detail, $json.provider_call_count, JSON.stringify($json.output_summary)]", ' alwaysOutputData: true,');
 w += cd('raiseFail', 'Raise Failure', '11_raise_failure.js');
 w += `
-export default workflow('cf002-scene-intelligence-v01', 'CF-002 — Scene Intelligence & Provenance v0.1')
+export default workflow('cf002-scene-intelligence-v011', 'CF-002 — Scene Intelligence & Provenance v0.1.1')
   .add(manual).to(runConfig).to(beginRun).to(isStarted
     .onTrue(upstream.to(resolveTitle).to(validateObs).to(normalise).to(buildIntel).to(validateProv).to(runOk
       .onTrue(hasInput
-        .onTrue(upEp.to(proEp).to(insSc).to(proSc).to(verify).to(complete).to(retSummary))
+        .onTrue(bootCat.to(upEp).to(proEp).to(insSc).to(proSc).to(verify).to(complete).to(retSummary))
         .onFalse(complete))
       .onFalse(shapeFail.to(markFailed).to(raiseFail))))
     .onFalse(loadOutputs.to(replaySummary)));
 upstream.onError(shapeFail);
+bootCat.onError(shapeFail);
 upEp.onError(shapeFail);
 proEp.onError(shapeFail);
 insSc.onError(shapeFail);

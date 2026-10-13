@@ -38,7 +38,7 @@ const scenes = ctx.scenes_norm.map(function (sn, idx) {
     visual_strength: unit(s.visual_strength, 'visual_strength', i), nostalgia_signal: unit(s.nostalgia_signal, 'nostalgia_signal', i),
     editorial_strength: strength,
     research_source_platform: so.platform, research_source_reference: so.reference.trim(), research_access_basis: so.research_access_basis,
-    research_access_notes: so.notes === undefined || clean(so.notes) === '' ? null : clean(so.notes),
+    research_access_notes: ctx.validation_mode ? (CF_VALIDATION_MODE + (so.notes === undefined || clean(so.notes) === '' ? '' : ' | ' + clean(so.notes))).slice(0, 500) : (so.notes === undefined || clean(so.notes) === '' ? null : clean(so.notes)),
     research_observed_at: new Date(Date.parse(so.observed_at)).toISOString(), research_observer: so.observer === undefined || clean(so.observer) === '' ? null : clean(so.observer),
     timestamps_human_verified: s.timestamps_human_verified === true,
   };

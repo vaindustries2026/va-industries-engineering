@@ -108,7 +108,7 @@ t('neutral notes accepted', () => { assert.strictEqual(go(FX.intake({ source: Ob
 t('unknown field rejected', () => { assert.strictEqual(code(go(FX.intake({ scenes: [FX.scene({ transcript: 'x' })] }))), 'CF002_UNKNOWN_FIELD'); });
 t('zero input -> NO_INPUT, nothing in payload', () => {
   const r = runPipeline({}, {}, FX.NOW); assert.strictEqual(r.final.ok, true); assert.strictEqual(r.final.payload, null); assert.strictEqual(r.final.summary.result, 'NO_INPUT');
-  assert.strictEqual(r.cfg.idempotency_basis, 'CF-002|v0.1|NO_INPUT');
+  assert.strictEqual(r.cfg.idempotency_basis, 'CF-002|v0.1.1|NO_INPUT');
 });
 t('quote limit: >25 quoted words refused, short quote accepted', () => {
   const long = '"' + Array(30).fill('word').join(' ') + '"';
@@ -132,6 +132,49 @@ t('no secrets, LLM or paid-provider names in any Code-node source', () => {
 });
 t('assembled stages are self-contained (no unresolved helper)', () => {
   ['01_run_config.js', '04_resolve_title.js', '05_validate_observation.js', '06_normalise_boundaries.js', '07_build_intelligence.js', '08_validate_provenance.js'].forEach((f) => { const c = assemble(f); assert.ok(!/@include/.test(c), f); new Function('$input', '$', '$now', c); });
+});
+
+// ---- v0.1.1 validation mode ----
+const MODE = 'CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH';
+const vgo = (o) => runPipeline({ intake: FX.vintake(o) }, {}, FX.NOW);
+t('V1 validation mode passes with a null candidate and no fabricated lineage', () => {
+  const r = vgo(); assert.strictEqual(r.final.ok, true);
+  const p = r.final.payload; assert.strictEqual(p.research_candidate_id, null); assert.strictEqual(p.anime_title_id, null); assert.strictEqual(p.validation_mode, MODE);
+  assert.strictEqual(r.final.summary.lineage, 'NOT_FROM_CF001_BATCH'); assert.strictEqual(r.final.summary.publication_source_status, 'UNKNOWN');
+  assert.strictEqual(r.final.summary.paid_calls, 0);
+});
+t('V2 lineage marker is stored in the scene notes, with publication still UNKNOWN', () => {
+  const s = vgo().final.payload.scenes[0]; assert.ok(s.research_access_notes.indexOf(MODE) === 0); assert.strictEqual(s.research_access_basis, 'PUBLIC_OFFICIAL_UPLOAD');
+});
+t('V3 validation mode refuses a candidate id or title id (no CF-001 lineage may be claimed)', () => {
+  assert.strictEqual(code(vgo({ research_candidate_id: FX.CAND })), 'CF002_VALIDATION_MODE_CANDIDATE_FORBIDDEN');
+  assert.strictEqual(code(vgo({ anime_title_id: FX.TITLE })), 'CF002_VALIDATION_MODE_TITLE_ID_FORBIDDEN');
+});
+t('V4 unknown mode name and catalog without the mode are refused', () => {
+  assert.strictEqual(code(vgo({ validation_mode: 'SOMETHING_ELSE' })), 'CF002_BAD_VALIDATION_MODE');
+  const r = go(FX.intake({ catalog: FX.vintake().catalog })); assert.strictEqual(code(r), 'CF002_CATALOG_REQUIRES_VALIDATION_MODE');
+});
+t('V5 catalog validation: missing, bad key, unknown field, bad media type, bad year', () => {
+  assert.strictEqual(code(vgo({ catalog: undefined })), 'CF002_MISSING_CATALOG');
+  const c = (o) => Object.assign({}, FX.vintake().catalog, o);
+  assert.strictEqual(code(vgo({ catalog: c({ franchise: { normalised_key: 'Upper Case', display_name: 'X' } }) })), 'CF002_BAD_CATALOG');
+  assert.strictEqual(code(vgo({ catalog: c({ title: { normalised_title_key: 'ok', display_title: 'X', media_type: 'BOOK' } }) })), 'CF002_BAD_CATALOG');
+  assert.strictEqual(code(vgo({ catalog: c({ title: { normalised_title_key: 'ok', display_title: 'X', start_year: 1800 } }) })), 'CF002_BAD_CATALOG');
+  assert.strictEqual(code(vgo({ catalog: c({ title: { normalised_title_key: 'ok', display_title: 'X', status: 'READY' } }) })), 'CF002_UNKNOWN_FIELD');
+  assert.strictEqual(code(vgo({ catalog: c({ title: { normalised_title_key: 'ok', display_title: 'X', approved: true } }) })), 'CF002_PUBLICATION_ASSERTION_REJECTED');
+});
+t('V6 identity: replay basis stable in validation mode; summary text is not identity; boundaries are', () => {
+  const a = vgo().cfg, b = vgo({ scenes: [FX.scene({ start: '00:00', end: '02:10', scene_summary: 'Other words.' })] }).cfg, c = vgo({ scenes: [FX.scene({ start: '00:00', end: '02:11' })] }).cfg;
+  assert.strictEqual(a.idempotency_basis, b.idempotency_basis); assert.notStrictEqual(a.idempotency_basis, c.idempotency_basis);
+  assert.ok(a.idempotency_basis.indexOf(MODE) > 0);
+});
+t('V7 production intake is byte-identical in behaviour: no validation fields in its identity', () => {
+  const a = go(FX.intake()).cfg; assert.strictEqual(a.input_ids.validation_mode, undefined); assert.strictEqual(a.input_ids.catalog, undefined);
+  assert.strictEqual(go(FX.intake()).final.payload.catalog, null); assert.strictEqual(go(FX.intake()).final.payload.validation_mode, null);
+});
+t('V8 validation mode still fails closed on missing timestamps and a future observation', () => {
+  assert.strictEqual(code(vgo({ scenes: [FX.scene({ start: undefined, end: undefined })] })), 'CF002_MISSING_TIMESTAMP');
+  assert.strictEqual(code(vgo({ source: Object.assign({}, FX.vintake().source, { observed_at: '2027-01-01T00:00:00Z' }) })), 'CF002_MISSING_OBSERVATION_TIME');
 });
 console.log('TOTAL pass=' + pass + ' fail=' + fail);
 process.exit(fail ? 1 : 0);

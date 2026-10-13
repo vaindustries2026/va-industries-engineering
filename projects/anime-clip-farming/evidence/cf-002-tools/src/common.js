@@ -1,7 +1,7 @@
 // ---- CF-002 common helpers (deterministic, no network, no randomness) ----
 const CF_AGENT_CODE = 'CF-002';
-const CF_AGENT_VERSION = 'v0.1';
-const CF_CONFIG_VERSION = 'cf002-config-v0.1';
+const CF_AGENT_VERSION = 'v0.1.1';
+const CF_CONFIG_VERSION = 'cf002-config-v0.1.1';
 const CF_NOTICE = 'Scene intelligence for research only. Research access is not publication permission; publication_source_status stays UNKNOWN until the human-governed rights process (CF-005) says otherwise.';
 const CF_BASES = ['HUMAN_VIEWED_LICENSED_PLATFORM', 'PUBLIC_OFFICIAL_UPLOAD', 'PUBLIC_UPLOAD_OWNER_UNVERIFIED', 'PRESS_OR_PROMO_KIT', 'SECONDARY_REFERENCE'];
 const CF_VARIANTS = ['TV', 'OVA', 'MOVIE', 'SPECIAL', 'RECAP', 'DIRECTORS_CUT'];
@@ -9,7 +9,14 @@ const CF_SPOILERS = ['NONE', 'LOW', 'MEDIUM', 'HIGH'];
 const CF_STRENGTHS = ['EDITORIALLY_STRONG', 'EDITORIALLY_MODERATE', 'EDITORIALLY_WEAK', 'UNASSESSED'];
 const CF_MAX_SCENES = 3;
 const CF_MAX_MS = 86400000;
-const CF_KEYS_INTAKE = ['research_candidate_id', 'anime_title_id', 'episode', 'source', 'scenes'];
+const CF_KEYS_INTAKE = ['research_candidate_id', 'anime_title_id', 'episode', 'source', 'scenes', 'validation_mode', 'catalog'];
+// v0.1.1: explicit, bounded engineering-validation mode for a source outside the CF-001 batch. Never implies CF-001 selected the title.
+const CF_VALIDATION_MODE = 'CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH';
+const CF_KEYS_CATALOG = ['franchise', 'title'];
+const CF_KEYS_CAT_FRANCHISE = ['normalised_key', 'display_name'];
+const CF_KEYS_CAT_TITLE = ['normalised_title_key', 'display_title', 'media_type', 'start_year'];
+const CF_MEDIA_TYPES = ['TV', 'OVA', 'ONA', 'MOVIE', 'SPECIAL'];
+const CF_CATKEY = /^[a-z0-9][a-z0-9 _:.\-]{0,118}$/;
 const CF_KEYS_EPISODE = ['season_number', 'episode_number', 'episode_variant', 'episode_title', 'duration_seconds'];
 const CF_KEYS_SOURCE = ['platform', 'reference', 'research_access_basis', 'observed_at', 'observer', 'notes'];
 const CF_KEYS_SCENE = ['start_ms', 'start', 'end_ms', 'end', 'characters_present', 'scene_summary', 'scene_function', 'why_scene_matters', 'possible_editorial_angles', 'context_requirement', 'spoiler_level', 'visual_strength', 'nostalgia_signal', 'editorial_strength', 'timestamps_human_verified'];

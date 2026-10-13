@@ -12,6 +12,28 @@ function keysOk(obj, allowed, where) {
   });
 }
 keysOk(it, CF_KEYS_INTAKE, 'intake');
+if (ctx.validation_mode) {
+  const cat = isObj(it.catalog) ? it.catalog : null;
+  if (!cat) e('CF002_MISSING_CATALOG', 'validation mode needs catalog.franchise and catalog.title');
+  else {
+    keysOk(cat, CF_KEYS_CATALOG, 'catalog');
+    const fr = isObj(cat.franchise) ? cat.franchise : null, ti = isObj(cat.title) ? cat.title : null;
+    if (!fr) e('CF002_MISSING_CATALOG', 'catalog.franchise is required');
+    else {
+      keysOk(fr, CF_KEYS_CAT_FRANCHISE, 'catalog.franchise');
+      if (typeof fr.normalised_key !== 'string' || !CF_CATKEY.test(fr.normalised_key)) e('CF002_BAD_CATALOG', 'catalog.franchise.normalised_key must be lower-case letters, digits, space or . _ : -');
+      if (typeof fr.display_name !== 'string' || clean(fr.display_name) === '' || fr.display_name.length > 200) e('CF002_BAD_CATALOG', 'catalog.franchise.display_name is required (max 200)');
+    }
+    if (!ti) e('CF002_MISSING_CATALOG', 'catalog.title is required');
+    else {
+      keysOk(ti, CF_KEYS_CAT_TITLE, 'catalog.title');
+      if (typeof ti.normalised_title_key !== 'string' || !CF_CATKEY.test(ti.normalised_title_key)) e('CF002_BAD_CATALOG', 'catalog.title.normalised_title_key must be lower-case letters, digits, space or . _ : -');
+      if (typeof ti.display_title !== 'string' || clean(ti.display_title) === '' || ti.display_title.length > 200) e('CF002_BAD_CATALOG', 'catalog.title.display_title is required (max 200)');
+      if (ti.media_type !== undefined && CF_MEDIA_TYPES.indexOf(ti.media_type) < 0) e('CF002_BAD_CATALOG', 'catalog.title.media_type must be one of ' + CF_MEDIA_TYPES.join(','));
+      if (ti.start_year !== undefined && (!Number.isInteger(ti.start_year) || ti.start_year < 1917 || ti.start_year > 2100)) e('CF002_BAD_CATALOG', 'catalog.title.start_year must be a whole year 1917-2100');
+    }
+  }
+}
 const ep = isObj(it.episode) ? it.episode : null, so = isObj(it.source) ? it.source : null;
 if (!ep) e('CF002_MISSING_EPISODE', 'episode object is required');
 else {

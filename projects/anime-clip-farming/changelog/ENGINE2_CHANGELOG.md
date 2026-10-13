@@ -4,6 +4,19 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-13 — ENGINE 2 — CF-002 v0.1.1 VALIDATION MODE (Pokémon XYZ case approved)
+
+- **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-13T09:17Z (approval of the bounded validation mechanism).
+- **Live n8n:** workflow `tmqsoycNV6k4iKr6` patched in place to `v0.1.1` (versionId `140ea945-91a1-4330-b288-3478d6dfc635`, 25 nodes, inactive). New inactive `TEST — CF-002 v0.1.1 validation-mode DB test` (`CbY7LN3BDrFMa6ar`). Executions 600-602.
+- **Live Supabase:** no change (no migration, no data). Rolled-back runtime-role test fails=0; counts afterwards 8/8/8 catalog and candidates, 0 episodes, 0 scenes.
+- **Change:** explicit mode `CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH`: NULL candidate, DRAFT-only franchise and title bootstrap, lineage marker in scene notes and run evidence. Production behaviour unchanged.
+- **Tests:** 48 static, 316 SQL on PG16 and 17, deployed code identical to tested code.
+- **Not changed:** migrations 0001-0004, CF-001 rows, the credential, CF-SSL-001, kill switches. LLM 0, paid 0, cost $0.
+- **Rollback:** restore n8n version `ee46f03f-a945-4baa-b35b-bece0c4fa8a1` (human) or archive; revert the repo commit.
+- **Stop state:** `CF002_BUILD_COMPLETE_LIVE_SOURCE_PENDING`. Waiting for the official-clip duration, scene start/end and real observation time. STOPPED before CF-003.
+
+---
+
 ## 2026-10-13 — ENGINE 2 — CF-002 LIVE VALIDATION DECISION (docs only)
 
 - Recorded CF002-POLICY-SPOILER-001 and CF002-VALIDATION-POKEMON-001 in `sprints/SPRINT_02_CF002/CF002_POLICY_AND_VALIDATION_DECISIONS.md`. No DB, n8n or schema change. Official clip could not be observed from this environment (YouTube blocked); exact scene timestamps requested. Status stays `CF002_BUILD_COMPLETE_LIVE_SOURCE_PENDING`; stopped before CF-003.

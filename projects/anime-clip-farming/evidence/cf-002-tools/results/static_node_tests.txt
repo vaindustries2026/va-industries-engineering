@@ -38,4 +38,12 @@ PASS text limits and enums
 PASS model-owned fields stay null; no prompt/model fields in payload
 PASS no secrets, LLM or paid-provider names in any Code-node source
 PASS assembled stages are self-contained (no unresolved helper)
-TOTAL pass=40 fail=0
+PASS V1 validation mode passes with a null candidate and no fabricated lineage
+PASS V2 lineage marker is stored in the scene notes, with publication still UNKNOWN
+PASS V3 validation mode refuses a candidate id or title id (no CF-001 lineage may be claimed)
+PASS V4 unknown mode name and catalog without the mode are refused
+PASS V5 catalog validation: missing, bad key, unknown field, bad media type, bad year
+PASS V6 identity: replay basis stable in validation mode; summary text is not identity; boundaries are
+PASS V7 production intake is byte-identical in behaviour: no validation fields in its identity
+PASS V8 validation mode still fails closed on missing timestamps and a future observation
+TOTAL pass=48 fail=0

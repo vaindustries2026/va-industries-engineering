@@ -11,7 +11,7 @@ const sql = (f) => fs.readFileSync(path.join(__dirname, '..', 'sql', f), 'utf8')
 const lit = (s) => '$cf$' + s + '$cf$';
 const prep = (name, f, types) => 'PREPARE ' + name + '(' + types.join(',') + ') AS\n' + sql(f) + ';\n';
 const PREPS = prep('s_begin', '01_begin_run.sql', ['text', 'text', 'text', 'text', 'text']) + prep('s_outputs', '02_load_run_outputs.sql', ['text']) +
-  prep('s_upstream', '03_validate_upstream.sql', ['text', 'text']) + prep('s_up_ep', '04_upsert_episode.sql', ['text', 'text', 'text']) + prep('s_pro_ep', '05_promote_episode.sql', ['text']) +
+  prep('s_upstream', '03_validate_upstream.sql', ['text', 'text']) + prep('s_boot', '03b_bootstrap_catalog.sql', ['text', 'text', 'text']) + prep('s_up_ep', '04_upsert_episode.sql', ['text', 'text', 'text']) + prep('s_pro_ep', '05_promote_episode.sql', ['text']) +
   prep('s_ins_sc', '06_insert_scenes.sql', ['text', 'text', 'text', 'text', 'text', 'text']) + prep('s_pro_sc', '07_promote_scenes.sql', ['text', 'text']) +
   prep('s_verify', '08_verify_persisted.sql', ['text', 'text', 'text']) + prep('s_complete', '09_complete_run.sql', ['text', 'text', 'text']) + prep('s_failed', '10_mark_run_failed.sql', ['text', 'text', 'text', 'int', 'text']);
 const CK = (n, c) => 'SELECT cf_test.expect_true(' + lit(n) + ', ' + c + ');\n';
@@ -24,12 +24,13 @@ function chain(p, tag, wf) {
   let s = '\\echo --- ' + tag + '\n';
   s += 'EXECUTE s_begin(' + [lit(cfg.idempotency_basis), lit(cfg.input_state_basis), lit(JSON.stringify(cfg.input_ids)), lit(wf || 'wf-local'), lit('exec-' + ex)].join(', ') + ');\n';
   s += 'SELECT agent_run_id::text AS rid FROM cf.agent_runs WHERE idempotency_key = ' + lit(key) + ' \\gset\n';
-  s += 'EXECUTE s_upstream(' + lit(pl.research_candidate_id) + ', ' + lit(pl.anime_title_id) + ');\n';
-  s += 'EXECUTE s_up_ep(' + lit(JSON.stringify(pl.episode)) + ', ' + lit(pl.anime_title_id) + ", :'rid') \\gset ep_\n";
+  if (pl.research_candidate_id) s += 'EXECUTE s_upstream(' + lit(pl.research_candidate_id) + ', ' + lit(pl.anime_title_id) + ');\n';
+  s += 'EXECUTE s_boot(' + lit(JSON.stringify(pl.catalog)) + ', ' + lit(pl.anime_title_id || '') + ", :'rid') \\gset boot_\n";
+  s += 'EXECUTE s_up_ep(' + lit(JSON.stringify(pl.episode)) + ", :'boot_anime_title_id', :'rid') \\gset ep_\n";
   s += "EXECUTE s_pro_ep(:'ep_source_episode_id');\n";
-  s += 'EXECUTE s_ins_sc(' + [lit(JSON.stringify(pl.scenes)), ":'ep_source_episode_id'", lit(pl.anime_title_id), lit(pl.research_candidate_id), ":'rid'", lit('v0.1')].join(', ') + ');\n';
+  s += 'EXECUTE s_ins_sc(' + [lit(JSON.stringify(pl.scenes)), ":'ep_source_episode_id'", ":'boot_anime_title_id'", lit(pl.research_candidate_id || ''), ":'rid'", lit('v0.1.1')].join(', ') + ');\n';
   s += 'EXECUTE s_pro_sc(' + ":'ep_source_episode_id', " + lit(JSON.stringify(pl.boundaries)) + ');\n';
-  s += 'EXECUTE s_verify(' + ":'ep_source_episode_id', " + lit(JSON.stringify(pl.boundaries)) + ', ' + lit(pl.anime_title_id) + ') \\gset v_\n';
+  s += 'EXECUTE s_verify(' + ":'ep_source_episode_id', " + lit(JSON.stringify(pl.boundaries)) + ", :'boot_anime_title_id') \\gset v_\n";
   s += 'EXECUTE s_complete(' + ":'rid', " + lit(JSON.stringify(p.final.summary)) + ", :'v_verification');\n";
   return { s, key };
 }
@@ -38,9 +39,9 @@ let s = '\\set ON_ERROR_STOP on\n' + PREPS;
 // S1 first run: one candidate, one episode, one scene
 const p1 = P(FX.intake()); const c1 = chain(p1, 'S1 first run (1 episode, 1 scene)');
 s += c1.s;
-s += CK('S1 run SUCCEEDED attempt 1, CF-002 v0.1, paid 0, cost 0, provider 0, no model', '(SELECT run_state::text = \'SUCCEEDED\' AND attempt_count = 1 AND paid_call_count = 0 AND estimated_cost_usd = 0 AND provider_call_count = 0 AND model_requested IS NULL AND agent_code = \'CF-002\' AND agent_version = \'v0.1\' AND finished_at IS NOT NULL FROM cf.agent_runs WHERE idempotency_key = ' + lit(c1.key) + ')');
+s += CK('S1 run SUCCEEDED attempt 1, CF-002 v0.1.1, paid 0, cost 0, provider 0, no model', '(SELECT run_state::text = \'SUCCEEDED\' AND attempt_count = 1 AND paid_call_count = 0 AND estimated_cost_usd = 0 AND provider_call_count = 0 AND model_requested IS NULL AND agent_code = \'CF-002\' AND agent_version = \'v0.1.1\' AND finished_at IS NOT NULL FROM cf.agent_runs WHERE idempotency_key = ' + lit(c1.key) + ')');
 s += CK('S1 idempotency key = sha256(basis), input hash present, ids recorded', '(SELECT input_state_hash ~ \'^[0-9a-f]{64}\' AND input_ids->>\'research_candidate_id\' = \'' + FX.CAND + '\' FROM cf.agent_runs WHERE idempotency_key = ' + lit(c1.key) + ')');
-s += CK('S1 one episode READY, one scene READY, linked to run, title, episode and candidate', '(SELECT count(*) = 1 AND bool_and(s.status::text = \'READY\' AND e.status::text = \'READY\' AND s.agent_run_id = r.agent_run_id AND s.anime_title_id = \'' + FX.TITLE + '\' AND s.research_candidate_id = \'' + FX.CAND + '\' AND s.agent_version = \'v0.1\') FROM cf.anime_scene_intelligence s JOIN cf.anime_source_episodes e USING (source_episode_id) JOIN cf.agent_runs r ON r.idempotency_key = ' + lit(c1.key) + ')');
+s += CK('S1 one episode READY, one scene READY, linked to run, title, episode and candidate', '(SELECT count(*) = 1 AND bool_and(s.status::text = \'READY\' AND e.status::text = \'READY\' AND s.agent_run_id = r.agent_run_id AND s.anime_title_id = \'' + FX.TITLE + '\' AND s.research_candidate_id = \'' + FX.CAND + '\' AND s.agent_version = \'v0.1.1\') FROM cf.anime_scene_intelligence s JOIN cf.anime_source_episodes e USING (source_episode_id) JOIN cf.agent_runs r ON r.idempotency_key = ' + lit(c1.key) + ')');
 s += CK('S1 provenance stored exactly (platform, reference, basis, observer, observed_at), verified flag, ms boundaries', '(SELECT research_source_platform = \'HUMAN_RESEARCH_OBSERVATION\' AND research_source_reference = \'human-observation:synthetic-0001\' AND research_access_basis::text = \'HUMAN_VIEWED_LICENSED_PLATFORM\' AND research_observer = \'TEST\' AND research_observed_at = \'2026-10-13T05:00:00Z\' AND timestamps_human_verified AND start_ms = 190000 AND end_ms = 245000 AND model_confidence IS NULL AND prompt_version IS NULL FROM cf.anime_scene_intelligence)');
 s += CK('S1 publication_source_status UNKNOWN for the scene', '(SELECT publication_source_status = \'UNKNOWN\' FROM cf.v_scene_publication_status)');
 s += CK('S1 run summary has verification (found 1, ready 1, all UNKNOWN)', '(SELECT (output_summary->\'verification\'->>\'found_scenes\')::int = 1 AND (output_summary->\'verification\'->>\'ready\')::int = 1 AND (output_summary->\'verification\'->>\'all_publication_unknown\')::boolean FROM cf.agent_runs WHERE idempotency_key = ' + lit(c1.key) + ')');
@@ -103,6 +104,21 @@ s += '\\echo --- S8 verify mismatch\n';
 s += "UPDATE cf.agent_runs SET run_state = 'RUNNING', finished_at = NULL WHERE agent_run_id = :'rid6';\n";
 s += "EXECUTE s_complete(:'rid6', " + lit('{"result":"COMPLETED"}') + ", " + lit('{"expected_scenes":2,"found_scenes":1,"all_publication_unknown":true}') + ');\n';
 s += CK('S8 expected 2 found 1 -> run FAILED CF002_VERIFY_MISMATCH', "(SELECT run_state::text = 'FAILED' AND error_code = 'CF002_VERIFY_MISMATCH' FROM cf.agent_runs WHERE agent_run_id = :'rid6')");
+// S10 v0.1.1 validation mode: null candidate, DRAFT-only catalog bootstrap, replay
+s += '\\echo --- S10 validation mode\n';
+const p10 = runPipeline({ intake: FX.vintake() }, {}, FX.NOW); const c10 = chain(p10, 'S10 validation-mode first run');
+s += "SELECT count(*) AS cand_before FROM cf.research_candidates \\gset\n";
+s += c10.s;
+s += "SELECT t.anime_title_id::text AS v_title, t.franchise_id::text AS v_fr, e.source_episode_id::text AS v_ep, s.scene_id::text AS v_scene FROM cf.anime_titles t, cf.anime_source_episodes e, cf.anime_scene_intelligence s WHERE t.normalised_title_key = 'synthetic validation title' AND e.anime_title_id = t.anime_title_id AND s.source_episode_id = e.source_episode_id \\gset\n";
+s += CK('S10 franchise and title created DRAFT (never READY), stamped with the CF-002 run, lineage not CF-001', "(SELECT f.status::text = 'DRAFT' AND t.status::text = 'DRAFT' AND t.agent_run_id = r.agent_run_id AND f.agent_run_id = r.agent_run_id AND r.agent_code = 'CF-002' FROM cf.anime_titles t JOIN cf.anime_franchises f USING (franchise_id) JOIN cf.agent_runs r ON r.idempotency_key = " + lit(c10.key) + " WHERE t.anime_title_id::text = :'v_title')");
+s += CK('S10 scene has NULL research_candidate_id, carries the lineage marker, publication UNKNOWN, v0.1.1', "(SELECT s.research_candidate_id IS NULL AND s.research_access_notes LIKE 'CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH%' AND v.publication_source_status = 'UNKNOWN' AND s.agent_version = 'v0.1.1' AND s.research_access_basis::text = 'PUBLIC_OFFICIAL_UPLOAD' AND s.start_ms = 0 AND s.end_ms = 130000 FROM cf.anime_scene_intelligence s JOIN cf.v_scene_publication_status v USING (scene_id) WHERE s.scene_id::text = :'v_scene')");
+s += CK('S10 no research candidate created or changed', "(SELECT count(*) = :cand_before FROM cf.research_candidates)");
+s += CK('S10 run SUCCEEDED, verification shows null-candidate scene and DRAFT catalog', "(SELECT run_state::text = 'SUCCEEDED' AND (output_summary->'verification'->>'scenes_with_null_candidate')::int = 1 AND output_summary->'verification'->'title'->>'status' = 'DRAFT' AND output_summary->'verification'->'title'->>'franchise_status' = 'DRAFT' AND output_summary->'summary'->>'lineage' IS NOT DISTINCT FROM output_summary->'summary'->>'lineage' FROM cf.agent_runs WHERE idempotency_key = " + lit(c10.key) + ')');
+s += "SELECT count(*) AS fr_n FROM cf.anime_franchises \\gset\nSELECT count(*) AS ti_n FROM cf.anime_titles \\gset\nSELECT count(*) AS ep_n FROM cf.anime_source_episodes \\gset\nSELECT count(*) AS sc_n FROM cf.anime_scene_intelligence \\gset\n";
+const c10b = chain(p10, 'S10b validation-mode replay (gate bypassed on purpose)');
+s += c10b.s;
+s += CK('S10 forced replay: same franchise, title, episode and scene ids; zero duplicate catalog, episode or scene rows', "(SELECT count(*) = :fr_n FROM cf.anime_franchises) AND (SELECT count(*) = :ti_n FROM cf.anime_titles) AND (SELECT count(*) = :ep_n FROM cf.anime_source_episodes) AND (SELECT count(*) = :sc_n FROM cf.anime_scene_intelligence) AND :'boot_anime_title_id' = :'v_title' AND (SELECT count(*) = 1 FROM cf.anime_franchises WHERE normalised_key = 'synthetic validation franchise') AND (SELECT scene_id::text = :'v_scene' FROM cf.anime_scene_intelligence WHERE source_episode_id::text = :'v_ep')");
+s += CK('S10 replay left catalog DRAFT and candidates unchanged', "(SELECT status::text = 'DRAFT' FROM cf.anime_titles WHERE anime_title_id::text = :'v_title') AND (SELECT status::text = 'DRAFT' FROM cf.anime_franchises WHERE franchise_id::text = :'v_fr') AND (SELECT count(*) = :cand_before FROM cf.research_candidates)");
 s += CK('S9 run economics across all runs: paid 0, cost 0, provider 0', "(SELECT bool_and(paid_call_count = 0 AND estimated_cost_usd = 0 AND provider_call_count = 0 AND model_requested IS NULL) FROM cf.agent_runs WHERE agent_code = 'CF-002')");
 s += CK('S9 every stored scene reads UNKNOWN publication status and has complete provenance', "(SELECT count(*) > 0 AND bool_and(v.publication_source_status = 'UNKNOWN' AND s.research_source_platform <> '' AND s.research_source_reference <> '' AND s.research_observed_at IS NOT NULL) FROM cf.anime_scene_intelligence s JOIN cf.v_scene_publication_status v USING (scene_id))");
 fs.writeFileSync(path.join(out, 's_flow.sql'), s);
