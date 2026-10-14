@@ -1,12 +1,23 @@
 {
-  "_status": "TEMPLATE ONLY. NOT RUNNABLE until a human fills the three TODO fields from the official clip. Remove this key and the _todo key before embedding in Run Config DEFAULT_INTAKE.",
-  "_todo": ["source.notes: clip total duration", "scenes[0].start", "scenes[0].end", "source.observed_at (time the human actually watched the clip)"],
+  "_status": "SUPERSEDED_BEFORE_LIVE_PERSISTENCE. The Pokemon case was cancelled on 2026-10-14 and must never be run. Kept for history only.",
   "validation_mode": "CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH",
   "catalog": {
-    "franchise": { "normalised_key": "pokemon", "display_name": "Pokémon" },
-    "title": { "normalised_title_key": "pokemon the series: xyz", "display_title": "Pokémon the Series: XYZ", "media_type": "TV" }
+    "franchise": {
+      "normalised_key": "pokemon",
+      "display_name": "Pokémon"
+    },
+    "title": {
+      "normalised_title_key": "pokemon the series: xyz",
+      "display_title": "Pokémon the Series: XYZ",
+      "media_type": "TV"
+    }
   },
-  "episode": { "season_number": 19, "episode_number": 38, "episode_variant": "TV", "episode_title": "Down to the Fiery Finish!" },
+  "episode": {
+    "season_number": 19,
+    "episode_number": 38,
+    "episode_variant": "TV",
+    "episode_title": "Down to the Fiery Finish!"
+  },
   "source": {
     "platform": "OFFICIAL_POKEMON_YOUTUBE",
     "reference": "https://www.youtube.com/watch?v=DiPjyqO-jqU",
@@ -20,11 +31,20 @@
       "start": "TODO",
       "end": "TODO",
       "timestamps_human_verified": true,
-      "characters_present": ["Ash Ketchum", "Ash-Greninja", "Alain", "Mega Charizard X"],
+      "characters_present": [
+        "Ash Ketchum",
+        "Ash-Greninja",
+        "Alain",
+        "Mega Charizard X"
+      ],
       "scene_summary": "Ash-Greninja and Alain's Mega Charizard X meet in the decisive battle of the Kalos League final.",
       "scene_function": "Climax of the Ash vs Alain Kalos League final and of the Bond Phenomenon arc.",
       "why_scene_matters": "Culmination of the Ash and Greninja Bond Phenomenon arc and of the Ash and Alain rivalry; one of the defining Kalos League moments; viewers hoped Ash might finally win, and the emotional weight and controversy of the loss are part of its memory; an instantly recognisable visual matchup with strong nostalgia for viewers of the original XY/XYZ run.",
-      "possible_editorial_angles": ["bond phenomenon payoff", "Ash vs Alain rivalry", "the Kalos League loss remembered"],
+      "possible_editorial_angles": [
+        "bond phenomenon payoff",
+        "Ash vs Alain rivalry",
+        "the Kalos League loss remembered"
+      ],
       "context_requirement": "Viewer should know Ash-Greninja's Bond Phenomenon and the Ash and Alain rivalry.",
       "spoiler_level": "HIGH",
       "visual_strength": 0.9,

@@ -7,7 +7,9 @@ Spoiler level is descriptive metadata, not a universal eligibility gate. Legacy/
 
 Product/business-rule correction: the business is built on anime memory and meaning, with a large nostalgia/legacy share, and audiences engage with legacy content because they remember the outcome. So `spoiler_level` must not block CF-002 persistence, reduce eligibility, prevent CF-003 consideration, or imply a scene is unsafe to discuss. The field stays in the schema (needed for current-anime content). Spoiler metadata (the field) is separated from spoiler gating policy (a future downstream rule keyed on content age, to be formalised later). Current code: CF-002 only stores the value and never gates on it; no migration change is needed.
 
-## CF002-VALIDATION-POKEMON-001
+## CF002-VALIDATION-POKEMON-001 — SUPERSEDED_BEFORE_LIVE_PERSISTENCE (cancelled 2026-10-14)
+The Pokémon case was replaced before anything was written; it is kept as history. No Pokémon catalog row, episode or scene exists (checked live 2026-10-14). Its intake file is renamed `pokemon_xyz_validation_intake.SUPERSEDED_BEFORE_LIVE_PERSISTENCE.json`. The v0.1.1 mechanism below is unchanged and is reused by the new case.
+
 Pokémon XYZ / Ash-Greninja vs Alain's Mega Charizard X was selected as the bounded live CF-002 scene-provenance validation case using an official Pokémon public clip.
 
 - Source: Official Pokémon YouTube channel clip "UK: Ash-Greninja versus Mega Charizard X! | Pokémon the Series: XYZ | Official Clip", video id `DiPjyqO-jqU`; episode context "Down to the Fiery Finish!".
@@ -31,3 +33,14 @@ The boundaries a human reads from the official clip are on the clip timeline, no
 
 ## Still required from a human before the live write
 Clip total duration, scene start and end on the clip timeline, and the real time the clip was watched (`observed_at`). This environment cannot reach YouTube (proxy returns 403), so nothing was guessed.
+
+## CF002-VALIDATION-DIGIMON-001 (2026-10-14, replaces CF002-VALIDATION-POKEMON-001)
+Digimon Adventure tri., Chapter 1 Reunion (released 2015-11-21), Crunchyroll presentation "E4 Reunion Part 4", was selected as the bounded live CF-002 validation case because a human can watch it directly.
+- Scene: Alphamon's first major combat confrontation with the DigiDestined, ending with the Alphamon vs Omnimon battle. Described editorially as Alphamon's first major battle and full combat appearance against the DigiDestined in tri., never as its literal first visual appearance.
+- Source: platform `CRUNCHYROLL`, basis `HUMAN_VIEWED_LICENSED_PLATFORM`, observer `VA_HUMAN_RESEARCHER_01`. Research access only; `publication_source_status` stays UNKNOWN; nothing about licensing, fair use, monetisation or redistribution is inferred. No download, no DRM bypass.
+- Source timebase: `source_timebase=CRUNCHYROLL_REUNION_PART_4`, stored in `source.notes` (existing `research_access_notes`), no migration. Timestamps are on the E4 player timeline and are not converted to the Chapter 1 movie timeline; reconciliation is left to a later sprint.
+- Lineage: Digimon is not among the 8 CF-001 candidates (live check 2026-10-14: no Digimon or Pokémon catalog rows, 8 candidates, 0 episodes, 0 scenes). Mode `CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH`, `research_candidate_id = NULL`, Bootstrap Catalog creates at most one `digimon` franchise and one `digimon adventure tri.` title, both DRAFT. No fabricated CF-001 lineage.
+- Persistence limit: 1 agent run, 1 franchise and 1 title if absent, 1 source episode, 1 scene. Then a replay of the identical observation.
+- Assumptions to confirm (defaults chosen, not instructed): episode identity season 1, episode 4, variant MOVIE; title media_type MOVIE; start_year 2015 from the stated release date.
+- Prepared, not runnable: `evidence/cf-002-tools/intake/digimon_tri_e4_validation_intake.TEMPLATE.json`. Human must supply: E4 player duration, scene start (Alphamon fully confronts the group for the major battle) and end (after the Omnimon confrontation ends and Alphamon retreats) on the E4 timeline, and the real observation time.
+- Spoiler: CF002-POLICY-SPOILER-001 applies; `spoiler_level` is informational and blocks nothing.

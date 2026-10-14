@@ -4,6 +4,15 @@ Newest first. Each entry: brief ID, date, operator, branch, what changed, what w
 
 ---
 
+## 2026-10-14 — ENGINE 2 — CF-002 VALIDATION CASE CHANGE (Pokémon cancelled, Digimon tri. E4)
+
+- **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-14T02:19Z.
+- **Change:** docs and intake template only. Pokémon marked `SUPERSEDED_BEFORE_LIVE_PERSISTENCE`; new `CF002-VALIDATION-DIGIMON-001` and a non-runnable Digimon intake template with timebase `CRUNCHYROLL_REUNION_PART_4`.
+- **Live:** no change (read-only check: no Digimon or Pokémon rows, 0 episodes, 0 scenes). n8n workflow unchanged (v0.1.1). No migration. LLM 0, paid 0.
+- **Stop state:** `CF002_BUILD_COMPLETE_LIVE_SOURCE_PENDING`. Waiting for the human E4 timestamps. STOPPED before CF-003.
+
+---
+
 ## 2026-10-13 — ENGINE 2 — CF-002 v0.1.1 VALIDATION MODE (Pokémon XYZ case approved)
 
 - **Operator:** Claude Engineer-2 (human owner Viva). Brief: Company Brain, relayed by Aquila, 2026-10-13T09:17Z (approval of the bounded validation mechanism).

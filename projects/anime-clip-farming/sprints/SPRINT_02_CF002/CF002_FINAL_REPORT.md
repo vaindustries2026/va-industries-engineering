@@ -18,3 +18,6 @@
 - Tests: 48 static, 316 SQL (PG16/17), live rolled-back block fails=0, deployed code identical to tested code.
 - Live data unchanged. Pending: clip duration, scene start/end, real observation time.
 - Rollback: restore workflow version `ee46f03f-a945-4baa-b35b-bece0c4fa8a1` in n8n (human), or archive; repo: revert the commit.
+
+## Addendum 2026-10-14: validation case changed
+Pokémon cancelled (SUPERSEDED_BEFORE_LIVE_PERSISTENCE). New case: Digimon Adventure tri., Crunchyroll E4 Reunion Part 4, timebase CRUNCHYROLL_REUNION_PART_4, same v0.1.1 mode. Live data still 0 episodes and 0 scenes. Pending: E4 player duration, scene start/end, real observation time.

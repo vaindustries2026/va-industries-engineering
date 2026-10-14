@@ -1,0 +1,67 @@
+{
+  "_status": "TEMPLATE ONLY. NOT RUNNABLE until the human observer fills every TODO field from the Crunchyroll E4 player. Remove the keys starting with underscore before embedding in Run Config DEFAULT_INTAKE.",
+  "_todo": [
+    "source.observed_at: real time the human watched",
+    "source.notes: E4 player duration (mm:ss)",
+    "scenes[0].start and scenes[0].end: E4 player timeline (MM:SS)"
+  ],
+  "_assumptions_to_confirm": [
+    "episode identity: season 1, episode_number 4, variant MOVIE (Crunchyroll shows E4 Reunion Part 4 of Chapter 1)",
+    "catalog title media_type MOVIE, start_year 2015 (Chapter 1 release 2015-11-21)"
+  ],
+  "validation_mode": "CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH",
+  "catalog": {
+    "franchise": {
+      "normalised_key": "digimon",
+      "display_name": "Digimon"
+    },
+    "title": {
+      "normalised_title_key": "digimon adventure tri.",
+      "display_title": "Digimon Adventure tri.",
+      "media_type": "MOVIE",
+      "start_year": 2015
+    }
+  },
+  "episode": {
+    "season_number": 1,
+    "episode_number": 4,
+    "episode_variant": "MOVIE",
+    "episode_title": "Chapter 1 - Reunion, E4 Reunion Part 4"
+  },
+  "source": {
+    "platform": "CRUNCHYROLL",
+    "reference": "human-observation:crunchyroll-digimon-adventure-tri-e4-reunion-part-4",
+    "research_access_basis": "HUMAN_VIEWED_LICENSED_PLATFORM",
+    "observed_at": "TODO-ISO-8601-UTC",
+    "observer": "VA_HUMAN_RESEARCHER_01",
+    "notes": "source_timebase=CRUNCHYROLL_REUNION_PART_4. Boundaries are on the Crunchyroll E4 Reunion Part 4 player timeline, not the Chapter 1 movie timeline. Player duration: TODO mm:ss."
+  },
+  "scenes": [
+    {
+      "start": "TODO",
+      "end": "TODO",
+      "timestamps_human_verified": true,
+      "characters_present": [
+        "Alphamon",
+        "Omnimon",
+        "Tai",
+        "Matt",
+        "Agumon",
+        "Gabumon",
+        "Meicoomon"
+      ],
+      "scene_summary": "Alphamon's first major battle against the DigiDestined and their partner Digimon: its overwhelming power outclasses the partners, the group tries to protect Meicoomon, Tai hesitates over the damage a fight could cause until Matt pushes him to act, the clash escalates to Omnimon, and Alphamon in its Ouryuken form is finally driven off.",
+      "scene_function": "Major statement of the raised threat level in tri.: a Royal Knight-level enemy against the original cast.",
+      "why_scene_matters": "The original Adventure cast and partners face a Royal Knight-level threat, which carries strong nostalgia; it sets the stakes for tri. with striking visuals; Tai's hesitation and Matt's push show the cast's dynamic. Editorially this is Alphamon's first major battle and full combat appearance in tri., not its literal first visual appearance.",
+      "possible_editorial_angles": [
+        "Alphamon vs Omnimon",
+        "original cast faces a Royal Knight",
+        "Tai's hesitation and Matt's push"
+      ],
+      "context_requirement": "Viewer should know the DigiDestined, their partners, Omnimon and why Meicoomon is being protected.",
+      "spoiler_level": "HIGH",
+      "visual_strength": 0.9,
+      "nostalgia_signal": 0.9
+    }
+  ]
+}
