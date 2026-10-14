@@ -6,8 +6,7 @@
     "scenes[0].start and scenes[0].end: E4 player timeline (MM:SS)"
   ],
   "_assumptions_to_confirm": [
-    "episode identity: season 1, episode_number 4, variant MOVIE (Crunchyroll shows E4 Reunion Part 4 of Chapter 1)",
-    "catalog title media_type MOVIE, start_year 2015 (Chapter 1 release 2015-11-21)"
+    "CONFIRMED 2026-10-14 by Company Brain: title Digimon Adventure tri., MOVIE/MOVIE, start_year 2015, part number 4, part title Reunion Part 4. season=1 is a Crunchyroll source-presentation locator only (the schema requires an integer season; no schema change)."
   ],
   "validation_mode": "CF002_VALIDATION_SOURCE_OUTSIDE_CF001_BATCH",
   "catalog": {
@@ -26,7 +25,7 @@
     "season_number": 1,
     "episode_number": 4,
     "episode_variant": "MOVIE",
-    "episode_title": "Chapter 1 - Reunion, E4 Reunion Part 4"
+    "episode_title": "Reunion Part 4"
   },
   "source": {
     "platform": "CRUNCHYROLL",
@@ -34,7 +33,7 @@
     "research_access_basis": "HUMAN_VIEWED_LICENSED_PLATFORM",
     "observed_at": "TODO-ISO-8601-UTC",
     "observer": "VA_HUMAN_RESEARCHER_01",
-    "notes": "source_timebase=CRUNCHYROLL_REUNION_PART_4. Boundaries are on the Crunchyroll E4 Reunion Part 4 player timeline, not the Chapter 1 movie timeline. Player duration: TODO mm:ss."
+    "notes": "SOURCE_PRESENTATION_ONLY - Crunchyroll episodic segmentation; canonical work is Digimon Adventure tri. Chapter 1 \"Reunion\" (movie); season 1 is a locator only. source_timebase=CRUNCHYROLL_REUNION_PART_4 (E4 player timeline, not the movie timeline). Player duration: TODO mm:ss."
   },
   "scenes": [
     {

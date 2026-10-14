@@ -24,3 +24,5 @@ Needed from a human: clip total duration, scene start and end on the clip timeli
 
 ## Update 2026-10-14: validation case changed to Digimon Adventure tri. E4
 Pokémon was cancelled before any live write. Live check 2026-10-14: no Digimon or Pokémon catalog rows; 8 franchises, 8 titles, 8 candidates, 0 episodes, 0 scenes. Waiting for the human observer (`VA_HUMAN_RESEARCHER_01`) to supply the Crunchyroll E4 player duration, scene start and end, and the real observation time. See CF002_POLICY_AND_VALIDATION_DECISIONS.md (CF002-VALIDATION-DIGIMON-001).
+
+Update 2026-10-14 (later): episode identity confirmed (see CF002-VALIDATION-DIGIMON-001). Season 1 is a source-presentation locator only, recorded in the scene note. Still waiting for the human's E4 player duration, scene start/end and observation time.
