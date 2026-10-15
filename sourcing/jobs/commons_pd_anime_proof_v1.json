@@ -1,0 +1,12 @@
+{
+  "job_id": "SRCJOB-COMMONS-PD-ANIME-PROOF-v1",
+  "channel": "ANIME_CLIP_FARMING",
+  "source_class": "SRC-PD-ARCHIVE",
+  "adapter": "wikimedia_commons",
+  "query": "Namakura Gatana filetype:video",
+  "search_limit": 20,
+  "accept_mediatypes": ["VIDEO"],
+  "accept_mimes": ["video/webm", "video/ogg"],
+  "max_items": 1,
+  "max_bytes": 100000000
+}

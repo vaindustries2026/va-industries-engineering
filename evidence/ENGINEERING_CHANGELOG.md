@@ -1947,3 +1947,28 @@ agent007_runs: 0
 production_writes: 0
 status: "STOPPED_HIGGSFIELD_ACCESS_NOT_CONFIGURED + STOPPED_BASE_FRAME_REQUIRED_BEFORE_MOTION + MOTION_PROVIDER_ABSTRACTION_BUILT + TEST_SUITE_PASS + ZERO_GENERATIONS + EVIDENCE_COMMITTED_TO_GITHUB"
 ```
+
+---
+
+## ENG-20261015-SOURCE-PROCUREMENT-V01: Anime Clip Farming source classes ranked; tier-A acquisition path built; live proof blocked by network policy
+
+```yaml
+change_id: "ENG-20261015-SOURCE-PROCUREMENT-V01"
+timestamp: "2026-10-15"
+actor: "Claude"
+authorised_by: "Human (session scope: Anime Clip Farming; free real fetch, repo-only evidence)"
+evidence: "evidence/SOURCE_PROCUREMENT_v1.0.md"
+built: ["sourcing/classes.py (9 classes, tiers A/B/C/X, deterministic rank)", "sourcing/rights.py (authority-field-only rights gate; NC/ND/restrictions/conflict fail closed)", "sourcing/adapters/wikimedia_commons.py (Action API, sha1+size integrity, host pin)", "sourcing/acquire.py (pipeline, REVIEW provenance, append-only ledger, idempotent)", "sourcing/jobs/commons_pd_anime_proof_v1.json"]
+ranking: ["1 A SRC-OPEN-LICENSE", "2 A SRC-PD-ARCHIVE", "3 B SRC-RIGHTSHOLDER-LICENSE", "4 B SRC-CREATOR-GRANT", "5 B SRC-OWN-ORIGINAL", "6 C SRC-FAIR-USE-EXCERPT", "7 C SRC-OFFICIAL-PROMO", "8 C SRC-PLATFORM-NATIVE-REMIX", "9 X SRC-PROHIBITED"]
+finding: "highest anime relevance classes are tier B/C; automatable classes hold almost no anime"
+tests: "14/14 sourcing pass; agent008 54/54 unchanged"
+live_proof: "FAIL_CLOSED TRANSPORT_UNREACHABLE (proxy 403 for commons.wikimedia.org) at 2026-10-15T01:56:31Z; no item, no partial, no ledger row"
+unblock: "allow commons.wikimedia.org + upload.wikimedia.org in environment network policy, rerun the job"
+paid_calls: 0
+production_writes: 0
+n8n_changes: 0
+supabase_changes: 0
+binaries_committed: 0
+rollback: "revert this commit"
+status: "SOURCE_CLASSES_DEFINED_AND_RANKED + TIER_A_ACQUISITION_PATH_BUILT + OFFLINE_PROVEN + LIVE_PROOF_BLOCKED_NETWORK_POLICY + ZERO_PAID_CALLS + ZERO_PRODUCTION_WRITES"
+```
