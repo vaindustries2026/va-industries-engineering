@@ -2860,3 +2860,26 @@ evidence: ["evidence/EP005_BATCH1_BASE_FRAME_REVIEW_RECONCILED_v1.0.md", "eviden
 rollback: "F09: delete registry row c28c7904 + storage object 6271cefa (human-authorised only); F15/v02 are local/evidence only"
 status: "EP005_BATCH1_BASE_FRAME_REVIEW_RECONCILED + F01/F03/F09_PIXEL_BRIDGE_PASS + F01_REJECTED + F03_REJECTED + F09_APPROVED + F09_PRESERVED + F15_DERIVED_REVIEW + F01_V02_PACKAGE_LOCKED + F03_V02_PACKAGE_LOCKED + F01_V02_GENERATIONS=0 + F03_V02_GENERATIONS=0 + ZERO_NEW_PROVIDER_CALLS + UPDATED_BATCH_STATE_READY"
 ```
+
+---
+
+## ENG-20261020-EP005-BATCH1-V2-FRAMES-GENERATED: F01 v02, F03 v02, F15 dedicated - 1 Flare call each, normalised review candidates
+
+```yaml
+change_id: "ENG-20261020-EP005-BATCH1-V2-FRAMES-GENERATED"
+timestamp: "2026-10-20"
+actor: "Claude"
+authorised_by: "Company Brain / Gilang (bounded image run: <=3 Flare generations, 1 per package, no retries/alternates/fallback)"
+change_type: "PAID IMAGE GENERATION (3) + EVIDENCE"
+f15_v01_crop: "REJECTED c5c5467598718be66e6b107ce8b83be5f7376a7ef3985e817af31d3502edc5e4; F15 -> dedicated generation (package locked 90689a7f: prompt 3072bf65..., body 0ed33b69...)"
+pre_submit: "PASS (auth 200; 6 refs = governance; 6 locked SHAs match; 0/1 attempts each)"
+calls:
+  F01_V02: {request_id: "de184354-7c0e-4632-919b-c63d4d22656b", raw_sha256: "684eb945aebb385be1237bedf3de5346a20f2ec9d8d2dd6270605f190af5bd59", normalised_sha256: "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845"}
+  F03_V02: {request_id: "b7f30c81-7e07-4e06-8335-31528821583a", raw_sha256: "7e5ea370f302fd79f1efb09fc6d6d89376f1f844d35d6e1ad172ae50171ecd2b", normalised_sha256: "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410"}
+  F15_V02: {request_id: "583f34dc-4dd3-4ec1-aa19-9f8e024cd503", raw_sha256: "14fcd488ba032c5dc7e2340d398f1e84dcf9dc8fb3883ee54cfb4fa779080d19", normalised_sha256: "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690"}
+normalisation: "crop 0,4,2688,1512 -> G04 1920x1080; two runs byte-identical x3; raw unchanged"
+provider_cost_returned: "none"
+side_effects: "3 image generations, 0 retries, 0 video/ElevenLabs/Seedance/Agent-006/007, 0 production DB/storage/registry writes, F09 + S027-S029 unchanged, manifest/readiness APPROVED"
+evidence: ["evidence/EP005_BATCH1_V2_FRAMES_READY_FOR_HUMAN_REVIEW_v1.0.md", "evidence/ep005/batch1_base_frames/B1V2_GENERATION_RECORD_v1.json"]
+status: "EP005_BATCH1_V2_FRAMES_READY_FOR_HUMAN_REVIEW + IMAGE_GENERATIONS=3 + RETRIES=0 + NORMALISATION_TWO_RUN_PASS x3 + ZERO_PRODUCTION_WRITES"
+```

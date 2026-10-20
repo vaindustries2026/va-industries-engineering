@@ -1,0 +1,51 @@
+{
+ "frame_id": "FRAME-EP005-F15-BASE-CAND-v02",
+ "status": "REVIEW (local candidate; no registry row; no production storage)",
+ "package": "F15_V02",
+ "family": "F15-MACRO-REFLECTION",
+ "provider_request_id": "583f34dc-4dd3-4ec1-aa19-9f8e024cd503",
+ "prompt_sha256": "3072bf65e56ace2ca43bb649d4c90c86bd8aad6b55fce05a601e31405a61bbae",
+ "request_body_sha256": "0ed33b69d5c4c01e8cd12e9cc637e946a4223897b2c0353a486e47cba80cf6d9",
+ "reference_sha256s": {
+  "CHAR-MIKKO-MASTER-v01": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+  "CHAR-LUMI-MASTER-v01": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+  "WORLD-EP005-BATHROOM-MASTER-v01": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+  "PROP-EP005-HAND-MIRROR-v01": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+  "PROP-EP005-CLEANING-CLOTH-v01": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+  "DUO-MIKKO-LUMI-SCALE-v01": "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f"
+ },
+ "raw": {
+  "RAW_SHA256": "14fcd488ba032c5dc7e2340d398f1e84dcf9dc8fb3883ee54cfb4fa779080d19",
+  "RAW_BYTE_SIZE": 4399633,
+  "RAW_DIMENSIONS": "2688x1520",
+  "RAW_FORMAT": "PNG"
+ },
+ "normalisation": {
+  "method": "G04 derive_frame: frame 0, exact centred 16:9 crop, scale 1920x1080 (lanczos+accurate_rnd+full_chroma_int+bitexact), lossless PNG; no other operation",
+  "crop": {
+   "x": 0,
+   "y": 4,
+   "w": 2688,
+   "h": 1512
+  },
+  "scale": {
+   "w": 1920,
+   "h": 1080
+  },
+  "source_state": "LOCKED_ORIGINAL_FOR_NORMALISATION"
+ },
+ "NORMALISED_SHA_A": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+ "NORMALISED_SHA_B": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+ "NORMALISATION_DETERMINISM_PASS": true,
+ "CANONICAL_RGB_PIXEL_SHA": "671b79d22abc1f8d26566d9c73c14b75b14bc47b1535a913c029a42234f5deba",
+ "normalised_bytes": 3518271,
+ "normalised_dimensions": "1920x1080",
+ "raw_unchanged": true,
+ "g03_applied": false,
+ "g08_applied": false,
+ "human_approval": {
+  "required": true,
+  "approved": false,
+  "approve_by": "exact NORMALISED_SHA"
+ }
+}

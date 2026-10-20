@@ -1,0 +1,140 @@
+{
+ "task": "EP005 BATCH 1 v2 IMAGE RUN - F01 v02, F03 v02, F15 dedicated (one Flare call each)",
+ "authorisation": "Company Brain / Gilang 2026-10-20: up to 3 Flare generations, exactly 1 per package, no retries, no alternate model or provider",
+ "spend_note": "no USD ceiling stated in this authorisation; provider exposes no price before or after the call; none returned",
+ "f15_v01_crop": "REJECTED (c5c54675...); F15 family kind DERIVE_CROP -> GENERATE (dedicated package locked in 90689a7f before submit)",
+ "pre_submit_verification": true,
+ "packages": {
+  "F01_V02": {
+   "candidate": "FRAME-EP005-F01-BASE-CAND-v02",
+   "REQUEST_ID": "de184354-7c0e-4632-919b-c63d4d22656b",
+   "submitted_at_utc": "Tue, 20 Oct 2026 05:19:48 GMT",
+   "CALL_STATUS": "completed",
+   "ATTEMPT_NUMBER": 1,
+   "RETRY_COUNT": 0,
+   "prompt_sha256": "6e3d11009d290121c19be55b3cc46fc2e91b3918805be42ce3e5159d7ca5d5c3",
+   "request_body_sha256": "f46b79b834b13b2a3384b869d1ade2f46ca34a76290dbe397665f3d1e0cb2f30",
+   "RAW_SHA256": "684eb945aebb385be1237bedf3de5346a20f2ec9d8d2dd6270605f190af5bd59",
+   "RAW_BYTE_SIZE": 4450502,
+   "RAW_DIMENSIONS": "2688x1520",
+   "RAW_FORMAT": "PNG",
+   "raw_state": "LOCKED_ORIGINAL_FOR_NORMALISATION",
+   "raw_cdn_expiry": "expiry-date=\"Wed, 28 Oct 2026 00:00:00 GMT\", rule-id=\"Delete after 7 days\"",
+   "NORMALISED_SHA_A": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "NORMALISED_SHA_B": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "NORMALISATION_DETERMINISM_PASS": true,
+   "CANONICAL_RGB_PIXEL_SHA": "c963f4d2e01997d49b3d5bc85082ae204e883340405e39ad8744af57601ce0fd",
+   "crop": {
+    "h": 1512,
+    "w": 2688,
+    "x": 0,
+    "y": 4
+   },
+   "provider_cost_returned": "none",
+   "composition_observations": {
+    "mirror_glass_px": "602x628 (58% of frame height; v01 glass height 634 px = 59%, i.e. unchanged)",
+    "notes": [
+     "Reflection: large, front-facing, clean, readable (eyes, both cheeks, nose, mouth) - strong for G03/G08 geometry.",
+     "Lumi: no long noodle arm; two tiny hands on the handle, but a short limb still links the orb to the hands at lower centre.",
+     "Mikko: the back of his real head/shoulder still fills the left ~350 px of frame (smaller share than v01, but still the left third).",
+     "Top petal tip touches the top frame edge (x 870-967)."
+    ]
+   }
+  },
+  "F03_V02": {
+   "candidate": "FRAME-EP005-F03-BASE-CAND-v02",
+   "REQUEST_ID": "b7f30c81-7e07-4e06-8335-31528821583a",
+   "submitted_at_utc": "Tue, 20 Oct 2026 05:20:26 GMT",
+   "CALL_STATUS": "completed",
+   "ATTEMPT_NUMBER": 1,
+   "RETRY_COUNT": 0,
+   "prompt_sha256": "4e68b6a408cc259d672ef3158a870cb0a3d35738b1f40cafd9df4d6855832782",
+   "request_body_sha256": "a5a5bef2fa28063daf425c97f1622634600dd42b5134f0fb630b4295ee955a2c",
+   "RAW_SHA256": "7e5ea370f302fd79f1efb09fc6d6d89376f1f844d35d6e1ad172ae50171ecd2b",
+   "RAW_BYTE_SIZE": 4899791,
+   "RAW_DIMENSIONS": "2688x1520",
+   "RAW_FORMAT": "PNG",
+   "raw_state": "LOCKED_ORIGINAL_FOR_NORMALISATION",
+   "raw_cdn_expiry": "expiry-date=\"Wed, 28 Oct 2026 00:00:00 GMT\", rule-id=\"Delete after 7 days\"",
+   "NORMALISED_SHA_A": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+   "NORMALISED_SHA_B": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+   "NORMALISATION_DETERMINISM_PASS": true,
+   "CANONICAL_RGB_PIXEL_SHA": "df5e11f9477be96151ec3a8c1127b20081cacad41302fa191a3f00ac3136c253",
+   "crop": {
+    "h": 1512,
+    "w": 2688,
+    "x": 0,
+    "y": 4
+   },
+   "provider_cost_returned": "none",
+   "composition_observations": {
+    "mirror_glass_px": "334x369 (34% of frame height; v01 glass height 298 px = 28%)",
+    "notes": [
+     "Mirror materially larger than v01 and fully outlined, but below the ~40%-of-height target in the prompt.",
+     "Lumi: smooth orb from behind, no lower lobes visible (orb bottom leaves the frame); one hand with a short arm holds the handle.",
+     "Mikko: real face three-quarter and very readable, cloth lowered in hand; reflection readable at moderate size.",
+     "Camera reads as over-Lumi's-side rather than strictly over the shoulder."
+    ]
+   }
+  },
+  "F15_V02": {
+   "candidate": "FRAME-EP005-F15-BASE-CAND-v02",
+   "REQUEST_ID": "583f34dc-4dd3-4ec1-aa19-9f8e024cd503",
+   "submitted_at_utc": "Tue, 20 Oct 2026 05:21:11 GMT",
+   "CALL_STATUS": "completed",
+   "ATTEMPT_NUMBER": 1,
+   "RETRY_COUNT": 0,
+   "prompt_sha256": "3072bf65e56ace2ca43bb649d4c90c86bd8aad6b55fce05a601e31405a61bbae",
+   "request_body_sha256": "0ed33b69d5c4c01e8cd12e9cc637e946a4223897b2c0353a486e47cba80cf6d9",
+   "RAW_SHA256": "14fcd488ba032c5dc7e2340d398f1e84dcf9dc8fb3883ee54cfb4fa779080d19",
+   "RAW_BYTE_SIZE": 4399633,
+   "RAW_DIMENSIONS": "2688x1520",
+   "RAW_FORMAT": "PNG",
+   "raw_state": "LOCKED_ORIGINAL_FOR_NORMALISATION",
+   "raw_cdn_expiry": "expiry-date=\"Wed, 28 Oct 2026 00:00:00 GMT\", rule-id=\"Delete after 7 days\"",
+   "NORMALISED_SHA_A": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+   "NORMALISED_SHA_B": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+   "NORMALISATION_DETERMINISM_PASS": true,
+   "CANONICAL_RGB_PIXEL_SHA": "671b79d22abc1f8d26566d9c73c14b75b14bc47b1535a913c029a42234f5deba",
+   "crop": {
+    "h": 1512,
+    "w": 2688,
+    "x": 0,
+    "y": 4
+   },
+   "provider_cost_returned": "none",
+   "composition_observations": {
+    "mirror_glass_px": "614x616 (57% of frame height)",
+    "notes": [
+     "Clean, deliberate macro: mirror centred, reflection large, sharp, front-facing and clean; neckerchief at the bottom of the glass.",
+     "No real Mikko face/body and no Lumi face/eye/body at the left or right edges; only Lumi's tiny hand on the handle at bottom centre.",
+     "Bathroom canon readable behind (window, toilet, vanity with grey-blue doors, blue towel), softly out of focus.",
+     "Top petal tip just touches the top frame edge (x 953-977); the prompt asked for an even margin on every side."
+    ]
+   }
+  }
+ },
+ "SIDE_EFFECT_AUDIT": {
+  "image_generations": 3,
+  "per_package": {
+   "F01_V02": 1,
+   "F03_V02": 1,
+   "F15_V02": 1
+  },
+  "retries": 0,
+  "video": 0,
+  "elevenlabs": 0,
+  "seedance": 0,
+  "agent006": 0,
+  "agent007": 0,
+  "manifest_script_readiness_change": false,
+  "s027_s028_s029": "unchanged (re-hash equal, APPROVED)",
+  "f09": "unchanged (row c28c7904 APPROVED, stored bytes re-hash equal; not read by this run)",
+  "production_db_writes": 0,
+  "production_storage_writes": 0,
+  "registry_rows_created": 0,
+  "billing_change": false,
+  "anime_clip_farming": "untouched"
+ },
+ "binaries": "raw + normalised PNGs in the session scratchpad only; raw provider copies on the CDN until 2026-10-28 00:00 GMT; normalised frames reproducible byte-for-byte from raw via b1v2_generate.py normalise"
+}
