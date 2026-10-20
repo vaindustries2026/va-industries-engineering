@@ -1,0 +1,50 @@
+{
+ "frame_id": "FRAME-EP005-F15-BASE-CAND-v01",
+ "status": "REVIEW (local candidate; NOT approved; no registry row; no production storage)",
+ "family": "F15-MACRO-REFLECTION",
+ "target_shots": [
+  "S019",
+  "S018 (G07-blocked; later where governed)"
+ ],
+ "F15_SOURCE_ASSET_ID": "FRAME-EP005-F09-BASE-CAND-v01",
+ "F15_SOURCE_REGISTRY_ID": "c28c7904-51ae-42e4-b7e1-4a44d93d9ba3",
+ "F15_SOURCE_SHA": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+ "F15_CROP_GEOMETRY": {
+  "x": 667,
+  "y": 215,
+  "w": 688,
+  "h": 387
+ },
+ "crop_rule": {
+  "governed_spec": "batch driver family F15: kind DERIVE_CROP, crop MEASURED_AFTER_F09_APPROVAL, scale 1920x1080",
+  "measurement": "pink flower-head bbox of the hand mirror on the approved F09 pixels (window x800-1230, y150-620; rows with >=20 pink px, first contiguous block; cols with >=10 pink px)",
+  "measured_head_bbox": {
+   "x0": 836,
+   "x1": 1186,
+   "y0": 234,
+   "y1": 583
+  },
+  "margin_px": 16,
+  "rule": "smallest exact 16:9 crop (16k x 9k) holding the full mirror head height + margin, centred on the head"
+ },
+ "scale": {
+  "w": 1920,
+  "h": 1080
+ },
+ "scale_flags": "lanczos+accurate_rnd+full_chroma_int+bitexact",
+ "upscale_factor": 2.7907,
+ "F15_OUTPUT_SHA_A": "c5c5467598718be66e6b107ce8b83be5f7376a7ef3985e817af31d3502edc5e4",
+ "F15_OUTPUT_SHA_B": "c5c5467598718be66e6b107ce8b83be5f7376a7ef3985e817af31d3502edc5e4",
+ "F15_DETERMINISM_PASS": true,
+ "F15_CANONICAL_RGB_SHA": "bb17401eac3f0479ebc1bbceb44927e342fc91c6d2bf07537386c6b59ca33f40",
+ "F15_DIMENSIONS": "1920x1080",
+ "bytes": 3260370,
+ "source_unchanged": true,
+ "operations": "G04 exact crop + deterministic lanczos resize only; no generative enhancement, sharpening or retouch",
+ "human_approval": {
+  "required": true,
+  "approved": false,
+  "approve_by": "exact F15 output sha256",
+  "concern": "macro crop quality (upscale of the F09 reflection)"
+ }
+}

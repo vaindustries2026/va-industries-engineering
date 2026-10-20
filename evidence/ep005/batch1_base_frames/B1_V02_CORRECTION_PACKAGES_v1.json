@@ -1,0 +1,173 @@
+{
+ "scope": "EP005 Batch 1 correction packages F01 v02, F03 v02 - LOCKED, NOT SUBMITTED, no spend authorised",
+ "source": "B1_GENERATION_PACKAGES_v1.json @ c6a7dd2258846e228da0dc0b6ae8cf10058ef781",
+ "model": "Higgsfield Marketing Studio Image 2.5 Flare",
+ "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
+ "references_in_order": [
+  {
+   "n": 1,
+   "asset_id": "CHAR-MIKKO-MASTER-v01",
+   "sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+   "content_type": "image/png",
+   "bytes": 2207008,
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/c01c93a7-edab-49e6-a2c4-c54b22ebc4d5.png",
+   "readback_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+   "upload_scope_id": "EP005-B1-BASEFRAME-REF-CHAR-MIKKO-MASTER-v01"
+  },
+  {
+   "n": 2,
+   "asset_id": "CHAR-LUMI-MASTER-v01",
+   "sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+   "content_type": "image/png",
+   "bytes": 1887897,
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d40a9c8f-6b4b-4482-9476-5985aa54d423.png",
+   "readback_sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+   "upload_scope_id": "EP005-B1-BASEFRAME-REF-CHAR-LUMI-MASTER-v01"
+  },
+  {
+   "n": 3,
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "content_type": "image/png",
+   "bytes": 1756516,
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/2b05b534-740d-4d58-8e07-e968260b312c.png",
+   "readback_sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "upload_scope_id": "EP005-B1-BASEFRAME-REF-WORLD-EP005-BATHROOM-MASTER-v01"
+  },
+  {
+   "n": 4,
+   "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+   "sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "content_type": "image/webp",
+   "bytes": 47670,
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/06a55257-a9c4-4cf9-ade9-c6ec01d01b60.webp",
+   "readback_sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "upload_scope_id": "EP005-B1-BASEFRAME-REF-PROP-EP005-HAND-MIRROR-v01"
+  },
+  {
+   "n": 5,
+   "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+   "sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "content_type": "image/webp",
+   "bytes": 237724,
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d865460f-60c2-40ca-b8dd-d60fb1ae3b78.webp",
+   "readback_sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "upload_scope_id": "EP005-B1-BASEFRAME-REF-PROP-EP005-CLEANING-CLOTH-v01"
+  },
+  {
+   "n": 6,
+   "asset_id": "DUO-MIKKO-LUMI-SCALE-v01",
+   "sha256": "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f",
+   "content_type": "image/png",
+   "bytes": 1704130,
+   "public_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/0e11b433-f9cf-4c70-84a0-5e45c2604cd6.png",
+   "readback_sha256": "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f",
+   "upload_scope_id": "EP005-B1-BASEFRAME-REF-DUO-MIKKO-LUMI-SCALE-v01"
+  }
+ ],
+ "reference_url_expiry": "Wed, 28 Oct 2026 00:00:00 GMT (same transport copies as v1); after expiry a re-upload changes image_urls, so the package must be re-locked and re-approved",
+ "packages": {
+  "F01_V02": {
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "version": "v02",
+   "status": "LOCKED_NOT_SUBMITTED",
+   "supersedes": {
+    "package": "F01 v1",
+    "v1_prompt_sha256": "559d3ba7b0c9ed9023df8376cdcd160b9047578418fb55bd492fdf155804cf97",
+    "v1_request_body_sha256": "008adeb425bc0edea374a0b8ac6e2b09decd485db2df4d56a71f62992ac3421c",
+    "rejected_normalised_sha256": "c191a513a4987cc0be6ea713f8a8dc88566c952db0250b122270786e0aa11e10"
+   },
+   "prompt_deltas_vs_v1": [
+    {
+     "replaced": "Composition: the hand mirror large and centred, Mikko's reflection filling most of the glass; the edge of Mikko's face/cheek and Lumi's tiny holding hand visible at the frame edge.",
+     "with": "Composition: the hand mirror large and centred, Mikko's reflection filling most of the glass, with Mikko's whole face clearly readable, front-facing and large inside the glass (eyes, both cheeks, nose and mouth unobstructed); only a small edge of Mikko's real cheek and shoulder and Lumi's tiny holding hand visible at the frame edge, not a large view of the back of Mikko's head or body.",
+     "correction": "MIKKO/CAMERA: readable centred reflection, large for G03/G08 geometry; no dominant rear-of-head/body view"
+    },
+    {
+     "replaced": "do not copy its layout, poses, labels or background). ",
+     "with": "do not copy its layout, poses, labels or background). Lumi keeps exactly the canonical silhouette from reference image 2: a smooth, perfectly round floating orb with no legs, no lower-body lobes and no long, elongated or noodle-like arms; only her tiny simple rounded hands, kept close to her body, reaching out just slightly to hold the mirror handle. Mikko keeps his canonical proportions from reference image 1. ",
+     "correction": "LUMI: canonical orb silhouette, no legs/lobes/long limbs, tiny hands close to body (small reach for the handle); MIKKO canonical proportions"
+    }
+   ],
+   "prompt_exact": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, slightly front-facing view into the hand mirror, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: the hand mirror large and centred, Mikko's reflection filling most of the glass, with Mikko's whole face clearly readable, front-facing and large inside the glass (eyes, both cheeks, nose and mouth unobstructed); only a small edge of Mikko's real cheek and shoulder and Lumi's tiny holding hand visible at the frame edge, not a large view of the back of Mikko's head or body. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Mikko and Lumi keep exactly the relative sizes shown in reference image 6 (scale reference only: do not copy its layout, poses, labels or background). Lumi keeps exactly the canonical silhouette from reference image 2: a smooth, perfectly round floating orb with no legs, no lower-body lobes and no long, elongated or noodle-like arms; only her tiny simple rounded hands, kept close to her body, reaching out just slightly to hold the mirror handle. Mikko keeps his canonical proportions from reference image 1. Pose: Mikko looks calmly and attentively into the mirror, hands relaxed and out of the way; the soft light-blue fleece cleaning cloth from reference image 5 is not in his hands and is not in view. Lumi holds the mirror steady by its handle with a gentle, attentive expression. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "prompt_chars": 3153,
+   "PROMPT_SHA256": "6e3d11009d290121c19be55b3cc46fc2e91b3918805be42ce3e5159d7ca5d5c3",
+   "request_body_exact": {
+    "prompt": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, slightly front-facing view into the hand mirror, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: the hand mirror large and centred, Mikko's reflection filling most of the glass, with Mikko's whole face clearly readable, front-facing and large inside the glass (eyes, both cheeks, nose and mouth unobstructed); only a small edge of Mikko's real cheek and shoulder and Lumi's tiny holding hand visible at the frame edge, not a large view of the back of Mikko's head or body. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Mikko and Lumi keep exactly the relative sizes shown in reference image 6 (scale reference only: do not copy its layout, poses, labels or background). Lumi keeps exactly the canonical silhouette from reference image 2: a smooth, perfectly round floating orb with no legs, no lower-body lobes and no long, elongated or noodle-like arms; only her tiny simple rounded hands, kept close to her body, reaching out just slightly to hold the mirror handle. Mikko keeps his canonical proportions from reference image 1. Pose: Mikko looks calmly and attentively into the mirror, hands relaxed and out of the way; the soft light-blue fleece cleaning cloth from reference image 5 is not in his hands and is not in view. Lumi holds the mirror steady by its handle with a gentle, attentive expression. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+    "image_urls": [
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/c01c93a7-edab-49e6-a2c4-c54b22ebc4d5.png",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d40a9c8f-6b4b-4482-9476-5985aa54d423.png",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/2b05b534-740d-4d58-8e07-e968260b312c.png",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/06a55257-a9c4-4cf9-ade9-c6ec01d01b60.webp",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d865460f-60c2-40ca-b8dd-d60fb1ae3b78.webp",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/0e11b433-f9cf-4c70-84a0-5e45c2604cd6.png"
+    ],
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "quality": "high",
+    "enhance_prompt": false
+   },
+   "REQUEST_BODY_SHA256": "f46b79b834b13b2a3384b869d1ade2f46ca34a76290dbe397665f3d1e0cb2f30",
+   "settings_unchanged": {
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "quality": "high",
+    "enhance_prompt": false
+   },
+   "target_frame_id": "FRAME-EP005-F01-BASE-CAND-v02",
+   "generations_authorised": 0,
+   "submitted": false
+  },
+  "F03_V02": {
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "version": "v02",
+   "status": "LOCKED_NOT_SUBMITTED",
+   "supersedes": {
+    "package": "F03 v1",
+    "v1_prompt_sha256": "c51d9670c8065c587a06ade5470e2908a3439bd88c64d742cc44e7e06cc9446f",
+    "v1_request_body_sha256": "d86ec189aa6c3af3eecbfad88c780b8b40a3cab1076125dc5b6db329654b8411",
+    "rejected_normalised_sha256": "e8571476c5be0b1c263c4b9c3be2c155ed1af265c87aa0c18786b69b409c5968"
+   },
+   "prompt_deltas_vs_v1": [
+    {
+     "replaced": "Composition: Lumi's round glowing back and tiny hands in the foreground holding the mirror slightly angled; Mikko's reflected face readable in the glass, Mikko watching attentively.",
+     "with": "Composition: Lumi's round glowing back and tiny hands in the foreground holding the mirror slightly angled and close to camera, so the hand mirror is large in frame: the clean glass is at least about 40% of the frame height with its full flower outline visible, and Mikko's reflected face (both cheeks, nose and mouth) is large and clearly readable in the glass; Mikko watching attentively.",
+     "correction": "MIRROR: materially larger readable glass (>= ~40% of frame height), full outline, readable cheeks/nose/mouth for G03 + room for G08 glint; over-Lumi's-shoulder camera unchanged"
+    },
+    {
+     "replaced": "do not copy its layout, poses, labels or background). ",
+     "with": "do not copy its layout, poses, labels or background). Lumi keeps exactly the canonical silhouette from reference image 2: a smooth, perfectly round floating orb with no legs, no lower-body lobes and no extra rounded appendages or shapes below or around her body; only her tiny simple rounded hands, holding the mirror close to her body. ",
+     "correction": "LUMI: canonical smooth orb, no legs/lobes/extra rounded appendages, tiny hands only"
+    }
+   ],
+   "prompt_exact": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, over Lumi's shoulder toward the mirror and Mikko, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Lumi's round glowing back and tiny hands in the foreground holding the mirror slightly angled and close to camera, so the hand mirror is large in frame: the clean glass is at least about 40% of the frame height with its full flower outline visible, and Mikko's reflected face (both cheeks, nose and mouth) is large and clearly readable in the glass; Mikko watching attentively. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Mikko and Lumi keep exactly the relative sizes shown in reference image 6 (scale reference only: do not copy its layout, poses, labels or background). Lumi keeps exactly the canonical silhouette from reference image 2: a smooth, perfectly round floating orb with no legs, no lower-body lobes and no extra rounded appendages or shapes below or around her body; only her tiny simple rounded hands, holding the mirror close to her body. Pose: Mikko watches calmly, not pointing, the soft light-blue fleece cleaning cloth from reference image 5 lowered in his hand. Lumi gently angles the mirror toward him. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+   "prompt_chars": 2971,
+   "PROMPT_SHA256": "4e68b6a408cc259d672ef3158a870cb0a3d35738b1f40cafd9df4d6855832782",
+   "request_body_exact": {
+    "prompt": "Create one single new image (not a character sheet, not a collage, no panels, no labels): a 16:9 still frame from a child-friendly stylised 3D animated preschool episode. CLOSE, over Lumi's shoulder toward the mirror and Mikko, locked. Setting: the bathroom from reference image 3 (main view), unchanged: warm cream walls and tiles, light wood vanity with grey-blue doors, wood-framed mirror, soft warm even lighting, low clutter, neutral desaturated tones, softly out of focus behind the characters. Do not redesign it. Composition: Lumi's round glowing back and tiny hands in the foreground holding the mirror slightly angled and close to camera, so the hand mirror is large in frame: the clean glass is at least about 40% of the frame height with its full flower outline visible, and Mikko's reflected face (both cheeks, nose and mouth) is large and clearly readable in the glass; Mikko watching attentively. Mikko from reference image 1, exactly as designed: honey-brown furry bear cub, big brown eyes, rosy cheeks, hair tuft on top, soft rounded ears, cream long-sleeve shirt, teal-blue overalls with paw-print pocket, yellow neckerchief, brown boots, rounded childlike proportions. Lumi from reference image 2, exactly as designed: a small, perfectly round warm golden-white glowing orb about the size of Mikko's head, star antenna on top, big brown eyes, rosy cheeks, tiny rounded hands and feet, gentle glow, not touching the floor. Mikko and Lumi keep exactly the relative sizes shown in reference image 6 (scale reference only: do not copy its layout, poses, labels or background). Lumi keeps exactly the canonical silhouette from reference image 2: a smooth, perfectly round floating orb with no legs, no lower-body lobes and no extra rounded appendages or shapes below or around her body; only her tiny simple rounded hands, holding the mirror close to her body. Pose: Mikko watches calmly, not pointing, the soft light-blue fleece cleaning cloth from reference image 5 lowered in his hand. Lumi gently angles the mirror toward him. Mikko's face is completely clean: no berry smudges, stains or marks anywhere on his face or fur. The pink flower-shaped hand mirror from reference image 4 is held by Lumi; its glass is perfectly clean (no smears, dirt or marks on the glass) and its full round outline is visible and unobstructed. The mirror clearly shows Mikko's own clean reflected face, correctly mirror-reversed, sharp and readable inside the glass. Calm, simple, stable pose suitable as a held frame or the first frame of a gentle animation. Only these two characters, one cloth and one mirror. No berry smudges or marks anywhere (they are added later), no marks on the mirror glass, no text, letters, logos, watermarks or captions, no extra characters, no extra limbs, no duplicate props, no costume or colour changes, no sparkles, glints, glows or effects on the mirror, no dramatic lighting or camera angle, no motion blur, no tilt, no lens distortion.",
+    "image_urls": [
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/c01c93a7-edab-49e6-a2c4-c54b22ebc4d5.png",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d40a9c8f-6b4b-4482-9476-5985aa54d423.png",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/2b05b534-740d-4d58-8e07-e968260b312c.png",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/06a55257-a9c4-4cf9-ade9-c6ec01d01b60.webp",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d865460f-60c2-40ca-b8dd-d60fb1ae3b78.webp",
+     "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/0e11b433-f9cf-4c70-84a0-5e45c2604cd6.png"
+    ],
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "quality": "high",
+    "enhance_prompt": false
+   },
+   "REQUEST_BODY_SHA256": "a5a5bef2fa28063daf425c97f1622634600dd42b5134f0fb630b4295ee955a2c",
+   "settings_unchanged": {
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "quality": "high",
+    "enhance_prompt": false
+   },
+   "target_frame_id": "FRAME-EP005-F03-BASE-CAND-v02",
+   "generations_authorised": 0,
+   "submitted": false
+  }
+ }
+}

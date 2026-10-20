@@ -1,0 +1,116 @@
+[
+ {
+  "id": "c28c7904-51ae-42e4-b7e1-4a44d93d9ba3",
+  "created_at": "2026-10-20T05:07:27.055161+00:00",
+  "updated_at": "2026-10-20T05:07:27.055161+00:00",
+  "asset_id": "FRAME-EP005-F09-BASE-CAND-v01",
+  "asset_name": "EP005 F09 Base Frame (S017)",
+  "asset_type": "SHOT_FRAME",
+  "asset_subtype": "BASE_FRAME",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/frames/FRAME-EP005-F09-BASE-CAND-v01.png",
+  "source_url": null,
+  "metadata_json": {
+   "bytes": 3936085,
+   "width": 1920,
+   "format": "PNG 8-bit RGB non-interlaced",
+   "height": 1080,
+   "sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+   "shot_id": "S017",
+   "approved": true,
+   "frame_id": "FRAME-EP005-F09-BASE-CAND-v01",
+   "has_alpha": false,
+   "approve_by": "exact sha256 d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+   "canon_role": "F09 medium two-shot base frame (shot-specific; not global character canon)",
+   "dimensions": "1920x1080",
+   "provenance": {
+    "model": "Marketing Studio Image 2.5 Flare",
+    "package": "evidence/ep005/batch1_base_frames/B1_GENERATION_PACKAGES_v1.json",
+    "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
+    "provider": "HIGGSFIELD",
+    "raw_bytes": 4788029,
+    "raw_state": "LOCKED_ORIGINAL_FOR_NORMALISATION (not creative approval)",
+    "raw_format": "PNG",
+    "prompt_sha256": "5bd2edc1364a1c4f5187fbe5d515c06fe19131294b13aa967a34ba4e04a12abd",
+    "raw_dimensions": "2688x1520",
+    "automatic_retries": 0,
+    "reference_sha256s": {
+     "CHAR-LUMI-MASTER-v01": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+     "CHAR-MIKKO-MASTER-v01": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+     "DUO-MIKKO-LUMI-SCALE-v01": "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f",
+     "PROP-EP005-HAND-MIRROR-v01": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+     "PROP-EP005-CLEANING-CLOTH-v01": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+     "WORLD-EP005-BATHROOM-MASTER-v01": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733"
+    },
+    "generation_attempts": 1,
+    "provider_request_id": "5136a0dd-2d90-4429-90a9-d42e37f3f097",
+    "raw_provider_sha256": "dd94032637075be656105b8841e7cf6da320ec808f569ea130e39e33f40a1efe",
+    "request_body_sha256": "36d91d95cf72825ccfa9d526870b34d92ae0b3a103f1cef3ba229dd1494893cc",
+    "package_reference_order": [
+     "CHAR-MIKKO-MASTER-v01",
+     "CHAR-LUMI-MASTER-v01",
+     "WORLD-EP005-BATHROOM-MASTER-v01",
+     "PROP-EP005-HAND-MIRROR-v01",
+     "PROP-EP005-CLEANING-CLOTH-v01",
+     "DUO-MIKKO-LUMI-SCALE-v01"
+    ]
+   },
+   "canon_scope": "MIKKO_LUMI_EP005_SHOT_SPECIFIC_PRODUCTION_ASSET",
+   "g03_applied": false,
+   "g08_applied": false,
+   "content_type": "image/png",
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "not_c1_canon": true,
+   "rgb24_sha256": "bf6ee47c083ba484ce8174b6bde078d6f5bc196abbe15d4c52cbedd03027e117",
+   "normalisation": {
+    "crop": {
+     "h": 1512,
+     "w": 2688,
+     "x": 0,
+     "y": 4
+    },
+    "scale": {
+     "h": 1080,
+     "w": 1920
+    },
+    "method": "G04 derive_frame: frame 0, exact centred 16:9 crop, scale 1920x1080 (lanczos+accurate_rnd+full_chroma_int+bitexact), lossless PNG; no other operation",
+    "source_state": "LOCKED_ORIGINAL_FOR_NORMALISATION",
+    "raw_unchanged": true,
+    "two_run_determinism": {
+     "runs": 2,
+     "run_sha256": [
+      "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+      "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e"
+     ],
+     "byte_identical": true
+    },
+    "generative_modification": false
+   },
+   "approval_notes": "Accepted: Mikko identity, Lumi identity, character scale relationship, bathroom continuity, medium two-shot composition, mirror placement, cloth / prop state, clean-face state, overall F09 composition for S017.",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "approval_record": "ENG-20261020-EP005-BATCH1-REVIEW-RECONCILED",
+   "approved_sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+   "generation_record": "evidence/ep005/batch1_base_frames/B1_GENERATION_RECORD_v1.json",
+   "pixel_equivalence": {
+    "method": "SHA256(PIL Image.open(file).convert('RGB').tobytes())",
+    "result": "PASS",
+    "local_rgb_sha256": "bf6ee47c083ba484ce8174b6bde078d6f5bc196abbe15d4c52cbedd03027e117",
+    "company_brain_reviewed_rgb_sha256": "bf6ee47c083ba484ce8174b6bde078d6f5bc196abbe15d4c52cbedd03027e117"
+   },
+   "storage_object_id": "6271cefa-0109-4ca0-b7f1-d8d5c639770b",
+   "approval_authority": "Company Brain / Gilang",
+   "storage_object_key": "visual/production/ep005/frames/FRAME-EP005-F09-BASE-CAND-v01.png",
+   "frame_family_members": [
+    "S017"
+   ],
+   "derivative_source_for": [
+    "F15-MACRO-REFLECTION (S019; S018 G07-blocked) - NOT approved"
+   ]
+  },
+  "notes": "Approved EP005 F09 base frame for S017 (Higgsfield Flare request 5136a0dd-2d90-4429-90a9-d42e37f3f097, G04 normalised 1920x1080). SHA-256 d442b0f7...f13e. Not C1/global canon. Company Brain approval 2026-10-20. F15 derivative not approved."
+ }
+]

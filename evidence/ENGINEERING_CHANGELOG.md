@@ -2833,3 +2833,30 @@ evidence: ["evidence/EP005_BATCH1_BASE_FRAMES_GENERATED_FOR_HUMAN_REVIEW_v1.0.md
 rollback: "no production state changed; discard candidates by not approving; spend is not reversible"
 status: "EP005_BATCH1_BASE_FRAMES_READY_FOR_HUMAN_REVIEW + F01/F03/F09_IMAGE_GENERATIONS=1 + TOTAL=3 + RETRIES=0 + RAW_OUTPUTS_PRESERVED + RAW_OUTPUTS_LOCKED_FOR_NORMALISATION + NORMALISATION_TWO_RUN_PASS + F01/F03/F09_NORMALISED_REVIEW_FRAME_READY + ZERO_VIDEO_GENERATIONS + ZERO_PRODUCTION_WRITES"
 ```
+
+---
+
+## ENG-20261020-EP005-BATCH1-REVIEW-RECONCILED: pixel bridge PASS x3; F01/F03 rejected; F09 approved + preserved + registered; F15 REVIEW; F01/F03 v02 locked
+
+```yaml
+change_id: "ENG-20261020-EP005-BATCH1-REVIEW-RECONCILED"
+timestamp: "2026-10-20"
+actor: "Claude"
+authorised_by: "Company Brain human review decision (EP005 Batch 1 base frames; accepted generation commit 6506ed7c)"
+change_type: "HUMAN DECISIONS + PRODUCTION STORAGE (1 object) + REGISTRY (1 row) + LOCAL DERIVATION + EVIDENCE"
+pixel_bridge: "PASS F01 a61459c5..., F03 ff22ecff..., F09 bf6ee47c... (SHA256 of PIL RGB bytes of the local normalised files)"
+decisions:
+  F01: "REJECTED c191a513a4987cc0be6ea713f8a8dc88566c952db0250b122270786e0aa11e10 (Lumi limb drift; Mikko mostly from behind)"
+  F03: "REJECTED e8571476c5be0b1c263c4b9c3be2c155ed1af265c87aa0c18786b69b409c5968 (Lumi lower lobes; glass too small for G03/G08)"
+  F09: "APPROVED d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e"
+f09_preserved: "production-assets/visual/production/ep005/frames/FRAME-EP005-F09-BASE-CAND-v01.png (x-upsert false, object 6271cefa-0109-4ca0-b7f1-d8d5c639770b, readback SHA match); asset_registry c28c7904-51ae-42e4-b7e1-4a44d93d9ba3 SHOT_FRAME/BASE_FRAME APPROVED, shot_id S017, full provenance"
+f15: {status: "REVIEW (local only)", source_sha: "d442b0f7...f13e", crop: "667,215,688,387 (measured mirror head 836-1186 x 234-583, +16px, exact 16:9)", output_sha_a: "c5c5467598718be66e6b107ce8b83be5f7376a7ef3985e817af31d3502edc5e4", output_sha_b: "same", rgb: "bb17401eac3f0479ebc1bbceb44927e342fc91c6d2bf07537386c6b59ca33f40", dims: "1920x1080", upscale: 2.79}
+v02_packages:
+  F01_V02: {prompt_sha256: "6e3d11009d290121c19be55b3cc46fc2e91b3918805be42ce3e5159d7ca5d5c3", request_body_sha256: "f46b79b834b13b2a3384b869d1ade2f46ca34a76290dbe397665f3d1e0cb2f30"}
+  F03_V02: {prompt_sha256: "4e68b6a408cc259d672ef3158a870cb0a3d35738b1f40cafd9df4d6855832782", request_body_sha256: "a5a5bef2fa28063daf425c97f1622634600dd42b5134f0fb630b4295ee955a2c"}
+batch_plan_v2: "deterministic (d15d8e5e...); F01/F03 shots WAITING_FOR_BASE_FRAME; S017 WAITING_FOR_G03_RECORD; S019 WAITING_FOR_FRAME_APPROVAL (F15); S026 unchanged"
+side_effects: "0 provider calls, 0 generations, 0 video/Seedance/ElevenLabs/Agent-006/007, no script/manifest/readiness change, S027-S029 unchanged, 205/205 tests"
+evidence: ["evidence/EP005_BATCH1_BASE_FRAME_REVIEW_RECONCILED_v1.0.md", "evidence/ep005/batch1_base_frames/", "evidence/agent008/batch_driver/FIRST_BATCH_PLAN_v2.json"]
+rollback: "F09: delete registry row c28c7904 + storage object 6271cefa (human-authorised only); F15/v02 are local/evidence only"
+status: "EP005_BATCH1_BASE_FRAME_REVIEW_RECONCILED + F01/F03/F09_PIXEL_BRIDGE_PASS + F01_REJECTED + F03_REJECTED + F09_APPROVED + F09_PRESERVED + F15_DERIVED_REVIEW + F01_V02_PACKAGE_LOCKED + F03_V02_PACKAGE_LOCKED + F01_V02_GENERATIONS=0 + F03_V02_GENERATIONS=0 + ZERO_NEW_PROVIDER_CALLS + UPDATED_BATCH_STATE_READY"
+```
