@@ -1,0 +1,121 @@
+{
+ "agent": "AGENT-008 \u2014 Shot Assembly Specification & Deterministic Compositor",
+ "agent_version": "agent008-v0.3-overlay-placement",
+ "deterministic_core_sha256": "c0e7baaa49e4d1d2c4cb6ec9ed5b09ce3a8079c4756c401b50609517fe61a2f3",
+ "human_approval": {
+  "approve_by": "exact output png sha256",
+  "approved": false,
+  "decisions": [
+   "APPROVE",
+   "REJECT"
+  ],
+  "required": true
+ },
+ "output": {
+  "bytes": 3519810,
+  "changed_pixels_outside_overlays": 0,
+  "file": "S019_G03_OVERLAY_FRAME_CANDIDATE.png",
+  "height": 1080,
+  "lossless_roundtrip": true,
+  "rgb24_sha256": "3b97a75f95bdddba3a8b469532fbc38195600bc1b2ae41989bdb6a66be59918d",
+  "sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+  "width": 1920
+ },
+ "overlays_composited": {
+  "frame_sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+  "overlays": [
+   {
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+    "surface": "REFLECTION"
+   }
+  ],
+  "shot_id": "S019"
+ },
+ "placement_record": {
+  "approval_status": "APPROVED",
+  "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+  "frame_range": [
+   0,
+   119
+  ],
+  "record_id": "G03-EP005-S019-CAND-v01",
+  "sha256": "9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b"
+ },
+ "placements": [
+  {
+   "anchor": "CENTER",
+   "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "layer_offset": [
+    927,
+    498
+   ],
+   "layer_size": [
+    65,
+    70
+   ],
+   "mirror": true,
+   "opacity": 1.0,
+   "rotation_deg": 0.0,
+   "scaled_size": [
+    65,
+    70
+   ],
+   "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+   "surface": "REFLECTION",
+   "trimmed_size": [
+    885,
+    947
+   ],
+   "visible_box": [
+    927,
+    498,
+    992,
+    568
+   ],
+   "visible_pixels": 2898,
+   "width_px": 65,
+   "x": 959,
+   "y": 533
+  }
+ ],
+ "proposed_registry": {
+  "asset_subtype": "DERIVED_FRAME",
+  "asset_type": "SHOT_FRAME",
+  "registered": false,
+  "requires": "human approval of output.sha256, then a separately authorised storage write + registration",
+  "shot_id": "S019"
+ },
+ "recipe": {
+  "composite": "compositor.over premultiplied float64, one final rint",
+  "mirror": "horizontal flip after scale (REFLECTION surface)",
+  "order": "sorted (surface, asset_id); overlaps rejected",
+  "png": "ffmpeg png encoder, rgb24, bitexact, no metadata",
+  "rotation": "compositor.rotate bilinear, premultiplied, about the padded layer centre",
+  "scale_flags": "lanczos+accurate_rnd+full_chroma_int+bitexact",
+  "trim": "alpha > 8 bounding box"
+ },
+ "safety": {
+  "auto_approved": false,
+  "provider_calls": 0,
+  "registered": false,
+  "source_mutated": false
+ },
+ "shot_id": "S019",
+ "source_frame": {
+  "asset_id": "FRAME-EP005-F15-BASE-CAND-v02",
+  "classification": "SHOT_FRAME/BASE_FRAME",
+  "height": 1080,
+  "registry_id": "ca534cfb-ba09-4758-b01a-7893c05563aa",
+  "registry_status": "APPROVED",
+  "sha256_after": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+  "verified_sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+  "width": 1920
+ },
+ "stage": "G03 overlay placement",
+ "status": "REVIEW",
+ "toolchain": {
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3"
+ }
+}

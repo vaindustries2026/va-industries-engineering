@@ -1,0 +1,161 @@
+{
+ "agent": "AGENT-008 \u2014 Shot Assembly Specification & Deterministic Compositor",
+ "agent_version": "agent008-v0.3-overlay-placement",
+ "deterministic_core_sha256": "de97326e9a47ffaf8a4c87cc99626b99c7a588ce37287f963abc3eccf5e5507d",
+ "human_approval": {
+  "approve_by": "exact output png sha256",
+  "approved": false,
+  "decisions": [
+   "APPROVE",
+   "REJECT"
+  ],
+  "required": true
+ },
+ "output": {
+  "bytes": 3937168,
+  "changed_pixels_outside_overlays": 0,
+  "file": "S017_G03_OVERLAY_FRAME_CANDIDATE.png",
+  "height": 1080,
+  "lossless_roundtrip": true,
+  "rgb24_sha256": "af4a45985a539bb4d52e334258edc20b2ab60e7c3f3f86e3a572377fc72278bd",
+  "sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+  "width": 1920
+ },
+ "overlays_composited": {
+  "frame_sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+  "overlays": [
+   {
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+    "surface": "FACE"
+   },
+   {
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+    "surface": "REFLECTION"
+   }
+  ],
+  "shot_id": "S017"
+ },
+ "placement_record": {
+  "approval_status": "APPROVED",
+  "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+  "frame_range": [
+   0,
+   95
+  ],
+  "record_id": "G03-EP005-S017-CAND-v01",
+  "sha256": "3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526"
+ },
+ "placements": [
+  {
+   "anchor": "CENTER",
+   "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "layer_offset": [
+    643,
+    349
+   ],
+   "layer_size": [
+    50,
+    54
+   ],
+   "mirror": false,
+   "opacity": 1.0,
+   "rotation_deg": 0.0,
+   "scaled_size": [
+    50,
+    54
+   ],
+   "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+   "surface": "FACE",
+   "trimmed_size": [
+    885,
+    947
+   ],
+   "visible_box": [
+    643,
+    349,
+    693,
+    403
+   ],
+   "visible_pixels": 1764,
+   "width_px": 50,
+   "x": 668,
+   "y": 376
+  },
+  {
+   "anchor": "CENTER",
+   "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+   "layer_offset": [
+    977,
+    435
+   ],
+   "layer_size": [
+    29,
+    31
+   ],
+   "mirror": true,
+   "opacity": 1.0,
+   "rotation_deg": 0.0,
+   "scaled_size": [
+    29,
+    31
+   ],
+   "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+   "surface": "REFLECTION",
+   "trimmed_size": [
+    885,
+    947
+   ],
+   "visible_box": [
+    977,
+    435,
+    1006,
+    466
+   ],
+   "visible_pixels": 631,
+   "width_px": 29,
+   "x": 991,
+   "y": 450
+  }
+ ],
+ "proposed_registry": {
+  "asset_subtype": "DERIVED_FRAME",
+  "asset_type": "SHOT_FRAME",
+  "registered": false,
+  "requires": "human approval of output.sha256, then a separately authorised storage write + registration",
+  "shot_id": "S017"
+ },
+ "recipe": {
+  "composite": "compositor.over premultiplied float64, one final rint",
+  "mirror": "horizontal flip after scale (REFLECTION surface)",
+  "order": "sorted (surface, asset_id); overlaps rejected",
+  "png": "ffmpeg png encoder, rgb24, bitexact, no metadata",
+  "rotation": "compositor.rotate bilinear, premultiplied, about the padded layer centre",
+  "scale_flags": "lanczos+accurate_rnd+full_chroma_int+bitexact",
+  "trim": "alpha > 8 bounding box"
+ },
+ "safety": {
+  "auto_approved": false,
+  "provider_calls": 0,
+  "registered": false,
+  "source_mutated": false
+ },
+ "shot_id": "S017",
+ "source_frame": {
+  "asset_id": "FRAME-EP005-F09-BASE-CAND-v01",
+  "classification": "SHOT_FRAME/BASE_FRAME",
+  "height": 1080,
+  "registry_id": "c28c7904-51ae-42e4-b7e1-4a44d93d9ba3",
+  "registry_status": "APPROVED",
+  "sha256_after": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+  "verified_sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+  "width": 1920
+ },
+ "stage": "G03 overlay placement",
+ "status": "REVIEW",
+ "toolchain": {
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3"
+ }
+}

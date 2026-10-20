@@ -1,0 +1,1308 @@
+[
+ {
+  "id": "b51ec1d1-9b36-4efd-9868-0417d2050c80",
+  "created_at": "2026-10-20T06:00:12.010125+00:00",
+  "updated_at": "2026-10-20T06:00:12.010125+00:00",
+  "asset_id": "G03-REC-EP005-S001-v01",
+  "asset_name": "EP005 S001 G03 placement record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G03_PLACEMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "shot_id": "S001",
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S001-CAND-v01",
+    "base_frame": {
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "placements": [
+     {
+      "x": 748,
+      "y": 538,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "width_px": 96,
+      "rotation_deg": 12,
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac"
+     },
+     {
+      "x": 907,
+      "y": 510,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 63,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 1001,
+      "y": 558,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "width_px": 57,
+      "rotation_deg": 0,
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e"
+     }
+    ],
+    "frame_range": [
+     0,
+     143
+    ]
+   },
+   "shot_id": "S001",
+   "approved": true,
+   "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+   "decisions": {
+    "DECISION_2_MOUTH_SIDE": "APPROVED: Mikko's RIGHT side of the mouth, opposite the cheek smudge (S001, S004, S005, S012, S013); supersedes the Phase-0 placeholder side for these production records",
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing",
+    "DECISION_1_REAL_FACE_SMUDGES": "APPROVED for S004, S012, S017: keep the matching physical smudges on the real face (mirror and real face are the same physical face state); exact candidate geometry"
+   },
+   "approve_by": "exact canonical record sha256 b97d24d754cb8e9ef9c632e18b7ecf18b2365a97dfe0025f0b1ff621b15cedfe",
+   "placements": [
+    {
+     "x": 748,
+     "y": 538,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "width_px": 96,
+     "visible_box": [
+      700,
+      518,
+      798,
+      565
+     ],
+     "rotation_deg": 12,
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-left in the reflection)"
+    },
+    {
+     "x": 907,
+     "y": 510,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 63,
+     "visible_box": [
+      876,
+      477,
+      939,
+      544
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 1001,
+     "y": 558,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "width_px": 57,
+     "visible_box": [
+      973,
+      547,
+      1030,
+      570
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner"
+    }
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F01-MIRROR-OPEN",
+   "record_sha256": "b97d24d754cb8e9ef9c632e18b7ecf18b2365a97dfe0025f0b1ff621b15cedfe",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "record_id_note": "record_id keeps the reviewed candidate identity (it is part of the approved canonical SHA)",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "placement_count": 3,
+   "base_frame_sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "approval_authority": "Company Brain / Gilang",
+   "base_frame_asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S001_G03_PREVIEW.png (scratch)"
+   },
+   "reproduced_g03_output_sha256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f"
+  },
+  "notes": "Approved G03 placement record for S001 (3 placements) on FRAME-EP005-F01-BASE-CAND-v02; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "431fab4d-0b62-4ebe-9324-4f6230efccb9",
+  "created_at": "2026-10-20T06:00:13.93986+00:00",
+  "updated_at": "2026-10-20T06:00:13.93986+00:00",
+  "asset_id": "G03-REC-EP005-S005-v01",
+  "asset_name": "EP005 S005 G03 placement record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G03_PLACEMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "shot_id": "S005",
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S005-CAND-v01",
+    "base_frame": {
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "placements": [
+     {
+      "x": 748,
+      "y": 538,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "width_px": 96,
+      "rotation_deg": 12,
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac"
+     },
+     {
+      "x": 907,
+      "y": 510,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 63,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 1001,
+      "y": 558,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "width_px": 57,
+      "rotation_deg": 0,
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e"
+     }
+    ],
+    "frame_range": [
+     0,
+     95
+    ]
+   },
+   "shot_id": "S005",
+   "approved": true,
+   "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+   "decisions": {
+    "DECISION_2_MOUTH_SIDE": "APPROVED: Mikko's RIGHT side of the mouth, opposite the cheek smudge (S001, S004, S005, S012, S013); supersedes the Phase-0 placeholder side for these production records",
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing",
+    "DECISION_1_REAL_FACE_SMUDGES": "APPROVED for S004, S012, S017: keep the matching physical smudges on the real face (mirror and real face are the same physical face state); exact candidate geometry"
+   },
+   "approve_by": "exact canonical record sha256 4b121fc8737351b4e47d5054ca17f8a42d3979b21a175e9c0d6ef78ea8567ce7",
+   "placements": [
+    {
+     "x": 748,
+     "y": 538,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "width_px": 96,
+     "visible_box": [
+      700,
+      518,
+      798,
+      565
+     ],
+     "rotation_deg": 12,
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-left in the reflection)"
+    },
+    {
+     "x": 907,
+     "y": 510,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 63,
+     "visible_box": [
+      876,
+      477,
+      939,
+      544
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 1001,
+     "y": 558,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "width_px": 57,
+     "visible_box": [
+      973,
+      547,
+      1030,
+      570
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner"
+    }
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F01-MIRROR-OPEN",
+   "record_sha256": "4b121fc8737351b4e47d5054ca17f8a42d3979b21a175e9c0d6ef78ea8567ce7",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "record_id_note": "record_id keeps the reviewed candidate identity (it is part of the approved canonical SHA)",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "placement_count": 3,
+   "base_frame_sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "approval_authority": "Company Brain / Gilang",
+   "base_frame_asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S005_G03_PREVIEW.png (scratch)"
+   },
+   "reproduced_g03_output_sha256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f"
+  },
+  "notes": "Approved G03 placement record for S005 (3 placements) on FRAME-EP005-F01-BASE-CAND-v02; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "5669559f-8b17-4e05-857e-e3db19d9a702",
+  "created_at": "2026-10-20T06:00:16.245531+00:00",
+  "updated_at": "2026-10-20T06:00:16.245531+00:00",
+  "asset_id": "G03-REC-EP005-S013-v01",
+  "asset_name": "EP005 S013 G03 placement record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G03_PLACEMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "shot_id": "S013",
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S013-CAND-v01",
+    "base_frame": {
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "placements": [
+     {
+      "x": 907,
+      "y": 510,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 63,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 1001,
+      "y": 558,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "width_px": 57,
+      "rotation_deg": 0,
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e"
+     }
+    ],
+    "frame_range": [
+     0,
+     95
+    ]
+   },
+   "shot_id": "S013",
+   "approved": true,
+   "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+   "decisions": {
+    "DECISION_2_MOUTH_SIDE": "APPROVED: Mikko's RIGHT side of the mouth, opposite the cheek smudge (S001, S004, S005, S012, S013); supersedes the Phase-0 placeholder side for these production records",
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing",
+    "DECISION_1_REAL_FACE_SMUDGES": "APPROVED for S004, S012, S017: keep the matching physical smudges on the real face (mirror and real face are the same physical face state); exact candidate geometry"
+   },
+   "approve_by": "exact canonical record sha256 ec6af454b30295b61128a968494e6177c32b7f48510119d03289201652a7bbd9",
+   "placements": [
+    {
+     "x": 907,
+     "y": 510,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 63,
+     "visible_box": [
+      876,
+      477,
+      939,
+      544
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 1001,
+     "y": 558,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "width_px": 57,
+     "visible_box": [
+      973,
+      547,
+      1030,
+      570
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner"
+    }
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F01-MIRROR-OPEN",
+   "record_sha256": "ec6af454b30295b61128a968494e6177c32b7f48510119d03289201652a7bbd9",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "record_id_note": "record_id keeps the reviewed candidate identity (it is part of the approved canonical SHA)",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "placement_count": 2,
+   "base_frame_sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "approval_authority": "Company Brain / Gilang",
+   "base_frame_asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S013_G03_PREVIEW.png (scratch)"
+   },
+   "reproduced_g03_output_sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee"
+  },
+  "notes": "Approved G03 placement record for S013 (2 placements) on FRAME-EP005-F01-BASE-CAND-v02; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "3f08a472-453f-4fea-b612-70f09d186c6b",
+  "created_at": "2026-10-20T06:00:18.219114+00:00",
+  "updated_at": "2026-10-20T06:00:18.219114+00:00",
+  "asset_id": "G03-REC-EP005-S004-v01",
+  "asset_name": "EP005 S004 G03 placement record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G03_PLACEMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "shot_id": "S004",
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S004-CAND-v01",
+    "base_frame": {
+     "sha256": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+     "asset_id": "FRAME-EP005-F03-BASE-CAND-v02"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "placements": [
+     {
+      "x": 1055,
+      "y": 635,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "width_px": 82,
+      "rotation_deg": 12,
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac"
+     },
+     {
+      "x": 1152,
+      "y": 588,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 46,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 1230,
+      "y": 623,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "width_px": 49,
+      "rotation_deg": 0,
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e"
+     },
+     {
+      "x": 800,
+      "y": 478,
+      "anchor": "CENTER",
+      "mirror": false,
+      "surface": "FACE",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "width_px": 100,
+      "rotation_deg": -12,
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac"
+     },
+     {
+      "x": 648,
+      "y": 471,
+      "anchor": "CENTER",
+      "mirror": false,
+      "surface": "FACE",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 72,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 521,
+      "y": 543,
+      "anchor": "CENTER",
+      "mirror": false,
+      "surface": "FACE",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "width_px": 77,
+      "rotation_deg": 0,
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e"
+     }
+    ],
+    "frame_range": [
+     0,
+     119
+    ]
+   },
+   "shot_id": "S004",
+   "approved": true,
+   "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+   "decisions": {
+    "DECISION_2_MOUTH_SIDE": "APPROVED: Mikko's RIGHT side of the mouth, opposite the cheek smudge (S001, S004, S005, S012, S013); supersedes the Phase-0 placeholder side for these production records",
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing",
+    "DECISION_1_REAL_FACE_SMUDGES": "APPROVED for S004, S012, S017: keep the matching physical smudges on the real face (mirror and real face are the same physical face state); exact candidate geometry"
+   },
+   "approve_by": "exact canonical record sha256 45c3deb9ff1d07b0b93a2a50b3ea27cf9581cb13214e082284dedca589fd0d70",
+   "placements": [
+    {
+     "x": 1055,
+     "y": 635,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "width_px": 82,
+     "visible_box": [
+      1013,
+      617,
+      1098,
+      658
+     ],
+     "rotation_deg": 12,
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-left in the reflection)"
+    },
+    {
+     "x": 1152,
+     "y": 588,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 46,
+     "visible_box": [
+      1129,
+      564,
+      1175,
+      613
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 1230,
+     "y": 623,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "width_px": 49,
+     "visible_box": [
+      1206,
+      613,
+      1255,
+      633
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner"
+    },
+    {
+     "x": 800,
+     "y": 478,
+     "mirror": false,
+     "surface": "FACE",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "width_px": 100,
+     "visible_box": [
+      747,
+      458,
+      850,
+      506
+     ],
+     "rotation_deg": -12,
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-right on the real face)"
+    },
+    {
+     "x": 648,
+     "y": 471,
+     "mirror": false,
+     "surface": "FACE",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 72,
+     "visible_box": [
+      612,
+      433,
+      684,
+      510
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 521,
+     "y": 543,
+     "mirror": false,
+     "surface": "FACE",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "width_px": 77,
+     "visible_box": [
+      483,
+      527,
+      560,
+      559
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner"
+    }
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F03-OVERSHOULDER-LUMI",
+   "record_sha256": "45c3deb9ff1d07b0b93a2a50b3ea27cf9581cb13214e082284dedca589fd0d70",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "record_id_note": "record_id keeps the reviewed candidate identity (it is part of the approved canonical SHA)",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "placement_count": 6,
+   "base_frame_sha256": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+   "approval_authority": "Company Brain / Gilang",
+   "base_frame_asset_id": "FRAME-EP005-F03-BASE-CAND-v02",
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S004_G03_PREVIEW.png (scratch)"
+   },
+   "reproduced_g03_output_sha256": "d9b86f59ff783926279c32aa37133d0fb78f6b5c3cbd899f7c51d807e739af25"
+  },
+  "notes": "Approved G03 placement record for S004 (6 placements) on FRAME-EP005-F03-BASE-CAND-v02; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "0368f003-f5d0-487b-b082-fdcf8211dfed",
+  "created_at": "2026-10-20T06:00:20.146855+00:00",
+  "updated_at": "2026-10-20T06:00:20.146855+00:00",
+  "asset_id": "G03-REC-EP005-S012-v01",
+  "asset_name": "EP005 S012 G03 placement record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G03_PLACEMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "shot_id": "S012",
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S012-CAND-v01",
+    "base_frame": {
+     "sha256": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+     "asset_id": "FRAME-EP005-F03-BASE-CAND-v02"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "placements": [
+     {
+      "x": 1152,
+      "y": 588,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 46,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 1230,
+      "y": 623,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "width_px": 49,
+      "rotation_deg": 0,
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e"
+     },
+     {
+      "x": 648,
+      "y": 471,
+      "anchor": "CENTER",
+      "mirror": false,
+      "surface": "FACE",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 72,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 521,
+      "y": 543,
+      "anchor": "CENTER",
+      "mirror": false,
+      "surface": "FACE",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "width_px": 77,
+      "rotation_deg": 0,
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e"
+     }
+    ],
+    "frame_range": [
+     0,
+     119
+    ]
+   },
+   "shot_id": "S012",
+   "approved": true,
+   "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+   "decisions": {
+    "DECISION_2_MOUTH_SIDE": "APPROVED: Mikko's RIGHT side of the mouth, opposite the cheek smudge (S001, S004, S005, S012, S013); supersedes the Phase-0 placeholder side for these production records",
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing",
+    "DECISION_1_REAL_FACE_SMUDGES": "APPROVED for S004, S012, S017: keep the matching physical smudges on the real face (mirror and real face are the same physical face state); exact candidate geometry"
+   },
+   "approve_by": "exact canonical record sha256 32f82bcf823d913834a913e30bceacb6d01838fd1ae17c57e17639dbeb1f6820",
+   "placements": [
+    {
+     "x": 1152,
+     "y": 588,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 46,
+     "visible_box": [
+      1129,
+      564,
+      1175,
+      613
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 1230,
+     "y": 623,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "width_px": 49,
+     "visible_box": [
+      1206,
+      613,
+      1255,
+      633
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner"
+    },
+    {
+     "x": 648,
+     "y": 471,
+     "mirror": false,
+     "surface": "FACE",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 72,
+     "visible_box": [
+      612,
+      433,
+      684,
+      510
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 521,
+     "y": 543,
+     "mirror": false,
+     "surface": "FACE",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "width_px": 77,
+     "visible_box": [
+      483,
+      527,
+      560,
+      559
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner"
+    }
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F03-OVERSHOULDER-LUMI",
+   "record_sha256": "32f82bcf823d913834a913e30bceacb6d01838fd1ae17c57e17639dbeb1f6820",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "record_id_note": "record_id keeps the reviewed candidate identity (it is part of the approved canonical SHA)",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "placement_count": 4,
+   "base_frame_sha256": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+   "approval_authority": "Company Brain / Gilang",
+   "base_frame_asset_id": "FRAME-EP005-F03-BASE-CAND-v02",
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S012_G03_PREVIEW.png (scratch)"
+   },
+   "reproduced_g03_output_sha256": "fb139763ab59217fd87da01cbcc3fe877ce195070da8a41a97ecfbd3799df39d"
+  },
+  "notes": "Approved G03 placement record for S012 (4 placements) on FRAME-EP005-F03-BASE-CAND-v02; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "87500cdc-4f33-42b2-a892-d851ea4f6aa7",
+  "created_at": "2026-10-20T06:00:21.694511+00:00",
+  "updated_at": "2026-10-20T06:00:21.694511+00:00",
+  "asset_id": "G03-REC-EP005-S017-v01",
+  "asset_name": "EP005 S017 G03 placement record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G03_PLACEMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "shot_id": "S017",
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S017-CAND-v01",
+    "base_frame": {
+     "sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+     "asset_id": "FRAME-EP005-F09-BASE-CAND-v01"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "placements": [
+     {
+      "x": 991,
+      "y": 450,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 29,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     },
+     {
+      "x": 668,
+      "y": 376,
+      "anchor": "CENTER",
+      "mirror": false,
+      "surface": "FACE",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 50,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     }
+    ],
+    "frame_range": [
+     0,
+     95
+    ]
+   },
+   "shot_id": "S017",
+   "approved": true,
+   "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+   "decisions": {
+    "DECISION_2_MOUTH_SIDE": "APPROVED: Mikko's RIGHT side of the mouth, opposite the cheek smudge (S001, S004, S005, S012, S013); supersedes the Phase-0 placeholder side for these production records",
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing",
+    "DECISION_1_REAL_FACE_SMUDGES": "APPROVED for S004, S012, S017: keep the matching physical smudges on the real face (mirror and real face are the same physical face state); exact candidate geometry"
+   },
+   "approve_by": "exact canonical record sha256 3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526",
+   "placements": [
+    {
+     "x": 991,
+     "y": 450,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 29,
+     "visible_box": [
+      977,
+      435,
+      1006,
+      466
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    },
+    {
+     "x": 668,
+     "y": 376,
+     "mirror": false,
+     "surface": "FACE",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 50,
+     "visible_box": [
+      643,
+      349,
+      693,
+      403
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    }
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "record_sha256": "3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "record_id_note": "record_id keeps the reviewed candidate identity (it is part of the approved canonical SHA)",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "placement_count": 2,
+   "base_frame_sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+   "approval_authority": "Company Brain / Gilang",
+   "base_frame_asset_id": "FRAME-EP005-F09-BASE-CAND-v01",
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S017_G03_PREVIEW.png (scratch)"
+   },
+   "reproduced_g03_output_sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b"
+  },
+  "notes": "Approved G03 placement record for S017 (2 placements) on FRAME-EP005-F09-BASE-CAND-v01; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "6ce2cf9d-0263-4dca-a2a6-a5981d35e65f",
+  "created_at": "2026-10-20T06:00:23.650481+00:00",
+  "updated_at": "2026-10-20T06:00:23.650481+00:00",
+  "asset_id": "G03-REC-EP005-S019-v01",
+  "asset_name": "EP005 S019 G03 placement record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G03_PLACEMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "shot_id": "S019",
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S019-CAND-v01",
+    "base_frame": {
+     "sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+     "asset_id": "FRAME-EP005-F15-BASE-CAND-v02"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "placements": [
+     {
+      "x": 959,
+      "y": 533,
+      "anchor": "CENTER",
+      "mirror": true,
+      "surface": "REFLECTION",
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "width_px": 65,
+      "rotation_deg": 0,
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+     }
+    ],
+    "frame_range": [
+     0,
+     119
+    ]
+   },
+   "shot_id": "S019",
+   "approved": true,
+   "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+   "decisions": {
+    "DECISION_2_MOUTH_SIDE": "APPROVED: Mikko's RIGHT side of the mouth, opposite the cheek smudge (S001, S004, S005, S012, S013); supersedes the Phase-0 placeholder side for these production records",
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing",
+    "DECISION_1_REAL_FACE_SMUDGES": "APPROVED for S004, S012, S017: keep the matching physical smudges on the real face (mirror and real face are the same physical face state); exact candidate geometry"
+   },
+   "approve_by": "exact canonical record sha256 9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b",
+   "placements": [
+    {
+     "x": 959,
+     "y": 533,
+     "mirror": true,
+     "surface": "REFLECTION",
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "width_px": 65,
+     "visible_box": [
+      927,
+      498,
+      992,
+      568
+     ],
+     "rotation_deg": 0,
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)"
+    }
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F15-MACRO-REFLECTION",
+   "record_sha256": "9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "record_id_note": "record_id keeps the reviewed candidate identity (it is part of the approved canonical SHA)",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "placement_count": 1,
+   "base_frame_sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+   "approval_authority": "Company Brain / Gilang",
+   "base_frame_asset_id": "FRAME-EP005-F15-BASE-CAND-v02",
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S019_G03_PREVIEW.png (scratch)"
+   },
+   "reproduced_g03_output_sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8"
+  },
+  "notes": "Approved G03 placement record for S019 (1 placements) on FRAME-EP005-F15-BASE-CAND-v02; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "bcae764d-e6fc-44dc-bb23-30f1dccef83d",
+  "created_at": "2026-10-20T06:00:26.02175+00:00",
+  "updated_at": "2026-10-20T06:00:26.02175+00:00",
+  "asset_id": "G08-REC-EP005-S004-v01",
+  "asset_name": "EP005 S004 G08 treatment record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G08_TREATMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "glint": {
+     "cx": 1062,
+     "cy": 628,
+     "frames": 8,
+     "size_px": 36,
+     "start_frame": 12,
+     "treatment_id": "TREATMENT-EP005-MIRROR-GLINT-v01",
+     "target_overlay": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "sync_audio_asset_id": "SFX-LUMI-CLUE-CHIME"
+    },
+    "shot_id": "S004",
+    "contract": "AGENT008_G08_TREATMENTS_v1",
+    "record_id": "G08-EP005-S004-CAND-v01",
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     119
+    ],
+    "input_frame": {
+     "sha256": "d9b86f59ff783926279c32aa37133d0fb78f6b5c3cbd899f7c51d807e739af25",
+     "asset_id": "S004-G03-PREVIEW"
+    },
+    "mirror_glass": {
+     "cx": 1158,
+     "cy": 519,
+     "rx": 165,
+     "ry": 177,
+     "shape": "ELLIPSE",
+     "feather_px": 0
+    }
+   },
+   "shot_id": "S004",
+   "approved": true,
+   "contract": "AGENT008_G08_TREATMENTS_v1",
+   "decisions": {
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing"
+   },
+   "approve_by": "exact canonical record sha256 7fe4c60dc3425ebd3e210693c626e264a3a88d0ffe74afdcf944573b34cc5137",
+   "treatments": [
+    "glint"
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "record_sha256": "7fe4c60dc3425ebd3e210693c626e264a3a88d0ffe74afdcf944573b34cc5137",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "approved_timing": {
+    "SFX-LUMI-CLUE-CHIME": {
+     "start_seconds": 0.5
+    }
+   },
+   "approval_authority": "Company Brain / Gilang",
+   "input_frame_binding": {
+    "g03_output_sha256": "d9b86f59ff783926279c32aa37133d0fb78f6b5c3cbd899f7c51d807e739af25",
+    "g03_record_asset_id": "G03-REC-EP005-S004-v01"
+   },
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S004_G08_PREVIEW.png (scratch)"
+   },
+   "mirror_glass_measurement": {
+    "fill_bbox": [
+     990,
+     339,
+     1325,
+     699
+    ],
+    "margin_px": 3
+   }
+  },
+  "notes": "Approved G08 treatment record for S004; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "3794e0ba-8cfc-41c9-b1cd-557aabaf1bf2",
+  "created_at": "2026-10-20T06:00:27.554381+00:00",
+  "updated_at": "2026-10-20T06:00:27.554381+00:00",
+  "asset_id": "G08-REC-EP005-S012-v01",
+  "asset_name": "EP005 S012 G08 treatment record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G08_TREATMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "glint": {
+     "cx": 1230,
+     "cy": 623,
+     "frames": 8,
+     "size_px": 36,
+     "start_frame": 24,
+     "treatment_id": "TREATMENT-EP005-MIRROR-GLINT-v01",
+     "target_overlay": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+    },
+    "shot_id": "S012",
+    "contract": "AGENT008_G08_TREATMENTS_v1",
+    "record_id": "G08-EP005-S012-CAND-v01",
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     119
+    ],
+    "input_frame": {
+     "sha256": "fb139763ab59217fd87da01cbcc3fe877ce195070da8a41a97ecfbd3799df39d",
+     "asset_id": "S012-G03-PREVIEW"
+    },
+    "mirror_glass": {
+     "cx": 1158,
+     "cy": 519,
+     "rx": 165,
+     "ry": 177,
+     "shape": "ELLIPSE",
+     "feather_px": 0
+    }
+   },
+   "shot_id": "S012",
+   "approved": true,
+   "contract": "AGENT008_G08_TREATMENTS_v1",
+   "decisions": {
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing"
+   },
+   "approve_by": "exact canonical record sha256 b5592060b08ba4dde9213024140d951baa96803c59d5f6c07e9ba0213fcc7060",
+   "treatments": [
+    "glint"
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "record_sha256": "b5592060b08ba4dde9213024140d951baa96803c59d5f6c07e9ba0213fcc7060",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "approved_timing": {},
+   "approval_authority": "Company Brain / Gilang",
+   "input_frame_binding": {
+    "g03_output_sha256": "fb139763ab59217fd87da01cbcc3fe877ce195070da8a41a97ecfbd3799df39d",
+    "g03_record_asset_id": "G03-REC-EP005-S012-v01"
+   },
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S012_G08_PREVIEW.png (scratch)"
+   },
+   "mirror_glass_measurement": {
+    "fill_bbox": [
+     990,
+     339,
+     1325,
+     699
+    ],
+    "margin_px": 3
+   }
+  },
+  "notes": "Approved G08 treatment record for S012; exact reviewed candidate; Company Brain 2026-10-20."
+ },
+ {
+  "id": "35b9de65-02d4-4c7a-9d7d-680c69103a19",
+  "created_at": "2026-10-20T06:00:29.498983+00:00",
+  "updated_at": "2026-10-20T06:00:29.498983+00:00",
+  "asset_id": "G08-REC-EP005-S025-v01",
+  "asset_name": "EP005 S025 G08 treatment record v01",
+  "asset_type": "PRODUCTION_RECORD",
+  "asset_subtype": "G08_TREATMENT_RECORD",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": null,
+  "source_url": null,
+  "metadata_json": {
+   "record": {
+    "pop": {
+     "gain": 0.1,
+     "frames": 7,
+     "start_frame": 12,
+     "treatment_id": "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01",
+     "sync_audio_asset_id": "SFX-COMPLETION-POP-v01"
+    },
+    "shot_id": "S025",
+    "contract": "AGENT008_G08_TREATMENTS_v1",
+    "record_id": "G08-EP005-S025-CAND-v01",
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "reflection": {
+     "mode": "PRESERVE",
+     "reflected_overlays": []
+    },
+    "frame_range": [
+     0,
+     95
+    ],
+    "input_frame": {
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02"
+    },
+    "mirror_glass": {
+     "cx": 895,
+     "cy": 427,
+     "rx": 298,
+     "ry": 311,
+     "shape": "ELLIPSE",
+     "feather_px": 0
+    }
+   },
+   "shot_id": "S025",
+   "approved": true,
+   "contract": "AGENT008_G08_TREATMENTS_v1",
+   "decisions": {
+    "DECISION_3_G08_TIMINGS": "APPROVED: S004 glint + clue chime from 0.5 s (frame 12); S012 glint from 1.0 s (frame 24); S025 completion pop from 0.5 s (frame 12); exact reviewed geometry and timing"
+   },
+   "approve_by": "exact canonical record sha256 9838577d4db1f90faea1f2cd390960ef79f9701b5191040e1a2d0d9e92d4dfa0",
+   "treatments": [
+    "reflection",
+    "pop"
+   ],
+   "episode_code": "EP-CANDIDATE-005",
+   "record_sha256": "9838577d4db1f90faea1f2cd390960ef79f9701b5191040e1a2d0d9e92d4dfa0",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "approved_timing": {
+    "SFX-COMPLETION-POP-v01": {
+     "start_seconds": 0.5
+    }
+   },
+   "approval_authority": "Company Brain / Gilang",
+   "input_frame_binding": {
+    "base_frame_sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+    "base_frame_asset_id": "FRAME-EP005-F01-BASE-CAND-v02"
+   },
+   "source_review_evidence": {
+    "file": "evidence/ep005/batch1_placement/B1_PLACEMENT_CANDIDATES_v1.json",
+    "commit": "5be76f01cb160a404a23ec8431d0e1df4fb82f0f",
+    "preview": "previews/S025_G08_PREVIEW.png (scratch)"
+   },
+   "mirror_glass_measurement": {
+    "fill_bbox": [
+     594,
+     113,
+     1196,
+     740
+    ],
+    "margin_px": 3
+   }
+  },
+  "notes": "Approved G08 treatment record for S025; exact reviewed candidate; Company Brain 2026-10-20."
+ }
+]

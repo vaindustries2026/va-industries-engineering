@@ -1,0 +1,339 @@
+{
+ "agent": "AGENT-008 \u2014 Shot Assembly Specification & Deterministic Compositor",
+ "agent_version": "agent008-v0.3-still",
+ "audio_cues": [
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "end_s": 4.0,
+   "gain_db": 0.0,
+   "kind": "BED",
+   "start_s": 0.0
+  }
+ ],
+ "deterministic_core_sha256": "e69c23de06c579b38fc2eb67f62e492935e988fc996a3dc2929c09c5801f972b",
+ "dialogue_timing": {
+  "lines": [],
+  "overlaps": [],
+  "sample_rate": 48000,
+  "shot_end_s": 4.0,
+  "shot_id": "S017",
+  "version": "agent008-g09-v1",
+  "window": {
+   "end_s": 4.0,
+   "post_hold_seconds": 0.0,
+   "pre_hold_seconds": 0.0,
+   "start_s": 0.0
+  }
+ },
+ "dialogue_tracks": [],
+ "human_approval": {
+  "approve_by": "exact review mp4 sha256",
+  "approved": false,
+  "decisions": [
+   "APPROVE",
+   "REJECT"
+  ],
+  "required": true
+ },
+ "layout": {
+  "crop": null,
+  "fit_scale": 1.0,
+  "fitted_size": [
+   1920,
+   1080
+  ],
+  "pad_color": "black",
+  "pad_offset": [
+   0,
+   0
+  ],
+  "scale_flags": "lanczos+accurate_rnd+full_chroma_int+bitexact",
+  "source_size": [
+   1920,
+   1080
+  ]
+ },
+ "mix_peak_dbfs": -30.479,
+ "output_spec": {
+  "audio_channels": 2,
+  "audio_sample_rate": 48000,
+  "canon_decision": false,
+  "fps": 24,
+  "height": 1080,
+  "output_status": "REVIEW",
+  "peak_ceiling_dbfs": -1.0,
+  "pixel_format": "yuv420p",
+  "review_audio_bitrate": "192k",
+  "review_audio_codec": "aac",
+  "spec_id": "A008-REVIEW-1080P24-PHASE0",
+  "video_codec": "libx264",
+  "width": 1920,
+  "x264_crf": 16,
+  "x264_preset": "medium"
+ },
+ "outputs": {
+  "mix_wav": {
+   "file": "S017_STILL_MIX.wav",
+   "sha256": "c44788f19a68f360775ce9dad20c1e6421f3c75154a6faff0da15f52d0290cd0"
+  },
+  "review_mp4": {
+   "bytes": 664932,
+   "file": "S017_STILL_REVIEW.mp4",
+   "sha256": "83cf8f642c15d6ad0313611876bc302cfebf9b7b09890031e4e29b642ae1a6f9"
+  }
+ },
+ "qc": {
+  "audio_peak_dbfs": -30.479,
+  "audio_sample_rate": 48000,
+  "audio_silent_windows": 0,
+  "audio_streams": 1,
+  "automatic_result": "PASS",
+  "black_frames": [],
+  "distinct_frames": 1,
+  "expected_duration_s": 4,
+  "expected_fps": "24/1",
+  "expected_frames": 96,
+  "expected_resolution": "1920x1080",
+  "frame_hash_list_sha256": "de8a7a31e3cff4afa0e0e90c14e8e3eb38313b089afd10d61cdd910e3764ecea",
+  "frames": 96,
+  "held_frame_rgb_sha256": "af4a45985a539bb4d52e334258edc20b2ab60e7c3f3f86e3a572377fc72278bd",
+  "issues": [],
+  "longest_identical_run": 96,
+  "max_freeze_frames": 96,
+  "output_duration_s": 4.0,
+  "output_fps": "24/1",
+  "output_frames": 96,
+  "output_resolution": "1920x1080",
+  "overlays_applied": 0,
+  "overlays_precomposited": 1,
+  "treatments_applied": 0
+ },
+ "recipes": {
+  "encode_command": [
+   "ffmpeg",
+   "-v",
+   "error",
+   "-y",
+   "-f",
+   "rawvideo",
+   "-pix_fmt",
+   "rgb24",
+   "-s",
+   "1920x1080",
+   "-r",
+   "24",
+   "-i",
+   "-",
+   "-i",
+   "<OUT>/S017_STILL_MIX.wav",
+   "-map",
+   "0:v:0",
+   "-map",
+   "1:a:0",
+   "-vf",
+   "scale=out_color_matrix=bt709:out_range=tv:flags=lanczos+accurate_rnd+full_chroma_int+bitexact,format=yuv420p",
+   "-c:v",
+   "libx264",
+   "-preset",
+   "medium",
+   "-crf",
+   "16",
+   "-threads",
+   "1",
+   "-color_primaries",
+   "bt709",
+   "-color_trc",
+   "bt709",
+   "-colorspace",
+   "bt709",
+   "-c:a",
+   "aac",
+   "-b:a",
+   "192k",
+   "-ar",
+   "48000",
+   "-frames:v",
+   "96",
+   "-fflags",
+   "+bitexact",
+   "-flags:v",
+   "+bitexact",
+   "-flags:a",
+   "+bitexact",
+   "-map_metadata",
+   "-1",
+   "-movflags",
+   "+faststart",
+   "<OUT>/S017_STILL_REVIEW.mp4"
+  ]
+ },
+ "safety": {
+  "auto_approved": false,
+  "provider_calls": 0,
+  "registered": false,
+  "source_mutated": false
+ },
+ "shot_id": "S017",
+ "shot_spec": {
+  "active_overlays": [
+   {
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "asset_subtype": "BERRY_SMUDGE_OVERLAY",
+    "asset_type": "OVERLAY_VFX",
+    "element": "Berry smudge on Mikko's nose",
+    "expected_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+    "object_key": "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01.webp",
+    "reference": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "registry_row_id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01.webp"
+   }
+  ],
+  "animation_method": "COMPOSITE",
+  "characters": [
+   {
+    "asset_id": "CHAR-MIKKO-MASTER-v01",
+    "asset_subtype": null,
+    "asset_type": "CHARACTER",
+    "character_name": "Mikko",
+    "expected_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+    "manifest_label": "TBD",
+    "object_key": "visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png",
+    "reference": "TBD::CHARACTER::Mikko",
+    "registry_row_id": "0d7a47e0-0adf-47d6-9cf9-f71ad7439747",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png"
+   },
+   {
+    "asset_id": "CHAR-LUMI-MASTER-v01",
+    "asset_subtype": null,
+    "asset_type": "CHARACTER",
+    "character_name": "Lumi",
+    "expected_sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+    "manifest_label": "TBD",
+    "object_key": "visual/canonical/characters/CHAR-LUMI-MASTER-v01.png",
+    "reference": "TBD::CHARACTER::Lumi",
+    "registry_row_id": "75cf9e5d-78ec-4cac-b1bb-49e696629bc2",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-LUMI-MASTER-v01.png"
+   }
+  ],
+  "clean_reveal": false,
+  "continuity_start_authority": {
+   "elements_inherited": 7,
+   "elements_not_redeclared": [],
+   "rule": "visible_at_start(N) = validated visible_at_end(N-1)",
+   "source_shot_id": "S016"
+  },
+  "dialogue_slots": [],
+  "duration_seconds": 4,
+  "environment": {
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "asset_subtype": null,
+   "asset_type": "ENVIRONMENT",
+   "expected_sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "manifest_label": "TBD",
+   "object_key": "visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png",
+   "reference": "TBD::ENVIRONMENT::Canonical environment/background",
+   "registry_row_id": "8cdeea80-1eb3-4a75-b50a-c209f1aae434",
+   "sha256_source": "asset_registry.metadata_json.sha256",
+   "status": "APPROVED",
+   "storage_path": "production-assets/visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png"
+  },
+  "episode_end_seconds": 68,
+  "episode_start_seconds": 64,
+  "event_audio": [],
+  "frames": 96,
+  "informational_stale_labels": [
+   "TBD",
+   "TMP_EP005_HAND_MIRROR",
+   "TMP_EP005_SOFT_CLOTH"
+  ],
+  "mapped_audio": [
+   {
+    "asset_id": "AMB-BATHROOM-QUIET-v01",
+    "asset_subtype": "AMBIENCE",
+    "asset_type": "AUDIO",
+    "audio_role": "AMBIENCE",
+    "expected_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+    "object_key": "audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+    "reference": "AMB-BATHROOM-QUIET-v01",
+    "registry_row_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+    "replaces_requirement": "TBD::AUDIO::AMBIENCE",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav"
+   }
+  ],
+  "music_present": false,
+  "named_sfx": [],
+  "props": [
+   {
+    "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+    "asset_subtype": null,
+    "asset_type": "PROP",
+    "expected_sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+    "label_is_stale": true,
+    "manifest_label": "TMP_EP005_HAND_MIRROR",
+    "object_key": "visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp",
+    "reference": "TMP_EP005_HAND_MIRROR",
+    "registry_row_id": "a61c0af2-1e8d-40e2-88d1-8848390f2a17",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp"
+   },
+   {
+    "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+    "asset_subtype": null,
+    "asset_type": "PROP",
+    "expected_sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+    "label_is_stale": true,
+    "manifest_label": "TMP_EP005_SOFT_CLOTH",
+    "object_key": "visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp",
+    "reference": "TMP_EP005_SOFT_CLOTH",
+    "registry_row_id": "ab33c77c-5fde-4642-9efb-706f619c4a7e",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "status": "APPROVED",
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp"
+   }
+  ],
+  "protected_participation_hold": false,
+  "shot_id": "S017",
+  "shot_index": 17,
+  "treatments": [],
+  "video_generation_required": false
+ },
+ "source_frame": {
+  "asset_id": "S017-G03",
+  "classification": "SHOT_FRAME/DERIVED_FRAME",
+  "overlays_composited": {
+   "frame_sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+   "overlays": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "FACE"
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION"
+    }
+   ],
+   "shot_id": "S017"
+  },
+  "registry_id": "c28c7904-51ae-42e4-b7e1-4a44d93d9ba3",
+  "registry_status": "APPROVED",
+  "shot_id": "S017",
+  "verified_sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b"
+ },
+ "stage": "G02 still shot",
+ "status": "REVIEW",
+ "toolchain": {
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3"
+ }
+}

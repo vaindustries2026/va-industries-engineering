@@ -2909,3 +2909,28 @@ evidence: ["evidence/EP005_BATCH1_FRAMES_APPROVED_PLACEMENT_REVIEW_READY_v1.0.md
 rollback: "registry rows 584d5e7a / 12ba1870 / ca534cfb / ce83a8ae and storage objects 289843fa / d3d66c00 / 048071bb (human-authorised only)"
 status: "EP005_BATCH1_FRAMES_APPROVED_AND_PLACEMENT_REVIEW_READY"
 ```
+
+---
+
+## ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS: G03 x7 + G08 x3 approved records; S005/S013/S017/S019 review MP4s rendered
+
+```yaml
+change_id: "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS"
+timestamp: "2026-10-20"
+actor: "Claude"
+authorised_by: "Company Brain G03/G08 review decision (real-face smudges S004/S012/S017; mouth RIGHT side; G08 timings 0.5/1.0/0.5 s); product-first render of S005/S013/S017/S019"
+change_type: "PRODUCTION RECORDS (10 registry rows) + LOCAL RENDER + REVIEW CANDIDATES (4 storage objects + 4 REVIEW rows) + EVIDENCE"
+records: "G03 7 (21 placements; each re-applied and reproduced the reviewed output SHA exactly) + G08 3 (S004/S012 bound to the reproduced G03 outputs; S025 to F01 v02); all APPROVED, readback canonical SHA match"
+renders:
+  S005: {sha256: "3d90e8bbc1945ec91c86897d289aa068fbbb40d53fedc83268cb288511a6e271", frames: 96, registry: "7d515dc3-e1bc-4f99-bbe3-f1abd5b59179"}
+  S013: {sha256: "917b038c6f420e1f68d5d5a7454200951d08766ea7d975b7b37b3bc309ef1240", frames: 96, registry: "3bad029d-40f6-42cb-a383-d472f14d7530"}
+  S017: {sha256: "83cf8f642c15d6ad0313611876bc302cfebf9b7b09890031e4e29b642ae1a6f9", frames: 96, registry: "989d21df-b047-4100-84e4-f9fc4efe0ba4"}
+  S019: {sha256: "618a047819ac4c7b81f1803c5891cd5d56afaeb8f91fcbbf4c3f001cd0ade201", frames: 120, registry: "6d9274b5-a092-4a2d-9368-c9d1c4dcad66"}
+determinism: "batch executed twice in independent dirs (runner renders A/B each): 4 identical renders per shot"
+qc: "Agent-008 QC PASS x4; independent QC 20/20 x4 (first pass method issues documented: codec-level decoded variation, chroma error in overlay boxes, distinct-asset vs placement count)"
+plan: "PLAN_ONLY deterministic 657e4b99...: S005/S013/S017/S019 READY_FOR_LOCAL_RENDER; S001/S012/S026 WAITING_FOR_DIALOGUE; S004/S025 WAITING_FOR_AUDIO_TIMING"
+side_effects: "0 provider calls / generations / ElevenLabs; script, manifest, readiness, S027-S029 unchanged; no agent008 code change; 205/205 tests"
+evidence: ["evidence/EP005_BATCH1_FIRST_FOUR_SHOTS_READY_FOR_HUMAN_REVIEW_v1.0.md", "evidence/ep005/batch1_placement/", "evidence/ep005/batch1_render/"]
+rollback: "REVIEW rows + objects for the four MP4s and the 10 record rows can be removed on human instruction; nothing APPROVED depends on them"
+status: "EP005_BATCH1_FIRST_FOUR_SHOTS_READY_FOR_HUMAN_REVIEW"
+```

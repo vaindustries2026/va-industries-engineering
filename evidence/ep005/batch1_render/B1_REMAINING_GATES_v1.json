@@ -1,0 +1,76 @@
+{
+ "plan_sha256": "657e4b99ac1a9b5c1d092cf2810abaebd80604193733eb05f7cbf6df73fd4a19",
+ "deterministic": true,
+ "gates": {
+  "S001": {
+   "state": "WAITING_FOR_DIALOGUE",
+   "dialogue_needed": [
+    "Mikko: Berries on my face! I want to feel fresh.",
+    "Lumi: I see three little smudges."
+   ],
+   "audio_timing_needed": "dialogue placement only (no named SFX); timing risk: est. 6.1 s of speech in a 6.0 s shot",
+   "provider_preflight_needed": "yes, after TTS approval: G03 pre-composited into the F01 motion base frame -> PROVIDER_PREFLIGHT_ONLY -> Seedance spend authorisation",
+   "human_approval_needed": [
+    "TTS clips",
+    "Seedance spend + ceiling",
+    "raw motion",
+    "final shot"
+   ]
+  },
+  "S004": {
+   "state": "WAITING_FOR_AUDIO_TIMING",
+   "dialogue_needed": [
+    "Lumi: A glint on his cheek!",
+    "Lumi: Find the next smudge!"
+   ],
+   "audio_timing_needed": "SFX-LUMI-CLUE-CHIME timing record at 0.5 s (Company Brain Decision 3 fixed the value; the approved timing record itself is not yet written)",
+   "provider_preflight_needed": "no (G02 still + glint)",
+   "human_approval_needed": [
+    "chime timing record",
+    "TTS clips (timing risk: ~5.0 s incl. chime in a 5.0 s shot)",
+    "final shot"
+   ]
+  },
+  "S012": {
+   "state": "WAITING_FOR_DIALOGUE",
+   "dialogue_needed": [
+    "Lumi: By your mouth!",
+    "Lumi: Find the next smudge!"
+   ],
+   "audio_timing_needed": "dialogue placement only (glint 1.0 s approved, no named SFX)",
+   "provider_preflight_needed": "no (G02 still + glint)",
+   "human_approval_needed": [
+    "TTS clips",
+    "final shot"
+   ]
+  },
+  "S025": {
+   "state": "WAITING_FOR_AUDIO_TIMING",
+   "dialogue_needed": [
+    "Lumi: Cheek, mouth, nose. All clear."
+   ],
+   "audio_timing_needed": "SFX-COMPLETION-POP-v01 timing record at 0.5 s (Decision 3 fixed the value; record not yet written)",
+   "provider_preflight_needed": "no (G02 still + reflection certificate + pop)",
+   "human_approval_needed": [
+    "pop timing record",
+    "TTS clip",
+    "final shot"
+   ]
+  },
+  "S026": {
+   "state": "WAITING_FOR_DIALOGUE",
+   "dialogue_needed": [
+    "Mikko: One little spot at a time!"
+   ],
+   "audio_timing_needed": "dialogue placement only",
+   "provider_preflight_needed": "yes, after TTS approval: F11 reuse frame (S027 base) -> PROVIDER_PREFLIGHT_ONLY -> Seedance spend authorisation",
+   "human_approval_needed": [
+    "TTS clip",
+    "Seedance spend + ceiling",
+    "raw motion",
+    "final shot"
+   ]
+  }
+ },
+ "next_batch": "TTS for 8 lines (Mikko 2, Lumi 6) with the approved voices; plus the two Decision-3 SFX timing records (S004 chime 0.5 s, S025 pop 0.5 s)"
+}

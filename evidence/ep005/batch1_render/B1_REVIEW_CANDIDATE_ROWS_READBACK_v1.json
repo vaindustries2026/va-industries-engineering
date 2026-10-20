@@ -1,0 +1,398 @@
+{
+ "S005": {
+  "id": "7d515dc3-e1bc-4f99-bbe3-f1abd5b59179",
+  "created_at": "2026-10-20T06:06:31.669781+00:00",
+  "updated_at": "2026-10-20T06:06:31.669781+00:00",
+  "asset_id": "SHOT-EP005-S005-ASSEMBLED-CAND-v01",
+  "asset_name": "EP005 S005 assembled shot candidate (Agent-008 still-shot compositor)",
+  "asset_type": "SHOT_RENDER",
+  "asset_subtype": "ASSEMBLED_SHOT",
+  "version": "v01",
+  "status": "REVIEW",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v01.mp4",
+  "source_url": null,
+  "metadata_json": {
+   "fps": "24/1",
+   "audio": "aac LC 48 kHz stereo",
+   "bytes": 609772,
+   "video": "h264 High yuv420p 1920x1080 24/1, 96 frames",
+   "frames": 96,
+   "record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "sha256": "3d90e8bbc1945ec91c86897d289aa068fbbb40d53fedc83268cb288511a6e271",
+   "shot_id": "S005",
+   "approved": false,
+   "container": "mp4",
+   "approve_by": "exact sha256 3d90e8bbc1945ec91c86897d289aa068fbbb40d53fedc83268cb288511a6e271",
+   "dimensions": "1920x1080",
+   "duration_s": 4.0,
+   "provenance": {
+    "qc": {
+     "checks": {
+      "fps_24": true,
+      "h264_yuv420p": true,
+      "res_1920x1080": true,
+      "exact_duration": true,
+      "agent008_qc_pass": true,
+      "ambience_present": true,
+      "overlays_visible": true,
+      "exact_frame_count": true,
+      "no_audio_clipping": true,
+      "deterministic_render": true,
+      "no_clipping_overlays": true,
+      "no_stale_certificate": true,
+      "expected_overlay_count": true,
+      "no_unintended_dialogue": true,
+      "approved_base_frame_sha": true,
+      "no_unintended_treatment": true,
+      "one_audio_aac_48k_stereo": true,
+      "audio_mapping_ambience_only": true,
+      "no_duplicate_g03_application": true,
+      "approved_placement_certificate": true
+     },
+     "agent008": "PASS",
+     "independent": "PASS"
+    },
+    "inputs": {
+     "overlays": "approved overlay SHAs as bound in the G03 record",
+     "base_frame": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "g03_frame_sha256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f",
+     "g03_record_sha256": "4b121fc8737351b4e47d5054ca17f8a42d3979b21a175e9c0d6ef78ea8567ce7",
+     "g03_record_asset_id": "G03-REC-EP005-S005-v01",
+     "AMB-BATHROOM-QUIET-v01": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f"
+    },
+    "lineage": {
+     "script": "6498ea8d (v05)",
+     "manifest": "0325d35c",
+     "readiness": "69bff641"
+    },
+    "excluded": [
+     "dialogue",
+     "foley",
+     "SFX",
+     "music",
+     "camera motion",
+     "zoom",
+     "treatments",
+     "fade",
+     "text",
+     "additional generation"
+    ],
+    "compositor": "Agent-008 batch driver LOCAL_RENDER_ONLY -> G03 place_overlays -> G02 compose_still_shot (evidence/ep005/batch1_render/b1_render_first_four.py)",
+    "input_shas_runner": {
+     "g03_frame": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f",
+     "base_frame": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "g03_record": "4b121fc8737351b4e47d5054ca17f8a42d3979b21a175e9c0d6ef78ea8567ce7"
+    },
+    "two_run_determinism": {
+     "runs": 4,
+     "sha256": "3d90e8bbc1945ec91c86897d289aa068fbbb40d53fedc83268cb288511a6e271",
+     "run1_eq_run2": true,
+     "run1_renderA_eq_renderB": true
+    }
+   },
+   "episode_code": "EP-CANDIDATE-005",
+   "human_decision": "PENDING",
+   "storage_object_id": "566f0f4c-dac4-426a-ae6e-bb328a4d174e",
+   "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v01.mp4"
+  },
+  "notes": "REVIEW assembled S005 candidate (Agent-008 still path, approved G03 record, deterministic, four renders identical). Human decision pending on exact SHA-256."
+ },
+ "S013": {
+  "id": "3bad029d-40f6-42cb-a383-d472f14d7530",
+  "created_at": "2026-10-20T06:06:40.536683+00:00",
+  "updated_at": "2026-10-20T06:06:40.536683+00:00",
+  "asset_id": "SHOT-EP005-S013-ASSEMBLED-CAND-v01",
+  "asset_name": "EP005 S013 assembled shot candidate (Agent-008 still-shot compositor)",
+  "asset_type": "SHOT_RENDER",
+  "asset_subtype": "ASSEMBLED_SHOT",
+  "version": "v01",
+  "status": "REVIEW",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v01.mp4",
+  "source_url": null,
+  "metadata_json": {
+   "fps": "24/1",
+   "audio": "aac LC 48 kHz stereo",
+   "bytes": 607019,
+   "video": "h264 High yuv420p 1920x1080 24/1, 96 frames",
+   "frames": 96,
+   "record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "sha256": "917b038c6f420e1f68d5d5a7454200951d08766ea7d975b7b37b3bc309ef1240",
+   "shot_id": "S013",
+   "approved": false,
+   "container": "mp4",
+   "approve_by": "exact sha256 917b038c6f420e1f68d5d5a7454200951d08766ea7d975b7b37b3bc309ef1240",
+   "dimensions": "1920x1080",
+   "duration_s": 4.0,
+   "provenance": {
+    "qc": {
+     "checks": {
+      "fps_24": true,
+      "h264_yuv420p": true,
+      "res_1920x1080": true,
+      "exact_duration": true,
+      "agent008_qc_pass": true,
+      "ambience_present": true,
+      "overlays_visible": true,
+      "exact_frame_count": true,
+      "no_audio_clipping": true,
+      "deterministic_render": true,
+      "no_clipping_overlays": true,
+      "no_stale_certificate": true,
+      "expected_overlay_count": true,
+      "no_unintended_dialogue": true,
+      "approved_base_frame_sha": true,
+      "no_unintended_treatment": true,
+      "one_audio_aac_48k_stereo": true,
+      "audio_mapping_ambience_only": true,
+      "no_duplicate_g03_application": true,
+      "approved_placement_certificate": true
+     },
+     "agent008": "PASS",
+     "independent": "PASS"
+    },
+    "inputs": {
+     "overlays": "approved overlay SHAs as bound in the G03 record",
+     "base_frame": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "g03_frame_sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+     "g03_record_sha256": "ec6af454b30295b61128a968494e6177c32b7f48510119d03289201652a7bbd9",
+     "g03_record_asset_id": "G03-REC-EP005-S013-v01",
+     "AMB-BATHROOM-QUIET-v01": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f"
+    },
+    "lineage": {
+     "script": "6498ea8d (v05)",
+     "manifest": "0325d35c",
+     "readiness": "69bff641"
+    },
+    "excluded": [
+     "dialogue",
+     "foley",
+     "SFX",
+     "music",
+     "camera motion",
+     "zoom",
+     "treatments",
+     "fade",
+     "text",
+     "additional generation"
+    ],
+    "compositor": "Agent-008 batch driver LOCAL_RENDER_ONLY -> G03 place_overlays -> G02 compose_still_shot (evidence/ep005/batch1_render/b1_render_first_four.py)",
+    "input_shas_runner": {
+     "g03_frame": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+     "base_frame": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "g03_record": "ec6af454b30295b61128a968494e6177c32b7f48510119d03289201652a7bbd9"
+    },
+    "two_run_determinism": {
+     "runs": 4,
+     "sha256": "917b038c6f420e1f68d5d5a7454200951d08766ea7d975b7b37b3bc309ef1240",
+     "run1_eq_run2": true,
+     "run1_renderA_eq_renderB": true
+    }
+   },
+   "episode_code": "EP-CANDIDATE-005",
+   "human_decision": "PENDING",
+   "storage_object_id": "b7230c42-ecea-4596-a197-1fa88a9ce62f",
+   "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v01.mp4"
+  },
+  "notes": "REVIEW assembled S013 candidate (Agent-008 still path, approved G03 record, deterministic, four renders identical). Human decision pending on exact SHA-256."
+ },
+ "S017": {
+  "id": "989d21df-b047-4100-84e4-f9fc4efe0ba4",
+  "created_at": "2026-10-20T06:06:47.977295+00:00",
+  "updated_at": "2026-10-20T06:06:47.977295+00:00",
+  "asset_id": "SHOT-EP005-S017-ASSEMBLED-CAND-v01",
+  "asset_name": "EP005 S017 assembled shot candidate (Agent-008 still-shot compositor)",
+  "asset_type": "SHOT_RENDER",
+  "asset_subtype": "ASSEMBLED_SHOT",
+  "version": "v01",
+  "status": "REVIEW",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v01.mp4",
+  "source_url": null,
+  "metadata_json": {
+   "fps": "24/1",
+   "audio": "aac LC 48 kHz stereo",
+   "bytes": 664932,
+   "video": "h264 High yuv420p 1920x1080 24/1, 96 frames",
+   "frames": 96,
+   "record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "sha256": "83cf8f642c15d6ad0313611876bc302cfebf9b7b09890031e4e29b642ae1a6f9",
+   "shot_id": "S017",
+   "approved": false,
+   "container": "mp4",
+   "approve_by": "exact sha256 83cf8f642c15d6ad0313611876bc302cfebf9b7b09890031e4e29b642ae1a6f9",
+   "dimensions": "1920x1080",
+   "duration_s": 4.0,
+   "provenance": {
+    "qc": {
+     "checks": {
+      "fps_24": true,
+      "h264_yuv420p": true,
+      "res_1920x1080": true,
+      "exact_duration": true,
+      "agent008_qc_pass": true,
+      "ambience_present": true,
+      "overlays_visible": true,
+      "exact_frame_count": true,
+      "no_audio_clipping": true,
+      "deterministic_render": true,
+      "no_clipping_overlays": true,
+      "no_stale_certificate": true,
+      "expected_overlay_count": true,
+      "no_unintended_dialogue": true,
+      "approved_base_frame_sha": true,
+      "no_unintended_treatment": true,
+      "one_audio_aac_48k_stereo": true,
+      "audio_mapping_ambience_only": true,
+      "no_duplicate_g03_application": true,
+      "approved_placement_certificate": true
+     },
+     "agent008": "PASS",
+     "independent": "PASS"
+    },
+    "inputs": {
+     "overlays": "approved overlay SHAs as bound in the G03 record",
+     "base_frame": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+     "g03_frame_sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+     "g03_record_sha256": "3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526",
+     "g03_record_asset_id": "G03-REC-EP005-S017-v01",
+     "AMB-BATHROOM-QUIET-v01": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f"
+    },
+    "lineage": {
+     "script": "6498ea8d (v05)",
+     "manifest": "0325d35c",
+     "readiness": "69bff641"
+    },
+    "excluded": [
+     "dialogue",
+     "foley",
+     "SFX",
+     "music",
+     "camera motion",
+     "zoom",
+     "treatments",
+     "fade",
+     "text",
+     "additional generation"
+    ],
+    "compositor": "Agent-008 batch driver LOCAL_RENDER_ONLY -> G03 place_overlays -> G02 compose_still_shot (evidence/ep005/batch1_render/b1_render_first_four.py)",
+    "input_shas_runner": {
+     "g03_frame": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+     "base_frame": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+     "g03_record": "3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526"
+    },
+    "two_run_determinism": {
+     "runs": 4,
+     "sha256": "83cf8f642c15d6ad0313611876bc302cfebf9b7b09890031e4e29b642ae1a6f9",
+     "run1_eq_run2": true,
+     "run1_renderA_eq_renderB": true
+    }
+   },
+   "episode_code": "EP-CANDIDATE-005",
+   "human_decision": "PENDING",
+   "storage_object_id": "a1d124f5-bb7a-4661-a9c9-6636a3cdadb0",
+   "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v01.mp4"
+  },
+  "notes": "REVIEW assembled S017 candidate (Agent-008 still path, approved G03 record, deterministic, four renders identical). Human decision pending on exact SHA-256."
+ },
+ "S019": {
+  "id": "6d9274b5-a092-4a2d-9368-c9d1c4dcad66",
+  "created_at": "2026-10-20T06:06:54.20084+00:00",
+  "updated_at": "2026-10-20T06:06:54.20084+00:00",
+  "asset_id": "SHOT-EP005-S019-ASSEMBLED-CAND-v01",
+  "asset_name": "EP005 S019 assembled shot candidate (Agent-008 still-shot compositor)",
+  "asset_type": "SHOT_RENDER",
+  "asset_subtype": "ASSEMBLED_SHOT",
+  "version": "v01",
+  "status": "REVIEW",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S019-ASSEMBLED-CAND-v01.mp4",
+  "source_url": null,
+  "metadata_json": {
+   "fps": "24/1",
+   "audio": "aac LC 48 kHz stereo",
+   "bytes": 628294,
+   "video": "h264 High yuv420p 1920x1080 24/1, 120 frames",
+   "frames": 120,
+   "record": "ENG-20261020-EP005-BATCH1-FIRST-FOUR-SHOTS",
+   "sha256": "618a047819ac4c7b81f1803c5891cd5d56afaeb8f91fcbbf4c3f001cd0ade201",
+   "shot_id": "S019",
+   "approved": false,
+   "container": "mp4",
+   "approve_by": "exact sha256 618a047819ac4c7b81f1803c5891cd5d56afaeb8f91fcbbf4c3f001cd0ade201",
+   "dimensions": "1920x1080",
+   "duration_s": 5.0,
+   "provenance": {
+    "qc": {
+     "checks": {
+      "fps_24": true,
+      "h264_yuv420p": true,
+      "res_1920x1080": true,
+      "exact_duration": true,
+      "agent008_qc_pass": true,
+      "ambience_present": true,
+      "overlays_visible": true,
+      "exact_frame_count": true,
+      "no_audio_clipping": true,
+      "deterministic_render": true,
+      "no_clipping_overlays": true,
+      "no_stale_certificate": true,
+      "expected_overlay_count": true,
+      "no_unintended_dialogue": true,
+      "approved_base_frame_sha": true,
+      "no_unintended_treatment": true,
+      "one_audio_aac_48k_stereo": true,
+      "audio_mapping_ambience_only": true,
+      "no_duplicate_g03_application": true,
+      "approved_placement_certificate": true
+     },
+     "agent008": "PASS",
+     "independent": "PASS"
+    },
+    "inputs": {
+     "overlays": "approved overlay SHAs as bound in the G03 record",
+     "base_frame": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+     "g03_frame_sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+     "g03_record_sha256": "9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b",
+     "g03_record_asset_id": "G03-REC-EP005-S019-v01",
+     "AMB-BATHROOM-QUIET-v01": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f"
+    },
+    "lineage": {
+     "script": "6498ea8d (v05)",
+     "manifest": "0325d35c",
+     "readiness": "69bff641"
+    },
+    "excluded": [
+     "dialogue",
+     "foley",
+     "SFX",
+     "music",
+     "camera motion",
+     "zoom",
+     "treatments",
+     "fade",
+     "text",
+     "additional generation"
+    ],
+    "compositor": "Agent-008 batch driver LOCAL_RENDER_ONLY -> G03 place_overlays -> G02 compose_still_shot (evidence/ep005/batch1_render/b1_render_first_four.py)",
+    "input_shas_runner": {
+     "g03_frame": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+     "base_frame": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+     "g03_record": "9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b"
+    },
+    "two_run_determinism": {
+     "runs": 4,
+     "sha256": "618a047819ac4c7b81f1803c5891cd5d56afaeb8f91fcbbf4c3f001cd0ade201",
+     "run1_eq_run2": true,
+     "run1_renderA_eq_renderB": true
+    }
+   },
+   "episode_code": "EP-CANDIDATE-005",
+   "human_decision": "PENDING",
+   "storage_object_id": "b3b5e08a-35ea-4f3a-aa9c-0a009ea8f090",
+   "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S019-ASSEMBLED-CAND-v01.mp4"
+  },
+  "notes": "REVIEW assembled S019 candidate (Agent-008 still path, approved G03 record, deterministic, four renders identical). Human decision pending on exact SHA-256."
+ }
+}
