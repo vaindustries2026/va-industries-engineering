@@ -2808,3 +2808,28 @@ production_writes: 0
 rollback: "nothing to roll back in production; transport copies expire by provider rule 2026-10-28; revert this commit to remove evidence"
 status: "EP005_BATCH1_BASE_FRAMES_READY_TO_SUBMIT + HIGGSFIELD_AUTH_VERIFIED + IMAGE_PROVIDER_VERIFIED (route by precedent) + C1_REFERENCES_VERIFIED + F01/F03/F09_PROMPT_LOCKED + F01/F03/F09_REQUEST_LOCKED + NORMALISATION_PLAN_LOCKED (G04 source-state decision open) + COST_PREFLIGHT_COMPLETE (all UNKNOWN) + IMAGE_GENERATION_MAX=3 + RETRIES=0 + ZERO_GENERATIONS + ZERO_SPEND + ZERO_PRODUCTION_WRITES + BATCH_DRIVER_HANDOFF_READY"
 ```
+
+---
+
+## ENG-20261020-EP005-BATCH1-BASE-FRAMES-GENERATED: F01/F03/F09 Flare calls (1 each), raw locked, G04-normalised review candidates
+
+```yaml
+change_id: "ENG-20261020-EP005-BATCH1-BASE-FRAMES-GENERATED"
+timestamp: "2026-10-20"
+actor: "Claude"
+authorised_by: "Company Brain / Gilang final authorisation (3 Flare calls; balance confirmed; ceiling USD 0.75/call, 2.25 total; cost unknown accepted; duo ref approved; option A locked raw)"
+change_type: "PAID IMAGE GENERATION (3) + EVIDENCE"
+accepted_presubmit_commit: "c6a7dd2258846e228da0dc0b6ae8cf10058ef781"
+pre_submit_verification: "PASS (auth 200; 6 refs re-hashed = governance; 3 prompt + 3 body SHAs = locked; ledger 0/1; no F01/F03/F09 rows)"
+calls:
+  F01: {request_id: "0411644c-ac41-40bf-90fc-8f6508e0ce4b", status: "completed", raw_sha256: "6373429df617fe0bcff563e5ef3f0ad248ea88e03daed0885de014304ddd7c37", normalised_sha256: "c191a513a4987cc0be6ea713f8a8dc88566c952db0250b122270786e0aa11e10"}
+  F03: {request_id: "13440037-6257-4cc9-be46-35cd4efe5aa1", status: "completed", raw_sha256: "d6b6b715b5f5012bbc9ffec618550c1c7cd21d50c67a498eb3e4120024ba3cd1", normalised_sha256: "e8571476c5be0b1c263c4b9c3be2c155ed1af265c87aa0c18786b69b409c5968"}
+  F09: {request_id: "5136a0dd-2d90-4429-90a9-d42e37f3f097", status: "completed", raw_sha256: "dd94032637075be656105b8841e7cf6da320ec808f569ea130e39e33f40a1efe", normalised_sha256: "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e"}
+raw: "2688x1520 PNG each; LOCKED_ORIGINAL_FOR_NORMALISATION (not creative approval); scratchpad only + provider CDN until 2026-10-28"
+normalisation: "crop 0,4,2688,1512 -> G04 1920x1080 lanczos bitexact; two runs byte-identical x3; raw unchanged"
+provider_cost_returned: "none (no cost/credit/usage fields)"
+side_effects: "3 image calls, 0 retries, 0 video/Seedance/ElevenLabs/Agent-006/007, 0 production DB/storage writes, 0 registry rows, no billing change, manifest/readiness APPROVED, S027-S029 unchanged"
+evidence: ["evidence/EP005_BATCH1_BASE_FRAMES_GENERATED_FOR_HUMAN_REVIEW_v1.0.md", "evidence/ep005/batch1_base_frames/"]
+rollback: "no production state changed; discard candidates by not approving; spend is not reversible"
+status: "EP005_BATCH1_BASE_FRAMES_READY_FOR_HUMAN_REVIEW + F01/F03/F09_IMAGE_GENERATIONS=1 + TOTAL=3 + RETRIES=0 + RAW_OUTPUTS_PRESERVED + RAW_OUTPUTS_LOCKED_FOR_NORMALISATION + NORMALISATION_TWO_RUN_PASS + F01/F03/F09_NORMALISED_REVIEW_FRAME_READY + ZERO_VIDEO_GENERATIONS + ZERO_PRODUCTION_WRITES"
+```
