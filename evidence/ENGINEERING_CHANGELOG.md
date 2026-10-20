@@ -2883,3 +2883,29 @@ side_effects: "3 image generations, 0 retries, 0 video/ElevenLabs/Seedance/Agent
 evidence: ["evidence/EP005_BATCH1_V2_FRAMES_READY_FOR_HUMAN_REVIEW_v1.0.md", "evidence/ep005/batch1_base_frames/B1V2_GENERATION_RECORD_v1.json"]
 status: "EP005_BATCH1_V2_FRAMES_READY_FOR_HUMAN_REVIEW + IMAGE_GENERATIONS=3 + RETRIES=0 + NORMALISATION_TWO_RUN_PASS x3 + ZERO_PRODUCTION_WRITES"
 ```
+
+---
+
+## ENG-20261020-EP005-BATCH1-FRAMES-APPROVED-PLACEMENT-REVIEW: F01 v02 / F03 v02 / F15 dedicated approved + preserved; F11 reuse bound; G03/G08 candidates ready for review
+
+```yaml
+change_id: "ENG-20261020-EP005-BATCH1-FRAMES-APPROVED-PLACEMENT-REVIEW"
+timestamp: "2026-10-20"
+actor: "Claude"
+authorised_by: "Company Brain human decision (approve all three; product-first tolerance; F11 reuse approved)"
+change_type: "HUMAN DECISIONS + PRODUCTION STORAGE (3) + REGISTRY (4) + LOCAL CANDIDATES/PREVIEWS + EVIDENCE"
+pixel_bridge: "PASS x3 (F01 c963f4d2..., F03 df5e11f9..., F15 671b79d2...)"
+approved_registered:
+  F01_V02: {sha256: "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845", object: "289843fa-f029-4df5-9561-42029fd537a0", row: "584d5e7a-c9eb-46f8-818f-d97a3c970104"}
+  F03_V02: {sha256: "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410", object: "d3d66c00-261b-48d3-a149-8dc1dbe9a810", row: "12ba1870-4fae-4e6f-a53a-4d2444a15f59"}
+  F15_V02: {sha256: "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690", object: "048071bb-10d8-4676-9c32-a4fbda281751", row: "ca534cfb-ba09-4758-b01a-7893c05563aa"}
+  F11_S026: {binding: "REUSE_EXISTING of FRAME-EP005-S027-BASE-v01 (81b841a6...061b)", row: "ce83a8ae-67e9-4520-bdbe-e0f8b4e8d545", storage_objects: 0}
+families: "F01/F03/F15 CLOSED_APPROVED (v03 needs reopening); F09 APPROVED unchanged; F11 APPROVED_REUSE"
+plan_only_v3: "deterministic cf146f24...; frame gates cleared; S001/S004/S005/S012/S013/S017/S019 WAITING_FOR_G03_RECORD; S025 WAITING_FOR_G08_RECORD; S026 WAITING_FOR_DIALOGUE"
+candidates: "G03 7 records / 21 placements; G08 3 records (S004 glint, S012 glint, S025 reflection PRESERVE + pop); 6 records flagged under 2 decisions (FACE surface; mouth side); previews + contact sheet in scratch"
+dialogue_packet: "8 lines (Mikko 2, Lumi 6); approved voices XjGYkUkzth8BPs29fmcV / f9imtLc2jfOLXtqe3Ihb; timing risk S001, S004"
+side_effects: "0 provider calls; 0 G03/G08 production records; 0 renders; manifest/readiness/S027-S029 unchanged; 205/205 tests"
+evidence: ["evidence/EP005_BATCH1_FRAMES_APPROVED_PLACEMENT_REVIEW_READY_v1.0.md", "evidence/ep005/batch1_base_frames/B1V2_APPROVAL_LEDGER_v1.jsonl", "evidence/ep005/batch1_placement/", "evidence/agent008/batch_driver/FIRST_BATCH_PLAN_v3.json"]
+rollback: "registry rows 584d5e7a / 12ba1870 / ca534cfb / ce83a8ae and storage objects 289843fa / d3d66c00 / 048071bb (human-authorised only)"
+status: "EP005_BATCH1_FRAMES_APPROVED_AND_PLACEMENT_REVIEW_READY"
+```

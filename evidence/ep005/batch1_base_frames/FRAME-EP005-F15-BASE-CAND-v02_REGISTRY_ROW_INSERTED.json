@@ -1,0 +1,127 @@
+[
+ {
+  "id": "ca534cfb-ba09-4758-b01a-7893c05563aa",
+  "created_at": "2026-10-20T05:37:35.49373+00:00",
+  "updated_at": "2026-10-20T05:37:35.49373+00:00",
+  "asset_id": "FRAME-EP005-F15-BASE-CAND-v02",
+  "asset_name": "EP005 F15 Base Frame v02 (S019)",
+  "asset_type": "SHOT_FRAME",
+  "asset_subtype": "BASE_FRAME",
+  "version": "v02",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/frames/FRAME-EP005-F15-BASE-CAND-v02.png",
+  "source_url": null,
+  "metadata_json": {
+   "bytes": 3518271,
+   "width": 1920,
+   "format": "PNG 8-bit RGB non-interlaced",
+   "height": 1080,
+   "sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+   "shot_id": "S019",
+   "approved": true,
+   "frame_id": "FRAME-EP005-F15-BASE-CAND-v02",
+   "has_alpha": false,
+   "approve_by": "exact sha256 e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+   "canon_role": "F15-MACRO-REFLECTION base frame (shot-specific; not global character canon)",
+   "dimensions": "1920x1080",
+   "provenance": {
+    "model": "Marketing Studio Image 2.5 Flare",
+    "package": "evidence/ep005/batch1_base_frames/B1_F15_DEDICATED_PACKAGE_v1.json",
+    "endpoint": "POST https://api.higgsfield.ai/marketing-studio/image/flare",
+    "provider": "HIGGSFIELD",
+    "raw_bytes": 4399633,
+    "raw_state": "LOCKED_ORIGINAL_FOR_NORMALISATION (not creative approval)",
+    "raw_format": "PNG",
+    "prompt_sha256": "3072bf65e56ace2ca43bb649d4c90c86bd8aad6b55fce05a601e31405a61bbae",
+    "raw_dimensions": "2688x1520",
+    "automatic_retries": 0,
+    "reference_sha256s": {
+     "CHAR-LUMI-MASTER-v01": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+     "CHAR-MIKKO-MASTER-v01": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+     "DUO-MIKKO-LUMI-SCALE-v01": "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f",
+     "PROP-EP005-HAND-MIRROR-v01": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+     "PROP-EP005-CLEANING-CLOTH-v01": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+     "WORLD-EP005-BATHROOM-MASTER-v01": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733"
+    },
+    "generation_attempts": 1,
+    "package_lock_commit": "90689a7f56d2550a22cec079c4d6cb09c211ce8e",
+    "provider_request_id": "583f34dc-4dd3-4ec1-aa19-9f8e024cd503",
+    "raw_provider_sha256": "14fcd488ba032c5dc7e2340d398f1e84dcf9dc8fb3883ee54cfb4fa779080d19",
+    "request_body_sha256": "0ed33b69d5c4c01e8cd12e9cc637e946a4223897b2c0353a486e47cba80cf6d9",
+    "raw_provider_md5_etag": "c7554f6510020e4c36d7e0442a7ed9b0"
+   },
+   "canon_scope": "MIKKO_LUMI_EP005_SHOT_SPECIFIC_PRODUCTION_ASSET",
+   "g03_applied": false,
+   "g08_applied": false,
+   "content_type": "image/png",
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F15-MACRO-REFLECTION",
+   "not_c1_canon": true,
+   "rgb24_sha256": "671b79d22abc1f8d26566d9c73c14b75b14bc47b1535a913c029a42234f5deba",
+   "normalisation": {
+    "crop": {
+     "h": 1512,
+     "w": 2688,
+     "x": 0,
+     "y": 4
+    },
+    "scale": {
+     "h": 1080,
+     "w": 1920
+    },
+    "method": "G04 derive_frame: frame 0, exact centred 16:9 crop, scale 1920x1080 (lanczos+accurate_rnd+full_chroma_int+bitexact), lossless PNG; no other operation",
+    "source_state": "LOCKED_ORIGINAL_FOR_NORMALISATION",
+    "raw_unchanged": true,
+    "two_run_determinism": {
+     "runs": 2,
+     "run_sha256": [
+      "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+      "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690"
+     ],
+     "byte_identical": true
+    },
+    "generative_modification": false
+   },
+   "accepted_items": [
+    "deliberate macro composition",
+    "large readable Mikko reflection",
+    "no distracting edge intrusion",
+    "bathroom continuity",
+    "Lumi hand / mirror interaction",
+    "image quality"
+   ],
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FRAMES-APPROVED-PLACEMENT-REVIEW",
+   "approved_sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+   "governance_mode": "PRODUCT_FIRST production tolerance (Company Brain 2026-10-20)",
+   "frame_family_kind": "GENERATE (dedicated; supersedes the REJECTED F09 crop FRAME-EP005-F15-BASE-CAND-v01)",
+   "generation_record": "evidence/ep005/batch1_base_frames/B1V2_GENERATION_RECORD_v1.json",
+   "pixel_equivalence": {
+    "method": "SHA256(PIL Image.open(file).convert('RGB').tobytes())",
+    "result": "PASS",
+    "local_rgb_sha256": "671b79d22abc1f8d26566d9c73c14b75b14bc47b1535a913c029a42234f5deba",
+    "company_brain_reviewed_rgb_sha256": "671b79d22abc1f8d26566d9c73c14b75b14bc47b1535a913c029a42234f5deba"
+   },
+   "storage_object_id": "048071bb-10d8-4676-9c32-a4fbda281751",
+   "approval_authority": "Company Brain / Gilang",
+   "frame_family_state": "CLOSED_APPROVED",
+   "storage_object_key": "visual/production/ep005/frames/FRAME-EP005-F15-BASE-CAND-v02.png",
+   "frame_family_members": [
+    "S018",
+    "S019"
+   ],
+   "accepted_human_variances": [
+    "top-petal proximity to the upper frame edge"
+   ],
+   "frame_family_blocked_members": [
+    "S018"
+   ],
+   "frame_family_code_ready_members": [
+    "S019"
+   ]
+  },
+  "notes": "Approved EP005 F15-MACRO-REFLECTION base frame v02 (Higgsfield Flare request 583f34dc-4dd3-4ec1-aa19-9f8e024cd503, G04 normalised 1920x1080). SHA-256 e7a3936d...c690. Members S018, S019. Not C1/global canon. Company Brain approval 2026-10-20 (product-first; variances recorded)."
+ }
+]

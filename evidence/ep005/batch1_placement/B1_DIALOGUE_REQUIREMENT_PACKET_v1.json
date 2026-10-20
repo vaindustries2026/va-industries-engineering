@@ -1,0 +1,115 @@
+{
+ "status": "REQUIREMENTS ONLY - no ElevenLabs call in this task",
+ "source": "live spec dialogue_slots (readiness 69bff641); all DEFERRED_NO_VOICE_ASSET",
+ "voice_source": "approved registered dialogue DLG-EP005-S028-MIKKO-v01 / DLG-EP005-S028-LUMI-v01 (same voice_id as S027)",
+ "estimate_basis": "speaking rate of the approved S028 clips: Mikko 0.40 s/word (1.58 s / 4 words), Lumi 0.51 s/word (2.55 s / 5 words); real clip durations decide",
+ "TOTAL_LINES": 8,
+ "MIKKO_LINES": 2,
+ "LUMI_LINES": 6,
+ "MIKKO": [
+  {
+   "SHOT_ID": "S001",
+   "EXACT_TEXT": "Berries on my face! I want to feel fresh.",
+   "VOICE_ID": "XjGYkUkzth8BPs29fmcV",
+   "VOICE": "Teddy Twinkle - Cute Cartoon Boy (VOICE-MIKKO-v01, approved)",
+   "ESTIMATED_DURATION_S": 3.6,
+   "SHOT_WINDOW_EPISODE_S": [
+    0,
+    6
+   ],
+   "TIMING_REQUIREMENT": "both lines inside the 6.0 s shot (Mikko then Lumi); no response hold. RISK: estimated 3.6 s + 2.5 s = 6.1 s > 6.0 s; needs brisker delivery or a timing decision"
+  },
+  {
+   "SHOT_ID": "S026",
+   "EXACT_TEXT": "One little spot at a time!",
+   "VOICE_ID": "XjGYkUkzth8BPs29fmcV",
+   "VOICE": "Teddy Twinkle - Cute Cartoon Boy (VOICE-MIKKO-v01, approved)",
+   "ESTIMATED_DURATION_S": 2.4,
+   "SHOT_WINDOW_EPISODE_S": [
+    99,
+    104
+   ],
+   "TIMING_REQUIREMENT": "during the S026 motion (5.0 s); clip-synced Seedance path like S027/S028; fits (est. 2.4 s)"
+  }
+ ],
+ "LUMI": [
+  {
+   "SHOT_ID": "S001",
+   "EXACT_TEXT": "I see three little smudges.",
+   "VOICE_ID": "f9imtLc2jfOLXtqe3Ihb",
+   "VOICE": "Lola - Soft, Innocent and Calming (VOICE-LUMI-v01, approved)",
+   "ESTIMATED_DURATION_S": 2.5,
+   "SHOT_WINDOW_EPISODE_S": [
+    0,
+    6
+   ],
+   "TIMING_REQUIREMENT": "both lines inside the 6.0 s shot (Mikko then Lumi); no response hold. RISK: estimated 3.6 s + 2.5 s = 6.1 s > 6.0 s; needs brisker delivery or a timing decision"
+  },
+  {
+   "SHOT_ID": "S004",
+   "EXACT_TEXT": "A glint on his cheek!",
+   "VOICE_ID": "f9imtLc2jfOLXtqe3Ihb",
+   "VOICE": "Lola - Soft, Innocent and Calming (VOICE-LUMI-v01, approved)",
+   "ESTIMATED_DURATION_S": 2.5,
+   "SHOT_WINDOW_EPISODE_S": [
+    13,
+    18
+   ],
+   "TIMING_REQUIREMENT": "both lines after the glint + clue chime (proposed 0.5 s) and finished before S005 (5.0 s shot). RISK: 0.5 + 2.5 + 2.0 = 5.0 s = the whole shot; tight"
+  },
+  {
+   "SHOT_ID": "S004",
+   "EXACT_TEXT": "Find the next smudge!",
+   "VOICE_ID": "f9imtLc2jfOLXtqe3Ihb",
+   "VOICE": "Lola - Soft, Innocent and Calming (VOICE-LUMI-v01, approved)",
+   "ESTIMATED_DURATION_S": 2.0,
+   "SHOT_WINDOW_EPISODE_S": [
+    13,
+    18
+   ],
+   "TIMING_REQUIREMENT": "both lines after the glint + clue chime (proposed 0.5 s) and finished before S005 (5.0 s shot). RISK: 0.5 + 2.5 + 2.0 = 5.0 s = the whole shot; tight"
+  },
+  {
+   "SHOT_ID": "S012",
+   "EXACT_TEXT": "By your mouth!",
+   "VOICE_ID": "f9imtLc2jfOLXtqe3Ihb",
+   "VOICE": "Lola - Soft, Innocent and Calming (VOICE-LUMI-v01, approved)",
+   "ESTIMATED_DURATION_S": 1.5,
+   "SHOT_WINDOW_EPISODE_S": [
+    44,
+    49
+   ],
+   "TIMING_REQUIREMENT": "after Lumi angles the mirror / glint (proposed 1.0 s); 5.0 s shot; fits (est. 3.5 s)"
+  },
+  {
+   "SHOT_ID": "S012",
+   "EXACT_TEXT": "Find the next smudge!",
+   "VOICE_ID": "f9imtLc2jfOLXtqe3Ihb",
+   "VOICE": "Lola - Soft, Innocent and Calming (VOICE-LUMI-v01, approved)",
+   "ESTIMATED_DURATION_S": 2.0,
+   "SHOT_WINDOW_EPISODE_S": [
+    44,
+    49
+   ],
+   "TIMING_REQUIREMENT": "after Lumi angles the mirror / glint (proposed 1.0 s); 5.0 s shot; fits (est. 3.5 s)"
+  },
+  {
+   "SHOT_ID": "S025",
+   "EXACT_TEXT": "Cheek, mouth, nose. All clear.",
+   "VOICE_ID": "f9imtLc2jfOLXtqe3Ihb",
+   "VOICE": "Lola - Soft, Innocent and Calming (VOICE-LUMI-v01, approved)",
+   "ESTIMATED_DURATION_S": 2.5,
+   "SHOT_WINDOW_EPISODE_S": [
+    95,
+    99
+   ],
+   "TIMING_REQUIREMENT": "with the clean reveal; completion pop proposed at 0.5 s; 4.0 s shot; fits (est. 2.5 s)"
+  }
+ ],
+ "silent_shots": {
+  "S005": "4 s response hold 18-22 s",
+  "S013": "4 s response hold 49-53 s",
+  "S017": "4 s processing hold 64-68 s",
+  "S019": "5 s response hold 74-79 s"
+ }
+}

@@ -1,0 +1,54 @@
+[
+ {
+  "id": "ce83a8ae-67e9-4520-bdbe-e0f8b4e8d545",
+  "created_at": "2026-10-20T05:37:38.089546+00:00",
+  "updated_at": "2026-10-20T05:37:38.089546+00:00",
+  "asset_id": "FRAME-EP005-S026-BASE-REUSE-v01",
+  "asset_name": "EP005 S026 Base Frame (reuse of S027 base frame)",
+  "asset_type": "SHOT_FRAME",
+  "asset_subtype": "BASE_FRAME",
+  "version": "v01",
+  "status": "APPROVED",
+  "aliases": [],
+  "storage_path": "production-assets/visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png",
+  "source_url": null,
+  "metadata_json": {
+   "bytes": 4746496,
+   "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+   "shot_id": "S026",
+   "approved": true,
+   "frame_id": "FRAME-EP005-S026-BASE-REUSE-v01",
+   "approve_by": "exact sha256 81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+   "canon_role": "S026 motion base frame = REUSE_EXISTING binding of the approved S027 base frame (no copy)",
+   "dimensions": "2688x1520",
+   "canon_scope": "MIKKO_LUMI_EP005_SHOT_SPECIFIC_PRODUCTION_ASSET",
+   "binding_type": "REUSE_EXISTING",
+   "content_type": "image/png",
+   "episode_code": "EP-CANDIDATE-005",
+   "frame_family": "F11-S027-START-REUSE",
+   "not_c1_canon": true,
+   "storage_note": "points at the existing S027 object; no duplicate bytes were written",
+   "human_approval": "APPROVED",
+   "human_decision": "APPROVED",
+   "approval_record": "ENG-20261020-EP005-BATCH1-FRAMES-APPROVED-PLACEMENT-REVIEW",
+   "approved_sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b",
+   "pixel_operations": {
+    "crop": null,
+    "scale": null,
+    "pixel_edit": null,
+    "bytes_unchanged": true,
+    "verified_sha256_at_binding": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+   },
+   "reuse_of_asset_id": "FRAME-EP005-S027-BASE-v01",
+   "storage_object_id": "cfb3bb48-2ca5-4146-835d-d27da6723891",
+   "approval_authority": "Company Brain / Gilang",
+   "frame_family_state": "APPROVED_REUSE",
+   "storage_object_key": "visual/production/ep005/frames/FRAME-EP005-S027-BASE-v01.png",
+   "frame_family_members": [
+    "S026"
+   ],
+   "reuse_of_registry_id": "d2a07b22-cf25-42ff-b86a-c4080ff24bc2"
+  },
+  "notes": "S026 reuse binding of FRAME-EP005-S027-BASE-v01 (REUSE_EXISTING; bytes unchanged, same storage object, SHA 81b841a6...061b). Company Brain approval 2026-10-20. S027 row untouched."
+ }
+]

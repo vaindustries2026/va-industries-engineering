@@ -1,0 +1,1475 @@
+{
+ "status": "CANDIDATES_PENDING_HUMAN_APPROVAL (LOCAL_PREPARE_ONLY; nothing registered or approved)",
+ "frames": {
+  "F01": {
+   "asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+   "registry_id": "584d5e7a-c9eb-46f8-818f-d97a3c970104",
+   "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845"
+  },
+  "F03": {
+   "asset_id": "FRAME-EP005-F03-BASE-CAND-v02",
+   "registry_id": "12ba1870-4fae-4e6f-a53a-4d2444a15f59",
+   "sha256": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410"
+  },
+  "F09": {
+   "asset_id": "FRAME-EP005-F09-BASE-CAND-v01",
+   "registry_id": "c28c7904-51ae-42e4-b7e1-4a44d93d9ba3",
+   "sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e"
+  },
+  "F15": {
+   "asset_id": "FRAME-EP005-F15-BASE-CAND-v02",
+   "registry_id": "ca534cfb-ba09-4758-b01a-7893c05563aa",
+   "sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690"
+  }
+ },
+ "overlay_sha256": {
+  "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+  "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+  "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1"
+ },
+ "measured_landmarks": {
+  "F01_REFL": {
+   "eye_l": [
+    814,
+    467
+   ],
+   "eye_r": [
+    1005,
+    473
+   ],
+   "nose_box": [
+    872,
+    492,
+    942,
+    537
+   ],
+   "cheek_anat_left": [
+    748,
+    538
+   ],
+   "mouth_corner_anat_right": [
+    967,
+    550
+   ],
+   "glass_seed": [
+    907,
+    420
+   ]
+  },
+  "F15_REFL": {
+   "eye_l": [
+    863,
+    492
+   ],
+   "eye_r": [
+    1051,
+    493
+   ],
+   "nose_box": [
+    923,
+    515,
+    995,
+    559
+   ],
+   "cheek_anat_left": [
+    792,
+    566
+   ],
+   "mouth_corner_anat_right": [
+    1020,
+    570
+   ],
+   "glass_seed": [
+    959,
+    400
+   ]
+  },
+  "F03_REFL": {
+   "eye_l": [
+    1061,
+    571
+   ],
+   "eye_r": [
+    1223,
+    544
+   ],
+   "nose_box": [
+    1127,
+    575,
+    1178,
+    608
+   ],
+   "cheek_anat_left": [
+    1055,
+    635
+   ],
+   "mouth_corner_anat_right": [
+    1200,
+    615
+   ],
+   "glass_seed": [
+    1153,
+    470
+   ]
+  },
+  "F03_FACE": {
+   "eye_l": [
+    485,
+    455
+   ],
+   "eye_r": [
+    732,
+    385
+   ],
+   "nose_box": [
+    605,
+    447,
+    690,
+    507
+   ],
+   "cheek_anat_left": [
+    800,
+    478
+   ],
+   "mouth_corner_anat_right": [
+    565,
+    535
+   ],
+   "cheek_w_override": 100,
+   "nose_w_override": 72,
+   "note": "three-quarter view turned toward the mirror: anatomical left cheek = far cheek (image-right), foreshortened, so the cheek width is held at 100 px; nose width reduced to clear the right eye"
+  },
+  "F09_REFL": {
+   "eye_l": [
+    951,
+    422
+   ],
+   "eye_r": [
+    1044,
+    440
+   ],
+   "nose_box": [
+    975,
+    442,
+    1007,
+    461
+   ],
+   "glass_seed": [
+    991,
+    400
+   ]
+  },
+  "F09_FACE": {
+   "eye_l": [
+    565,
+    368
+   ],
+   "eye_r": [
+    722,
+    330
+   ],
+   "nose_box": [
+    637,
+    360,
+    698,
+    400
+   ],
+   "nose_w_override": 50,
+   "note": "nose width reduced to clear the right eye"
+  }
+ },
+ "size_rule": "cheek w = round(0.50 x eye distance); mouth w = round(0.30 x eye distance); nose w = round(0.90 x nose width); overrides noted per region",
+ "glass": {
+  "F01": {
+   "ellipse": {
+    "shape": "ELLIPSE",
+    "cx": 895,
+    "cy": 427,
+    "rx": 298,
+    "ry": 311,
+    "feather_px": 0
+   },
+   "fill_bbox": [
+    594,
+    113,
+    1196,
+    740
+   ],
+   "margin_px": 3
+  },
+  "F03": {
+   "ellipse": {
+    "shape": "ELLIPSE",
+    "cx": 1158,
+    "cy": 519,
+    "rx": 165,
+    "ry": 177,
+    "feather_px": 0
+   },
+   "fill_bbox": [
+    990,
+    339,
+    1325,
+    699
+   ],
+   "margin_px": 3
+  },
+  "F09": {
+   "ellipse": {
+    "shape": "ELLIPSE",
+    "cx": 1009,
+    "cy": 416,
+    "rx": 115,
+    "ry": 130,
+    "feather_px": 0
+   },
+   "fill_bbox": [
+    891,
+    283,
+    1126,
+    548
+   ],
+   "margin_px": 3
+  },
+  "F15": {
+   "ellipse": {
+    "shape": "ELLIPSE",
+    "cx": 945,
+    "cy": 450,
+    "rx": 307,
+    "ry": 305,
+    "feather_px": 0
+   },
+   "fill_bbox": [
+    635,
+    142,
+    1254,
+    758
+   ],
+   "margin_px": 3
+  }
+ },
+ "G03": [
+  {
+   "SHOT_ID": "S001",
+   "FRAME_FAMILY": "F01",
+   "FRAME_ASSET_ID": "FRAME-EP005-F01-BASE-CAND-v02",
+   "FRAME_SHA": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "G03_RECORD_STATUS": "CANDIDATE_PENDING_HUMAN_APPROVAL",
+   "G03_RECORD": {
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S001-CAND-v01",
+    "shot_id": "S001",
+    "base_frame": {
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     143
+    ],
+    "placements": [
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 748,
+      "y": 538,
+      "width_px": 96,
+      "rotation_deg": 12,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 907,
+      "y": 510,
+      "width_px": 63,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1001,
+      "y": 558,
+      "width_px": 57,
+      "rotation_deg": 0,
+      "mirror": true
+     }
+    ]
+   },
+   "G03_RECORD_SHA256": "b97d24d754cb8e9ef9c632e18b7ecf18b2365a97dfe0025f0b1ff621b15cedfe",
+   "G03_PLACEMENTS": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 748,
+     "y": 538,
+     "width_px": 96,
+     "rotation_deg": 12,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-left in the reflection)",
+     "visible_box": [
+      700,
+      518,
+      798,
+      565
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 907,
+     "y": 510,
+     "width_px": 63,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      876,
+      477,
+      939,
+      544
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1001,
+     "y": 558,
+     "width_px": 57,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner",
+     "visible_box": [
+      973,
+      547,
+      1030,
+      570
+     ]
+    }
+   ],
+   "G03_PREVIEW_FRAME_SHA256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f",
+   "FLAGS": [
+    {
+     "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+     "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S005",
+   "FRAME_FAMILY": "F01",
+   "FRAME_ASSET_ID": "FRAME-EP005-F01-BASE-CAND-v02",
+   "FRAME_SHA": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "G03_RECORD_STATUS": "CANDIDATE_PENDING_HUMAN_APPROVAL",
+   "G03_RECORD": {
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S005-CAND-v01",
+    "shot_id": "S005",
+    "base_frame": {
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     95
+    ],
+    "placements": [
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 748,
+      "y": 538,
+      "width_px": 96,
+      "rotation_deg": 12,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 907,
+      "y": 510,
+      "width_px": 63,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1001,
+      "y": 558,
+      "width_px": 57,
+      "rotation_deg": 0,
+      "mirror": true
+     }
+    ]
+   },
+   "G03_RECORD_SHA256": "4b121fc8737351b4e47d5054ca17f8a42d3979b21a175e9c0d6ef78ea8567ce7",
+   "G03_PLACEMENTS": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 748,
+     "y": 538,
+     "width_px": 96,
+     "rotation_deg": 12,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-left in the reflection)",
+     "visible_box": [
+      700,
+      518,
+      798,
+      565
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 907,
+     "y": 510,
+     "width_px": 63,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      876,
+      477,
+      939,
+      544
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1001,
+     "y": 558,
+     "width_px": 57,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner",
+     "visible_box": [
+      973,
+      547,
+      1030,
+      570
+     ]
+    }
+   ],
+   "G03_PREVIEW_FRAME_SHA256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f",
+   "FLAGS": [
+    {
+     "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+     "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S013",
+   "FRAME_FAMILY": "F01",
+   "FRAME_ASSET_ID": "FRAME-EP005-F01-BASE-CAND-v02",
+   "FRAME_SHA": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+   "G03_RECORD_STATUS": "CANDIDATE_PENDING_HUMAN_APPROVAL",
+   "G03_RECORD": {
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S013-CAND-v01",
+    "shot_id": "S013",
+    "base_frame": {
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     95
+    ],
+    "placements": [
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 907,
+      "y": 510,
+      "width_px": 63,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1001,
+      "y": 558,
+      "width_px": 57,
+      "rotation_deg": 0,
+      "mirror": true
+     }
+    ]
+   },
+   "G03_RECORD_SHA256": "ec6af454b30295b61128a968494e6177c32b7f48510119d03289201652a7bbd9",
+   "G03_PLACEMENTS": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 907,
+     "y": 510,
+     "width_px": 63,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      876,
+      477,
+      939,
+      544
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1001,
+     "y": 558,
+     "width_px": 57,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner",
+     "visible_box": [
+      973,
+      547,
+      1030,
+      570
+     ]
+    }
+   ],
+   "G03_PREVIEW_FRAME_SHA256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+   "FLAGS": [
+    {
+     "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+     "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S004",
+   "FRAME_FAMILY": "F03",
+   "FRAME_ASSET_ID": "FRAME-EP005-F03-BASE-CAND-v02",
+   "FRAME_SHA": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+   "G03_RECORD_STATUS": "CANDIDATE_PENDING_HUMAN_APPROVAL",
+   "G03_RECORD": {
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S004-CAND-v01",
+    "shot_id": "S004",
+    "base_frame": {
+     "asset_id": "FRAME-EP005-F03-BASE-CAND-v02",
+     "sha256": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     119
+    ],
+    "placements": [
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1055,
+      "y": 635,
+      "width_px": 82,
+      "rotation_deg": 12,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1152,
+      "y": 588,
+      "width_px": 46,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1230,
+      "y": 623,
+      "width_px": 49,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+      "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+      "surface": "FACE",
+      "anchor": "CENTER",
+      "x": 800,
+      "y": 478,
+      "width_px": 100,
+      "rotation_deg": -12,
+      "mirror": false
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "FACE",
+      "anchor": "CENTER",
+      "x": 648,
+      "y": 471,
+      "width_px": 72,
+      "rotation_deg": 0,
+      "mirror": false
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "surface": "FACE",
+      "anchor": "CENTER",
+      "x": 521,
+      "y": 543,
+      "width_px": 77,
+      "rotation_deg": 0,
+      "mirror": false
+     }
+    ]
+   },
+   "G03_RECORD_SHA256": "45c3deb9ff1d07b0b93a2a50b3ea27cf9581cb13214e082284dedca589fd0d70",
+   "G03_PLACEMENTS": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1055,
+     "y": 635,
+     "width_px": 82,
+     "rotation_deg": 12,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-left in the reflection)",
+     "visible_box": [
+      1013,
+      617,
+      1098,
+      658
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1152,
+     "y": 588,
+     "width_px": 46,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      1129,
+      564,
+      1175,
+      613
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1230,
+     "y": 623,
+     "width_px": 49,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner",
+     "visible_box": [
+      1206,
+      613,
+      1255,
+      633
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "overlay_sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+     "surface": "FACE",
+     "anchor": "CENTER",
+     "x": 800,
+     "y": 478,
+     "width_px": 100,
+     "rotation_deg": -12,
+     "mirror": false,
+     "anatomical_meaning": "Mikko's anatomical left cheek (image-right on the real face)",
+     "visible_box": [
+      747,
+      458,
+      850,
+      506
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "FACE",
+     "anchor": "CENTER",
+     "x": 648,
+     "y": 471,
+     "width_px": 72,
+     "rotation_deg": 0,
+     "mirror": false,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      612,
+      433,
+      684,
+      510
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "surface": "FACE",
+     "anchor": "CENTER",
+     "x": 521,
+     "y": 543,
+     "width_px": 77,
+     "rotation_deg": 0,
+     "mirror": false,
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner",
+     "visible_box": [
+      483,
+      527,
+      560,
+      559
+     ]
+    }
+   ],
+   "G03_PREVIEW_FRAME_SHA256": "d9b86f59ff783926279c32aa37133d0fb78f6b5c3cbd899f7c51d807e739af25",
+   "FLAGS": [
+    {
+     "placement": "all FACE-surface placements",
+     "question": "the manifest names the mirror reflection only; Mikko's real face is visible in this frame. Add the matching FACE marks (proposed, shown in the preview) or keep the reflection only?"
+    },
+    {
+     "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+     "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S012",
+   "FRAME_FAMILY": "F03",
+   "FRAME_ASSET_ID": "FRAME-EP005-F03-BASE-CAND-v02",
+   "FRAME_SHA": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410",
+   "G03_RECORD_STATUS": "CANDIDATE_PENDING_HUMAN_APPROVAL",
+   "G03_RECORD": {
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S012-CAND-v01",
+    "shot_id": "S012",
+    "base_frame": {
+     "asset_id": "FRAME-EP005-F03-BASE-CAND-v02",
+     "sha256": "ac93ecfb986dbed9ea32525dc8be7851cb790f6b59c656d7cd41815588ed5410"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     119
+    ],
+    "placements": [
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1152,
+      "y": 588,
+      "width_px": 46,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 1230,
+      "y": 623,
+      "width_px": 49,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "FACE",
+      "anchor": "CENTER",
+      "x": 648,
+      "y": 471,
+      "width_px": 72,
+      "rotation_deg": 0,
+      "mirror": false
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+      "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+      "surface": "FACE",
+      "anchor": "CENTER",
+      "x": 521,
+      "y": 543,
+      "width_px": 77,
+      "rotation_deg": 0,
+      "mirror": false
+     }
+    ]
+   },
+   "G03_RECORD_SHA256": "32f82bcf823d913834a913e30bceacb6d01838fd1ae17c57e17639dbeb1f6820",
+   "G03_PLACEMENTS": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1152,
+     "y": 588,
+     "width_px": 46,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      1129,
+      564,
+      1175,
+      613
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 1230,
+     "y": 623,
+     "width_px": 49,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner",
+     "visible_box": [
+      1206,
+      613,
+      1255,
+      633
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "FACE",
+     "anchor": "CENTER",
+     "x": 648,
+     "y": 471,
+     "width_px": 72,
+     "rotation_deg": 0,
+     "mirror": false,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      612,
+      433,
+      684,
+      510
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+     "overlay_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+     "surface": "FACE",
+     "anchor": "CENTER",
+     "x": 521,
+     "y": 543,
+     "width_px": 77,
+     "rotation_deg": 0,
+     "mirror": false,
+     "anatomical_meaning": "skin beside (not inside) Mikko's mouth, anatomical right corner",
+     "visible_box": [
+      483,
+      527,
+      560,
+      559
+     ]
+    }
+   ],
+   "G03_PREVIEW_FRAME_SHA256": "fb139763ab59217fd87da01cbcc3fe877ce195070da8a41a97ecfbd3799df39d",
+   "FLAGS": [
+    {
+     "placement": "all FACE-surface placements",
+     "question": "the manifest names the mirror reflection only; Mikko's real face is visible in this frame. Add the matching FACE marks (proposed, shown in the preview) or keep the reflection only?"
+    },
+    {
+     "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+     "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S017",
+   "FRAME_FAMILY": "F09",
+   "FRAME_ASSET_ID": "FRAME-EP005-F09-BASE-CAND-v01",
+   "FRAME_SHA": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+   "G03_RECORD_STATUS": "CANDIDATE_PENDING_HUMAN_APPROVAL",
+   "G03_RECORD": {
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S017-CAND-v01",
+    "shot_id": "S017",
+    "base_frame": {
+     "asset_id": "FRAME-EP005-F09-BASE-CAND-v01",
+     "sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     95
+    ],
+    "placements": [
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 991,
+      "y": 450,
+      "width_px": 29,
+      "rotation_deg": 0,
+      "mirror": true
+     },
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "FACE",
+      "anchor": "CENTER",
+      "x": 668,
+      "y": 376,
+      "width_px": 50,
+      "rotation_deg": 0,
+      "mirror": false
+     }
+    ]
+   },
+   "G03_RECORD_SHA256": "3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526",
+   "G03_PLACEMENTS": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 991,
+     "y": 450,
+     "width_px": 29,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      977,
+      435,
+      1006,
+      466
+     ]
+    },
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "FACE",
+     "anchor": "CENTER",
+     "x": 668,
+     "y": 376,
+     "width_px": 50,
+     "rotation_deg": 0,
+     "mirror": false,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      643,
+      349,
+      693,
+      403
+     ]
+    }
+   ],
+   "G03_PREVIEW_FRAME_SHA256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+   "FLAGS": [
+    {
+     "placement": "all FACE-surface placements",
+     "question": "the manifest names the mirror reflection only; Mikko's real face is visible in this frame. Add the matching FACE marks (proposed, shown in the preview) or keep the reflection only?"
+    }
+   ]
+  },
+  {
+   "SHOT_ID": "S019",
+   "FRAME_FAMILY": "F15",
+   "FRAME_ASSET_ID": "FRAME-EP005-F15-BASE-CAND-v02",
+   "FRAME_SHA": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+   "G03_RECORD_STATUS": "CANDIDATE_PENDING_HUMAN_APPROVAL",
+   "G03_RECORD": {
+    "contract": "AGENT008_G03_OVERLAY_PLACEMENT_v1",
+    "record_id": "G03-EP005-S019-CAND-v01",
+    "shot_id": "S019",
+    "base_frame": {
+     "asset_id": "FRAME-EP005-F15-BASE-CAND-v02",
+     "sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     119
+    ],
+    "placements": [
+     {
+      "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+      "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+      "surface": "REFLECTION",
+      "anchor": "CENTER",
+      "x": 959,
+      "y": 533,
+      "width_px": 65,
+      "rotation_deg": 0,
+      "mirror": true
+     }
+    ]
+   },
+   "G03_RECORD_SHA256": "9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b",
+   "G03_PLACEMENTS": [
+    {
+     "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+     "overlay_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+     "surface": "REFLECTION",
+     "anchor": "CENTER",
+     "x": 959,
+     "y": 533,
+     "width_px": 65,
+     "rotation_deg": 0,
+     "mirror": true,
+     "anatomical_meaning": "Mikko's nose (centred on the nose, covering the bridge)",
+     "visible_box": [
+      927,
+      498,
+      992,
+      568
+     ]
+    }
+   ],
+   "G03_PREVIEW_FRAME_SHA256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+   "FLAGS": []
+  }
+ ],
+ "G08": {
+  "S004": {
+   "record": {
+    "contract": "AGENT008_G08_TREATMENTS_v1",
+    "record_id": "G08-EP005-S004-CAND-v01",
+    "shot_id": "S004",
+    "input_frame": {
+     "asset_id": "S004-G03-PREVIEW",
+     "sha256": "d9b86f59ff783926279c32aa37133d0fb78f6b5c3cbd899f7c51d807e739af25"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     119
+    ],
+    "mirror_glass": {
+     "shape": "ELLIPSE",
+     "cx": 1158,
+     "cy": 519,
+     "rx": 165,
+     "ry": 177,
+     "feather_px": 0
+    },
+    "glint": {
+     "treatment_id": "TREATMENT-EP005-MIRROR-GLINT-v01",
+     "start_frame": 12,
+     "frames": 8,
+     "cx": 1062,
+     "cy": 628,
+     "size_px": 36,
+     "target_overlay": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+     "sync_audio_asset_id": "SFX-LUMI-CLUE-CHIME"
+    }
+   },
+   "record_sha256": "7fe4c60dc3425ebd3e210693c626e264a3a88d0ffe74afdcf944573b34cc5137",
+   "glass_measurement": {
+    "fill_bbox": [
+     990,
+     339,
+     1325,
+     699
+    ],
+    "margin_px": 3
+   },
+   "plan": {
+    "windows": [
+     {
+      "treatment_id": "TREATMENT-EP005-MIRROR-GLINT-v01",
+      "start_frame": 12,
+      "frames": 8,
+      "sync": {
+       "audio_asset_id": "SFX-LUMI-CLUE-CHIME",
+       "audio_start_seconds": 0.5,
+       "frame": 12
+      },
+      "envelope": [
+       0.35,
+       0.675,
+       1.0,
+       0.82,
+       0.64,
+       0.46,
+       0.28,
+       0.1
+      ],
+      "center": [
+       1062,
+       628
+      ],
+      "size_px": 36,
+      "box": [
+       1044,
+       610,
+       1080,
+       646
+      ],
+      "target_overlay": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01"
+     }
+    ]
+   },
+   "peak_frame": 14,
+   "peak_frame_png_sha256": "11a0c2cad0def8d76d16c0a63443cb077f81e1b80301d8c751489485ee50ff7a",
+   "unchanged_outside_glass": true,
+   "held_frame_equals_input_outside_window": true,
+   "reflection_certificate": null,
+   "proposed_timing": {
+    "SFX-LUMI-CLUE-CHIME": {
+     "start_seconds": 0.5
+    }
+   },
+   "input_frame_note": "bound to the G03 preview output of the candidate placement record; if the G03 record changes, this record must be re-bound"
+  },
+  "S012": {
+   "record": {
+    "contract": "AGENT008_G08_TREATMENTS_v1",
+    "record_id": "G08-EP005-S012-CAND-v01",
+    "shot_id": "S012",
+    "input_frame": {
+     "asset_id": "S012-G03-PREVIEW",
+     "sha256": "fb139763ab59217fd87da01cbcc3fe877ce195070da8a41a97ecfbd3799df39d"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     119
+    ],
+    "mirror_glass": {
+     "shape": "ELLIPSE",
+     "cx": 1158,
+     "cy": 519,
+     "rx": 165,
+     "ry": 177,
+     "feather_px": 0
+    },
+    "glint": {
+     "treatment_id": "TREATMENT-EP005-MIRROR-GLINT-v01",
+     "start_frame": 24,
+     "frames": 8,
+     "cx": 1230,
+     "cy": 623,
+     "size_px": 36,
+     "target_overlay": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+    }
+   },
+   "record_sha256": "b5592060b08ba4dde9213024140d951baa96803c59d5f6c07e9ba0213fcc7060",
+   "glass_measurement": {
+    "fill_bbox": [
+     990,
+     339,
+     1325,
+     699
+    ],
+    "margin_px": 3
+   },
+   "plan": {
+    "windows": [
+     {
+      "treatment_id": "TREATMENT-EP005-MIRROR-GLINT-v01",
+      "start_frame": 24,
+      "frames": 8,
+      "sync": null,
+      "envelope": [
+       0.35,
+       0.675,
+       1.0,
+       0.82,
+       0.64,
+       0.46,
+       0.28,
+       0.1
+      ],
+      "center": [
+       1230,
+       623
+      ],
+      "size_px": 36,
+      "box": [
+       1212,
+       605,
+       1248,
+       641
+      ],
+      "target_overlay": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01"
+     }
+    ]
+   },
+   "peak_frame": 26,
+   "peak_frame_png_sha256": "eeea963e37041ed52324cbb6614807ea68d710c58520eec5c10881de650b2b28",
+   "unchanged_outside_glass": true,
+   "held_frame_equals_input_outside_window": true,
+   "reflection_certificate": null,
+   "proposed_timing": {},
+   "input_frame_note": "bound to the G03 preview output of the candidate placement record; if the G03 record changes, this record must be re-bound"
+  },
+  "S025": {
+   "record": {
+    "contract": "AGENT008_G08_TREATMENTS_v1",
+    "record_id": "G08-EP005-S025-CAND-v01",
+    "shot_id": "S025",
+    "input_frame": {
+     "asset_id": "FRAME-EP005-F01-BASE-CAND-v02",
+     "sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845"
+    },
+    "frame_size": [
+     1920,
+     1080
+    ],
+    "frame_range": [
+     0,
+     95
+    ],
+    "mirror_glass": {
+     "shape": "ELLIPSE",
+     "cx": 895,
+     "cy": 427,
+     "rx": 298,
+     "ry": 311,
+     "feather_px": 0
+    },
+    "reflection": {
+     "mode": "PRESERVE",
+     "reflected_overlays": []
+    },
+    "pop": {
+     "treatment_id": "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01",
+     "start_frame": 12,
+     "frames": 7,
+     "gain": 0.1,
+     "sync_audio_asset_id": "SFX-COMPLETION-POP-v01"
+    }
+   },
+   "record_sha256": "9838577d4db1f90faea1f2cd390960ef79f9701b5191040e1a2d0d9e92d4dfa0",
+   "glass_measurement": {
+    "fill_bbox": [
+     594,
+     113,
+     1196,
+     740
+    ],
+    "margin_px": 3
+   },
+   "plan": {
+    "windows": [
+     {
+      "treatment_id": "TREATMENT-EP005-COMPLETION-POP-ACCENT-v01",
+      "start_frame": 12,
+      "frames": 7,
+      "sync": {
+       "audio_asset_id": "SFX-COMPLETION-POP-v01",
+       "audio_start_seconds": 0.5,
+       "frame": 12
+      },
+      "envelope": [
+       0.25,
+       0.5,
+       0.75,
+       1.0,
+       0.75,
+       0.5,
+       0.25
+      ],
+      "gain": 0.1
+     }
+    ]
+   },
+   "peak_frame": 15,
+   "peak_frame_png_sha256": "241b48984254b4a4b55929dc7e71ad5f3484e517e9d4769d9ed463503b5b18f8",
+   "unchanged_outside_glass": true,
+   "held_frame_equals_input_outside_window": true,
+   "reflection_certificate": {
+    "mode": "PRESERVE",
+    "reflected_overlays": [],
+    "frame_sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845"
+   },
+   "proposed_timing": {
+    "SFX-COMPLETION-POP-v01": {
+     "start_seconds": 0.5
+    }
+   },
+   "input_frame_note": "bound to the approved F01 v02 base frame (S025 has no overlays)"
+  }
+ },
+ "AMBIGUOUS": [
+  {
+   "shot_id": "S001",
+   "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+   "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+  },
+  {
+   "shot_id": "S005",
+   "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+   "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+  },
+  {
+   "shot_id": "S013",
+   "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+   "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+  },
+  {
+   "shot_id": "S004",
+   "placement": "all FACE-surface placements",
+   "question": "the manifest names the mirror reflection only; Mikko's real face is visible in this frame. Add the matching FACE marks (proposed, shown in the preview) or keep the reflection only?"
+  },
+  {
+   "shot_id": "S004",
+   "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+   "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+  },
+  {
+   "shot_id": "S012",
+   "placement": "all FACE-surface placements",
+   "question": "the manifest names the mirror reflection only; Mikko's real face is visible in this frame. Add the matching FACE marks (proposed, shown in the preview) or keep the reflection only?"
+  },
+  {
+   "shot_id": "S012",
+   "placement": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01 (both surfaces)",
+   "question": "the spec says \"beside, not inside, the mouth\" without a side. Proposed: anatomical RIGHT corner (opposite the cheek mark, so the three marks read separately; the non-canon Phase-0 stand-in used the left side, which collides with the cheek mark at production scale). Confirm the side."
+  },
+  {
+   "shot_id": "S017",
+   "placement": "all FACE-surface placements",
+   "question": "the manifest names the mirror reflection only; Mikko's real face is visible in this frame. Add the matching FACE marks (proposed, shown in the preview) or keep the reflection only?"
+  }
+ ],
+ "preview_manifest": [
+  {
+   "file": "previews/S001_G03_PREVIEW.png",
+   "sha256": "26e71dd03cbc073f2bef086b87fd8866ee91ab9296905a184176c077451325ad"
+  },
+  {
+   "file": "previews/S005_G03_PREVIEW.png",
+   "sha256": "fd05d898741cc3fb3fa190a58682e746a3bf882d7aead6ccfda944566d000efd"
+  },
+  {
+   "file": "previews/S013_G03_PREVIEW.png",
+   "sha256": "854aaf66f960f79a6cf757fda89a8e70ba7dec04a941d31a11ec9de6618b2640"
+  },
+  {
+   "file": "previews/S004_G03_PREVIEW.png",
+   "sha256": "edf233d1c194d54393baf7b8c6e911fba26c08858512382251a955875f9cfbd8"
+  },
+  {
+   "file": "previews/S012_G03_PREVIEW.png",
+   "sha256": "09f9b001e62aed7cef0528e2bd640d7977d68e59c1b1e86fb35d58bdc4d8af27"
+  },
+  {
+   "file": "previews/S017_G03_PREVIEW.png",
+   "sha256": "45a283d3de8f10b8b5edd5809dddbca284dd63aa942ffdeb6b2a5681e9f46255"
+  },
+  {
+   "file": "previews/S019_G03_PREVIEW.png",
+   "sha256": "b220a31ceb7a0c823fbc03fbcb205c9543b9ce879065bce9ea08f9c051b1bf8e"
+  },
+  {
+   "file": "previews/S004_G08_PREVIEW.png",
+   "sha256": "89504770c47c3a99b90725638e9e4eb9ca1c93e5ed57afd5c24c67ec89a02ae1"
+  },
+  {
+   "file": "previews/S012_G08_PREVIEW.png",
+   "sha256": "e0d6f51dd16f1e7050ac63946d218055ea373f67d87d2c1385a0766ba31e484d"
+  },
+  {
+   "file": "previews/S025_G08_PREVIEW.png",
+   "sha256": "fb5d28d04b5c0351ec96deecccfbe8bc2f4543b1e700da4b569be8ba1e1354f9"
+  },
+  {
+   "file": "previews/BATCH1_PLACEMENT_CONTACT_SHEET.png",
+   "sha256": "0a0e767a9dfbe313677251229ae1cca2268bed9f518748d8410faf67fd36e4df"
+  }
+ ],
+ "preview_note": "previews rendered by the unchanged G03/G08 modules with the candidate records passed in memory under a preview-only approval flag; preview provenance stays in scratch; not production assets"
+}
