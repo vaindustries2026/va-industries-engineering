@@ -1,0 +1,323 @@
+{
+ "task": "EP005 BATCH 1 - BASE FRAME PROVIDER PRE-SUBMIT (zero generation, zero spend)",
+ "date_utc": "2026-10-20",
+ "HIGGSFIELD_AUTH": {
+  "HIGGSFIELD_AUTH_STATUS": "VERIFIED",
+  "probe": "GET https://api.higgsfield.ai/requests/0d6997fe-6c53-487e-8477-242e60c80c75/status (S027 request; read-only)",
+  "result": "HTTP 200, status completed, images present",
+  "scheme": "Authorization: Key <credential>, injected by the environment proxy; application code sends no auth header; the credential was never read, printed or stored"
+ },
+ "IMAGE_PROVIDER": "Higgsfield (api.higgsfield.ai)",
+ "IMAGE_MODEL": "Marketing Studio Image 2.5 Flare - POST /marketing-studio/image/flare, DIRECT mode (S027 precedent)",
+ "MODEL_AVAILABILITY": {
+  "status": "ROUTE_PROVEN_BY_PRECEDENT; LIVE_AVAILABILITY_NOT_PROVABLE_READ_ONLY",
+  "evidence": [
+   "2026-10-09: the exact route accepted the S027 body (HTTP 200 queued -> completed, request 0d6997fe-...)",
+   "2026-10-20: the same API account still authenticates and still serves that request record (HTTP 200)",
+   "no read-only model catalogue route exists on the API; docs.higgsfield.ai is egress-blocked (CONNECT 403); GET on the route is non-discriminating (a bogus path also answers 405 Allow: POST); any POST is a generation and is forbidden here"
+  ],
+  "corroboration_only": "the Higgsfield MCP catalogue (separate workspace account, different surface) lists \"GPT Image 2.5\" with a \"flare\" variant and \"Marketing Studio Image\"; it does not list the API route by name and is not used as proof",
+  "fail_closed_at_submit": "if the route answers 404/410/422 at submit, STOP: no model substitution, no retry (FALLBACK_MODEL NONE)"
+ },
+ "REFERENCES": [
+  {
+   "ASSET_ID": "CHAR-MIKKO-MASTER-v01",
+   "SOURCE_SHA": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+   "REMOTE_REFERENCE_STATUS": "FRESH_TRANSPORT_COPY_UPLOADED (1 upload; unsigned public_url)",
+   "REMOTE_READBACK_STATUS": "SHA256_MATCH",
+   "n": 1
+  },
+  {
+   "ASSET_ID": "CHAR-LUMI-MASTER-v01",
+   "SOURCE_SHA": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+   "REMOTE_REFERENCE_STATUS": "FRESH_TRANSPORT_COPY_UPLOADED (1 upload; unsigned public_url)",
+   "REMOTE_READBACK_STATUS": "SHA256_MATCH",
+   "n": 2
+  },
+  {
+   "ASSET_ID": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "SOURCE_SHA": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "REMOTE_REFERENCE_STATUS": "FRESH_TRANSPORT_COPY_UPLOADED (1 upload; unsigned public_url)",
+   "REMOTE_READBACK_STATUS": "SHA256_MATCH",
+   "n": 3
+  },
+  {
+   "ASSET_ID": "PROP-EP005-HAND-MIRROR-v01",
+   "SOURCE_SHA": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+   "REMOTE_REFERENCE_STATUS": "FRESH_TRANSPORT_COPY_UPLOADED (1 upload; unsigned public_url)",
+   "REMOTE_READBACK_STATUS": "SHA256_MATCH",
+   "n": 4
+  },
+  {
+   "ASSET_ID": "PROP-EP005-CLEANING-CLOTH-v01",
+   "SOURCE_SHA": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+   "REMOTE_REFERENCE_STATUS": "FRESH_TRANSPORT_COPY_UPLOADED (1 upload; unsigned public_url)",
+   "REMOTE_READBACK_STATUS": "SHA256_MATCH",
+   "n": 5
+  },
+  {
+   "ASSET_ID": "DUO-MIKKO-LUMI-SCALE-v01",
+   "SOURCE_SHA": "735d64075af999d8a00d35afe2674174f5e0feea9b1b4acb9ec2208f1e1d121f",
+   "REMOTE_REFERENCE_STATUS": "FRESH_TRANSPORT_COPY_UPLOADED (1 upload; unsigned public_url)",
+   "REMOTE_READBACK_STATUS": "SHA256_MATCH",
+   "n": 6
+  }
+ ],
+ "reference_notes": [
+  "registry rows (live, APPROVED) = storage bytes = C1 canon hashes in CLAUDE.md for Mikko, Lumi, bathroom; props match registry",
+  "DUO-MIKKO-LUMI-SCALE-v01 has NO asset_registry row; governed by CLAUDE.md C1 canon hash (canon/c1/mikko_lumi_duo_scale_sheet.png)",
+  "S027 transport copies had expired (CloudFront 403 AccessDenied); fresh copies expire 2026-10-28 00:00 GMT",
+  "upload classified free: governed S028 evidence \"one signed upload (free)\"; S027 uploads left credits unchanged",
+  "signed upload_url never recorded; ledger holds unsigned public_url, host, bytes, readback SHA only"
+ ],
+ "LOCKED_PACKAGES": {
+  "F01": {
+   "FRAME_FAMILY_ID": "F01-MIRROR-OPEN",
+   "F01_PROMPT_SHA256": "559d3ba7b0c9ed9023df8376cdcd160b9047578418fb55bd492fdf155804cf97",
+   "F01_REQUEST_BODY_SHA256": "008adeb425bc0edea374a0b8ac6e2b09decd485db2df4d56a71f62992ac3421c",
+   "source_brief_sha256": "c4569262cb3ff27e971d062dc9cf6298ddc0ace2465549b70c51a9d4a799012e",
+   "prompt_chars": 2584
+  },
+  "F03": {
+   "FRAME_FAMILY_ID": "F03-OVERSHOULDER-LUMI",
+   "F03_PROMPT_SHA256": "c51d9670c8065c587a06ade5470e2908a3439bd88c64d742cc44e7e06cc9446f",
+   "F03_REQUEST_BODY_SHA256": "d86ec189aa6c3af3eecbfad88c780b8b40a3cab1076125dc5b6db329654b8411",
+   "source_brief_sha256": "ef2a65b0a0d17fafba30e730b61eaa44e5c430e721b5875d6eec5725153d410d",
+   "prompt_chars": 2479
+  },
+  "F09": {
+   "FRAME_FAMILY_ID": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "F09_PROMPT_SHA256": "5bd2edc1364a1c4f5187fbe5d515c06fe19131294b13aa967a34ba4e04a12abd",
+   "F09_REQUEST_BODY_SHA256": "36d91d95cf72825ccfa9d526870b34d92ae0b3a103f1cef3ba229dd1494893cc",
+   "source_brief_sha256": "5cd6922bba82e8c7674e3b563b94242beac338afe952399360712198b800cb6c",
+   "prompt_chars": 2433
+  }
+ },
+ "packages_file": "B1_GENERATION_PACKAGES_v1.json",
+ "COST": {
+  "COST_PER_CALL": "UNKNOWN",
+  "TOTAL_COST_FOR_3_CALLS": "UNKNOWN",
+  "CREDITS_PER_CALL": "UNKNOWN",
+  "TOTAL_CREDITS_REQUIRED": "UNKNOWN",
+  "CURRENT_API_BALANCE": "UNKNOWN",
+  "COST_INFORMATION_SOURCE": "NONE AVAILABLE: no official price or balance route on api.higgsfield.ai; docs.higgsfield.ai egress-blocked; the S027 Flare submit/status responses carried no cost field. Not inferred from browser-plan credits, the MCP connector or Seedance costs.",
+  "historical_fact_only": "S027 record: API balance USD 5.00 before the S027 call (pre-call statement); after-call balance never read"
+ },
+ "ATTEMPT_LEDGER": {
+  "F01_ATTEMPT_MAX": 1,
+  "F03_ATTEMPT_MAX": 1,
+  "F09_ATTEMPT_MAX": 1,
+  "TOTAL_IMAGE_GENERATION_MAX": 3,
+  "RETRIES": 0,
+  "ALTERNATE_CANDIDATES": 0,
+  "FALLBACK_MODEL": "NONE",
+  "attempts_used": {
+   "F01": 0,
+   "F03": 0,
+   "F09": 0
+  },
+  "rules": [
+   "each call independent: a failure or rejection of one does not authorise or block another",
+   "one POST per family, count 1; no automatic retry on any status (including 5xx / timeout: record and STOP that family)",
+   "every returned raw output is downloaded and preserved with its SHA-256 even if later rejected",
+   "before each POST: body SHA = locked value, prompt SHA = locked value, 6 image_urls HEAD 200, attempts_used = 0"
+  ]
+ },
+ "FRAME_NORMALISATION_PLAN": {
+  "step_1": "download the provider output once (plain GET); record raw SHA-256, bytes, dimensions; preserve raw unmodified (no G03/G08 on raw)",
+  "step_2": "crop = largest exact centred 16:9 crop (w=16k, h=9k); STOP if more than 2% of either axis would be trimmed",
+  "step_3": "G04 derive_frame(raw, 0, crop, scale {1920,1080}) lanczos bitexact; run twice into separate dirs; byte-identical or STOP",
+  "step_4": "normalised frame = REVIEW candidate; human approves the exact normalised SHA; G03/G08 measurement only on the approved normalised frame",
+  "expected_for_2688x1520": {
+   "x": 0,
+   "y": 4,
+   "w": 2688,
+   "h": 1512
+  },
+  "synthetic_proof": {
+   "raw_sha256": "2865fc180ac91cc3a11443a86ecfbbabd2cc1fe4e8b7d3fdacbbd4c4509dda8e",
+   "run1_sha256": "69e2887869f12a833561120e5e19ec26e72d968044deeb1084375e95a503c48c",
+   "run2_sha256": "69e2887869f12a833561120e5e19ec26e72d968044deeb1084375e95a503c48c",
+   "byte_identical": true,
+   "source_unchanged": true,
+   "crop_table": {
+    "2688x1520": {
+     "x": 0,
+     "y": 4,
+     "w": 2688,
+     "h": 1512
+    },
+    "2560x1440": {
+     "x": 0,
+     "y": 0,
+     "w": 2560,
+     "h": 1440
+    },
+    "1920x1080": {
+     "x": 0,
+     "y": 0,
+     "w": 1920,
+     "h": 1080
+    },
+    "2752x1536": {
+     "x": 16,
+     "y": 3,
+     "w": 2720,
+     "h": 1530
+    },
+    "2048x2048": "STOP RAW_ASPECT_UNEXPECTED"
+   }
+  },
+  "OPEN_DECISION_G04_SOURCE_STATE": {
+   "finding": "unchanged G04 derive_frame accepts only APPROVED/LOCKED sources; a REVIEW raw is refused (DERIVE_SOURCE_NOT_APPROVED, proven)",
+   "option_A_recommended": "record the preserved raw as LOCKED (byte-pinned provider original, not a creative approval) for normalisation only; human approves the normalised SHA",
+   "option_B": "human approves the raw SHA first, then the normalised SHA (two approvals)",
+   "no_code_change": "neither option changes code; a decision is needed before normalisation runs"
+  }
+ },
+ "BATCH_DRIVER_HANDOFF": [
+  {
+   "FRAME_FAMILY": "F01-MIRROR-OPEN",
+   "MEMBER_SHOTS": [
+    "S001",
+    "S005",
+    "S013",
+    "S025"
+   ],
+   "G03_RECORDS_REQUIRED": {
+    "S001": [
+     "CHEEK",
+     "NOSE",
+     "MOUTH"
+    ],
+    "S005": [
+     "CHEEK",
+     "NOSE",
+     "MOUTH"
+    ],
+    "S013": [
+     "NOSE",
+     "MOUTH"
+    ]
+   },
+   "G08_RECORDS_REQUIRED": {
+    "S025": [
+     "MIRROR-REFLECTION",
+     "COMPLETION-POP-ACCENT (SFX-COMPLETION-POP-v01 timing)"
+    ]
+   },
+   "DIALOGUE_REQUIREMENTS": [
+    "S001 Mikko: Berries on my face! I want to feel fresh.",
+    "S001 Lumi: I see three little smudges.",
+    "S025 Lumi: Cheek, mouth, nose. All clear."
+   ],
+   "DETERMINISTIC_STILL_SHOTS": [
+    "S005",
+    "S013",
+    "S025"
+   ],
+   "PROVIDER_MOTION_SHOTS": [
+    "S001 (separate Seedance authorisation)"
+   ],
+   "DERIVED_FRAME_DEPENDENCIES": [],
+   "notes": "S024 shares the frame but is G06-blocked (not in batch); S025 expression variance needs human acceptance"
+  },
+  {
+   "FRAME_FAMILY": "F03-OVERSHOULDER-LUMI",
+   "MEMBER_SHOTS": [
+    "S004",
+    "S012"
+   ],
+   "G03_RECORDS_REQUIRED": {
+    "S004": [
+     "CHEEK",
+     "NOSE",
+     "MOUTH"
+    ],
+    "S012": [
+     "NOSE",
+     "MOUTH"
+    ]
+   },
+   "G08_RECORDS_REQUIRED": {
+    "S004": [
+     "MIRROR-GLINT (SFX-LUMI-CLUE-CHIME sync)"
+    ],
+    "S012": [
+     "MIRROR-GLINT"
+    ]
+   },
+   "DIALOGUE_REQUIREMENTS": [
+    "S004 Lumi: A glint on his cheek!",
+    "S004 Lumi: Find the next smudge!",
+    "S012 Lumi: By your mouth!",
+    "S012 Lumi: Find the next smudge!"
+   ],
+   "DETERMINISTIC_STILL_SHOTS": [
+    "S004",
+    "S012"
+   ],
+   "PROVIDER_MOTION_SHOTS": [],
+   "DERIVED_FRAME_DEPENDENCIES": []
+  },
+  {
+   "FRAME_FAMILY": "F09-MEDIUM-TWOSHOT-MIRROR-FRONT",
+   "MEMBER_SHOTS": [
+    "S017"
+   ],
+   "G03_RECORDS_REQUIRED": {
+    "S017": [
+     "NOSE"
+    ],
+    "S019": [
+     "NOSE (on the F15 derived frame)"
+    ]
+   },
+   "G08_RECORDS_REQUIRED": {},
+   "DIALOGUE_REQUIREMENTS": [],
+   "DETERMINISTIC_STILL_SHOTS": [
+    "S017",
+    "S019"
+   ],
+   "PROVIDER_MOTION_SHOTS": [],
+   "DERIVED_FRAME_DEPENDENCIES": [
+    "F15-MACRO-REFLECTION (S019; S018 G07-blocked) = G04 crop/scale of the APPROVED normalised F09 frame; crop region measured on that frame; human quality check of the upscale"
+   ]
+  },
+  {
+   "FRAME_FAMILY": "F11-S027-START-REUSE (not generated)",
+   "MEMBER_SHOTS": [
+    "S026"
+   ],
+   "G03_RECORDS_REQUIRED": {},
+   "G08_RECORDS_REQUIRED": {},
+   "DIALOGUE_REQUIREMENTS": [
+    "S026 Mikko: One little spot at a time!"
+   ],
+   "DETERMINISTIC_STILL_SHOTS": [],
+   "PROVIDER_MOTION_SHOTS": [
+    "S026 (separate Seedance authorisation)"
+   ],
+   "DERIVED_FRAME_DEPENDENCIES": [
+    "FRAME-EP005-S027-BASE-v01 reused as-is (APPROVED, 81b841a6...061b)"
+   ]
+  }
+ ],
+ "driver_run_against_production": false,
+ "live_reconciliation": {
+  "manifest 0325d35c": "APPROVED",
+  "readiness 69bff641": "APPROVED",
+  "camera_setup S001/S004/S005/S012/S013/S017/S019/S025": "equal to preflight evidence",
+  "FRAME-EP005-* registry rows": "S027-BASE-v01, S028-BASE-CAND-v01, S029-BASE-CAND-v01 only (no F01/F03/F09 frame exists)"
+ },
+ "non_regression": "python3 -m unittest discover -s agent008/tests -t . -> 205 tests OK; no agent008 code changed",
+ "counts": {
+  "image_generations": 0,
+  "video_generations": 0,
+  "paid_provider_calls": 0,
+  "provider_transport_uploads": 6,
+  "production_registry_writes": 0,
+  "production_storage_writes": 0,
+  "status_changes": 0
+ }
+}

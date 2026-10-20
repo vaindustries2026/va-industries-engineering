@@ -2778,3 +2778,33 @@ provider_calls: 0
 production_writes: 0
 status: "AGENT008_BATCH_DRIVER_V01_COMPLETE + BATCH_DRIVER_IMPLEMENTED + FAIL_CLOSED_STATE_MACHINE + EXPLICIT_SHOT_ALLOWLIST + G04_OVERLAY_CHAIN_COMPLETE + PLAN_ONLY_PASS + FIRST_BATCH_DRY_RUN_PASS + BATCH_REVIEW_MANIFEST_READY + FULL_TEST_SUITE_PASS + S027_UNCHANGED + S028_UNCHANGED + S029_UNCHANGED + ZERO_PROVIDER_CALLS + ZERO_PRODUCTION_WRITES + FIRST_PAID_FRAME_BATCH_READY_FOR_AUTHORISATION"
 ```
+
+---
+
+## ENG-20261020-EP005-BATCH1-BASE-FRAMES-PRESUBMIT: F01/F03/F09 Flare packages locked; 6 transport-only reference uploads; no submit
+
+```yaml
+change_id: "ENG-20261020-EP005-BATCH1-BASE-FRAMES-PRESUBMIT"
+timestamp: "2026-10-20"
+actor: "Claude"
+authorised_by: "Company Brain (EP005 Batch 1 base-frame provider pre-submit; zero generation, zero spend)"
+change_type: "EVIDENCE + PROVIDER TRANSPORT UPLOADS (6, free, transport-only)"
+auth: "HIGGSFIELD_AUTH_STATUS VERIFIED (GET /requests/0d6997fe-.../status HTTP 200; proxy-injected Key scheme; credential never seen)"
+model: "Marketing Studio Image 2.5 Flare, POST /marketing-studio/image/flare, DIRECT; availability = route proven by S027 precedent, not re-provable read-only"
+references: "6 SHA-verified (Mikko, Lumi, bathroom, mirror, cloth, duo scale sheet); 6 uploads, 6 readback SHA matches; expire 2026-10-28 00:00 GMT; DUO has no registry row (C1 canon hash only)"
+packages:
+  F01: {prompt_sha256: "559d3ba7b0c9ed9023df8376cdcd160b9047578418fb55bd492fdf155804cf97", request_body_sha256: "008adeb425bc0edea374a0b8ac6e2b09decd485db2df4d56a71f62992ac3421c"}
+  F03: {prompt_sha256: "c51d9670c8065c587a06ade5470e2908a3439bd88c64d742cc44e7e06cc9446f", request_body_sha256: "d86ec189aa6c3af3eecbfad88c780b8b40a3cab1076125dc5b6db329654b8411"}
+  F09: {prompt_sha256: "5bd2edc1364a1c4f5187fbe5d515c06fe19131294b13aa967a34ba4e04a12abd", request_body_sha256: "36d91d95cf72825ccfa9d526870b34d92ae0b3a103f1cef3ba229dd1494893cc"}
+prompt_delta: "audited brief + one duo-scale sentence binding reference image 6; nothing else"
+normalisation: "raw preserved -> exact centred 16:9 crop (2688x1520 -> 0,4,2688,1512) -> G04 1920x1080, two-run byte-identical (synthetic proof) -> REVIEW; open decision: G04 refuses REVIEW sources (option A LOCKED raw recommended, or B raw approval)"
+cost: "COST_PER_CALL, TOTAL_COST, CREDITS, BALANCE all UNKNOWN (no official price/balance route; docs blocked)"
+ledger: "F01/F03/F09 max 1 each; total 3; retries 0; alternates 0; fallback NONE; used 0"
+non_regression: "205/205 tests OK; S027/S028/S029 stored frames re-hash equal + APPROVED; manifest + readiness APPROVED; camera specs equal preflight"
+evidence: ["evidence/EP005_BATCH1_BASE_FRAMES_READY_TO_SUBMIT_v1.0.md", "evidence/ep005/batch1_base_frames/"]
+image_generations: 0
+paid_provider_calls: 0
+production_writes: 0
+rollback: "nothing to roll back in production; transport copies expire by provider rule 2026-10-28; revert this commit to remove evidence"
+status: "EP005_BATCH1_BASE_FRAMES_READY_TO_SUBMIT + HIGGSFIELD_AUTH_VERIFIED + IMAGE_PROVIDER_VERIFIED (route by precedent) + C1_REFERENCES_VERIFIED + F01/F03/F09_PROMPT_LOCKED + F01/F03/F09_REQUEST_LOCKED + NORMALISATION_PLAN_LOCKED (G04 source-state decision open) + COST_PREFLIGHT_COMPLETE (all UNKNOWN) + IMAGE_GENERATION_MAX=3 + RETRIES=0 + ZERO_GENERATIONS + ZERO_SPEND + ZERO_PRODUCTION_WRITES + BATCH_DRIVER_HANDOFF_READY"
+```
