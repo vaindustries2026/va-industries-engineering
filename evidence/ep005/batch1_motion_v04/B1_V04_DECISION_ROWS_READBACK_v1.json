@@ -1,0 +1,724 @@
+{
+ "SHOT-EP005-S005-ASSEMBLED-CAND-v03": {
+  "before": {
+   "id": "c2d08192-f26d-4b6f-940e-ccbba423b554",
+   "created_at": "2026-10-21T02:48:09.471103+00:00",
+   "updated_at": "2026-10-21T02:48:09.471103+00:00",
+   "asset_id": "SHOT-EP005-S005-ASSEMBLED-CAND-v03",
+   "asset_name": "EP005 S005 assembled shot candidate v03 (Kling 3.0 Turbo real motion)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v03",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v03.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 3711767,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+    "shot_id": "S005",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+    "dimensions": "1920x1080",
+    "duration_s": 4.0,
+    "provenance": {
+     "qc": {
+      "visual": {
+       "notes": [
+        "Reflection: expression changes (open smile -> calm closed smile), eyes move across the marks, small head settle",
+        "Foreground real Mikko head/shoulder leans in (character motion; mirror pink area constant within ~3%, no camera zoom)",
+        "Lumi: expression change and gentle float; two tiny hands stay on the handle",
+        "Cheek, nose and mouth (right side) marks stay at the same facial spots through 0/25/50/75/100%",
+        "Mouth opens/closes once with the expression change (not speech)"
+       ],
+       "verdict": "PASS",
+       "NO_EXTRA_LIMBS": "YES",
+       "NO_NEW_OBJECTS": "YES",
+       "NO_MAJOR_MORPHING": "YES",
+       "NOT_JUST_CAMERA_ZOOM": "YES",
+       "CANON_IDENTITY_STABLE": "YES",
+       "REAL_CHARACTER_MOTION": "YES",
+       "MIRROR_CONTINUITY_PASS": "YES",
+       "SMUDGE_CONTINUITY_PASS": "YES",
+       "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES"
+      },
+      "assembly": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "agent008_qc_pass": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "deterministic_two_runs": true,
+       "g03_travelled_not_reapplied": true,
+       "pixel_motion_far_above_codec_noise": true,
+       "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true
+      }
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      },
+      "provider_audio": "stripped (not mapped)"
+     },
+     "assembly": "Agent-008 motion.compose.compose_motion_shot (fps 24, lanczos fit 1280x720 -> 1920x1080, first 96 frames; G03 pre-composited in the start image, not re-applied)",
+     "raw_sha256": "7377d38324ac9eecbf26fdb06f5116800b1eb7059323067f9eb8007dcf74c54d",
+     "provider_request_id": "8db8e5b7-2f32-4b71-b09d-dfd9e220ee53",
+     "raw_motion_asset_id": "MOTION-EP005-S005-KLING30T-CAND-v01",
+     "two_run_determinism": {
+      "sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_decision": "PENDING",
+    "storage_object_id": "97b1ff86-e811-4689-a0d3-1477f7417df0",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v03.mp4",
+    "supersedes_presentation_of": [
+     "SHOT-EP005-S005-ASSEMBLED-CAND-v01",
+     "SHOT-EP005-S005-ASSEMBLED-CAND-v02"
+    ]
+   },
+   "notes": "REVIEW v03 real-motion candidate for S005 (Kling 3.0 Turbo 720p, governed assembly, ambience only). Human decision pending on exact SHA-256."
+  },
+  "after": {
+   "id": "c2d08192-f26d-4b6f-940e-ccbba423b554",
+   "created_at": "2026-10-21T02:48:09.471103+00:00",
+   "updated_at": "2026-10-21T02:48:09.471103+00:00",
+   "asset_id": "SHOT-EP005-S005-ASSEMBLED-CAND-v03",
+   "asset_name": "EP005 S005 assembled shot candidate v03 (Kling 3.0 Turbo real motion)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v03",
+   "status": "APPROVED",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v03.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 3711767,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+    "shot_id": "S005",
+    "approved": true,
+    "container": "mp4",
+    "approve_by": "exact sha256 629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+    "dimensions": "1920x1080",
+    "duration_s": 4.0,
+    "provenance": {
+     "qc": {
+      "visual": {
+       "notes": [
+        "Reflection: expression changes (open smile -> calm closed smile), eyes move across the marks, small head settle",
+        "Foreground real Mikko head/shoulder leans in (character motion; mirror pink area constant within ~3%, no camera zoom)",
+        "Lumi: expression change and gentle float; two tiny hands stay on the handle",
+        "Cheek, nose and mouth (right side) marks stay at the same facial spots through 0/25/50/75/100%",
+        "Mouth opens/closes once with the expression change (not speech)"
+       ],
+       "verdict": "PASS",
+       "NO_EXTRA_LIMBS": "YES",
+       "NO_NEW_OBJECTS": "YES",
+       "NO_MAJOR_MORPHING": "YES",
+       "NOT_JUST_CAMERA_ZOOM": "YES",
+       "CANON_IDENTITY_STABLE": "YES",
+       "REAL_CHARACTER_MOTION": "YES",
+       "MIRROR_CONTINUITY_PASS": "YES",
+       "SMUDGE_CONTINUITY_PASS": "YES",
+       "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES"
+      },
+      "assembly": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "agent008_qc_pass": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "deterministic_two_runs": true,
+       "g03_travelled_not_reapplied": true,
+       "pixel_motion_far_above_codec_noise": true,
+       "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true
+      }
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      },
+      "provider_audio": "stripped (not mapped)"
+     },
+     "assembly": "Agent-008 motion.compose.compose_motion_shot (fps 24, lanczos fit 1280x720 -> 1920x1080, first 96 frames; G03 pre-composited in the start image, not re-applied)",
+     "raw_sha256": "7377d38324ac9eecbf26fdb06f5116800b1eb7059323067f9eb8007dcf74c54d",
+     "provider_request_id": "8db8e5b7-2f32-4b71-b09d-dfd9e220ee53",
+     "raw_motion_asset_id": "MOTION-EP005-S005-KLING30T-CAND-v01",
+     "two_run_determinism": {
+      "sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+      "byte_identical": true
+     }
+    },
+    "final_state": "COMPLETE_APPROVED",
+    "episode_code": "EP-CANDIDATE-005",
+    "approval_basis": "COMPANY BRAIN FINAL HUMAN APPROVAL 2026-10-21 of exact sha256; evidence basis 5b4aeea8f9684b2541896a832abdd063a15b67b0",
+    "human_approval": "APPROVED",
+    "human_decision": "APPROVED",
+    "approval_record": "ENG-20261021-EP005-BATCH1-MOTION-REVIEW-RECONCILED",
+    "approved_sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+    "approval_reasons": [
+     "genuine character animation visible",
+     "Mikko reflection naturally reacts",
+     "eyes move",
+     "Lumi floats naturally",
+     "all three smudges remain consistent",
+     "no material canon defect"
+    ],
+    "storage_object_id": "97b1ff86-e811-4689-a0d3-1477f7417df0",
+    "approval_authority": "Gilang / Company Brain",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v03.mp4",
+    "supersedes_presentation_of": [
+     "SHOT-EP005-S005-ASSEMBLED-CAND-v01",
+     "SHOT-EP005-S005-ASSEMBLED-CAND-v02"
+    ]
+   },
+   "notes": "REVIEW v03 real-motion candidate for S005 (Kling 3.0 Turbo 720p, governed assembly, ambience only). Human decision pending on exact SHA-256."
+  }
+ },
+ "SHOT-EP005-S017-ASSEMBLED-CAND-v03": {
+  "before": {
+   "id": "9a6620f2-31a8-45a9-96d6-ab65137896f7",
+   "created_at": "2026-10-21T02:48:39.325003+00:00",
+   "updated_at": "2026-10-21T02:48:39.325003+00:00",
+   "asset_id": "SHOT-EP005-S017-ASSEMBLED-CAND-v03",
+   "asset_name": "EP005 S017 assembled shot candidate v03 (Kling 3.0 Turbo real motion)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v03",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v03.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 3282829,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+    "shot_id": "S017",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+    "dimensions": "1920x1080",
+    "duration_s": 4.0,
+    "provenance": {
+     "qc": {
+      "visual": {
+       "notes": [
+        "Mikko turns his head toward the mirror, blinks (eyes half closed at 75%), returns; cloth stays in his hand",
+        "The reflection blinks in sync with Mikko (same Mikko, not an independent face)",
+        "Nose mark persists on the real face and on the reflection throughout",
+        "Lumi floats beside him with expression change, holding the mirror"
+       ],
+       "verdict": "PASS",
+       "NO_EXTRA_LIMBS": "YES",
+       "NO_NEW_OBJECTS": "YES",
+       "NO_MAJOR_MORPHING": "YES",
+       "NOT_JUST_CAMERA_ZOOM": "YES",
+       "CANON_IDENTITY_STABLE": "YES",
+       "REAL_CHARACTER_MOTION": "YES",
+       "MIRROR_CONTINUITY_PASS": "YES",
+       "SMUDGE_CONTINUITY_PASS": "YES",
+       "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES"
+      },
+      "assembly": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "agent008_qc_pass": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "deterministic_two_runs": true,
+       "g03_travelled_not_reapplied": true,
+       "pixel_motion_far_above_codec_noise": true,
+       "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true
+      }
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      },
+      "provider_audio": "stripped (not mapped)"
+     },
+     "assembly": "Agent-008 motion.compose.compose_motion_shot (fps 24, lanczos fit 1280x720 -> 1920x1080, first 96 frames; G03 pre-composited in the start image, not re-applied)",
+     "raw_sha256": "4a7db31e074de892e3cb2d8881a132bbe45f6038d734c70af72f13a57aa746a6",
+     "provider_request_id": "12f7f695-1e97-46a2-a65d-595a299490ce",
+     "raw_motion_asset_id": "MOTION-EP005-S017-KLING30T-CAND-v01",
+     "two_run_determinism": {
+      "sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_decision": "PENDING",
+    "storage_object_id": "d96d1a6b-aa78-4a37-b332-c6838bc5f2d2",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v03.mp4",
+    "supersedes_presentation_of": [
+     "SHOT-EP005-S017-ASSEMBLED-CAND-v01",
+     "SHOT-EP005-S017-ASSEMBLED-CAND-v02"
+    ]
+   },
+   "notes": "REVIEW v03 real-motion candidate for S017 (Kling 3.0 Turbo 720p, governed assembly, ambience only). Human decision pending on exact SHA-256."
+  },
+  "after": {
+   "id": "9a6620f2-31a8-45a9-96d6-ab65137896f7",
+   "created_at": "2026-10-21T02:48:39.325003+00:00",
+   "updated_at": "2026-10-21T02:48:39.325003+00:00",
+   "asset_id": "SHOT-EP005-S017-ASSEMBLED-CAND-v03",
+   "asset_name": "EP005 S017 assembled shot candidate v03 (Kling 3.0 Turbo real motion)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v03",
+   "status": "APPROVED",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v03.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 3282829,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+    "shot_id": "S017",
+    "approved": true,
+    "container": "mp4",
+    "approve_by": "exact sha256 78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+    "dimensions": "1920x1080",
+    "duration_s": 4.0,
+    "provenance": {
+     "qc": {
+      "visual": {
+       "notes": [
+        "Mikko turns his head toward the mirror, blinks (eyes half closed at 75%), returns; cloth stays in his hand",
+        "The reflection blinks in sync with Mikko (same Mikko, not an independent face)",
+        "Nose mark persists on the real face and on the reflection throughout",
+        "Lumi floats beside him with expression change, holding the mirror"
+       ],
+       "verdict": "PASS",
+       "NO_EXTRA_LIMBS": "YES",
+       "NO_NEW_OBJECTS": "YES",
+       "NO_MAJOR_MORPHING": "YES",
+       "NOT_JUST_CAMERA_ZOOM": "YES",
+       "CANON_IDENTITY_STABLE": "YES",
+       "REAL_CHARACTER_MOTION": "YES",
+       "MIRROR_CONTINUITY_PASS": "YES",
+       "SMUDGE_CONTINUITY_PASS": "YES",
+       "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES"
+      },
+      "assembly": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "agent008_qc_pass": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "deterministic_two_runs": true,
+       "g03_travelled_not_reapplied": true,
+       "pixel_motion_far_above_codec_noise": true,
+       "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true
+      }
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      },
+      "provider_audio": "stripped (not mapped)"
+     },
+     "assembly": "Agent-008 motion.compose.compose_motion_shot (fps 24, lanczos fit 1280x720 -> 1920x1080, first 96 frames; G03 pre-composited in the start image, not re-applied)",
+     "raw_sha256": "4a7db31e074de892e3cb2d8881a132bbe45f6038d734c70af72f13a57aa746a6",
+     "provider_request_id": "12f7f695-1e97-46a2-a65d-595a299490ce",
+     "raw_motion_asset_id": "MOTION-EP005-S017-KLING30T-CAND-v01",
+     "two_run_determinism": {
+      "sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+      "byte_identical": true
+     }
+    },
+    "final_state": "COMPLETE_APPROVED",
+    "episode_code": "EP-CANDIDATE-005",
+    "approval_basis": "COMPANY BRAIN FINAL HUMAN APPROVAL 2026-10-21 of exact sha256; evidence basis 5b4aeea8f9684b2541896a832abdd063a15b67b0",
+    "human_approval": "APPROVED",
+    "human_decision": "APPROVED",
+    "approval_record": "ENG-20261021-EP005-BATCH1-MOTION-REVIEW-RECONCILED",
+    "approved_sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+    "approval_reasons": [
+     "genuine character movement",
+     "Mikko turns / blinks",
+     "Lumi moves naturally",
+     "reflection is acceptably consistent",
+     "nose smudge continuity holds",
+     "no material canon defect"
+    ],
+    "storage_object_id": "d96d1a6b-aa78-4a37-b332-c6838bc5f2d2",
+    "approval_authority": "Gilang / Company Brain",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v03.mp4",
+    "supersedes_presentation_of": [
+     "SHOT-EP005-S017-ASSEMBLED-CAND-v01",
+     "SHOT-EP005-S017-ASSEMBLED-CAND-v02"
+    ]
+   },
+   "notes": "REVIEW v03 real-motion candidate for S017 (Kling 3.0 Turbo 720p, governed assembly, ambience only). Human decision pending on exact SHA-256."
+  }
+ },
+ "SHOT-EP005-S013-ASSEMBLED-CAND-v03": {
+  "before": {
+   "id": "2ff0838e-9f14-48b8-a7ab-79f5fd3bdd9f",
+   "created_at": "2026-10-21T02:48:24.291967+00:00",
+   "updated_at": "2026-10-21T02:48:24.291967+00:00",
+   "asset_id": "SHOT-EP005-S013-ASSEMBLED-CAND-v03",
+   "asset_name": "EP005 S013 assembled shot candidate v03 (Kling 3.0 Turbo real motion)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v03",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v03.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 3459813,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+    "shot_id": "S013",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+    "dimensions": "1920x1080",
+    "duration_s": 4.0,
+    "provenance": {
+     "qc": {
+      "visual": {
+       "notes": [
+        "Reflection: expression change, eyes glance from one mark toward the other (75%), restrained head motion",
+        "Lumi: expression change and gentle float, mirror steady",
+        "Nose and mouth marks stay fixed in the reflection",
+        "FLAG for human check: from ~3.5 s a red berry mark becomes visible at the edge of the foreground (real) Mikko's face as his head turns slightly; consistent with Decision 1 (the real face carries the marks), but from this angle it cannot be confirmed whether it is the nose mark coming into view or the removed cheek mark"
+       ],
+       "verdict": "PASS",
+       "NO_EXTRA_LIMBS": "YES",
+       "NO_NEW_OBJECTS": "YES",
+       "NO_MAJOR_MORPHING": "YES",
+       "NOT_JUST_CAMERA_ZOOM": "YES",
+       "CANON_IDENTITY_STABLE": "YES",
+       "REAL_CHARACTER_MOTION": "YES",
+       "MIRROR_CONTINUITY_PASS": "YES",
+       "SMUDGE_CONTINUITY_PASS": "YES (reflection) - see flag",
+       "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES"
+      },
+      "assembly": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "agent008_qc_pass": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "deterministic_two_runs": true,
+       "g03_travelled_not_reapplied": true,
+       "pixel_motion_far_above_codec_noise": true,
+       "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true
+      }
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      },
+      "provider_audio": "stripped (not mapped)"
+     },
+     "assembly": "Agent-008 motion.compose.compose_motion_shot (fps 24, lanczos fit 1280x720 -> 1920x1080, first 96 frames; G03 pre-composited in the start image, not re-applied)",
+     "raw_sha256": "0fe0a14d7d0caf25dad79466920d6bcfacef77641f85fe51fcf1c55a8e8cfe0f",
+     "provider_request_id": "3bcd163c-f53b-4fdd-88cb-ed1b1269855e",
+     "raw_motion_asset_id": "MOTION-EP005-S013-KLING30T-CAND-v01",
+     "two_run_determinism": {
+      "sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_decision": "PENDING",
+    "storage_object_id": "4e22a022-4569-4c63-9764-dbe3da0712f8",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v03.mp4",
+    "supersedes_presentation_of": [
+     "SHOT-EP005-S013-ASSEMBLED-CAND-v01",
+     "SHOT-EP005-S013-ASSEMBLED-CAND-v02"
+    ]
+   },
+   "notes": "REVIEW v03 real-motion candidate for S013 (Kling 3.0 Turbo 720p, governed assembly, ambience only). Human decision pending on exact SHA-256."
+  },
+  "after": {
+   "id": "2ff0838e-9f14-48b8-a7ab-79f5fd3bdd9f",
+   "created_at": "2026-10-21T02:48:24.291967+00:00",
+   "updated_at": "2026-10-21T02:48:24.291967+00:00",
+   "asset_id": "SHOT-EP005-S013-ASSEMBLED-CAND-v03",
+   "asset_name": "EP005 S013 assembled shot candidate v03 (Kling 3.0 Turbo real motion)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v03",
+   "status": "REJECTED",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v03.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 3459813,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+    "kept_as": "evidence only (stored file untouched)",
+    "shot_id": "S013",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+    "dimensions": "1920x1080",
+    "duration_s": 4.0,
+    "provenance": {
+     "qc": {
+      "visual": {
+       "notes": [
+        "Reflection: expression change, eyes glance from one mark toward the other (75%), restrained head motion",
+        "Lumi: expression change and gentle float, mirror steady",
+        "Nose and mouth marks stay fixed in the reflection",
+        "FLAG for human check: from ~3.5 s a red berry mark becomes visible at the edge of the foreground (real) Mikko's face as his head turns slightly; consistent with Decision 1 (the real face carries the marks), but from this angle it cannot be confirmed whether it is the nose mark coming into view or the removed cheek mark"
+       ],
+       "verdict": "PASS",
+       "NO_EXTRA_LIMBS": "YES",
+       "NO_NEW_OBJECTS": "YES",
+       "NO_MAJOR_MORPHING": "YES",
+       "NOT_JUST_CAMERA_ZOOM": "YES",
+       "CANON_IDENTITY_STABLE": "YES",
+       "REAL_CHARACTER_MOTION": "YES",
+       "MIRROR_CONTINUITY_PASS": "YES",
+       "SMUDGE_CONTINUITY_PASS": "YES (reflection) - see flag",
+       "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES"
+      },
+      "assembly": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "agent008_qc_pass": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "deterministic_two_runs": true,
+       "g03_travelled_not_reapplied": true,
+       "pixel_motion_far_above_codec_noise": true,
+       "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true
+      }
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      },
+      "provider_audio": "stripped (not mapped)"
+     },
+     "assembly": "Agent-008 motion.compose.compose_motion_shot (fps 24, lanczos fit 1280x720 -> 1920x1080, first 96 frames; G03 pre-composited in the start image, not re-applied)",
+     "raw_sha256": "0fe0a14d7d0caf25dad79466920d6bcfacef77641f85fe51fcf1c55a8e8cfe0f",
+     "provider_request_id": "3bcd163c-f53b-4fdd-88cb-ed1b1269855e",
+     "raw_motion_asset_id": "MOTION-EP005-S013-KLING30T-CAND-v01",
+     "two_run_determinism": {
+      "sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_approval": "REJECTED",
+    "human_decision": "REJECTED",
+    "approval_record": "ENG-20261021-EP005-BATCH1-MOTION-REVIEW-RECONCILED",
+    "rejected_sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+    "rejection_basis": "COMPANY BRAIN FINAL HUMAN APPROVAL 2026-10-21 of exact sha256; evidence basis 5b4aeea8f9684b2541896a832abdd063a15b67b0",
+    "rejection_state": "REJECTED_BY_HUMAN",
+    "rejection_reasons": [
+     "animation acceptable, but late in the shot an unwanted red facial mark appears on foreground Mikko: continuity defect",
+     "do not repair the existing moving video; one replacement generation authorised"
+    ],
+    "storage_object_id": "4e22a022-4569-4c63-9764-dbe3da0712f8",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v03.mp4",
+    "rejection_authority": "Gilang / Company Brain",
+    "supersedes_presentation_of": [
+     "SHOT-EP005-S013-ASSEMBLED-CAND-v01",
+     "SHOT-EP005-S013-ASSEMBLED-CAND-v02"
+    ]
+   },
+   "notes": "REVIEW v03 real-motion candidate for S013 (Kling 3.0 Turbo 720p, governed assembly, ambience only). Human decision pending on exact SHA-256."
+  }
+ },
+ "MOTION-EP005-S019-KLING30T-CAND-v01": {
+  "before": {
+   "id": "ac50f330-133c-4e78-adbd-d7cae2058db3",
+   "created_at": "2026-10-21T02:48:46.840979+00:00",
+   "updated_at": "2026-10-21T02:48:46.840979+00:00",
+   "asset_id": "MOTION-EP005-S019-KLING30T-CAND-v01",
+   "asset_name": "EP005 S019 raw motion (Kling 3.0 Turbo 720p) candidate v01",
+   "asset_type": "SHOT_MOTION",
+   "asset_subtype": "RAW_MOTION_SOURCE",
+   "version": "v01",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/motion/MOTION-EP005-S019-KLING30T-CAND-v01.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "bytes": 2956741,
+    "codec": "h264",
+    "model": "kling-video/v3.0-turbo/image-to-video",
+    "frames": 121,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "f107ef3e453bfad26d12426c2c39bd6155f29509ba01b68d7334b1b79969023b",
+    "attempt": 1,
+    "shot_id": "S019",
+    "approved": false,
+    "provider": "HIGGSFIELD",
+    "dimensions": "1280x720",
+    "duration_s": 5.041667,
+    "episode_code": "EP-CANDIDATE-005",
+    "prompt_sha256": "4a827017ae609f981c7819f54b910408f14dfa23d3d7122422e214ab3f9f0459",
+    "human_decision": "PENDING",
+    "visual_qc_notes": [
+     "Reflection reacts (smile -> neutral -> small 'o' of surprise); nose mark stays fixed; mirror stable",
+     "FAIL: from ~frame 60 (2.5 s) a SECOND hand enters and grips the handle - a yellow gloved hand with a cream cuff and a furry brown sleeve - in addition to Lumi's tiny hand; not in the approved image, not Lumi canon (extra limb / new object)",
+     "Not assembled; no retry authorised; raw preserved as REVIEW evidence"
+    ],
+    "storage_object_id": "19848492-b641-45c4-a875-3e6b5f9edda0",
+    "visual_qc_verdict": "FAIL",
+    "start_image_sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+    "storage_object_key": "visual/production/ep005/motion/MOTION-EP005-S019-KLING30T-CAND-v01.mp4",
+    "provider_request_id": "d14abf6e-6be9-4c8b-b63d-1c762debcb4d",
+    "request_body_sha256": "2b3fe64c61e90c34eace88872e0b2c0ec2954b3929786a706aad8d9c4d6d33d3",
+    "provider_original_md5": "82960fc8d20d04567ecb93e4c70bda45",
+    "provider_audio_present": true
+   },
+   "notes": "Raw Kling 3.0 Turbo output for S019 (request d14abf6e-6be9-4c8b-b63d-1c762debcb4d), exact provider bytes. Visual QC: FAIL. Not approved."
+  },
+  "after": {
+   "id": "ac50f330-133c-4e78-adbd-d7cae2058db3",
+   "created_at": "2026-10-21T02:48:46.840979+00:00",
+   "updated_at": "2026-10-21T02:48:46.840979+00:00",
+   "asset_id": "MOTION-EP005-S019-KLING30T-CAND-v01",
+   "asset_name": "EP005 S019 raw motion (Kling 3.0 Turbo 720p) candidate v01",
+   "asset_type": "SHOT_MOTION",
+   "asset_subtype": "RAW_MOTION_SOURCE",
+   "version": "v01",
+   "status": "REJECTED",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/motion/MOTION-EP005-S019-KLING30T-CAND-v01.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "bytes": 2956741,
+    "codec": "h264",
+    "model": "kling-video/v3.0-turbo/image-to-video",
+    "frames": 121,
+    "record": "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03",
+    "sha256": "f107ef3e453bfad26d12426c2c39bd6155f29509ba01b68d7334b1b79969023b",
+    "attempt": 1,
+    "kept_as": "evidence only (stored file untouched)",
+    "shot_id": "S019",
+    "approved": false,
+    "provider": "HIGGSFIELD",
+    "dimensions": "1280x720",
+    "duration_s": 5.041667,
+    "episode_code": "EP-CANDIDATE-005",
+    "prompt_sha256": "4a827017ae609f981c7819f54b910408f14dfa23d3d7122422e214ab3f9f0459",
+    "human_approval": "REJECTED",
+    "human_decision": "REJECTED",
+    "approval_record": "ENG-20261021-EP005-BATCH1-MOTION-REVIEW-RECONCILED",
+    "rejected_sha256": "f107ef3e453bfad26d12426c2c39bd6155f29509ba01b68d7334b1b79969023b",
+    "rejection_basis": "COMPANY BRAIN FINAL HUMAN APPROVAL 2026-10-21 of exact sha256; evidence basis 5b4aeea8f9684b2541896a832abdd063a15b67b0",
+    "rejection_state": "REJECTED_BY_HUMAN / CANON_FAIL",
+    "visual_qc_notes": [
+     "Reflection reacts (smile -> neutral -> small 'o' of surprise); nose mark stays fixed; mirror stable",
+     "FAIL: from ~frame 60 (2.5 s) a SECOND hand enters and grips the handle - a yellow gloved hand with a cream cuff and a furry brown sleeve - in addition to Lumi's tiny hand; not in the approved image, not Lumi canon (extra limb / new object)",
+     "Not assembled; no retry authorised; raw preserved as REVIEW evidence"
+    ],
+    "rejection_reasons": [
+     "CANON_FAIL: an unauthorised second hand / yellow glove / brown furry sleeve enters and grabs the mirror",
+     "one replacement generation authorised"
+    ],
+    "storage_object_id": "19848492-b641-45c4-a875-3e6b5f9edda0",
+    "visual_qc_verdict": "FAIL",
+    "start_image_sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+    "storage_object_key": "visual/production/ep005/motion/MOTION-EP005-S019-KLING30T-CAND-v01.mp4",
+    "provider_request_id": "d14abf6e-6be9-4c8b-b63d-1c762debcb4d",
+    "rejection_authority": "Gilang / Company Brain",
+    "request_body_sha256": "2b3fe64c61e90c34eace88872e0b2c0ec2954b3929786a706aad8d9c4d6d33d3",
+    "provider_original_md5": "82960fc8d20d04567ecb93e4c70bda45",
+    "provider_audio_present": true
+   },
+   "notes": "Raw Kling 3.0 Turbo output for S019 (request d14abf6e-6be9-4c8b-b63d-1c762debcb4d), exact provider bytes. Visual QC: FAIL. Not approved."
+  }
+ }
+}
