@@ -1,0 +1,176 @@
+{
+ "authorisation": {
+  "by": "Gilang / Company Brain",
+  "date": "2026-10-21",
+  "max_total_spend_usd": 1.5,
+  "shots": [
+   "S005",
+   "S013",
+   "S017",
+   "S019"
+  ],
+  "calls_max_per_shot": 1,
+  "total_calls_max": 4,
+  "retries": 0,
+  "fallback_model": "NONE",
+  "alternate_generations": 0,
+  "model": "kling-video/v3.0-turbo/image-to-video",
+  "resolution": "720p"
+ },
+ "endpoint": "POST https://api.higgsfield.ai/kling-video/v3.0-turbo/image-to-video",
+ "schema_basis": "official model id from the authorisation; parameters corroborated by the Higgsfield catalog entry kling3_0_turbo (resolution 720p|1080p, duration 3-15 whole seconds, single start_image, no sound parameter); image_url field = the governed Higgsfield image-to-video contract (Seedance / Kling 3.0); aspect follows the 16:9 source image (no aspect field sent)",
+ "packages": {
+  "S005": {
+   "SHOT_ID": "S005",
+   "PROMPT_TEXT": "Gentle, restrained children's cartoon animation. Mikko studies his reflection in the hand mirror: in the mirror his face blinks once naturally, breathes softly and his head settles very slightly, his eyes moving gently over the three berry smudges on his cheek, his nose and beside his mouth. Mikko's own head and shoulder in the foreground move slightly with his breathing, matching the reflection. Lumi hovers gently with a tiny up-and-down float while holding the mirror steady; the mirror settles slightly in her tiny hands. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+   "PROMPT_SHA256": "27256c701f4423417c12df63d3a50d2d577fe03a56001f287d23d6760e4bb62a",
+   "REQUEST_BODY": {
+    "prompt": "Gentle, restrained children's cartoon animation. Mikko studies his reflection in the hand mirror: in the mirror his face blinks once naturally, breathes softly and his head settles very slightly, his eyes moving gently over the three berry smudges on his cheek, his nose and beside his mouth. Mikko's own head and shoulder in the foreground move slightly with his breathing, matching the reflection. Lumi hovers gently with a tiny up-and-down float while holding the mirror steady; the mirror settles slightly in her tiny hands. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+    "image_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/c48a3c43-591f-4c8f-9b7f-8bee2ff69b57.png",
+    "duration": 4,
+    "resolution": "720p"
+   },
+   "REQUEST_BODY_SHA256": "b2522a4e99f169d4244f904e6c1e115c0e25e01d333823a1031f32b4cb183073",
+   "start_image": {
+    "kind": "approved composed frame (base frame + approved G03 record)",
+    "sha256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f",
+    "base_frame": "FRAME-EP005-F01-BASE-CAND-v02",
+    "g03_record": "G03-REC-EP005-S005-v01",
+    "g03_record_sha256": "4b121fc8737351b4e47d5054ca17f8a42d3979b21a175e9c0d6ef78ea8567ce7",
+    "overlays_composited": {
+     "shot_id": "S005",
+     "frame_sha256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f",
+     "overlays": [
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-CHEEK-v01",
+       "sha256": "b2c735f270fccda76861e28212bec2cd60bd20564aa8c35d9a7affa394ca78ac",
+       "surface": "REFLECTION"
+      },
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+       "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+       "surface": "REFLECTION"
+      },
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+       "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+       "surface": "REFLECTION"
+      }
+     ]
+    }
+   },
+   "duration_s": 4,
+   "frames_required": 96,
+   "submitted": false
+  },
+  "S013": {
+   "SHOT_ID": "S013",
+   "PROMPT_TEXT": "Gentle, restrained children's cartoon animation. Mikko calmly studies the two remaining berry smudges in the hand mirror: in the mirror his face blinks once naturally and his eyes move slowly from the smudge on his nose to the smudge beside his mouth, with very small breathing and head movement. Mikko's own head and shoulder in the foreground move slightly with his breathing, matching the reflection. Lumi hovers gently and keeps the mirror steady. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+   "PROMPT_SHA256": "86b68d36a642b2ae14cb4864126e7a1585edbea4e8c20ec2deea60d897e79e68",
+   "REQUEST_BODY": {
+    "prompt": "Gentle, restrained children's cartoon animation. Mikko calmly studies the two remaining berry smudges in the hand mirror: in the mirror his face blinks once naturally and his eyes move slowly from the smudge on his nose to the smudge beside his mouth, with very small breathing and head movement. Mikko's own head and shoulder in the foreground move slightly with his breathing, matching the reflection. Lumi hovers gently and keeps the mirror steady. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+    "image_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d77ad924-02f4-46c2-be71-42dcdf8349a5.png",
+    "duration": 4,
+    "resolution": "720p"
+   },
+   "REQUEST_BODY_SHA256": "88bd214774e87c04d0c2ea100d82424799a27fbed17ec032abb2da53253b7f94",
+   "start_image": {
+    "kind": "approved composed frame (base frame + approved G03 record)",
+    "sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+    "base_frame": "FRAME-EP005-F01-BASE-CAND-v02",
+    "g03_record": "G03-REC-EP005-S013-v01",
+    "g03_record_sha256": "ec6af454b30295b61128a968494e6177c32b7f48510119d03289201652a7bbd9",
+    "overlays_composited": {
+     "shot_id": "S013",
+     "frame_sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+     "overlays": [
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+       "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+       "surface": "REFLECTION"
+      },
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+       "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+       "surface": "REFLECTION"
+      }
+     ]
+    }
+   },
+   "duration_s": 4,
+   "frames_required": 96,
+   "submitted": false
+  },
+  "S017": {
+   "SHOT_ID": "S017",
+   "PROMPT_TEXT": "Gentle, restrained children's cartoon animation. Mikko, standing on the left with the blue cloth in his hand, shifts his attention slightly toward the hand mirror with a small natural head turn, blinks once and his eyes move gently. His reflection in the mirror follows the same small movement exactly, as one and the same Mikko. Lumi floats gently beside him with a soft hovering motion, holding the mirror steady. The berry smudge stays on Mikko's nose and on the nose of his reflection. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+   "PROMPT_SHA256": "e874ccaa72afb46dd4e9a4c5fa347c9821566322528412d3bc2c86a421c47e57",
+   "REQUEST_BODY": {
+    "prompt": "Gentle, restrained children's cartoon animation. Mikko, standing on the left with the blue cloth in his hand, shifts his attention slightly toward the hand mirror with a small natural head turn, blinks once and his eyes move gently. His reflection in the mirror follows the same small movement exactly, as one and the same Mikko. Lumi floats gently beside him with a soft hovering motion, holding the mirror steady. The berry smudge stays on Mikko's nose and on the nose of his reflection. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+    "image_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/cebc7b2a-7b04-480f-87cb-0aada4ce4099.png",
+    "duration": 4,
+    "resolution": "720p"
+   },
+   "REQUEST_BODY_SHA256": "90df4264951995d5d12e23635ca820313b0f3f02f80484774c5727416937963b",
+   "start_image": {
+    "kind": "approved composed frame (base frame + approved G03 record)",
+    "sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+    "base_frame": "FRAME-EP005-F09-BASE-CAND-v01",
+    "g03_record": "G03-REC-EP005-S017-v01",
+    "g03_record_sha256": "3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526",
+    "overlays_composited": {
+     "shot_id": "S017",
+     "frame_sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+     "overlays": [
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+       "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+       "surface": "FACE"
+      },
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+       "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+       "surface": "REFLECTION"
+      }
+     ]
+    }
+   },
+   "duration_s": 4,
+   "frames_required": 96,
+   "submitted": false
+  },
+  "S019": {
+   "SHOT_ID": "S019",
+   "PROMPT_TEXT": "Gentle, restrained children's cartoon animation. Close-up of the pink flower-shaped hand mirror. Mikko's reflected face shows restrained natural life: a soft blink, subtle breathing and a tiny reaction in his eyes as he notices the berry smudge on his nose. Lumi's tiny hand holding the mirror handle makes a very small steadying movement. The mirror stays stable and readable and keeps its exact shape. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+   "PROMPT_SHA256": "4a827017ae609f981c7819f54b910408f14dfa23d3d7122422e214ab3f9f0459",
+   "REQUEST_BODY": {
+    "prompt": "Gentle, restrained children's cartoon animation. Close-up of the pink flower-shaped hand mirror. Mikko's reflected face shows restrained natural life: a soft blink, subtle breathing and a tiny reaction in his eyes as he notices the berry smudge on his nose. Lumi's tiny hand holding the mirror handle makes a very small steadying movement. The mirror stays stable and readable and keeps its exact shape. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+    "image_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/c6f60a73-7693-496c-8d22-1c11742dd75b.png",
+    "duration": 5,
+    "resolution": "720p"
+   },
+   "REQUEST_BODY_SHA256": "2b3fe64c61e90c34eace88872e0b2c0ec2954b3929786a706aad8d9c4d6d33d3",
+   "start_image": {
+    "kind": "approved composed frame (base frame + approved G03 record)",
+    "sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+    "base_frame": "FRAME-EP005-F15-BASE-CAND-v02",
+    "g03_record": "G03-REC-EP005-S019-v01",
+    "g03_record_sha256": "9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b",
+    "overlays_composited": {
+     "shot_id": "S019",
+     "frame_sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+     "overlays": [
+      {
+       "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+       "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+       "surface": "REFLECTION"
+      }
+     ]
+    }
+   },
+   "duration_s": 5,
+   "frames_required": 120,
+   "submitted": false
+  }
+ }
+}
