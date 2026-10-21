@@ -2984,3 +2984,32 @@ side_effects: "4 Kling calls, 0 retries; 7 storage objects + 7 REVIEW rows; no i
 evidence: ["evidence/EP005_BATCH1_REAL_MOTION_V03_REVIEW_v1.0.md", "evidence/ep005/batch1_motion/"]
 status: "EP005_BATCH1_REAL_MOTION_PARTIAL: 3 of 4 REVIEW-ready; S019 MOTION_CANON_FAIL"
 ```
+
+---
+
+## ENG-20261021-EP005-BATCH1-MOTION-REVIEW-RECONCILED: S005/S017 COMPLETE_APPROVED; S013 v03 + S019 raw REJECTED; S013/S019 Kling replacements (2 calls) both FAIL QC
+
+```yaml
+change_id: "ENG-20261021-EP005-BATCH1-MOTION-REVIEW-RECONCILED"
+timestamp: "2026-10-21"
+actor: "Claude"
+authorised_by: "Company Brain decision + Gilang paid authorisation (additional max USD 1.00; kling-video/v3.0-turbo/image-to-video 720p; 1 call each S013/S019; no retry/alternate/fallback); evidence basis 5b4aeea8"
+change_type: "HUMAN DECISIONS BOUND (4 row PATCHes) + PAID VIDEO GENERATION (2) + RAW PRESERVATION (2 objects + 2 REVIEW rows) + EVIDENCE"
+decisions:
+  S005_v03: "APPROVED / COMPLETE_APPROVED 629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8 (stored SHA match)"
+  S017_v03: "APPROVED / COMPLETE_APPROVED 78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f (stored SHA match)"
+  S013_v03: "REJECTED_BY_HUMAN 38c43abb... (red mark on foreground Mikko); kept"
+  S019_raw_v01: "REJECTED_BY_HUMAN / CANON_FAIL f107ef3e... (second hand / yellow glove / brown sleeve); kept"
+package_lock_commit: "98df19106bcfaf05c7cfd73761038e79f59f5ff7"
+requests: {S013: "b5f182ac-7369-4389-832c-86fcbed6e363", S019: "470f93c2-9160-4823-96c0-2d100aa03d00"}
+raw_sha256: {S013: "174eb8a1ee8ba0182f9d6b6b72bef303bde987a98811de460672c67cfc0b58df", S019: "defadf575f985229d847c1b37713fed46e236cc0625986a3113ceaf8db0d72fa"}
+raw_rows: {S013: "MOTION-EP005-S013-KLING30T-CAND-v02 e5b28aee-1162-4d82-9775-f95d160d26f5 REVIEW", S019: "MOTION-EP005-S019-KLING30T-CAND-v02 8be0d7c5-dce0-4067-b7d0-7209a6aebb2b REVIEW"}
+visual_qc: "S013 FAIL (NEW_RED_MARK: foreground Mikko turns, red berry mark on nose tip visible f48-f96); S019 FAIL (EXTRA_HAND/ARM: second pale-yellow limb with glowing orb enters ~f50); no retry"
+assembly: "none (no passing raw); SHOT-EP005-S013/S019-ASSEMBLED-CAND-v04 not created"
+spend: "provider exposed no cost; known USD 0.00, actual UNKNOWN; no top-up/billing change"
+finished_shot_count: 5   # S027, S028, S029, S005, S017
+side_effects: "2 Kling calls, 0 retries; no image generation/Flare/Seedance/ElevenLabs/Agent-006/007; script, manifest, readiness, S027-S029 unchanged; no agent008 code change"
+evidence: ["evidence/EP005_BATCH1_MOTION_V04_RECONCILIATION_v1.0.md", "evidence/ep005/batch1_motion_v04/"]
+rollback: "decision rows PATCH back to REVIEW (prior state in B1_V04_DECISION_ROWS_READBACK_v1.json) on human instruction; the 2 raw v02 rows/objects removable on human instruction"
+status: "EP005_BATCH1_MOTION_RECONCILED_PARTIAL: S005/S017 COMPLETE_APPROVED; S013_V04_FAIL; S019_V04_FAIL; STOPPED"
+```

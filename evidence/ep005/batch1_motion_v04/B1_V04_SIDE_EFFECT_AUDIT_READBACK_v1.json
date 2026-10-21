@@ -1,0 +1,175 @@
+{
+ "SHOT-EP005-S005-ASSEMBLED-CAND-v03": {
+  "status": "APPROVED",
+  "approved": true,
+  "human_decision": "APPROVED",
+  "final_state": "COMPLETE_APPROVED",
+  "rejection_state": null,
+  "sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+  "stored_sha_match": true,
+  "updated_at": "2026-10-21T02:48:09.471103+00:00"
+ },
+ "SHOT-EP005-S017-ASSEMBLED-CAND-v03": {
+  "status": "APPROVED",
+  "approved": true,
+  "human_decision": "APPROVED",
+  "final_state": "COMPLETE_APPROVED",
+  "rejection_state": null,
+  "sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+  "stored_sha_match": true,
+  "updated_at": "2026-10-21T02:48:39.325003+00:00"
+ },
+ "SHOT-EP005-S013-ASSEMBLED-CAND-v03": {
+  "status": "REJECTED",
+  "approved": false,
+  "human_decision": "REJECTED",
+  "final_state": null,
+  "rejection_state": "REJECTED_BY_HUMAN",
+  "sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+  "stored_sha_match": true,
+  "updated_at": "2026-10-21T02:48:24.291967+00:00"
+ },
+ "MOTION-EP005-S019-KLING30T-CAND-v01": {
+  "status": "REJECTED",
+  "approved": false,
+  "human_decision": "REJECTED",
+  "final_state": null,
+  "rejection_state": "REJECTED_BY_HUMAN / CANON_FAIL",
+  "sha256": "f107ef3e453bfad26d12426c2c39bd6155f29509ba01b68d7334b1b79969023b",
+  "stored_sha_match": true,
+  "updated_at": "2026-10-21T02:48:46.840979+00:00"
+ },
+ "MOTION-EP005-S013-KLING30T-CAND-v02": {
+  "status": "REVIEW",
+  "approved": false,
+  "human_decision": "PENDING",
+  "final_state": null,
+  "rejection_state": null,
+  "sha256": "174eb8a1ee8ba0182f9d6b6b72bef303bde987a98811de460672c67cfc0b58df",
+  "stored_sha_match": true,
+  "updated_at": "2026-10-21T03:08:17.739061+00:00"
+ },
+ "MOTION-EP005-S019-KLING30T-CAND-v02": {
+  "status": "REVIEW",
+  "approved": false,
+  "human_decision": "PENDING",
+  "final_state": null,
+  "rejection_state": null,
+  "sha256": "defadf575f985229d847c1b37713fed46e236cc0625986a3113ceaf8db0d72fa",
+  "stored_sha_match": true,
+  "updated_at": "2026-10-21T03:08:24.214263+00:00"
+ },
+ "SHOT-EP005-S013-ASSEMBLED-CAND-v04": "ABSENT",
+ "SHOT-EP005-S019-ASSEMBLED-CAND-v04": "ABSENT",
+ "APPROVED_EP005_SHOT_RENDERS": [
+  {
+   "asset_id": "SHOT-EP005-S029-ASSEMBLED-v01",
+   "updated_at": "2026-10-12T03:16:44.936579+00:00",
+   "sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6"
+  },
+  {
+   "asset_id": "SHOT-EP005-S028-ASSEMBLED-v01",
+   "updated_at": "2026-10-12T02:30:23.906288+00:00",
+   "sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0"
+  },
+  {
+   "asset_id": "SHOT-EP005-S027-ASSEMBLED-v01",
+   "updated_at": "2026-10-09T23:09:14.159241+00:00",
+   "sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde"
+  },
+  {
+   "asset_id": "SHOT-EP005-S005-ASSEMBLED-CAND-v03",
+   "updated_at": "2026-10-21T02:48:09.471103+00:00",
+   "sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8"
+  },
+  {
+   "asset_id": "SHOT-EP005-S017-ASSEMBLED-CAND-v03",
+   "updated_at": "2026-10-21T02:48:39.325003+00:00",
+   "sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f"
+  }
+ ],
+ "S027": [
+  {
+   "asset_id": "FRAME-EP005-S027-BASE-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-09T06:17:25.940513+00:00",
+   "sha256": "81b841a6ab53219b26755c4e83a9777953a2d03f37213875e38691c112f0061b"
+  },
+  {
+   "asset_id": "MOTION-EP005-S027-SEEDANCE20-CAND-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-09T08:17:54.176061+00:00",
+   "sha256": "86dddea5a37cbe5b35a5c7540e0914ebebb1abcf1365cbc778b47ffc0b450e25"
+  },
+  {
+   "asset_id": "DLG-EP005-S027-L1-MIKKO-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-09T09:39:42.684489+00:00",
+   "sha256": "81a0b038e0e81114f88079dd3f42aeafbbe47ba39cb8e8a706933e6ba531da50"
+  },
+  {
+   "asset_id": "SHOT-EP005-S027-ASSEMBLED-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-09T23:09:14.159241+00:00",
+   "sha256": "7b01c392948e477ed24241e1ed28156628d498d234613121561bee0ff15b8fde"
+  }
+ ],
+ "S028": [
+  {
+   "asset_id": "MOTION-EP005-S028-SEEDANCE20-CAND-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-12T02:17:05.499435+00:00",
+   "sha256": "341683c40de8d71ebed564b7739f9b338add2f954d00e347e0561c7fbe7a9b58"
+  },
+  {
+   "asset_id": "SHOT-EP005-S028-ASSEMBLED-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-12T02:30:23.906288+00:00",
+   "sha256": "1d5dfabde957aeabaec89659858eb7a28910de2266513a16b77734ea11a47cc0"
+  },
+  {
+   "asset_id": "DLG-EP005-S028-LUMI-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-12T00:23:13.292625+00:00",
+   "sha256": "970f55a95f73f0949be74c5d5424318811d5fa2add0438abd42e3f37f639a8bc"
+  },
+  {
+   "asset_id": "DLG-EP005-S028-MIKKO-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-12T00:23:13.292625+00:00",
+   "sha256": "ab81173ee7ddb15eeb8b3bbb0bdd7eed6840d76f9100d5edb1e6ca5d04b230b0"
+  },
+  {
+   "asset_id": "FRAME-EP005-S028-BASE-CAND-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-11T23:28:08.351861+00:00",
+   "sha256": "9ac6ccc3239fd08a69e9a570f13a8b857d0d9d7257fb37d24f8ad676476c6ff0"
+  }
+ ],
+ "S029": [
+  {
+   "asset_id": "SHOT-EP005-S029-ASSEMBLED-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-12T03:16:44.936579+00:00",
+   "sha256": "b8a4e3b4233a31646d046000ffac5332aef0fe19d0a2a3f1ab67285fb3b137d6"
+  },
+  {
+   "asset_id": "FRAME-EP005-S029-BASE-CAND-v01",
+   "status": "APPROVED",
+   "updated_at": "2026-10-12T03:10:12.536804+00:00",
+   "sha256": "a8b0d0fc597d9ad009fe96745485e89c2bae5d8764734a0cdec5ca00f7b023e4"
+  }
+ ],
+ "created_today_by_record": [
+  {
+   "asset_id": "MOTION-EP005-S013-KLING30T-CAND-v02",
+   "status": "REVIEW",
+   "created_at": "2026-10-21T03:08:17.739061+00:00"
+  },
+  {
+   "asset_id": "MOTION-EP005-S019-KLING30T-CAND-v02",
+   "status": "REVIEW",
+   "created_at": "2026-10-21T03:08:24.214263+00:00"
+  }
+ ]
+}

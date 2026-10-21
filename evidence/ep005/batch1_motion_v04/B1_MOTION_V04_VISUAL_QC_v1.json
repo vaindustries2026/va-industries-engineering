@@ -1,0 +1,42 @@
+{
+ "method": "raw clips sampled at frames 0/25/50/75/100% plus every 12 (S013) / 10 (S019) frames; high-scale crops: S013 foreground real-Mikko face edge (x 0-420, y 300-720, 1.5x) at f0/48/60/72/84/96; S019 hand/handle region (x 380-900, y 420-720, 2x) at f0/50/65/75/85/100; reflection face crops. Sheets: qc/B1_V04_QC_*.jpg",
+ "rule": "Company Brain 2026-10-21: if the defect appears, FAIL the shot; do not retry",
+ "verdicts": {
+  "S013": {
+   "verdict": "FAIL",
+   "raw_sha256": "174eb8a1ee8ba0182f9d6b6b72bef303bde987a98811de460672c67cfc0b58df",
+   "REAL_CHARACTER_MOTION": "YES",
+   "NEW_RED_MARK": "YES",
+   "SMUDGE_COUNT_STABLE": "NO (reflection keeps its two marks; a third red berry mark becomes visible on the foreground real Mikko)",
+   "SMUDGE_POSITION_STABLE": "YES (reflection nose and mouth marks fixed)",
+   "CANON_IDENTITY_STABLE": "YES",
+   "EXTRA_LIMBS": "NO",
+   "MIRROR_CONTINUITY_PASS": "YES",
+   "notes": [
+    "Reflection: one natural blink (~f24), eyes move between the nose and mouth marks, small head/breathing motion; nose and mouth marks stay in place",
+    "Lumi floats gently, blinks; mirror steady",
+    "DEFECT: despite the hard negative, the foreground real Mikko turns his head from ~f48; an eye edge and his muzzle come into view at the frame's left edge carrying a red berry mark on the nose tip, visible f48 through f96 (end). f0 shows no muzzle and no mark. Same defect class as the rejected v03 (new red mark on foreground Mikko late in the shot)",
+    "Not assembled; no v04 candidate created"
+   ]
+  },
+  "S019": {
+   "verdict": "FAIL",
+   "raw_sha256": "defadf575f985229d847c1b37713fed46e236cc0625986a3113ceaf8db0d72fa",
+   "REAL_CHARACTER_MOTION": "YES",
+   "EXTRA_HAND": "YES",
+   "EXTRA_ARM": "YES",
+   "YELLOW_GLOVE": "YES (a second pale-yellow mitten-like limb, same colour family as the rejected raw's glove)",
+   "BROWN_SLEEVE": "NO",
+   "NEW_CHARACTER": "NO",
+   "LUMI_HAND_CANON_PASS": "NO",
+   "NOSE_SMUDGE_STABLE": "YES",
+   "MIRROR_CONTINUITY_PASS": "YES (mirror shape stable)",
+   "notes": [
+    "Reflection: expression settles from open smile to a small calm mouth, eyes move, nose smudge stays fixed",
+    "f0-~f45: one pale-yellow hand holds the bottom of the handle (as in the start frame)",
+    "DEFECT: from ~f50 a second pale-yellow limb enters from the lower right holding a large glowing orb and pushes it up across the handle to just below the mirror (f60-f90), then withdraws partly by f100-f120; two hands are visible together on the handle. Violates EXACTLY ONE visible hand / no arm entering / nothing reaches toward the mirror / no new object",
+    "Not assembled; no v04 candidate created"
+   ]
+  }
+ }
+}
