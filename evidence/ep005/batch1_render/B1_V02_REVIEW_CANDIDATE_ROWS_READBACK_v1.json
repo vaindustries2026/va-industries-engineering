@@ -1,0 +1,530 @@
+{
+ "v02": {
+  "S005": {
+   "id": "0c2214d9-34f0-4705-9636-aaba402a8bef",
+   "created_at": "2026-10-21T01:43:46.343469+00:00",
+   "updated_at": "2026-10-21T01:43:46.343469+00:00",
+   "asset_id": "SHOT-EP005-S005-ASSEMBLED-CAND-v02",
+   "asset_name": "EP005 S005 assembled shot candidate v02 (deterministic presentation pass)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v02",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v02.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 2036231,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-FIRST-FOUR-SHOTS-V02-PRESENTATION",
+    "sha256": "b5c052ad7b8a4b9969ae45cc29546ae91c27249876f29e4b0f417db57e7ae37d",
+    "shot_id": "S005",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 b5c052ad7b8a4b9969ae45cc29546ae91c27249876f29e4b0f417db57e7ae37d",
+    "dimensions": "1920x1080",
+    "duration_s": 4,
+    "provenance": {
+     "qc": {
+      "checks": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "NO_UNAPPROVED_SFX": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "approved_g03_frame": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "MEASURED_MOTION_PASS": true,
+       "AMBIENCE_ASSET_APPROVED": true,
+       "frame0_is_approved_content": true,
+       "safe_bounds_no_edge_exposure": true,
+       "motion_is_the_approved_transform": true,
+       "deterministic_two_runs_byte_identical": true
+      },
+      "motion": {
+       "last_vs_first_mae": 17.003,
+       "consecutive_mae_max": 0.7969,
+       "consecutive_mae_min": 0.0774,
+       "min_border_mean_8px": 99.68,
+       "consecutive_mae_median": 0.6086,
+       "v01_codec_noise_ceiling": 0.037,
+       "pre_encode_distinct_frames": 96,
+       "decoded_vs_untransformed_mae_last": 16.929,
+       "decoded_vs_untransformed_mae_first": 1.62,
+       "decoded_vs_expected_transform_mae_max": 1.691
+      },
+      "result": "PASS"
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      }
+     },
+     "camera": {
+      "focus": "mirror glass centre x (F01 glass ellipse); top-anchored (y 150) so the mirror top petal, already at the frame edge, loses <= 4.4 px",
+      "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame",
+      "END_SCALE": 1.03,
+      "FOCAL_POINT": [
+       895,
+       150
+      ],
+      "START_SCALE": 1.0,
+      "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+      "MAX_SAFE_CROP": {
+       "end_window": [
+        26.068,
+        4.369,
+        1890.146,
+        1052.913
+       ],
+       "min_margin_px": 0.0
+      },
+      "TRANSLATION_X_END": 0,
+      "TRANSLATION_Y_END": 0
+     },
+     "lineage": {
+      "script": "6498ea8d (v05)",
+      "manifest": "0325d35c",
+      "readiness": "69bff641"
+     },
+     "excluded": [
+      "dialogue",
+      "SFX",
+      "music",
+      "generative video",
+      "interpolation",
+      "character animation",
+      "base-frame change",
+      "G03/G08 change"
+     ],
+     "pipeline": "approved G03 frame (re-applied from the APPROVED G03 record, SHA-verified) -> deterministic 2D camera transform (whole image) -> governed mix_motion_audio + encode_review (evidence/ep005/batch1_render/b1_presentation_v02.py)",
+     "g03_frame_sha256": "407efd175114772e406e0e6baa9c3e019c6b39ed82b8025aa489826482eed82f",
+     "base_frame_sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "g03_record_sha256": "4b121fc8737351b4e47d5054ca17f8a42d3979b21a175e9c0d6ef78ea8567ce7",
+     "two_run_determinism": {
+      "runs": 2,
+      "sha256": "b5c052ad7b8a4b9969ae45cc29546ae91c27249876f29e4b0f417db57e7ae37d",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_decision": "PENDING",
+    "storage_object_id": "58d75536-ec87-45a5-99b8-98365f2be09a",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S005-ASSEMBLED-CAND-v02.mp4",
+    "supersedes_presentation_of": "SHOT-EP005-S005-ASSEMBLED-CAND-v01 (REJECTED as presentation; kept as history)"
+   },
+   "notes": "REVIEW v02 presentation candidate for S005: same approved pixels with a deterministic camera push and audible approved ambience. Human decision pending on exact SHA-256."
+  },
+  "S013": {
+   "id": "3fe6db9d-c7af-4abc-beb2-f426fae75df3",
+   "created_at": "2026-10-21T01:43:54.08943+00:00",
+   "updated_at": "2026-10-21T01:43:54.08943+00:00",
+   "asset_id": "SHOT-EP005-S013-ASSEMBLED-CAND-v02",
+   "asset_name": "EP005 S013 assembled shot candidate v02 (deterministic presentation pass)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v02",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v02.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 2013283,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-FIRST-FOUR-SHOTS-V02-PRESENTATION",
+    "sha256": "1b6ef6b63905007471b9d576f7737c313fe86de17bd08e6f6acf48b4e8eeb882",
+    "shot_id": "S013",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 1b6ef6b63905007471b9d576f7737c313fe86de17bd08e6f6acf48b4e8eeb882",
+    "dimensions": "1920x1080",
+    "duration_s": 4,
+    "provenance": {
+     "qc": {
+      "checks": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "NO_UNAPPROVED_SFX": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "approved_g03_frame": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "MEASURED_MOTION_PASS": true,
+       "AMBIENCE_ASSET_APPROVED": true,
+       "frame0_is_approved_content": true,
+       "safe_bounds_no_edge_exposure": true,
+       "motion_is_the_approved_transform": true,
+       "deterministic_two_runs_byte_identical": true
+      },
+      "motion": {
+       "last_vs_first_mae": 15.103,
+       "consecutive_mae_max": 0.6823,
+       "consecutive_mae_min": 0.0681,
+       "min_border_mean_8px": 99.77,
+       "consecutive_mae_median": 0.5132,
+       "v01_codec_noise_ceiling": 0.037,
+       "pre_encode_distinct_frames": 96,
+       "decoded_vs_untransformed_mae_last": 15.047,
+       "decoded_vs_untransformed_mae_first": 1.623,
+       "decoded_vs_expected_transform_mae_max": 1.696
+      },
+      "result": "PASS"
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      }
+     },
+     "camera": {
+      "focus": "remaining smudges x (midpoint of the nose and mouth marks); top-anchored (y 150) to protect the top petal (<= 3.7 px)",
+      "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame",
+      "END_SCALE": 1.025,
+      "FOCAL_POINT": [
+       954,
+       150
+      ],
+      "START_SCALE": 1.0,
+      "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+      "MAX_SAFE_CROP": {
+       "end_window": [
+        23.268,
+        3.659,
+        1896.439,
+        1057.317
+       ],
+       "min_margin_px": 0.0
+      },
+      "TRANSLATION_X_END": 0,
+      "TRANSLATION_Y_END": 0
+     },
+     "lineage": {
+      "script": "6498ea8d (v05)",
+      "manifest": "0325d35c",
+      "readiness": "69bff641"
+     },
+     "excluded": [
+      "dialogue",
+      "SFX",
+      "music",
+      "generative video",
+      "interpolation",
+      "character animation",
+      "base-frame change",
+      "G03/G08 change"
+     ],
+     "pipeline": "approved G03 frame (re-applied from the APPROVED G03 record, SHA-verified) -> deterministic 2D camera transform (whole image) -> governed mix_motion_audio + encode_review (evidence/ep005/batch1_render/b1_presentation_v02.py)",
+     "g03_frame_sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+     "base_frame_sha256": "5710032060494eea80bb6ac95bb31a3a1345caadfb8f711fa118de4ebcb1a845",
+     "g03_record_sha256": "ec6af454b30295b61128a968494e6177c32b7f48510119d03289201652a7bbd9",
+     "two_run_determinism": {
+      "runs": 2,
+      "sha256": "1b6ef6b63905007471b9d576f7737c313fe86de17bd08e6f6acf48b4e8eeb882",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_decision": "PENDING",
+    "storage_object_id": "2f32b1bf-8836-49b3-9542-cd139414b469",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S013-ASSEMBLED-CAND-v02.mp4",
+    "supersedes_presentation_of": "SHOT-EP005-S013-ASSEMBLED-CAND-v01 (REJECTED as presentation; kept as history)"
+   },
+   "notes": "REVIEW v02 presentation candidate for S013: same approved pixels with a deterministic camera push and audible approved ambience. Human decision pending on exact SHA-256."
+  },
+  "S017": {
+   "id": "87f02ff2-f403-4d4a-aa16-47f3708714e8",
+   "created_at": "2026-10-21T01:44:01.292053+00:00",
+   "updated_at": "2026-10-21T01:44:01.292053+00:00",
+   "asset_id": "SHOT-EP005-S017-ASSEMBLED-CAND-v02",
+   "asset_name": "EP005 S017 assembled shot candidate v02 (deterministic presentation pass)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v02",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v02.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 2714516,
+    "video": "h264 yuv420p 1920x1080 24/1, 96 frames",
+    "frames": 96,
+    "record": "ENG-20261021-EP005-BATCH1-FIRST-FOUR-SHOTS-V02-PRESENTATION",
+    "sha256": "a4b6a8cdb17d04bdda1c7175acf2ee8c69026617801afee30f0522c561e4301a",
+    "shot_id": "S017",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 a4b6a8cdb17d04bdda1c7175acf2ee8c69026617801afee30f0522c561e4301a",
+    "dimensions": "1920x1080",
+    "duration_s": 4,
+    "provenance": {
+     "qc": {
+      "checks": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "NO_UNAPPROVED_SFX": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "approved_g03_frame": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "MEASURED_MOTION_PASS": true,
+       "AMBIENCE_ASSET_APPROVED": true,
+       "frame0_is_approved_content": true,
+       "safe_bounds_no_edge_exposure": true,
+       "motion_is_the_approved_transform": true,
+       "deterministic_two_runs_byte_identical": true
+      },
+      "motion": {
+       "last_vs_first_mae": 17.681,
+       "consecutive_mae_max": 1.0188,
+       "consecutive_mae_min": 0.0851,
+       "min_border_mean_8px": 146.76,
+       "consecutive_mae_median": 0.7769,
+       "v01_codec_noise_ceiling": 0.037,
+       "pre_encode_distinct_frames": 96,
+       "decoded_vs_untransformed_mae_last": 17.767,
+       "decoded_vs_untransformed_mae_first": 1.788,
+       "decoded_vs_expected_transform_mae_max": 1.966
+      },
+      "result": "PASS"
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -33.0,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.8,
+       "sample_peak_dbfs": -19.3
+      }
+     },
+     "camera": {
+      "focus": "between Mikko's real-face nose mark (668,376) and the reflected nose mark (991,450); drift toward the reflection",
+      "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame",
+      "END_SCALE": 1.025,
+      "FOCAL_POINT": [
+       830,
+       413
+      ],
+      "START_SCALE": 1.0,
+      "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+      "MAX_SAFE_CROP": {
+       "end_window": [
+        32.244,
+        10.073,
+        1905.415,
+        1063.732
+       ],
+       "min_margin_px": 0.0
+      },
+      "TRANSLATION_X_END": 12,
+      "TRANSLATION_Y_END": 0
+     },
+     "lineage": {
+      "script": "6498ea8d (v05)",
+      "manifest": "0325d35c",
+      "readiness": "69bff641"
+     },
+     "excluded": [
+      "dialogue",
+      "SFX",
+      "music",
+      "generative video",
+      "interpolation",
+      "character animation",
+      "base-frame change",
+      "G03/G08 change"
+     ],
+     "pipeline": "approved G03 frame (re-applied from the APPROVED G03 record, SHA-verified) -> deterministic 2D camera transform (whole image) -> governed mix_motion_audio + encode_review (evidence/ep005/batch1_render/b1_presentation_v02.py)",
+     "g03_frame_sha256": "f8513ca6e6053a7eea03694ca3eb47e63aec78ba5c95a4351b872a339da74b3b",
+     "base_frame_sha256": "d442b0f7ac9524319fb2d171b7891e35ea94b4877f131de77f2bced74050f13e",
+     "g03_record_sha256": "3dec85135c407a9c2e58c0b104678ff750aa1ec549b5d2d5721b177b86200526",
+     "two_run_determinism": {
+      "runs": 2,
+      "sha256": "a4b6a8cdb17d04bdda1c7175acf2ee8c69026617801afee30f0522c561e4301a",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_decision": "PENDING",
+    "storage_object_id": "1ae2cf6c-8f3b-46d4-82e8-264982c30002",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S017-ASSEMBLED-CAND-v02.mp4",
+    "supersedes_presentation_of": "SHOT-EP005-S017-ASSEMBLED-CAND-v01 (REJECTED as presentation; kept as history)"
+   },
+   "notes": "REVIEW v02 presentation candidate for S017: same approved pixels with a deterministic camera push and audible approved ambience. Human decision pending on exact SHA-256."
+  },
+  "S019": {
+   "id": "257b104e-a66a-4c9f-a153-68fd65ab5a11",
+   "created_at": "2026-10-21T01:44:08.765885+00:00",
+   "updated_at": "2026-10-21T01:44:08.765885+00:00",
+   "asset_id": "SHOT-EP005-S019-ASSEMBLED-CAND-v02",
+   "asset_name": "EP005 S019 assembled shot candidate v02 (deterministic presentation pass)",
+   "asset_type": "SHOT_RENDER",
+   "asset_subtype": "ASSEMBLED_SHOT",
+   "version": "v02",
+   "status": "REVIEW",
+   "aliases": [],
+   "storage_path": "production-assets/visual/production/ep005/shots/SHOT-EP005-S019-ASSEMBLED-CAND-v02.mp4",
+   "source_url": null,
+   "metadata_json": {
+    "fps": "24/1",
+    "audio": "aac LC 48 kHz stereo",
+    "bytes": 2463097,
+    "video": "h264 yuv420p 1920x1080 24/1, 120 frames",
+    "frames": 120,
+    "record": "ENG-20261021-EP005-BATCH1-FIRST-FOUR-SHOTS-V02-PRESENTATION",
+    "sha256": "854e88c3218c870b871c1373ae024e55c4830f7bbb10eb431ae8590fc7d04001",
+    "shot_id": "S019",
+    "approved": false,
+    "container": "mp4",
+    "approve_by": "exact sha256 854e88c3218c870b871c1373ae024e55c4830f7bbb10eb431ae8590fc7d04001",
+    "dimensions": "1920x1080",
+    "duration_s": 5,
+    "provenance": {
+     "qc": {
+      "checks": {
+       "fps_24": true,
+       "NO_DIALOGUE": true,
+       "exact_frames": true,
+       "h264_yuv420p": true,
+       "res_1920x1080": true,
+       "exact_duration": true,
+       "NO_UNAPPROVED_SFX": true,
+       "AUDIBLE_LEVEL_PASS": true,
+       "approved_g03_frame": true,
+       "AUDIO_TRACK_PRESENT": true,
+       "MEASURED_MOTION_PASS": true,
+       "AMBIENCE_ASSET_APPROVED": true,
+       "frame0_is_approved_content": true,
+       "safe_bounds_no_edge_exposure": true,
+       "motion_is_the_approved_transform": true,
+       "deterministic_two_runs_byte_identical": true
+      },
+      "motion": {
+       "last_vs_first_mae": 16.55,
+       "consecutive_mae_max": 0.6466,
+       "consecutive_mae_min": 0.0614,
+       "min_border_mean_8px": 170.71,
+       "consecutive_mae_median": 0.4856,
+       "v01_codec_noise_ceiling": 0.037,
+       "pre_encode_distinct_frames": 120,
+       "decoded_vs_untransformed_mae_last": 16.514,
+       "decoded_vs_untransformed_mae_first": 1.574,
+       "decoded_vs_expected_transform_mae_max": 1.653
+      },
+      "result": "PASS"
+     },
+     "audio": {
+      "bed": "AMB-BATHROOM-QUIET-v01",
+      "gain_db": 11.5,
+      "measured": {
+       "max_volume_db": -19.3,
+       "mean_volume_db": -32.8,
+       "true_peak_dbtp": -19.3,
+       "integrated_lufs": -30.6,
+       "sample_peak_dbfs": -19.3
+      }
+     },
+     "camera": {
+      "focus": "reflected nose clue x (F15 approved nose mark); top-anchored (y 150) to protect the top petal (<= 5.1 px)",
+      "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame",
+      "END_SCALE": 1.035,
+      "FOCAL_POINT": [
+       959,
+       150
+      ],
+      "START_SCALE": 1.0,
+      "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+      "MAX_SAFE_CROP": {
+       "end_window": [
+        32.43,
+        5.072,
+        1887.502,
+        1048.551
+       ],
+       "min_margin_px": 0.0
+      },
+      "TRANSLATION_X_END": 0,
+      "TRANSLATION_Y_END": 0
+     },
+     "lineage": {
+      "script": "6498ea8d (v05)",
+      "manifest": "0325d35c",
+      "readiness": "69bff641"
+     },
+     "excluded": [
+      "dialogue",
+      "SFX",
+      "music",
+      "generative video",
+      "interpolation",
+      "character animation",
+      "base-frame change",
+      "G03/G08 change"
+     ],
+     "pipeline": "approved G03 frame (re-applied from the APPROVED G03 record, SHA-verified) -> deterministic 2D camera transform (whole image) -> governed mix_motion_audio + encode_review (evidence/ep005/batch1_render/b1_presentation_v02.py)",
+     "g03_frame_sha256": "f429b9bd79b73e9e368f13194c1c13a1adc8d8703ff7cc1b4a1670ad0be7daf8",
+     "base_frame_sha256": "e7a3936d8ab6f3fff5d2d39a5b349f6159f4eeb22953dbf715f45df8dfbdc690",
+     "g03_record_sha256": "9ee67f836457f8b88faf4b5aceeae5ea632788dba35764bf853a5dbf0191650b",
+     "two_run_determinism": {
+      "runs": 2,
+      "sha256": "854e88c3218c870b871c1373ae024e55c4830f7bbb10eb431ae8590fc7d04001",
+      "byte_identical": true
+     }
+    },
+    "episode_code": "EP-CANDIDATE-005",
+    "human_decision": "PENDING",
+    "storage_object_id": "e41c3e9d-2246-499e-9c06-19a5b795acdf",
+    "storage_object_key": "visual/production/ep005/shots/SHOT-EP005-S019-ASSEMBLED-CAND-v02.mp4",
+    "supersedes_presentation_of": "SHOT-EP005-S019-ASSEMBLED-CAND-v01 (REJECTED as presentation; kept as history)"
+   },
+   "notes": "REVIEW v02 presentation candidate for S019: same approved pixels with a deterministic camera push and audible approved ambience. Human decision pending on exact SHA-256."
+  }
+ },
+ "v01_after": {
+  "SHOT-EP005-S005-ASSEMBLED-CAND-v01": [
+   "REVIEW",
+   "2026-10-20T06:06:31.669781+00:00"
+  ],
+  "SHOT-EP005-S013-ASSEMBLED-CAND-v01": [
+   "REVIEW",
+   "2026-10-20T06:06:40.536683+00:00"
+  ],
+  "SHOT-EP005-S017-ASSEMBLED-CAND-v01": [
+   "REVIEW",
+   "2026-10-20T06:06:47.977295+00:00"
+  ],
+  "SHOT-EP005-S019-ASSEMBLED-CAND-v01": [
+   "REVIEW",
+   "2026-10-20T06:06:54.20084+00:00"
+  ]
+ }
+}

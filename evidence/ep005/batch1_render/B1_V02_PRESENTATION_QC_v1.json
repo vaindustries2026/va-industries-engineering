@@ -1,0 +1,314 @@
+{
+ "S005": {
+  "shot_id": "S005",
+  "mp4_sha256": "b5c052ad7b8a4b9969ae45cc29546ae91c27249876f29e4b0f417db57e7ae37d",
+  "run_b_sha256": "b5c052ad7b8a4b9969ae45cc29546ae91c27249876f29e4b0f417db57e7ae37d",
+  "video": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "res": "1920x1080",
+   "fps": "24/1",
+   "frames": 96,
+   "duration_s": 4.0
+  },
+  "audio_streams": 1,
+  "camera": {
+   "START_SCALE": 1.0,
+   "END_SCALE": 1.03,
+   "FOCAL_POINT": [
+    895,
+    150
+   ],
+   "TRANSLATION_X_END": 0,
+   "TRANSLATION_Y_END": 0,
+   "focus": "mirror glass centre x (F01 glass ellipse); top-anchored (y 150) so the mirror top petal, already at the frame edge, loses <= 4.4 px",
+   "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+   "MAX_SAFE_CROP": {
+    "end_window": [
+     26.068,
+     4.369,
+     1890.146,
+     1052.913
+    ],
+    "min_margin_px": 0.0
+   },
+   "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame"
+  },
+  "motion": {
+   "decoded_vs_expected_transform_mae_max": 1.691,
+   "decoded_vs_untransformed_mae_first": 1.62,
+   "decoded_vs_untransformed_mae_last": 16.929,
+   "consecutive_mae_min": 0.0774,
+   "consecutive_mae_median": 0.6086,
+   "consecutive_mae_max": 0.7969,
+   "v01_codec_noise_ceiling": 0.037,
+   "last_vs_first_mae": 17.003,
+   "pre_encode_distinct_frames": 96,
+   "min_border_mean_8px": 99.68
+  },
+  "audio": {
+   "integrated_lufs": -30.8,
+   "sample_peak_dbfs": -19.3,
+   "true_peak_dbtp": -19.3,
+   "mean_volume_db": -33.0,
+   "max_volume_db": -19.3,
+   "gain_db": 11.5,
+   "cues": [
+    "AMB-BATHROOM-QUIET-v01:BED"
+   ]
+  },
+  "checks": {
+   "res_1920x1080": true,
+   "fps_24": true,
+   "exact_frames": true,
+   "exact_duration": true,
+   "h264_yuv420p": true,
+   "deterministic_two_runs_byte_identical": true,
+   "MEASURED_MOTION_PASS": true,
+   "motion_is_the_approved_transform": true,
+   "frame0_is_approved_content": true,
+   "safe_bounds_no_edge_exposure": true,
+   "approved_g03_frame": true,
+   "AUDIO_TRACK_PRESENT": true,
+   "AMBIENCE_ASSET_APPROVED": true,
+   "AUDIBLE_LEVEL_PASS": true,
+   "NO_DIALOGUE": true,
+   "NO_UNAPPROVED_SFX": true
+  },
+  "result": "PASS"
+ },
+ "S013": {
+  "shot_id": "S013",
+  "mp4_sha256": "1b6ef6b63905007471b9d576f7737c313fe86de17bd08e6f6acf48b4e8eeb882",
+  "run_b_sha256": "1b6ef6b63905007471b9d576f7737c313fe86de17bd08e6f6acf48b4e8eeb882",
+  "video": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "res": "1920x1080",
+   "fps": "24/1",
+   "frames": 96,
+   "duration_s": 4.0
+  },
+  "audio_streams": 1,
+  "camera": {
+   "START_SCALE": 1.0,
+   "END_SCALE": 1.025,
+   "FOCAL_POINT": [
+    954,
+    150
+   ],
+   "TRANSLATION_X_END": 0,
+   "TRANSLATION_Y_END": 0,
+   "focus": "remaining smudges x (midpoint of the nose and mouth marks); top-anchored (y 150) to protect the top petal (<= 3.7 px)",
+   "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+   "MAX_SAFE_CROP": {
+    "end_window": [
+     23.268,
+     3.659,
+     1896.439,
+     1057.317
+    ],
+    "min_margin_px": 0.0
+   },
+   "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame"
+  },
+  "motion": {
+   "decoded_vs_expected_transform_mae_max": 1.696,
+   "decoded_vs_untransformed_mae_first": 1.623,
+   "decoded_vs_untransformed_mae_last": 15.047,
+   "consecutive_mae_min": 0.0681,
+   "consecutive_mae_median": 0.5132,
+   "consecutive_mae_max": 0.6823,
+   "v01_codec_noise_ceiling": 0.037,
+   "last_vs_first_mae": 15.103,
+   "pre_encode_distinct_frames": 96,
+   "min_border_mean_8px": 99.77
+  },
+  "audio": {
+   "integrated_lufs": -30.8,
+   "sample_peak_dbfs": -19.3,
+   "true_peak_dbtp": -19.3,
+   "mean_volume_db": -33.0,
+   "max_volume_db": -19.3,
+   "gain_db": 11.5,
+   "cues": [
+    "AMB-BATHROOM-QUIET-v01:BED"
+   ]
+  },
+  "checks": {
+   "res_1920x1080": true,
+   "fps_24": true,
+   "exact_frames": true,
+   "exact_duration": true,
+   "h264_yuv420p": true,
+   "deterministic_two_runs_byte_identical": true,
+   "MEASURED_MOTION_PASS": true,
+   "motion_is_the_approved_transform": true,
+   "frame0_is_approved_content": true,
+   "safe_bounds_no_edge_exposure": true,
+   "approved_g03_frame": true,
+   "AUDIO_TRACK_PRESENT": true,
+   "AMBIENCE_ASSET_APPROVED": true,
+   "AUDIBLE_LEVEL_PASS": true,
+   "NO_DIALOGUE": true,
+   "NO_UNAPPROVED_SFX": true
+  },
+  "result": "PASS"
+ },
+ "S017": {
+  "shot_id": "S017",
+  "mp4_sha256": "a4b6a8cdb17d04bdda1c7175acf2ee8c69026617801afee30f0522c561e4301a",
+  "run_b_sha256": "a4b6a8cdb17d04bdda1c7175acf2ee8c69026617801afee30f0522c561e4301a",
+  "video": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "res": "1920x1080",
+   "fps": "24/1",
+   "frames": 96,
+   "duration_s": 4.0
+  },
+  "audio_streams": 1,
+  "camera": {
+   "START_SCALE": 1.0,
+   "END_SCALE": 1.025,
+   "FOCAL_POINT": [
+    830,
+    413
+   ],
+   "TRANSLATION_X_END": 12,
+   "TRANSLATION_Y_END": 0,
+   "focus": "between Mikko's real-face nose mark (668,376) and the reflected nose mark (991,450); drift toward the reflection",
+   "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+   "MAX_SAFE_CROP": {
+    "end_window": [
+     32.244,
+     10.073,
+     1905.415,
+     1063.732
+    ],
+    "min_margin_px": 0.0
+   },
+   "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame"
+  },
+  "motion": {
+   "decoded_vs_expected_transform_mae_max": 1.966,
+   "decoded_vs_untransformed_mae_first": 1.788,
+   "decoded_vs_untransformed_mae_last": 17.767,
+   "consecutive_mae_min": 0.0851,
+   "consecutive_mae_median": 0.7769,
+   "consecutive_mae_max": 1.0188,
+   "v01_codec_noise_ceiling": 0.037,
+   "last_vs_first_mae": 17.681,
+   "pre_encode_distinct_frames": 96,
+   "min_border_mean_8px": 146.76
+  },
+  "audio": {
+   "integrated_lufs": -30.8,
+   "sample_peak_dbfs": -19.3,
+   "true_peak_dbtp": -19.3,
+   "mean_volume_db": -33.0,
+   "max_volume_db": -19.3,
+   "gain_db": 11.5,
+   "cues": [
+    "AMB-BATHROOM-QUIET-v01:BED"
+   ]
+  },
+  "checks": {
+   "res_1920x1080": true,
+   "fps_24": true,
+   "exact_frames": true,
+   "exact_duration": true,
+   "h264_yuv420p": true,
+   "deterministic_two_runs_byte_identical": true,
+   "MEASURED_MOTION_PASS": true,
+   "motion_is_the_approved_transform": true,
+   "frame0_is_approved_content": true,
+   "safe_bounds_no_edge_exposure": true,
+   "approved_g03_frame": true,
+   "AUDIO_TRACK_PRESENT": true,
+   "AMBIENCE_ASSET_APPROVED": true,
+   "AUDIBLE_LEVEL_PASS": true,
+   "NO_DIALOGUE": true,
+   "NO_UNAPPROVED_SFX": true
+  },
+  "result": "PASS"
+ },
+ "S019": {
+  "shot_id": "S019",
+  "mp4_sha256": "854e88c3218c870b871c1373ae024e55c4830f7bbb10eb431ae8590fc7d04001",
+  "run_b_sha256": "854e88c3218c870b871c1373ae024e55c4830f7bbb10eb431ae8590fc7d04001",
+  "video": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "res": "1920x1080",
+   "fps": "24/1",
+   "frames": 120,
+   "duration_s": 5.0
+  },
+  "audio_streams": 1,
+  "camera": {
+   "START_SCALE": 1.0,
+   "END_SCALE": 1.035,
+   "FOCAL_POINT": [
+    959,
+    150
+   ],
+   "TRANSLATION_X_END": 0,
+   "TRANSLATION_Y_END": 0,
+   "focus": "reflected nose clue x (F15 approved nose mark); top-anchored (y 150) to protect the top petal (<= 5.1 px)",
+   "MOTION_CURVE": "0.75 * cosine ease-in-out + 0.25 * linear (never stationary)",
+   "MAX_SAFE_CROP": {
+    "end_window": [
+     32.43,
+     5.072,
+     1887.502,
+     1048.551
+    ],
+    "min_margin_px": 0.0
+   },
+   "resample": "PIL Image.resize(box, LANCZOS) of the approved frame, once per output frame"
+  },
+  "motion": {
+   "decoded_vs_expected_transform_mae_max": 1.653,
+   "decoded_vs_untransformed_mae_first": 1.574,
+   "decoded_vs_untransformed_mae_last": 16.514,
+   "consecutive_mae_min": 0.0614,
+   "consecutive_mae_median": 0.4856,
+   "consecutive_mae_max": 0.6466,
+   "v01_codec_noise_ceiling": 0.037,
+   "last_vs_first_mae": 16.55,
+   "pre_encode_distinct_frames": 120,
+   "min_border_mean_8px": 170.71
+  },
+  "audio": {
+   "integrated_lufs": -30.6,
+   "sample_peak_dbfs": -19.3,
+   "true_peak_dbtp": -19.3,
+   "mean_volume_db": -32.8,
+   "max_volume_db": -19.3,
+   "gain_db": 11.5,
+   "cues": [
+    "AMB-BATHROOM-QUIET-v01:BED"
+   ]
+  },
+  "checks": {
+   "res_1920x1080": true,
+   "fps_24": true,
+   "exact_frames": true,
+   "exact_duration": true,
+   "h264_yuv420p": true,
+   "deterministic_two_runs_byte_identical": true,
+   "MEASURED_MOTION_PASS": true,
+   "motion_is_the_approved_transform": true,
+   "frame0_is_approved_content": true,
+   "safe_bounds_no_edge_exposure": true,
+   "approved_g03_frame": true,
+   "AUDIO_TRACK_PRESENT": true,
+   "AMBIENCE_ASSET_APPROVED": true,
+   "AUDIBLE_LEVEL_PASS": true,
+   "NO_DIALOGUE": true,
+   "NO_UNAPPROVED_SFX": true
+  },
+  "result": "PASS"
+ }
+}

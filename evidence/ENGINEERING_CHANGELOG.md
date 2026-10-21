@@ -2934,3 +2934,28 @@ evidence: ["evidence/EP005_BATCH1_FIRST_FOUR_SHOTS_READY_FOR_HUMAN_REVIEW_v1.0.m
 rollback: "REVIEW rows + objects for the four MP4s and the 10 record rows can be removed on human instruction; nothing APPROVED depends on them"
 status: "EP005_BATCH1_FIRST_FOUR_SHOTS_READY_FOR_HUMAN_REVIEW"
 ```
+
+---
+
+## ENG-20261021-EP005-BATCH1-FIRST-FOUR-SHOTS-V02-PRESENTATION: deterministic camera push + audible ambience for S005/S013/S017/S019 (v01 presentation rejected)
+
+```yaml
+change_id: "ENG-20261021-EP005-BATCH1-FIRST-FOUR-SHOTS-V02-PRESENTATION"
+timestamp: "2026-10-21"
+actor: "Claude"
+authorised_by: "Company Brain review (visual/G03 accepted; v01 rejected as presentation: static hold + inaudible ambience)"
+change_type: "DETERMINISTIC PRESENTATION PASS + REVIEW CANDIDATES (4 objects + 4 REVIEW rows) + EVIDENCE"
+method: "approved G03 frame (re-applied from APPROVED record, SHA-verified) -> whole-image camera push about a focal point (0.75 cosine + 0.25 linear ease; Lanczos, one resample/frame) -> governed bed mix (+11.5 dB) + encode_review"
+camera: "S005 1.000->1.030 F(895,150); S013 1.000->1.025 F(954,150); S017 1.000->1.025 F(830,413) drift +12 px x; S019 1.000->1.035 F(959,150)"
+renders:
+  S005: "b5c052ad7b8a4b9969ae45cc29546ae91c27249876f29e4b0f417db57e7ae37d"
+  S013: "1b6ef6b63905007471b9d576f7737c313fe86de17bd08e6f6acf48b4e8eeb882"
+  S017: "a4b6a8cdb17d04bdda1c7175acf2ee8c69026617801afee30f0522c561e4301a"
+  S019: "854e88c3218c870b871c1373ae024e55c4830f7bbb10eb431ae8590fc7d04001"
+audio: "-30.6/-30.8 LUFS integrated, -19.3 dBTP / -19.3 dBFS sample peak, mean -33 dB (v01 -44.5 dB)"
+qc: "PASS x4: MEASURED_MOTION (median consecutive 0.49-0.78 vs codec ceiling 0.037), transform fidelity <= 1.97, safe bounds, audible level, ambience only, no dialogue/SFX; two runs byte-identical"
+history: "v01 MP4 rows/objects untouched (REVIEW); v01 presentation rejection recorded in B1_REVIEW_CANDIDATE_LEDGER_v1.jsonl"
+side_effects: "0 provider calls / generations / ElevenLabs; base frames, G03/G08 records, script, manifest, readiness, S027-S029 unchanged; no agent008 code change; 205/205 tests"
+evidence: ["evidence/EP005_BATCH1_FIRST_FOUR_SHOTS_V02_READY_FOR_HUMAN_REVIEW_v1.0.md", "evidence/ep005/batch1_render/"]
+status: "EP005_BATCH1_FIRST_FOUR_SHOTS_V02_READY_FOR_HUMAN_REVIEW"
+```
