@@ -1,0 +1,152 @@
+{
+ "S005": {
+  "shot_id": "S005",
+  "mp4_sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+  "run_b_sha256": "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8",
+  "video": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "res": "1920x1080",
+   "fps": "24/1",
+   "frames": 96,
+   "duration_s": 4.0
+  },
+  "audio_streams": 1,
+  "audio": {
+   "integrated_lufs": -30.8,
+   "sample_peak_dbfs": -19.3,
+   "true_peak_dbtp": -19.3,
+   "mean_volume_db": -33.0,
+   "max_volume_db": -19.3
+  },
+  "audio_cues": [
+   "AMB-BATHROOM-QUIET-v01:BED"
+  ],
+  "agent008_qc": "PASS",
+  "agent008_qc_issues": [],
+  "overlays_precomposited_in_base_frame": 3,
+  "overlays_applied": 0,
+  "motion": {
+   "consecutive_mae_median": 2.002,
+   "consecutive_mae_min": 0.5937,
+   "first_last_mae": 25.421,
+   "codec_noise_ceiling_v01": 0.037
+  },
+  "checks": {
+   "res_1920x1080": true,
+   "fps_24": true,
+   "exact_frames": true,
+   "exact_duration": true,
+   "h264_yuv420p": true,
+   "deterministic_two_runs": true,
+   "agent008_qc_pass": true,
+   "g03_travelled_not_reapplied": true,
+   "pixel_motion_far_above_codec_noise": true,
+   "AUDIO_TRACK_PRESENT": true,
+   "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true,
+   "AUDIBLE_LEVEL_PASS": true,
+   "NO_DIALOGUE": true
+  },
+  "result": "PASS"
+ },
+ "S013": {
+  "shot_id": "S013",
+  "mp4_sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+  "run_b_sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+  "video": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "res": "1920x1080",
+   "fps": "24/1",
+   "frames": 96,
+   "duration_s": 4.0
+  },
+  "audio_streams": 1,
+  "audio": {
+   "integrated_lufs": -30.8,
+   "sample_peak_dbfs": -19.3,
+   "true_peak_dbtp": -19.3,
+   "mean_volume_db": -33.0,
+   "max_volume_db": -19.3
+  },
+  "audio_cues": [
+   "AMB-BATHROOM-QUIET-v01:BED"
+  ],
+  "agent008_qc": "PASS",
+  "agent008_qc_issues": [],
+  "overlays_precomposited_in_base_frame": 2,
+  "overlays_applied": 0,
+  "motion": {
+   "consecutive_mae_median": 1.3444,
+   "consecutive_mae_min": 0.5761,
+   "first_last_mae": 19.159,
+   "codec_noise_ceiling_v01": 0.037
+  },
+  "checks": {
+   "res_1920x1080": true,
+   "fps_24": true,
+   "exact_frames": true,
+   "exact_duration": true,
+   "h264_yuv420p": true,
+   "deterministic_two_runs": true,
+   "agent008_qc_pass": true,
+   "g03_travelled_not_reapplied": true,
+   "pixel_motion_far_above_codec_noise": true,
+   "AUDIO_TRACK_PRESENT": true,
+   "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true,
+   "AUDIBLE_LEVEL_PASS": true,
+   "NO_DIALOGUE": true
+  },
+  "result": "PASS"
+ },
+ "S017": {
+  "shot_id": "S017",
+  "mp4_sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+  "run_b_sha256": "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f",
+  "video": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "res": "1920x1080",
+   "fps": "24/1",
+   "frames": 96,
+   "duration_s": 4.0
+  },
+  "audio_streams": 1,
+  "audio": {
+   "integrated_lufs": -30.8,
+   "sample_peak_dbfs": -19.3,
+   "true_peak_dbtp": -19.3,
+   "mean_volume_db": -33.0,
+   "max_volume_db": -19.3
+  },
+  "audio_cues": [
+   "AMB-BATHROOM-QUIET-v01:BED"
+  ],
+  "agent008_qc": "PASS",
+  "agent008_qc_issues": [],
+  "overlays_precomposited_in_base_frame": 1,
+  "overlays_applied": 0,
+  "motion": {
+   "consecutive_mae_median": 0.9323,
+   "consecutive_mae_min": 0.3837,
+   "first_last_mae": 14.306,
+   "codec_noise_ceiling_v01": 0.037
+  },
+  "checks": {
+   "res_1920x1080": true,
+   "fps_24": true,
+   "exact_frames": true,
+   "exact_duration": true,
+   "h264_yuv420p": true,
+   "deterministic_two_runs": true,
+   "agent008_qc_pass": true,
+   "g03_travelled_not_reapplied": true,
+   "pixel_motion_far_above_codec_noise": true,
+   "AUDIO_TRACK_PRESENT": true,
+   "AMBIENCE_ONLY_PROVIDER_AUDIO_STRIPPED": true,
+   "AUDIBLE_LEVEL_PASS": true,
+   "NO_DIALOGUE": true
+  },
+  "result": "PASS"
+ }
+}

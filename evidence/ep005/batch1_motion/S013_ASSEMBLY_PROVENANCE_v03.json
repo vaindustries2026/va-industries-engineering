@@ -1,0 +1,359 @@
+{
+ "agent": "AGENT-008 \u2014 Shot Assembly Specification & Deterministic Compositor",
+ "agent_version": "agent008-v0.2-motion",
+ "stage": "8C->8D->8F",
+ "status": "REVIEW",
+ "shot_id": "S013",
+ "motion_request": {
+  "shot_id": "S013",
+  "source_frame_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/motion03/g03/S013/S013_G03_OVERLAY_FRAME_CANDIDATE.png",
+  "source_frame_sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+  "motion_prompt": "Gentle, restrained children's cartoon animation. Mikko calmly studies the two remaining berry smudges in the hand mirror: in the mirror his face blinks once naturally and his eyes move slowly from the smudge on his nose to the smudge beside his mouth, with very small breathing and head movement. Mikko's own head and shoulder in the foreground move slightly with his breathing, matching the reflection. Lumi hovers gently and keeps the mirror steady. Locked camera: no zoom, no pan, no cut. Keep everything exactly as in the image: Mikko the honey-brown bear cub, Lumi the small round glowing golden-white orb with tiny hands, the bathroom, and the pink flower-shaped hand mirror. The berry smudges stay fixed on the same spots of Mikko's face and do not move, change or disappear. No speaking, no talking mouth movement, no new objects or characters, no extra limbs, no morphing.",
+  "negative_constraints": "",
+  "duration_seconds": 4,
+  "aspect_ratio": "16:9",
+  "resolution": "720p",
+  "fps_target": 24,
+  "provider": "higgsfield",
+  "provider_model": "kling-video/v3.0-turbo/image-to-video",
+  "approval_scope_id": "EP005-B1V3-MOTION-S013",
+  "provider_params": {},
+  "source_frame_url": "https://d3snorpfx4xhv8.cloudfront.net/b253ddaf-db92-485d-a71c-c161961cb73b/d77ad924-02f4-46c2-be71-42dcdf8349a5.png",
+  "prompt_sha256": "86b68d36a642b2ae14cb4864126e7a1585edbea4e8c20ec2deea60d897e79e68",
+  "negative_constraints_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "motion_result": {
+  "provider": "higgsfield",
+  "provider_model": "kling-video/v3.0-turbo/image-to-video",
+  "provider_job_id": "3bcd163c-f53b-4fdd-88cb-ed1b1269855e",
+  "source_frame_sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+  "prompt_hash": "86b68d36a642b2ae14cb4864126e7a1585edbea4e8c20ec2deea60d897e79e68",
+  "provider_status": "COMPLETED",
+  "raw_output_path": "/tmp/claude-0/-home-user-va-industries-engineering/6f0c7166-6f22-5581-b3bd-4906bd5211f4/scratchpad/motion03/raw/S013/7f7210f6-d00f-4d95-bc07-f8c9c0597b6a.mp4",
+  "raw_output_sha256": "0fe0a14d7d0caf25dad79466920d6bcfacef77641f85fe51fcf1c55a8e8cfe0f",
+  "raw_original_filename": "7f7210f6-d00f-4d95-bc07-f8c9c0597b6a.mp4",
+  "raw_bytes": 2973963,
+  "raw_duration": 4.041667,
+  "raw_resolution": "1280x720",
+  "raw_fps": "24/1",
+  "raw_codec": "h264",
+  "created_at": null,
+  "cost_or_usage_if_available": null,
+  "status": "REVIEW",
+  "source_frame_url": null
+ },
+ "raw_output_verified_sha256": "0fe0a14d7d0caf25dad79466920d6bcfacef77641f85fe51fcf1c55a8e8cfe0f",
+ "output_spec": {
+  "spec_id": "A008-REVIEW-1080P24-PHASE0",
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "pixel_format": "yuv420p",
+  "video_codec": "libx264",
+  "x264_preset": "medium",
+  "x264_crf": 16,
+  "audio_sample_rate": 48000,
+  "audio_channels": 2,
+  "review_audio_codec": "aac",
+  "review_audio_bitrate": "192k",
+  "peak_ceiling_dbfs": -1.0,
+  "output_status": "REVIEW",
+  "canon_decision": false
+ },
+ "shot_spec": {
+  "shot_id": "S013",
+  "shot_index": 13,
+  "episode_start_seconds": 49,
+  "episode_end_seconds": 53,
+  "duration_seconds": 4,
+  "frames": 96,
+  "animation_method": "COMPOSITE",
+  "video_generation_required": false,
+  "protected_participation_hold": true,
+  "clean_reveal": false,
+  "active_overlays": [
+   {
+    "element": "Berry smudge on Mikko's nose",
+    "reference": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "registry_row_id": "dfaa3b89-8366-44dc-ace9-542b4a764a80",
+    "status": "APPROVED",
+    "asset_type": "OVERLAY_VFX",
+    "asset_subtype": "BERRY_SMUDGE_OVERLAY",
+    "storage_path": "production-assets/visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01.webp",
+    "object_key": "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01.webp",
+    "expected_sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+    "sha256_source": "asset_registry.metadata_json.sha256"
+   },
+   {
+    "element": "Berry smudge on skin beside Mikko's mouth",
+    "reference": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+    "registry_row_id": "b960c11c-6b88-4223-854b-e9ba44c7aad4",
+    "status": "APPROVED",
+    "asset_type": "OVERLAY_VFX",
+    "asset_subtype": "BERRY_SMUDGE_OVERLAY",
+    "storage_path": "production-assets/visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01.webp",
+    "object_key": "visual/production/ep005/overlays/OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01.webp",
+    "expected_sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+    "sha256_source": "asset_registry.metadata_json.sha256"
+   }
+  ],
+  "treatments": [],
+  "props": [
+   {
+    "manifest_label": "TMP_EP005_HAND_MIRROR",
+    "label_is_stale": true,
+    "reference": "TMP_EP005_HAND_MIRROR",
+    "asset_id": "PROP-EP005-HAND-MIRROR-v01",
+    "registry_row_id": "a61c0af2-1e8d-40e2-88d1-8848390f2a17",
+    "status": "APPROVED",
+    "asset_type": "PROP",
+    "asset_subtype": null,
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp",
+    "object_key": "visual/production/ep005/props/PROP-EP005-HAND-MIRROR-v01.webp",
+    "expected_sha256": "34fa31a132144c355714480fa82b22916fc2f825d418658bb787791a0b9c56ac",
+    "sha256_source": "asset_registry.metadata_json.sha256"
+   },
+   {
+    "manifest_label": "TMP_EP005_SOFT_CLOTH",
+    "label_is_stale": true,
+    "reference": "TMP_EP005_SOFT_CLOTH",
+    "asset_id": "PROP-EP005-CLEANING-CLOTH-v01",
+    "registry_row_id": "ab33c77c-5fde-4642-9efb-706f619c4a7e",
+    "status": "APPROVED",
+    "asset_type": "PROP",
+    "asset_subtype": null,
+    "storage_path": "production-assets/visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp",
+    "object_key": "visual/production/ep005/props/PROP-EP005-CLEANING-CLOTH-v01.webp",
+    "expected_sha256": "afaa3a9fcfc5b562023080318425457c5b4dda8eb58065f56ae542786637c1db",
+    "sha256_source": "asset_registry.metadata_json.sha256"
+   }
+  ],
+  "characters": [
+   {
+    "character_name": "Mikko",
+    "manifest_label": "TBD",
+    "reference": "TBD::CHARACTER::Mikko",
+    "asset_id": "CHAR-MIKKO-MASTER-v01",
+    "registry_row_id": "0d7a47e0-0adf-47d6-9cf9-f71ad7439747",
+    "status": "APPROVED",
+    "asset_type": "CHARACTER",
+    "asset_subtype": null,
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png",
+    "object_key": "visual/canonical/characters/CHAR-MIKKO-MASTER-v01.png",
+    "expected_sha256": "41c9480a847c962c1ecfda4fe076e0abcd86548ba67f692621cfc6e13d61f1a8",
+    "sha256_source": "asset_registry.metadata_json.sha256"
+   },
+   {
+    "character_name": "Lumi",
+    "manifest_label": "TBD",
+    "reference": "TBD::CHARACTER::Lumi",
+    "asset_id": "CHAR-LUMI-MASTER-v01",
+    "registry_row_id": "75cf9e5d-78ec-4cac-b1bb-49e696629bc2",
+    "status": "APPROVED",
+    "asset_type": "CHARACTER",
+    "asset_subtype": null,
+    "storage_path": "production-assets/visual/canonical/characters/CHAR-LUMI-MASTER-v01.png",
+    "object_key": "visual/canonical/characters/CHAR-LUMI-MASTER-v01.png",
+    "expected_sha256": "8b29c1abea53cb253eea39cdd41d5001ed38036945b049078915ac5993c43a41",
+    "sha256_source": "asset_registry.metadata_json.sha256"
+   }
+  ],
+  "environment": {
+   "manifest_label": "TBD",
+   "reference": "TBD::ENVIRONMENT::Canonical environment/background",
+   "asset_id": "WORLD-EP005-BATHROOM-MASTER-v01",
+   "registry_row_id": "8cdeea80-1eb3-4a75-b50a-c209f1aae434",
+   "status": "APPROVED",
+   "asset_type": "ENVIRONMENT",
+   "asset_subtype": null,
+   "storage_path": "production-assets/visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png",
+   "object_key": "visual/canonical/worlds/WORLD-EP005-BATHROOM-MASTER-v01.png",
+   "expected_sha256": "ab79c560d3c79a05cb957331149ee4b8a176e109b06010480ba6c26903bd3733",
+   "sha256_source": "asset_registry.metadata_json.sha256"
+  },
+  "named_sfx": [],
+  "mapped_audio": [
+   {
+    "replaces_requirement": "TBD::AUDIO::AMBIENCE",
+    "reference": "AMB-BATHROOM-QUIET-v01",
+    "asset_id": "AMB-BATHROOM-QUIET-v01",
+    "registry_row_id": "2ba504eb-43ad-45c2-a3bc-67ce72282359",
+    "status": "APPROVED",
+    "asset_type": "AUDIO",
+    "asset_subtype": "AMBIENCE",
+    "storage_path": "production-assets/audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+    "object_key": "audio/ambience/AMB-BATHROOM-QUIET-v01.wav",
+    "expected_sha256": "ea28fad468e353b99d48070d12853620f08e8b05c8d912706122d31176544d2f",
+    "sha256_source": "asset_registry.metadata_json.sha256",
+    "audio_role": "AMBIENCE"
+   }
+  ],
+  "event_audio": [],
+  "music_present": false,
+  "dialogue_slots": [],
+  "continuity_start_authority": {
+   "rule": "visible_at_start(N) = validated visible_at_end(N-1)",
+   "source_shot_id": "S012",
+   "elements_inherited": 7,
+   "elements_not_redeclared": []
+  },
+  "informational_stale_labels": [
+   "TBD",
+   "TMP_EP005_HAND_MIRROR",
+   "TMP_EP005_SOFT_CLOTH"
+  ]
+ },
+ "dialogue_tracks": [],
+ "overlays_composited_in_base_frame": {
+  "frame_sha256": "5ff38815af3f443740bef8f4383284036cedc4c2944d1d1090eeffdba28d93ee",
+  "overlays": [
+   {
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-MOUTH-v01",
+    "sha256": "df7c2adb446daaae3eafc0a5fce3090b4b5c2c1409d12fd82d4b242b0f637b0e",
+    "surface": "REFLECTION"
+   },
+   {
+    "asset_id": "OVERLAY-EP005-BERRY-SMUDGE-NOSE-v01",
+    "sha256": "c11691271bcdbfc7b20ca253d59518560ec17e446a28f72cc3ab88da1da00bc1",
+    "surface": "REFLECTION"
+   }
+  ],
+  "shot_id": "S013"
+ },
+ "dialogue_timing": {
+  "version": "agent008-g09-v1",
+  "shot_id": "S013",
+  "sample_rate": 48000,
+  "shot_end_s": 4.0,
+  "window": {
+   "start_s": 0.0,
+   "end_s": 4.0,
+   "pre_hold_seconds": 0.0,
+   "post_hold_seconds": 0.0
+  },
+  "lines": [],
+  "overlaps": []
+ },
+ "audio_cues": [
+  {
+   "asset_id": "AMB-BATHROOM-QUIET-v01",
+   "kind": "BED",
+   "start_s": 0.0,
+   "end_s": 4.0,
+   "gain_db": 11.5
+  }
+ ],
+ "mix_peak_dbfs": -18.979,
+ "qc": {
+  "frames": 96,
+  "black_frames": [],
+  "longest_identical_run": 1,
+  "max_freeze_frames": 24,
+  "distinct_frames": 96,
+  "frame_hash_list_sha256": "0d4c498eaa029d9ea1b308a360adb44bc0a885cf70125559fa378d86b11ecf05",
+  "issues": [],
+  "expected_frames": 96,
+  "output_frames": 96,
+  "output_resolution": "1920x1080",
+  "expected_resolution": "1920x1080",
+  "output_duration_s": 4.0,
+  "expected_duration_s": 4,
+  "audio_peak_dbfs": -18.979,
+  "audio_silent_windows": 0,
+  "overlays_applied": 0,
+  "treatments_applied": 0,
+  "overlays_precomposited_in_base_frame": 2,
+  "automatic_result": "PASS"
+ },
+ "recipes": {
+  "encode_command": [
+   "ffmpeg",
+   "-v",
+   "error",
+   "-y",
+   "-f",
+   "rawvideo",
+   "-pix_fmt",
+   "rgb24",
+   "-s",
+   "1920x1080",
+   "-r",
+   "24",
+   "-i",
+   "-",
+   "-i",
+   "<OUT>/S013_MOTION_MIX.wav",
+   "-map",
+   "0:v:0",
+   "-map",
+   "1:a:0",
+   "-vf",
+   "scale=out_color_matrix=bt709:out_range=tv:flags=lanczos+accurate_rnd+full_chroma_int+bitexact,format=yuv420p",
+   "-c:v",
+   "libx264",
+   "-preset",
+   "medium",
+   "-crf",
+   "16",
+   "-threads",
+   "1",
+   "-color_primaries",
+   "bt709",
+   "-color_trc",
+   "bt709",
+   "-colorspace",
+   "bt709",
+   "-c:a",
+   "aac",
+   "-b:a",
+   "192k",
+   "-ar",
+   "48000",
+   "-frames:v",
+   "96",
+   "-fflags",
+   "+bitexact",
+   "-flags:v",
+   "+bitexact",
+   "-flags:a",
+   "+bitexact",
+   "-map_metadata",
+   "-1",
+   "-movflags",
+   "+faststart",
+   "<OUT>/MOTION_SMOKE_REVIEW.mp4"
+  ]
+ },
+ "outputs": {
+  "review_mp4": {
+   "file": "MOTION_SMOKE_REVIEW.mp4",
+   "sha256": "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216",
+   "bytes": 3459813
+  },
+  "mix_wav": {
+   "file": "S013_MOTION_MIX.wav",
+   "sha256": "721a3c894eb26d1f2deb57649e725d8a14d27f736c7e2cdb15f02817a3147bcf"
+  }
+ },
+ "human_approval": {
+  "required": true,
+  "approved": false,
+  "decisions": [
+   "APPROVE",
+   "REJECT",
+   "REGENERATE"
+  ],
+  "approve_by": "exact review mp4 sha256"
+ },
+ "safety": {
+  "auto_approved": false,
+  "auto_retry": false
+ },
+ "toolchain": {
+  "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+  "numpy": "2.5.3"
+ },
+ "deterministic_core_sha256": "18378256632f6235bf4c253cbd81d436e288f002e10c42a026605038bcafca36"
+}

@@ -1,0 +1,77 @@
+{
+ "method": "frames at 0/25/50/75/100% of each raw clip, face/hand crops, full-size checks, mirror pink-area scale check (camera zoom)",
+ "verdicts": {
+  "S005": {
+   "verdict": "PASS",
+   "REAL_CHARACTER_MOTION": "YES",
+   "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES",
+   "NOT_JUST_CAMERA_ZOOM": "YES",
+   "CANON_IDENTITY_STABLE": "YES",
+   "NO_EXTRA_LIMBS": "YES",
+   "NO_MAJOR_MORPHING": "YES",
+   "MIRROR_CONTINUITY_PASS": "YES",
+   "SMUDGE_CONTINUITY_PASS": "YES",
+   "NO_NEW_OBJECTS": "YES",
+   "notes": [
+    "Reflection: expression changes (open smile -> calm closed smile), eyes move across the marks, small head settle",
+    "Foreground real Mikko head/shoulder leans in (character motion; mirror pink area constant within ~3%, no camera zoom)",
+    "Lumi: expression change and gentle float; two tiny hands stay on the handle",
+    "Cheek, nose and mouth (right side) marks stay at the same facial spots through 0/25/50/75/100%",
+    "Mouth opens/closes once with the expression change (not speech)"
+   ]
+  },
+  "S013": {
+   "verdict": "PASS",
+   "REAL_CHARACTER_MOTION": "YES",
+   "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES",
+   "NOT_JUST_CAMERA_ZOOM": "YES",
+   "CANON_IDENTITY_STABLE": "YES",
+   "NO_EXTRA_LIMBS": "YES",
+   "NO_MAJOR_MORPHING": "YES",
+   "MIRROR_CONTINUITY_PASS": "YES",
+   "SMUDGE_CONTINUITY_PASS": "YES (reflection) - see flag",
+   "NO_NEW_OBJECTS": "YES",
+   "notes": [
+    "Reflection: expression change, eyes glance from one mark toward the other (75%), restrained head motion",
+    "Lumi: expression change and gentle float, mirror steady",
+    "Nose and mouth marks stay fixed in the reflection",
+    "FLAG for human check: from ~3.5 s a red berry mark becomes visible at the edge of the foreground (real) Mikko's face as his head turns slightly; consistent with Decision 1 (the real face carries the marks), but from this angle it cannot be confirmed whether it is the nose mark coming into view or the removed cheek mark"
+   ]
+  },
+  "S017": {
+   "verdict": "PASS",
+   "REAL_CHARACTER_MOTION": "YES",
+   "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES",
+   "NOT_JUST_CAMERA_ZOOM": "YES",
+   "CANON_IDENTITY_STABLE": "YES",
+   "NO_EXTRA_LIMBS": "YES",
+   "NO_MAJOR_MORPHING": "YES",
+   "MIRROR_CONTINUITY_PASS": "YES",
+   "SMUDGE_CONTINUITY_PASS": "YES",
+   "NO_NEW_OBJECTS": "YES",
+   "notes": [
+    "Mikko turns his head toward the mirror, blinks (eyes half closed at 75%), returns; cloth stays in his hand",
+    "The reflection blinks in sync with Mikko (same Mikko, not an independent face)",
+    "Nose mark persists on the real face and on the reflection throughout",
+    "Lumi floats beside him with expression change, holding the mirror"
+   ]
+  },
+  "S019": {
+   "verdict": "FAIL",
+   "REAL_CHARACTER_MOTION": "YES",
+   "VISIBLE_BLINK_HEAD_BODY_HOVER_MOTION": "YES",
+   "NOT_JUST_CAMERA_ZOOM": "YES",
+   "CANON_IDENTITY_STABLE": "NO",
+   "NO_EXTRA_LIMBS": "NO",
+   "NO_MAJOR_MORPHING": "YES",
+   "MIRROR_CONTINUITY_PASS": "YES",
+   "SMUDGE_CONTINUITY_PASS": "YES",
+   "NO_NEW_OBJECTS": "NO",
+   "notes": [
+    "Reflection reacts (smile -> neutral -> small 'o' of surprise); nose mark stays fixed; mirror stable",
+    "FAIL: from ~frame 60 (2.5 s) a SECOND hand enters and grips the handle - a yellow gloved hand with a cream cuff and a furry brown sleeve - in addition to Lumi's tiny hand; not in the approved image, not Lumi canon (extra limb / new object)",
+    "Not assembled; no retry authorised; raw preserved as REVIEW evidence"
+   ]
+  }
+ }
+}

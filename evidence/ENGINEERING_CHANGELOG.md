@@ -2959,3 +2959,28 @@ side_effects: "0 provider calls / generations / ElevenLabs; base frames, G03/G08
 evidence: ["evidence/EP005_BATCH1_FIRST_FOUR_SHOTS_V02_READY_FOR_HUMAN_REVIEW_v1.0.md", "evidence/ep005/batch1_render/"]
 status: "EP005_BATCH1_FIRST_FOUR_SHOTS_V02_READY_FOR_HUMAN_REVIEW"
 ```
+
+---
+
+## ENG-20261021-EP005-BATCH1-REAL-MOTION-V03: Kling 3.0 Turbo i2v for S005/S013/S017/S019 (4 calls): 3 PASS -> v03 REVIEW; S019 FAIL (extra hand)
+
+```yaml
+change_id: "ENG-20261021-EP005-BATCH1-REAL-MOTION-V03"
+timestamp: "2026-10-21"
+actor: "Claude"
+authorised_by: "Gilang / Company Brain paid execution authorisation (max USD 1.50; kling-video/v3.0-turbo/image-to-video 720p; 1 call per shot; no retry/fallback)"
+change_type: "PAID VIDEO GENERATION (4) + RAW PRESERVATION (4) + GOVERNED ASSEMBLY (3) + REVIEW CANDIDATES (3) + EVIDENCE"
+package_lock_commit: "93e027fc71aa2808846f2c4408a6d97915038763"
+requests: {S005: "8db8e5b7-2f32-4b71-b09d-dfd9e220ee53", S013: "3bcd163c-f53b-4fdd-88cb-ed1b1269855e", S017: "12f7f695-1e97-46a2-a65d-595a299490ce", S019: "d14abf6e-6be9-4c8b-b63d-1c762debcb4d"}
+raw_sha256: {S005: "7377d383...c54d", S013: "0fe0a14d...fe0f", S017: "4a7db31e...46a6", S019: "f107ef3e...023b"}
+visual_qc: "S005 PASS; S013 PASS (flag: mark at the real-face edge from ~3.5 s, human check); S017 PASS; S019 FAIL (second gloved hand with furry sleeve enters at ~2.5 s: extra limb / new object)"
+v03_candidates:
+  S005: "629e2e44fb10e285fe6782dac7724573a823f251e614edbd101de0ef0ca70cc8"
+  S013: "38c43abbb1e9c57ec7d54a6b92b34a2422f2e42763a4a8eb6704b7f062a33216"
+  S017: "78fdfe927296235dea176f970aeb26554b9864a93789de009acc3f7b6eeaf97f"
+audio: "-30.8 LUFS, -19.3 dBTP, ambience only, provider audio stripped"
+spend: "provider exposed no cost; known USD 0.00, actual UNKNOWN (verify balance vs the USD 1.50 authorisation)"
+side_effects: "4 Kling calls, 0 retries; 7 storage objects + 7 REVIEW rows; no image generation/Seedance/ElevenLabs/Agent-006/007; script, manifest, readiness, S027-S029, v01/v02 history unchanged"
+evidence: ["evidence/EP005_BATCH1_REAL_MOTION_V03_REVIEW_v1.0.md", "evidence/ep005/batch1_motion/"]
+status: "EP005_BATCH1_REAL_MOTION_PARTIAL: 3 of 4 REVIEW-ready; S019 MOTION_CANON_FAIL"
+```
